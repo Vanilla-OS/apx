@@ -7,6 +7,5 @@
 #   from outside, directly on the host.
 
 apx_clean() {
-    info "clean"
-    warn "args: $@"
+    container_exec sudo apt clean "$@"
 }

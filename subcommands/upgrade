@@ -7,6 +7,5 @@
 #   from outside, directly on the host.
 
 apx_upgrade() {
-    info "upgrade"
-    warn "args: $@"
+    container_exec sudo apt upgrade "$@"
 }

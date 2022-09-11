@@ -7,23 +7,25 @@
 #   from outside, directly on the host.
 
 apx_init() {
-    PROCEED="n"
-    
+    PROCEED="y"
+    ALREADY_EXISTS=false
+
     if container_exists; then
+        ALREADY_EXISTS=true
         warn "Container already exists. Do you want to re-initialize it? [y/N]"
         read -r PROCEED
         PROCEED=$(echo "$PROCEED" | tr '[:upper:]' '[:lower:]')
     fi
 
     if [ "$PROCEED" = "y" ]; then
-        distrobox stop "$CONTAINER_NAME" --yes
-        distrobox rm "$CONTAINER_NAME" --yes
+        if [ "$ALREADY_EXISTS" = true ]; then
+            container_rm
+        fi
     else
         return 0
     fi
 
-    distrobox create --name "$CONTAINER_NAME" --image "$(host_image)" --yes --additional-flags --label=manager=apx
-    distrobox generate-entry "$CONTAINER_NAME" --delete
+    container_create
 
     if [ "$?" -ne 0 ]; then
         err "Failed to create container"

@@ -6,6 +6,6 @@
 # Description: Apx is a wrapper around apt to make it works inside a container
 #   from outside, directly on the host.
 
-apx_autoremove() {
-    container_exec sudo apt autoremove "$@"
+apx_run() {
+    container_exec "$@"
 }

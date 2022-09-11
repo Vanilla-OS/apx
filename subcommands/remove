@@ -7,6 +7,5 @@
 #   from outside, directly on the host.
 
 apx_remove() {
-    info "remove"
-    warn "args: $@"
+    container_exec sudo apt remove "$@"
 }

@@ -7,6 +7,5 @@
 #   from outside, directly on the host.
 
 apx_list() {
-    info "list"
-    warn "args: $@"
+    container_exec apt list "$@"
 }

@@ -7,6 +7,5 @@
 #   from outside, directly on the host.
 
 apx_purge() {
-    info "purge"
-    warn "args: $@"
+    container_exec sudo apt purge "$@"
 }

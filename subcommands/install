@@ -7,6 +7,5 @@
 #   from outside, directly on the host.
 
 apx_install() {
-    info "install"
-    warn "args: $@"
+    container_exec sudo apt install "$@"
 }
