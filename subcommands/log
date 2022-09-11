@@ -1,0 +1,20 @@
+#!/bin/sh#!/bin/sh
+# License: GPLv3
+# Authors:
+#   Mirko Brombin <send@mirko.pm>
+# Copyright: 2022
+# Description: Apx is a wrapper around apt to make it works inside a container
+#   from outside, directly on the host.
+
+apx_log() {
+    if [ ! -f $(current_log_file) ]; then
+        err "No logs found"
+        return 1
+    fi
+    
+    if [ "$#" -eq 0 ]; then
+        grep -E "$PREFIX_INFO|$PREFIX_WARNING|$PREFIX_ERROR" $(current_log_file)
+    else
+        grep -E "$1" $(current_log_file)
+    fi
+}

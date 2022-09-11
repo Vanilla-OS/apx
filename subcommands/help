@@ -28,6 +28,7 @@ Commands:
     init        Initialize the container
     install     Install packages
     list        List packages based on package names
+    log         Show logs
     purge       Purge packages
     run         Run a command inside the container
     remove      Remove packages
