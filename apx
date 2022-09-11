@@ -10,7 +10,7 @@
 DEV_IMPORTS=true
 SUBCOMMANDS="clean enter help init install list purge remove run search show update upgrade version"
 CONTAINER_NAME="apx_managed"
-VERSION="0.0.1"
+VERSION="0.0.2"
 APP_LABEL="◆"
 
 # Imports
