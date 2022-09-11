@@ -10,7 +10,7 @@
 DEV_IMPORTS=true
 SUBCOMMANDS="clean enter help init install list log purge remove run search show update upgrade version"
 CONTAINER_NAME="apx_managed"
-VERSION="0.0.2"
+VERSION="0.0.3"
 APP_LABEL="◆"
 LOGS_DIR="/var/log/apx"
 
