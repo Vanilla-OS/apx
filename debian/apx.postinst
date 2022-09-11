@@ -1,0 +1,18 @@
+#!/bin/sh -e
+
+case "$1" in
+    configure)
+        chmod +x /usr/bin/apx
+	;;
+
+    abort-upgrade|abort-deconfigure|abort-remove)
+	;;
+
+    *)
+	echo "$0 called with unknown argument \`$1'" 1>&2
+	exit 1
+	;;
+esac
+
+#DEBHELPER#
+exit 0

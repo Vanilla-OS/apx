@@ -1,0 +1,3 @@
+apx /usr/bin
+subcommands /usr/share/apx
+utils /usr/share/apx
