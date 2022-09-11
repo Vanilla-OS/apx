@@ -7,5 +7,6 @@
 #   from outside, directly on the host.
 
 apx_remove() {
+    container_rm_desktop_entry "$@"
     container_exec sudo apt remove "$@"
 }

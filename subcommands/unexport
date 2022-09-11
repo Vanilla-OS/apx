@@ -6,7 +6,6 @@
 # Description: Apx is a wrapper around apt to make it works inside a container
 #   from outside, directly on the host.
 
-apx_install() {
-    container_exec sudo apt install "$@"
-    container_gen_desktop_entry "$@"
+apx_unexport() {
+    container_rm_desktop_entry "$@"
 }

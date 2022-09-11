@@ -55,3 +55,27 @@ container_rm() {
     distrobox rm "$CONTAINER_NAME" --yes
     return $?
 }
+
+container_gen_desktop_entry() {
+    container_exec distrobox-export --app "$1" --export-label "$APP_LABEL"
+    if [ "$?" -ne 0 ]; then
+        container_exec distrobox-export --app "$(echo "$1" | cut -d'-' -f1)" --export-label "$APP_LABEL"
+    fi
+
+    if [ "$?" -ne 0 ]; then
+        warn "No desktop entry found for $1, nothing to export"
+        exit 1
+    fi
+}
+
+container_rm_desktop_entry() {
+    container_exec distrobox-export --app "$1" --delete
+    if [ "$?" -ne 0 ]; then
+        container_exec distrobox-export --app "$(echo "$1" | cut -d'-' -f1)" --delete
+    fi
+
+    if [ "$?" -ne 0 ]; then
+        warn "No desktop entry found for $1, nothing to delete"
+        exit 1
+    fi
+}
