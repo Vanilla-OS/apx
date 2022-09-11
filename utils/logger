@@ -15,14 +15,21 @@ FORMAT_WARN="\033[1;33m"
 FORMAT_ERROR="\033[1;31m"
 FORMAT_RESET="\033[0m"
 
+current_log_file() {
+    echo "$LOGS_DIR/$(date +%Y-%m-%d).log"
+}
+
 info() {
     echo "${FORMAT_INFO}${PREFIX_INFO}${FORMAT_RESET}${@}"
+    echo "$(date +%Y-%m-%d\ %H:%M:%S) ${PREFIX_INFO}${@}" >> $(current_log_file)
 }
 
 warn() {
     echo "${FORMAT_WARN}${PREFIX_WARNING}${FORMAT_RESET}${@}"
+    echo "$(date +%Y-%m-%d\ %H:%M:%S) ${PREFIX_WARNING}${@}" >> $(current_log_file)
 }
 
 err() {
     echo "${FORMAT_ERROR}${PREFIX_ERROR}${FORMAT_RESET}${@}"
+    echo "$(date +%Y-%m-%d\ %H:%M:%S) ${PREFIX_ERROR}${@}" >> $(current_log_file)
 }
