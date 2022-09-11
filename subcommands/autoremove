@@ -8,4 +8,13 @@
 
 apx_autoremove() {
     container_exec sudo apt autoremove "$@"
+    
+    # the following logs are muted and only stored in the log file
+    # this allows this command to be used in scripts without
+    # polluting the output
+    if [ "$?" -ne 1 ]; then
+        _info "Auto-remove completed"
+    else
+        _err "Failed to auto-remove"
+    fi
 }

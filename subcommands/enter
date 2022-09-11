@@ -8,4 +8,10 @@
 
 apx_enter() {
     distrobox enter "$CONTAINER_NAME"
+
+    if [ "$?" -ne 1 ]; then
+        info "You are now outside the container"
+    else
+        err "Failed to enter container, it might be corrupted, try to re-init it using 'apx init'"
+    fi
 }

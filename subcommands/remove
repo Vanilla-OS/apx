@@ -9,4 +9,13 @@
 apx_remove() {
     container_rm_desktop_entry "$@"
     container_exec sudo apt remove "$@"
+
+    # the following logs are muted and only stored in the log file
+    # this allows this command to be used in scripts without
+    # polluting the output
+    if [ "$?" -ne 1 ]; then
+        _info "Package(s) removed: $@"
+    else
+        _err "Failed to remove package(s): $@"
+    fi
 }

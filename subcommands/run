@@ -8,4 +8,13 @@
 
 apx_run() {
     container_exec "$@"
+
+    # the following logs are muted and only stored in the log file
+    # this allows this command to be used in scripts without
+    # polluting the output
+    if [ "$?" -ne 1 ]; then
+        _info "Command executed successfully"
+    else
+        _err "Failed to execute command. Try to enter the container with 'apx enter' and run the command manually."
+    fi
 }

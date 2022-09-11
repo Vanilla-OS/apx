@@ -8,4 +8,13 @@
 
 apx_clean() {
     container_exec sudo apt clean "$@"
+
+    # the following logs are muted and only stored in the log file
+    # this allows this command to be used in scripts without
+    # polluting the output
+    if [ "$?" -ne 1 ]; then
+        _info "Clean completed"
+    else
+        _err "Failed to clean"
+    fi
 }

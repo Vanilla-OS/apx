@@ -12,7 +12,8 @@ apx_init() {
 
     if container_exists; then
         ALREADY_EXISTS=true
-        warn "Container already exists. Do you want to re-initialize it? [y/N]"
+        warn "Container already exists. Do you want to re-initialize it?\ 
+This operation will remove everything, of course your files as well. [y/N] "
         read -r PROCEED
         PROCEED=$(echo "$PROCEED" | tr '[:upper:]' '[:lower:]')
     fi

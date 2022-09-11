@@ -19,17 +19,31 @@ current_log_file() {
     echo "$LOGS_DIR/$(date +%Y-%m-%d).log"
 }
 
+# functions to log messages without showing them on the terminal
+_info() {
+    echo "$(date +%Y-%m-%d\ %H:%M:%S) ${PREFIX_INFO}${@}" >> $(current_log_file)
+}
+
+_warn() {
+    echo "$(date +%Y-%m-%d\ %H:%M:%S) ${PREFIX_WARNING}${@}" >> $(current_log_file)
+}
+
+_err() {
+    echo "$(date +%Y-%m-%d\ %H:%M:%S) ${PREFIX_ERROR}${@}" >> $(current_log_file)
+}
+
+# functions to log messages and show them on the terminal
 info() {
     echo "${FORMAT_INFO}${PREFIX_INFO}${FORMAT_RESET}${@}"
-    echo "$(date +%Y-%m-%d\ %H:%M:%S) ${PREFIX_INFO}${@}" >> $(current_log_file)
+    _info "${@}"
 }
 
 warn() {
     echo "${FORMAT_WARN}${PREFIX_WARNING}${FORMAT_RESET}${@}"
-    echo "$(date +%Y-%m-%d\ %H:%M:%S) ${PREFIX_WARNING}${@}" >> $(current_log_file)
+    _warn "${@}"
 }
 
 err() {
     echo "${FORMAT_ERROR}${PREFIX_ERROR}${FORMAT_RESET}${@}"
-    echo "$(date +%Y-%m-%d\ %H:%M:%S) ${PREFIX_ERROR}${@}" >> $(current_log_file)
+    _err "${@}"
 }

@@ -8,4 +8,13 @@
 
 apx_show() {
     container_exec apt show "$@"
+
+    # the following logs are muted and only stored in the log file
+    # this allows this command to be used in scripts without
+    # polluting the output
+    if [ "$?" -ne 1 ]; then
+        _info "Showing package completed: $@"
+    else
+        _err "Failed to show package: $@"
+    fi
 }

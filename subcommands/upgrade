@@ -8,4 +8,13 @@
 
 apx_upgrade() {
     container_exec sudo apt upgrade "$@"
+
+    # the following logs are muted and only stored in the log file
+    # this allows this command to be used in scripts without
+    # polluting the output
+    if [ "$?" -ne 1 ]; then
+        _info "Upgrade completed"
+    else
+        _err "Failed to upgrade"
+    fi
 }

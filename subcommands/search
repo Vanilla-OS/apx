@@ -8,4 +8,13 @@
 
 apx_search() {
     container_exec apt search "$@"
+
+    # the following logs are muted and only stored in the log file
+    # this allows this command to be used in scripts without
+    # polluting the output
+    if [ "$?" -ne 1 ]; then
+        _info "Search completed"
+    else
+        _err "Failed to search"
+    fi
 }

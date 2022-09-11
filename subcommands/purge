@@ -8,4 +8,13 @@
 
 apx_purge() {
     container_exec sudo apt purge "$@"
+
+    # the following logs are muted and only stored in the log file
+    # this allows this command to be used in scripts without
+    # polluting the output
+    if [ "$?" -ne 1 ]; then
+        _info "Purge completed"
+    else
+        _err "Failed to purge"
+    fi
 }
