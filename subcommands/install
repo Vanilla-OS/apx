@@ -8,5 +8,10 @@
 
 apx_install() {
     container_exec sudo apt install "$@"
-    container_gen_desktop_entry "$@"
+    if [ "$?" -ne 1 ]; then
+        container_gen_desktop_entry "$@"
+        info "New package(s) installed: $@"
+    else
+        err "Failed to install package(s): $@"
+    fi
 }
