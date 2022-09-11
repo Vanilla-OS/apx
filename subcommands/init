@@ -26,9 +26,4 @@ apx_init() {
     fi
 
     container_create
-
-    if [ "$?" -ne 0 ]; then
-        err "Failed to create container"
-        exit 1
-    fi
 }
