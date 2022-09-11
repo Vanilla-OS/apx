@@ -1,0 +1,32 @@
+#!/bin/sh
+# License: GPLv3
+# Authors:
+#   Mirko Brombin <send@mirko.pm>
+# Copyright: 2022
+# Description: Apx is a wrapper around apt to make it works inside a container
+#   from outside, directly on the host.
+
+apx_init() {
+    PROCEED="n"
+    
+    if container_exists; then
+        warn "Container already exists. Do you want to re-initialize it? [y/N]"
+        read -r PROCEED
+        PROCEED=$(echo "$PROCEED" | tr '[:upper:]' '[:lower:]')
+    fi
+
+    if [ "$PROCEED" = "y" ]; then
+        distrobox stop "$CONTAINER_NAME" --yes
+        distrobox rm "$CONTAINER_NAME" --yes
+    else
+        return 0
+    fi
+
+    distrobox create --name "$CONTAINER_NAME" --image "$(host_image)" --yes --additional-flags --label=manager=apx
+    distrobox generate-entry "$CONTAINER_NAME" --delete
+
+    if [ "$?" -ne 0 ]; then
+        err "Failed to create container"
+        exit 1
+    fi
+}

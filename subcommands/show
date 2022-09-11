@@ -1,0 +1,12 @@
+#!/bin/sh#!/bin/sh
+# License: GPLv3
+# Authors:
+#   Mirko Brombin <send@mirko.pm>
+# Copyright: 2022
+# Description: Apx is a wrapper around apt to make it works inside a container
+#   from outside, directly on the host.
+
+apx_show() {
+    info "show"
+    warn "args: $@"
+}

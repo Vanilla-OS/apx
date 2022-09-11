@@ -1,0 +1,39 @@
+#!/bin/sh
+# License: GPLv3
+# Authors:
+#   Mirko Brombin <send@mirko.pm>
+# Copyright: 2022
+# Description: Apx is a wrapper around apt to make it works inside a container
+#   from outside, directly on the host.
+
+host_image() {
+    echo $(lsb_release -is | tr '[:upper:]' '[:lower:]')":"$(lsb_release -rs)
+    return 0
+}
+
+container_manager() {
+    if which podman > /dev/null
+    then
+        echo "podman"
+    elif which docker > /dev/null
+    then
+        echo "docker"
+    else
+        err "No container engine found. Please install Podman or Docker"
+        exit 1
+    fi
+}
+
+container_exists() {
+    if $(container_manager) ps -a | grep -q "$CONTAINER_NAME"
+    then
+        return 0
+    else
+        return 1
+    fi
+}
+
+distrobox_version() {
+    echo $(distrobox version | grep -oP '(?<=distrobox: ).*')
+    return 0
+}

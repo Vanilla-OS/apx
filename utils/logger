@@ -1,0 +1,28 @@
+#!/bin/sh
+# License: GPLv3
+# Authors:
+#   Mirko Brombin <send@mirko.pm>
+# Copyright: 2022
+# Description: Apx is a wrapper around apt to make it works inside a container
+#   from outside, directly on the host.
+
+PREFIX="apx:"
+PREFIX_INFO="${PREFIX}info: "
+PREFIX_ERROR="${PREFIX}error: "
+PREFIX_WARNING="${PREFIX}warning: "
+FORMAT_INFO="\033[1;34m"
+FORMAT_WARN="\033[1;33m"
+FORMAT_ERROR="\033[1;31m"
+FORMAT_RESET="\033[0m"
+
+info() {
+    echo "${FORMAT_INFO}${PREFIX_INFO}${FORMAT_RESET}${@}"
+}
+
+warn() {
+    echo "${FORMAT_WARN}${PREFIX_WARNING}${FORMAT_RESET}${@}"
+}
+
+err() {
+    echo "${FORMAT_ERROR}${PREFIX_ERROR}${FORMAT_RESET}${@}"
+}
