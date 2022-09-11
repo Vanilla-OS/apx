@@ -37,12 +37,19 @@ distrobox_version() {
 
 container_exec() {
     distrobox enter "$CONTAINER_NAME" -- "$@"
+    return $?
 }
 
 container_create() {
     distrobox create --name "$CONTAINER_NAME" --image "$(host_image)" --yes --additional-flags --label=manager=apx
     distrobox generate-entry "$CONTAINER_NAME" --delete
-    return $?
+
+    if [ "$?" -ne 0 ]; then
+        err "Failed to create container"
+        exit 1
+    else
+        info "Container created"
+    fi
 }
 
 container_stop() {
@@ -65,6 +72,8 @@ container_gen_desktop_entry() {
     if [ "$?" -ne 0 ]; then
         warn "No desktop entry found for $1, nothing to export"
         exit 1
+    else
+        info "Desktop entry exported for $1"
     fi
 }
 
@@ -77,5 +86,7 @@ container_rm_desktop_entry() {
     if [ "$?" -ne 0 ]; then
         warn "No desktop entry found for $1, nothing to delete"
         exit 1
+    else
+        info "Desktop entry removed for $1"
     fi
 }
