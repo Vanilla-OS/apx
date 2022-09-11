@@ -12,11 +12,9 @@ host_image() {
 }
 
 container_manager() {
-    if which podman > /dev/null
-    then
+    if which podman > /dev/null; then
         echo "podman"
-    elif which docker > /dev/null
-    then
+    elif which docker > /dev/null; then
         echo "docker"
     else
         err "No container engine found. Please install Podman or Docker"
@@ -25,8 +23,7 @@ container_manager() {
 }
 
 container_exists() {
-    if $(container_manager) ps -a | grep -q "$CONTAINER_NAME"
-    then
+    if $(container_manager) ps -a | grep -q "$CONTAINER_NAME"; then
         return 0
     else
         return 1
@@ -36,4 +33,25 @@ container_exists() {
 distrobox_version() {
     echo $(distrobox version | grep -oP '(?<=distrobox: ).*')
     return 0
+}
+
+container_exec() {
+    distrobox enter "$CONTAINER_NAME" -- "$@"
+}
+
+container_create() {
+    distrobox create --name "$CONTAINER_NAME" --image "$(host_image)" --yes --additional-flags --label=manager=apx
+    distrobox generate-entry "$CONTAINER_NAME" --delete
+    return $?
+}
+
+container_stop() {
+    distrobox stop "$CONTAINER_NAME" --yes
+    return $?
+}
+
+container_rm() {
+    distrobox stop "$CONTAINER_NAME" --yes
+    distrobox rm "$CONTAINER_NAME" --yes
+    return $?
 }
