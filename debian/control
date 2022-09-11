@@ -10,5 +10,6 @@ Rules-Requires-Root: no
 
 Package: apx
 Architecture: all
+Depends: bash-completion
 Description: Apx is a wrapper around apt to make it works inside a container 
   from outside, directly on the host.

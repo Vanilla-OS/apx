@@ -1,0 +1,29 @@
+# License: GPLv3
+# Authors:
+#   Mirko Brombin <send@mirko.pm>
+# Copyright: 2022
+# Description: Apx is a wrapper around apt to make it works inside a container
+#   from outside, directly on the host.
+
+# this file contains the autocomplete functions for the subcommands
+
+_complete_apx() {
+    local word=${COMP_WORDS[COMP_CWORD]}
+    local line=${COMP_LINE}
+    local xpat
+    local commands="clean enter help init install list log purge remove run search show update upgrade version"
+
+    case "$1" in 
+    apx)
+        case "$line" in
+        *)
+            xpat="$commands"
+            ;;
+        esac
+    esac
+
+    COMPREPLY=($(compgen -W "$commands" -- $word))
+    return 0
+}
+
+complete -F _complete_apx apx
