@@ -3,6 +3,7 @@
 case "$1" in
     configure)
         chmod +x /usr/bin/apx
+		sed -i 's/DEV_IMPORTS=true/DEV_IMPORTS=false/g' /usr/bin/apx
 	;;
 
     abort-upgrade|abort-deconfigure|abort-remove)
