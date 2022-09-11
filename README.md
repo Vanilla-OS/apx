@@ -8,7 +8,7 @@
 <br/>
 
 
-```bash
+```
 Apx is a wrapper around apt to make it works inside a container
   from outside, directly on the host.
 
