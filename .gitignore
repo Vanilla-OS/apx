@@ -1,0 +1,5 @@
+/debian/.debhelper
+/debian/apx
+/debian/debhelper-build-stamp
+/debian/files
+/debian/apx.substvars
