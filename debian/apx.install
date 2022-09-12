@@ -1,5 +1,5 @@
 apx /usr/bin
 subcommands /usr/share/apx
-utils/container /usr/share/apx
-utils/logger /usr/share/apx
+utils/container /usr/share/apx/utils
+utils/logger /usr/share/apx/utils
 utils/apx_completion /etc/bash_completion.d
