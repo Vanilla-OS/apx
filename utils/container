@@ -7,7 +7,11 @@
 #   from outside, directly on the host.
 
 host_image() {
-    echo $(lsb_release -is | tr '[:upper:]' '[:lower:]')":"$(lsb_release -rs)
+    if [ -f /etc/almost/predefined-container.cfg ]; then
+        cat /etc/almost/predefined-container.cfg
+    else
+        echo $(lsb_release -is | tr '[:upper:]' '[:lower:]')":"$(lsb_release -rs)
+    fi
     return 0
 }
 
