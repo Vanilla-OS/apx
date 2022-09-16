@@ -69,9 +69,9 @@ container_rm() {
 }
 
 container_gen_desktop_entry() {
-    container_exec distrobox-export --app "$1" --export-label "$APP_LABEL"
+    container_exec distrobox-export --app "$1" --export-label "$APP_LABEL" > /dev/null
     if [ "$?" -ne 0 ]; then
-        container_exec distrobox-export --app "$(echo "$1" | cut -d'-' -f1)" --export-label "$APP_LABEL"
+        container_exec distrobox-export --app "$(echo "$1" | cut -d'-' -f1)" --export-label "$APP_LABEL" > /dev/null
     fi
 
     if [ "$?" -ne 0 ]; then
@@ -83,9 +83,9 @@ container_gen_desktop_entry() {
 }
 
 container_rm_desktop_entry() {
-    container_exec distrobox-export --app "$1" --delete
+    container_exec distrobox-export --app "$1" --delete > /dev/null
     if [ "$?" -ne 0 ]; then
-        container_exec distrobox-export --app "$(echo "$1" | cut -d'-' -f1)" --delete
+        container_exec distrobox-export --app "$(echo "$1" | cut -d'-' -f1)" --delete > /dev/null
     fi
 
     if [ "$?" -ne 0 ]; then
