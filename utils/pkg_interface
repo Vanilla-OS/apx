@@ -18,9 +18,9 @@ get_subcommand() {
     upper_subcommand="$(echo "$1" | tr '[:lower:]' '[:upper:]')"
     subcommand="PKG_MANAGER_SC_${upper_subcommand}"
     subcommand="$(eval "echo \$$subcommand")"
-    
+
     if [ -n "$PKG_MANAGER_INTERFACE" ] && [ -n "$subcommand" ]; then
-        if [ -n "$PKG_MANAGER_NEED_SUDO" ]; then
+        if [ -n "$PKG_MANAGER_NEED_SUDO" ] && [ "$PKG_MANAGER_NEED_SUDO" = "true" ]; then
             echo "sudo $PKG_MANAGER_INTERFACE $subcommand"
         else
             echo "$PKG_MANAGER_INTERFACE $subcommand"
