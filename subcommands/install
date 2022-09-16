@@ -18,6 +18,7 @@ apx_install() {
     # this allows this command to be used in scripts without
     # polluting the output
     if [ "$?" -eq 0 ]; then
+        container_gen_desktop_entry "$@"
         _info "Install completed"
     else
         _err "Failed to install"
