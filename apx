@@ -14,19 +14,36 @@ VERSION="0.0.6"
 APP_LABEL="◆"
 LOGS_DIR="/var/log/apx"
 
+# Packagers must pre-configure apx placing a file named "packager-rules.cfg" in
+# /etc/apx. This file must contain the following variables:
+# - PKG_CONTAINER_IMAGE: the image to use for the container e.g. "archlinux:latest"
+# - PKG_MANAGER_NEED_SUDO: if the package manager needs sudo to run
+# - PKG_MANAGER_INTERFACE: the interface to use for the container e.g. "pacman"
+#                          then place a file named "packager-manager-interface.cfg"
+#                          in /etc/apx (see the example file "packager-manager-interface.cfg.example"
+#                          whcih implements the pacman interface)
+
 # Imports
 if [ "$DEV_IMPORTS" = true ]; then
     . ./utils/logger
     . ./utils/container
+    . ./utils/pkg_interface
     for subcommand in $SUBCOMMANDS; do
         . ./subcommands/$subcommand
     done
 else
     . /usr/share/apx/utils/logger
     . /usr/share/apx/utils/container
+    . /usr/share/apx/utils/pkg_interface
     for subcommand in $SUBCOMMANDS; do
         . /usr/share/apx/subcommands/$subcommand
     done
+fi
+if [ -f /etc/apx/packager-rules.cfg ]; then
+    . /etc/apx/packager-rules.cfg
+fi
+if [ -f /etc/apx/packager-manager-interface.cfg ]; then
+    . /etc/apx/packager-manager-interface.cfg
 fi
 
 # Exit if the script..

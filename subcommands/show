@@ -7,14 +7,19 @@
 #   from outside, directly on the host.
 
 apx_show() {
-    container_exec apt show "$@"
+    pkg_manager_subcommand="$(get_subcommand show)"
+    if [ -n "$pkg_manager_subcommand" ]; then
+        container_exec $pkg_manager_subcommand "$@"
+    else
+        container_exec sudo apt show "$@"
+    fi
 
     # the following logs are muted and only stored in the log file
     # this allows this command to be used in scripts without
     # polluting the output
-    if [ "$?" -ne 1 ]; then
-        _info "Showing package completed: $@"
+    if [ "$?" -eq 0 ]; then
+        _info "Show completed"
     else
-        _err "Failed to show package: $@"
+        _err "Failed to show"
     fi
 }

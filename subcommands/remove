@@ -7,15 +7,19 @@
 #   from outside, directly on the host.
 
 apx_remove() {
-    container_rm_desktop_entry "$@"
-    container_exec sudo apt remove "$@"
+    pkg_manager_subcommand="$(get_subcommand remove)"
+    if [ -n "$pkg_manager_subcommand" ]; then
+        container_exec $pkg_manager_subcommand "$@"
+    else
+        container_exec sudo apt remove "$@"
+    fi
 
     # the following logs are muted and only stored in the log file
     # this allows this command to be used in scripts without
     # polluting the output
-    if [ "$?" -ne 1 ]; then
-        _info "Package(s) removed: $@"
+    if [ "$?" -eq 0 ]; then
+        _info "Remove completed"
     else
-        _err "Failed to remove package(s): $@"
+        _err "Failed to remove"
     fi
 }

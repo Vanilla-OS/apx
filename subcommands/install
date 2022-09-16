@@ -7,15 +7,19 @@
 #   from outside, directly on the host.
 
 apx_install() {
-    container_exec sudo apt install "$@"
+    pkg_manager_subcommand="$(get_subcommand install)"
+    if [ -n "$pkg_manager_subcommand" ]; then
+        container_exec $pkg_manager_subcommand "$@"
+    else
+        container_exec sudo apt install "$@"
+    fi
 
     # the following logs are muted and only stored in the log file
     # this allows this command to be used in scripts without
     # polluting the output
-    if [ "$?" -ne 1 ]; then
-        container_gen_desktop_entry "$@"
-        _info "New package(s) installed: $@"
+    if [ "$?" -eq 0 ]; then
+        _info "Install completed"
     else
-        _err "Failed to install package(s): $@"
+        _err "Failed to install"
     fi
 }

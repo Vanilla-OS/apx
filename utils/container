@@ -7,10 +7,10 @@
 #   from outside, directly on the host.
 
 host_image() {
-    if [ -f /etc/apx/predefined-container.cfg ]; then
-        cat /etc/apx/predefined-container.cfg
-    else
+    if [ -z "$PKG_CONTAINER_IMAGE" ]; then
         echo $(lsb_release -is | tr '[:upper:]' '[:lower:]')":"$(lsb_release -rs)
+    else
+        echo "$PKG_CONTAINER_IMAGE"
     fi
     return 0
 }

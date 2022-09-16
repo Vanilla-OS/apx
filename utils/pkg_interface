@@ -1,0 +1,29 @@
+#!/bin/sh
+# License: GPLv3
+# Authors:
+#   Mirko Brombin <send@mirko.pm>
+# Copyright: 2022
+# Description: Apx is a wrapper around apt to make it works inside a container
+#   from outside, directly on the host.
+
+get_pkg_manager() {
+    if [ -n "$PKG_MANAGER" ]; then
+        echo "$PKG_MANAGER"
+    else
+        echo "apt"
+    fi
+}
+
+get_subcommand() {
+    upper_subcommand="$(echo "$1" | tr '[:lower:]' '[:upper:]')"
+    subcommand="PKG_MANAGER_SC_${upper_subcommand}"
+    if [ -n "$PKG_MANAGER_INTERFACE" ] && [ -n "${!subcommand}" ]; then
+        if [ -n "$PKG_MANAGER_NEED_SUDO" ]; then
+            echo "sudo $PKG_MANAGER_INTERFACE ${!subcommand}"
+        else
+            echo "$PKG_MANAGER_INTERFACE ${!subcommand}"
+        fi
+    else
+        echo ""
+    fi
+}

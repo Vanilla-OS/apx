@@ -7,12 +7,17 @@
 #   from outside, directly on the host.
 
 apx_list() {
-    container_exec apt list "$@"
+    pkg_manager_subcommand="$(get_subcommand list)"
+    if [ -n "$pkg_manager_subcommand" ]; then
+        container_exec $pkg_manager_subcommand "$@"
+    else
+        container_exec sudo apt list "$@"
+    fi
 
     # the following logs are muted and only stored in the log file
     # this allows this command to be used in scripts without
     # polluting the output
-    if [ "$?" -ne 1 ]; then
+    if [ "$?" -eq 0 ]; then
         _info "List completed"
     else
         _err "Failed to list"
