@@ -7,7 +7,7 @@
 
 <br/>
 
-
+## Help
 ```
 Apx is a wrapper around apt to make it works inside a container
   from outside, directly on the host.
@@ -39,3 +39,20 @@ Commands:
     upgrade     Upgrade the system by installing/upgrading packages
     version     Show version and exit
 ```
+
+## Notes for packagers
+If you want to package apx for your distribution without using an Ubuntu image, you
+need to configure your own package manager interface and define the container image
+name. To do so, you need to create a file named `packager-rules.cfg` in `/etc/apx/`
+with the following content:
+
+```bash
+PKG_CONTAINER_IMAGE="your-image-name" # e.g. "archlinux:latest"
+PKG_MANAGER_NEED_SUDO="true|false" # If your package manager needs sudo
+PKG_MANAGER_INTERFACE="your-package-manager-interface" # e.g. pacman
+```
+
+now to write your own package manager interface, you need to create a file named
+`packager-manager-interface.cfg` in `/etc/apx/` and update it following the
+[packager-manager-interface.cfg.example](packager-manager-interface.cfg.example)
+file.
