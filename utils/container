@@ -40,6 +40,7 @@ distrobox_version() {
 }
 
 container_exec() {
+    _info "Running $@"
     distrobox enter "$CONTAINER_NAME" -- "$@"
     return $?
 }
