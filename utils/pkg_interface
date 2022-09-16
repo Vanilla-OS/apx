@@ -17,11 +17,13 @@ get_pkg_manager() {
 get_subcommand() {
     upper_subcommand="$(echo "$1" | tr '[:lower:]' '[:upper:]')"
     subcommand="PKG_MANAGER_SC_${upper_subcommand}"
-    if [ -n "$PKG_MANAGER_INTERFACE" ] && [ -n "${!subcommand}" ]; then
+    subcommand="$(eval "echo \$$subcommand")"
+    
+    if [ -n "$PKG_MANAGER_INTERFACE" ] && [ -n "$subcommand" ]; then
         if [ -n "$PKG_MANAGER_NEED_SUDO" ]; then
-            echo "sudo $PKG_MANAGER_INTERFACE ${!subcommand}"
+            echo "sudo $PKG_MANAGER_INTERFACE $subcommand"
         else
-            echo "$PKG_MANAGER_INTERFACE ${!subcommand}"
+            echo "$PKG_MANAGER_INTERFACE $subcommand"
         fi
     else
         echo ""
