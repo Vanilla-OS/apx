@@ -8,7 +8,7 @@
 
 # Params
 DEV_IMPORTS=true
-SUBCOMMANDS="clean enter help init install list log purge remove run search show update upgrade version"
+SUBCOMMANDS="clean export unexport enter help init install list log purge remove run search show update upgrade version"
 CONTAINER_NAME="apx_managed"
 VERSION="0.0.7"
 APP_LABEL="◆"
@@ -26,6 +26,7 @@ LOGS_DIR="/var/log/apx"
 # Imports
 if [ "$DEV_IMPORTS" = true ]; then
     . ./utils/logger
+    . ./utils/spinner
     . ./utils/container
     . ./utils/pkg_interface
     for subcommand in $SUBCOMMANDS; do
@@ -33,6 +34,7 @@ if [ "$DEV_IMPORTS" = true ]; then
     done
 else
     . /usr/share/apx/utils/logger
+    . /usr/share/apx/utils/spinner
     . /usr/share/apx/utils/container
     . /usr/share/apx/utils/pkg_interface
     for subcommand in $SUBCOMMANDS; do
