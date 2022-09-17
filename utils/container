@@ -46,8 +46,8 @@ container_exec() {
 }
 
 container_create() {
-    distrobox create --name "$CONTAINER_NAME" --image "$(host_image)" --yes --additional-flags --label=manager=apx
-    distrobox generate-entry "$CONTAINER_NAME" --delete
+    spin "Initializing container" distrobox create --name "$CONTAINER_NAME" --image "$(host_image)" --yes --additional-flags --label=manager=apx
+    spin "Post-init" distrobox generate-entry "$CONTAINER_NAME" --delete
 
     if [ "$?" -ne 0 ]; then
         err "Failed to create container"
@@ -58,20 +58,32 @@ container_create() {
 }
 
 container_stop() {
-    distrobox stop "$CONTAINER_NAME" --yes
+    spin "Stopping" distrobox stop "$CONTAINER_NAME" --yes
+    if [ "$?" -ne 0 ]; then
+        err "Failed to stop container"
+        exit 1
+    else
+        info "Container stopped"
+    fi
     return $?
 }
 
 container_rm() {
-    distrobox stop "$CONTAINER_NAME" --yes
-    distrobox rm "$CONTAINER_NAME" --yes
+    spin "Stopping" distrobox stop "$CONTAINER_NAME" --yes
+    spin "Deleting" distrobox rm "$CONTAINER_NAME" --yes
+    if [ "$?" -ne 0 ]; then
+        err "Failed to delete container"
+        exit 1
+    else
+        info "Container deleted"
+    fi
     return $?
 }
 
 container_gen_desktop_entry() {
-    container_exec distrobox-export --app "$1" --export-label "$APP_LABEL" > /dev/null
+    spin "Generating Desktop Entry" container_exec distrobox-export --app "$1" --export-label "$APP_LABEL" > /dev/null
     if [ "$?" -ne 0 ]; then
-        container_exec distrobox-export --app "$(echo "$1" | cut -d'-' -f1)" --export-label "$APP_LABEL" > /dev/null
+        spin "2nd attempt" container_exec distrobox-export --app "$(echo "$1" | cut -d'-' -f1)" --export-label "$APP_LABEL" > /dev/null
     fi
 
     if [ "$?" -ne 0 ]; then
@@ -83,9 +95,9 @@ container_gen_desktop_entry() {
 }
 
 container_rm_desktop_entry() {
-    container_exec distrobox-export --app "$1" --delete > /dev/null
+    spin "Removing Desktop entry" container_exec distrobox-export --app "$1" --delete > /dev/null
     if [ "$?" -ne 0 ]; then
-        container_exec distrobox-export --app "$(echo "$1" | cut -d'-' -f1)" --delete > /dev/null
+        spin "2nd attempt" container_exec distrobox-export --app "$(echo "$1" | cut -d'-' -f1)" --delete > /dev/null
     fi
 
     if [ "$?" -ne 0 ]; then
