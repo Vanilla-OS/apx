@@ -94,12 +94,12 @@ if [ "$1" = "--sys" ]; then
     shift
     immutable=false
     if is_immutable; then
-        almost enter rw
+        sudo almost enter rw
         immutable=true
     fi
     sudo $(get_pkg_manager) $@
     if [ "$immutable" = true ]; then
-        almost enter ro
+        sudo almost enter ro
     fi
     exit $?
 fi
