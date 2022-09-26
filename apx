@@ -97,7 +97,7 @@ if [ "$1" = "--sys" ]; then
         almost enter rw
         immutable=true
     fi
-    sudo get_pkg_manager "$@"
+    sudo $(get_pkg_manager) $@
     if [ "$immutable" = true ]; then
         almost enter ro
     fi
