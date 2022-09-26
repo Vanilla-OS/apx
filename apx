@@ -87,9 +87,9 @@ if [ "$1" != "--sys" ] && ! container_exists && [ "$1" != "help" ] && [ "$1" != 
     exit 1
 fi
 
-# Run the subcommand trough apt if --sys is provided, it also takes care of
-# the immutable check, the system will be set as rw and restored as ro after
-# the command is executed
+# Run the subcommand trough the system pkg managaer if --sys is provided, it also 
+# takes care of the immutable check, the system will be set as rw and restored to 
+# ro after the command is executed
 if [ "$1" = "--sys" ]; then
     shift
     immutable=false
@@ -97,7 +97,7 @@ if [ "$1" = "--sys" ]; then
         almost enter rw
         immutable=true
     fi
-    sudo apt "$@"
+    sudo get_pkg_manager "$@"
     if [ "$immutable" = true ]; then
         almost enter ro
     fi
