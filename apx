@@ -57,7 +57,7 @@ if ! which distrobox > /dev/null; then
     exit 1
 fi
 # ..neither podman nor docker are installed
-if [ "$1" != "--sys" ] && ! which container_manager > /dev/null; then
+if [ "$1" != "--sys" ] && ! which $(container_manager)  > /dev/null; then
     err "Neither podman nor docker are installed"
     exit 1
 fi

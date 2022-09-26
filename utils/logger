@@ -30,16 +30,16 @@ _err() {
 
 # functions to log messages and show them on the terminal
 info() {
-    printf "$(tput setf 4)$(tput bold)$(tput setaf 4)${PREFIX_INFO}$(tput sgr0) ${@}"
+    printf "$(tput setf 4)$(tput bold)$(tput setaf 4)${PREFIX_INFO}$(tput sgr0) ${@}\n"
     _info "${@}"
 }
 
 warn() {
-    printf "$(tput setf 3)$(tput bold)$(tput setaf 3)${PREFIX_WARNING}$(tput sgr0) ${@}"
+    printf "$(tput setf 3)$(tput bold)$(tput setaf 3)${PREFIX_WARNING}$(tput sgr0) ${@}\n"
     _warn "${@}"
 }
 
 err() {
-    printf "$(tput setf 1)$(tput bold)$(tput setaf 1)${PREFIX_ERROR}$(tput sgr0) ${@}"
+    printf "$(tput setf 1)$(tput bold)$(tput setaf 1)${PREFIX_ERROR}$(tput sgr0) ${@}\n"
     _err "${@}"
 }
