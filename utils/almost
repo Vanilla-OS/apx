@@ -1,0 +1,19 @@
+#!/bin/sh
+# License: GPLv3
+# Authors:
+#   Mirko Brombin <send@mirko.pm>
+# Copyright: 2022
+# Description: Apx is a wrapper around apt to make it works inside a container
+#   from outside, directly on the host.
+
+is_immutable() {
+    if ! which almost > /dev/null; then
+        return 1
+    fi
+
+    if almost check | grep -q "rw"; then
+        return 1
+    fi
+
+    return 0
+}
