@@ -68,7 +68,7 @@ if [ -z "$1" ]; then
 fi
 # ..was launched as root
 if [ "$(id -u)" -eq 0 ]; then
-    err "This script must not be run as root"
+    err "DO NOT run as root"
     exit 1
 fi
 # ..is running inside a container
