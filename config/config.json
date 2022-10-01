@@ -1,0 +1,10 @@
+{
+    "container": {
+        "name": "apx_managed"
+    },
+    "pkg_manager": {
+        "image": "",
+        "path": "",
+        "update": ""
+    }
+}

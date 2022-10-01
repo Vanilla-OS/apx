@@ -3,9 +3,11 @@ package core
 import (
 	"fmt"
 	"os"
+	"path/filepath"
 )
 
 var apxDir = "/etc/apx"
+var ProcessPath string
 
 func init() {
 	if !RootCheck(false) {
@@ -17,6 +19,12 @@ func init() {
 			os.Exit(1)
 		}
 	}
+
+	ex, err := os.Executable()
+	if err != nil {
+		panic("Can't get process path!\n" + err.Error())
+	}
+	ProcessPath = filepath.Dir(ex)
 }
 
 func RootCheck(display bool) bool {

@@ -1,10 +1,21 @@
 package main
 
+/*	License: GPLv3
+	Authors:
+		Mirko Brombin <send@mirko.pm>
+		Pietro di Caprio <pietro@fabricators.ltd>
+	Copyright: 2022
+	Description: Apx is a wrapper around apt to make it works inside a container
+	from outside, directly on the host.
+*/
+
 import (
 	"fmt"
 
 	"github.com/spf13/cobra"
 	"github.com/vanilla-os/apx/cmd"
+	"github.com/vanilla-os/apx/core"
+	"github.com/vanilla-os/apx/lang"
 )
 
 var (
@@ -12,32 +23,8 @@ var (
 )
 
 func help(cmd *cobra.Command, args []string) {
-	fmt.Print(`Usage: 
-apx [options] [command] [arguments]
-
-Options:
-  -h, --help    Show this help message and exit
-  -v, --version Show version and exit
-  --sys        Perform operations on the system instead of the managed container
-
-Commands:
-    autoremove  Remove automatically all unused packages
-    clean       Clean the apt cache
-    enter       Enter the container
-    help        Show this help message and exit
-    init        Initialize the container
-    install     Install packages
-    list        List packages based on package names
-    log         Show logs
-    purge       Purge packages
-    run         Run a command inside the container
-    remove      Remove packages
-    search      Search in package descriptions
-    show        Show package details
-    update      Update list of available packages
-    upgrade     Upgrade the system by installing/upgrading packages
-    version     Show version and exit
-`)
+	text := lang.GetText("en", "cmd_help")
+	fmt.Println(text)
 }
 
 func newApxCommand() *cobra.Command {
@@ -54,4 +41,10 @@ func main() {
 	rootCmd.AddCommand(cmd.NewAutoRemoveCommand())
 	rootCmd.SetHelpFunc(help)
 	rootCmd.Execute()
+
+	fmt.Println(" --------- ")
+	image, _ := core.GetHostImage()
+	fmt.Println(image)
+	fmt.Println(core.GetDistroboxVersion())
+	fmt.Println(" --------- ")
 }
