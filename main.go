@@ -43,6 +43,8 @@ func main() {
 	rootCmd.AddCommand(cmd.NewInitializeCommand())
 	rootCmd.AddCommand(cmd.NewAutoRemoveCommand())
 	rootCmd.AddCommand(cmd.NewInstallCommand())
+	rootCmd.AddCommand(cmd.NewCleanCommand())
+	rootCmd.AddCommand(cmd.NewEnterCommand())
 	rootCmd.SetHelpFunc(help)
 	rootCmd.Execute()
 
