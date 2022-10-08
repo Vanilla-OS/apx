@@ -54,6 +54,7 @@ func main() {
 	rootCmd.AddCommand(cmd.NewShowCommand())
 	rootCmd.AddCommand(cmd.NewUnexportCommand())
 	rootCmd.AddCommand(cmd.NewUpdateCommand())
+	rootCmd.AddCommand(cmd.NewUpgradeCommand())
 	rootCmd.SetHelpFunc(help)
 	rootCmd.Execute()
 
