@@ -26,8 +26,9 @@ type ContainerConfig struct {
 }
 
 type PkgManagerConfig struct {
-	Bin  string `json:"pkgmanager_bin,omitempty"`
-	Lock string `json:"pkgmanager_lock,omitempty"`
+	Bin  string `json:"pkgmanager_bin"`
+	Lock string `json:"pkgmanager_lock"`
+	Sudo bool   `json:"pkgmanager_sudo"`
 }
 
 var Cnf *Config

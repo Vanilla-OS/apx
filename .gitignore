@@ -3,3 +3,4 @@
 /debian/debhelper-build-stamp
 /debian/files
 /debian/apx.substvars
+/obj-x86_64-linux-gnu

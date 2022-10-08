@@ -40,12 +40,16 @@ func NewUpgradeCommand() *cobra.Command {
 }
 
 func upgrade(cmd *cobra.Command, args []string) error {
-	command := append([]string{"sudo", "apt", "upgrade"}, args...)
-	if cmd.Flag("sys").Value.String() == "true" {
+	sys := cmd.Flag("sys").Value.String() == "true"
+	command := append([]string{}, core.GetPkgManager(sys)...)
+	command = append(command, "upgrade")
+	command = append(command, args...)
+
+	if sys {
 		core.AlmostRun(command...)
-	} else {
-		core.RunContainer(command...)
+		return nil
 	}
 
+	core.RunContainer(command...)
 	return nil
 }

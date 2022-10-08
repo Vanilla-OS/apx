@@ -39,6 +39,11 @@ func AlmostRun(command ...string) (string, error) {
 		run = exec.Command(command[0], command[1:]...)
 	}
 
+	run.Env = os.Environ()
+	run.Stdout = os.Stdout
+	run.Stderr = os.Stderr
+	run.Stdin = os.Stdin
+	run.Run()
 	out, err := run.Output()
 	return string(out), err
 }

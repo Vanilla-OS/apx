@@ -11,7 +11,6 @@ package core
 
 import (
 	"errors"
-	"fmt"
 	"io/ioutil"
 	"os/exec"
 	"strings"
@@ -35,7 +34,6 @@ func PkgManagerSmartLock() {
 		lines := strings.Split(string(data), "\n")
 		for _, l := range lines {
 			if l == "# Apx::SmartLock" {
-				fmt.Println("Apx::SmartLock is already active on this machine!")
 				return
 			}
 		}
