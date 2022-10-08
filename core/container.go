@@ -69,8 +69,6 @@ func GetDistroboxVersion() (version string, err error) {
 }
 
 func RunContainer(args ...string) error {
-	log.Default().Printf("Running %v\n", args)
-
 	cmd := exec.Command("distrobox", "enter",
 		settings.Cnf.Container.Name, "--")
 	cmd.Args = append(cmd.Args, args...)
@@ -141,13 +139,14 @@ func ExportDesktopEntry(program string) error {
 	log.Default().Printf("Exporting desktop entry %v\n", program)
 
 	err := RunContainer(
-		"distrobox=export", "--app", program,
+		"distrobox-export", "--app", program,
 		"--export-label", "◆", ">", "/dev/null")
 	if err != nil {
 		fmt.Println("No desktop entry found for %w, nothing to export.\n", program)
 		return err
 	}
 
+	log.Default().Printf("Desktop entry exported for %v\n", program)
 	return nil
 }
 
