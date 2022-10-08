@@ -59,7 +59,7 @@ func main() {
 	rootCmd.Execute()
 
 	if sys, _ := rootCmd.PersistentFlags().GetBool("sys"); sys == true {
-		log.Default().Println("Operating on host system...")
+		log.Default().Println("Operations were performed on the host.")
 		core.PkgManagerSmartLock()
 	}
 }
