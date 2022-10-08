@@ -12,7 +12,9 @@ package core
 import (
 	"errors"
 	"fmt"
+	"io/ioutil"
 	"log"
+	"os"
 	"os/exec"
 	"strings"
 
@@ -56,7 +58,6 @@ func GetDistroboxVersion() (version string, err error) {
 func RunContainer(args []string) error {
 	log.Default().Printf("Running %v\n", args)
 
-	// distrobox enter "$CONTAINER_NAME" -- "$@"
 	cmd := exec.Command("distrobox", "enter",
 		settings.Cnf.Container.Name, "--")
 	cmd.Args = append(cmd.Args, args...)
@@ -73,8 +74,6 @@ func CreateContainer() error {
 		return err
 	}
 
-	// distrobox create --name "$CONTAINER_NAME" --image "$(host_image)" --yes
-	// --additional-flags --label=manager=apx
 	cmd := exec.Command("distrobox", "create", "--name", settings.Cnf.Container.Name,
 		"--image", host_image, "--yes", "--no-entry", "--additional-flags", "--label=manager=apx")
 
@@ -85,10 +84,65 @@ func CreateContainer() error {
 func StopContainer() error {
 	log.Default().Printf("Stopping container\n")
 
-	// distrobox stop "$CONTAINER_NAME" --yes
 	cmd := exec.Command("distrobox", "stop",
 		settings.Cnf.Container.Name, "--yes")
 
 	_, err := cmd.Output()
 	return err
+}
+
+func RemoveContainer() error {
+	log.Default().Printf("Removing container\n")
+
+	err := StopContainer()
+	if err != nil {
+		return err
+	}
+
+	cmd := exec.Command("distrobox", "rm",
+		settings.Cnf.Container.Name, "--yes")
+
+	_, err = cmd.Output()
+	return err
+}
+
+func ExportDesktopEntry(program string) error {
+	log.Default().Printf("Exporting desktop entry %v\n", program)
+
+	err := RunContainer([]string{
+		"distrobox=export", "--app", program,
+		"--export-label", "◆", ">", "/dev/null"})
+	if err != nil {
+		fmt.Println("No desktop entry found for %w, nothing to export.\n", program)
+		return err
+	}
+
+	return nil
+}
+
+func RemoveDesktopEntry(program string) error {
+	log.Default().Printf("Removing desktop entry %v\n", program)
+
+	home_dir, err := os.UserHomeDir()
+	if err != nil {
+		return err
+	}
+
+	files, err := ioutil.ReadDir(home_dir + "/.local/share/applications")
+	if err != nil {
+		return err
+	}
+
+	for _, file := range files {
+		if strings.HasPrefix(strings.ToLower(file.Name()),
+			strings.ToLower(program)) {
+			log.Default().Printf("Removing desktop entry %v\n", file.Name())
+			err := os.Remove(home_dir + "/.local/share/applications/" + file.Name())
+			if err != nil {
+				return err
+			}
+		}
+	}
+	log.Default().Printf("Desktop entry %v not found.\n", program)
+	return nil
 }
