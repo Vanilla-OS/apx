@@ -21,6 +21,19 @@ import (
 	"github.com/vanilla-os/apx/settings"
 )
 
+func ContainerManager() string {
+	docker := exec.Command("which", "docker")
+	podman := exec.Command("which", "podman")
+
+	if err := docker.Run(); err == nil {
+		return "docker"
+	} else if err := podman.Run(); err == nil {
+		return "podman"
+	}
+
+	panic("No container engine found. Please install Podman or Docker.")
+}
+
 func GetHostImage() (img string, err error) {
 	if settings.Cnf.Container.Image != "" {
 		return settings.Cnf.Container.Image, nil
@@ -55,15 +68,16 @@ func GetDistroboxVersion() (version string, err error) {
 	return splitted[1], nil
 }
 
-func RunContainer(args []string) error {
+func RunContainer(args ...string) error {
 	log.Default().Printf("Running %v\n", args)
 
 	cmd := exec.Command("distrobox", "enter",
 		settings.Cnf.Container.Name, "--")
 	cmd.Args = append(cmd.Args, args...)
+	cmd.Stdout = os.Stdout
+	cmd.Stderr = os.Stderr
 
-	_, err := cmd.Output()
-	return err
+	return cmd.Run()
 }
 
 func CreateContainer() error {
@@ -76,8 +90,8 @@ func CreateContainer() error {
 
 	cmd := exec.Command("distrobox", "create", "--name", settings.Cnf.Container.Name,
 		"--image", host_image, "--yes", "--no-entry", "--additional-flags", "--label=manager=apx")
-
 	_, err = cmd.Output()
+
 	return err
 }
 
@@ -109,9 +123,9 @@ func RemoveContainer() error {
 func ExportDesktopEntry(program string) error {
 	log.Default().Printf("Exporting desktop entry %v\n", program)
 
-	err := RunContainer([]string{
+	err := RunContainer(
 		"distrobox=export", "--app", program,
-		"--export-label", "◆", ">", "/dev/null"})
+		"--export-label", "◆", ">", "/dev/null")
 	if err != nil {
 		fmt.Println("No desktop entry found for %w, nothing to export.\n", program)
 		return err
@@ -145,4 +159,11 @@ func RemoveDesktopEntry(program string) error {
 	}
 	log.Default().Printf("Desktop entry %v not found.\n", program)
 	return nil
+}
+
+func ContainerExists() bool {
+	manager := ContainerManager()
+	cmd := exec.Command(manager, "ps", "-a", "-q", "-f", "name="+settings.Cnf.Container.Name)
+	output, _ := cmd.Output()
+	return len(output) > 0
 }
