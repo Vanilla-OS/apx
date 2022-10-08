@@ -40,9 +40,15 @@ func AlmostRun(command ...string) (string, error) {
 	}
 
 	run.Env = os.Environ()
-	run.Stdout = os.Stdout
-	run.Stderr = os.Stderr
-	run.Stdin = os.Stdin
+	if run.Stdout == nil {
+		run.Stdout = os.Stdout
+	}
+	if run.Stderr == nil {
+		run.Stderr = os.Stderr
+	}
+	if run.Stdin == nil {
+		run.Stdin = os.Stdin
+	}
 	run.Run()
 	out, err := run.Output()
 	return string(out), err
