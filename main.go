@@ -51,6 +51,7 @@ func main() {
 	rootCmd.AddCommand(cmd.NewRemoveCommand())
 	rootCmd.AddCommand(cmd.NewRunCommand())
 	rootCmd.AddCommand(cmd.NewSearchCommand())
+	rootCmd.AddCommand(cmd.NewShowCommand())
 	rootCmd.SetHelpFunc(help)
 	rootCmd.Execute()
 
