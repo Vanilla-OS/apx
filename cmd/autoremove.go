@@ -11,7 +11,6 @@ package cmd
 
 import (
 	"fmt"
-	"log"
 
 	"github.com/spf13/cobra"
 	"github.com/vanilla-os/apx/core"
@@ -37,19 +36,15 @@ func NewAutoRemoveCommand() *cobra.Command {
 		RunE:  autoRemove,
 	}
 	cmd.SetUsageFunc(autoRemoveUsage)
-	cmd.Flags().BoolP("verbose", "v", false, "verbose output")
-	cmd.Flags().BoolP("on-persistent", "p", false, "used by systemd to enter in default mode only if the persistent mode is enabled")
 	return cmd
 }
 
 func autoRemove(cmd *cobra.Command, args []string) error {
-	fmt.Println("autoremove")
-
+	command := append([]string{"sudo", "apt", "autoremove", "-y"}, args...)
 	if cmd.Flag("sys").Value.String() == "true" {
-		if core.ImmutabilityStatus() {
-			log.Default().Printf("immutable")
-		}
-		log.Default().Printf("system")
+		core.AlmostRun(command...)
+	} else {
+		core.RunContainer(command...)
 	}
 
 	return nil
