@@ -74,10 +74,27 @@ func RunContainer(args ...string) error {
 	cmd := exec.Command("distrobox", "enter",
 		settings.Cnf.Container.Name, "--")
 	cmd.Args = append(cmd.Args, args...)
+	cmd.Env = os.Environ()
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
+	cmd.Stdin = os.Stdin
 
 	return cmd.Run()
+}
+
+func EnterContainer() error {
+	cmd := exec.Command("distrobox", "enter", settings.Cnf.Container.Name)
+	cmd.Env = os.Environ()
+	cmd.Stdout = os.Stdout
+	cmd.Stderr = os.Stderr
+	cmd.Stdin = os.Stdin
+
+	err := cmd.Run()
+	if err != nil {
+		panic(err)
+	}
+
+	return nil
 }
 
 func CreateContainer() error {
