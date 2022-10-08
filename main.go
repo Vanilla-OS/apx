@@ -53,6 +53,7 @@ func main() {
 	rootCmd.AddCommand(cmd.NewSearchCommand())
 	rootCmd.AddCommand(cmd.NewShowCommand())
 	rootCmd.AddCommand(cmd.NewUnexportCommand())
+	rootCmd.AddCommand(cmd.NewUpdateCommand())
 	rootCmd.SetHelpFunc(help)
 	rootCmd.Execute()
 
