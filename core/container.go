@@ -22,8 +22,8 @@ import (
 )
 
 func GetHostImage() (img string, err error) {
-	if settings.Cnf.PkgManager.Image != "" {
-		return settings.Cnf.PkgManager.Image, nil
+	if settings.Cnf.Container.Image != "" {
+		return settings.Cnf.Container.Image, nil
 	}
 
 	distro_raw, err := exec.Command("lsb_release", "-is").Output()

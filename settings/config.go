@@ -19,13 +19,15 @@ type Config struct {
 }
 
 type ContainerConfig struct {
-	Name string `json:"name"`
+	Name   string `json:"name"`
+	Image  string `json:"container_image,omitempty"`
+	Path   string `json:"container_path"`
+	Update string `json:"container_update"`
 }
 
 type PkgManagerConfig struct {
-	Image     string `json:"pkg_manager_image,omitempty"`
-	Path      string `json:"pkg_manager_path"`
-	UpdateCmd string `json:"pkg_manager_update"`
+	Bin  string `json:"pkgmanager_bin,omitempty"`
+	Lock string `json:"pkgmanager_lock,omitempty"`
 }
 
 var Cnf *Config
@@ -45,4 +47,14 @@ func init() {
 	if err != nil {
 		panic("Config error!\n" + err.Error())
 	}
+
+	// fmt.Println("==========================")
+	// fmt.Println("Config:")
+	// fmt.Println("Container name:", Cnf.Container.Name)
+	// fmt.Println("Container image:", Cnf.Container.Image)
+	// fmt.Println("Container path:", Cnf.Container.Path)
+	// fmt.Println("Container update command:", Cnf.Container.Update)
+	// fmt.Println("Package manager bin:", Cnf.PkgManager.Bin)
+	// fmt.Println("Package manager lock:", Cnf.PkgManager.Lock)
+	// fmt.Println("==========================")
 }

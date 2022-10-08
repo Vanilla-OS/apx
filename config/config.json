@@ -1,10 +1,12 @@
 {
     "container": {
-        "name": "apx_managed"
+        "name": "apx_managed",
+        "image": "fdfdf",
+        "path": "fdfdfdf",
+        "update": "fdf"
     },
-    "pkg_manager": {
-        "image": "",
-        "path": "",
-        "update": ""
+    "pkgmanager": {
+        "bin": "/usr/bin/apt",
+        "lock": "/usr/bin/_apt"
     }
 }

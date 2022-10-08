@@ -11,6 +11,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 
 	"github.com/spf13/cobra"
 	"github.com/vanilla-os/apx/cmd"
@@ -30,17 +31,23 @@ func help(cmd *cobra.Command, args []string) {
 func newApxCommand() *cobra.Command {
 	return &cobra.Command{
 		Use:     "apx",
-		Short:   "Apx is a package manager around apt which allows you to install packages in a container or system",
+		Short:   "Apx is a package manager around apt which allows you to install packages in a container or host system.",
 		Version: Version,
 	}
 }
 
 func main() {
 	rootCmd := newApxCommand()
-	rootCmd.PersistentFlags().Bool("sys", false, "Perform operations on the system instead of the managed container")
+	rootCmd.PersistentFlags().Bool("sys", false, "Perform operations on the system host rather than in the container.")
+
 	rootCmd.AddCommand(cmd.NewAutoRemoveCommand())
 	rootCmd.SetHelpFunc(help)
 	rootCmd.Execute()
+
+	if sys, _ := rootCmd.PersistentFlags().GetBool("sys"); sys == true {
+		log.Default().Println("Operating on host system...")
+		core.PkgManagerSmartLock()
+	}
 
 	fmt.Println(" --------- ")
 	image, _ := core.GetHostImage()
