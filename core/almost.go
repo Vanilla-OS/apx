@@ -42,3 +42,21 @@ func AlmostRun(command ...string) (string, error) {
 	out, err := run.Output()
 	return string(out), err
 }
+
+func AlmostEnterRw() (string, error) {
+	var run *exec.Cmd
+
+	run = exec.Command("sudo", "almost", "enter", "rw")
+	out, err := run.Output()
+
+	return string(out), err
+}
+
+func AlmostEnterRo() (string, error) {
+	var run *exec.Cmd
+
+	run = exec.Command("sudo", "almost", "enter", "ro")
+	out, err := run.Output()
+
+	return string(out), err
+}
