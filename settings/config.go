@@ -34,6 +34,7 @@ type PkgManagerConfig struct {
 var Cnf *Config
 
 func init() {
+	viper.AddConfigPath("/etc/apx/")
 	viper.AddConfigPath("config/")
 	viper.SetConfigName("config")
 	viper.SetConfigType("json")
