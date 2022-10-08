@@ -49,6 +49,7 @@ func main() {
 	rootCmd.AddCommand(cmd.NewListCommand())
 	rootCmd.AddCommand(cmd.NewPurgeCommand())
 	rootCmd.AddCommand(cmd.NewRemoveCommand())
+	rootCmd.AddCommand(cmd.NewRunCommand())
 	rootCmd.SetHelpFunc(help)
 	rootCmd.Execute()
 
