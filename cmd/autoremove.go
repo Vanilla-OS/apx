@@ -11,6 +11,7 @@ package cmd
 
 import (
 	"fmt"
+	"log"
 
 	"github.com/spf13/cobra"
 	"github.com/vanilla-os/apx/core"
@@ -44,12 +45,11 @@ func NewAutoRemoveCommand() *cobra.Command {
 func autoRemove(cmd *cobra.Command, args []string) error {
 	fmt.Println("autoremove")
 
-	// example of --sys flag
 	if cmd.Flag("sys").Value.String() == "true" {
 		if core.ImmutabilityStatus() {
-			fmt.Println("immutable")
+			log.Default().Printf("immutable")
 		}
-		fmt.Println("system")
+		log.Default().Printf("system")
 	}
 
 	return nil

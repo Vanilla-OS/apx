@@ -11,6 +11,7 @@ package core
 
 import (
 	"fmt"
+	"log"
 	"os"
 	"os/exec"
 )
@@ -46,7 +47,7 @@ func CheckContainerTools() error {
 }
 
 func InstallDistrobox() error {
-	fmt.Println(`Distrobox is not installed. Would you like to install it now? [y/N]`)
+	log.Default().Printf(`Distrobox is not installed. Would you like to install it now? [y/N]`)
 	var input string
 	_, err := fmt.Scanln(&input)
 
@@ -55,14 +56,14 @@ func InstallDistrobox() error {
 	}
 
 	if input != "y" {
-		fmt.Println("Please install Distrobox in order to use apx!")
+		log.Default().Printf("Please install Distrobox in order to use apx!")
 		os.Exit(1)
 	}
 
 	installDistroboxScript := exec.Command("sudo", "curl", "-s", "https://raw.githubusercontent.com/89luca89/distrobox/main/install | sudo sh")
 	err = installDistroboxScript.Run()
 	if err != nil {
-		fmt.Println("Cannot automatically install distrobox. Please install it manually.")
+		log.Default().Printf("Cannot automatically install distrobox. Please install it manually.")
 		return err
 	}
 
@@ -80,14 +81,14 @@ func InstallPodman() error {
 	}
 
 	if input != "y" {
-		fmt.Println("Please install Podman in order to user apx!")
+		log.Default().Printf("Please install Podman in order to user apx!")
 		os.Exit(1)
 	}
 
 	installDistroboxScript := exec.Command("sudo", "apt", "install", "-y", "podman")
 	installDistroboxScript.Run()
 	if err != nil {
-		fmt.Println("Cannot automatically install podman. Please install it manually.")
+		log.Default().Printf("Cannot automatically install podman. Please install it manually.")
 		return err
 	}
 
