@@ -40,7 +40,9 @@ func main() {
 	rootCmd := newApxCommand()
 	rootCmd.PersistentFlags().Bool("sys", false, "Perform operations on the system host rather than in the container.")
 
+	rootCmd.AddCommand(cmd.NewInitializeCommand())
 	rootCmd.AddCommand(cmd.NewAutoRemoveCommand())
+	rootCmd.AddCommand(cmd.NewInstallCommand())
 	rootCmd.SetHelpFunc(help)
 	rootCmd.Execute()
 
@@ -48,10 +50,4 @@ func main() {
 		log.Default().Println("Operating on host system...")
 		core.PkgManagerSmartLock()
 	}
-
-	fmt.Println(" --------- ")
-	image, _ := core.GetHostImage()
-	fmt.Println(image)
-	fmt.Println(core.GetDistroboxVersion())
-	fmt.Println(" --------- ")
 }
