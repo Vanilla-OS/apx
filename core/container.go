@@ -135,7 +135,7 @@ func RemoveDesktopEntry(program string) error {
 
 	for _, file := range files {
 		if strings.HasPrefix(strings.ToLower(file.Name()),
-			strings.ToLower(program)) {
+			strings.ToLower(settings.Cnf.Container.Name+"-"+program)) {
 			log.Default().Printf("Removing desktop entry %v\n", file.Name())
 			err := os.Remove(home_dir + "/.local/share/applications/" + file.Name())
 			if err != nil {
