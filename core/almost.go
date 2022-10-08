@@ -25,3 +25,20 @@ func ImmutabilityStatus() bool {
 	// at this point will be at the user's risk
 	return false
 }
+
+func AlmostRun(command ...string) (string, error) {
+	var run *exec.Cmd
+
+	// if the system is immutable, we run the command with "almost"
+	// to obtain a temporary read-only state
+	if ImmutabilityStatus() {
+		cmd := []string{"sudo", "almost", "run"}
+		cmd = append(cmd, command...)
+		run = exec.Command(cmd[0], cmd[1:]...)
+	} else {
+		run = exec.Command(command[0], command[1:]...)
+	}
+
+	out, err := run.Output()
+	return string(out), err
+}
