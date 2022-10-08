@@ -40,7 +40,7 @@ func NewInstallCommand() *cobra.Command {
 }
 
 func install(cmd *cobra.Command, args []string) error {
-	command := append([]string{"sudo", "apt", "install", "-y"}, args...)
+	command := append([]string{"sudo", "apt", "install"}, args...)
 	if cmd.Flag("sys").Value.String() == "true" {
 		core.AlmostRun(command...)
 	} else {

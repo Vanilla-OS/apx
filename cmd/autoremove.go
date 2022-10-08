@@ -40,7 +40,7 @@ func NewAutoRemoveCommand() *cobra.Command {
 }
 
 func autoRemove(cmd *cobra.Command, args []string) error {
-	command := append([]string{"sudo", "apt", "autoremove", "-y"}, args...)
+	command := append([]string{"sudo", "apt", "autoremove"}, args...)
 	if cmd.Flag("sys").Value.String() == "true" {
 		core.AlmostRun(command...)
 	} else {
