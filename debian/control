@@ -20,7 +20,6 @@ Architecture: all
 Depends: ${shlibs:Depends},
          ${misc:Depends},
          podman,
-         distrobox,
          golang-go,
          golang-github-spf13-cobra-dev,
          golang-github-spf13-viper-dev,
