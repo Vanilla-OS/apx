@@ -37,13 +37,21 @@ func NewListCommand() *cobra.Command {
 		RunE:  list,
 	}
 	cmd.SetUsageFunc(listUsage)
+	cmd.Flags().SetInterspersed(false)
+	cmd.Flags().BoolP("upgradable", "u", false, "List only upgradable packages.")
 	return cmd
 }
 
 func list(cmd *cobra.Command, args []string) error {
 	sys := cmd.Flag("sys").Value.String() == "true"
+
 	command := append([]string{}, core.GetPkgManager(sys)...)
 	command = append(command, "list")
+
+	if cmd.Flag("upgradable").Value.String() == "true" {
+		command = append(command, "--upgradable")
+	}
+
 	command = append(command, args...)
 
 	if sys {
