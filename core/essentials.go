@@ -23,6 +23,7 @@ func init() {
 Please refer to our documentation at https://documentation.vanillaos.org/`)
 		panic(err)
 	}
+	// TODO: check minimum version of Distrobox (1.4.1)
 }
 
 func CheckContainerTools() error {
