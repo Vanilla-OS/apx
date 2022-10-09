@@ -19,7 +19,8 @@ Package: apx
 Architecture: all
 Depends: ${shlibs:Depends},
          ${misc:Depends},
-         podman
+         podman,
+         distrobox,
          golang-go,
          golang-github-spf13-cobra-dev,
          golang-github-spf13-viper-dev,
