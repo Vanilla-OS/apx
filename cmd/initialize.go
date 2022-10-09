@@ -43,8 +43,6 @@ func NewInitializeCommand() *cobra.Command {
 }
 
 func initialize(cmd *cobra.Command, args []string) error {
-	initialize := false
-
 	if core.ContainerExists() {
 		log.Default().Printf(`Container already exists. Do you want to re-initialize it?\ 
 This operation will remove everything, of course your files as well. [y/N] `)
@@ -53,17 +51,13 @@ This operation will remove everything, of course your files as well. [y/N] `)
 		fmt.Scanln(&proceed)
 		proceed = strings.ToLower(proceed)
 
-		if proceed == "y" {
-			initialize = true
-		} else {
+		if proceed != "y" {
 			os.Exit(0)
 		}
 	}
 
-	if initialize {
-		if err := core.CreateContainer(); err != nil {
-			panic(err)
-		}
+	if err := core.CreateContainer(); err != nil {
+		panic(err)
 	}
 
 	log.Default().Println("Container created")

@@ -21,12 +21,6 @@ import (
 	"github.com/vanilla-os/apx/settings"
 )
 
-func init() {
-	if !ContainerExists() {
-		CreateContainer()
-	}
-}
-
 func ContainerManager() string {
 	docker := exec.Command("which", "docker")
 	podman := exec.Command("which", "podman")
@@ -75,6 +69,11 @@ func GetDistroboxVersion() (version string, err error) {
 }
 
 func RunContainer(args ...string) error {
+	if !ContainerExists() {
+		log.Default().Printf("Managed container does not exist.\nTry: apx init")
+		return errors.New("Managed container does not exist")
+	}
+
 	cmd := exec.Command("distrobox", "enter",
 		settings.Cnf.Container.Name, "--")
 	cmd.Args = append(cmd.Args, args...)
@@ -87,6 +86,11 @@ func RunContainer(args ...string) error {
 }
 
 func EnterContainer() error {
+	if !ContainerExists() {
+		log.Default().Printf("Managed container does not exist.\nTry: apx init")
+		return errors.New("Managed container does not exist")
+	}
+
 	cmd := exec.Command("distrobox", "enter", settings.Cnf.Container.Name)
 	cmd.Env = os.Environ()
 	cmd.Stdout = os.Stdout
@@ -111,7 +115,8 @@ func CreateContainer() error {
 
 	cmd := exec.Command("distrobox", "create", "--name", settings.Cnf.Container.Name,
 		"--image", host_image, "--yes", "--no-entry", "--additional-flags", "--label=manager=apx")
-	_, err = cmd.Output()
+	cmd.Env = os.Environ()
+	err = cmd.Run()
 
 	return err
 }
