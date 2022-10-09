@@ -113,7 +113,7 @@ func CreateContainer() error {
 		return err
 	}
 	cmd := exec.Command("distrobox", "create", "--name", settings.Cnf.Container.Name,
-		"--image", host_image, "--yes", "--additional-flags", "--label=manager=apx")
+		"--image", host_image, "--yes", "--no-entry", "--additional-flags", "--label=manager=apx")
 	cmd.Env = os.Environ()
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
