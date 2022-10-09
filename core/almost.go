@@ -26,7 +26,7 @@ func ImmutabilityStatus() bool {
 	return false
 }
 
-func AlmostRun(command ...string) (string, error) {
+func AlmostRun(output bool, command ...string) (string, error) {
 	var run *exec.Cmd
 
 	// if the system is immutable, we run the command with "almost"
@@ -40,16 +40,20 @@ func AlmostRun(command ...string) (string, error) {
 	}
 
 	run.Env = os.Environ()
-	if run.Stdout == nil {
-		run.Stdout = os.Stdout
+	if !output {
+		if run.Stdout == nil {
+			run.Stdout = os.Stdout
+		}
+		if run.Stderr == nil {
+			run.Stderr = os.Stderr
+		}
+		if run.Stdin == nil {
+			run.Stdin = os.Stdin
+		}
+		err := run.Run()
+		return "", err
 	}
-	if run.Stderr == nil {
-		run.Stderr = os.Stderr
-	}
-	if run.Stdin == nil {
-		run.Stdin = os.Stdin
-	}
-	run.Run()
+
 	out, err := run.Output()
 	return string(out), err
 }
