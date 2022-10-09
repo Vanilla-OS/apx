@@ -11,11 +11,9 @@ package main
 
 import (
 	"fmt"
-	"log"
 
 	"github.com/spf13/cobra"
 	"github.com/vanilla-os/apx/cmd"
-	"github.com/vanilla-os/apx/core"
 )
 
 var (
@@ -79,9 +77,4 @@ func main() {
 	rootCmd.AddCommand(cmd.NewUpgradeCommand())
 	rootCmd.SetHelpFunc(help)
 	rootCmd.Execute()
-
-	if sys, _ := rootCmd.PersistentFlags().GetBool("sys"); sys == true {
-		log.Default().Println("Operations were performed on the host.")
-		core.PkgManagerSmartLock()
-	}
 }

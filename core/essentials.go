@@ -60,7 +60,7 @@ func InstallDistrobox() error {
 		os.Exit(1)
 	}
 
-	_, err = AlmostRun("sudo", "curl", "-s", "https://raw.githubusercontent.com/89luca89/distrobox/main/install | sudo sh")
+	_, err = AlmostRun(false, "sudo", "curl", "-s", "https://raw.githubusercontent.com/89luca89/distrobox/main/install | sudo sh")
 	if err != nil {
 		log.Default().Printf("Cannot automatically install distrobox. Please install it manually.")
 		return err
@@ -84,7 +84,7 @@ func InstallPodman() error {
 		os.Exit(1)
 	}
 
-	_, err = AlmostRun("sudo", "apt", "install", "-y", "podman")
+	_, err = AlmostRun(false, "sudo", "apt", "install", "-y", "podman")
 	if err != nil {
 		log.Default().Printf("Cannot automatically install podman. Please install it manually.")
 		return err

@@ -11,6 +11,7 @@ package cmd
 
 import (
 	"fmt"
+	"log"
 
 	"github.com/spf13/cobra"
 	"github.com/vanilla-os/apx/core"
@@ -46,7 +47,9 @@ func list(cmd *cobra.Command, args []string) error {
 	command = append(command, args...)
 
 	if sys {
-		core.AlmostRun(command...)
+		log.Default().Println("Performing operations on the host system.")
+		core.PkgManagerSmartLock()
+		core.AlmostRun(false, command...)
 		return nil
 	}
 
