@@ -11,7 +11,9 @@ package core
 
 import (
 	"errors"
+	"fmt"
 	"io/ioutil"
+	"log"
 	"os/exec"
 	"strings"
 
@@ -19,51 +21,56 @@ import (
 )
 
 func PkgManagerSmartLock() {
-	_, err := exec.LookPath(settings.Cnf.PkgManager.Bin)
-	if err != nil {
-		panic("Config error! Package manager setting is not configured correctly!")
-	}
-
 	if settings.Cnf.PkgManager.Lock == settings.Cnf.PkgManager.Bin {
 		panic("Bin/Lock collision!")
 	}
 
 	// here we skip the whole process if the package manager is already locked
-	data, err := ioutil.ReadFile(settings.Cnf.PkgManager.Bin)
-	if err == nil {
-		lines := strings.Split(string(data), "\n")
-		for _, l := range lines {
-			if l == "# Apx::SmartLock" {
-				return
+	_, err := exec.LookPath(settings.Cnf.PkgManager.Bin)
+	bin_exists := err == nil
+
+	if bin_exists {
+		data, err := ioutil.ReadFile(settings.Cnf.PkgManager.Bin)
+		if err == nil {
+			lines := strings.Split(string(data), "\n")
+			for _, l := range lines {
+				if l == "# Apx::SmartLock" {
+					return
+				}
 			}
 		}
 	}
 
-	err = performSmartLock()
+	err = performSmartLock(bin_exists)
 	if err != nil {
 		panic("Something went wrong: " + err.Error())
 	}
 }
 
-func performSmartLock() error {
-	_, err := AlmostRun("sudo", "mv", settings.Cnf.PkgManager.Bin, settings.Cnf.PkgManager.Lock)
-	if err != nil {
-		return errors.New("can't lock the original binary")
+func performSmartLock(bin_exists bool) error {
+	if bin_exists {
+		_, err := AlmostRun(false, "sudo", "mv", settings.Cnf.PkgManager.Bin, settings.Cnf.PkgManager.Lock)
+		if err != nil {
+			fmt.Println(err.Error())
+			return errors.New("can't lock the original binary")
+		}
+	} else {
+		log.Default().Println("There original package manager binary wasn't found. Assuming this was already locked. Skipping this step.")
 	}
 
 	// here we replace the original binary with a shell script which points to
 	// apx so other programs won't break when they call it
-	_, err = AlmostRun("sudo", "touch", settings.Cnf.PkgManager.Bin)
+	_, err := AlmostRun(false, "sudo", "touch", settings.Cnf.PkgManager.Bin)
 	if err != nil {
 		return errors.New("can't recreate the locked binary")
 	}
 
-	_, err = AlmostRun("sudo", "chmod", "755", settings.Cnf.PkgManager.Bin)
+	_, err = AlmostRun(false, "sudo", "chmod", "755", settings.Cnf.PkgManager.Bin)
 	if err != nil {
 		return errors.New("can't change permissions on " + settings.Cnf.PkgManager.Bin)
 	}
 
-	_, err = AlmostRun("sudo", "--",
+	_, err = AlmostRun(false, "sudo", "--",
 		"sh", "-c", "echo '#!/bin/sh\\n# Apx::SmartLock\\napx --sys $@' >> "+settings.Cnf.PkgManager.Bin,
 		"&&", "exit", "0")
 	if err != nil {
