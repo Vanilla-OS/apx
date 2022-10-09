@@ -37,6 +37,7 @@ func NewUpdateCommand() *cobra.Command {
 		RunE:  update,
 	}
 	cmd.SetUsageFunc(updateUsage)
+	cmd.Flags().BoolP("assume-yes", "y", false, "Proceed without manual confirmation.")
 	return cmd
 }
 
@@ -45,6 +46,10 @@ func update(cmd *cobra.Command, args []string) error {
 	command := append([]string{}, core.GetPkgManager(sys)...)
 	command = append(command, "update")
 	command = append(command, args...)
+
+	if cmd.Flag("assume-yes").Value.String() == "true" {
+		command = append(command, "-y")
+	}
 
 	if sys {
 		log.Default().Println("Performing operations on the host system.")

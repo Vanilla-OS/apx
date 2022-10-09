@@ -37,6 +37,7 @@ func NewUpgradeCommand() *cobra.Command {
 		RunE:  upgrade,
 	}
 	cmd.SetUsageFunc(upgrasdeUsage)
+	cmd.Flags().BoolP("assume-yes", "y", false, "Proceed without manual confirmation.")
 	return cmd
 }
 
@@ -45,6 +46,10 @@ func upgrade(cmd *cobra.Command, args []string) error {
 	command := append([]string{}, core.GetPkgManager(sys)...)
 	command = append(command, "upgrade")
 	command = append(command, args...)
+
+	if cmd.Flag("assume-yes").Value.String() == "true" {
+		command = append(command, "-y")
+	}
 
 	if sys {
 		log.Default().Println("Performing operations on the host system.")

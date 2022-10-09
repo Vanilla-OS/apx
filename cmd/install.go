@@ -37,13 +37,25 @@ func NewInstallCommand() *cobra.Command {
 		RunE:  install,
 	}
 	cmd.SetUsageFunc(installUsage)
+	cmd.Flags().SetInterspersed(false)
+	cmd.Flags().BoolP("assume-yes", "y", false, "Proceed without manual confirmation.")
+	cmd.Flags().BoolP("fix-broken", "f", false, "Fix broken deps before installing.")
 	return cmd
 }
 
 func install(cmd *cobra.Command, args []string) error {
 	sys := cmd.Flag("sys").Value.String() == "true"
+
 	command := append([]string{}, core.GetPkgManager(sys)...)
 	command = append(command, "install")
+
+	if cmd.Flag("assume-yes").Value.String() == "true" {
+		command = append(command, "-y")
+	}
+	if cmd.Flag("fix-broken").Value.String() == "true" {
+		command = append(command, "-f")
+	}
+
 	command = append(command, args...)
 
 	if sys {
