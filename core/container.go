@@ -21,6 +21,12 @@ import (
 	"github.com/vanilla-os/apx/settings"
 )
 
+func init() {
+	if !ContainerExists() {
+		CreateContainer()
+	}
+}
+
 func ContainerManager() string {
 	docker := exec.Command("which", "docker")
 	podman := exec.Command("which", "podman")
