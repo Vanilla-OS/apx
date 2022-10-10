@@ -56,6 +56,9 @@ This operation will remove everything, of course your files as well. [y/N] `)
 		}
 	}
 
+	if err := core.RemoveContainer(); err != nil {
+		panic(err)
+	}
 	if err := core.CreateContainer(); err != nil {
 		panic(err)
 	}
