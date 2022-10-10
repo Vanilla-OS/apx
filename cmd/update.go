@@ -15,6 +15,7 @@ import (
 
 	"github.com/spf13/cobra"
 	"github.com/vanilla-os/apx/core"
+	"github.com/vanilla-os/apx/settings"
 )
 
 func updateUsage(*cobra.Command) error {
@@ -44,7 +45,7 @@ func NewUpdateCommand() *cobra.Command {
 func update(cmd *cobra.Command, args []string) error {
 	sys := cmd.Flag("sys").Value.String() == "true"
 	command := append([]string{}, core.GetPkgManager(sys)...)
-	command = append(command, "update")
+	command = append(command, settings.Cnf.PkgManager.CmdUpdate)
 	command = append(command, args...)
 
 	if cmd.Flag("assume-yes").Value.String() == "true" {

@@ -15,6 +15,7 @@ import (
 
 	"github.com/spf13/cobra"
 	"github.com/vanilla-os/apx/core"
+	"github.com/vanilla-os/apx/settings"
 )
 
 func removeUsage(*cobra.Command) error {
@@ -45,7 +46,7 @@ func NewRemoveCommand() *cobra.Command {
 func remove(cmd *cobra.Command, args []string) error {
 	sys := cmd.Flag("sys").Value.String() == "true"
 	command := append([]string{}, core.GetPkgManager(sys)...)
-	command = append(command, "remove")
+	command = append(command, settings.Cnf.PkgManager.CmdRemove)
 	command = append(command, args...)
 
 	if cmd.Flag("assume-yes").Value.String() == "true" {

@@ -26,9 +26,18 @@ type ContainerConfig struct {
 }
 
 type PkgManagerConfig struct {
-	Bin  string `json:"pkgmanager_bin"`
-	Lock string `json:"pkgmanager_lock"`
-	Sudo bool   `json:"pkgmanager_sudo"`
+	Bin        string `json:"pkgmanager_bin"`
+	Lock       string `json:"pkgmanager_lock"`
+	Sudo       bool   `json:"pkgmanager_sudo"`
+	CmdClean   string `json:"pkgmanager_cmdClean"`
+	CmdInstall string `json:"pkgmanager_cmdInstall"`
+	CmdList    string `json:"pkgmanager_cmdList"`
+	CmdPurge   string `json:"pkgmanager_cmdPurge"`
+	CmdRemove  string `json:"pkgmanager_cmdRemove"`
+	CmdSearch  string `json:"pkgmanager_cmdSearch"`
+	CmdShow    string `json:"pkgmanager_cmdShow"`
+	CmdUpdate  string `json:"pkgmanager_cmdUpdate"`
+	CmdUpgrade string `json:"pkgmanager_cmdUpgrade"`
 }
 
 var Cnf *Config

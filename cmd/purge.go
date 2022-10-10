@@ -15,6 +15,7 @@ import (
 
 	"github.com/spf13/cobra"
 	"github.com/vanilla-os/apx/core"
+	"github.com/vanilla-os/apx/settings"
 )
 
 func purgeUsage(*cobra.Command) error {
@@ -43,7 +44,7 @@ func NewPurgeCommand() *cobra.Command {
 func purge(cmd *cobra.Command, args []string) error {
 	sys := cmd.Flag("sys").Value.String() == "true"
 	command := append([]string{}, core.GetPkgManager(sys)...)
-	command = append(command, "purge")
+	command = append(command, settings.Cnf.PkgManager.CmdPurge)
 	command = append(command, args...)
 
 	if sys {

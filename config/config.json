@@ -8,6 +8,15 @@
     "pkgmanager": {
         "bin": "/usr/bin/apt",
         "lock": "/usr/bin/_apt",
-        "sudo": true
+        "sudo": true,
+        "cmdClean": "clean",
+        "cmdInstall": "install",
+        "cmdList": "list",
+        "cmdPurge": "purge",
+        "cmdRemove": "remove",
+        "cmdSearch": "search",
+        "cmdShow": "show",
+        "cmdUpdate": "update",
+        "cmdUpgrade": "upgrade"
     }
 }

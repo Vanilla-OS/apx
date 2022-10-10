@@ -15,6 +15,7 @@ import (
 
 	"github.com/spf13/cobra"
 	"github.com/vanilla-os/apx/core"
+	"github.com/vanilla-os/apx/settings"
 )
 
 func showUsage(*cobra.Command) error {
@@ -43,7 +44,7 @@ func NewShowCommand() *cobra.Command {
 func show(cmd *cobra.Command, args []string) error {
 	sys := cmd.Flag("sys").Value.String() == "true"
 	command := append([]string{}, core.GetPkgManager(sys)...)
-	command = append(command, "show")
+	command = append(command, settings.Cnf.PkgManager.CmdShow)
 	command = append(command, args...)
 
 	if sys {
