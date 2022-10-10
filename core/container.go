@@ -112,13 +112,24 @@ func CreateContainer() error {
 	if err != nil {
 		return err
 	}
-	cmd := exec.Command("/usr/lib/apx/distrobox", "create", "--name", settings.Cnf.Container.Name,
-		"--image", host_image, "--yes", "--no-entry", "--additional-flags", "--label=manager=apx")
+	cmd := exec.Command("/usr/lib/apx/distrobox", "create",
+		"--name", settings.Cnf.Container.Name,
+		"--image", host_image,
+		"--yes",
+		"--no-entry",
+		"--additional-flags",
+		"--label=manager=apx")
 	cmd.Env = os.Environ()
-	cmd.Stdout = os.Stdout
-	cmd.Stderr = os.Stderr
-	cmd.Stdin = os.Stdin
-	err = cmd.Run()
+	// mute command output
+	//cmd.Stdout = os.Stdout
+	//cmd.Stderr = os.Stderr
+	//cmd.Stdin = os.Stdin
+	//err = cmd.Run()
+
+	_, err = cmd.Output()
+	if err != nil {
+		log.Panic(err)
+	}
 
 	return err
 }
