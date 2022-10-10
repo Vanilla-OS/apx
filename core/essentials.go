@@ -27,11 +27,11 @@ Please refer to our documentation at https://documentation.vanillaos.org/`)
 }
 
 func CheckContainerTools() error {
-	distrobox := exec.Command("which", "distrobox")
+	_, distrobox := os.Stat("/usr/lib/apx/distrobox")
 	docker := exec.Command("which", "docker")
 	podman := exec.Command("which", "podman")
 
-	if err := distrobox.Run(); err != nil {
+	if distrobox != nil {
 		err := InstallDistrobox()
 		if err != nil {
 			return err
@@ -48,7 +48,7 @@ func CheckContainerTools() error {
 }
 
 func InstallDistrobox() error {
-	log.Default().Printf(`Distrobox is not installed. Would you like to install it now? [y/N]`)
+	log.Default().Printf(`Distrobox (micro-distrobox) is not installed. Would you like to install it now? [y/N]`)
 	var input string
 	_, err := fmt.Scanln(&input)
 
@@ -57,7 +57,7 @@ func InstallDistrobox() error {
 	}
 
 	if input != "y" {
-		log.Default().Printf("Please install Distrobox in order to use apx!")
+		log.Default().Printf("Please install micro-distrobox in order to use apx!")
 		os.Exit(1)
 	}
 

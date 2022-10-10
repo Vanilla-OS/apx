@@ -11,6 +11,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 
 	"github.com/spf13/cobra"
 	"github.com/vanilla-os/apx/cmd"
@@ -19,6 +20,11 @@ import (
 var (
 	Version = "1.0.11"
 )
+
+func init() {
+	log.SetPrefix("\033[1m\033[34m⌬ Apx :: \033[0m")
+	log.SetFlags(0)
+}
 
 func help(cmd *cobra.Command, args []string) {
 	fmt.Println(`Usage:

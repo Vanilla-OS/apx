@@ -55,7 +55,7 @@ func GetHostImage() (img string, err error) {
 }
 
 func GetDistroboxVersion() (version string, err error) {
-	output, err := exec.Command("distrobox", "version").Output()
+	output, err := exec.Command("/usr/lib/apx/distrobox", "version").Output()
 	if err != nil {
 		return "", err
 	}
@@ -74,7 +74,7 @@ func RunContainer(args ...string) error {
 		return errors.New("Managed container does not exist")
 	}
 
-	cmd := exec.Command("distrobox", "enter",
+	cmd := exec.Command("/usr/lib/apx/distrobox", "enter",
 		settings.Cnf.Container.Name, "--")
 	cmd.Args = append(cmd.Args, args...)
 	cmd.Env = os.Environ()
@@ -91,7 +91,7 @@ func EnterContainer() error {
 		return errors.New("Managed container does not exist")
 	}
 
-	cmd := exec.Command("distrobox", "enter", settings.Cnf.Container.Name)
+	cmd := exec.Command("/usr/lib/apx/distrobox", "enter", settings.Cnf.Container.Name)
 	cmd.Env = os.Environ()
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
@@ -112,7 +112,7 @@ func CreateContainer() error {
 	if err != nil {
 		return err
 	}
-	cmd := exec.Command("distrobox", "create", "--name", settings.Cnf.Container.Name,
+	cmd := exec.Command("/usr/lib/apx/distrobox", "create", "--name", settings.Cnf.Container.Name,
 		"--image", host_image, "--yes", "--no-entry", "--additional-flags", "--label=manager=apx")
 	cmd.Env = os.Environ()
 	cmd.Stdout = os.Stdout
@@ -126,7 +126,7 @@ func CreateContainer() error {
 func StopContainer() error {
 	log.Default().Printf("Stopping container\n")
 
-	cmd := exec.Command("distrobox", "stop",
+	cmd := exec.Command("/usr/lib/apx/distrobox", "stop",
 		settings.Cnf.Container.Name, "--yes")
 
 	_, err := cmd.Output()
@@ -141,7 +141,7 @@ func RemoveContainer() error {
 		return err
 	}
 
-	cmd := exec.Command("distrobox", "rm",
+	cmd := exec.Command("/usr/lib/apx/distrobox", "rm",
 		settings.Cnf.Container.Name, "--yes")
 
 	_, err = cmd.Output()
@@ -152,7 +152,7 @@ func ExportDesktopEntry(program string) error {
 	log.Default().Printf("Exporting desktop entry %v\n", program)
 
 	err := RunContainer(
-		"distrobox-export", "--app", program,
+		"/usr/lib/apx/distrobox-export", "--app", program,
 		"--export-label", "◆", ">", "/dev/null")
 	if err != nil {
 		fmt.Println("No desktop entry found for %w, nothing to export.\n", program)
