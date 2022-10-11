@@ -30,14 +30,14 @@ func GetPkgCommand(sys bool, container string, command string) []string {
 	case "aur":
 		return GetAurPkgCommand(command)
 	case "default":
-		return GetDefaultPkgCommand(command)
+		return GetDefaultPkgCommand(sys, command)
 	default:
 		return nil
 	}
 }
 
-func GetDefaultPkgCommand(command string) []string {
-	res := []string{settings.Cnf.PkgManager.Bin}
+func GetDefaultPkgCommand(sys bool, command string) []string {
+	res := GetPkgManager(sys)
 	switch command {
 	case "autoremove":
 		res = append(res, settings.Cnf.PkgManager.CmdAutoremove)
@@ -71,9 +71,6 @@ func GetDefaultPkgCommand(command string) []string {
 		break
 	default:
 		return nil
-	}
-	if settings.Cnf.PkgManager.Sudo {
-		res = append([]string{"sudo"}, res...)
 	}
 	return res
 
