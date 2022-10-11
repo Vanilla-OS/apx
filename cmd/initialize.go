@@ -70,7 +70,5 @@ This operation will remove everything, of course your files as well. [y/N] `)
 		panic(err)
 	}
 
-	log.Default().Println("Container created")
-
 	return nil
 }

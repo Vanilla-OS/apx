@@ -17,7 +17,9 @@ import (
 	"os"
 	"os/exec"
 	"strings"
+	"time"
 
+	"github.com/briandowns/spinner"
 	"github.com/vanilla-os/apx/settings"
 )
 
@@ -135,13 +137,16 @@ func EnterContainer(container string) error {
 }
 
 func CreateContainer(container string) error {
-	log.Default().Printf("Initializing container\n")
-
 	container_image, err := GetContainerImage(container)
-	container_name := GetContainerName(container)
 	if err != nil {
 		return err
 	}
+
+	container_name := GetContainerName(container)
+	spinner := spinner.New(spinner.CharSets[11], 100*time.Millisecond)
+	spinner.Suffix = " Creating container..."
+
+	spinner.Start()
 
 	cmd := exec.Command("/usr/lib/apx/distrobox", "create",
 		"--name", container_name,
@@ -157,34 +162,47 @@ func CreateContainer(container string) error {
 	//cmd.Stderr = os.Stderr
 	//cmd.Stdin = os.Stdin
 	//err = cmd.Run()
-
 	_, err = cmd.Output()
 	if err != nil {
 		log.Panic(err)
 	}
 
+	spinner.Stop()
+
 	if container == "aur" {
 		RunContainer(container, GetAurPkgCommand("install-yay")...)
 	}
+
+	log.Default().Println("Container created")
 
 	return err
 }
 
 func StopContainer(container string) error {
-	log.Default().Printf("Stopping container\n")
-
 	container_name := GetContainerName(container)
+	spinner := spinner.New(spinner.CharSets[11], 100*time.Millisecond)
+	spinner.Suffix = " Stopping container..."
+
+	spinner.Start()
 
 	cmd := exec.Command("/usr/lib/apx/distrobox", "stop", container_name, "--yes")
 	_, err := cmd.Output()
+
+	spinner.Stop()
+
+	if err != nil {
+		log.Panic(err)
+	}
+
+	log.Default().Println("Container stopped")
 
 	return err
 }
 
 func RemoveContainer(container string) error {
-	log.Default().Printf("Removing container\n")
-
 	container_name := GetContainerName(container)
+	spinner := spinner.New(spinner.CharSets[11], 100*time.Millisecond)
+	spinner.Suffix = " Removing container..."
 
 	if !ContainerExists(container) {
 		return nil
@@ -195,19 +213,29 @@ func RemoveContainer(container string) error {
 		return err
 	}
 
+	spinner.Start()
+
 	cmd := exec.Command("/usr/lib/apx/distrobox", "rm", container_name, "--yes")
 	_, err = cmd.Output()
+
+	spinner.Stop()
 
 	return err
 }
 
 func ExportDesktopEntry(container string, program string) error {
-	log.Default().Printf("Exporting desktop entry %v\n", program)
+	spinner := spinner.New(spinner.CharSets[11], 100*time.Millisecond)
+	spinner.Suffix = fmt.Sprintf("Exporting desktop entry: %v\n", program)
+
+	spinner.Start()
 
 	err := RunContainer(
 		container,
 		"distrobox-export", "--app", program,
 		"--export-label", "◆", ">", "/dev/null")
+
+	spinner.Stop()
+
 	if err != nil {
 		fmt.Printf("No desktop entry found for %v, nothing to export.\n", program)
 		return err
@@ -218,14 +246,16 @@ func ExportDesktopEntry(container string, program string) error {
 }
 
 func RemoveDesktopEntry(container string, program string) error {
-	log.Default().Printf("Removing desktop entry %v\n", program)
-
 	container_name := GetContainerName(container)
+	spinner := spinner.New(spinner.CharSets[11], 100*time.Millisecond)
+	spinner.Suffix = fmt.Sprintf("Removing desktop entry: %v\n", program)
 
 	home_dir, err := os.UserHomeDir()
 	if err != nil {
 		return err
 	}
+
+	spinner.Start()
 
 	files, err := ioutil.ReadDir(home_dir + "/.local/share/applications")
 	if err != nil {
@@ -235,13 +265,16 @@ func RemoveDesktopEntry(container string, program string) error {
 	for _, file := range files {
 		if strings.HasPrefix(strings.ToLower(file.Name()),
 			strings.ToLower(container_name+"-"+program)) {
-			log.Default().Printf("Removing desktop entry %v\n", file.Name())
+			spinner.Stop()
 			err := os.Remove(home_dir + "/.local/share/applications/" + file.Name())
 			if err != nil {
 				return err
 			}
 		}
 	}
+
+	spinner.Stop()
+
 	log.Default().Printf("Desktop entry %v not found.\n", program)
 	return nil
 }
