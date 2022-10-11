@@ -66,7 +66,10 @@ func remove(cmd *cobra.Command, args []string) error {
 		return nil
 	}
 
-	core.RunContainer(container, command...)
+	err := core.RunContainer(container, command...)
+	if err != nil {
+		return err
+	}
 
 	for _, pkg := range args {
 		core.RemoveDesktopEntry(container, pkg)

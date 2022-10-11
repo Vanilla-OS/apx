@@ -71,7 +71,10 @@ func install(cmd *cobra.Command, args []string) error {
 		return nil
 	}
 
-	core.RunContainer(container, command...)
+	err := core.RunContainer(container, command...)
+	if err != nil {
+		return err
+	}
 
 	if cmd.Flag("no-export").Value.String() == "true" {
 		return nil
