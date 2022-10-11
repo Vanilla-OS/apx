@@ -37,60 +37,46 @@ func GetPkgCommand(sys bool, container string, command string) []string {
 }
 
 func GetDefaultPkgCommand(command string) []string {
+	res := []string{settings.Cnf.PkgManager.Bin}
 	switch command {
 	case "autoremove":
-		return []string{
-			settings.Cnf.PkgManager.Bin,
-			settings.Cnf.PkgManager.CmdAutoremove,
-		}
+		res = append(res, settings.Cnf.PkgManager.CmdAutoremove)
+		break
 	case "clean":
-		return []string{
-			settings.Cnf.PkgManager.Bin,
-			settings.Cnf.PkgManager.CmdClean,
-		}
+		res = append(res, settings.Cnf.PkgManager.CmdClean)
+		break
 	case "install":
-		return []string{
-			settings.Cnf.PkgManager.Bin,
-			settings.Cnf.PkgManager.CmdInstall,
-		}
+		res = append(res, settings.Cnf.PkgManager.CmdInstall)
+		break
 	case "list":
-		return []string{
-			settings.Cnf.PkgManager.Bin,
-			settings.Cnf.PkgManager.CmdList,
-		}
+		res = append(res, settings.Cnf.PkgManager.CmdList)
+		break
 	case "purge":
-		return []string{
-			settings.Cnf.PkgManager.Bin,
-			settings.Cnf.PkgManager.CmdPurge,
-		}
+		res = append(res, settings.Cnf.PkgManager.CmdPurge)
+		break
 	case "remove":
-		return []string{
-			settings.Cnf.PkgManager.Bin,
-			settings.Cnf.PkgManager.CmdRemove,
-		}
+		res = append(res, settings.Cnf.PkgManager.CmdRemove)
+		break
 	case "search":
-		return []string{
-			settings.Cnf.PkgManager.Bin,
-			settings.Cnf.PkgManager.CmdSearch,
-		}
+		res = append(res, settings.Cnf.PkgManager.CmdSearch)
+		break
 	case "show":
-		return []string{
-			settings.Cnf.PkgManager.Bin,
-			settings.Cnf.PkgManager.CmdShow,
-		}
+		res = append(res, settings.Cnf.PkgManager.CmdShow)
+		break
 	case "update":
-		return []string{
-			settings.Cnf.PkgManager.Bin,
-			settings.Cnf.PkgManager.CmdUpdate,
-		}
+		res = append(res, settings.Cnf.PkgManager.CmdUpdate)
+		break
 	case "upgrade":
-		return []string{
-			settings.Cnf.PkgManager.Bin,
-			settings.Cnf.PkgManager.CmdUpgrade,
-		}
+		res = append(res, settings.Cnf.PkgManager.CmdUpgrade)
+		break
 	default:
 		return nil
 	}
+	if settings.Cnf.PkgManager.Sudo {
+		res = append([]string{"sudo"}, res...)
+	}
+	return res
+
 }
 
 func GetAurPkgCommand(command string) []string {
