@@ -40,6 +40,7 @@ func NewInstallCommand() *cobra.Command {
 	cmd.Flags().SetInterspersed(false)
 	cmd.Flags().BoolP("assume-yes", "y", false, "Proceed without manual confirmation.")
 	cmd.Flags().BoolP("fix-broken", "f", false, "Fix broken deps before installing.")
+	cmd.Flags().Bool("no-export", false, "Do not export a desktop entry after the installation.")
 	return cmd
 }
 
@@ -71,6 +72,10 @@ func install(cmd *cobra.Command, args []string) error {
 	}
 
 	core.RunContainer(container, command...)
+
+	if cmd.Flag("no-export").Value.String() == "true" {
+		return nil
+	}
 
 	for _, pkg := range args {
 		core.ExportDesktopEntry(container, pkg)
