@@ -51,8 +51,7 @@ func list(cmd *cobra.Command, args []string) error {
 		container = "aur"
 	}
 
-	command := append([]string{}, core.GetPkgManager(sys)...)
-	command = append(command, core.GetPkgCommand(sys, container, "list")...)
+	command := append([]string{}, core.GetPkgCommand(sys, container, "list")...)
 
 	if cmd.Flag("upgradable").Value.String() == "true" {
 		command = append(command, "--upgradable")

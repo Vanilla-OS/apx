@@ -49,8 +49,7 @@ func clean(cmd *cobra.Command, args []string) error {
 		container = "aur"
 	}
 
-	command := append([]string{}, core.GetPkgManager(sys)...)
-	command = append(command, core.GetPkgCommand(sys, container, "clean")...)
+	command := append([]string{}, core.GetPkgCommand(sys, container, "clean")...)
 	command = append(command, args...)
 
 	if sys {

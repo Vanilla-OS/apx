@@ -51,8 +51,7 @@ func remove(cmd *cobra.Command, args []string) error {
 		container = "aur"
 	}
 
-	command := append([]string{}, core.GetPkgManager(sys)...)
-	command = append(command, core.GetPkgCommand(sys, container, "remove")...)
+	command := append([]string{}, core.GetPkgCommand(sys, container, "remove")...)
 	command = append(command, args...)
 
 	if cmd.Flag("assume-yes").Value.String() == "true" {
