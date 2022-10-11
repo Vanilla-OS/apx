@@ -15,7 +15,6 @@ import (
 
 	"github.com/spf13/cobra"
 	"github.com/vanilla-os/apx/core"
-	"github.com/vanilla-os/apx/settings"
 )
 
 func removeUsage(*cobra.Command) error {
@@ -45,8 +44,15 @@ func NewRemoveCommand() *cobra.Command {
 
 func remove(cmd *cobra.Command, args []string) error {
 	sys := cmd.Flag("sys").Value.String() == "true"
+	aur := cmd.Flag("aur").Value.String() == "true"
+
+	container := "default"
+	if aur {
+		container = "aur"
+	}
+
 	command := append([]string{}, core.GetPkgManager(sys)...)
-	command = append(command, settings.Cnf.PkgManager.CmdRemove)
+	command = append(command, core.GetPkgCommand(sys, container, "remove")...)
 	command = append(command, args...)
 
 	if cmd.Flag("assume-yes").Value.String() == "true" {
@@ -60,6 +66,11 @@ func remove(cmd *cobra.Command, args []string) error {
 		return nil
 	}
 
-	core.RunContainer(command...)
+	core.RunContainer(container, command...)
+
+	for _, pkg := range args {
+		core.RemoveDesktopEntry(container, pkg)
+	}
+
 	return nil
 }

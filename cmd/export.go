@@ -40,5 +40,12 @@ func NewExportCommand() *cobra.Command {
 }
 
 func export(cmd *cobra.Command, args []string) error {
-	return core.ExportDesktopEntry(args[0])
+	aur := cmd.Flag("aur").Value.String() == "true"
+
+	container := "default"
+	if aur {
+		container = "aur"
+	}
+
+	return core.ExportDesktopEntry(container, args[0])
 }

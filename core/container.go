@@ -54,6 +54,32 @@ func GetHostImage() (img string, err error) {
 	return fmt.Sprintf("%v:%v", distro, release), nil
 }
 
+func GetContainerImage(container string) (image string, err error) {
+	switch container {
+	case "default":
+		return GetHostImage()
+	case "aur":
+		return "docker.io/library/archlinux", nil
+	default:
+		image = ""
+		err = errors.New("Can't retrieve image for unknown container")
+	}
+	return image, err
+}
+
+func GetContainerName(container string) (name string) {
+	switch container {
+	case "default":
+		name := "apx_managed"
+		return name
+	case "aur":
+		name := "apx_managed_aur"
+		return name
+	default:
+		panic("Unknown container not supported")
+	}
+}
+
 func GetDistroboxVersion() (version string, err error) {
 	output, err := exec.Command("/usr/lib/apx/distrobox", "version").Output()
 	if err != nil {
@@ -68,14 +94,15 @@ func GetDistroboxVersion() (version string, err error) {
 	return splitted[1], nil
 }
 
-func RunContainer(args ...string) error {
-	if !ContainerExists() {
+func RunContainer(container string, args ...string) error {
+	if !ContainerExists(container) {
 		log.Default().Printf("Managed container does not exist.\nTry: apx init")
 		return errors.New("Managed container does not exist")
 	}
 
-	cmd := exec.Command("/usr/lib/apx/distrobox", "enter",
-		settings.Cnf.Container.Name, "--")
+	container_name := GetContainerName(container)
+
+	cmd := exec.Command("/usr/lib/apx/distrobox", "enter", container_name, "--")
 	cmd.Args = append(cmd.Args, args...)
 	cmd.Env = os.Environ()
 	cmd.Stdout = os.Stdout
@@ -85,13 +112,15 @@ func RunContainer(args ...string) error {
 	return cmd.Run()
 }
 
-func EnterContainer() error {
-	if !ContainerExists() {
+func EnterContainer(container string) error {
+	if !ContainerExists(container) {
 		log.Default().Printf("Managed container does not exist.\nTry: apx init")
 		return errors.New("Managed container does not exist")
 	}
 
-	cmd := exec.Command("/usr/lib/apx/distrobox", "enter", settings.Cnf.Container.Name)
+	container_name := GetContainerName(container)
+
+	cmd := exec.Command("/usr/lib/apx/distrobox", "enter", container_name)
 	cmd.Env = os.Environ()
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
@@ -105,20 +134,23 @@ func EnterContainer() error {
 	return nil
 }
 
-func CreateContainer() error {
+func CreateContainer(container string) error {
 	log.Default().Printf("Initializing container\n")
 
-	host_image, err := GetHostImage()
+	container_image, err := GetContainerImage(container)
+	container_name := GetContainerName(container)
 	if err != nil {
 		return err
 	}
+
 	cmd := exec.Command("/usr/lib/apx/distrobox", "create",
-		"--name", settings.Cnf.Container.Name,
-		"--image", host_image,
+		"--name", container_name,
+		"--image", container_image,
 		"--yes",
 		"--no-entry",
 		"--additional-flags",
-		"--label=manager=apx")
+		"--label=manager=apx",
+		"--yes")
 	cmd.Env = os.Environ()
 	// mute command output
 	//cmd.Stdout = os.Stdout
@@ -131,42 +163,53 @@ func CreateContainer() error {
 		log.Panic(err)
 	}
 
+	if container == "aur" {
+		RunContainer(container, GetAurPkgCommand("install-yay")...)
+	}
+
 	return err
 }
 
-func StopContainer() error {
+func StopContainer(container string) error {
 	log.Default().Printf("Stopping container\n")
 
-	cmd := exec.Command("/usr/lib/apx/distrobox", "stop",
-		settings.Cnf.Container.Name, "--yes")
+	container_name := GetContainerName(container)
 
+	cmd := exec.Command("/usr/lib/apx/distrobox", "stop", container_name, "--yes")
 	_, err := cmd.Output()
+
 	return err
 }
 
-func RemoveContainer() error {
+func RemoveContainer(container string) error {
 	log.Default().Printf("Removing container\n")
 
-	err := StopContainer()
+	container_name := GetContainerName(container)
+
+	if !ContainerExists(container) {
+		return nil
+	}
+
+	err := StopContainer(container)
 	if err != nil {
 		return err
 	}
 
-	cmd := exec.Command("/usr/lib/apx/distrobox", "rm",
-		settings.Cnf.Container.Name, "--yes")
-
+	cmd := exec.Command("/usr/lib/apx/distrobox", "rm", container_name, "--yes")
 	_, err = cmd.Output()
+
 	return err
 }
 
-func ExportDesktopEntry(program string) error {
+func ExportDesktopEntry(container string, program string) error {
 	log.Default().Printf("Exporting desktop entry %v\n", program)
 
 	err := RunContainer(
-		"/usr/lib/apx/distrobox-export", "--app", program,
+		container,
+		"distrobox-export", "--app", program,
 		"--export-label", "◆", ">", "/dev/null")
 	if err != nil {
-		fmt.Println("No desktop entry found for %w, nothing to export.\n", program)
+		fmt.Printf("No desktop entry found for %v, nothing to export.\n", program)
 		return err
 	}
 
@@ -174,8 +217,10 @@ func ExportDesktopEntry(program string) error {
 	return nil
 }
 
-func RemoveDesktopEntry(program string) error {
+func RemoveDesktopEntry(container string, program string) error {
 	log.Default().Printf("Removing desktop entry %v\n", program)
+
+	container_name := GetContainerName(container)
 
 	home_dir, err := os.UserHomeDir()
 	if err != nil {
@@ -189,7 +234,7 @@ func RemoveDesktopEntry(program string) error {
 
 	for _, file := range files {
 		if strings.HasPrefix(strings.ToLower(file.Name()),
-			strings.ToLower(settings.Cnf.Container.Name+"-"+program)) {
+			strings.ToLower(container_name+"-"+program)) {
 			log.Default().Printf("Removing desktop entry %v\n", file.Name())
 			err := os.Remove(home_dir + "/.local/share/applications/" + file.Name())
 			if err != nil {
@@ -201,9 +246,12 @@ func RemoveDesktopEntry(program string) error {
 	return nil
 }
 
-func ContainerExists() bool {
+func ContainerExists(container string) bool {
+	container_name := GetContainerName(container)
 	manager := ContainerManager()
-	cmd := exec.Command(manager, "ps", "-a", "-q", "-f", "name="+settings.Cnf.Container.Name)
+
+	cmd := exec.Command(manager, "ps", "-a", "-q", "-f", "name="+container_name)
 	output, _ := cmd.Output()
+
 	return len(output) > 0
 }

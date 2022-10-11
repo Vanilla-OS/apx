@@ -41,7 +41,14 @@ func NewEnterCommand() *cobra.Command {
 }
 
 func enter(cmd *cobra.Command, args []string) error {
-	if err := core.EnterContainer(); err != nil {
+	aur := cmd.Flag("aur").Value.String() == "true"
+
+	container := "default"
+	if aur {
+		container = "aur"
+	}
+
+	if err := core.EnterContainer(container); err != nil {
 		log.Default().Fatal("Failed to enter container: ", err)
 		return err
 	}

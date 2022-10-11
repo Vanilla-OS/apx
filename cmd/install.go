@@ -15,7 +15,6 @@ import (
 
 	"github.com/spf13/cobra"
 	"github.com/vanilla-os/apx/core"
-	"github.com/vanilla-os/apx/settings"
 )
 
 func installUsage(*cobra.Command) error {
@@ -46,9 +45,14 @@ func NewInstallCommand() *cobra.Command {
 
 func install(cmd *cobra.Command, args []string) error {
 	sys := cmd.Flag("sys").Value.String() == "true"
+	aur := cmd.Flag("aur").Value.String() == "true"
 
-	command := append([]string{}, core.GetPkgManager(sys)...)
-	command = append(command, settings.Cnf.PkgManager.CmdInstall)
+	container := "default"
+	if aur {
+		container = "aur"
+	}
+
+	command := append([]string{}, core.GetPkgCommand(sys, container, "install")...)
 
 	if cmd.Flag("assume-yes").Value.String() == "true" {
 		command = append(command, "-y")
@@ -66,6 +70,11 @@ func install(cmd *cobra.Command, args []string) error {
 		return nil
 	}
 
-	core.RunContainer(command...)
+	core.RunContainer(container, command...)
+
+	for _, pkg := range args {
+		core.ExportDesktopEntry(container, pkg)
+	}
+
 	return nil
 }

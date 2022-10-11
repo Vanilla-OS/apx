@@ -40,5 +40,12 @@ func NewUnexportCommand() *cobra.Command {
 }
 
 func unexport(cmd *cobra.Command, args []string) error {
-	return core.RemoveDesktopEntry(args[0])
+	aur := cmd.Flag("aur").Value.String() == "true"
+
+	container := "default"
+	if aur {
+		container = "aur"
+	}
+
+	return core.RemoveDesktopEntry(container, args[0])
 }

@@ -40,5 +40,13 @@ func NewRunCommand() *cobra.Command {
 }
 
 func run(cmd *cobra.Command, args []string) error {
-	return core.RunContainer(args...)
+	aur := cmd.Flag("aur").Value.String() == "true"
+
+	container := "default"
+	if aur {
+		container = "aur"
+	}
+	core.RunContainer(container, args...)
+
+	return nil
 }

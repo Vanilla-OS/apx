@@ -34,7 +34,7 @@ Options:
 	-h, --help    Show this help message and exit
 	-v, --version Show version and exit
 	--sys         Perform operations on the system instead of the managed container
-	--distro	  Choose a different container of destination (default, archlinux)
+	--aur	    Install packages from the AUR repository
 
 Commands:
 	autoremove  Remove automatically all unused packages
@@ -66,7 +66,7 @@ func newApxCommand() *cobra.Command {
 func main() {
 	rootCmd := newApxCommand()
 	rootCmd.PersistentFlags().Bool("sys", false, "Perform operations on the system host rather than in the container.")
-	rootCmd.PersistentFlags().String("distro", "default", "Choose a different container of destination (default, archlinux)")
+	rootCmd.PersistentFlags().Bool("aur", false, "Install packages from the AUR repository.")
 
 	rootCmd.AddCommand(cmd.NewInitializeCommand())
 	rootCmd.AddCommand(cmd.NewAutoRemoveCommand())
