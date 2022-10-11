@@ -220,6 +220,8 @@ func RemoveContainer(container string) error {
 
 	spinner.Stop()
 
+	log.Default().Println("Container removed")
+
 	return err
 }
 
