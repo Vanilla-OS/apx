@@ -77,7 +77,7 @@ func GetDefaultPkgCommand(sys bool, command string) []string {
 }
 
 func GetAurPkgCommand(command string) []string {
-	bin := "yay"
+	bin := "ame"
 
 	switch command {
 	// defaults
@@ -107,12 +107,12 @@ func GetAurPkgCommand(command string) []string {
 		return []string{
 			"sh -c",
 			`"sudo pacman -S --needed --noconfirm git base-devel &&
-					rm -rf ~/.local/src/yay &&
-					mkdir -p ~/.local/src/yay &&
-					git clone https://aur.archlinux.org/yay.git ~/.local/src/yay &&
-					cd ~/.local/src/yay && yes "" | /usr/sbin/makepkg -is &&
+					rm -rf ~/.local/src/ame &&
+					mkdir -p ~/.local/src/ame &&
+					git clone https://aur.archlinux.org/ame.git ~/.local/src/ame &&
+					cd ~/.local/src/ame && yes "" | /usr/sbin/makepkg -is --noconfirm &&
 					cd -- ~ &&
-					rm -rf ~/.local/src/yay"`,
+					rm -rf ~/.local/src/ame"`,
 		}
 	default:
 		return nil
