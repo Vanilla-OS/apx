@@ -27,7 +27,6 @@ type ContainerConfig struct {
 
 type PkgManagerConfig struct {
 	Bin           string `json:"pkgmanager_bin"`
-	Lock          string `json:"pkgmanager_lock"`
 	Sudo          bool   `json:"pkgmanager_sudo"`
 	CmdAutoremove string `json:"pkgmanager_cmdAutoremove"`
 	CmdClean      string `json:"pkgmanager_cmdClean"`
@@ -67,6 +66,5 @@ func init() {
 	// fmt.Println("Container path:", Cnf.Container.Path)
 	// fmt.Println("Container update command:", Cnf.Container.Update)
 	// fmt.Println("Package manager bin:", Cnf.PkgManager.Bin)
-	// fmt.Println("Package manager lock:", Cnf.PkgManager.Lock)
 	// fmt.Println("==========================")
 }

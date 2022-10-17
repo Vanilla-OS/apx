@@ -7,7 +7,6 @@
     },
     "pkgmanager": {
         "bin": "/usr/bin/apt",
-        "lock": "/usr/bin/_apt",
         "sudo": true,
         "cmdAutoremove": "autoremove",
         "cmdClean": "clean",

@@ -6,7 +6,7 @@ func GetPkgManager(sys bool) []string {
 	sudo := settings.Cnf.PkgManager.Sudo
 
 	if sys {
-		bin := settings.Cnf.PkgManager.Lock
+		bin := settings.Cnf.PkgManager.Bin
 
 		if sudo {
 			return []string{"sudo", bin}

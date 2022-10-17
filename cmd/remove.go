@@ -60,7 +60,6 @@ func remove(cmd *cobra.Command, args []string) error {
 
 	if sys {
 		log.Default().Println("Performing operations on the host system.")
-		core.PkgManagerSmartLock()
 		core.AlmostRun(false, command...)
 		return nil
 	}
