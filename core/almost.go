@@ -28,16 +28,19 @@ func ImmutabilityStatus() bool {
 
 func AlmostRun(output bool, command ...string) (string, error) {
 	var run *exec.Cmd
+	var immutable_need_restore bool
 
-	// if the system is immutable, we run the command with "almost"
-	// to obtain a temporary read-only state
+	// if the system is immutable, we need to enter rw mode and
+	// then exit rw mode after the command is executed
 	if ImmutabilityStatus() {
-		cmd := []string{"sudo", "almost", "run"}
-		cmd = append(cmd, command...)
-		run = exec.Command(cmd[0], cmd[1:]...)
-	} else {
-		run = exec.Command(command[0], command[1:]...)
+		immutable_need_restore = true
+		err := exec.Command("sudo", "almost", "enter", "rw").Run()
+		if err != nil {
+			panic(err)
+		}
 	}
+
+	run = exec.Command(command[0], command[1:]...)
 
 	run.Env = os.Environ()
 	if !output {
@@ -55,6 +58,15 @@ func AlmostRun(output bool, command ...string) (string, error) {
 	}
 
 	out, err := run.Output()
+
+	// restore the system to immutable mode due to previous check
+	if immutable_need_restore {
+		err := exec.Command("sudo", "almost", "enter", "ro").Run()
+		if err != nil {
+			panic(err)
+		}
+	}
+
 	return string(out), err
 }
 
