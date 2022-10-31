@@ -103,7 +103,7 @@ func GetAurPkgCommand(command string) []string {
 		return []string{bin, "-Su"}
 
 	// specials
-	case "install-yay":
+	case "install-ame":
 		return []string{
 			"sh -c",
 			`"sudo pacman -S --needed --noconfirm git base-devel &&

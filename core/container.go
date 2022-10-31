@@ -170,7 +170,7 @@ func CreateContainer(container string) error {
 	spinner.Stop()
 
 	if container == "aur" {
-		RunContainer(container, GetAurPkgCommand("install-yay")...)
+		RunContainer(container, GetAurPkgCommand("install-ame")...)
 	}
 
 	log.Default().Println("Container created")
