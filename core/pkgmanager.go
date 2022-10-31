@@ -1,6 +1,15 @@
 package core
 
-import "github.com/vanilla-os/apx/settings"
+import (
+	"encoding/json"
+	"fmt"
+	"io"
+	"net/http"
+	"os"
+	"strings"
+
+	"github.com/vanilla-os/apx/settings"
+)
 
 func GetPkgManager(sys bool) []string {
 	sudo := settings.Cnf.PkgManager.Sudo
@@ -77,7 +86,7 @@ func GetDefaultPkgCommand(sys bool, command string) []string {
 }
 
 func GetAurPkgCommand(command string) []string {
-	bin := "ame"
+	bin := "yay"
 
 	switch command {
 	// defaults
@@ -103,18 +112,74 @@ func GetAurPkgCommand(command string) []string {
 		return []string{bin, "-Su"}
 
 	// specials
-	case "install-ame":
+	case "install-yay":
 		return []string{
-			"sh -c",
-			`"sudo pacman -S --needed --noconfirm git base-devel &&
-					rm -rf ~/.local/src/ame &&
-					mkdir -p ~/.local/src/ame &&
-					git clone https://aur.archlinux.org/ame.git ~/.local/src/ame &&
-					cd ~/.local/src/ame && yes "" | /usr/sbin/makepkg -is --noconfirm &&
-					cd -- ~ &&
-					rm -rf ~/.local/src/ame"`,
+			"bash", "-c", "cd ~/.local/src/yay  && tar -xvf yay.tar.gz && cd yay_*_x86_64* && sudo cp yay /usr/bin",
 		}
 	default:
 		return nil
+	}
+}
+
+func GetLatestYay() string {
+	url := "https://api.github.com/repos/Jguer/yay/releases/latest"
+	resp, err := http.Get(url)
+	if err != nil {
+		panic(err)
+	}
+	defer resp.Body.Close()
+
+	var result map[string]interface{}
+	json.NewDecoder(resp.Body).Decode(&result)
+
+	assets_url := result["assets_url"].(string)
+	resp, err = http.Get(assets_url)
+	if err != nil {
+		panic(err)
+	}
+	defer resp.Body.Close()
+
+	var assets []map[string]interface{}
+	json.NewDecoder(resp.Body).Decode(&assets)
+
+	for _, asset := range assets {
+		if strings.Contains(asset["name"].(string), "x86_64") {
+			return asset["browser_download_url"].(string)
+		}
+	}
+	panic("Failed to install yay. No asset found.")
+}
+
+func DownloadYay() {
+	url := GetLatestYay()
+	resp, err := http.Get(url)
+	if err != nil {
+		panic(err)
+	}
+	defer resp.Body.Close()
+
+	home, err := os.UserHomeDir()
+	if err != nil {
+		panic(err)
+	}
+
+	yay_dir := fmt.Sprintf("%v/.local/src/yay", home)
+	if _, err := os.Stat(yay_dir); os.IsNotExist(err) {
+		err = os.MkdirAll(yay_dir, 0755)
+		if err != nil {
+			panic(err)
+		}
+	}
+
+	yay_file := fmt.Sprintf("%v/yay.tar.gz", yay_dir)
+	out, err := os.Create(yay_file)
+	if err != nil {
+		panic(err)
+	}
+	defer out.Close()
+
+	_, err = io.Copy(out, resp.Body)
+	if err != nil {
+		panic(err)
 	}
 }
