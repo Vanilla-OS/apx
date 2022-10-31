@@ -98,8 +98,11 @@ func GetDistroboxVersion() (version string, err error) {
 
 func RunContainer(container string, args ...string) error {
 	if !ContainerExists(container) {
-		log.Default().Printf("Managed container does not exist.\nTry: apx init")
-		return errors.New("Managed container does not exist")
+		err := CreateContainer(container)
+		if err != nil {
+			log.Default().Println("Failed to initialize the container. Try manually with `apx init`.")
+			return err
+		}
 	}
 
 	container_name := GetContainerName(container)
