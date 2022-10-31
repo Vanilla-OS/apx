@@ -137,6 +137,11 @@ func EnterContainer(container string) error {
 }
 
 func CreateContainer(container string) error {
+	if CheckConnection() == false {
+		log.Default().Println("No internet connection. Please connect to the internet and try again.")
+		return errors.New("Failed to create container.")
+	}
+
 	container_image, err := GetContainerImage(container)
 	if err != nil {
 		return err
