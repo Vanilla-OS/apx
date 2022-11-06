@@ -23,7 +23,6 @@ func init() {
 Please refer to our documentation at https://documentation.vanillaos.org/`)
 		panic(err)
 	}
-	// TODO: check minimum version of Distrobox (1.4.1)
 }
 
 func CheckContainerTools() error {
@@ -92,4 +91,16 @@ func InstallPodman() error {
 	}
 
 	return nil
+}
+
+func IsVM() bool {
+	_, err := exec.Command("systemd-detect-virt").Output()
+	return err == nil
+}
+
+func ExitIfVM() {
+	if IsVM() {
+		log.Default().Printf("You are running apx inside a virtual machine. Only `apx --sys` is supported.")
+		os.Exit(1)
+	}
 }
