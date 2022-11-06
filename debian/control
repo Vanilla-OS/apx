@@ -9,7 +9,8 @@ Build-Depends: debhelper (>= 9),
                golang-github-spf13-cobra-dev,
                golang-github-spf13-viper-dev,
                golang-github-google-uuid-dev,
-               golang-github-mattn-go-sqlite3-dev
+               golang-github-mattn-go-sqlite3-dev,
+               golang-github-briandowns-spinner-dev
 Standards-Version: 3.9.6
 Homepage: https://github.com/vanilla-os/apx
 Vcs-Browser: https://github.com/vanilla-os/apx
@@ -25,6 +26,6 @@ Depends: ${shlibs:Depends},
          golang-github-spf13-cobra-dev,
          golang-github-spf13-viper-dev,
          golang-github-google-uuid-dev,
-         golang-github-briandowns-spinner-dev,
+         golang-github-briandowns-spinner-dev
 Built-Using: ${misc:Built-Using}
 Description: Apx is the default package manager in Vanilla OS.
