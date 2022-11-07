@@ -8,10 +8,8 @@
 <br/>
 
 ## Help
-```
-Special thanks to distrobox <https://github.com/89luca89/distrobox> for
-  making this possible.
 
+```
 Usage: apx [options] [command] [arguments]
 
 Options:
@@ -39,6 +37,7 @@ Commands:
 ```
 
 ## Other distros
+
 > Please consider to keep the project name as `apx` to avoid confusion for users.
 
 To use with another package manager, re-compile editing the `config.json` file
