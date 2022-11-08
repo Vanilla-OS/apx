@@ -1,6 +1,7 @@
 package core
 
 import (
+	"fmt"
 	"os"
 	"os/exec"
 	"strings"
@@ -54,7 +55,9 @@ func AlmostRun(output bool, command ...string) (string, error) {
 			run.Stdin = os.Stdin
 		}
 		err := run.Run()
-		return "", err
+		if err != nil {
+			fmt.Println(err)
+		}
 	}
 
 	out, err := run.Output()
@@ -71,18 +74,14 @@ func AlmostRun(output bool, command ...string) (string, error) {
 }
 
 func AlmostEnterRw() (string, error) {
-	var run *exec.Cmd
-
-	run = exec.Command("sudo", "almost", "enter", "rw")
+	run := exec.Command("sudo", "almost", "enter", "rw")
 	out, err := run.Output()
 
 	return string(out), err
 }
 
 func AlmostEnterRo() (string, error) {
-	var run *exec.Cmd
-
-	run = exec.Command("sudo", "almost", "enter", "ro")
+	run := exec.Command("sudo", "almost", "enter", "ro")
 	out, err := run.Output()
 
 	return string(out), err
