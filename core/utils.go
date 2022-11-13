@@ -36,3 +36,13 @@ func RootCheck(display bool) bool {
 	}
 	return true
 }
+
+func AskConfirmation(s string) bool {
+	var response string
+	fmt.Print(s + " [y/N]: ")
+	fmt.Scanln(&response)
+	if response == "y" || response == "Y" {
+		return true
+	}
+	return false
+}

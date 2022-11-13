@@ -65,6 +65,21 @@ func install(cmd *cobra.Command, args []string) error {
 	command = append(command, args...)
 
 	if sys {
+		if cmd.Flag("assume-yes").Value.String() != "true" && !core.AskConfirmation(`
+----------------------
+CONFIRMATION REQUIRED!
+----------------------
+Are you sure you want to perform this action in the host system?
+
+Installing packages in the host system may consist of a security risk. Ommit
+the --sys flag if you don't strictly need to install packages in the host
+system or if you are not sure what you are doing.. Neither Vanilla OS nor the 
+hardware manufacturer will be responsible for any data loss caused by doing 
+this.
+
+This command is intended to be used only by advanced users.`) {
+			return nil
+		}
 		log.Default().Println("Performing operations on the host system.")
 		core.AlmostRun(false, command...)
 		return nil
