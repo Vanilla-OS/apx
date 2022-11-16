@@ -1,0 +1,25 @@
+Uso:
+apx [opções] [comando] [argumentos]
+
+Opções:
+  -h, --help    Mostrar esta mensagem de ajuda e fecha
+  -v, --version Mostrar a versão e fecha
+  --sys         Execute operações no sistema em vez do contêiner gerenciado
+
+Commands:
+    autoremove  Remova automaticamente todos os pacotes não utilizados
+    clean       Limpe o cache do apt
+    enter       Entra no container
+    help        Mostrar esta mensagem de ajuda e fecha
+    init        Inicializa o contêiner
+    install     Instalar pacote
+    list        Listar pacotes com base nos nomes dos pacotes
+    log         Exibe logs
+    purge       Limpa pacote
+    run         Execute um comando dentro do contêiner
+    remove      Remove pacote
+    search      Pesquise nas descrições dos pacotes
+    show        Mostrar detalhes do pacote
+    update      Atualizar lista de pacotes disponíveis
+    upgrade     Atualize o sistema instalando/atualizando pacotes
+    version     Mostrar versão e fecha
