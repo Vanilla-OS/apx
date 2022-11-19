@@ -62,6 +62,8 @@ func GetContainerImage(container string) (image string, err error) {
 		return GetHostImage()
 	case "aur":
 		return "docker.io/library/archlinux", nil
+	case "dnf":
+		return "docker.io/library/fedora", nil
 	default:
 		image = ""
 		err = errors.New("Can't retrieve image for unknown container")
@@ -76,6 +78,9 @@ func GetContainerName(container string) (name string) {
 		return name
 	case "aur":
 		name := "apx_managed_aur"
+		return name
+	case "dnf":
+		name := "apx_managed_dnf"
 		return name
 	default:
 		panic("Unknown container not supported")

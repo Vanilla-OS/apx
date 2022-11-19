@@ -43,10 +43,13 @@ func NewAutoRemoveCommand() *cobra.Command {
 func autoRemove(cmd *cobra.Command, args []string) error {
 	sys := cmd.Flag("sys").Value.String() == "true"
 	aur := cmd.Flag("aur").Value.String() == "true"
+	dnf := cmd.Flag("dnf").Value.String() == "true"
 
 	container := "default"
 	if aur {
 		container = "aur"
+	} else if dnf {
+		container = "dnf"
 	}
 
 	command := append([]string{}, core.GetPkgCommand(sys, container, "autoremove")...)

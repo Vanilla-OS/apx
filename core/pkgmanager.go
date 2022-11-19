@@ -38,6 +38,8 @@ func GetPkgCommand(sys bool, container string, command string) []string {
 	switch container {
 	case "aur":
 		return GetAurPkgCommand(command)
+	case "dnf":
+		return GetDnfPkgCommand(command)
 	case "default":
 		return GetDefaultPkgCommand(sys, command)
 	default:
@@ -50,34 +52,24 @@ func GetDefaultPkgCommand(sys bool, command string) []string {
 	switch command {
 	case "autoremove":
 		res = append(res, settings.Cnf.PkgManager.CmdAutoremove)
-		break
 	case "clean":
 		res = append(res, settings.Cnf.PkgManager.CmdClean)
-		break
 	case "install":
 		res = append(res, settings.Cnf.PkgManager.CmdInstall)
-		break
 	case "list":
 		res = append(res, settings.Cnf.PkgManager.CmdList)
-		break
 	case "purge":
 		res = append(res, settings.Cnf.PkgManager.CmdPurge)
-		break
 	case "remove":
 		res = append(res, settings.Cnf.PkgManager.CmdRemove)
-		break
 	case "search":
 		res = append(res, settings.Cnf.PkgManager.CmdSearch)
-		break
 	case "show":
 		res = append(res, settings.Cnf.PkgManager.CmdShow)
-		break
 	case "update":
 		res = append(res, settings.Cnf.PkgManager.CmdUpdate)
-		break
 	case "upgrade":
 		res = append(res, settings.Cnf.PkgManager.CmdUpgrade)
-		break
 	default:
 		return nil
 	}
@@ -116,6 +108,35 @@ func GetAurPkgCommand(command string) []string {
 		return []string{
 			"bash", "-c", "cd ~/.local/src/yay  && tar -xvf yay.tar.gz && cd yay_*_x86_64* && sudo cp yay /usr/bin",
 		}
+	default:
+		return nil
+	}
+}
+
+func GetDnfPkgCommand(command string) []string {
+	bin := "dnf"
+
+	switch command {
+	case "autoremove":
+		return []string{"sudo", bin, "autoremove"}
+	case "clean":
+		return []string{"sudo", bin, "clean"}
+	case "install":
+		return []string{"sudo", bin, "install"}
+	case "list":
+		return []string{"sudo", bin, "list"}
+	case "purge":
+		return []string{"sudo", bin, "remove"}
+	case "remove":
+		return []string{"sudo", bin, "remove"}
+	case "search":
+		return []string{"sudo", bin, "search"}
+	case "show":
+		return []string{"sudo", bin, "info"}
+	case "update":
+		return []string{"sudo", bin, "upgrade", "--refresh"}
+	case "upgrade":
+		return []string{"sudo", bin, "upgrade"}
 	default:
 		return nil
 	}

@@ -44,10 +44,13 @@ func NewInitializeCommand() *cobra.Command {
 
 func initialize(cmd *cobra.Command, args []string) error {
 	aur := cmd.Flag("aur").Value.String() == "true"
+	dnf := cmd.Flag("dnf").Value.String() == "true"
 
 	container := "default"
 	if aur {
 		container = "aur"
+	} else if dnf {
+		container = "dnf"
 	}
 
 	if core.ContainerExists(container) {

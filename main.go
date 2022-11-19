@@ -35,6 +35,7 @@ Options:
 	-v, --version Show version and exit
 	--sys         Perform operations on the system instead of the managed container
 	--aur	    Install packages from the AUR repository
+	--dnf	    Install packages from the Fedora repository
 
 Commands:
 	autoremove  Remove automatically all unused packages
@@ -67,6 +68,7 @@ func main() {
 	rootCmd := newApxCommand()
 	rootCmd.PersistentFlags().Bool("sys", false, "Perform operations on the system host rather than in the container.")
 	rootCmd.PersistentFlags().Bool("aur", false, "Install packages from the AUR repository.")
+	rootCmd.PersistentFlags().Bool("dnf", false, "Install packages from the Fedora repository.")
 
 	rootCmd.AddCommand(cmd.NewInitializeCommand())
 	rootCmd.AddCommand(cmd.NewAutoRemoveCommand())
