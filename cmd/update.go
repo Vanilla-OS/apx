@@ -11,7 +11,6 @@ package cmd
 
 import (
 	"fmt"
-	"log"
 
 	"github.com/spf13/cobra"
 	"github.com/vanilla-os/apx/core"
@@ -42,7 +41,6 @@ func NewUpdateCommand() *cobra.Command {
 }
 
 func update(cmd *cobra.Command, args []string) error {
-	sys := cmd.Flag("sys").Value.String() == "true"
 	aur := cmd.Flag("aur").Value.String() == "true"
 	dnf := cmd.Flag("dnf").Value.String() == "true"
 
@@ -53,17 +51,11 @@ func update(cmd *cobra.Command, args []string) error {
 		container = "dnf"
 	}
 
-	command := append([]string{}, core.GetPkgCommand(sys, container, "update")...)
+	command := append([]string{}, core.GetPkgCommand(container, "update")...)
 	command = append(command, args...)
 
 	if cmd.Flag("assume-yes").Value.String() == "true" {
 		command = append(command, "-y")
-	}
-
-	if sys {
-		log.Default().Println("Performing operations on the host system.")
-		core.AlmostRun(false, command...)
-		return nil
 	}
 
 	core.RunContainer(container, command...)

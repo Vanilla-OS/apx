@@ -11,7 +11,6 @@ package cmd
 
 import (
 	"fmt"
-	"log"
 
 	"github.com/spf13/cobra"
 	"github.com/vanilla-os/apx/core"
@@ -43,7 +42,6 @@ func NewListCommand() *cobra.Command {
 }
 
 func list(cmd *cobra.Command, args []string) error {
-	sys := cmd.Flag("sys").Value.String() == "true"
 	aur := cmd.Flag("aur").Value.String() == "true"
 	dnf := cmd.Flag("dnf").Value.String() == "true"
 
@@ -54,19 +52,13 @@ func list(cmd *cobra.Command, args []string) error {
 		container = "dnf"
 	}
 
-	command := append([]string{}, core.GetPkgCommand(sys, container, "list")...)
+	command := append([]string{}, core.GetPkgCommand(container, "list")...)
 
 	if cmd.Flag("upgradable").Value.String() == "true" {
 		command = append(command, "--upgradable")
 	}
 
 	command = append(command, args...)
-
-	if sys {
-		log.Default().Println("Performing operations on the host system.")
-		core.AlmostRun(false, command...)
-		return nil
-	}
 
 	core.RunContainer(container, command...)
 

@@ -11,7 +11,6 @@ package cmd
 
 import (
 	"fmt"
-	"log"
 
 	"github.com/spf13/cobra"
 	"github.com/vanilla-os/apx/core"
@@ -45,7 +44,6 @@ func NewInstallCommand() *cobra.Command {
 }
 
 func install(cmd *cobra.Command, args []string) error {
-	sys := cmd.Flag("sys").Value.String() == "true"
 	aur := cmd.Flag("aur").Value.String() == "true"
 	dnf := cmd.Flag("dnf").Value.String() == "true"
 
@@ -56,7 +54,7 @@ func install(cmd *cobra.Command, args []string) error {
 		container = "dnf"
 	}
 
-	command := append([]string{}, core.GetPkgCommand(sys, container, "install")...)
+	command := append([]string{}, core.GetPkgCommand(container, "install")...)
 
 	if cmd.Flag("assume-yes").Value.String() == "true" {
 		command = append(command, "-y")
@@ -66,27 +64,6 @@ func install(cmd *cobra.Command, args []string) error {
 	}
 
 	command = append(command, args...)
-
-	if sys {
-		if cmd.Flag("assume-yes").Value.String() != "true" && !core.AskConfirmation(`
-----------------------
-CONFIRMATION REQUIRED!
-----------------------
-Are you sure you want to perform this action in the host system?
-
-Installing packages in the host system may consist of a security risk. Ommit
-the --sys flag if you don't strictly need to install packages in the host
-system or if you are not sure what you are doing.. Neither Vanilla OS nor the 
-hardware manufacturer will be responsible for any data loss caused by doing 
-this.
-
-This command is intended to be used only by advanced users.`) {
-			return nil
-		}
-		log.Default().Println("Performing operations on the host system.")
-		core.AlmostRun(false, command...)
-		return nil
-	}
 
 	err := core.RunContainer(container, command...)
 	if err != nil {

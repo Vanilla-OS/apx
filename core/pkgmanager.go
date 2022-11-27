@@ -11,18 +11,8 @@ import (
 	"github.com/vanilla-os/apx/settings"
 )
 
-func GetPkgManager(sys bool) []string {
+func GetPkgManager() []string {
 	sudo := settings.Cnf.PkgManager.Sudo
-
-	if sys {
-		bin := settings.Cnf.PkgManager.Bin
-
-		if sudo {
-			return []string{"sudo", bin}
-		}
-		return []string{bin}
-	}
-
 	bin := settings.Cnf.PkgManager.Bin
 
 	if sudo {
@@ -31,24 +21,21 @@ func GetPkgManager(sys bool) []string {
 	return []string{bin}
 }
 
-func GetPkgCommand(sys bool, container string, command string) []string {
-	if sys {
-		container = "default"
-	}
+func GetPkgCommand(container string, command string) []string {
 	switch container {
 	case "aur":
 		return GetAurPkgCommand(command)
 	case "dnf":
 		return GetDnfPkgCommand(command)
 	case "default":
-		return GetDefaultPkgCommand(sys, command)
+		return GetDefaultPkgCommand(command)
 	default:
 		return nil
 	}
 }
 
-func GetDefaultPkgCommand(sys bool, command string) []string {
-	res := GetPkgManager(sys)
+func GetDefaultPkgCommand(command string) []string {
+	res := GetPkgManager()
 	switch command {
 	case "autoremove":
 		res = append(res, settings.Cnf.PkgManager.CmdAutoremove)
