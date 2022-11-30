@@ -4,7 +4,6 @@ apx [options] [command] [arguments]
 Options:
   -h, --help    Show this help message and exit
   -v, --version Show version and exit
-  --sys         Perform operations on the system instead of the managed container
 
 Commands:
     autoremove  Remove automatically all unused packages

@@ -15,7 +15,6 @@ Usage: apx [options] [command] [arguments]
 Options:
   -h, --help    Show this help message and exit
   -v, --version Show version and exit
-  --sys         Perform operations on the system instead of the managed container
   --aur         Install packages from the AUR repository
   --dnf         Install packages from the Fedora repository
 

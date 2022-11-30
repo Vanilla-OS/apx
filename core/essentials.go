@@ -100,7 +100,7 @@ func IsVM() bool {
 
 func ExitIfVM() {
 	if IsVM() {
-		log.Default().Printf("You are running apx inside a virtual machine. Only `apx --sys` is supported.")
+		log.Default().Printf("Apx does not work inside a VM.")
 		os.Exit(1)
 	}
 }
