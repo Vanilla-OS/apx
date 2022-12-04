@@ -66,7 +66,7 @@ func GetContainerImage(container string) (image string, err error) {
 		return "docker.io/library/fedora", nil
 	default:
 		image = ""
-		err = errors.New("Can't retrieve image for unknown container")
+		err = errors.New("can't retrieve image for unknown container")
 	}
 	return image, err
 }
@@ -151,9 +151,9 @@ func EnterContainer(container string) error {
 func CreateContainer(container string) error {
 	ExitIfVM()
 
-	if CheckConnection() == false {
+	if !CheckConnection() {
 		log.Default().Println("No internet connection. Please connect to the internet and try again.")
-		return errors.New("Failed to create container.")
+		return errors.New("failed to create container")
 	}
 
 	container_image, err := GetContainerImage(container)
@@ -309,8 +309,12 @@ func ContainerExists(container string) bool {
 	container_name := GetContainerName(container)
 	manager := ContainerManager()
 
-	cmd := exec.Command(manager, "ps", "-a", "-q", "-f", "name="+container_name)
+	cmd := exec.Command(manager, "ps", "-a", "-q", "-f", "name="+container_name+"$")
 	output, _ := cmd.Output()
+
+	// fmt.Println("container_name: ", container_name)
+	// fmt.Println("command: ", cmd.String())
+	// fmt.Println("output: ", string(output))
 
 	return len(output) > 0
 }
