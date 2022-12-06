@@ -137,11 +137,14 @@ func EnterContainer(container string) error {
 	cmd := exec.Command("/usr/lib/apx/distrobox", "enter", container_name)
 	cmd.Env = os.Environ()
 	cmd.Stdout = os.Stdout
-	cmd.Stderr = os.Stderr
+	cmd.Stderr = ioutil.Discard
 	cmd.Stdin = os.Stdin
 
 	err := cmd.Run()
 	if err != nil {
+		if err.Error() != "exit status 130" {
+			return err
+		}
 		panic(err)
 	}
 
