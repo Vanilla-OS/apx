@@ -5,8 +5,8 @@ package cmd
 		Mirko Brombin <send@mirko.pm>
 		Pietro di Caprio <pietro@fabricators.ltd>
 	Copyright: 2022
-	Description: Apx is a wrapper around apt to make it works inside a container
-	from outside, directly on the host.
+	Description: Apx is a wrapper around apt to make it work inside a container
+	with support to installing packages from multiple sources without altering the root filesystem.
 */
 
 import (
@@ -18,13 +18,17 @@ import (
 
 func purgeUsage(*cobra.Command) error {
 	fmt.Print(`Description: 
-Purge packages.
+Purge packages inside a managed container.
 
 Usage:
   apx purge <packages>
+  apx --aur purge <packages>
+  apx --dnf purge <packages>
 
 Examples:
   apx purge htop
+  apx --aur purge htop
+  apx --dnf purge htop
 `)
 	return nil
 }
@@ -32,7 +36,7 @@ Examples:
 func NewPurgeCommand() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "purge",
-		Short: "Purge packages.",
+		Short: "Purge packages inside a managed container",
 		RunE:  purge,
 	}
 	cmd.SetUsageFunc(purgeUsage)

@@ -5,8 +5,8 @@ package cmd
 		Mirko Brombin <send@mirko.pm>
 		Pietro di Caprio <pietro@fabricators.ltd>
 	Copyright: 2022
-	Description: Apx is a wrapper around apt to make it works inside a container
-	from outside, directly on the host.
+	Description: Apx is a wrapper around apt to make it work inside a container
+	with support to installing packages from multiple sources without altering the root filesystem.
 */
 
 import (
@@ -18,13 +18,17 @@ import (
 
 func runUsage(*cobra.Command) error {
 	fmt.Print(`Description: 
-Run a program inside the container.
+Run a program inside a managed container.
 
 Usage:
   apx run <program>
+  apx --aur run <program>
+  apx --dnf run <program>
 
 Examples:
   apx run htop
+  apx --aur run neofetch
+  apx --dnf run firefox
 `)
 	return nil
 }
@@ -32,7 +36,7 @@ Examples:
 func NewRunCommand() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "run",
-		Short: "Run a program inside the container.",
+		Short: "Run a program inside a managed container.",
 		RunE:  run,
 	}
 	cmd.SetUsageFunc(runUsage)

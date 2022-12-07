@@ -5,8 +5,8 @@ package cmd
 		Mirko Brombin <send@mirko.pm>
 		Pietro di Caprio <pietro@fabricators.ltd>
 	Copyright: 2022
-	Description: Apx is a wrapper around apt to make it works inside a container
-	from outside, directly on the host.
+	Description: Apx is a wrapper around apt to make it work inside a container
+	with support to installing packages from multiple sources without altering the root filesystem.
 */
 
 import (
@@ -23,9 +23,8 @@ Enter in the container shell.
 
 Usage:
   apx enter
-
-Examples:
-  apx enter
+  apx --aur enter
+  apx --dnf enter
 `)
 	return nil
 }
