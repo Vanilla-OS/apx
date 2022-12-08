@@ -5,8 +5,7 @@ package cmd
 		Mirko Brombin <send@mirko.pm>
 		Pietro di Caprio <pietro@fabricators.ltd>
 	Copyright: 2022
-	Description: Apx is a wrapper around apt to make it works inside a container
-	from outside, directly on the host.
+	Description: Apx is a wrapper around multiple package managers to install packages and run commands inside a managed container.
 */
 
 import (
@@ -24,9 +23,6 @@ func initializeUsage(*cobra.Command) error {
 Initialize the managed container.
 
 Usage:
-  apx init
-
-Examples:
   apx init
 `)
 	return nil
@@ -55,7 +51,7 @@ func initialize(cmd *cobra.Command, args []string) error {
 
 	if core.ContainerExists(container) {
 		log.Default().Printf(`Container already exists. Do you want to re-initialize it?\ 
-This operation will remove everything, of course your files as well. [y/N] `)
+This operation will remove everything, including your files in the container. [y/N] `)
 
 		var proceed string
 		fmt.Scanln(&proceed)

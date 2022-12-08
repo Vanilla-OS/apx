@@ -5,8 +5,7 @@ package cmd
 		Mirko Brombin <send@mirko.pm>
 		Pietro di Caprio <pietro@fabricators.ltd>
 	Copyright: 2022
-	Description: Apx is a wrapper around apt to make it works inside a container
-	from outside, directly on the host.
+	Description: Apx is a wrapper around multiple package managers to install packages and run commands inside a managed container.
 */
 
 import (
@@ -18,13 +17,17 @@ import (
 
 func cleanUsage(*cobra.Command) error {
 	fmt.Print(`Description: 
-Clean the package manager cache.
+Clean the apx package manager cache.
 
 Usage:
   apx clean
+  apx --aur clean
+  apx --dnf clean <arguments>
 
 Examples:
   apx clean
+  apx --aur clean
+  apx --dnf clean all
 `)
 	return nil
 }
@@ -32,7 +35,7 @@ Examples:
 func NewCleanCommand() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "clean",
-		Short: "Clean the package manager cache",
+		Short: "Clean the apx package manager cache",
 		RunE:  clean,
 	}
 	cmd.SetUsageFunc(cleanUsage)

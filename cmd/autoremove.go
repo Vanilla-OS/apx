@@ -5,8 +5,7 @@ package cmd
 		Mirko Brombin <send@mirko.pm>
 		Pietro di Caprio <pietro@fabricators.ltd>
 	Copyright: 2022
-	Description: Apx is a wrapper around apt to make it works inside a container
-	from outside, directly on the host.
+	Description: Apx is a wrapper around multiple package managers to install packages and run commands inside a managed container.
 */
 
 import (
@@ -18,13 +17,12 @@ import (
 
 func autoRemoveUsage(*cobra.Command) error {
 	fmt.Print(`Description: 
-Remove automatically all unused packages.
+Remove all unused packages automatically.
 
 Usage:
   apx autoremove
-
-Examples:
-  apx autoremove
+  apx --aur autoremove
+  apx --dnf autoremove
 `)
 	return nil
 }
@@ -32,7 +30,7 @@ Examples:
 func NewAutoRemoveCommand() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "autoremove",
-		Short: "Remove automatically all unused packages",
+		Short: "Remove all unused packages automatically",
 		RunE:  autoRemove,
 	}
 	cmd.SetUsageFunc(autoRemoveUsage)

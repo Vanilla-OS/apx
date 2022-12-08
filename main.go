@@ -5,8 +5,7 @@ package main
 		Mirko Brombin <send@mirko.pm>
 		Pietro di Caprio <pietro@fabricators.ltd>
 	Copyright: 2022
-	Description: Apx is a wrapper around apt to make it works inside a container
-	from outside, directly on the host.
+	Description: Apx is a wrapper around multiple package managers to install packages and run commands inside a managed container.
 */
 
 import (
@@ -37,36 +36,38 @@ Options:
 	--dnf	    Install packages from the Fedora repository
 
 Commands:
-	autoremove  Remove automatically all unused packages
-	clean       Clean the apt cache
-	enter       Enter the container
-	help        Show this help message and exit
-	init        Initialize the container
-	install     Install packages
-	list        List packages based on package names
-	log         Show logs
-	purge       Purge packages
-	run         Run a command inside the container
-	remove      Remove packages
-	search      Search in package descriptions
-	show        Show package details
-	update      Update list of available packages
-	upgrade     Upgrade the system by installing/upgrading packages
-	version     Show version and exit`)
+        autoremove  Remove all unused packages automatically
+        clean       Clean the apx package manager cache
+        enter       Enter in the container shell
+        export      Export/Recreate a program's desktop entry from a managed container
+        help        Show this help message and exit
+        init        Initialize the managed container
+        install     Install packages inside a managed container
+        list        List installed packages
+        log         Show logs
+        purge       Purge packages inside a managed container
+        run         Run a command inside a managed container
+        remove      Remove packages inside a managed container
+        search      Search for packages in a managed container
+        show        Show details about a package
+        unexport    Unexport/Remove a program's desktop entry from a managed container
+        update      Update the list of available packages
+        upgrade     Upgrade the system by installing/upgrading available packages
+        version     Show version and exit`)
 }
 
 func newApxCommand() *cobra.Command {
 	return &cobra.Command{
 		Use:     "apx",
-		Short:   "Apx is a package manager around apt which allows you to install packages in a container or host system.",
+		Short:   "Apx is a package manager with support for multiple sources allowing you to install packages in a managed container.",
 		Version: Version,
 	}
 }
 
 func main() {
 	rootCmd := newApxCommand()
-	rootCmd.PersistentFlags().Bool("aur", false, "Install packages from the AUR repository.")
-	rootCmd.PersistentFlags().Bool("dnf", false, "Install packages from the Fedora repository.")
+	rootCmd.PersistentFlags().Bool("aur", false, "Install packages from the AUR (Arch User Repository).")
+	rootCmd.PersistentFlags().Bool("dnf", false, "Install packages from the Fedora's DNF (Dandified YUM) repository.")
 
 	rootCmd.AddCommand(cmd.NewInitializeCommand())
 	rootCmd.AddCommand(cmd.NewAutoRemoveCommand())

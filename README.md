@@ -1,7 +1,7 @@
 <div align="center">
   <img src="apx-logo.png" height="120">
   <h1 align="center">apx</h1>
-  <p align="center">Apx is the default package manager in Vanilla OS. It installs packages inside a managed container by default but can be used to install packages in the host as well.</p>
+  <p align="center">Apx is the default package manager in Vanilla OS. It is a wrapper around multiple package managers to install packages and run commands inside a managed container.</p>
   <small>Special thanks to <a href="https://github.com/89luca89/distrobox">distrobox</a> for making this possible.</small>
 </div>
 
@@ -19,21 +19,23 @@ Options:
   --dnf         Install packages from the Fedora repository
 
 Commands:
-    autoremove  Remove automatically all unused packages
-    clean       Clean the apt cache
-    enter       Enter the container
+    autoremove  Remove all unused packages automatically
+    clean       Clean the apx package manager cache
+    enter       Enter in the container shell
+    export      Export/Recreate a program's desktop entry from a managed container
     help        Show this help message and exit
-    init        Initialize the container
-    install     Install packages
-    list        List packages based on package names
+    init        Initialize the managed container
+    install     Install packages inside a managed container
+    list        List installed packages
     log         Show logs
-    purge       Purge packages
-    run         Run a command inside the container
-    remove      Remove packages
-    search      Search in package descriptions
-    show        Show package details
-    update      Update list of available packages
-    upgrade     Upgrade the system by installing/upgrading packages
+    purge       Purge packages inside a managed container
+    run         Run a command inside a managed container
+    remove      Remove packages inside a managed container
+    search      Search for packages in a managed container
+    show        Show details about a package
+    unexport    Unexport/Remove a program's desktop entry from a managed container
+    update      Update the list of available packages
+    upgrade     Upgrade the system by installing/upgrading available packages
     version     Show version and exit
 ```
 

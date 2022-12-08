@@ -5,8 +5,7 @@ package cmd
 		Mirko Brombin <send@mirko.pm>
 		Pietro di Caprio <pietro@fabricators.ltd>
 	Copyright: 2022
-	Description: Apx is a wrapper around apt to make it works inside a container
-	from outside, directly on the host.
+	Description: Apx is a wrapper around multiple package managers to install packages and run commands inside a managed container.
 */
 
 import (
@@ -18,13 +17,17 @@ import (
 
 func unexportUsage(*cobra.Command) error {
 	fmt.Print(`Description: 
-Unexport a program from the container.
+Unexport/Remove a program's desktop entry from a managed container.
 
 Usage:
   apx unexport <program>
+  apx unexport --aur <program>
+  apx unexport --dnf <program>
 
 Examples:
-  apx unexport <program>
+  apx unexport htop
+  apx unexport --aur htop
+  apx unexport --dnf htop
 `)
 	return nil
 }
@@ -32,7 +35,7 @@ Examples:
 func NewUnexportCommand() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "unexport",
-		Short: "Export a program from the container.",
+		Short: "Unexport/Remove a program's desktop entry from a managed container",
 		RunE:  unexport,
 	}
 	cmd.SetUsageFunc(unexportUsage)
