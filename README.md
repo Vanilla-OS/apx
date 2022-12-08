@@ -19,21 +19,21 @@ Options:
   --dnf         Install packages from the Fedora repository
 
 Commands:
-    autoremove  Remove all unused packages automatically
+    autoremove  Remove all unused packages
     clean       Clean the apx package manager cache
-    enter       Enter in the container shell
+    enter       Enter the container's shell
     export      Export/Recreate a program's desktop entry from a managed container
     help        Show this help message and exit
-    init        Initialize the managed container
-    install     Install packages inside a managed container
+    init        Initialize a managed container
+    install     Install packages inside the container
     list        List installed packages
     log         Show logs
-    purge       Purge packages inside a managed container
-    run         Run a command inside a managed container
-    remove      Remove packages inside a managed container
-    search      Search for packages in a managed container
+    purge       Purge packages from the container
+    run         Run a command inside the container
+    remove      Remove packages from the container
+    search      Search for packages
     show        Show details about a package
-    unexport    Unexport/Remove a program's desktop entry from a managed container
+    unexport    Unexport/Remove a program's desktop entry
     update      Update the list of available packages
     upgrade     Upgrade the system by installing/upgrading available packages
     version     Show version and exit
