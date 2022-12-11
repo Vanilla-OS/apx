@@ -1,4 +1,10 @@
-apx (1.2.4) kinetic; urgency=medium
+apx (1.2.5) kinetic; urgency=medium
+
+  * Support for sideloading packages (--sideload)
+
+ -- Mirko brombin <send@mirko.pm>  Sun, 11 Dec 2022 09:10:03 +0200
+ 
+ apx (1.2.4) kinetic; urgency=medium
 
   * First Release
 
