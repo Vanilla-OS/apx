@@ -17,12 +17,16 @@ import (
 
 func upgrasdeUsage(*cobra.Command) error {
 	fmt.Print(`Description: 
-Upgrade the system by installing/upgrading available packages.
+	Upgrade the system by installing/upgrading available packages.
 
 Usage:
+  apx upgrade [options]
+  
+Options:
+  -h, --help            Show this help message and exit
+
+Examples:
   apx upgrade
-  apx --aur upgrade
-  apx --dnf upgrade
 `)
 	return nil
 }

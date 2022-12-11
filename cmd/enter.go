@@ -18,12 +18,13 @@ import (
 
 func enterUsage(*cobra.Command) error {
 	fmt.Print(`Description: 
-Enter in the container shell.
+	Enter in the container shell.
 
 Usage:
-  apx enter
-  apx --aur enter
-  apx --dnf enter
+  apx enter [options]
+
+Options:
+  -h, --help            Show this help message and exit
 `)
 	return nil
 }

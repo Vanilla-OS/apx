@@ -17,17 +17,16 @@ import (
 
 func purgeUsage(*cobra.Command) error {
 	fmt.Print(`Description: 
-Purge packages inside a managed container.
+	Purge packages inside a managed container.
 
 Usage:
-  apx purge <packages>
-  apx --aur purge <packages>
-  apx --dnf purge <packages>
+  apx purge <packages> [options]
+
+Options:
+  -h, --help            Show this help message and exit
 
 Examples:
   apx purge htop
-  apx --aur purge htop
-  apx --dnf purge htop
 `)
 	return nil
 }

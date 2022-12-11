@@ -17,17 +17,16 @@ import (
 
 func showUsage(*cobra.Command) error {
 	fmt.Print(`Description: 
-Show details about a package.
+	Show details about a package.
 
 Usage:
-  apx show <package>
-  apx --aur show <package>
-  apx --dnf show <package>
+  apx show <package> [options]
+
+Options:
+  -h, --help            Show this help message and exit
 
 Examples:
   apx show htop
-  apx --aur show htop
-  apx --dnf show htop
   
 `)
 	return nil

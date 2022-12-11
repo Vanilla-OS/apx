@@ -17,17 +17,16 @@ import (
 
 func removeUsage(*cobra.Command) error {
 	fmt.Print(`Description: 
-Remove packages inside a managed container.
+	Remove packages inside a managed container.
 
 Usage:
-  apx remove <packages>
-  apx remove --aur <packages>
-  apx remove --dnf <packages>
+  apx remove <packages> [options]
+
+Options:
+  -h, --help            Show this help message and exit
 
 Examples:
   apx remove htop
-  apx --aur remove htop
-  apx --dnf remove htop
 `)
 	return nil
 }

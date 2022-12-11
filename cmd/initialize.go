@@ -20,10 +20,13 @@ import (
 
 func initializeUsage(*cobra.Command) error {
 	fmt.Print(`Description: 
-Initialize the managed container.
+	Initialize the managed container.
 
 Usage:
-  apx init
+  apx init [options]
+
+Options:
+  -h, --help            Show this help message and exit
 `)
 	return nil
 }

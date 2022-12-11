@@ -32,8 +32,6 @@ Options:
 Examples:
   apx install htop git
   apx install --sideload /path/to/file.deb
-  apx --aur install htop
-  apx --dnf install htop
 `)
 	return nil
 }

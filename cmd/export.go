@@ -17,17 +17,16 @@ import (
 
 func exportUsage(*cobra.Command) error {
 	fmt.Print(`Description: 
-Export/Recreate a program's desktop entry from a managed container.
+	Export/Recreate a program's desktop entry from a managed container.
 
 Usage:
-  apx export <program>
-  apx export --aur <program>
-  apx export --dnf <program>
+  apx export <program> [options]
+
+Options:
+  -h, --help            Show this help message and exit
 
 Examples:
   apx export htop
-  apx export --aur htop
-  apx export --dnf firefox
 `)
 	return nil
 }

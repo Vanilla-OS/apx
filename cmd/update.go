@@ -17,12 +17,16 @@ import (
 
 func updateUsage(*cobra.Command) error {
 	fmt.Print(`Description: 
-Update the list of available packages.
+	Update the list of available packages.
 
 Usage:
+  apx update [options]
+
+Options:
+  -h, --help            Show this help message and exit
+
+Examples:
   apx update
-  apx --aur update
-  apx --dnf update
 `)
 	return nil
 }

@@ -17,17 +17,16 @@ import (
 
 func cleanUsage(*cobra.Command) error {
 	fmt.Print(`Description: 
-Clean the apx package manager cache.
+	Clean the apx package manager cache.
 
 Usage:
-  apx clean
-  apx --aur clean
-  apx --dnf clean <arguments>
+  apx clean [options]
+
+Options:
+  -h, --help            Show this help message and exit
 
 Examples:
   apx clean
-  apx --aur clean
-  apx --dnf clean all
 `)
 	return nil
 }

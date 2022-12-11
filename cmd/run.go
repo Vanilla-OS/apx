@@ -17,17 +17,16 @@ import (
 
 func runUsage(*cobra.Command) error {
 	fmt.Print(`Description: 
-Run a program inside a managed container.
+	Run a program inside a managed container.
 
 Usage:
-  apx run <program>
-  apx --aur run <program>
-  apx --dnf run <program>
+  apx run <program> [options]
+
+Options:
+  -h, --help            Show this help message and exit
 
 Examples:
   apx run htop
-  apx --aur run neofetch
-  apx --dnf run firefox
 `)
 	return nil
 }

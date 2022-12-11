@@ -17,17 +17,16 @@ import (
 
 func searchUsage(*cobra.Command) error {
 	fmt.Print(`Description: 
-Search for packages in a managed container.
+	Search for packages in a managed container.
 
 Usage:
-  apx search <packages>
-  apx --aur search <packages>
-  apx --dnf search <packages>
+  apx search <packages> [options]
+
+Options:
+  -h, --help            Show this help message and exit
 
 Examples:
   apx search htop
-  apx --aur search htop
-  apx --dnf search dnf
 `)
 	return nil
 }

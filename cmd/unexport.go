@@ -17,17 +17,16 @@ import (
 
 func unexportUsage(*cobra.Command) error {
 	fmt.Print(`Description: 
-Unexport/Remove a program's desktop entry from a managed container.
+	Unexport/Remove a program's desktop entry from a managed container.
 
 Usage:
-  apx unexport <program>
-  apx unexport --aur <program>
-  apx unexport --dnf <program>
+  apx unexport <program> [options]
+
+Options:
+  -h, --help            Show this help message and exit
 
 Examples:
   apx unexport htop
-  apx unexport --aur htop
-  apx unexport --dnf htop
 `)
 	return nil
 }

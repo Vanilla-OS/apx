@@ -17,12 +17,13 @@ import (
 
 func listUsage(*cobra.Command) error {
 	fmt.Print(`Description: 
-List installed packages.
+	List installed packages.
 
 Usage:
-  apx list
-  apx --aur list
-  apx --dnf list
+  apx list [options]
+
+Options:
+  -h, --help            Show this help message and exit
 `)
 	return nil
 }

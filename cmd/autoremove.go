@@ -17,12 +17,15 @@ import (
 
 func autoRemoveUsage(*cobra.Command) error {
 	fmt.Print(`Description: 
-Remove all unused packages automatically.
+	Remove all unused packages automatically.
+Usage:
+  apx autoremove [options]
+
+Options:
+  -h, --help            Show this help message and exit
 
 Usage:
   apx autoremove
-  apx --aur autoremove
-  apx --dnf autoremove
 `)
 	return nil
 }
