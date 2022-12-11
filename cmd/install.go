@@ -97,8 +97,10 @@ func install(cmd *cobra.Command, args []string) error {
 		return nil
 	}
 
-	for _, pkg := range args {
-		core.ExportDesktopEntry(container, pkg)
+	if !sideload {
+		for _, pkg := range args {
+			core.ExportDesktopEntry(container, pkg)
+		}
 	}
 
 	return nil
