@@ -137,7 +137,7 @@ func EnterContainer(container string) error {
 	cmd := exec.Command("/usr/lib/apx/distrobox", "enter", container_name)
 	cmd.Env = os.Environ()
 	cmd.Stdout = os.Stdout
-	cmd.Stderr = ioutil.Discard
+	cmd.Stderr = os.Stderr
 	cmd.Stdin = os.Stdin
 
 	err := cmd.Run()
@@ -251,26 +251,8 @@ func RemoveContainer(container string) error {
 	return err
 }
 
-func ExportDesktopEntry(container string, program string) error {
-	spinner := spinner.New(spinner.CharSets[11], 100*time.Millisecond)
-	spinner.Suffix = fmt.Sprintf("Exporting desktop entry: %v\n", program)
-
-	spinner.Start()
-
-	err := RunContainer(
-		container,
-		"distrobox-export", "--app", program,
-		"--export-label", "◆", ">", "/dev/null")
-
-	spinner.Stop()
-
-	if err != nil {
-		fmt.Printf("No desktop entry found for %v, nothing to export.\n", program)
-		return err
-	}
-
-	log.Default().Printf("Desktop entry exported for %v\n", program)
-	return nil
+func ExportDesktopEntry(container string, program string) {
+	RunContainer(container, "sh", "-c", "distrobox-export --app "+program+" 2>/dev/null || true")
 }
 
 func RemoveDesktopEntry(container string, program string) error {

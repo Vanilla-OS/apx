@@ -52,5 +52,6 @@ func export(cmd *cobra.Command, args []string) error {
 		container = "dnf"
 	}
 
-	return core.ExportDesktopEntry(container, args[0])
+	core.ExportDesktopEntry(container, args[0])
+	return nil
 }
