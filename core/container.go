@@ -145,7 +145,6 @@ func EnterContainer(container string) error {
 		if err.Error() != "exit status 130" {
 			return err
 		}
-		panic(err)
 	}
 
 	return nil

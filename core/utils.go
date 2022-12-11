@@ -3,6 +3,7 @@ package core
 import (
 	"fmt"
 	"os"
+	"os/user"
 	"path/filepath"
 )
 
@@ -45,4 +46,26 @@ func AskConfirmation(s string) bool {
 		return true
 	}
 	return false
+}
+
+func MoveToUserTemp(path string) (string, error) {
+	user, err := user.Current()
+	if err != nil {
+		return "", err
+	}
+
+	cacheDir := filepath.Join(user.HomeDir, ".cache", "apx")
+	if _, err := os.Stat(cacheDir); os.IsNotExist(err) {
+		if err := os.MkdirAll(cacheDir, 0755); err != nil {
+			return "", err
+		}
+	}
+
+	fileName := filepath.Base(path)
+	newPath := filepath.Join(cacheDir, fileName)
+	if err := os.Rename(path, newPath); err != nil {
+		return "", err
+	}
+
+	return newPath, nil
 }
