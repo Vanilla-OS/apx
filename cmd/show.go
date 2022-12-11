@@ -27,7 +27,6 @@ Options:
 
 Examples:
   apx show htop
-  
 `)
 	return nil
 }
