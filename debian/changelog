@@ -1,4 +1,11 @@
-apx (1.2.5) kinetic; urgency=medium
+apx (1.2.6) kinetic; urgency=medium
+
+  * Skip export for sideloaded packages
+  * Mute export logs
+
+ -- Mirko brombin <send@mirko.pm>  Sun, 11 Dec 2022 10:00:03 +0200
+
+ apx (1.2.5) kinetic; urgency=medium
 
   * Support for sideloading packages (--sideload)
 
