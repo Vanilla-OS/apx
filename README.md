@@ -39,6 +39,10 @@ Commands:
     version     Show version and exit
 ```
 
+## Docs
+
+The official **documentation and manpage** for `apx` are available at <https://documentation.vanillaos.org/docs/apx/>.
+
 ## Other distros
 
 > Please consider to keep the project name as `apx` to avoid confusion for users.
