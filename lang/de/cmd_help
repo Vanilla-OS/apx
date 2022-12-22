@@ -1,0 +1,24 @@
+Aufruf:
+apx [Optionen] [Befehl] [Argumente]
+
+Optionen:
+  -h, --help    Hilfe ausgeben und beenden
+  -v, --version Versionsinformation anzeigen und beenden
+
+Befehle:
+    autoremove  Alle nicht genutzten Pakete entfernen
+    clean       Apt-Cache leeren
+    enter       Container betreten
+    help        Hilfe ausgeben und beenden
+    init        Container initialisieren
+    install     Pakete installieren
+    list        Pakete nach Name auflisten
+    log         Logdateien anzeigen
+    purge       Pakete und Konfigurationsdateien entfernen
+    run         Befehl im Container ausführen
+    remove      Pakete entfernen
+    search      In Paketbeschreibungen suchen
+    show        Paketdetails anzeigen
+    update      neue Paketinformationen holen
+    upgrade     Upgrade (Paketaktualisierung) durchführen
+    version     Versionsinformation anzeigen und beenden
