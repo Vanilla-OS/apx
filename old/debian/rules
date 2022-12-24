@@ -1,6 +1,0 @@
-#!/usr/bin/make -f
-
-export NO_PNG_PKG_MANGLE=1
-
-%:
-	dh $@

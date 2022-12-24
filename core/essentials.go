@@ -10,6 +10,7 @@ package core
 */
 
 import (
+	"errors"
 	"fmt"
 	"log"
 	"os"
@@ -32,63 +33,13 @@ func CheckContainerTools() error {
 	podman := exec.Command("which", "podman")
 
 	if distrobox != nil {
-		err := InstallDistrobox()
-		if err != nil {
-			return err
-		}
+		return errors.New(`Distrobox is not installed. Please install it.`)
 	}
 
 	if err := docker.Run(); err != nil {
 		if err := podman.Run(); err != nil {
-			InstallPodman()
+			return errors.New(`No container engine found. Please install Podman or Docker.`)
 		}
-	}
-
-	return nil
-}
-
-func InstallDistrobox() error {
-	log.Default().Printf(`Distrobox (micro-distrobox) is not installed. Would you like to install it now? [y/N]`)
-	var input string
-	_, err := fmt.Scanln(&input)
-
-	if err != nil {
-		return err
-	}
-
-	if input != "y" {
-		log.Default().Printf("Please install micro-distrobox in order to use apx!")
-		os.Exit(1)
-	}
-
-	_, err = AlmostRun(false, "sudo", "apt", "install", "-y", "micro-distrobox")
-	if err != nil {
-		log.Default().Printf("Cannot automatically install distrobox. Please install it manually.")
-		return err
-	}
-
-	return nil
-
-}
-
-func InstallPodman() error {
-	fmt.Println(`Podman is not installed. Would you like to install it now? [y/N]`)
-	var input string
-	_, err := fmt.Scanln(&input)
-
-	if err != nil {
-		return err
-	}
-
-	if input != "y" {
-		log.Default().Printf("Please install Podman in order to user apx!")
-		os.Exit(1)
-	}
-
-	_, err = AlmostRun(false, "sudo", "apt", "install", "-y", "podman")
-	if err != nil {
-		log.Default().Printf("Cannot automatically install podman. Please install it manually.")
-		return err
 	}
 
 	return nil

@@ -1,8 +1,0 @@
-apx /usr/bin
-subcommands /usr/share/apx
-utils/almost /usr/share/apx/utils
-utils/apx_completion /etc/bash_completion.d
-utils/container /usr/share/apx/utils
-utils/logger /usr/share/apx/utils
-utils/pkg_interface /usr/share/apx/utils
-utils/spinner /usr/share/apx/utils
