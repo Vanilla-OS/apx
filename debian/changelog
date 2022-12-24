@@ -1,4 +1,4 @@
-apx (1.2.6) kinetic; urgency=medium
+apx (1.3.0) kinetic; urgency=medium
 
   * Skip export for sideloaded packages
   * Mute export logs
