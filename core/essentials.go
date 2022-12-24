@@ -14,6 +14,7 @@ import (
 	"log"
 	"os"
 	"os/exec"
+	"strings"
 )
 
 func init() {
@@ -101,6 +102,22 @@ func IsVM() bool {
 func ExitIfVM() {
 	if IsVM() {
 		log.Default().Printf("Apx does not work inside a VM.")
+		os.Exit(1)
+	}
+}
+
+func IsOverlayTypeFS() bool {
+	out, err := exec.Command("df", "-T", "/").Output()
+	if err != nil {
+		return false
+	}
+
+	return strings.Contains(string(out), "overlay")
+}
+
+func ExitIfOverlayTypeFS() {
+	if IsOverlayTypeFS() {
+		log.Default().Printf("Apx does not work with overlay type filesystem.")
 		os.Exit(1)
 	}
 }

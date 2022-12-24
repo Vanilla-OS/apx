@@ -102,7 +102,7 @@ func GetDistroboxVersion() (version string, err error) {
 }
 
 func RunContainer(container string, args ...string) error {
-	ExitIfVM()
+	ExitIfOverlayTypeFS()
 
 	if !ContainerExists(container) {
 		err := CreateContainer(container)
@@ -125,7 +125,7 @@ func RunContainer(container string, args ...string) error {
 }
 
 func EnterContainer(container string) error {
-	ExitIfVM()
+	ExitIfOverlayTypeFS()
 
 	if !ContainerExists(container) {
 		log.Default().Printf("Managed container does not exist.\nTry: apx init")
@@ -151,7 +151,7 @@ func EnterContainer(container string) error {
 }
 
 func CreateContainer(container string) error {
-	ExitIfVM()
+	ExitIfOverlayTypeFS()
 
 	if !CheckConnection() {
 		log.Default().Println("No internet connection. Please connect to the internet and try again.")
@@ -201,7 +201,7 @@ func CreateContainer(container string) error {
 }
 
 func StopContainer(container string) error {
-	ExitIfVM()
+	ExitIfOverlayTypeFS()
 
 	container_name := GetContainerName(container)
 	spinner := spinner.New(spinner.CharSets[11], 100*time.Millisecond)
@@ -224,7 +224,7 @@ func StopContainer(container string) error {
 }
 
 func RemoveContainer(container string) error {
-	ExitIfVM()
+	ExitIfOverlayTypeFS()
 
 	container_name := GetContainerName(container)
 	spinner := spinner.New(spinner.CharSets[11], 100*time.Millisecond)
