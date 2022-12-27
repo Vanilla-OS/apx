@@ -1,1 +1,2 @@
 config/config.json /etc/apx/
+man/apx.1 /usr/share/man
