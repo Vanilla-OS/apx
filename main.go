@@ -44,7 +44,6 @@ Commands:
 	init        Initialize a managed container
 	install     Install packages inside the container
 	list        List installed packages
-	log         Show logs
 	purge       Purge packages from the container
 	run         Run a command inside the container
 	remove      Remove packages from the container
