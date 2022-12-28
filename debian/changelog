@@ -1,7 +1,8 @@
-apx (1.3.1) kinetic; urgency=medium
+apx (1.3.2) kinetic; urgency=medium
 
   * Skip export for sideloaded packages
   * Mute export logs
+  * Addition of man page (man apx)
 
  -- Mirko brombin <send@mirko.pm>  Sun, 11 Dec 2022 10:00:03 +0200
 
