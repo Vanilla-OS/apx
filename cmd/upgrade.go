@@ -15,7 +15,7 @@ import (
 	"github.com/vanilla-os/apx/core"
 )
 
-func upgrasdeUsage(*cobra.Command) error {
+func upgradeUsage(*cobra.Command) error {
 	fmt.Print(`Description: 
 	Upgrade the system by installing/upgrading available packages.
 
@@ -37,7 +37,7 @@ func NewUpgradeCommand() *cobra.Command {
 		Short: "Upgrade the system by installing/upgrading available packages.",
 		RunE:  upgrade,
 	}
-	cmd.SetUsageFunc(upgrasdeUsage)
+	cmd.SetUsageFunc(upgradeUsage)
 	cmd.Flags().BoolP("assume-yes", "y", false, "Proceed without manual confirmation.")
 	return cmd
 }
