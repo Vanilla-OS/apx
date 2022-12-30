@@ -24,6 +24,9 @@ Usage:
 
 Options:
   -h, --help            Show this help message and exit
+  -u, --upgradable      Show only upgradable packages
+  -i, --installed       Show only installed packages
+
 `)
 	return nil
 }
@@ -37,6 +40,8 @@ func NewListCommand() *cobra.Command {
 	cmd.SetUsageFunc(listUsage)
 	cmd.Flags().SetInterspersed(false)
 	cmd.Flags().BoolP("upgradable", "u", false, "List only upgradable packages.")
+	cmd.Flags().BoolP("installed", "i", false, "List only installed packages.")
+
 	return cmd
 }
 
@@ -55,6 +60,9 @@ func list(cmd *cobra.Command, args []string) error {
 
 	if cmd.Flag("upgradable").Value.String() == "true" {
 		command = append(command, "--upgradable")
+	}
+	if cmd.Flag("installed").Value.String() == "true" {
+		command = append(command, "--installed")
 	}
 
 	command = append(command, args...)
