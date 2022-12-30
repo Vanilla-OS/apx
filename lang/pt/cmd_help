@@ -1,0 +1,24 @@
+Utilização:
+apx [opções] [comando] [argumentos]
+
+Opções:
+  -h, --help    Mostrar esta mensagem de ajuda e sair
+  -v, --version Mostrar a versão e sair
+
+Comandos:
+    autoremove  Remover automaticamente todos os pacotes não utilizados
+    clean       Limpar o cache do apt
+    enter       Entrar no container
+    help        Mostrar esta mensagem de ajuda e sair
+    init        Inicializar o container
+    install     Instalar pacotes
+    list        Listar pacotes com base nos nomes dos pacotes
+    log         Mostrar registos
+    purge       Purgar pacotes
+    run         Executar um comando dentro do container
+    remove      Remover pacotes
+    search      Pesquisar nas descrições dos pacotes
+    show        Mostrar detalhes dos pacotes
+    update      Atualizar lista de pacotes disponíveis
+    upgrade     Atualizar o sistema ao instalar/atualizar pacotes
+    version     Mostrar versão e sair
