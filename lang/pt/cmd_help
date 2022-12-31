@@ -7,7 +7,7 @@ Opções:
   --dnf         Instalar pacotes do repositório Fedora
 
 Comandos:
-    autoremove  Remover automaticamente todos os pacotes não utilizados
+    autoremove  Remover todos os pacotes não utilizados
     clean       Limpar o cache do gestor de pacotes apx
     enter       Entrar no shell do container
     export      Exportar/Recriar a entrada de um programa na área de trabalho a partir de um contentor gerido
