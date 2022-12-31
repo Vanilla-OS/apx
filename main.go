@@ -51,8 +51,7 @@ Commands:
 	show        Show details about a package
 	unexport    Unexport/Remove a program's desktop entry
 	update      Update the list of available packages
-	upgrade     Upgrade the system by installing/upgrading available packages
-	version     Show version and exit`)
+	upgrade     Upgrade the system by installing/upgrading available packages`)
 }
 
 func newApxCommand() *cobra.Command {

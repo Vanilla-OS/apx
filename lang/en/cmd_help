@@ -1,24 +1,26 @@
-Usage:
-apx [options] [command] [arguments]
+Usage: apx [options] [command] [arguments]
 
 Options:
   -h, --help    Show this help message and exit
   -v, --version Show version and exit
+  --aur         Install packages from the AUR repository
+  --dnf         Install packages from the Fedora repository
 
 Commands:
-    autoremove  Remove automatically all unused packages
-    clean       Clean the apt cache
-    enter       Enter the container
+    autoremove  Remove all unused packages
+    clean       Clean the apx package manager cache
+    enter       Enter the container's shell
+    export      Export/Recreate a program's desktop entry from a managed container
     help        Show this help message and exit
-    init        Initialize the container
-    install     Install packages
-    list        List packages based on package names
-    log         Show logs
-    purge       Purge packages
+    init        Initialize a managed container
+    install     Install packages inside the container
+    list        List installed packages
+    log         Show logs (This command is yet to be implemented)
+    purge       Purge packages from the container
     run         Run a command inside the container
-    remove      Remove packages
-    search      Search in package descriptions
-    show        Show package details
-    update      Update list of available packages
-    upgrade     Upgrade the system by installing/upgrading packages
-    version     Show version and exit
+    remove      Remove packages from the container
+    search      Search for packages
+    show        Show details about a package
+    unexport    Unexport/Remove a program's desktop entry
+    update      Update the list of available packages
+    upgrade     Upgrade the system by installing/upgrading available packages

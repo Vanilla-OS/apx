@@ -21,4 +21,3 @@ Commands:
     show        Mostrar detalhes do pacote
     update      Atualizar lista de pacotes disponíveis
     upgrade     Atualize o sistema instalando/atualizando pacotes
-    version     Mostrar versão e fecha
