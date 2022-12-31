@@ -27,6 +27,8 @@ func GetPkgCommand(container string, command string) []string {
 		return GetAurPkgCommand(command)
 	case "dnf":
 		return GetDnfPkgCommand(command)
+	case "apk":
+		return GetApkPkgCommand(command)
 	case "default":
 		return GetDefaultPkgCommand(command)
 	default:
@@ -124,6 +126,35 @@ func GetDnfPkgCommand(command string) []string {
 		return []string{"sudo", bin, "upgrade", "--refresh"}
 	case "upgrade":
 		return []string{"sudo", bin, "upgrade"}
+	default:
+		return nil
+	}
+}
+
+func GetApkPkgCommand(command string) []string {
+	bin := "apk"
+
+	switch command {
+	case "autoremove":
+		return []string{"echo", "Not implemented yet! "}
+	case "clean":
+		return []string{"echo", "Not implemented yet! "}
+	case "install":
+		return []string{"sudo", bin, "add"}
+	case "list":
+		return []string{"sudo", bin, "list"}
+	case "purge":
+		return []string{"sudo", bin, "del"}
+	case "remove":
+		return []string{"sudo", bin, "del"}
+	case "search":
+		return []string{"sudo", bin, "search"}
+	case "show":
+		return []string{"sudo", bin, "info"}
+	case "update":
+		return []string{"sudo", bin, "update"}
+	case "upgrade":
+		return []string{"sudo", bin, "upgrade", "--available"}
 	default:
 		return nil
 	}

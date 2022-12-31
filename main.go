@@ -34,6 +34,7 @@ Options:
 	-v, --version Show version and exit
 	--aur	    Install packages from the AUR repository
 	--dnf	    Install packages from the Fedora repository
+	--apk	    Install packages from the Alpine repository
 
 Commands:
 	autoremove  Remove all unused packages
@@ -66,6 +67,7 @@ func main() {
 	rootCmd := newApxCommand()
 	rootCmd.PersistentFlags().Bool("aur", false, "Install packages from the AUR (Arch User Repository).")
 	rootCmd.PersistentFlags().Bool("dnf", false, "Install packages from the Fedora's DNF (Dandified YUM) repository.")
+	rootCmd.PersistentFlags().Bool("apk", false, "Install packages from the Alpine repository.")
 
 	rootCmd.AddCommand(cmd.NewInitializeCommand())
 	rootCmd.AddCommand(cmd.NewAutoRemoveCommand())

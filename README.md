@@ -17,6 +17,7 @@ Options:
   -v, --version Show version and exit
   --aur         Install packages from the AUR repository
   --dnf         Install packages from the Fedora repository
+  --apk         Install packages from the Alpine repository
 
 Commands:
     autoremove  Remove all unused packages
