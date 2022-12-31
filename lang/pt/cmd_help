@@ -21,4 +21,3 @@ Comandos:
     show        Mostrar detalhes dos pacotes
     update      Atualizar lista de pacotes disponíveis
     upgrade     Atualizar o sistema ao instalar/atualizar pacotes
-    version     Mostrar versão e sair
