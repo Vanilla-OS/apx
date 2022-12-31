@@ -11,21 +11,10 @@ var apxDir = "/etc/apx"
 var ProcessPath string
 
 func init() {
-	if !RootCheck(false) {
-		return
+	if RootCheck(false) {
+		fmt.Println("Do not run Apx as root!")
+		os.Exit(1)
 	}
-	if _, err := os.Stat(apxDir); os.IsNotExist(err) {
-		if err := os.Mkdir(apxDir, 0755); err != nil {
-			fmt.Println(err)
-			os.Exit(1)
-		}
-	}
-
-	ex, err := os.Executable()
-	if err != nil {
-		panic("Can't get process path!\n" + err.Error())
-	}
-	ProcessPath = filepath.Dir(ex)
 }
 
 func RootCheck(display bool) bool {
