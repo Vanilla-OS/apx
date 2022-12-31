@@ -1,23 +1,26 @@
-Utilização:
-apx [opções] [comando] [argumentos]
+Utilização: apx [opções] [comando] [argumentos]
 
 Opções:
   -h, --help    Mostrar esta mensagem de ajuda e sair
   -v, --version Mostrar a versão e sair
+  --aur         Instalar pacotes do repositório AUR
+  --dnf         Instalar pacotes do repositório Fedora
 
 Comandos:
     autoremove  Remover automaticamente todos os pacotes não utilizados
-    clean       Limpar o cache do apt
-    enter       Entrar no container
+    clean       Limpar o cache do gestor de pacotes apx
+    enter       Entrar no shell do container
+    export      Exportar/Recriar a entrada de um programa na área de trabalho a partir de um contentor gerido
     help        Mostrar esta mensagem de ajuda e sair
-    init        Inicializar o container
-    install     Instalar pacotes
-    list        Listar pacotes com base nos nomes dos pacotes
-    log         Mostrar registos
-    purge       Purgar pacotes
+    init        Inicializar um container gerido
+    install     Instalar pacotes dentro do container
+    list        Listar pacotes instalados
+    log         Mostrar registos (este comando ainda não foi implementado)
+    purge       Purgar pacotes do container
     run         Executar um comando dentro do container
-    remove      Remover pacotes
-    search      Pesquisar nas descrições dos pacotes
-    show        Mostrar detalhes dos pacotes
-    update      Atualizar lista de pacotes disponíveis
+    remove      Remover pacotes do container
+    search      Procurar por pacotes
+    show        Mostrar detalhes sobre um pacote
+    unexport    Cancelar a exportação/Remover a entrada de um programa na área de trabalho
+    update      Atualizar a lista de pacotes disponíveis
     upgrade     Atualizar o sistema ao instalar/atualizar pacotes
