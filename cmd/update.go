@@ -43,18 +43,6 @@ func NewUpdateCommand() *cobra.Command {
 }
 
 func update(cmd *cobra.Command, args []string) error {
-	aur := cmd.Flag("aur").Value.String() == "true"
-	dnf := cmd.Flag("dnf").Value.String() == "true"
-	apk := cmd.Flag("apk").Value.String() == "true"
-
-	container := "default"
-	if aur {
-		container = "aur"
-	} else if dnf {
-		container = "dnf"
-	} else if apk {
-		container = "apk"
-	}
 
 	command := append([]string{}, core.GetPkgCommand(container, "update")...)
 	command = append(command, args...)

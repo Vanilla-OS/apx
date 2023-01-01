@@ -55,35 +55,9 @@ Commands:
 	upgrade     Upgrade the system by installing/upgrading available packages`)
 }
 
-func newApxCommand() *cobra.Command {
-	return &cobra.Command{
-		Use:     "apx",
-		Short:   "Apx is a package manager with support for multiple sources allowing you to install packages in a managed container.",
-		Version: Version,
-	}
-}
-
 func main() {
-	rootCmd := newApxCommand()
-	rootCmd.PersistentFlags().Bool("aur", false, "Install packages from the AUR (Arch User Repository).")
-	rootCmd.PersistentFlags().Bool("dnf", false, "Install packages from the Fedora's DNF (Dandified YUM) repository.")
-	rootCmd.PersistentFlags().Bool("apk", false, "Install packages from the Alpine repository.")
+	rootCmd := cmd.NewApxCommand(Version)
 
-	rootCmd.AddCommand(cmd.NewInitializeCommand())
-	rootCmd.AddCommand(cmd.NewAutoRemoveCommand())
-	rootCmd.AddCommand(cmd.NewInstallCommand())
-	rootCmd.AddCommand(cmd.NewCleanCommand())
-	rootCmd.AddCommand(cmd.NewEnterCommand())
-	rootCmd.AddCommand(cmd.NewExportCommand())
-	rootCmd.AddCommand(cmd.NewListCommand())
-	rootCmd.AddCommand(cmd.NewPurgeCommand())
-	rootCmd.AddCommand(cmd.NewRemoveCommand())
-	rootCmd.AddCommand(cmd.NewRunCommand())
-	rootCmd.AddCommand(cmd.NewSearchCommand())
-	rootCmd.AddCommand(cmd.NewShowCommand())
-	rootCmd.AddCommand(cmd.NewUnexportCommand())
-	rootCmd.AddCommand(cmd.NewUpdateCommand())
-	rootCmd.AddCommand(cmd.NewUpgradeCommand())
 	rootCmd.SetHelpFunc(help)
 	rootCmd.Execute()
 }

@@ -42,18 +42,6 @@ func NewPurgeCommand() *cobra.Command {
 }
 
 func purge(cmd *cobra.Command, args []string) error {
-	aur := cmd.Flag("aur").Value.String() == "true"
-	dnf := cmd.Flag("dnf").Value.String() == "true"
-	apk := cmd.Flag("apk").Value.String() == "true"
-
-	container := "default"
-	if aur {
-		container = "aur"
-	} else if dnf {
-		container = "dnf"
-	} else if apk {
-		container = "apk"
-	}
 
 	command := append([]string{}, core.GetPkgCommand(container, "purge")...)
 	command = append(command, args...)
