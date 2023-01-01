@@ -47,5 +47,36 @@ The official **documentation and manpage** for `apx` are available at <https://d
 
 > Please consider to keep the project name as `apx` to avoid confusion for users.
 
-To use with another package manager, re-compile editing the `config.json` file
-to point to the desired package manger and image.
+To use with another package manager, re-compile editing the `config.json` file or simply edit `/etc/apx/config.json` on a pre-compiled installation
+to point to the desired:
+* Image:
+
+by adding the docker image path for example `docker.io/library/ubuntu` to `"image": "",` under `"container": {`
+
+
+
+where for a **Simple Ubuntu image setup** it would look something like:
+`"image": "docker.io/library/ubuntu",`
+* Package Manager:
+
+by replacing `"bin": "/usr/bin/apt",` with `"bin": "ABSOLUTE PATH TO YOUR PACKAGE MANAGER",`
+and replacing all `"cmd*":"",` with the apt alternative fot your package manager.
+
+
+where for a **Simple Fedora dnf setup** it would look something like:
+```
+    "pkgmanager": { 
+         "bin": "/usr/bin/dnf", 
+         "sudo": true, 
+         "cmdAutoremove": "autoremove", 
+         "cmdClean": "clean", 
+         "cmdInstall": "install", 
+         "cmdList": "list", 
+         "cmdPurge": "remove", 
+         "cmdRemove": "remove", 
+         "cmdSearch": "search", 
+         "cmdShow": "repoquery -i", 
+         "cmdUpdate": "update --refresh", 
+         "cmdUpgrade": "distrosync" 
+     }
+```
