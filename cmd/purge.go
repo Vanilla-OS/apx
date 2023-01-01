@@ -12,7 +12,6 @@ import (
 	"fmt"
 
 	"github.com/spf13/cobra"
-	"github.com/vanilla-os/apx/core"
 )
 
 func purgeUsage(*cobra.Command) error {
@@ -43,10 +42,10 @@ func NewPurgeCommand() *cobra.Command {
 
 func purge(cmd *cobra.Command, args []string) error {
 
-	command := append([]string{}, core.GetPkgCommand(container, "purge")...)
+	command := append([]string{}, container.GetPkgCommand("purge")...)
 	command = append(command, args...)
 
-	core.RunContainer(container, command...)
+	container.Run(command...)
 
 	return nil
 }

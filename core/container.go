@@ -23,6 +23,69 @@ import (
 	"github.com/vanilla-os/apx/settings"
 )
 
+type ContainerType int
+
+const (
+	DEFAULT ContainerType = iota // 0
+	AUR     ContainerType = iota // 1
+	DNF     ContainerType = iota // 2
+	APK     ContainerType = iota // 3
+)
+
+type Container struct {
+	containerType ContainerType
+	customName    string
+}
+
+func NewContainer(kind ContainerType) *Container {
+	return &Container{
+		containerType: kind,
+	}
+}
+func NewNamedContainer(kind ContainerType, name string) *Container {
+	return &Container{
+		containerType: kind,
+		customName:    name,
+	}
+}
+func (c *Container) GetContainerImage() (image string, err error) {
+	switch c.containerType {
+	case DEFAULT:
+		return GetHostImage()
+	case AUR:
+		return "docker.io/library/archlinux", nil
+	case DNF:
+		return "docker.io/library/fedora", nil
+	case APK:
+		return "docker.io/library/alpine", nil
+	default:
+		image = ""
+		err = errors.New("can't retrieve image for unknown container")
+	}
+	return image, err
+}
+
+func (c *Container) GetContainerName() (name string) {
+	var cn strings.Builder
+	switch c.containerType {
+	case DEFAULT:
+		cn.WriteString("apx_managed")
+	case AUR:
+		cn.WriteString("apx_managed_aur")
+	case DNF:
+		cn.WriteString("apx_managed_dnf")
+	case APK:
+		cn.WriteString("apx_managed_apk")
+	default:
+		panic("Unknown container not supported")
+	}
+	if len(c.customName) > 0 {
+		cn.WriteString("_")
+		cn.WriteString(strings.Replace(c.customName, " ", "", -1))
+	}
+	return cn.String()
+}
+
 func ContainerManager() string {
 	docker := exec.Command("which", "docker")
 	podman := exec.Command("which", "podman")
@@ -56,42 +119,6 @@ func GetHostImage() (img string, err error) {
 	return fmt.Sprintf("%v:%v", distro, release), nil
 }
 
-func GetContainerImage(container string) (image string, err error) {
-	switch container {
-	case "default":
-		return GetHostImage()
-	case "aur":
-		return "docker.io/library/archlinux", nil
-	case "dnf":
-		return "docker.io/library/fedora", nil
-	case "apk":
-		return "docker.io/library/alpine", nil
-	default:
-		image = ""
-		err = errors.New("can't retrieve image for unknown container")
-	}
-	return image, err
-}
-
-func GetContainerName(container string) (name string) {
-	switch container {
-	case "default":
-		name := "apx_managed"
-		return name
-	case "aur":
-		name := "apx_managed_aur"
-		return name
-	case "dnf":
-		name := "apx_managed_dnf"
-		return name
-	case "apk":
-		name := "apx_managed_apk"
-		return name
-	default:
-		panic("Unknown container not supported")
-	}
-}
-
 func GetDistroboxVersion() (version string, err error) {
 	output, err := exec.Command("/usr/lib/apx/distrobox", "version").Output()
 	if err != nil {
@@ -106,18 +133,18 @@ func GetDistroboxVersion() (version string, err error) {
 	return splitted[1], nil
 }
 
-func RunContainer(container string, args ...string) error {
+func (c *Container) Run(args ...string) error {
 	ExitIfOverlayTypeFS()
 
-	if !ContainerExists(container) {
-		err := CreateContainer(container)
+	if !c.Exists() {
+		err := c.Create()
 		if err != nil {
 			log.Default().Println("Failed to initialize the container. Try manually with `apx init`.")
 			return err
 		}
 	}
 
-	container_name := GetContainerName(container)
+	container_name := c.GetContainerName()
 
 	cmd := exec.Command("/usr/lib/apx/distrobox", "enter", container_name, "--")
 	cmd.Args = append(cmd.Args, args...)
@@ -129,15 +156,15 @@ func RunContainer(container string, args ...string) error {
 	return cmd.Run()
 }
 
-func EnterContainer(container string) error {
+func (c *Container) Enter() error {
 	ExitIfOverlayTypeFS()
 
-	if !ContainerExists(container) {
+	if !c.Exists() {
 		log.Default().Printf("Managed container does not exist.\nTry: apx init")
 		return errors.New("Managed container does not exist")
 	}
 
-	container_name := GetContainerName(container)
+	container_name := c.GetContainerName()
 
 	cmd := exec.Command("/usr/lib/apx/distrobox", "enter", container_name)
 	cmd.Env = os.Environ()
@@ -155,7 +182,7 @@ func EnterContainer(container string) error {
 	return nil
 }
 
-func CreateContainer(container string) error {
+func (c *Container) Create() error {
 	ExitIfOverlayTypeFS()
 
 	if !CheckConnection() {
@@ -163,12 +190,12 @@ func CreateContainer(container string) error {
 		return errors.New("failed to create container")
 	}
 
-	container_image, err := GetContainerImage(container)
+	container_image, err := c.GetContainerImage()
 	if err != nil {
 		return err
 	}
 
-	container_name := GetContainerName(container)
+	container_name := c.GetContainerName()
 	spinner := spinner.New(spinner.CharSets[11], 100*time.Millisecond)
 	spinner.Suffix = " Creating container..."
 
@@ -195,9 +222,9 @@ func CreateContainer(container string) error {
 
 	spinner.Stop()
 
-	if container == "aur" {
+	if c.containerType == AUR {
 		DownloadYay()
-		RunContainer(container, GetAurPkgCommand("install-yay")...)
+		c.Run(GetAurPkgCommand("install-yay")...)
 	}
 
 	log.Default().Println("Container created")
@@ -205,10 +232,10 @@ func CreateContainer(container string) error {
 	return err
 }
 
-func StopContainer(container string) error {
+func (c *Container) Stop() error {
 	ExitIfOverlayTypeFS()
 
-	container_name := GetContainerName(container)
+	container_name := c.GetContainerName()
 	spinner := spinner.New(spinner.CharSets[11], 100*time.Millisecond)
 	spinner.Suffix = " Stopping container..."
 
@@ -228,18 +255,18 @@ func StopContainer(container string) error {
 	return err
 }
 
-func RemoveContainer(container string) error {
+func (c *Container) Remove() error {
 	ExitIfOverlayTypeFS()
 
-	container_name := GetContainerName(container)
+	container_name := c.GetContainerName()
 	spinner := spinner.New(spinner.CharSets[11], 100*time.Millisecond)
 	spinner.Suffix = " Removing container..."
 
-	if !ContainerExists(container) {
+	if !c.Exists() {
 		return nil
 	}
 
-	err := StopContainer(container)
+	err := c.Stop()
 	if err != nil {
 		return err
 	}
@@ -256,12 +283,12 @@ func RemoveContainer(container string) error {
 	return err
 }
 
-func ExportDesktopEntry(container string, program string) {
-	RunContainer(container, "sh", "-c", "distrobox-export --app "+program+" 2>/dev/null || true")
+func (c *Container) ExportDesktopEntry(program string) {
+	c.Run("sh", "-c", "distrobox-export --app "+program+" 2>/dev/null || true")
 }
 
-func RemoveDesktopEntry(container string, program string) error {
-	container_name := GetContainerName(container)
+func (c *Container) RemoveDesktopEntry(program string) error {
+	container_name := c.GetContainerName()
 	spinner := spinner.New(spinner.CharSets[11], 100*time.Millisecond)
 	spinner.Suffix = fmt.Sprintf("Removing desktop entry: %v\n", program)
 
@@ -294,8 +321,8 @@ func RemoveDesktopEntry(container string, program string) error {
 	return nil
 }
 
-func ContainerExists(container string) bool {
-	container_name := GetContainerName(container)
+func (c *Container) Exists() bool {
+	container_name := c.GetContainerName()
 	manager := ContainerManager()
 
 	cmd := exec.Command(manager, "ps", "-a", "-q", "-f", "name="+container_name+"$")

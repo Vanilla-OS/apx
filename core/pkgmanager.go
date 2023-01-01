@@ -21,15 +21,15 @@ func GetPkgManager() []string {
 	return []string{bin}
 }
 
-func GetPkgCommand(container string, command string) []string {
-	switch container {
-	case "aur":
+func (c *Container) GetPkgCommand(command string) []string {
+	switch c.containerType {
+	case AUR:
 		return GetAurPkgCommand(command)
-	case "dnf":
+	case DNF:
 		return GetDnfPkgCommand(command)
-	case "apk":
+	case APK:
 		return GetApkPkgCommand(command)
-	case "default":
+	case DEFAULT:
 		return GetDefaultPkgCommand(command)
 	default:
 		return nil

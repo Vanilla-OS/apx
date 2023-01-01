@@ -12,7 +12,6 @@ import (
 	"fmt"
 
 	"github.com/spf13/cobra"
-	"github.com/vanilla-os/apx/core"
 )
 
 func unexportUsage(*cobra.Command) error {
@@ -43,5 +42,5 @@ func NewUnexportCommand() *cobra.Command {
 
 func unexport(cmd *cobra.Command, args []string) error {
 
-	return core.RemoveDesktopEntry(container, args[0])
+	return container.RemoveDesktopEntry(args[0])
 }

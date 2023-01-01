@@ -12,7 +12,6 @@ import (
 	"fmt"
 
 	"github.com/spf13/cobra"
-	"github.com/vanilla-os/apx/core"
 )
 
 func exportUsage(*cobra.Command) error {
@@ -43,6 +42,6 @@ func NewExportCommand() *cobra.Command {
 
 func export(cmd *cobra.Command, args []string) error {
 
-	core.ExportDesktopEntry(container, args[0])
+	container.ExportDesktopEntry(args[0])
 	return nil
 }

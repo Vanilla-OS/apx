@@ -12,7 +12,6 @@ import (
 	"fmt"
 
 	"github.com/spf13/cobra"
-	"github.com/vanilla-os/apx/core"
 )
 
 func showUsage(*cobra.Command) error {
@@ -43,10 +42,10 @@ func NewShowCommand() *cobra.Command {
 
 func show(cmd *cobra.Command, args []string) error {
 
-	command := append([]string{}, core.GetPkgCommand(container, "show")...)
+	command := append([]string{}, container.GetPkgCommand("show")...)
 	command = append(command, args...)
 
-	core.RunContainer(container, command...)
+	container.Run(command...)
 
 	return nil
 }

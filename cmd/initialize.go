@@ -15,7 +15,6 @@ import (
 	"strings"
 
 	"github.com/spf13/cobra"
-	"github.com/vanilla-os/apx/core"
 )
 
 func initializeUsage(*cobra.Command) error {
@@ -43,7 +42,7 @@ func NewInitializeCommand() *cobra.Command {
 
 func initialize(cmd *cobra.Command, args []string) error {
 
-	if core.ContainerExists(container) {
+	if container.Exists() {
 		log.Default().Printf(`Container already exists. Do you want to re-initialize it?\ 
 This operation will remove everything, including your files in the container. [y/N] `)
 
@@ -56,10 +55,10 @@ This operation will remove everything, including your files in the container. [y
 		}
 	}
 
-	if err := core.RemoveContainer(container); err != nil {
+	if err := container.Remove(); err != nil {
 		panic(err)
 	}
-	if err := core.CreateContainer(container); err != nil {
+	if err := container.Create(); err != nil {
 		panic(err)
 	}
 

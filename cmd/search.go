@@ -12,7 +12,6 @@ import (
 	"fmt"
 
 	"github.com/spf13/cobra"
-	"github.com/vanilla-os/apx/core"
 )
 
 func searchUsage(*cobra.Command) error {
@@ -43,10 +42,10 @@ func NewSearchCommand() *cobra.Command {
 
 func search(cmd *cobra.Command, args []string) error {
 
-	command := append([]string{}, core.GetPkgCommand(container, "search")...)
+	command := append([]string{}, container.GetPkgCommand("search")...)
 	command = append(command, args...)
 
-	core.RunContainer(container, command...)
+	container.Run(command...)
 
 	return nil
 }

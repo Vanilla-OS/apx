@@ -12,7 +12,6 @@ import (
 	"fmt"
 
 	"github.com/spf13/cobra"
-	"github.com/vanilla-os/apx/core"
 )
 
 func runUsage(*cobra.Command) error {
@@ -43,7 +42,7 @@ func NewRunCommand() *cobra.Command {
 
 func run(cmd *cobra.Command, args []string) error {
 
-	core.RunContainer(container, args...)
+	container.Run(args...)
 
 	return nil
 }

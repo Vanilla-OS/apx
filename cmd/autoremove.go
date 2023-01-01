@@ -12,7 +12,6 @@ import (
 	"fmt"
 
 	"github.com/spf13/cobra"
-	"github.com/vanilla-os/apx/core"
 )
 
 func autoRemoveUsage(*cobra.Command) error {
@@ -42,10 +41,10 @@ func NewAutoRemoveCommand() *cobra.Command {
 
 func autoRemove(cmd *cobra.Command, args []string) error {
 
-	command := append([]string{}, core.GetPkgCommand(container, "autoremove")...)
+	command := append([]string{}, container.GetPkgCommand("autoremove")...)
 	command = append(command, args...)
 
-	core.RunContainer(container, command...)
+	container.Run(command...)
 
 	return nil
 }

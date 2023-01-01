@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"github.com/spf13/cobra"
+	"github.com/vanilla-os/apx/core"
 )
 
 // package level variables for viper flags
@@ -9,7 +10,8 @@ var aur, dnf, apk bool
 
 // package level variable for container name,
 // set in root command's PersistentPreRun function
-var container string = "default"
+var container *core.Container
+var name string
 
 func NewApxCommand(Version string) *cobra.Command {
 	rootCmd := &cobra.Command{
@@ -23,6 +25,7 @@ func NewApxCommand(Version string) *cobra.Command {
 	rootCmd.PersistentFlags().BoolVar(&aur, "aur", false, "Install packages from the AUR (Arch User Repository).")
 	rootCmd.PersistentFlags().BoolVar(&dnf, "dnf", false, "Install packages from the Fedora's DNF (Dandified YUM) repository.")
 	rootCmd.PersistentFlags().BoolVar(&apk, "apk", false, "Install packages from the Alpine repository.")
+	rootCmd.PersistentFlags().StringVarP(&name, "name", "n", "", "Create named container with this name.")
 
 	rootCmd.AddCommand(NewInitializeCommand())
 	rootCmd.AddCommand(NewAutoRemoveCommand())
@@ -42,14 +45,19 @@ func NewApxCommand(Version string) *cobra.Command {
 	return rootCmd
 }
 
-func getContainer() string {
-	container := "default"
+func getContainer() *core.Container {
+	var kind core.ContainerType = core.DEFAULT
 	if aur {
-		container = "aur"
+		kind = core.AUR
 	} else if dnf {
-		container = "dnf"
+		kind = core.DNF
 	} else if apk {
-		container = "apk"
+		kind = core.APK
 	}
-	return container
+	if len(name) > 0 {
+		return core.NewNamedContainer(kind, name)
+	} else {
+		return core.NewContainer(kind)
+	}
+
 }

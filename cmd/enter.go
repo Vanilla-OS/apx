@@ -13,7 +13,6 @@ import (
 	"log"
 
 	"github.com/spf13/cobra"
-	"github.com/vanilla-os/apx/core"
 )
 
 func enterUsage(*cobra.Command) error {
@@ -41,7 +40,7 @@ func NewEnterCommand() *cobra.Command {
 
 func enter(cmd *cobra.Command, args []string) error {
 
-	if err := core.EnterContainer(container); err != nil {
+	if err := container.Enter(); err != nil {
 		log.Default().Fatal("Failed to enter container: ", err)
 		return err
 	}

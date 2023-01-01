@@ -12,7 +12,6 @@ import (
 	"fmt"
 
 	"github.com/spf13/cobra"
-	"github.com/vanilla-os/apx/core"
 )
 
 func upgradeUsage(*cobra.Command) error {
@@ -44,14 +43,14 @@ func NewUpgradeCommand() *cobra.Command {
 
 func upgrade(cmd *cobra.Command, args []string) error {
 
-	command := append([]string{}, core.GetPkgCommand(container, "upgrade")...)
+	command := append([]string{}, container.GetPkgCommand("upgrade")...)
 	command = append(command, args...)
 
 	if cmd.Flag("assume-yes").Value.String() == "true" {
 		command = append(command, "-y")
 	}
 
-	core.RunContainer(container, command...)
+	container.Run(command...)
 
 	return nil
 }

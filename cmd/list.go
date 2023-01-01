@@ -12,7 +12,6 @@ import (
 	"fmt"
 
 	"github.com/spf13/cobra"
-	"github.com/vanilla-os/apx/core"
 )
 
 func listUsage(*cobra.Command) error {
@@ -47,7 +46,7 @@ func NewListCommand() *cobra.Command {
 
 func list(cmd *cobra.Command, args []string) error {
 
-	command := append([]string{}, core.GetPkgCommand(container, "list")...)
+	command := append([]string{}, container.GetPkgCommand("list")...)
 
 	if cmd.Flag("upgradable").Value.String() == "true" {
 		command = append(command, "--upgradable")
@@ -58,7 +57,7 @@ func list(cmd *cobra.Command, args []string) error {
 
 	command = append(command, args...)
 
-	core.RunContainer(container, command...)
+	container.Run(command...)
 
 	return nil
 }
