@@ -36,30 +36,10 @@ func ContainerManager() string {
 	panic("No container engine found. Please install Podman or Docker.")
 }
 
-func GetHostImage() (img string, err error) {
-	if settings.Cnf.Container.Image != "" {
-		return settings.Cnf.Container.Image, nil
-	}
-
-	distro_raw, err := exec.Command("lsb_release", "-is").Output()
-	if err != nil {
-		return "", err
-	}
-	distro := strings.ToLower(strings.Trim(string(distro_raw), "\r\n"))
-
-	release_raw, err := exec.Command("lsb_release", "-rs").Output()
-	if err != nil {
-		return "", err
-	}
-	release := strings.ToLower(strings.Trim(string(release_raw), "\r\n"))
-
-	return fmt.Sprintf("%v:%v", distro, release), nil
-}
-
 func GetContainerImage(container string) (image string, err error) {
 	switch container {
 	case "default":
-		return GetHostImage()
+		return settings.Cnf.Image, nil
 	case "apt":
 		return "docker.io/library/ubuntu", nil
 	case "aur":
@@ -78,7 +58,7 @@ func GetContainerImage(container string) (image string, err error) {
 func GetContainerName(container string) (name string) {
 	switch container {
 	case "default":
-		return "apx_managed"
+		return settings.Cnf.ContainerName
 	case "apt":
 		return "apx_managed_apt"
 	case "aur":
