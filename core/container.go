@@ -60,6 +60,8 @@ func GetContainerImage(container string) (image string, err error) {
 	switch container {
 	case "default":
 		return GetHostImage()
+	case "apt":
+		return "docker.io/library/ubuntu", nil
 	case "aur":
 		return "docker.io/library/archlinux", nil
 	case "dnf":
@@ -76,17 +78,15 @@ func GetContainerImage(container string) (image string, err error) {
 func GetContainerName(container string) (name string) {
 	switch container {
 	case "default":
-		name := "apx_managed"
-		return name
+		return "apx_managed"
+	case "apt":
+		return "apx_managed_apt"
 	case "aur":
-		name := "apx_managed_aur"
-		return name
+		return "apx_managed_aur"
 	case "dnf":
-		name := "apx_managed_dnf"
-		return name
+		return "apx_managed_dnf"
 	case "apk":
-		name := "apx_managed_apk"
-		return name
+		return "apx_managed_apk"
 	default:
 		panic("Unknown container not supported")
 	}

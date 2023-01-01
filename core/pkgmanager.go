@@ -23,6 +23,8 @@ func GetPkgManager() []string {
 
 func GetPkgCommand(container string, command string) []string {
 	switch container {
+	case "apt":
+		return GetAptPkgCommand(command)
 	case "aur":
 		return GetAurPkgCommand(command)
 	case "dnf":
@@ -63,7 +65,12 @@ func GetDefaultPkgCommand(command string) []string {
 		return nil
 	}
 	return res
+}
 
+func GetAptPkgCommand(command string) []string {
+	bin := "apt"
+
+	return []string{"sudo", bin, command}
 }
 
 func GetAurPkgCommand(command string) []string {
