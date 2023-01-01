@@ -43,11 +43,11 @@ Commands:
 
 The official **documentation and manpage** for `apx` are available at <https://documentation.vanillaos.org/docs/apx/>.
 
-## Other distros
+## Other Distributions and Package Managers
 
 > Please consider to keep the project name as `apx` to avoid confusion for users.
 
-To use with another package manager, re-compile editing the `config.json` file or simply edit `/etc/apx/config.json` on a pre-compiled installation
+To use with another distro and/or package manager, re-compile editing the `config.json` file or simply edit `/etc/apx/config.json` on a pre-compiled installation
 to point to the desired:
 * Image:
 
