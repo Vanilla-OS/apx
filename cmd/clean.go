@@ -32,11 +32,12 @@ Examples:
 
 func NewCleanCommand() *cobra.Command {
 	cmd := &cobra.Command{
-		Use:   "clean",
-		Short: "Clean the apx package manager cache",
-		RunE:  clean,
+		Example: "apx clean",
+		Use:     "clean",
+		Short:   "Clean the apx package manager cache",
+		RunE:    clean,
 	}
-	cmd.SetUsageFunc(cleanUsage)
+	//cmd.SetUsageFunc(cleanUsage)
 	return cmd
 }
 

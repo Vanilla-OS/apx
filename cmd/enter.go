@@ -30,11 +30,12 @@ Options:
 
 func NewEnterCommand() *cobra.Command {
 	cmd := &cobra.Command{
-		Use:   "enter",
-		Short: "Enter in the container shell",
-		RunE:  enter,
+		Example: "apx enter",
+		Use:     "enter",
+		Short:   "Enter in the container shell",
+		RunE:    enter,
 	}
-	cmd.SetUsageFunc(enterUsage)
+	//	cmd.SetUsageFunc(enterUsage)
 	return cmd
 }
 

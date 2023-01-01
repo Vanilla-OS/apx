@@ -31,11 +31,12 @@ Usage:
 
 func NewAutoRemoveCommand() *cobra.Command {
 	cmd := &cobra.Command{
-		Use:   "autoremove",
-		Short: "Remove all unused packages automatically",
-		RunE:  autoRemove,
+		Example: "apx autoremove",
+		Use:     "autoremove",
+		Short:   "Remove all unused packages automatically",
+		RunE:    autoRemove,
 	}
-	cmd.SetUsageFunc(autoRemoveUsage)
+	//cmd.SetUsageFunc(autoRemoveUsage)
 	return cmd
 }
 

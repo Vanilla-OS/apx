@@ -32,11 +32,12 @@ Examples:
 
 func NewPurgeCommand() *cobra.Command {
 	cmd := &cobra.Command{
-		Use:   "purge",
-		Short: "Purge packages inside a managed container",
-		RunE:  purge,
+		Example: "apx purge htop",
+		Use:     "purge <packages>",
+		Short:   "Purge packages inside a managed container",
+		RunE:    purge,
 	}
-	cmd.SetUsageFunc(purgeUsage)
+	//cmd.SetUsageFunc(purgeUsage)
 	return cmd
 }
 

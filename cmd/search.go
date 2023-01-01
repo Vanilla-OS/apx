@@ -32,11 +32,12 @@ Examples:
 
 func NewSearchCommand() *cobra.Command {
 	cmd := &cobra.Command{
-		Use:   "search",
-		Short: "Search for packages in a managed container.",
-		RunE:  search,
+		Example: "apx search neovim",
+		Use:     "search <packages>",
+		Short:   "Search for packages in a managed container.",
+		RunE:    search,
 	}
-	cmd.SetUsageFunc(searchUsage)
+	//	cmd.SetUsageFunc(searchUsage)
 	return cmd
 }
 

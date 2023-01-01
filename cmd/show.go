@@ -32,11 +32,12 @@ Examples:
 
 func NewShowCommand() *cobra.Command {
 	cmd := &cobra.Command{
-		Use:   "show",
-		Short: "Show details about a package",
-		RunE:  show,
+		Example: "apx show htop",
+		Use:     "show <package>",
+		Short:   "Show details about a package",
+		RunE:    show,
 	}
-	cmd.SetUsageFunc(showUsage)
+	//cmd.SetUsageFunc(showUsage)
 	return cmd
 }
 

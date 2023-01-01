@@ -32,11 +32,12 @@ Examples:
 
 func NewExportCommand() *cobra.Command {
 	cmd := &cobra.Command{
-		Use:   "export",
-		Short: "Export/Recreate a program's desktop entry from a managed container",
-		RunE:  export,
+		Example: "apx export htop",
+		Use:     "export <program>",
+		Short:   "Export/Recreate a program's desktop entry from a managed container",
+		RunE:    export,
 	}
-	cmd.SetUsageFunc(exportUsage)
+	//	cmd.SetUsageFunc(exportUsage)
 	return cmd
 }
 

@@ -32,11 +32,12 @@ Examples:
 
 func NewRemoveCommand() *cobra.Command {
 	cmd := &cobra.Command{
-		Use:   "remove",
-		Short: "Remove packages inside a managed container.",
-		RunE:  remove,
+		Example: "apx remove htop",
+		Use:     "remove <packages>",
+		Short:   "Remove packages inside a managed container.",
+		RunE:    remove,
 	}
-	cmd.SetUsageFunc(removeUsage)
+	//cmd.SetUsageFunc(removeUsage)
 	cmd.Flags().BoolP("assume-yes", "y", false, "Proceed without manual confirmation.")
 
 	return cmd

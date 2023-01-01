@@ -25,7 +25,7 @@ func NewApxCommand(Version string) *cobra.Command {
 	rootCmd.PersistentFlags().BoolVar(&aur, "aur", false, "Install packages from the AUR (Arch User Repository).")
 	rootCmd.PersistentFlags().BoolVar(&dnf, "dnf", false, "Install packages from the Fedora's DNF (Dandified YUM) repository.")
 	rootCmd.PersistentFlags().BoolVar(&apk, "apk", false, "Install packages from the Alpine repository.")
-	rootCmd.PersistentFlags().StringVarP(&name, "name", "n", "", "Create named container with this name.")
+	rootCmd.PersistentFlags().StringVarP(&name, "name", "n", "", "Create or use custom container with this name.")
 
 	rootCmd.AddCommand(NewInitializeCommand())
 	rootCmd.AddCommand(NewAutoRemoveCommand())

@@ -38,11 +38,13 @@ Examples:
 
 func NewInstallCommand() *cobra.Command {
 	cmd := &cobra.Command{
-		Use:   "install",
+		Example: `apx install htop git
+apx install --sideload /path/to/file.deb`,
+		Use:   "install <packages>",
 		Short: "Install packages inside a managed container",
 		RunE:  install,
 	}
-	cmd.SetUsageFunc(installUsage)
+	//cmd.SetUsageFunc(installUsage)
 	cmd.Flags().SetInterspersed(false)
 	cmd.Flags().BoolP("assume-yes", "y", false, "Proceed without manual confirmation.")
 	cmd.Flags().BoolP("fix-broken", "f", false, "Fix broken deps before installing.")

@@ -32,11 +32,12 @@ Examples:
 
 func NewRunCommand() *cobra.Command {
 	cmd := &cobra.Command{
-		Use:   "run",
-		Short: "Run a program inside a managed container.",
-		RunE:  run,
+		Example: "apx run htop",
+		Use:     "run <program>",
+		Short:   "Run a program inside a managed container.",
+		RunE:    run,
 	}
-	cmd.SetUsageFunc(runUsage)
+	//cmd.SetUsageFunc(runUsage)
 	return cmd
 }
 

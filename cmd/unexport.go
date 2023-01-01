@@ -32,11 +32,12 @@ Examples:
 
 func NewUnexportCommand() *cobra.Command {
 	cmd := &cobra.Command{
-		Use:   "unexport",
-		Short: "Unexport/Remove a program's desktop entry from a managed container",
-		RunE:  unexport,
+		Example: "apx unexport code",
+		Use:     "unexport <program>",
+		Short:   "Unexport/Remove a program's desktop entry from a managed container",
+		RunE:    unexport,
 	}
-	cmd.SetUsageFunc(unexportUsage)
+	//	cmd.SetUsageFunc(unexportUsage)
 	return cmd
 }
 

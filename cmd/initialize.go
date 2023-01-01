@@ -32,11 +32,12 @@ Options:
 
 func NewInitializeCommand() *cobra.Command {
 	cmd := &cobra.Command{
-		Use:   "init",
-		Short: "Initialize the managed container",
-		RunE:  initialize,
+		Example: "apx init",
+		Use:     "init",
+		Short:   "Initialize the managed container",
+		RunE:    initialize,
 	}
-	cmd.SetUsageFunc(initializeUsage)
+	//cmd.SetUsageFunc(initializeUsage)
 	return cmd
 }
 

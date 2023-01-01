@@ -32,11 +32,12 @@ Examples:
 
 func NewUpgradeCommand() *cobra.Command {
 	cmd := &cobra.Command{
-		Use:   "upgrade",
-		Short: "Upgrade the system by installing/upgrading available packages.",
-		RunE:  upgrade,
+		Example: "apx upgrade",
+		Use:     "upgrade",
+		Short:   "Upgrade the system by installing/upgrading available packages.",
+		RunE:    upgrade,
 	}
-	cmd.SetUsageFunc(upgradeUsage)
+	//	cmd.SetUsageFunc(upgradeUsage)
 	cmd.Flags().BoolP("assume-yes", "y", false, "Proceed without manual confirmation.")
 	return cmd
 }

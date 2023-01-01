@@ -36,7 +36,7 @@ func NewListCommand() *cobra.Command {
 		Short: "List installed packages.",
 		RunE:  list,
 	}
-	cmd.SetUsageFunc(listUsage)
+	//cmd.SetUsageFunc(listUsage)
 	cmd.Flags().SetInterspersed(false)
 	cmd.Flags().BoolP("upgradable", "u", false, "List only upgradable packages.")
 	cmd.Flags().BoolP("installed", "i", false, "List only installed packages.")
