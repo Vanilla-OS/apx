@@ -43,10 +43,10 @@ This operation will remove everything, including your files in the container. [y
 	}
 
 	if err := container.Remove(); err != nil {
-		panic(err)
+		log.Fatal(fmt.Errorf("error removing container: %v", err))
 	}
 	if err := container.Create(); err != nil {
-		panic(err)
+		log.Fatal(fmt.Errorf("error creating container: %v", err))
 	}
 
 	return nil

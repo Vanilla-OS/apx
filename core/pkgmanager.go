@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
+	"log"
 	"net/http"
 	"os"
 	"strings"
@@ -170,7 +171,7 @@ func GetLatestYay() string {
 	url := "https://api.github.com/repos/Jguer/yay/releases/latest"
 	resp, err := http.Get(url)
 	if err != nil {
-		panic(err)
+		log.Fatalf("error getting latest yay: %v", err)
 	}
 	defer resp.Body.Close()
 
@@ -180,7 +181,7 @@ func GetLatestYay() string {
 	assets_url := result["assets_url"].(string)
 	resp, err = http.Get(assets_url)
 	if err != nil {
-		panic(err)
+		log.Fatalf("error downloading yay assets: %v", err)
 	}
 	defer resp.Body.Close()
 
@@ -192,39 +193,40 @@ func GetLatestYay() string {
 			return asset["browser_download_url"].(string)
 		}
 	}
-	panic("Failed to install yay. No asset found.")
+	log.Fatal("no yay asset found for architecture x86_64")
+	return ""
 }
 
 func DownloadYay() {
 	url := GetLatestYay()
 	resp, err := http.Get(url)
 	if err != nil {
-		panic(err)
+		log.Fatalf("error downloading yay: %v", err)
 	}
 	defer resp.Body.Close()
 
 	home, err := os.UserHomeDir()
 	if err != nil {
-		panic(err)
+		log.Fatalf("error detecting user home directory: %v", err)
 	}
 
 	yay_dir := fmt.Sprintf("%v/.local/src/yay", home)
 	if _, err := os.Stat(yay_dir); os.IsNotExist(err) {
 		err = os.MkdirAll(yay_dir, 0755)
 		if err != nil {
-			panic(err)
+			log.Fatalf("error creating yay src directory: %v", err)
 		}
 	}
 
 	yay_file := fmt.Sprintf("%v/yay.tar.gz", yay_dir)
 	out, err := os.Create(yay_file)
 	if err != nil {
-		panic(err)
+		log.Fatalf("error creating yay tar: %v", err)
 	}
 	defer out.Close()
 
 	_, err = io.Copy(out, resp.Body)
 	if err != nil {
-		panic(err)
+		log.Fatalf("error writing yay tar: %v", err)
 	}
 }

@@ -77,7 +77,7 @@ func (c *Container) GetContainerName() (name string) {
 	case APK:
 		cn.WriteString("apx_managed_apk")
 	default:
-		panic("Unknown container not supported")
+		log.Fatal(fmt.Errorf("unspecified container type"))
 	}
 	if len(c.customName) > 0 {
 		cn.WriteString("_")
@@ -96,7 +96,8 @@ func ContainerManager() string {
 		return "podman"
 	}
 
-	panic("No container engine found. Please install Podman or Docker.")
+	log.Fatal("no container engine found. Please install Podman or Docker.")
+	return ""
 }
 
 func GetHostImage() (img string, err error) {
@@ -217,7 +218,7 @@ func (c *Container) Create() error {
 	//err = cmd.Run()
 	_, err = cmd.Output()
 	if err != nil {
-		log.Panic(err)
+		log.Fatalf("error creating container: %v", err)
 	}
 
 	spinner.Stop()
@@ -247,7 +248,7 @@ func (c *Container) Stop() error {
 	spinner.Stop()
 
 	if err != nil {
-		log.Panic(err)
+		log.Fatalf("error stopping container: %v", err)
 	}
 
 	log.Default().Println("Container stopped")
