@@ -24,8 +24,8 @@ import (
 )
 
 func ContainerManager() string {
-	docker := exec.Command("which", "docker")
-	podman := exec.Command("which", "podman")
+	docker := exec.Command("sh", "-c", "command", "-v", "docker")
+	podman := exec.Command("sh", "-c", "command", "-v", "podman")
 
 	if err := docker.Run(); err == nil {
 		return "docker"
