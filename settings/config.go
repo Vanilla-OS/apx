@@ -18,7 +18,7 @@ import (
 )
 
 type Config struct {
-	ContainerName string `json:"container_name"`
+	ContainerName string `json:"containername"`
 	Image         string `json:"image"`
 	PkgManager    string `json:"pkgmanager"`
 }

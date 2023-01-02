@@ -1,5 +1,5 @@
 {
-    "container_name": "apx_managed",
+    "containername": "apx_managed",
     "image": "docker.io/library/ubuntu",
     "pkgmanager": "apt"
 }
