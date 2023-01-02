@@ -5,7 +5,7 @@ import (
 )
 
 // package level variables for viper flags
-var aur, dnf, apk bool
+var apt, aur, dnf, apk bool
 
 // package level variable for container name,
 // set in root command's PersistentPreRun function
@@ -20,6 +20,7 @@ func NewApxCommand(Version string) *cobra.Command {
 			container = getContainer()
 		},
 	}
+	rootCmd.PersistentFlags().BoolVar(&apt, "apt", false, "Install packages from the Ubuntu repository.")
 	rootCmd.PersistentFlags().BoolVar(&aur, "aur", false, "Install packages from the AUR (Arch User Repository).")
 	rootCmd.PersistentFlags().BoolVar(&dnf, "dnf", false, "Install packages from the Fedora's DNF (Dandified YUM) repository.")
 	rootCmd.PersistentFlags().BoolVar(&apk, "apk", false, "Install packages from the Alpine repository.")
@@ -44,7 +45,9 @@ func NewApxCommand(Version string) *cobra.Command {
 
 func getContainer() string {
 	container := "default"
-	if aur {
+	if apt {
+		container = "apt"
+	} else if aur {
 		container = "aur"
 	} else if dnf {
 		container = "dnf"

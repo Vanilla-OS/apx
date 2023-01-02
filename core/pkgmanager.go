@@ -11,18 +11,10 @@ import (
 	"github.com/vanilla-os/apx/settings"
 )
 
-func GetPkgManager() []string {
-	sudo := settings.Cnf.PkgManager.Sudo
-	bin := settings.Cnf.PkgManager.Bin
-
-	if sudo {
-		return []string{"sudo", bin}
-	}
-	return []string{bin}
-}
-
 func GetPkgCommand(container string, command string) []string {
 	switch container {
+	case "apt":
+		return GetAptPkgCommand(command)
 	case "aur":
 		return GetAurPkgCommand(command)
 	case "dnf":
@@ -37,33 +29,49 @@ func GetPkgCommand(container string, command string) []string {
 }
 
 func GetDefaultPkgCommand(command string) []string {
-	res := GetPkgManager()
+	pkgmanager := settings.Cnf.PkgManager
+
+	switch pkgmanager {
+	case "apt":
+		return GetAptPkgCommand(command)
+	case "aur":
+		return GetAurPkgCommand(command)
+	case "dnf":
+		return GetDnfPkgCommand(command)
+	case "apk":
+		return GetApkPkgCommand(command)
+	default:
+		return []string{"echo", pkgmanager + " is not implemented yet!"}
+	}
+}
+
+func GetAptPkgCommand(command string) []string {
+	bin := "apt"
+
 	switch command {
 	case "autoremove":
-		res = append(res, settings.Cnf.PkgManager.CmdAutoremove)
+		return []string{"sudo", bin, "autoremove"}
 	case "clean":
-		res = append(res, settings.Cnf.PkgManager.CmdClean)
+		return []string{"sudo", bin, "clean"}
 	case "install":
-		res = append(res, settings.Cnf.PkgManager.CmdInstall)
+		return []string{"sudo", bin, "install"}
 	case "list":
-		res = append(res, settings.Cnf.PkgManager.CmdList)
+		return []string{"sudo", bin, "list"}
 	case "purge":
-		res = append(res, settings.Cnf.PkgManager.CmdPurge)
+		return []string{"sudo", bin, "purge"}
 	case "remove":
-		res = append(res, settings.Cnf.PkgManager.CmdRemove)
+		return []string{"sudo", bin, "remove"}
 	case "search":
-		res = append(res, settings.Cnf.PkgManager.CmdSearch)
+		return []string{"sudo", bin, "search"}
 	case "show":
-		res = append(res, settings.Cnf.PkgManager.CmdShow)
+		return []string{"sudo", bin, "show"}
 	case "update":
-		res = append(res, settings.Cnf.PkgManager.CmdUpdate)
+		return []string{"sudo", bin, "update"}
 	case "upgrade":
-		res = append(res, settings.Cnf.PkgManager.CmdUpgrade)
+		return []string{"sudo", bin, "upgrade"}
 	default:
 		return nil
 	}
-	return res
-
 }
 
 func GetAurPkgCommand(command string) []string {
