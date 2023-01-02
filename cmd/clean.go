@@ -9,26 +9,8 @@ package cmd
 */
 
 import (
-	"fmt"
-
 	"github.com/spf13/cobra"
 )
-
-func cleanUsage(*cobra.Command) error {
-	fmt.Print(`Description: 
-	Clean the apx package manager cache.
-
-Usage:
-  apx clean [options]
-
-Options:
-  -h, --help            Show this help message and exit
-
-Examples:
-  apx clean
-`)
-	return nil
-}
 
 func NewCleanCommand() *cobra.Command {
 	cmd := &cobra.Command{
@@ -37,7 +19,6 @@ func NewCleanCommand() *cobra.Command {
 		Short:   "Clean the apx package manager cache",
 		RunE:    clean,
 	}
-	//cmd.SetUsageFunc(cleanUsage)
 	return cmd
 }
 

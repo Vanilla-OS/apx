@@ -9,26 +9,8 @@ package cmd
 */
 
 import (
-	"fmt"
-
 	"github.com/spf13/cobra"
 )
-
-func upgradeUsage(*cobra.Command) error {
-	fmt.Print(`Description: 
-	Upgrade the system by installing/upgrading available packages.
-
-Usage:
-  apx upgrade [options]
-  
-Options:
-  -h, --help            Show this help message and exit
-
-Examples:
-  apx upgrade
-`)
-	return nil
-}
 
 func NewUpgradeCommand() *cobra.Command {
 	cmd := &cobra.Command{
@@ -37,7 +19,6 @@ func NewUpgradeCommand() *cobra.Command {
 		Short:   "Upgrade the system by installing/upgrading available packages.",
 		RunE:    upgrade,
 	}
-	//	cmd.SetUsageFunc(upgradeUsage)
 	cmd.Flags().BoolP("assume-yes", "y", false, "Proceed without manual confirmation.")
 	return cmd
 }

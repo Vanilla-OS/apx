@@ -9,25 +9,8 @@ package cmd
 */
 
 import (
-	"fmt"
-
 	"github.com/spf13/cobra"
 )
-
-func autoRemoveUsage(*cobra.Command) error {
-	fmt.Print(`Description: 
-	Remove all unused packages automatically.
-Usage:
-  apx autoremove [options]
-
-Options:
-  -h, --help            Show this help message and exit
-
-Usage:
-  apx autoremove
-`)
-	return nil
-}
 
 func NewAutoRemoveCommand() *cobra.Command {
 	cmd := &cobra.Command{
@@ -36,7 +19,6 @@ func NewAutoRemoveCommand() *cobra.Command {
 		Short:   "Remove all unused packages automatically",
 		RunE:    autoRemove,
 	}
-	//cmd.SetUsageFunc(autoRemoveUsage)
 	return cmd
 }
 

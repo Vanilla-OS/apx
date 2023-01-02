@@ -9,26 +9,8 @@ package cmd
 */
 
 import (
-	"fmt"
-
 	"github.com/spf13/cobra"
 )
-
-func searchUsage(*cobra.Command) error {
-	fmt.Print(`Description: 
-	Search for packages in a managed container.
-
-Usage:
-  apx search <packages> [options]
-
-Options:
-  -h, --help            Show this help message and exit
-
-Examples:
-  apx search htop
-`)
-	return nil
-}
 
 func NewSearchCommand() *cobra.Command {
 	cmd := &cobra.Command{
@@ -37,7 +19,6 @@ func NewSearchCommand() *cobra.Command {
 		Short:   "Search for packages in a managed container.",
 		RunE:    search,
 	}
-	//	cmd.SetUsageFunc(searchUsage)
 	return cmd
 }
 

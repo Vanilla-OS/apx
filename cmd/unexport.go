@@ -9,26 +9,8 @@ package cmd
 */
 
 import (
-	"fmt"
-
 	"github.com/spf13/cobra"
 )
-
-func unexportUsage(*cobra.Command) error {
-	fmt.Print(`Description: 
-	Unexport/Remove a program's desktop entry from a managed container.
-
-Usage:
-  apx unexport <program> [options]
-
-Options:
-  -h, --help            Show this help message and exit
-
-Examples:
-  apx unexport htop
-`)
-	return nil
-}
 
 func NewUnexportCommand() *cobra.Command {
 	cmd := &cobra.Command{
@@ -37,7 +19,6 @@ func NewUnexportCommand() *cobra.Command {
 		Short:   "Unexport/Remove a program's desktop entry from a managed container",
 		RunE:    unexport,
 	}
-	//	cmd.SetUsageFunc(unexportUsage)
 	return cmd
 }
 

@@ -15,27 +15,6 @@ import (
 	"github.com/vanilla-os/apx/core"
 )
 
-func installUsage(*cobra.Command) error {
-	fmt.Print(`Description: 
-	Install packages inside a managed container.
-
-Usage:
-  apx install [options] <packages>
-
-Options:
-  -h, --help            Show this help message and exit
-  -y, --assume-yes      Proceed without manual confirmation.
-  -f, --fix-broken      Fix broken deps before installing.
-  --no-export           Do not export a desktop entry after the installation.
-  --sideload [path]     Install a package from a local file.
-
-Examples:
-  apx install htop git
-  apx install --sideload /path/to/file.deb
-`)
-	return nil
-}
-
 func NewInstallCommand() *cobra.Command {
 	cmd := &cobra.Command{
 		Example: `apx install htop git
@@ -44,7 +23,6 @@ apx install --sideload /path/to/file.deb`,
 		Short: "Install packages inside a managed container",
 		RunE:  install,
 	}
-	//cmd.SetUsageFunc(installUsage)
 	cmd.Flags().SetInterspersed(false)
 	cmd.Flags().BoolP("assume-yes", "y", false, "Proceed without manual confirmation.")
 	cmd.Flags().BoolP("fix-broken", "f", false, "Fix broken deps before installing.")

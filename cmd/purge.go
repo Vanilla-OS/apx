@@ -9,26 +9,8 @@ package cmd
 */
 
 import (
-	"fmt"
-
 	"github.com/spf13/cobra"
 )
-
-func purgeUsage(*cobra.Command) error {
-	fmt.Print(`Description: 
-	Purge packages inside a managed container.
-
-Usage:
-  apx purge <packages> [options]
-
-Options:
-  -h, --help            Show this help message and exit
-
-Examples:
-  apx purge htop
-`)
-	return nil
-}
 
 func NewPurgeCommand() *cobra.Command {
 	cmd := &cobra.Command{
@@ -37,7 +19,6 @@ func NewPurgeCommand() *cobra.Command {
 		Short:   "Purge packages inside a managed container",
 		RunE:    purge,
 	}
-	//cmd.SetUsageFunc(purgeUsage)
 	return cmd
 }
 

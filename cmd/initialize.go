@@ -17,19 +17,6 @@ import (
 	"github.com/spf13/cobra"
 )
 
-func initializeUsage(*cobra.Command) error {
-	fmt.Print(`Description: 
-	Initialize the managed container.
-
-Usage:
-  apx init [options]
-
-Options:
-  -h, --help            Show this help message and exit
-`)
-	return nil
-}
-
 func NewInitializeCommand() *cobra.Command {
 	cmd := &cobra.Command{
 		Example: "apx init",
@@ -37,7 +24,6 @@ func NewInitializeCommand() *cobra.Command {
 		Short:   "Initialize the managed container",
 		RunE:    initialize,
 	}
-	//cmd.SetUsageFunc(initializeUsage)
 	return cmd
 }
 

@@ -9,26 +9,8 @@ package cmd
 */
 
 import (
-	"fmt"
-
 	"github.com/spf13/cobra"
 )
-
-func removeUsage(*cobra.Command) error {
-	fmt.Print(`Description: 
-	Remove packages inside a managed container.
-
-Usage:
-  apx remove <packages> [options]
-
-Options:
-  -h, --help            Show this help message and exit
-
-Examples:
-  apx remove htop
-`)
-	return nil
-}
 
 func NewRemoveCommand() *cobra.Command {
 	cmd := &cobra.Command{
@@ -37,7 +19,6 @@ func NewRemoveCommand() *cobra.Command {
 		Short:   "Remove packages inside a managed container.",
 		RunE:    remove,
 	}
-	//cmd.SetUsageFunc(removeUsage)
 	cmd.Flags().BoolP("assume-yes", "y", false, "Proceed without manual confirmation.")
 
 	return cmd

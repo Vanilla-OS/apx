@@ -9,26 +9,8 @@ package cmd
 */
 
 import (
-	"fmt"
-
 	"github.com/spf13/cobra"
 )
-
-func showUsage(*cobra.Command) error {
-	fmt.Print(`Description: 
-	Show details about a package.
-
-Usage:
-  apx show <package> [options]
-
-Options:
-  -h, --help            Show this help message and exit
-
-Examples:
-  apx show htop
-`)
-	return nil
-}
 
 func NewShowCommand() *cobra.Command {
 	cmd := &cobra.Command{
@@ -37,7 +19,6 @@ func NewShowCommand() *cobra.Command {
 		Short:   "Show details about a package",
 		RunE:    show,
 	}
-	//cmd.SetUsageFunc(showUsage)
 	return cmd
 }
 
