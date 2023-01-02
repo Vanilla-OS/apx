@@ -32,6 +32,7 @@ func help(cmd *cobra.Command, args []string) {
 Options:
 	-h, --help    Show this help message and exit
 	-v, --version Show version and exit
+	--apt	    Install packages from the Ubuntu repository
 	--aur	    Install packages from the AUR repository
 	--dnf	    Install packages from the Fedora repository
 	--apk	    Install packages from the Alpine repository

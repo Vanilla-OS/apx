@@ -10,34 +10,17 @@ package settings
 */
 
 import (
+	"fmt"
+	"os/exec"
+	"strings"
+
 	"github.com/spf13/viper"
 )
 
 type Config struct {
-	Container  ContainerConfig  `json:"container"`
-	PkgManager PkgManagerConfig `json:"pkg_manager"`
-}
-
-type ContainerConfig struct {
-	Name   string `json:"name"`
-	Image  string `json:"container_image,omitempty"`
-	Path   string `json:"container_path"`
-	Update string `json:"container_update"`
-}
-
-type PkgManagerConfig struct {
-	Bin           string `json:"pkgmanager_bin"`
-	Sudo          bool   `json:"pkgmanager_sudo"`
-	CmdAutoremove string `json:"pkgmanager_cmdAutoremove"`
-	CmdClean      string `json:"pkgmanager_cmdClean"`
-	CmdInstall    string `json:"pkgmanager_cmdInstall"`
-	CmdList       string `json:"pkgmanager_cmdList"`
-	CmdPurge      string `json:"pkgmanager_cmdPurge"`
-	CmdRemove     string `json:"pkgmanager_cmdRemove"`
-	CmdSearch     string `json:"pkgmanager_cmdSearch"`
-	CmdShow       string `json:"pkgmanager_cmdShow"`
-	CmdUpdate     string `json:"pkgmanager_cmdUpdate"`
-	CmdUpgrade    string `json:"pkgmanager_cmdUpgrade"`
+	ContainerName string `json:"containername"`
+	Image         string `json:"image"`
+	PkgManager    string `json:"pkgmanager"`
 }
 
 var Cnf *Config
@@ -50,13 +33,23 @@ func init() {
 	err := viper.ReadInConfig()
 
 	if err != nil {
-		panic("Config error!")
-	}
+		image, pkgmanager, err := GetHostInfo()
 
-	err = viper.Unmarshal(&Cnf)
+		if err != nil {
+			panic("Unsupported setup detected, set a default distro and package manager in the config file")
+		}
 
-	if err != nil {
-		panic("Config error!\n" + err.Error())
+		Cnf = &Config{ContainerName: "apx_managed", Image: image, PkgManager: pkgmanager}
+	} else {
+		err = viper.Unmarshal(&Cnf)
+
+		if err != nil {
+			panic("Config error!\n" + err.Error())
+		}
+
+		if Cnf.ContainerName == "" || Cnf.Image == "" || Cnf.PkgManager == "" {
+			panic("Config error!\ncontainer_name, image and pkgmanager have to be set")
+		}
 	}
 
 	// fmt.Println("==========================")
@@ -67,4 +60,36 @@ func init() {
 	// fmt.Println("Container update command:", Cnf.Container.Update)
 	// fmt.Println("Package manager bin:", Cnf.PkgManager.Bin)
 	// fmt.Println("==========================")
+}
+
+func GetHostInfo() (img string, pkgmanager string, err error) {
+	distro_raw, err := exec.Command("lsb_release", "-is").Output()
+	if err != nil {
+		return "", "", err
+	}
+	distro := strings.ToLower(strings.Trim(string(distro_raw), "\r\n"))
+
+	release_raw, err := exec.Command("lsb_release", "-rs").Output()
+	if err != nil {
+		return "", "", err
+	}
+	release := strings.ToLower(strings.Trim(string(release_raw), "\r\n"))
+
+	img = fmt.Sprintf("%v:%v", distro, release)
+
+	pkgmanager = ""
+	switch distro {
+	case "ubuntu":
+		pkgmanager = "apt"
+	case "archlinux":
+		pkgmanager = "yay"
+	case "fedora":
+		pkgmanager = "dnf"
+	case "alpine":
+		pkgmanager = "apk"
+	default:
+		return "", "", fmt.Errorf("Unknown package manager for this distro")
+	}
+
+	return img, pkgmanager, nil
 }

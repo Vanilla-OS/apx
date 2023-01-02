@@ -1,22 +1,5 @@
 {
-    "container": {
-        "name": "apx_managed",
-        "image": "",
-        "path": "",
-        "update": ""
-    },
-    "pkgmanager": {
-        "bin": "/usr/bin/apt",
-        "sudo": true,
-        "cmdAutoremove": "autoremove",
-        "cmdClean": "clean",
-        "cmdInstall": "install",
-        "cmdList": "list",
-        "cmdPurge": "purge",
-        "cmdRemove": "remove",
-        "cmdSearch": "search",
-        "cmdShow": "show",
-        "cmdUpdate": "update",
-        "cmdUpgrade": "upgrade"
-    }
+    "containername": "apx_managed",
+    "image": "docker.io/library/ubuntu",
+    "pkgmanager": "apt"
 }

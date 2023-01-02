@@ -26,10 +26,10 @@ import (
 type ContainerType int
 
 const (
-	DEFAULT ContainerType = iota // 0
-	AUR     ContainerType = iota // 1
-	DNF     ContainerType = iota // 2
-	APK     ContainerType = iota // 3
+	APT ContainerType = iota // 0
+	AUR ContainerType = iota // 1
+	DNF ContainerType = iota // 2
+	APK ContainerType = iota // 3
 )
 
 type Container struct {
@@ -50,7 +50,7 @@ func NewNamedContainer(kind ContainerType, name string) *Container {
 }
 func (c *Container) GetContainerImage() (image string, err error) {
 	switch c.containerType {
-	case DEFAULT:
+	case APT:
 		return GetHostImage()
 	case AUR:
 		return "docker.io/library/archlinux", nil
@@ -68,7 +68,7 @@ func (c *Container) GetContainerImage() (image string, err error) {
 func (c *Container) GetContainerName() (name string) {
 	var cn strings.Builder
 	switch c.containerType {
-	case DEFAULT:
+	case APT:
 		cn.WriteString("apx_managed")
 	case AUR:
 		cn.WriteString("apx_managed_aur")
@@ -100,8 +100,8 @@ func ContainerManager() string {
 }
 
 func GetHostImage() (img string, err error) {
-	if settings.Cnf.Container.Image != "" {
-		return settings.Cnf.Container.Image, nil
+	if settings.Cnf.Image != "" {
+		return settings.Cnf.Image, nil
 	}
 
 	distro_raw, err := exec.Command("lsb_release", "-is").Output()
