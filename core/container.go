@@ -128,7 +128,7 @@ func GetDistroboxVersion() (version string, err error) {
 
 	splitted := strings.Split(string(output), "distrobox: ")
 	if len(splitted) != 2 {
-		return "", errors.New("Can't retrieve distrobox version")
+		return "", errors.New("can't retrieve distrobox version")
 	}
 
 	return splitted[1], nil
@@ -162,7 +162,7 @@ func (c *Container) Enter() error {
 
 	if !c.Exists() {
 		log.Default().Printf("Managed container does not exist.\nTry: apx init")
-		return errors.New("Managed container does not exist")
+		return errors.New("managed container does not exist")
 	}
 
 	container_name := c.GetContainerName()

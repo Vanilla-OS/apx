@@ -15,8 +15,5 @@ import (
 
 func CheckConnection() bool {
 	_, err := http.Get("https://google.com") // TODO: use a better way to check connection
-	if err != nil {
-		return false
-	}
-	return true
+	return err == nil
 }
