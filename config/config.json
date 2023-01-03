@@ -1,5 +1,6 @@
 {
-    "containername": "apx_managed",
+    "distroid": "ubuntu",
+    "containername": "apx_managed_ubuntu",
     "image": "docker.io/library/ubuntu",
     "pkgmanager": "apt",
     "distroboxpath": "/usr/lib/apx/distrobox"
