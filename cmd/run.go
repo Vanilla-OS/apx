@@ -9,41 +9,22 @@ package cmd
 */
 
 import (
-	"fmt"
-
 	"github.com/spf13/cobra"
-	"github.com/vanilla-os/apx/core"
 )
-
-func runUsage(*cobra.Command) error {
-	fmt.Print(`Description: 
-	Run a program inside a managed container.
-
-Usage:
-  apx run <program> [options]
-
-Options:
-  -h, --help            Show this help message and exit
-
-Examples:
-  apx run htop
-`)
-	return nil
-}
 
 func NewRunCommand() *cobra.Command {
 	cmd := &cobra.Command{
-		Use:   "run",
-		Short: "Run a program inside a managed container.",
-		RunE:  run,
+		Example: "apx run htop",
+		Use:     "run <program>",
+		Short:   "Run a program inside a managed container.",
+		RunE:    run,
 	}
-	cmd.SetUsageFunc(runUsage)
 	return cmd
 }
 
 func run(cmd *cobra.Command, args []string) error {
 
-	core.RunContainer(container, args...)
+	container.Run(args...)
 
 	return nil
 }

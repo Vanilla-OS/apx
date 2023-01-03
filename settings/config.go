@@ -11,6 +11,7 @@ package settings
 
 import (
 	"fmt"
+	"log"
 	"os/exec"
 	"strings"
 
@@ -36,7 +37,7 @@ func init() {
 		image, pkgmanager, err := GetHostInfo()
 
 		if err != nil {
-			panic("Unsupported setup detected, set a default distro and package manager in the config file")
+			log.Fatal("Unsupported setup detected, set a default distro and package manager in the config file")
 		}
 
 		Cnf = &Config{ContainerName: "apx_managed", Image: image, PkgManager: pkgmanager}
@@ -44,11 +45,11 @@ func init() {
 		err = viper.Unmarshal(&Cnf)
 
 		if err != nil {
-			panic("Config error!\n" + err.Error())
+			log.Fatalf("Config error: %v\n" + err.Error())
 		}
 
 		if Cnf.ContainerName == "" || Cnf.Image == "" || Cnf.PkgManager == "" {
-			panic("Config error!\ncontainer_name, image and pkgmanager have to be set")
+			log.Fatal("Config error!\ncontainer_name, image and pkgmanager have to be set")
 		}
 	}
 

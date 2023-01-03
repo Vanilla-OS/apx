@@ -9,44 +9,25 @@ package cmd
 */
 
 import (
-	"fmt"
-
 	"github.com/spf13/cobra"
-	"github.com/vanilla-os/apx/core"
 )
-
-func searchUsage(*cobra.Command) error {
-	fmt.Print(`Description: 
-	Search for packages in a managed container.
-
-Usage:
-  apx search <packages> [options]
-
-Options:
-  -h, --help            Show this help message and exit
-
-Examples:
-  apx search htop
-`)
-	return nil
-}
 
 func NewSearchCommand() *cobra.Command {
 	cmd := &cobra.Command{
-		Use:   "search",
-		Short: "Search for packages in a managed container.",
-		RunE:  search,
+		Example: "apx search neovim",
+		Use:     "search <packages>",
+		Short:   "Search for packages in a managed container.",
+		RunE:    search,
 	}
-	cmd.SetUsageFunc(searchUsage)
 	return cmd
 }
 
 func search(cmd *cobra.Command, args []string) error {
 
-	command := append([]string{}, core.GetPkgCommand(container, "search")...)
+	command := append([]string{}, container.GetPkgCommand("search")...)
 	command = append(command, args...)
 
-	core.RunContainer(container, command...)
+	container.Run(command...)
 
 	return nil
 }

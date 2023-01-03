@@ -9,27 +9,8 @@ package cmd
 */
 
 import (
-	"fmt"
-
 	"github.com/spf13/cobra"
-	"github.com/vanilla-os/apx/core"
 )
-
-func listUsage(*cobra.Command) error {
-	fmt.Print(`Description: 
-	List installed packages.
-
-Usage:
-  apx list [options]
-
-Options:
-  -h, --help            Show this help message and exit
-  -u, --upgradable      Show only upgradable packages
-  -i, --installed       Show only installed packages
-
-`)
-	return nil
-}
 
 func NewListCommand() *cobra.Command {
 	cmd := &cobra.Command{
@@ -37,7 +18,6 @@ func NewListCommand() *cobra.Command {
 		Short: "List installed packages.",
 		RunE:  list,
 	}
-	cmd.SetUsageFunc(listUsage)
 	cmd.Flags().SetInterspersed(false)
 	cmd.Flags().BoolP("upgradable", "u", false, "List only upgradable packages.")
 	cmd.Flags().BoolP("installed", "i", false, "List only installed packages.")
@@ -47,7 +27,7 @@ func NewListCommand() *cobra.Command {
 
 func list(cmd *cobra.Command, args []string) error {
 
-	command := append([]string{}, core.GetPkgCommand(container, "list")...)
+	command := append([]string{}, container.GetPkgCommand("list")...)
 
 	if cmd.Flag("upgradable").Value.String() == "true" {
 		command = append(command, "--upgradable")
@@ -58,7 +38,7 @@ func list(cmd *cobra.Command, args []string) error {
 
 	command = append(command, args...)
 
-	core.RunContainer(container, command...)
+	container.Run(command...)
 
 	return nil
 }

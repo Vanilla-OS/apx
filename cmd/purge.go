@@ -9,44 +9,25 @@ package cmd
 */
 
 import (
-	"fmt"
-
 	"github.com/spf13/cobra"
-	"github.com/vanilla-os/apx/core"
 )
-
-func purgeUsage(*cobra.Command) error {
-	fmt.Print(`Description: 
-	Purge packages inside a managed container.
-
-Usage:
-  apx purge <packages> [options]
-
-Options:
-  -h, --help            Show this help message and exit
-
-Examples:
-  apx purge htop
-`)
-	return nil
-}
 
 func NewPurgeCommand() *cobra.Command {
 	cmd := &cobra.Command{
-		Use:   "purge",
-		Short: "Purge packages inside a managed container",
-		RunE:  purge,
+		Example: "apx purge htop",
+		Use:     "purge <packages>",
+		Short:   "Purge packages inside a managed container",
+		RunE:    purge,
 	}
-	cmd.SetUsageFunc(purgeUsage)
 	return cmd
 }
 
 func purge(cmd *cobra.Command, args []string) error {
 
-	command := append([]string{}, core.GetPkgCommand(container, "purge")...)
+	command := append([]string{}, container.GetPkgCommand("purge")...)
 	command = append(command, args...)
 
-	core.RunContainer(container, command...)
+	container.Run(command...)
 
 	return nil
 }

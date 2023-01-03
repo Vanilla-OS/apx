@@ -23,7 +23,7 @@ func init() {
 	if err != nil {
 		fmt.Println(`One or more core components are not available. 
 Please refer to our documentation at https://documentation.vanillaos.org/`)
-		panic(err)
+		log.Fatal(err)
 	}
 }
 
@@ -33,12 +33,12 @@ func CheckContainerTools() error {
 	podman := exec.Command("which", "podman")
 
 	if distrobox != nil {
-		return errors.New(`Distrobox is not installed. Please install it.`)
+		return errors.New(`distrobox is not installed`)
 	}
 
 	if err := docker.Run(); err != nil {
 		if err := podman.Run(); err != nil {
-			return errors.New(`No container engine found. Please install Podman or Docker.`)
+			return errors.New(`container engine (docker or podman) not found`)
 		}
 	}
 

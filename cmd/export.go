@@ -9,40 +9,21 @@ package cmd
 */
 
 import (
-	"fmt"
-
 	"github.com/spf13/cobra"
-	"github.com/vanilla-os/apx/core"
 )
-
-func exportUsage(*cobra.Command) error {
-	fmt.Print(`Description: 
-	Export/Recreate a program's desktop entry from a managed container.
-
-Usage:
-  apx export <program> [options]
-
-Options:
-  -h, --help            Show this help message and exit
-
-Examples:
-  apx export htop
-`)
-	return nil
-}
 
 func NewExportCommand() *cobra.Command {
 	cmd := &cobra.Command{
-		Use:   "export",
-		Short: "Export/Recreate a program's desktop entry from a managed container",
-		RunE:  export,
+		Example: "apx export htop",
+		Use:     "export <program>",
+		Short:   "Export/Recreate a program's desktop entry from a managed container",
+		RunE:    export,
 	}
-	cmd.SetUsageFunc(exportUsage)
 	return cmd
 }
 
 func export(cmd *cobra.Command, args []string) error {
 
-	core.ExportDesktopEntry(container, args[0])
+	container.ExportDesktopEntry(args[0])
 	return nil
 }
