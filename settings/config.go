@@ -10,9 +10,10 @@ package settings
 */
 
 import (
+	"bufio"
 	"fmt"
 	"log"
-	"os/exec"
+	"os"
 	"strings"
 
 	"github.com/spf13/viper"
@@ -52,45 +53,50 @@ func init() {
 			log.Fatal("Config error!\ncontainer_name, image and pkgmanager have to be set")
 		}
 	}
-
-	// fmt.Println("==========================")
-	// fmt.Println("Config:")
-	// fmt.Println("Container name:", Cnf.Container.Name)
-	// fmt.Println("Container image:", Cnf.Container.Image)
-	// fmt.Println("Container path:", Cnf.Container.Path)
-	// fmt.Println("Container update command:", Cnf.Container.Update)
-	// fmt.Println("Package manager bin:", Cnf.PkgManager.Bin)
-	// fmt.Println("==========================")
 }
 
 func GetHostInfo() (img string, pkgmanager string, err error) {
-	distro_raw, err := exec.Command("lsb_release", "-is").Output()
+	file, err := os.Open("/etc/os-release")
+
 	if err != nil {
-		return "", "", err
+		return "", "", fmt.Errorf("Failed to open /etc/os-release: " + err.Error())
 	}
-	distro := strings.ToLower(strings.Trim(string(distro_raw), "\r\n"))
 
-	release_raw, err := exec.Command("lsb_release", "-rs").Output()
-	if err != nil {
-		return "", "", err
+	var distro_id string
+	var distro_version string
+	scanner := bufio.NewScanner(file)
+	for scanner.Scan() {
+		line_content := scanner.Text()
+		if strings.HasPrefix(line_content, "ID=") {
+			distro_id = strings.Trim(line_content, "ID=")
+		} else if strings.HasPrefix(line_content, "VERSION_ID=") {
+			distro_version = strings.Trim(line_content, "VERSION_ID=")
+		}
 	}
-	release := strings.ToLower(strings.Trim(string(release_raw), "\r\n"))
 
-	img = fmt.Sprintf("%v:%v", distro, release)
+	if err := scanner.Err(); err != nil {
+		return "", "", fmt.Errorf("Failure while reading /etc/os-release: " + err.Error())
+	}
 
-	pkgmanager = ""
-	switch distro {
+	defer file.Close()
+
+	if len(distro_id) == 0 {
+		return "", "", fmt.Errorf("Failed to read distro type")
+	}
+	if len(distro_version) == 0 {
+		return "", "", fmt.Errorf("Failed to read distro version")
+	}
+
+	switch distro_id {
 	case "ubuntu":
-		pkgmanager = "apt"
-	case "archlinux":
-		pkgmanager = "yay"
+		return "docker.io/library/ubuntu:" + distro_version, "apt", nil
+	case "arch":
+		return "docker.io/library/archlinux:" + distro_version, "yay", nil
 	case "fedora":
-		pkgmanager = "dnf"
+		return "docker.io/library/fedora:" + distro_version, "dnf", nil
 	case "alpine":
-		pkgmanager = "apk"
+		return "docker.io/library/alpine:" + distro_version, "apk", nil
 	default:
-		return "", "", fmt.Errorf("Unknown package manager for this distro")
+		return "", "", fmt.Errorf("Unsupported distro detected")
 	}
-
-	return img, pkgmanager, nil
 }
