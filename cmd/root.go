@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"github.com/spf13/cobra"
+	"github.com/spf13/viper"
 	"github.com/vanilla-os/apx/core"
 )
 
@@ -43,11 +44,21 @@ func NewApxCommand(Version string) *cobra.Command {
 	rootCmd.AddCommand(NewUnexportCommand())
 	rootCmd.AddCommand(NewUpdateCommand())
 	rootCmd.AddCommand(NewUpgradeCommand())
+	viper.BindPFlag("aur", rootCmd.PersistentFlags().Lookup("aur"))
+	viper.BindPFlag("apt", rootCmd.PersistentFlags().Lookup("apt"))
+	viper.BindPFlag("dnf", rootCmd.PersistentFlags().Lookup("dnf"))
+	viper.BindPFlag("apk", rootCmd.PersistentFlags().Lookup("apk"))
 	return rootCmd
 }
 
 func getContainer() *core.Container {
 	var kind core.ContainerType = core.APT
+	// in the future these should be moved to
+	// constants, and wrapped in package level calls
+	apt = viper.GetBool("apt")
+	aur = viper.GetBool("aur")
+	dnf = viper.GetBool("dnf")
+	apk = viper.GetBool("apk")
 	if aur {
 		kind = core.AUR
 	} else if dnf {

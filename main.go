@@ -13,6 +13,7 @@ import (
 	"log"
 
 	"github.com/spf13/cobra"
+	"github.com/spf13/viper"
 	"github.com/vanilla-os/apx/cmd"
 )
 
@@ -23,6 +24,8 @@ var (
 func init() {
 	log.SetPrefix("\033[1m\033[34m⌬ Apx :: \033[0m")
 	log.SetFlags(0)
+	viper.SetEnvPrefix("apx") // will be uppercased automatically
+	viper.AutomaticEnv()
 }
 
 func help(cmd *cobra.Command, args []string) {
