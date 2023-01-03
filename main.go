@@ -58,7 +58,6 @@ Commands:
 
 func main() {
 	rootCmd := cmd.NewApxCommand(Version)
-
-	rootCmd.SetHelpFunc(help)
+	//	rootCmd.SetHelpFunc(help)
 	rootCmd.Execute()
 }

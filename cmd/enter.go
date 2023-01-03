@@ -13,35 +13,21 @@ import (
 	"log"
 
 	"github.com/spf13/cobra"
-	"github.com/vanilla-os/apx/core"
 )
-
-func enterUsage(*cobra.Command) error {
-	fmt.Print(`Description: 
-	Enter in the container shell.
-
-Usage:
-  apx enter [options]
-
-Options:
-  -h, --help            Show this help message and exit
-`)
-	return nil
-}
 
 func NewEnterCommand() *cobra.Command {
 	cmd := &cobra.Command{
-		Use:   "enter",
-		Short: "Enter in the container shell",
-		RunE:  enter,
+		Example: "apx enter",
+		Use:     "enter",
+		Short:   "Enter in the container shell",
+		RunE:    enter,
 	}
-	cmd.SetUsageFunc(enterUsage)
 	return cmd
 }
 
 func enter(cmd *cobra.Command, args []string) error {
 
-	if err := core.EnterContainer(container); err != nil {
+	if err := container.Enter(); err != nil {
 		log.Default().Fatal("Failed to enter container: ", err)
 		return err
 	}

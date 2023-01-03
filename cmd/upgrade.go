@@ -9,49 +9,30 @@ package cmd
 */
 
 import (
-	"fmt"
-
 	"github.com/spf13/cobra"
-	"github.com/vanilla-os/apx/core"
 )
-
-func upgradeUsage(*cobra.Command) error {
-	fmt.Print(`Description: 
-	Upgrade the system by installing/upgrading available packages.
-
-Usage:
-  apx upgrade [options]
-  
-Options:
-  -h, --help            Show this help message and exit
-
-Examples:
-  apx upgrade
-`)
-	return nil
-}
 
 func NewUpgradeCommand() *cobra.Command {
 	cmd := &cobra.Command{
-		Use:   "upgrade",
-		Short: "Upgrade the system by installing/upgrading available packages.",
-		RunE:  upgrade,
+		Example: "apx upgrade",
+		Use:     "upgrade",
+		Short:   "Upgrade the system by installing/upgrading available packages.",
+		RunE:    upgrade,
 	}
-	cmd.SetUsageFunc(upgradeUsage)
 	cmd.Flags().BoolP("assume-yes", "y", false, "Proceed without manual confirmation.")
 	return cmd
 }
 
 func upgrade(cmd *cobra.Command, args []string) error {
 
-	command := append([]string{}, core.GetPkgCommand(container, "upgrade")...)
+	command := append([]string{}, container.GetPkgCommand("upgrade")...)
 	command = append(command, args...)
 
 	if cmd.Flag("assume-yes").Value.String() == "true" {
 		command = append(command, "-y")
 	}
 
-	core.RunContainer(container, command...)
+	container.Run(command...)
 
 	return nil
 }

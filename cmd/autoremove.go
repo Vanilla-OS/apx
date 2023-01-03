@@ -9,43 +9,25 @@ package cmd
 */
 
 import (
-	"fmt"
-
 	"github.com/spf13/cobra"
-	"github.com/vanilla-os/apx/core"
 )
-
-func autoRemoveUsage(*cobra.Command) error {
-	fmt.Print(`Description: 
-	Remove all unused packages automatically.
-Usage:
-  apx autoremove [options]
-
-Options:
-  -h, --help            Show this help message and exit
-
-Usage:
-  apx autoremove
-`)
-	return nil
-}
 
 func NewAutoRemoveCommand() *cobra.Command {
 	cmd := &cobra.Command{
-		Use:   "autoremove",
-		Short: "Remove all unused packages automatically",
-		RunE:  autoRemove,
+		Example: "apx autoremove",
+		Use:     "autoremove",
+		Short:   "Remove all unused packages automatically",
+		RunE:    autoRemove,
 	}
-	cmd.SetUsageFunc(autoRemoveUsage)
 	return cmd
 }
 
 func autoRemove(cmd *cobra.Command, args []string) error {
 
-	command := append([]string{}, core.GetPkgCommand(container, "autoremove")...)
+	command := append([]string{}, container.GetPkgCommand("autoremove")...)
 	command = append(command, args...)
 
-	core.RunContainer(container, command...)
+	container.Run(command...)
 
 	return nil
 }
