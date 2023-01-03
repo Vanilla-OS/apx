@@ -19,7 +19,6 @@ func NewRunCommand() *cobra.Command {
 		Short:   "Run a program inside a managed container.",
 		RunE:    run,
 	}
-	//cmd.SetUsageFunc(runUsage)
 	return cmd
 }
 
