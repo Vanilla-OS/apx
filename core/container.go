@@ -90,10 +90,11 @@ func ContainerManager() string {
 	docker := exec.Command("sh", "-c", "command -v docker")
 	podman := exec.Command("sh", "-c", "command -v podman")
 
-	if err := docker.Run(); err == nil {
-		return "docker"
-	} else if err := podman.Run(); err == nil {
+	// prefer podman over docker if both are present
+	if err := podman.Run(); err == nil {
 		return "podman"
+	} else if err := docker.Run(); err == nil {
+		return "docker"
 	}
 
 	log.Fatal("no container engine found. Please install Podman or Docker.")
