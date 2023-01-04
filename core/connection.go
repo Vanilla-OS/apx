@@ -16,9 +16,7 @@ import (
 
 func CheckConnection(host, port string) bool {
 	testDomain := fmt.Sprintf("%s:%s", host, port)
-	conn, err := net.Dial("tcp", testDomain)
-
-	defer conn.Close()
+	_, err := net.Dial("tcp", testDomain)
 
 	return err == nil
 }
