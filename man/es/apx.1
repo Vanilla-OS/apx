@@ -7,35 +7,35 @@
 .IP
 .nf
 \f[C]
-\[ga]apx\[ga] es el administrador de paquetes de Vanilla OS que es f\['a]cil de usar para instalar paquetes de m\['u]ltiples fuentes dentro de contenedores sin la necesidad de alterar el sistema de archivos ra\['i]z.
+Apx es un administrador de paquetes con soporte para m\[ú]ltiples fuentes que le permite instalar paquetes en un contenedor administrado.
 \f[R]
 .fi
 .SS SYNOPSIS
 .IP
 .nf
 \f[C]
-apx [opciones] [comando] [argumentos]
+apx [comando] [banderas] [argumentos]
 \f[R]
 .fi
 .SS DESCRIPTION
 .IP
 .nf
 \f[C]
-apx is a wrapper around multiple package managers to install packages and run commands inside a managed container.
-apx es un envoltorio alrededor de m\['u]ltiples administradores de paquetes para realizar la instalaci\['o]n de paquetes y ejecutar comandos dentro de un contenedor.
+Apx es un administrador de paquetes con soporte para m\[ú]ltiples fuentes que le permite instalar paquetes en un contenedor administrado
 
 Uso:
-    apx [opciones] [comando] [argumentos]
+    apx [comando]
 
-Opciones:
+Banderas:
     -h, --help      Muestra este mensaje
     -v, --version   Muestra la versi\['o]n
     --aur           Instala paquetes desde el repositorio AUR
     --dnf           Instala paquetes desde los repositorios de Fedora Linux
 
-Commands:
+Comandos disponibles:
     autoremove      Elimina todos los paquetes no utilizados
     clean           Limpia la cach\['e] de apx
+    completion      Generar el script de autocompletado para el intérprete de comandos especificado.
     enter           Entra al shell del contenedor
     export          Exporta/Recrea el acceso directo de un programa del contenedor
     help            Muestra este mensaje
@@ -51,6 +51,15 @@ Commands:
     unexport        Elimina el acceso directo de un programa
     update          Actualiza los repositorios de paquetes disponibles
     upgrade         Actualiza todo el sistema instalando/actualizado los paquetes disponibles
+    
+Banderas globales:
+       --apk        Instalar paquetes desde el repositorio de Alpine.
+       --apt        Instalar paquetes desde el repositorio de Ubuntu.
+       --aur        Instala paquetes desde AUR (Arch User Repository).
+       --dnf        Instala paquetes desde el repositorio DNF (Dandified YUM) de Fedora.
+   -h, --help       Ayuda para apx
+   -n, --name cuerda     Crea o usa un contenedor personalizado con este nombre.
+   -v, --version         Versión para apx
 \f[R]
 .fi
 .SS AUTOREMOVE
@@ -60,9 +69,9 @@ Commands:
 Descripci\['o]n: 
     Elimina todos los paquetes no utilizados.
 Uso:
-    apx autoremove [opciones]
+    apx autoremove [banderas]
 
-Opciones:
+Banderas:
     -h, --help            Muestra este mensaje
 
 Uso:
@@ -77,13 +86,34 @@ Descrici\['o]n:
     Limpia la cach\['e] de apx.
 
 Uso:
-    apx clean [opciones]
+    apx clean [banderas]
 
-Opciones:
+Banderas:
     -h, --help            Muestra este mensaje
 
 Ejemplo:
     apx clean
+\f[R]
+.fi
+.SS COMPLETION
+.IP
+.nf
+\f[C]
+Descrici\['o]n: 
+   Generar el script de autocompletado para apx para el intérprete de comandos especificado.
+   Consulta cada sub-comando en la página de ayuda para obtener detalles sobre como usar el script generado.
+
+Uso:
+   apx completion [comando] [banderas]
+
+Comandos disponibles:
+    bash                Generar el script de autocompletado para bash
+    fish                Generar el script de autocompletado fish
+    powershell          Generar el script de autocompletado powershell
+    zsh                 Generar el script de autocompletado zsh
+
+Banderas:
+    -h, --help  Mostrar este mensaje de ayuda para finalizar y salir
 \f[R]
 .fi
 .SS ENTER
@@ -94,9 +124,9 @@ Descripci\['o]n:
     Entra al shell del contenedor.
 
 Uso:
-    apx enter [opciones]
+    apx enter [banderas]
 
-Opciones:
+Banderas:
     -h, --help            Muestra este mensaje
 \f[R]
 .fi
@@ -108,9 +138,9 @@ Descripci\['o]n:
     Exporta/Recrea el acceso directo de un programa del contenedor.
 
 Uso:
-    apx export <programa> [opciones]
+    apx export <programa> [banderas]
 
-Opciones:
+Banderas:
     -h, --help            Muestra este mensaje
 
 Ejemplo:
@@ -125,9 +155,9 @@ Descripci\['o]n:
     Inicializa un contenedor.
 
 Uso:
-    apx init [opciones]
+    apx init [banderas]
 
-Opciones:
+Banderas:
     -h, --help            Muestra este mensaje
 \f[R]
 .fi
@@ -139,9 +169,9 @@ Descripci\['o]n:
     Instala paquetes dentro del contenedor.
 
 Uso:
-    apx install [opciones] <paquetes>
+    apx install [banderas] <paquetes>
 
-Opciones:
+Banderas:
     -h, --help            Muestra este mensaje
     -y, --assume-yes      Proceder sin confirmaci\['o]n manual.
     -f, --fix-broken      Reparar dependencias rotas antes de instalar.
@@ -161,9 +191,9 @@ Descripci\['o]n:
     Lista todos los paquetes instalados.
 
 Uso:
-    apx list [opciones]
+    apx list [banderas]
 
-Opciones:
+Banderas:
     -h, --help            Muestra este mensaje
 \f[R]
 .fi
@@ -175,9 +205,9 @@ Descripci\['o]n:
     Muestra los registros.
 
 Uso:
-    apx log [opciones]
+    apx log [banderas]
 
-Opciones:
+Banderas:
     -h, --help            Muestra este mensaje
 \f[R]
 .fi
@@ -189,9 +219,9 @@ Descripci\['o]n:
     Purga los paquetes del contenedor.
 
 Uso:
-    apx purge <paquetes> [opciones]
+    apx purge <paquetes> [banderas]
 
-Opciones:
+Banderas:
     -h, --help            Show this help message and exit
 
 Ejemplos:
@@ -206,9 +236,9 @@ Descripci\['o]n:
     Ejecuta un comando dentro del contenedor.
 
 Uso:
-    apx run <programa> [opciones]
+    apx run <programa> [banderas]
 
-Opciones:
+Banderas:
     -h, --help            Muestra este mensaje
 
 Ejemplo:
@@ -223,9 +253,9 @@ Descripci\['o]n:
     Elimina paquetes del contenedor.
 
 Uso:
-    apx remove <paquetes> [opciones]
+    apx remove <paquetes> [banderas]
 
-Opciones:
+Banderas:
     -h, --help            Muestra este mensaje
 
 Ejemplo:
@@ -240,9 +270,9 @@ Descripci\['o]n:
     Buscar paquetes.
 
 Uso
-    apx search <paquetes> [opciones]
+    apx search <paquetes> [banderas]
 
-Opciones:
+Banderas:
     -h, --help            Muestra este mensaje
 
 Ejemplo:
@@ -257,9 +287,9 @@ Descripci\['o]n:
     Muestra los detalles de un paquete.
 
 Uso:
-    apx show <paquete> [opciones]
+    apx show <paquete> [banderas]
 
-Opciones:
+Banderas:
     -h, --help            Muestra este mensaje
 
 Ejemplo:
@@ -274,9 +304,9 @@ Descripci\['o]n:
     Elimina el acceso directo de un programa.
 
 Uso:
-    apx unexport <programa> [opciones]
+    apx unexport <programa> [banderas]
 
-Opciones:
+Banderas:
     -h, --help            Muestra este mensaje
 
 Ejemplo:
@@ -291,9 +321,9 @@ Descripci\['o]n:
     Actualiza los repositorios de paquetes disponibles.
 
 Uso:
-    apx update [opciones]
+    apx update [banderas]
 
-Opciones:
+Banderas:
     -h, --help            Muestra este mensaje
 
 Ejemplo:
@@ -308,9 +338,9 @@ Descripci\['o]n:
     Actualiza todo el sistema instalando/actualizado los paquetes disponibles.
 
 Uso:
-    apx upgrade [opciones]
+    apx upgrade [banderas]
 
-Opciones:
+Banderas:
     -h, --help            Muestra este mensaje
 
 Ejemplo:
@@ -343,10 +373,11 @@ problemas (https://github.com/Vanilla-OS/ABRoot/issues).
 .nf
 \f[C]
 \[at]JMarcosHP
+Ali Paredes
 \f[R]
 .fi
 .SS COPYRIGHT
 .PP
 GNU General Public License v3.0 (GPL v3.0)
 .PP
-Copyright (c) 2023 JMarcosHP.
+Copyright (c) 2023 Authors.
