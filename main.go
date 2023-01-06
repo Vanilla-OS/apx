@@ -4,7 +4,7 @@ package main
 	Authors:
 		Mirko Brombin <send@mirko.pm>
 		Pietro di Caprio <pietro@fabricators.ltd>
-	Copyright: 2022
+	Copyright: 2023
 	Description: Apx is a wrapper around multiple package managers to install packages and run commands inside a managed container.
 */
 
@@ -30,33 +30,37 @@ func init() {
 
 func help(cmd *cobra.Command, args []string) {
 	fmt.Println(`Usage:
-	apx [options] [command] [arguments]
+  apx [command]
 
-Options:
-	-h, --help    Show this help message and exit
-	-v, --version Show version and exit
-	--apt	    Install packages from the Ubuntu repository
-	--aur	    Install packages from the AUR repository
-	--dnf	    Install packages from the Fedora repository
-	--apk	    Install packages from the Alpine repository
+Available Commands:
+  autoremove  Remove all unused packages automatically
+  clean       Clean the apx package manager cache
+  completion  Generate the autocompletion script for the specified shell
+  enter       Enter in the container shell
+  export      Export/Recreate a program's desktop entry from a managed container
+  help        Help about any command
+  init        Initialize the managed container
+  install     Install packages inside a managed container
+  list        List installed packages.
+  purge       Purge packages inside a managed container
+  remove      Remove packages inside a managed container.
+  run         Run a program inside a managed container.
+  search      Search for packages in a managed container.
+  show        Show details about a package
+  unexport    Unexport/Remove a program's desktop entry from a managed container
+  update      Update the list of available packages
+  upgrade     Upgrade the system by installing/upgrading available packages.
 
-Commands:
-	autoremove  Remove all unused packages
-	clean       Clean the apx package manager cache
-	enter       Enter the container shell
-	export      Export/Recreate a program's desktop entry from the container
-	help        Show this help message and exit
-	init        Initialize a managed container
-	install     Install packages inside the container
-	list        List installed packages
-	purge       Purge packages from the container
-	run         Run a command inside the container
-	remove      Remove packages from the container
-	search      Search for packages
-	show        Show details about a package
-	unexport    Unexport/Remove a program's desktop entry
-	update      Update the list of available packages
-	upgrade     Upgrade the system by installing/upgrading available packages`)
+Flags:
+      --apk           Install packages from the Alpine repository.
+      --apt           Install packages from the Ubuntu repository.
+      --aur           Install packages from the AUR (Arch User Repository).
+      --dnf           Install packages from the Fedora's DNF (Dandified YUM) repository.
+  -h, --help          help for apx
+  -n, --name string   Create or use custom container with this name.
+  -v, --version       version for apx
+
+Use "apx [command] --help" for more information about a command.`)
 }
 
 func main() {
