@@ -314,7 +314,7 @@ func (c *Container) ExportDesktopEntry(program string) {
 
 func (c *Container) ExportBinary(bin string) error {
 	// Get host's $PATH
-	out, err := c.Output("sh", "-c", "distrobox-host-exec printenv | grep PATH")
+	out, err := c.Output("sh", "-c", "distrobox-host-exec printenv | grep -E ^PATH=")
 	if err != nil {
 		return err
 	}
@@ -329,6 +329,11 @@ func (c *Container) ExportBinary(bin string) error {
 	paths := strings.Split(host_path, ":")
 	bin_rename := ""
 	for _, path := range paths {
+		// Skip directory if it doesn't exist
+		if _, err := os.Stat(path); os.IsNotExist(err) {
+			continue
+		}
+
 		entries, err := os.ReadDir(path)
 		if err != nil {
 			return err
@@ -362,16 +367,14 @@ func (c *Container) ExportBinary(bin string) error {
 		}
 	}
 
-	bin_path_cmd := exec.Command("sh", "-c", "command -v "+bin)
-	bin_path, err := bin_path_cmd.Output()
+	bin_path, err := c.Output("sh", "-c", "command -v "+bin)
 	if err != nil {
 		return err
 	}
 
-	c.Run("sh", "-c", "distrobox-export --bin "+string(bin_path)+" -export-path ~/.local/bin 2>/dev/null || true")
+	c.Run("sh", "-c", "distrobox-export --bin "+string(bin_path)+" --export-path ~/.local/bin >/dev/null 2>/dev/null || true")
 	if bin_rename != "" {
-		rename_cmd := exec.Command("mv", "~/.local/bin/"+bin, "~/.local/bin/"+bin_rename)
-		if err := rename_cmd.Run(); err != nil {
+		if err := c.Run("sh", "-c", "mv ~/.local/bin/"+bin+" ~/.local/bin/"+bin_rename); err != nil {
 			return err
 		}
 
