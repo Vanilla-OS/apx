@@ -13,7 +13,7 @@ apx - package manager with support for multiple sources allowing you to install 
 .IP
 .nf
 \f[C]
-apx [options] [command] [arguments]
+apx [command] [flags] [arguments]
 \f[R]
 .fi
 .SS DESCRIPTION
@@ -44,7 +44,7 @@ Available Commands:
   update      Update the list of available packages
   upgrade     Upgrade the system by installing/upgrading available packages.
 
-Flags:
+Global Flags:
       --apk           Install packages from the Alpine repository.
       --apt           Install packages from the Ubuntu repository.
       --aur           Install packages from the AUR (Arch User Repository).
@@ -63,7 +63,7 @@ Use "apx [command] --help" for more information about a command.
 Description: 
     Remove all unused packages automatically.
 Usage:
-    apx autoremove [options]
+    apx autoremove [flags]
 
 Flags:
     -h, --help            Show this help message and exit
@@ -80,7 +80,7 @@ Description:
     Clean the apx package manager cache.
 
 Usage:
-    apx clean [options]
+    apx clean [flags]
 
 Flags:
     -h, --help            Show this help message and exit
@@ -118,7 +118,7 @@ Description:
     Enter in the container shell.
 
 Usage:
-    apx enter [options]
+    apx enter [flags]
 
 Flags:
     -h, --help            Show this help message and exit
@@ -132,7 +132,7 @@ Description:
     Export/Recreate a program\[aq]s desktop entry from a managed container.
 
 Usage:
-    apx export <program> [options]
+    apx export <program> [flags]
 
 Flags:
     -h, --help            Show this help message and exit
@@ -149,7 +149,7 @@ Description:
     Initialize the managed container.
 
 Usage:
-    apx init [options]
+    apx init [flags]
 
 Flags:
     -h, --help            Show this help message and exit
@@ -163,7 +163,7 @@ Description:
     Install packages inside a managed container.
 
 Usage:
-    apx install [options] <packages>
+    apx install [flags] <packages>
 
 Flags:
     -h, --help            Show this help message and exit
@@ -185,7 +185,7 @@ Description:
     List installed packages.
 
 Usage:
-    apx list [options]
+    apx list [flags]
 
 Flags:
     -h, --help            Show this help message and exit
@@ -201,7 +201,7 @@ Description:
     Show logs.
 
 Usage:
-    apx log [options] (This command is yet to be implemented)
+    apx log [flags] (This command is yet to be implemented)
 
 Flags:
     -h, --help            Show this help message and exit
@@ -215,7 +215,7 @@ Description:
     Purge packages inside a managed container.
 
 Usage:
-    apx purge <packages> [options]
+    apx purge <packages> [flags]
 
 Flags:
     -h, --help            Show this help message and exit
@@ -232,7 +232,7 @@ Description:
     Run a program inside a managed container.
 
 Usage:
-    apx run <program> [options]
+    apx run <program> [flags]
 
 Flags:
     -h, --help            Show this help message and exit
@@ -249,7 +249,7 @@ Description:
     Remove packages inside a managed container.
 
 Usage:
-    apx remove <packages> [options]
+    apx remove <packages> [flags]
 
 Flags:
     -h, --help            Show this help message and exit
@@ -266,7 +266,7 @@ Description:
     Search for packages in a managed container.
 
 Usage:
-    apx search <packages> [options]
+    apx search <packages> [flags]
 
 Flags:
     -h, --help            Show this help message and exit
@@ -283,7 +283,7 @@ Description:
     Show details about a package.
 
 Usage:
-    apx show <package> [options]
+    apx show <package> [flags]
 
 Flags:
     -h, --help            Show this help message and exit
@@ -300,7 +300,7 @@ Description:
     Unexport/Remove a program\[aq]s desktop entry from a managed container.
 
 Usage:
-    apx unexport <program> [options]
+    apx unexport <program> [flags]
 
 Flags:
     -h, --help            Show this help message and exit
@@ -317,7 +317,7 @@ Description:
     Update the list of available packages.
 
 Usage:
-    apx update [options]
+    apx update [flags]
 
 Flags:
     -h, --help            Show this help message and exit
@@ -334,7 +334,7 @@ Description:
     Upgrade the system by installing/upgrading available packages.
 
 Usage:
-    apx upgrade [options]
+    apx upgrade [flags]
   
 Flags:
     -h, --help            Show this help message and exit

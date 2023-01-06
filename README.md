@@ -34,7 +34,7 @@ Available Commands:
   update      Update the list of available packages
   upgrade     Upgrade the system by installing/upgrading available packages.
 
-Flags:
+Global Flags:
       --apk           Install packages from the Alpine repository.
       --apt           Install packages from the Ubuntu repository.
       --aur           Install packages from the AUR (Arch User Repository).
