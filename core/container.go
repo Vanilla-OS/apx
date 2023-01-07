@@ -135,14 +135,14 @@ func GetDistroboxVersion() (version string, err error) {
 	return splitted[1], nil
 }
 
-func (c *Container) Run(args ...string) error {
+func (c *Container) Exec(capture_output bool, args ...string) (string, error) {
 	ExitIfOverlayTypeFS()
 
 	if !c.Exists() {
 		err := c.Create()
 		if err != nil {
 			log.Default().Println("Failed to initialize the container. Try manually with `apx init`.")
-			return err
+			return "", err
 		}
 	}
 
@@ -151,11 +151,34 @@ func (c *Container) Run(args ...string) error {
 	cmd := exec.Command(settings.Cnf.DistroboxPath, "enter", container_name, "--")
 	cmd.Args = append(cmd.Args, args...)
 	cmd.Env = os.Environ()
-	cmd.Stdout = os.Stdout
-	cmd.Stderr = os.Stderr
-	cmd.Stdin = os.Stdin
 
-	return cmd.Run()
+	if capture_output {
+		out, err := cmd.Output()
+		if err != nil {
+			return "", err
+		}
+
+		return string(out), nil
+	} else {
+		cmd.Stdout = os.Stdout
+		cmd.Stderr = os.Stderr
+		cmd.Stdin = os.Stdin
+
+		return "", cmd.Run()
+	}
+}
+
+// Run executes a command with args inside the container, piping stdout, stderr,
+// and stdin to the shell.
+func (c *Container) Run(args ...string) error {
+	_, err := c.Exec(false, args...)
+	return err
+}
+
+// Output executes a command with args insinde the container, capturing and
+// returning the output
+func (c *Container) Output(args ...string) (string, error) {
+	return c.Exec(true, args...)
 }
 
 func (c *Container) Enter() error {
@@ -287,6 +310,80 @@ func (c *Container) Remove() error {
 
 func (c *Container) ExportDesktopEntry(program string) {
 	c.Run("sh", "-c", "distrobox-export --app "+program+" 2>/dev/null || true")
+}
+
+func (c *Container) ExportBinary(bin string) error {
+	// Get host's $PATH
+	out, err := c.Output("sh", "-c", "distrobox-host-exec printenv | grep -E ^PATH=")
+	if err != nil {
+		return err
+	}
+
+	// If bin name not in $PATH, export to .local/bin
+	// Otherwise, export with suffix based on container name
+	if !strings.HasPrefix(out, "PATH=") {
+		return errors.New("Failed to read host's $PATH")
+	}
+	_, host_path, _ := strings.Cut(out, "=")
+
+	paths := strings.Split(host_path, ":")
+	bin_rename := ""
+	for _, path := range paths {
+		// Skip directory if it doesn't exist
+		if _, err := os.Stat(path); os.IsNotExist(err) {
+			continue
+		}
+
+		entries, err := os.ReadDir(path)
+		if err != nil {
+			return err
+		}
+
+		duplicate_found := false
+		for _, entry := range entries {
+			if entry.Name() == bin {
+				switch c.containerType {
+				case APT:
+					bin_rename = fmt.Sprintf("apt_%s", bin)
+				case AUR:
+					bin_rename = fmt.Sprintf("aur_%s", bin)
+				case DNF:
+					bin_rename = fmt.Sprintf("dnf_%s", bin)
+				case APK:
+					bin_rename = fmt.Sprintf("apk_%s", bin)
+				default:
+					return errors.New("can't export binary from unknown container")
+				}
+
+				fmt.Printf("Warning: another program with name `%s` already exists on host, exporting as `%s`.\n", bin, bin_rename)
+				duplicate_found = true
+				break
+			}
+		}
+
+		// No need to keep searching if we alrady found a duplicate name
+		if duplicate_found {
+			break
+		}
+	}
+
+	bin_path, err := c.Output("sh", "-c", "command -v "+bin)
+	if err != nil {
+		return err
+	}
+
+	c.Run("sh", "-c", "distrobox-export --bin "+string(bin_path)+" --export-path ~/.local/bin >/dev/null 2>/dev/null || true")
+	if bin_rename != "" {
+		if err := c.Run("sh", "-c", "mv ~/.local/bin/"+bin+" ~/.local/bin/"+bin_rename); err != nil {
+			return err
+		}
+
+		fmt.Printf("Binary exported to `~/.local/bin/%s`.\n", bin_rename)
+		return nil
+	}
+
+	fmt.Printf("Binary exported to `~/.local/bin/%s`.\n", bin)
+	return nil
 }
 
 func (c *Container) RemoveDesktopEntry(program string) error {

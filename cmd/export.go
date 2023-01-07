@@ -9,6 +9,8 @@ package cmd
 */
 
 import (
+	"fmt"
+
 	"github.com/spf13/cobra"
 )
 
@@ -19,11 +21,17 @@ func NewExportCommand() *cobra.Command {
 		Short:   "Export/Recreate a program's desktop entry from a managed container",
 		RunE:    export,
 	}
+	cmd.Flags().String("bin", "", "Export a binary instead.")
 	return cmd
 }
 
 func export(cmd *cobra.Command, args []string) error {
-
-	container.ExportDesktopEntry(args[0])
+	if cmd.Flag("bin").Value.String() != "" {
+        if err := container.ExportBinary(cmd.Flag("bin").Value.String()); err != nil {
+            fmt.Printf("Error: %s\n", err)
+        }
+	} else {
+		container.ExportDesktopEntry(args[0])
+	}
 	return nil
 }
