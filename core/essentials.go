@@ -16,6 +16,8 @@ import (
 	"os"
 	"os/exec"
 	"strings"
+
+	"github.com/vanilla-os/apx/settings"
 )
 
 func init() {
@@ -28,7 +30,7 @@ Please refer to our documentation at https://documentation.vanillaos.org/`)
 }
 
 func CheckContainerTools() error {
-	_, distrobox := os.Stat("/usr/bin/distrobox")
+	_, distrobox := os.Stat(settings.Cnf.DistroboxPath)
 	docker := exec.Command("which", "docker")
 	podman := exec.Command("which", "podman")
 
