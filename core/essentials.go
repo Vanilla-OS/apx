@@ -28,7 +28,7 @@ Please refer to our documentation at https://documentation.vanillaos.org/`)
 }
 
 func CheckContainerTools() error {
-	_, distrobox := os.Stat("/usr/lib/apx/distrobox")
+	_, distrobox := os.Stat("/usr/bin/distrobox")
 	docker := exec.Command("which", "docker")
 	podman := exec.Command("which", "podman")
 
