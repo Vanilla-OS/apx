@@ -23,6 +23,7 @@ type Config struct {
 	ContainerName string `json:"containername"`
 	Image         string `json:"image"`
 	PkgManager    string `json:"pkgmanager"`
+	DistroboxPath string `json:"distroboxpath"`
 }
 
 var Cnf *Config
@@ -41,7 +42,7 @@ func init() {
 			log.Fatal("Unsupported setup detected, set a default distro and package manager in the config file")
 		}
 
-		Cnf = &Config{ContainerName: "apx_managed", Image: image, PkgManager: pkgmanager}
+		Cnf = &Config{ContainerName: "apx_managed", Image: image, PkgManager: pkgmanager, DistroboxPath: "/usr/lib/apx/distrobox"}
 	} else {
 		err = viper.Unmarshal(&Cnf)
 

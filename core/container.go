@@ -122,7 +122,7 @@ func GetHostImage() (img string, err error) {
 }
 
 func GetDistroboxVersion() (version string, err error) {
-	output, err := exec.Command("/usr/lib/apx/distrobox", "version").Output()
+	output, err := exec.Command(settings.Cnf.DistroboxPath, "version").Output()
 	if err != nil {
 		return "", err
 	}
@@ -148,7 +148,7 @@ func (c *Container) Run(args ...string) error {
 
 	container_name := c.GetContainerName()
 
-	cmd := exec.Command("/usr/lib/apx/distrobox", "enter", container_name, "--")
+	cmd := exec.Command(settings.Cnf.DistroboxPath, "enter", container_name, "--")
 	cmd.Args = append(cmd.Args, args...)
 	cmd.Env = os.Environ()
 	cmd.Stdout = os.Stdout
@@ -168,7 +168,7 @@ func (c *Container) Enter() error {
 
 	container_name := c.GetContainerName()
 
-	cmd := exec.Command("/usr/lib/apx/distrobox", "enter", container_name)
+	cmd := exec.Command(settings.Cnf.DistroboxPath, "enter", container_name)
 	cmd.Env = os.Environ()
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
@@ -203,7 +203,7 @@ func (c *Container) Create() error {
 
 	spinner.Start()
 
-	cmd := exec.Command("/usr/lib/apx/distrobox", "create",
+	cmd := exec.Command(settings.Cnf.DistroboxPath, "create",
 		"--name", container_name,
 		"--image", container_image,
 		"--yes",
@@ -243,7 +243,7 @@ func (c *Container) Stop() error {
 
 	spinner.Start()
 
-	cmd := exec.Command("/usr/lib/apx/distrobox", "stop", container_name, "--yes")
+	cmd := exec.Command(settings.Cnf.DistroboxPath, "stop", container_name, "--yes")
 	_, err := cmd.Output()
 
 	spinner.Stop()
@@ -275,7 +275,7 @@ func (c *Container) Remove() error {
 
 	spinner.Start()
 
-	cmd := exec.Command("/usr/lib/apx/distrobox", "rm", container_name, "--yes")
+	cmd := exec.Command(settings.Cnf.DistroboxPath, "rm", container_name, "--yes")
 	_, err = cmd.Output()
 
 	spinner.Stop()
