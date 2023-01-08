@@ -314,7 +314,7 @@ func (c *Container) ExportDesktopEntry(program string) {
 
 func (c *Container) ExportBinary(bin string) error {
 	// Get host's $PATH
-	out, err := c.Output("sh", "-c", "distrobox-host-exec printenv | grep -E ^PATH=")
+	out, err := c.Output("sh", "-c", "distrobox-host-exec $(getent passwd $USER | cut -f 7 -d :) -l -i -c printenv | grep -E ^PATH=")
 	if err != nil {
 		return err
 	}
@@ -341,7 +341,8 @@ func (c *Container) ExportBinary(bin string) error {
 
 		duplicate_found := false
 		for _, entry := range entries {
-			if entry.Name() == bin {
+			// If duplicate is located in ~/.local/bin, we'll handle it later
+			if entry.Name() == bin && !strings.Contains(path, "/.local/bin") {
 				switch c.containerType {
 				case APT:
 					bin_rename = fmt.Sprintf("apt_%s", bin)
@@ -367,9 +368,16 @@ func (c *Container) ExportBinary(bin string) error {
 		}
 	}
 
+	// If returns error, binary could not be found
 	bin_path, err := c.Output("sh", "-c", "command -v "+bin)
 	if err != nil {
-		return err
+		return errors.New(fmt.Sprintf("Error: Could not find a binary with name `%s` in $PATH. Nothing to export.", bin))
+	}
+
+	// Binaries in ~/.local/bin are already accessible by the host
+	if strings.Contains(bin_path, "/.local/bin") {
+		fmt.Printf("`%s` is already shared with host system. There's no need to export it.\n", bin)
+		return nil
 	}
 
 	c.Run("sh", "-c", "distrobox-export --bin "+string(bin_path)+" --export-path ~/.local/bin >/dev/null 2>/dev/null || true")
