@@ -1,0 +1,25 @@
+Verwendung:
+apx [Optionen] [Befehl] [Argumente]
+
+Optionen:
+  -h, --help    Zeigt diesen Hilfetext und beendet apx
+  -v, --version Zeigt die Version und beendet apx
+  --sys         Durchführung von Operationen im System statt im Container
+
+Befehle:
+    autoremove  Entfernt automatisch alle unbenutzten Pakete
+    clean       Löscht den apt-Cache
+    enter       Betritt den Container
+    help        Zeigt diesen Hilfetext und beendet apx
+    init        Initialisiert den Container
+    install     Installiert Pakete
+    list        Listet Pakete basierend auf ihren Namen auf
+    log         Zeigt Protokolle
+    purge       Bereinigt Pakete
+    run         Führt einen Befehl innerhalb des Containers aus
+    remove      Entfernt Pakete
+    search      Sucht in Paketbeschreibungen
+    show        Zeigt Paketdetails
+    update      Aktualisiert die Liste der verfügbaren Pakete
+    upgrade     Aktualisiert das System
+    version     Zeigt Version und beendet apx
