@@ -55,5 +55,5 @@ The official **documentation and manpage** for `apx` are available at <https://d
 
 > Please consider to keep the project name as `apx` to avoid confusion for users.
 
-To use with another package manager, re-compile editing the `config.json` file
+To use with another package manager, edit the `config.json` file
 to point to the desired package manger and image.
