@@ -4,6 +4,7 @@ import (
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 	"github.com/vanilla-os/apx/core"
+	"github.com/vanilla-os/apx/settings"
 )
 
 // package level variables for viper flags
@@ -23,10 +24,11 @@ func NewApxCommand(Version string) *cobra.Command {
 			container = getContainer()
 		},
 	}
-	rootCmd.PersistentFlags().BoolVar(&apt, "apt", false, "Install packages from the Ubuntu repository.")
-	rootCmd.PersistentFlags().BoolVar(&aur, "aur", false, "Install packages from the AUR (Arch User Repository).")
-	rootCmd.PersistentFlags().BoolVar(&dnf, "dnf", false, "Install packages from the Fedora's DNF (Dandified YUM) repository.")
-	rootCmd.PersistentFlags().BoolVar(&apk, "apk", false, "Install packages from the Alpine repository.")
+
+	rootCmd.PersistentFlags().BoolVar(&apt, string(core.APT), false, "Install packages from the Ubuntu repository.")
+	rootCmd.PersistentFlags().BoolVar(&aur, string(core.AUR), false, "Install packages from the AUR (Arch User Repository).")
+	rootCmd.PersistentFlags().BoolVar(&dnf, string(core.DNF), false, "Install packages from the Fedora's DNF (Dandified YUM) repository.")
+	rootCmd.PersistentFlags().BoolVar(&apk, string(core.APK), false, "Install packages from the Alpine repository.")
 	rootCmd.PersistentFlags().StringVarP(&name, "name", "n", "", "Create or use custom container with this name.")
 
 	rootCmd.AddCommand(NewInitializeCommand())
@@ -44,32 +46,34 @@ func NewApxCommand(Version string) *cobra.Command {
 	rootCmd.AddCommand(NewUnexportCommand())
 	rootCmd.AddCommand(NewUpdateCommand())
 	rootCmd.AddCommand(NewUpgradeCommand())
-	viper.BindPFlag("aur", rootCmd.PersistentFlags().Lookup("aur"))
-	viper.BindPFlag("apt", rootCmd.PersistentFlags().Lookup("apt"))
-	viper.BindPFlag("dnf", rootCmd.PersistentFlags().Lookup("dnf"))
-	viper.BindPFlag("apk", rootCmd.PersistentFlags().Lookup("apk"))
+	viper.BindPFlag(string(core.APT), rootCmd.PersistentFlags().Lookup(string(core.APT)))
+	viper.BindPFlag(string(core.AUR), rootCmd.PersistentFlags().Lookup(string(core.AUR)))
+	viper.BindPFlag(string(core.DNF), rootCmd.PersistentFlags().Lookup(string(core.DNF)))
+	viper.BindPFlag(string(core.APK), rootCmd.PersistentFlags().Lookup(string(core.APK)))
 	return rootCmd
 }
 
 func getContainer() *core.Container {
-	var kind core.ContainerType = core.APT
-	// in the future these should be moved to
-	// constants, and wrapped in package level calls
-	apt = viper.GetBool("apt")
-	aur = viper.GetBool("aur")
-	dnf = viper.GetBool("dnf")
-	apk = viper.GetBool("apk")
-	if aur {
+	var kind core.ContainerType = core.ContainerType(settings.Cnf.PkgManager)
+
+	apt = viper.GetBool(string(core.APT))
+	aur = viper.GetBool(string(core.AUR))
+	dnf = viper.GetBool(string(core.DNF))
+	apk = viper.GetBool(string(core.APK))
+
+	if apt {
+		kind = core.APT
+	} else if aur {
 		kind = core.AUR
 	} else if dnf {
 		kind = core.DNF
 	} else if apk {
 		kind = core.APK
 	}
+
 	if len(name) > 0 {
 		return core.NewNamedContainer(kind, name)
 	} else {
 		return core.NewContainer(kind)
 	}
-
 }
