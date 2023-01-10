@@ -228,14 +228,30 @@ func (c *Container) Create() error {
 
 	spinner.Start()
 
-	cmd := exec.Command(settings.Cnf.DistroboxPath, "create",
+	info, err := settings.FromPackageManger(settings.Cnf.PkgManager)
+	if err != nil {
+		log.Fatalf("error creating container: %v", err)
+	}
+
+	labels := ContainerLabels{
+		Managed:    true,
+		Distro:     info.Id,
+		PkgManager: info.Pkgmanager,
+		Userid:     os.Geteuid(),
+	}
+
+	cmd_args := []string{
+		"create",
 		"--name", container_name,
 		"--image", container_image,
 		"--yes",
 		"--no-entry",
 		"--additional-flags",
-		"--label=manager=apx",
-		"--yes")
+	}
+	cmd_args = append(cmd_args, labels.ToArguments()...)
+	cmd_args = append(cmd_args, "--yes")
+
+	cmd := exec.Command(settings.Cnf.DistroboxPath, cmd_args...)
 	cmd.Env = os.Environ()
 	cmd.Env = append(cmd.Env, "CONTAINER_STORAGE_OPTIONS=--storage-driver=overlay")
 	cmd.Env = append(cmd.Env, "DOCKER_OPTS=--storage-driver=overlay")
