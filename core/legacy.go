@@ -38,23 +38,17 @@ func GetLegacyContainersIds() []string {
 	return legacy_containers_ids
 }
 
-func (c *Container) GetLegacyContainerName() (name string) {
-	var cn strings.Builder
-	switch c.containerType {
-	case APT:
-		cn.WriteString("apx_managed")
-	case AUR:
-		cn.WriteString("apx_managed_aur")
-	case DNF:
-		cn.WriteString("apx_managed_dnf")
-	case APK:
-		cn.WriteString("apx_managed_apk")
-	default:
-		log.Fatal(fmt.Errorf("unspecified container type"))
+func GetLegacyContainerNameAndDistro(pkgManager string) (string, string) {
+	switch pkgManager {
+	case "apt":
+		return "apx_managed", "ubuntu"
+	case "aur":
+		return "apx_managed_aur", "archlinux"
+	case "dnf":
+		return "apx_managed_dnf", "fedora"
+	case "apk":
+		return "apx_managed_apk", "alpine"
 	}
-	if len(c.customName) > 0 {
-		cn.WriteString("_")
-		cn.WriteString(strings.Replace(c.customName, " ", "", -1))
-	}
-	return cn.String()
+	log.Fatal(fmt.Errorf("unspecified container type"))
+	return "", ""
 }
