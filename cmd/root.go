@@ -1,6 +1,8 @@
 package cmd
 
 import (
+	"log"
+
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 	"github.com/vanilla-os/apx/core"
@@ -14,12 +16,22 @@ var apt, aur, dnf, apk bool
 var container *core.Container
 var name string
 
+func checkForLegacyContainers() {
+	if len(core.GetLegacyContainersIds()) > 0 {
+		log.Fatal("Legacy containers have been detected. Please close all open apx applications and run 'apx migrate'")
+	}
+}
+
 func NewApxCommand(Version string) *cobra.Command {
 	rootCmd := &cobra.Command{
 		Use:     "apx",
 		Short:   "Apx is a package manager with support for multiple sources allowing you to install packages in a managed container.",
 		Version: Version,
 		PersistentPreRun: func(cmd *cobra.Command, args []string) {
+			if cmd.Use != "migrate" {
+				checkForLegacyContainers()
+			}
+
 			container = getContainer()
 		},
 	}
@@ -44,6 +56,7 @@ func NewApxCommand(Version string) *cobra.Command {
 	rootCmd.AddCommand(NewUnexportCommand())
 	rootCmd.AddCommand(NewUpdateCommand())
 	rootCmd.AddCommand(NewUpgradeCommand())
+	rootCmd.AddCommand(NewMigrateCommand())
 	viper.BindPFlag("aur", rootCmd.PersistentFlags().Lookup("aur"))
 	viper.BindPFlag("apt", rootCmd.PersistentFlags().Lookup("apt"))
 	viper.BindPFlag("dnf", rootCmd.PersistentFlags().Lookup("dnf"))
