@@ -1,5 +1,7 @@
 package settings
 
+import "errors"
+
 type PackageManager string
 
 const (
@@ -14,6 +16,21 @@ type DistroInfo struct {
 	Image         string
 	Pkgmanager    PackageManager
 	ContainerName string
+}
+
+func FromPackageManger(pkgmanager string) (DistroInfo, error) {
+	switch pkgmanager {
+	case Apt:
+		return DistroUbuntu, nil
+	case Yay:
+		return DistroArch, nil
+	case Dnf:
+		return DistroFedora, nil
+	case Apk:
+		return DistroAlpine, nil
+	default:
+		return DistroInfo{}, errors.New("Invalid package manager")
+	}
 }
 
 var DistroUbuntu = DistroInfo{Id: "ubuntu", Image: "docker.io/library/ubuntu", Pkgmanager: Apt, ContainerName: "apx_managed_ubuntu"}
