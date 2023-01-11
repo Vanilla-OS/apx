@@ -20,6 +20,7 @@ import (
 	"time"
 
 	"github.com/briandowns/spinner"
+	"github.com/thanhpk/randstr"
 	"github.com/vanilla-os/apx/settings"
 )
 
@@ -65,24 +66,15 @@ func (c *Container) GetContainerImage() (image string, err error) {
 	return image, err
 }
 
-func (c *Container) GetContainerName() (name string) {
+func (c *Container) GenerateNewContainerName() (name string) {
 	var cn strings.Builder
-	switch c.containerType {
-	case APT:
-		cn.WriteString("apx_managed")
-	case AUR:
-		cn.WriteString("apx_managed_aur")
-	case DNF:
-		cn.WriteString("apx_managed_dnf")
-	case APK:
-		cn.WriteString("apx_managed_apk")
-	default:
-		log.Fatal(fmt.Errorf("unspecified container type"))
-	}
+	cn.WriteString(settings.Cnf.ContainerName)
 	if len(c.customName) > 0 {
 		cn.WriteString("_")
 		cn.WriteString(strings.Replace(c.customName, " ", "", -1))
 	}
+	cn.WriteString("_")
+	cn.WriteString(randstr.Hex(10))
 	return cn.String()
 }
 
@@ -146,7 +138,8 @@ func (c *Container) Exec(capture_output bool, args ...string) (string, error) {
 		}
 	}
 
-	container_name := c.GetContainerName()
+	// container_name := c.GetContainerName()
+	container_name := "TODO_REPLACE"
 
 	cmd := exec.Command(settings.Cnf.DistroboxPath, "enter", container_name, "--")
 	cmd.Args = append(cmd.Args, args...)
@@ -189,7 +182,8 @@ func (c *Container) Enter() error {
 		return errors.New("managed container does not exist")
 	}
 
-	container_name := c.GetContainerName()
+	// container_name := c.GetContainerName()
+	container_name := "TODO_REPLACE"
 
 	cmd := exec.Command(settings.Cnf.DistroboxPath, "enter", container_name)
 	cmd.Env = os.Environ()
@@ -220,7 +214,7 @@ func (c *Container) Create() error {
 		return err
 	}
 
-	container_name := c.GetContainerName()
+	container_name := c.GenerateNewContainerName()
 	spinner := spinner.New(spinner.CharSets[11], 100*time.Millisecond)
 	spinner.Suffix = " Creating container..."
 
@@ -276,7 +270,8 @@ func (c *Container) Create() error {
 func (c *Container) Stop() error {
 	ExitIfOverlayTypeFS()
 
-	container_name := c.GetContainerName()
+	// container_name := c.GetContainerName()
+	container_name := "TODO_REPLACE"
 	spinner := spinner.New(spinner.CharSets[11], 100*time.Millisecond)
 	spinner.Suffix = " Stopping container..."
 
@@ -299,7 +294,8 @@ func (c *Container) Stop() error {
 func (c *Container) Remove() error {
 	ExitIfOverlayTypeFS()
 
-	container_name := c.GetContainerName()
+	// container_name := c.GetContainerName()
+	container_name := "TODO_REPLACE"
 	spinner := spinner.New(spinner.CharSets[11], 100*time.Millisecond)
 	spinner.Suffix = " Removing container..."
 
@@ -411,7 +407,8 @@ func (c *Container) ExportBinary(bin string) error {
 }
 
 func (c *Container) RemoveDesktopEntry(program string) error {
-	container_name := c.GetContainerName()
+	// container_name := c.GetContainerName()
+	container_name := "TODO_REPLACE"
 	spinner := spinner.New(spinner.CharSets[11], 100*time.Millisecond)
 	spinner.Suffix = fmt.Sprintf("Removing desktop entry: %v\n", program)
 
@@ -445,7 +442,8 @@ func (c *Container) RemoveDesktopEntry(program string) error {
 }
 
 func (c *Container) Exists() bool {
-	container_name := c.GetContainerName()
+	// container_name := c.GetContainerName()
+	container_name := "TODO_REPLACE"
 	manager := ContainerManager()
 
 	cmd := exec.Command(manager, "ps", "-a", "-q", "-f", "name="+container_name+"$")
