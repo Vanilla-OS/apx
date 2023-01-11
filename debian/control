@@ -20,9 +20,6 @@ Depends: ${shlibs:Depends},
          ${misc:Depends},
          micro-distrobox,
          podman,
-         golang-go,
-         golang-github-spf13-cobra-dev,
-         golang-github-spf13-viper-dev,
-         golang-github-briandowns-spinner-dev
+         golang-go
 Built-Using: ${misc:Built-Using}
 Description: Apx is the default package manager in Vanilla OS.
