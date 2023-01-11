@@ -11,7 +11,6 @@ package cmd
 import (
 	"fmt"
 	"log"
-	"os"
 	"os/exec"
 	"strings"
 
@@ -52,18 +51,14 @@ func migrate(cmd *cobra.Command, args []string) error {
 			"--name", container.GenerateNewContainerName(),
 		}
 
-		labels := core.ContainerLabels{
-			Managed: true,
-			Userid:  os.Geteuid(),
-		}
+		labels := &core.ContainerLabels{}
 
 		found := false
 		for _, pm := range []string{"apt", "aur", "dnf", "apk"} {
 			legacy_name, distro := core.GetLegacyContainerNameAndDistro(pm)
 			if name == legacy_name {
 				found = true
-				labels.PkgManager = settings.PackageManager(pm)
-				labels.Distro = distro
+				labels = core.CreateLabels(distro, settings.PackageManager(pm), "")
 				break
 			}
 		}

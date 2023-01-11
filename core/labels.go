@@ -2,6 +2,7 @@ package core
 
 import (
 	"fmt"
+	"os"
 
 	"github.com/vanilla-os/apx/settings"
 )
@@ -12,6 +13,16 @@ type ContainerLabels struct {
 	PkgManager settings.PackageManager
 	Userid     int
 	CustomName string
+}
+
+func CreateLabels(distro string, pkgManager settings.PackageManager, name string) *ContainerLabels {
+	return &ContainerLabels{
+		Managed:    true,
+		Distro:     distro,
+		PkgManager: pkgManager,
+		Userid:     os.Geteuid(),
+		CustomName: name,
+	}
 }
 
 func (l *ContainerLabels) ToArguments() []string {
