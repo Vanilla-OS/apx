@@ -79,6 +79,35 @@ func (c *Container) GenerateNewContainerName() (name string) {
 	return cn.String()
 }
 
+func (c *Container) GetIdOfContainer() (id string) {
+	info := settings.DistroInfo{}
+
+	switch c.containerType {
+	case APT:
+		info = settings.DistroUbuntu
+	case AUR:
+		info = settings.DistroArch
+	case DNF:
+		info = settings.DistroFedora
+	case APK:
+		info = settings.DistroAlpine
+	}
+
+	labels := CreateLabels(info.Id, info.Pkgmanager, c.customName)
+
+	manager := ContainerManager()
+
+	cmd_args := []string{"ps", "-aq"}
+	cmd_args = append(cmd_args, labels.ToFilters()...)
+	cmd := exec.Command(manager, cmd_args...)
+	output, _ := cmd.Output()
+
+	container_id := string(output)
+	container_id = strings.TrimSpace(container_id)
+
+	return container_id
+}
+
 func ContainerManager() string {
 	docker := exec.Command("sh", "-c", "command -v docker")
 	podman := exec.Command("sh", "-c", "command -v podman")
@@ -139,8 +168,7 @@ func (c *Container) Exec(capture_output bool, args ...string) (string, error) {
 		}
 	}
 
-	// container_name := c.GetContainerName()
-	container_name := "TODO_REPLACE"
+	container_name := c.GetIdOfContainer()
 
 	cmd := exec.Command(settings.Cnf.DistroboxPath, "enter", container_name, "--")
 	cmd.Args = append(cmd.Args, args...)
@@ -183,8 +211,7 @@ func (c *Container) Enter() error {
 		return errors.New("managed container does not exist")
 	}
 
-	// container_name := c.GetContainerName()
-	container_name := "TODO_REPLACE"
+	container_name := c.GetIdOfContainer()
 
 	cmd := exec.Command(settings.Cnf.DistroboxPath, "enter", container_name)
 	cmd.Env = os.Environ()
@@ -242,9 +269,9 @@ func (c *Container) Create() error {
 		"--image", container_image,
 		"--yes",
 		"--no-entry",
-		"--additional-flags",
 	}
-	cmd_args = append(cmd_args, labels.ToArguments()...)
+	cmd_args = append(cmd_args, "--additional-flags")
+	cmd_args = append(cmd_args, strings.Join(labels.ToArguments(), " "))
 	cmd_args = append(cmd_args, "--yes")
 
 	cmd := exec.Command(settings.Cnf.DistroboxPath, cmd_args...)
@@ -276,8 +303,7 @@ func (c *Container) Create() error {
 func (c *Container) Stop() error {
 	ExitIfOverlayTypeFS()
 
-	// container_name := c.GetContainerName()
-	container_name := "TODO_REPLACE"
+	container_name := c.GetIdOfContainer()
 	spinner := spinner.New(spinner.CharSets[11], 100*time.Millisecond)
 	spinner.Suffix = " Stopping container..."
 
@@ -300,8 +326,7 @@ func (c *Container) Stop() error {
 func (c *Container) Remove() error {
 	ExitIfOverlayTypeFS()
 
-	// container_name := c.GetContainerName()
-	container_name := "TODO_REPLACE"
+	container_name := c.GetIdOfContainer()
 	spinner := spinner.New(spinner.CharSets[11], 100*time.Millisecond)
 	spinner.Suffix = " Removing container..."
 
@@ -413,8 +438,7 @@ func (c *Container) ExportBinary(bin string) error {
 }
 
 func (c *Container) RemoveDesktopEntry(program string) error {
-	// container_name := c.GetContainerName()
-	container_name := "TODO_REPLACE"
+	container_name := c.GetIdOfContainer()
 	spinner := spinner.New(spinner.CharSets[11], 100*time.Millisecond)
 	spinner.Suffix = fmt.Sprintf("Removing desktop entry: %v\n", program)
 
@@ -448,16 +472,6 @@ func (c *Container) RemoveDesktopEntry(program string) error {
 }
 
 func (c *Container) Exists() bool {
-	// container_name := c.GetContainerName()
-	container_name := "TODO_REPLACE"
-	manager := ContainerManager()
-
-	cmd := exec.Command(manager, "ps", "-a", "-q", "-f", "name="+container_name+"$")
-	output, _ := cmd.Output()
-
-	// fmt.Println("container_name: ", container_name)
-	// fmt.Println("command: ", cmd.String())
-	// fmt.Println("output: ", string(output))
-
-	return len(output) > 0
+	container_name := c.GetIdOfContainer()
+	return len(container_name) > 0
 }
