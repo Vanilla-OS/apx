@@ -55,17 +55,19 @@ func migrate(cmd *cobra.Command, args []string) error {
 
 		found := false
 		for _, pm := range []string{"apt", "aur", "dnf", "apk"} {
-			legacy_name, distro := core.GetLegacyContainerNameAndDistro(pm)
+			legacy_name, distro := container.GetLegacyContainerNameAndDistro(pm)
 			if name == legacy_name {
 				found = true
-				labels = core.CreateLabels(distro, settings.PackageManager(pm), "")
+				labels = core.CreateLabels(distro, settings.PackageManager(pm), container.GetCustomName())
 				break
 			}
 		}
 
 		if !found {
 			// TODO Implement migration for named containers
-			log.Fatal("Unknown container type for container: " + name)
+			log.Fatal(
+				"Unknown container type for container: " + name + "\n" +
+					"If you have named containers, try running `apx migrate --name string` for each named container")
 		}
 
 		cmd_args = append(cmd_args, "--additional-flags")

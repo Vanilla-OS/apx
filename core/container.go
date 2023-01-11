@@ -67,6 +67,10 @@ func (c *Container) GetContainerImage() (image string, err error) {
 	return image, err
 }
 
+func (c *Container) GetCustomName() string {
+	return c.customName
+}
+
 func (c *Container) GenerateNewContainerName() (name string) {
 	var cn strings.Builder
 	cn.WriteString(settings.Cnf.ContainerName)
