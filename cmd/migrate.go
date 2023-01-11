@@ -13,6 +13,7 @@ import (
 	"log"
 	"os"
 	"os/exec"
+	"strings"
 
 	"github.com/spf13/cobra"
 	"github.com/vanilla-os/apx/core"
@@ -46,7 +47,6 @@ func migrate(cmd *cobra.Command, args []string) error {
 		name := string(output[2 : len(output)-2])
 
 		cmd_args := []string{
-			"-c", settings.Cnf.DistroboxPath,
 			"create",
 			"--clone", id,
 			"--name", container.GenerateNewContainerName(),
@@ -74,10 +74,10 @@ func migrate(cmd *cobra.Command, args []string) error {
 		}
 
 		cmd_args = append(cmd_args, "--additional-flags")
-		cmd_args = append(cmd_args, labels.ToArguments()...)
+		cmd_args = append(cmd_args, strings.Join(labels.ToArguments(), " "))
 		fmt.Println(cmd_args)
 
-		out, err = exec.Command("sh", cmd_args...).Output()
+		out, err = exec.Command(settings.Cnf.DistroboxPath, cmd_args...).Output()
 		if err != nil {
 			log.Fatal(string(out))
 		}
