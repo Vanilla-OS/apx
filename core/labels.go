@@ -15,9 +15,9 @@ type ContainerLabels struct {
 
 func (l *ContainerLabels) ToArguments() []string {
 	return []string{
-		"--label=\"apx.managed=" + fmt.Sprint(l.Managed) + "\"",
-		"--label=\"apx.distro=" + l.Distro + "\"",
-		"--label=\"apx.pkgmanager=" + string(l.PkgManager) + "\"",
-		"--label=\"apx.userid=" + fmt.Sprint(l.Userid) + "\"",
+		"--label=apx.managed=" + fmt.Sprint(l.Managed),
+		"--label=apx.distro=" + l.Distro,
+		"--label=apx.pkgmanager=" + string(l.PkgManager),
+		"--label=apx.userid=" + fmt.Sprint(l.Userid),
 	}
 }
