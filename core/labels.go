@@ -20,6 +20,6 @@ func (l *ContainerLabels) ToArguments() []string {
 		"--label=apx.distro=" + l.Distro,
 		"--label=apx.pkgmanager=" + string(l.PkgManager),
 		"--label=apx.userid=" + fmt.Sprint(l.Userid),
-		"--label=apx.customname=" + l.CustomName + "\"",
+		"--label=apx.customname=" + l.CustomName,
 	}
 }
