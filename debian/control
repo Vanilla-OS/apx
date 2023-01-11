@@ -5,10 +5,7 @@ Maintainer: Mirko Brombin <send@mirko.pm>
 Uploaders: Mirko Brombin <send@mirko.pm>
 Build-Depends: debhelper (>= 9),
                dh-golang,
-               golang-go,
-               golang-github-spf13-cobra-dev,
-               golang-github-spf13-viper-dev,
-               golang-github-briandowns-spinner-dev
+               golang-go
 Standards-Version: 3.9.6
 Homepage: https://github.com/vanilla-os/apx
 Vcs-Browser: https://github.com/vanilla-os/apx
