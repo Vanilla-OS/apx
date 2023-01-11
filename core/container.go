@@ -41,6 +41,7 @@ type Container struct {
 func NewContainer(kind ContainerType) *Container {
 	return &Container{
 		containerType: kind,
+		customName:    "",
 	}
 }
 func NewNamedContainer(kind ContainerType, name string) *Container {
@@ -230,6 +231,7 @@ func (c *Container) Create() error {
 		Distro:     info.Id,
 		PkgManager: info.Pkgmanager,
 		Userid:     os.Geteuid(),
+		CustomName: c.customName,
 	}
 
 	cmd_args := []string{
