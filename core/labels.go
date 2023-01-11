@@ -34,3 +34,13 @@ func (l *ContainerLabels) ToArguments() []string {
 		"--label=apx.customname=" + l.CustomName,
 	}
 }
+
+func (l *ContainerLabels) ToFilters() []string {
+	return []string{
+		"--filter", "label=apx.managed=" + fmt.Sprint(l.Managed),
+		"--filter", "label=apx.distro=" + l.Distro,
+		"--filter", "label=apx.pkgmanager=" + string(l.PkgManager),
+		"--filter", "label=apx.userid=" + fmt.Sprint(l.Userid),
+		"--filter", "label=apx.customname=" + l.CustomName,
+	}
+}
