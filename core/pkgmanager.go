@@ -23,24 +23,24 @@ func (c *Container) GetPkgCommand(command string) []string {
 	case APK:
 		return GetApkPkgCommand(command)
 	default:
-		return nil
+		return GetDefaultPkgCommand(command)
 	}
 }
 
 func GetDefaultPkgCommand(command string) []string {
-	pkgmanager := settings.Cnf.PkgManager
+	pkgmanager := ContainerType(settings.Cnf.PkgManager)
 
 	switch pkgmanager {
-	case "apt":
+	case APT:
 		return GetAptPkgCommand(command)
-	case "aur":
+	case AUR:
 		return GetAurPkgCommand(command)
-	case "dnf":
+	case DNF:
 		return GetDnfPkgCommand(command)
-	case "apk":
+	case APK:
 		return GetApkPkgCommand(command)
 	default:
-		return []string{"echo", pkgmanager + " is not implemented yet!"}
+		return []string{"echo", string(pkgmanager) + " is not implemented yet!"}
 	}
 }
 

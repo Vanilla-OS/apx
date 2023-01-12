@@ -23,13 +23,20 @@ import (
 	"github.com/vanilla-os/apx/settings"
 )
 
-type ContainerType int
+type ContainerType string
 
 const (
-	APT ContainerType = iota // 0
-	AUR ContainerType = iota // 1
-	DNF ContainerType = iota // 2
-	APK ContainerType = iota // 3
+	APT ContainerType = "apt"
+	AUR ContainerType = "aur"
+	DNF ContainerType = "dnf"
+	APK ContainerType = "apk"
+)
+
+const (
+	APT_IMAGE string = "docker.io/library/ubuntu"
+	AUR_IMAGE string = "docker.io/library/archlinux"
+	DNF_IMAGE string = "docker.io/library/fedora"
+	APK_IMAGE string = "docker.io/library/alpine"
 )
 
 type Container struct {
@@ -53,11 +60,11 @@ func (c *Container) GetContainerImage() (image string, err error) {
 	case APT:
 		return GetHostImage()
 	case AUR:
-		return "docker.io/library/archlinux", nil
+		return AUR_IMAGE, nil
 	case DNF:
-		return "docker.io/library/fedora", nil
+		return DNF_IMAGE, nil
 	case APK:
-		return "docker.io/library/alpine", nil
+		return APK_IMAGE, nil
 	default:
 		image = ""
 		err = errors.New("can't retrieve image for unknown container")
@@ -69,13 +76,13 @@ func (c *Container) GetContainerName() (name string) {
 	var cn strings.Builder
 	switch c.containerType {
 	case APT:
-		cn.WriteString("apx_managed")
+		cn.WriteString(settings.Cnf.ContainerName)
 	case AUR:
-		cn.WriteString("apx_managed_aur")
+		cn.WriteString(settings.Cnf.ContainerName + "_aur")
 	case DNF:
-		cn.WriteString("apx_managed_dnf")
+		cn.WriteString(settings.Cnf.ContainerName + "_dnf")
 	case APK:
-		cn.WriteString("apx_managed_apk")
+		cn.WriteString(settings.Cnf.ContainerName + "_apk")
 	default:
 		log.Fatal(fmt.Errorf("unspecified container type"))
 	}
@@ -111,6 +118,10 @@ func GetHostImage() (img string, err error) {
 		return "", err
 	}
 	distro := strings.ToLower(strings.Trim(string(distro_raw), "\r\n"))
+
+	if distro != "ubuntu" {
+		return APT_IMAGE, nil
+	}
 
 	release_raw, err := exec.Command("lsb_release", "-rs").Output()
 	if err != nil {
