@@ -193,6 +193,8 @@ func (c *Container) Enter() error {
 
 	cmd := exec.Command(settings.Cnf.DistroboxPath, "enter", container_name)
 	cmd.Env = os.Environ()
+	cmd.Env = append(cmd.Env, "CONTAINER_STORAGE_OPTIONS=--storage-driver=overlay")
+	cmd.Env = append(cmd.Env, "DOCKER_OPTS=--storage-driver=overlay")
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
 	cmd.Stdin = os.Stdin
@@ -235,6 +237,8 @@ func (c *Container) Create() error {
 		"--label=manager=apx",
 		"--yes")
 	cmd.Env = os.Environ()
+	cmd.Env = append(cmd.Env, "CONTAINER_STORAGE_OPTIONS=--storage-driver=overlay")
+	cmd.Env = append(cmd.Env, "DOCKER_OPTS=--storage-driver=overlay")
 	// mute command output
 	//cmd.Stdout = os.Stdout
 	//cmd.Stderr = os.Stderr
