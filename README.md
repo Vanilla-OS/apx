@@ -57,3 +57,9 @@ The official **documentation and manpage** for `apx` are available at <https://d
 
 To use with another package manager, re-compile editing the `config.json` file
 to point to the desired package manger and image.
+
+
+## Dependencies
+
+To add new dependencies, use `go get` as usual, then run `go mod tidy` and finally `go mod vendor` before
+committing code.
