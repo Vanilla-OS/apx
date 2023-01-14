@@ -9,6 +9,7 @@ package cmd
 */
 
 import (
+	"errors"
 	"fmt"
 
 	"github.com/spf13/cobra"
@@ -27,10 +28,13 @@ func NewExportCommand() *cobra.Command {
 
 func export(cmd *cobra.Command, args []string) error {
 	if cmd.Flag("bin").Value.String() != "" {
-        if err := container.ExportBinary(cmd.Flag("bin").Value.String()); err != nil {
-            fmt.Printf("Error: %s\n", err)
-        }
+		if err := container.ExportBinary(cmd.Flag("bin").Value.String()); err != nil {
+			fmt.Printf("Error: %s\n", err)
+		}
 	} else {
+		if len(args) == 0 {
+			return errors.New("Please specify a program to export.")
+		}
 		container.ExportDesktopEntry(args[0])
 	}
 	return nil
