@@ -8,11 +8,13 @@ import (
 )
 
 type ContainerLabels struct {
-	Managed    bool
-	Distro     string
-	PkgManager settings.PackageManager
-	Userid     int
-	CustomName string
+	Id           string
+	Managed      bool
+	Distro       string
+	PkgManager   settings.PackageManager
+	Userid       int
+	CustomName   string
+	MigratedFrom string
 }
 
 func CreateLabels(distro string, pkgManager settings.PackageManager, name string) *ContainerLabels {
@@ -27,11 +29,13 @@ func CreateLabels(distro string, pkgManager settings.PackageManager, name string
 
 func (l *ContainerLabels) ToArguments() []string {
 	return []string{
+		"--label=apx.id=" + l.Id,
 		"--label=apx.managed=" + fmt.Sprint(l.Managed),
 		"--label=apx.distro=" + l.Distro,
 		"--label=apx.pkgmanager=" + string(l.PkgManager),
 		"--label=apx.userid=" + fmt.Sprint(l.Userid),
 		"--label=apx.customname=" + l.CustomName,
+		"--label=apx.migratedfrom=" + l.MigratedFrom,
 	}
 }
 

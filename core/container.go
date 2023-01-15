@@ -259,13 +259,8 @@ func (c *Container) Create() error {
 		log.Fatalf("error creating container: %v", err)
 	}
 
-	labels := ContainerLabels{
-		Managed:    true,
-		Distro:     info.Id,
-		PkgManager: info.Pkgmanager,
-		Userid:     os.Geteuid(),
-		CustomName: c.customName,
-	}
+	labels := CreateLabels(info.Id, info.Pkgmanager, c.customName)
+	labels.Id = randstr.Hex(10)
 
 	cmd_args := []string{
 		"create",

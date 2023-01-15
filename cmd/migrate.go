@@ -63,6 +63,9 @@ func migrate(cmd *cobra.Command, args []string) error {
 			}
 		}
 
+		labels.Id = randstr.Hex(10)
+		labels.MigratedFrom = name
+
 		if !found {
 			// TODO Implement migration for named containers
 			log.Fatal(
