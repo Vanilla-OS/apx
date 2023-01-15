@@ -1,4 +1,4 @@
-apx (1.4.1-1) kinetic; urgency=critical
+apx (1.4.1-2) kinetic; urgency=critical
 
   * Allow exporting binaries
   * Update manpage

@@ -194,6 +194,7 @@ func (c *Container) Enter() error {
 
 	cmd := exec.Command(settings.Cnf.DistroboxPath, "enter", container_name)
 	cmd.Env = os.Environ()
+	cmd.Env = append(cmd.Env, "STORAGE_DRIVER=vfs")
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
 	cmd.Stdin = os.Stdin

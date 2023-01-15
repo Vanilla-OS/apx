@@ -18,7 +18,7 @@ import (
 )
 
 var (
-	Version = "1.4.1-1"
+	Version = "1.4.1-2"
 )
 
 func init() {
