@@ -1,3 +1,11 @@
+apx (1.4.1) kinetic; urgency=critical
+
+  * Allow exporting binaries
+  * Update manpage
+  * Fix bug the graph driver
+
+ -- Mirko brombin <send@mirko.pm>  Sun, 11 Dec 2022 10:00:03 +0200
+ 
 apx (1.4.0) kinetic; urgency=medium
 
   * New managed Alpine Linux container
