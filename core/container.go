@@ -151,6 +151,7 @@ func (c *Container) Exec(capture_output bool, args ...string) (string, error) {
 	cmd := exec.Command(settings.Cnf.DistroboxPath, "enter", container_name, "--")
 	cmd.Args = append(cmd.Args, args...)
 	cmd.Env = os.Environ()
+	cmd.Env = append(cmd.Env, "STORAGE_DRIVER=vfs")
 
 	if capture_output {
 		out, err := cmd.Output()
@@ -235,6 +236,7 @@ func (c *Container) Create() error {
 		"--label=manager=apx",
 		"--yes")
 	cmd.Env = os.Environ()
+	cmd.Env = append(cmd.Env, "STORAGE_DRIVER=vfs")
 	// mute command output
 	//cmd.Stdout = os.Stdout
 	//cmd.Stderr = os.Stderr
