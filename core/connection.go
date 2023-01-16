@@ -10,10 +10,13 @@ package core
 */
 
 import (
-	"net/http"
+	"fmt"
+	"net"
 )
 
-func CheckConnection() bool {
-	_, err := http.Get("https://google.com") // TODO: use a better way to check connection
+func CheckConnection(host, port string) bool {
+	testDomain := fmt.Sprintf("%s:%s", host, port)
+	_, err := net.Dial("tcp", testDomain)
+
 	return err == nil
 }
