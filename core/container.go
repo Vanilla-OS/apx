@@ -187,7 +187,7 @@ func (c *Container) Enter() error {
 func (c *Container) Create() error {
 	ExitIfOverlayTypeFS()
 
-	if !CheckConnection("docker.io", "443") {
+	if !CheckConnection("cloudflare.com", "443") {
 		log.Default().Println("No internet connection. Please connect to the internet and try again.")
 		return errors.New("failed to create container")
 	}
