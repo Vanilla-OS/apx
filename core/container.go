@@ -329,11 +329,11 @@ func (c *Container) ExportBinary(bin string) error {
 	}
 	_, host_path, _ := strings.Cut(out, "=")
 
-    // Ensure `~/.local/bin` exists
-    local_bin_path := fmt.Sprintf("/home/%s/.local/bin", os.Getenv("USER"))
-    if _, err := os.Stat(local_bin_path); os.IsNotExist(err) {
-        os.Mkdir(local_bin_path, 0775)
-    }
+	// Ensure `~/.local/bin` exists
+	local_bin_path := fmt.Sprintf("/home/%s/.local/bin", os.Getenv("USER"))
+	if _, err := os.Stat(local_bin_path); os.IsNotExist(err) {
+		os.Mkdir(local_bin_path, 0775)
+	}
 
 	paths := strings.Split(host_path, ":")
 	bin_rename := ""
