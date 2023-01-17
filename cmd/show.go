@@ -9,6 +9,8 @@ package cmd
 */
 
 import (
+	"errors"
+	"fmt"
 	"github.com/spf13/cobra"
 )
 
@@ -19,10 +21,29 @@ func NewShowCommand() *cobra.Command {
 		Short:   "Show details about a package",
 		RunE:    show,
 	}
+	cmd.Flags().BoolP("isinstalled", "i", false, "Returns only whether package is installed")
 	return cmd
 }
 
 func show(cmd *cobra.Command, args []string) error {
+	if len(args) == 0 {
+		return errors.New("Please specify a package name.")
+	}
+
+	if cmd.Flag("isinstalled").Value.String() == "true" {
+		result, err := container.IsPackageInstalled(args[0])
+		if err != nil {
+			return err
+		}
+
+		if result {
+			fmt.Printf("%s is installed", args[0])
+		} else {
+			fmt.Printf("%s is not installed", args[0])
+		}
+
+		return nil
+	}
 
 	command := append([]string{}, container.GetPkgCommand("show")...)
 	command = append(command, args...)

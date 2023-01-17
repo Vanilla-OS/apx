@@ -2,11 +2,13 @@ package core
 
 import (
 	"encoding/json"
+	"errors"
 	"fmt"
 	"io"
 	"log"
 	"net/http"
 	"os"
+	"strconv"
 	"strings"
 
 	"github.com/vanilla-os/apx/settings"
@@ -165,6 +167,36 @@ func GetApkPkgCommand(command string) []string {
 	default:
 		return nil
 	}
+}
+
+func (c *Container) IsPackageInstalled(pkgname string) (bool, error) {
+	var query_cmd string
+	switch c.containerType {
+	case APT:
+		query_cmd = "dpkg -l"
+	case AUR:
+		query_cmd = "yay -Qi"
+	case DNF:
+		query_cmd = "rpm -q"
+	case APK:
+		query_cmd = "apk -e info"
+	default:
+		return false, errors.New("Cannot query package from unknown container")
+	}
+
+	query_check_str := fmt.Sprintf("if $(%s %s >/dev/null 2>/dev/null); then echo true; else echo false; fi", query_cmd, pkgname)
+
+	result, err := c.Output("sh", "-c", query_check_str)
+	if err != nil {
+		return false, err
+	}
+
+	result_bool, err := strconv.ParseBool(string(result[:len(result)-1]))
+	if err != nil {
+		return false, err
+	}
+
+	return result_bool, nil
 }
 
 func GetLatestYay() string {
