@@ -438,7 +438,11 @@ func (c *Container) RemoveDesktopEntry(program string) error {
 	return nil
 }
 
-func (c *Container) RemoveBinary(bin string) error {
+// RemoveBinary unexports/removes an exported binary application.
+// fail_silently will not return an error if the file was not found or is invalid,
+// this is useful for when removing packages, where the binary may not have been exported
+// fail_silently will still return an error on unexpected issues
+func (c *Container) RemoveBinary(bin string, fail_silently bool) error {
 	// Check file exists in ~/.local/bin
 	local_bin_file := fmt.Sprintf("/home/%s/.local/bin/%s", os.Getenv("USER"), bin)
 	if _, err := os.Stat(local_bin_file); os.IsNotExist(err) {
@@ -459,7 +463,11 @@ func (c *Container) RemoveBinary(bin string) error {
 
 		prefixed_bin_file := fmt.Sprintf("/home/%s/.local/bin/%s", os.Getenv("USER"), prefix)
 		if _, prefix_err := os.Stat(prefixed_bin_file); os.IsNotExist(prefix_err) {
-			return errors.New(fmt.Sprintf("Binary `%s` is not exported.", bin))
+			if !fail_silently {
+				return errors.New(fmt.Sprintf("Binary `%s` is not exported.", bin))
+			} else {
+				return nil
+			}
 		} else {
 			local_bin_file = prefixed_bin_file
 		}
@@ -477,7 +485,11 @@ func (c *Container) RemoveBinary(bin string) error {
 		if linenr == 2 {
 			text := scanner.Text()
 			if text != "# distrobox_binary" {
-				return errors.New(fmt.Sprintf("`~/.local/bin/%s` is not an apx export, refusing to remove.", bin))
+				if !fail_silently {
+					return errors.New(fmt.Sprintf("`~/.local/bin/%s` is not an apx export, refusing to remove.", bin))
+				} else {
+					return nil
+				}
 			} else {
 				break
 			}

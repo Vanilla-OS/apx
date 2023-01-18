@@ -29,7 +29,7 @@ func NewUnexportCommand() *cobra.Command {
 func unexport(cmd *cobra.Command, args []string) error {
 	if cmd.Flag("bin").Value.String() != "" {
 		bin_name := cmd.Flag("bin").Value.String()
-		if err := container.RemoveBinary(bin_name); err != nil {
+		if err := container.RemoveBinary(bin_name, false); err != nil {
 			fmt.Printf("Error: %s\n", err)
 		} else {
 			fmt.Printf("Successfully removed exported binary `%s`.", bin_name)
