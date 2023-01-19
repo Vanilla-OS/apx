@@ -40,6 +40,7 @@ func remove(cmd *cobra.Command, args []string) error {
 
 	for _, pkg := range args {
 		container.RemoveDesktopEntry(pkg)
+		container.RemoveBinary(pkg, true)
 	}
 
 	return nil

@@ -10,6 +10,7 @@ package core
 */
 
 import (
+	"bufio"
 	"errors"
 	"fmt"
 	"io/ioutil"
@@ -434,6 +435,73 @@ func (c *Container) RemoveDesktopEntry(program string) error {
 	spinner.Stop()
 
 	log.Default().Printf("Desktop entry %v not found.\n", program)
+	return nil
+}
+
+// RemoveBinary unexports/removes an exported binary application.
+// fail_silently will not return an error if the file was not found or is invalid,
+// this is useful for when removing packages, where the binary may not have been exported
+// fail_silently will still return an error on unexpected issues
+func (c *Container) RemoveBinary(bin string, fail_silently bool) error {
+	// Check file exists in ~/.local/bin
+	local_bin_file := fmt.Sprintf("/home/%s/.local/bin/%s", os.Getenv("USER"), bin)
+	if _, err := os.Stat(local_bin_file); os.IsNotExist(err) {
+		// Try to look for a prefixed file
+		var prefix string
+		switch c.containerType {
+		case APT:
+			prefix = fmt.Sprintf("apt_%s", bin)
+		case AUR:
+			prefix = fmt.Sprintf("aur_%s", bin)
+		case DNF:
+			prefix = fmt.Sprintf("dnf_%s", bin)
+		case APK:
+			prefix = fmt.Sprintf("apk_%s", bin)
+		default:
+			return errors.New("can't unexport binary from unknown container")
+		}
+
+		prefixed_bin_file := fmt.Sprintf("/home/%s/.local/bin/%s", os.Getenv("USER"), prefix)
+		if _, prefix_err := os.Stat(prefixed_bin_file); os.IsNotExist(prefix_err) {
+			if !fail_silently {
+				return errors.New(fmt.Sprintf("Binary `%s` is not exported.", bin))
+			} else {
+				return nil
+			}
+		} else {
+			local_bin_file = prefixed_bin_file
+		}
+	}
+
+	// Ensure it's a distrobox export by reading the file's second line
+	file, err := os.Open(local_bin_file)
+	if err != nil {
+		return err
+	}
+	defer file.Close()
+
+	scanner := bufio.NewScanner(file)
+	for linenr := 1; scanner.Scan(); linenr++ {
+		if linenr == 2 {
+			text := scanner.Text()
+			if text != "# distrobox_binary" {
+				if !fail_silently {
+					return errors.New(fmt.Sprintf("`~/.local/bin/%s` is not an apx export, refusing to remove.", bin))
+				} else {
+					return nil
+				}
+			} else {
+				break
+			}
+		}
+	}
+
+	// Delete it
+	err = os.Remove(local_bin_file)
+	if err != nil {
+		return err
+	}
+
 	return nil
 }
 

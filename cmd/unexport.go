@@ -9,6 +9,9 @@ package cmd
 */
 
 import (
+	"errors"
+	"fmt"
+
 	"github.com/spf13/cobra"
 )
 
@@ -19,10 +22,23 @@ func NewUnexportCommand() *cobra.Command {
 		Short:   "Unexport/Remove a program's desktop entry from a managed container",
 		RunE:    unexport,
 	}
+	cmd.Flags().String("bin", "", "Unexport a previously exported binary.")
 	return cmd
 }
 
 func unexport(cmd *cobra.Command, args []string) error {
-
-	return container.RemoveDesktopEntry(args[0])
+	if cmd.Flag("bin").Value.String() != "" {
+		bin_name := cmd.Flag("bin").Value.String()
+		if err := container.RemoveBinary(bin_name, false); err != nil {
+			fmt.Printf("Error: %s\n", err)
+		} else {
+			fmt.Printf("Successfully removed exported binary `%s`.", bin_name)
+		}
+		return nil
+	} else {
+		if len(args) == 0 {
+			return errors.New("Please specify a program to unexport.")
+		}
+		return container.RemoveDesktopEntry(args[0])
+	}
 }
