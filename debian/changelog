@@ -1,3 +1,13 @@
+apx (1.4.2) kinetic; urgency=medium
+
+  * Exit status on show -i
+  * Automatically unexport on package removal
+  * Unexport binary
+  * Add isinstalled flag to apx show
+  * Change connection test server to 'cloudflare'
+
+ -- Mirko brombin <send@mirko.pm>  Fri, 20 Jan 2023 08:00:03 +0200
+
 apx (1.4.1-2) kinetic; urgency=critical
 
   * Allow exporting binaries
@@ -16,7 +26,7 @@ apx (1.4.0) kinetic; urgency=medium
 
  -- Mirko brombin <send@mirko.pm>  Sun, 11 Dec 2022 10:00:03 +0200
  
- apx (1.3.4) kinetic; urgency=medium
+apx (1.3.4) kinetic; urgency=medium
 
   * Skip export for sideloaded packages
   * Mute export logs
@@ -24,13 +34,13 @@ apx (1.4.0) kinetic; urgency=medium
 
  -- Mirko brombin <send@mirko.pm>  Sun, 11 Dec 2022 10:00:03 +0200
 
- apx (1.2.5) kinetic; urgency=medium
+apx (1.2.5) kinetic; urgency=medium
 
   * Support for sideloading packages (--sideload)
 
  -- Mirko brombin <send@mirko.pm>  Sun, 11 Dec 2022 09:10:03 +0200
  
- apx (1.2.4) kinetic; urgency=medium
+apx (1.2.4) kinetic; urgency=medium
 
   * First Release
 
