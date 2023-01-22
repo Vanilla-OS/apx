@@ -39,7 +39,7 @@ Global Flags:
       --apt           Install packages from the Ubuntu repository.
       --aur           Install packages from the AUR (Arch User Repository).
       --dnf           Install packages from the Fedora's DNF (Dandified YUM) repository.
-      --zypper        Install packages from the OpenSUSE's Zypper repository.
+      --zypper        Install packages from the openSUSE's Zypper repository.
   -h, --help          help for apx
   -n, --name string   Create or use custom container with this name.
   -v, --version       version for apx
