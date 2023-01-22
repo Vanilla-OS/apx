@@ -178,13 +178,13 @@ func GetZypperPkgCommand(command string) []string {
 
 	switch command {
 	case "autoremove":
-		return []string{"sudo", bin, "rm -u"}
+		return []string{"echo", "Not implemented yet! "}
 	case "clean":
 		return []string{"sudo", bin, "clean"}
 	case "install":
 		return []string{"sudo", bin, "install"}
 	case "list":
-		return []string{"sudo", "rpm -qa"}
+		return []string{"sudo", bin, "pa"}
 	case "purge":
 		return []string{"sudo", bin, "remove"}
 	case "remove":
