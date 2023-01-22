@@ -26,6 +26,8 @@ func (c *Container) GetPkgCommand(command string) []string {
 		return GetApkPkgCommand(command)
 	case ZYPPER:
 		return GetZypperPkgCommand(command)
+	case VOID:
+		return GetVoidPkgCommand(command)
 	default:
 		return nil
 	}
@@ -45,6 +47,8 @@ func GetDefaultPkgCommand(command string) []string {
 		return GetApkPkgCommand(command)
 	case "zypper":
 		return GetZypperPkgCommand(command)
+	case "void":
+		return GetVoidPkgCommand(command)
 	default:
 		return []string{"echo", pkgmanager + " is not implemented yet!"}
 	}
@@ -202,6 +206,34 @@ func GetZypperPkgCommand(command string) []string {
 	}
 }
 
+func GetVoidPkgCommand(command string) []string {
+
+	switch command {
+	case "autoremove":
+		return []string{"sudo", "xbps-remove", "-oO"}
+	case "clean":
+		return []string{"sudo", "xbps-remove", "-O"}
+	case "install":
+		return []string{"sudo", "xbps-install", "-S"}
+	case "list":
+		return []string{"sudo", "xbps-query", "-l"}
+	case "purge":
+		return []string{"sudo", "xbps-remove", "-R"}
+	case "remove":
+		return []string{"sudo", "xbps-remove"}
+	case "search":
+		return []string{"sudo", "xbps-query", "-Rs"}
+	case "show":
+		return []string{"sudo", "xbps-query", "-RS"}
+	case "update":
+		return []string{"sudo", "xbps-install", "-Su"}
+	case "upgrade":
+		return []string{"sudo", "xbps-install", "-Su"}
+	default:
+		return nil
+	}
+}
+
 func (c *Container) IsPackageInstalled(pkgname string) (bool, error) {
 	var query_cmd string
 	switch c.containerType {
@@ -215,6 +247,8 @@ func (c *Container) IsPackageInstalled(pkgname string) (bool, error) {
 		query_cmd = "apk -e info"
 	case ZYPPER:
 		query_cmd = "rpm -q"
+	case VOID:
+		query_cmd = "xbps-query"
 	default:
 		return false, errors.New("Cannot query package from unknown container")
 	}

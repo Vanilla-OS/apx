@@ -40,6 +40,7 @@ Global Flags:
       --aur           Install packages from the AUR (Arch User Repository).
       --dnf           Install packages from the Fedora's DNF (Dandified YUM) repository.
       --zypper        Install packages from the openSUSE repository.
+      --void          Install packages from the Void (Linux) repository.
   -h, --help          help for apx
   -n, --name string   Create or use custom container with this name.
   -v, --version       version for apx
