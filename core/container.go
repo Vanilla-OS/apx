@@ -328,9 +328,9 @@ func (c *Container) ExportDesktopEntry(program string) {
 
 func (c *Container) ExportBinary(bin string) error {
 	// Get host's $PATH
-	out, err := c.Output("sh", "-c", "distrobox-host-exec $(getent passwd $USER | cut -f 7 -d :) -l -i -c printenv | grep -E ^PATH=")
+	out, err := c.Output("sh", "-c", "distrobox-host-exec $(readlink -fn $(getent passwd $USER | cut -f 7 -d :)) -l -i -c printenv | grep -E ^PATH=")
 	if err != nil {
-		return err
+		return errors.New(fmt.Sprintf("Failed to execute printenv: %s", err))
 	}
 
 	// If bin name not in $PATH, export to .local/bin
@@ -356,7 +356,7 @@ func (c *Container) ExportBinary(bin string) error {
 
 		entries, err := os.ReadDir(path)
 		if err != nil {
-			return err
+			return errors.New(fmt.Sprintf("Could not read directory %s: %s", path, err))
 		}
 
 		duplicate_found := false
