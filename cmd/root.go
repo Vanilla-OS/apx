@@ -7,7 +7,7 @@ import (
 )
 
 // package level variables for viper flags
-var apt, aur, dnf, apk, zypper, void bool
+var apt, aur, dnf, apk, zypper, xbps bool
 
 // package level variable for container name,
 // set in root command's PersistentPreRun function
@@ -28,7 +28,7 @@ func NewApxCommand(Version string) *cobra.Command {
 	rootCmd.PersistentFlags().BoolVar(&dnf, "dnf", false, "Install packages from the Fedora's DNF (Dandified YUM) repository.")
 	rootCmd.PersistentFlags().BoolVar(&apk, "apk", false, "Install packages from the Alpine repository.")
 	rootCmd.PersistentFlags().BoolVar(&zypper, "zypper", false, " Install packages from the OpenSUSE repository.")
-	rootCmd.PersistentFlags().BoolVar(&void, "void", false, " Install packages from the Void (Linux) repository.")
+	rootCmd.PersistentFlags().BoolVar(&xbps, "xbps", false, " Install packages from the Void (Linux) repository.")
 	rootCmd.PersistentFlags().StringVarP(&name, "name", "n", "", "Create or use custom container with this name.")
 
 	rootCmd.AddCommand(NewInitializeCommand())
@@ -51,7 +51,7 @@ func NewApxCommand(Version string) *cobra.Command {
 	viper.BindPFlag("dnf", rootCmd.PersistentFlags().Lookup("dnf"))
 	viper.BindPFlag("apk", rootCmd.PersistentFlags().Lookup("apk"))
 	viper.BindPFlag("zypper", rootCmd.PersistentFlags().Lookup("zypper"))
-	viper.BindPFlag("void", rootCmd.PersistentFlags().Lookup("void"))
+	viper.BindPFlag("xbps", rootCmd.PersistentFlags().Lookup("xbps"))
 	return rootCmd
 }
 
@@ -64,7 +64,7 @@ func getContainer() *core.Container {
 	dnf = viper.GetBool("dnf")
 	apk = viper.GetBool("apk")
 	zypper = viper.GetBool("zypper")
-	void = viper.GetBool("void")
+	xbps = viper.GetBool("xbps")
 	if aur {
 		kind = core.AUR
 	} else if dnf {
@@ -73,8 +73,8 @@ func getContainer() *core.Container {
 		kind = core.APK
 	} else if zypper {
 		kind = core.ZYPPER
-	} else if void {
-		kind = core.VOID
+	} else if xbps {
+		kind = core.XBPS
 	}
 	if len(name) > 0 {
 		return core.NewNamedContainer(kind, name)

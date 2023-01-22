@@ -26,8 +26,8 @@ func (c *Container) GetPkgCommand(command string) []string {
 		return GetApkPkgCommand(command)
 	case ZYPPER:
 		return GetZypperPkgCommand(command)
-	case VOID:
-		return GetVoidPkgCommand(command)
+	case XBPS:
+		return GetXbpsPkgCommand(command)
 	default:
 		return nil
 	}
@@ -47,8 +47,8 @@ func GetDefaultPkgCommand(command string) []string {
 		return GetApkPkgCommand(command)
 	case "zypper":
 		return GetZypperPkgCommand(command)
-	case "void":
-		return GetVoidPkgCommand(command)
+	case "xbps":
+		return GetXbpsPkgCommand(command)
 	default:
 		return []string{"echo", pkgmanager + " is not implemented yet!"}
 	}
@@ -206,7 +206,7 @@ func GetZypperPkgCommand(command string) []string {
 	}
 }
 
-func GetVoidPkgCommand(command string) []string {
+func GetXbpsPkgCommand(command string) []string {
 
 	switch command {
 	case "autoremove":
@@ -247,7 +247,7 @@ func (c *Container) IsPackageInstalled(pkgname string) (bool, error) {
 		query_cmd = "apk -e info"
 	case ZYPPER:
 		query_cmd = "rpm -q"
-	case VOID:
+	case XBPS:
 		query_cmd = "xbps-query"
 	default:
 		return false, errors.New("Cannot query package from unknown container")
