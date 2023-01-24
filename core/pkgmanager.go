@@ -173,7 +173,7 @@ func (c *Container) IsPackageInstalled(pkgname string) (bool, error) {
 	var query_cmd string
 	switch c.containerType {
 	case APT:
-		query_cmd = "dpkg -l"
+		query_cmd = "dpkg -s"
 	case AUR:
 		query_cmd = "yay -Qi"
 	case DNF:
