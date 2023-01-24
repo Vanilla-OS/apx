@@ -21,6 +21,7 @@ import (
 	"time"
 
 	"github.com/briandowns/spinner"
+	"github.com/thanhpk/randstr"
 	"github.com/vanilla-os/apx/settings"
 )
 
@@ -41,6 +42,7 @@ type Container struct {
 func NewContainer(kind ContainerType) *Container {
 	return &Container{
 		containerType: kind,
+		customName:    "",
 	}
 }
 func NewNamedContainer(kind ContainerType, name string) *Container {
@@ -66,25 +68,49 @@ func (c *Container) GetContainerImage() (image string, err error) {
 	return image, err
 }
 
-func (c *Container) GetContainerName() (name string) {
+func (c *Container) GetCustomName() string {
+	return c.customName
+}
+
+func (c *Container) GenerateNewContainerName() (name string) {
 	var cn strings.Builder
-	switch c.containerType {
-	case APT:
-		cn.WriteString("apx_managed")
-	case AUR:
-		cn.WriteString("apx_managed_aur")
-	case DNF:
-		cn.WriteString("apx_managed_dnf")
-	case APK:
-		cn.WriteString("apx_managed_apk")
-	default:
-		log.Fatal(fmt.Errorf("unspecified container type"))
-	}
+	cn.WriteString(settings.Cnf.ContainerName)
 	if len(c.customName) > 0 {
 		cn.WriteString("_")
 		cn.WriteString(strings.Replace(c.customName, " ", "", -1))
 	}
+	cn.WriteString("_")
+	cn.WriteString(randstr.Hex(10))
 	return cn.String()
+}
+
+func (c *Container) GetIdOfContainer() (id string) {
+	info := settings.DistroInfo{}
+
+	switch c.containerType {
+	case APT:
+		info = settings.DistroUbuntu
+	case AUR:
+		info = settings.DistroArch
+	case DNF:
+		info = settings.DistroFedora
+	case APK:
+		info = settings.DistroAlpine
+	}
+
+	labels := CreateLabels(info.Id, info.Pkgmanager, c.customName)
+
+	manager := ContainerManager()
+
+	cmd_args := []string{"ps", "-aq"}
+	cmd_args = append(cmd_args, labels.ToFilters()...)
+	cmd := exec.Command(manager, cmd_args...)
+	output, _ := cmd.Output()
+
+	container_id := string(output)
+	container_id = strings.TrimSpace(container_id)
+
+	return container_id
 }
 
 func ContainerManager() string {
@@ -147,7 +173,7 @@ func (c *Container) Exec(capture_output bool, args ...string) (string, error) {
 		}
 	}
 
-	container_name := c.GetContainerName()
+	container_name := c.GetIdOfContainer()
 
 	cmd := exec.Command(settings.Cnf.DistroboxPath, "enter", container_name, "--")
 	cmd.Args = append(cmd.Args, args...)
@@ -191,7 +217,7 @@ func (c *Container) Enter() error {
 		return errors.New("managed container does not exist")
 	}
 
-	container_name := c.GetContainerName()
+	container_name := c.GetIdOfContainer()
 
 	cmd := exec.Command(settings.Cnf.DistroboxPath, "enter", container_name)
 	cmd.Env = os.Environ()
@@ -223,20 +249,32 @@ func (c *Container) Create() error {
 		return err
 	}
 
-	container_name := c.GetContainerName()
+	container_name := c.GenerateNewContainerName()
 	spinner := spinner.New(spinner.CharSets[11], 100*time.Millisecond)
 	spinner.Suffix = " Creating container..."
 
 	spinner.Start()
 
-	cmd := exec.Command(settings.Cnf.DistroboxPath, "create",
+	info, err := settings.FromPackageManger(settings.Cnf.PkgManager)
+	if err != nil {
+		log.Fatalf("error creating container: %v", err)
+	}
+
+	labels := CreateLabels(info.Id, info.Pkgmanager, c.customName)
+	labels.Id = randstr.Hex(10)
+
+	cmd_args := []string{
+		"create",
 		"--name", container_name,
 		"--image", container_image,
 		"--yes",
 		"--no-entry",
-		"--additional-flags",
-		"--label=manager=apx",
-		"--yes")
+	}
+	cmd_args = append(cmd_args, "--additional-flags")
+	cmd_args = append(cmd_args, strings.Join(labels.ToArguments(), " "))
+	cmd_args = append(cmd_args, "--yes")
+
+	cmd := exec.Command(settings.Cnf.DistroboxPath, cmd_args...)
 	cmd.Env = os.Environ()
 	cmd.Env = append(cmd.Env, "STORAGE_DRIVER=vfs")
 	// mute command output
@@ -264,7 +302,7 @@ func (c *Container) Create() error {
 func (c *Container) Stop() error {
 	ExitIfOverlayTypeFS()
 
-	container_name := c.GetContainerName()
+	container_name := c.GetIdOfContainer()
 	spinner := spinner.New(spinner.CharSets[11], 100*time.Millisecond)
 	spinner.Suffix = " Stopping container..."
 
@@ -287,7 +325,7 @@ func (c *Container) Stop() error {
 func (c *Container) Remove() error {
 	ExitIfOverlayTypeFS()
 
-	container_name := c.GetContainerName()
+	container_name := c.GetIdOfContainer()
 	spinner := spinner.New(spinner.CharSets[11], 100*time.Millisecond)
 	spinner.Suffix = " Removing container..."
 
@@ -405,7 +443,7 @@ func (c *Container) ExportBinary(bin string) error {
 }
 
 func (c *Container) RemoveDesktopEntry(program string) error {
-	container_name := c.GetContainerName()
+	container_name := c.GetIdOfContainer()
 	spinner := spinner.New(spinner.CharSets[11], 100*time.Millisecond)
 	spinner.Suffix = fmt.Sprintf("Removing desktop entry: %v\n", program)
 
@@ -506,15 +544,6 @@ func (c *Container) RemoveBinary(bin string, fail_silently bool) error {
 }
 
 func (c *Container) Exists() bool {
-	container_name := c.GetContainerName()
-	manager := ContainerManager()
-
-	cmd := exec.Command(manager, "ps", "-a", "-q", "-f", "name="+container_name+"$")
-	output, _ := cmd.Output()
-
-	// fmt.Println("container_name: ", container_name)
-	// fmt.Println("command: ", cmd.String())
-	// fmt.Println("output: ", string(output))
-
-	return len(output) > 0
+	container_name := c.GetIdOfContainer()
+	return len(container_name) > 0
 }
