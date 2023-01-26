@@ -29,8 +29,8 @@ type Config struct {
 var Cnf *Config
 
 func init() {
-	viper.AddConfigPath("/etc/apx/")
 	viper.AddConfigPath("config/")
+	viper.AddConfigPath("/etc/apx/")
 	viper.SetConfigName("config")
 	viper.SetConfigType("json")
 	err := viper.ReadInConfig()
