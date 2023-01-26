@@ -94,6 +94,7 @@ func setStorage() error {
 	}
 	// storage config doesn't exist
 	f, err := os.Create(configPath)
+	defer f.Close()
 	if err != nil {
 		return err
 	}
