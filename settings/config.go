@@ -97,6 +97,10 @@ func GetHostInfo() (img string, pkgmanager string, err error) {
 		return "docker.io/library/fedora:" + distro_version, "dnf", nil
 	case "alpine":
 		return "docker.io/library/alpine:" + distro_version, "apk", nil
+	case "zypper":
+		return "registry.opensuse.org/opensuse/tumbleweed:latest" + distro_version, "zypper", nil
+	case "xbps":
+		return "ghcr.io/void-linux/void-linux:latest-full-x86_64" + distro_version, "xbps", nil
 	default:
 		return "", "", fmt.Errorf("Unsupported distro detected")
 	}

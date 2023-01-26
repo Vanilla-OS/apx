@@ -27,10 +27,12 @@ import (
 type ContainerType int
 
 const (
-	APT ContainerType = iota // 0
-	AUR ContainerType = iota // 1
-	DNF ContainerType = iota // 2
-	APK ContainerType = iota // 3
+	APT    ContainerType = iota // 0
+	AUR    ContainerType = iota // 1
+	DNF    ContainerType = iota // 2
+	APK    ContainerType = iota // 3
+	ZYPPER ContainerType = iota // 4
+	XBPS   ContainerType = iota // 5
 )
 
 type Container struct {
@@ -59,6 +61,10 @@ func (c *Container) GetContainerImage() (image string, err error) {
 		return "docker.io/library/fedora", nil
 	case APK:
 		return "docker.io/library/alpine", nil
+	case ZYPPER:
+		return "registry.opensuse.org/opensuse/tumbleweed:latest", nil
+	case XBPS:
+		return "ghcr.io/void-linux/void-linux:latest-full-x86_64", nil
 	default:
 		image = ""
 		err = errors.New("can't retrieve image for unknown container")
@@ -77,6 +83,10 @@ func (c *Container) GetContainerName() (name string) {
 		cn.WriteString("apx_managed_dnf")
 	case APK:
 		cn.WriteString("apx_managed_apk")
+	case ZYPPER:
+		cn.WriteString("apx_managed_zypper")
+	case XBPS:
+		cn.WriteString("apx_managed_xbps")
 	default:
 		log.Fatal(fmt.Errorf("unspecified container type"))
 	}
@@ -318,9 +328,9 @@ func (c *Container) ExportDesktopEntry(program string) {
 
 func (c *Container) ExportBinary(bin string) error {
 	// Get host's $PATH
-	out, err := c.Output("sh", "-c", "distrobox-host-exec $(getent passwd $USER | cut -f 7 -d :) -l -i -c printenv | grep -E ^PATH=")
+	out, err := c.Output("sh", "-c", "distrobox-host-exec $(readlink -fn $(getent passwd $USER | cut -f 7 -d :)) -l -i -c printenv | grep -E ^PATH=")
 	if err != nil {
-		return err
+		return errors.New(fmt.Sprintf("Failed to execute printenv: %s", err))
 	}
 
 	// If bin name not in $PATH, export to .local/bin
@@ -346,7 +356,7 @@ func (c *Container) ExportBinary(bin string) error {
 
 		entries, err := os.ReadDir(path)
 		if err != nil {
-			return err
+			return errors.New(fmt.Sprintf("Could not read directory %s: %s", path, err))
 		}
 
 		duplicate_found := false
@@ -362,6 +372,10 @@ func (c *Container) ExportBinary(bin string) error {
 					bin_rename = fmt.Sprintf("dnf_%s", bin)
 				case APK:
 					bin_rename = fmt.Sprintf("apk_%s", bin)
+				case ZYPPER:
+					bin_rename = fmt.Sprintf("zypper_%s", bin)
+				case XBPS:
+					bin_rename = fmt.Sprintf("xbps_%s", bin)
 				default:
 					return errors.New("can't export binary from unknown container")
 				}
@@ -457,6 +471,10 @@ func (c *Container) RemoveBinary(bin string, fail_silently bool) error {
 			prefix = fmt.Sprintf("dnf_%s", bin)
 		case APK:
 			prefix = fmt.Sprintf("apk_%s", bin)
+		case ZYPPER:
+			prefix = fmt.Sprintf("zypper_%s", bin)
+		case XBPS:
+			prefix = fmt.Sprintf("xbps_%s", bin)
 		default:
 			return errors.New("can't unexport binary from unknown container")
 		}
