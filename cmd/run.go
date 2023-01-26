@@ -19,6 +19,7 @@ func NewRunCommand() *cobra.Command {
 		Short:   "Run a program inside a managed container.",
 		RunE:    run,
 	}
+	cmd.Flags().SetInterspersed(false)
 	return cmd
 }
 
