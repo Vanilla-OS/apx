@@ -92,17 +92,18 @@ func setStorage() error {
 		// config exists
 		return nil
 	}
-	// storage config doesn't exist
+	// storage config path doesn't exist
 	err = os.MkdirAll(path.Join(home, ".config", "containers"), 0755)
 	if err != nil {
 		return err
 	}
-	// storage config doesn't exist
+	// storage config file doesn't exist
 	f, err := os.Create(configPath)
-	defer f.Close()
 	if err != nil {
 		return err
 	}
+	defer f.Close()
+
 	_, err = f.Write([]byte(storageConf))
 
 	return err
