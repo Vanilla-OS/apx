@@ -1,6 +1,9 @@
 package cmd
 
 import (
+	"os"
+	"path"
+
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 	"github.com/vanilla-os/apx/core"
@@ -20,6 +23,10 @@ func NewApxCommand(Version string) *cobra.Command {
 		Short:   "Apx is a package manager with support for multiple sources allowing you to install packages in a managed container.",
 		Version: Version,
 		PersistentPreRun: func(cmd *cobra.Command, args []string) {
+			err := setStorage()
+
+			cobra.CheckErr(err)
+
 			container = getContainer()
 		},
 	}
@@ -73,3 +80,35 @@ func getContainer() *core.Container {
 	}
 
 }
+
+func setStorage() error {
+	home, err := os.UserHomeDir()
+	if err != nil {
+		return err
+	}
+	configPath := path.Join(home, ".config", "containers", "storage.conf")
+	_, err = os.Stat(configPath)
+	if err == nil {
+		// config exists
+		return nil
+	}
+	// storage config path doesn't exist
+	err = os.MkdirAll(path.Join(home, ".config", "containers"), 0755)
+	if err != nil {
+		return err
+	}
+	// storage config file doesn't exist
+	f, err := os.Create(configPath)
+	if err != nil {
+		return err
+	}
+	defer f.Close()
+
+	_, err = f.Write([]byte(storageConf))
+
+	return err
+}
+
+const storageConf = `[storage]
+driver = "vfs"
+`
