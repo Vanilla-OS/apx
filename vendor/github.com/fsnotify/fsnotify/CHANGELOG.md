@@ -50,7 +50,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * Linux: Properly handle inotify's IN_Q_OVERFLOW event (thanks @zeldovich)
 * Docs: replace references to OS X with macOS
 
-## [1.4.2] - 2016-10-10
+## [1.5.0] - 2016-10-10
 
 * Linux: use InotifyInit1 with IN_CLOEXEC to stop leaking a file descriptor to a child process when using fork/exec [#178](https://github.com/fsnotify/fsnotify/pull/178) (thanks @pattyshack)
 

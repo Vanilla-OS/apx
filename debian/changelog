@@ -1,3 +1,14 @@
+apx (1.5.0) kinetic; urgency=medium
+
+  * New --zypper flag
+  * New --xbps flag
+  * Fix export for linked binaries
+  * Accurately check package is installed
+  * Fix arguments order
+  * Fix the storage error by setting a custom podman configuration if not available
+
+ -- Mirko brombin <send@mirko.pm>  Fri, 20 Jan 2023 08:00:03 +0200
+ 
 apx (1.4.2) kinetic; urgency=medium
 
   * Exit status on show -i

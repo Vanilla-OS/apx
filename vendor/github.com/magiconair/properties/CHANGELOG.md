@@ -123,7 +123,7 @@
  * Added a [MustSet()](http://godoc.org/github.com/magiconair/properties#Properties.MustSet) method
  * Migrated test library from launchpad.net/gocheck to [gopkg.in/check.v1](http://gopkg.in/check.v1)
 
-### [1.4.2](https://github.com/magiconair/properties/tree/v1.4.2) - 15 Nov 2014
+### [1.5.0](https://github.com/magiconair/properties/tree/v1.5.0) - 15 Nov 2014
 
  * [Issue #2](https://github.com/magiconair/properties/issues/2): Fixed goroutine leak in parser which created two lexers but cleaned up only one
 
