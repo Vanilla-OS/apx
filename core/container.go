@@ -567,6 +567,10 @@ func (c *Container) Exists() bool {
 func ApplyForAll(command string, flags []string) error {
 	for i := 0; i < CONTAINER_TYPES; i++ {
 		container := NewContainer(ContainerType(i))
+		if !container.Exists() {
+			continue
+		}
+
 		name := container.GetContainerName()
 
 		log.Default().Println(fmt.Sprintf("Running %s in %s...", command, name))
