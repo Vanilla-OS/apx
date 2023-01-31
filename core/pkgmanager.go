@@ -112,7 +112,7 @@ func GetAurPkgCommand(command string) []string {
 	// specials
 	case "install-yay":
 		return []string{
-			"bash", "-c", "cd ~/.local/src/yay  && tar -xvf yay.tar.gz && cd yay_*_x86_64* && sudo cp yay /usr/bin",
+			"bash", "-c", "cd ~/.local/src/yay  && tar -xf yay.tar.gz && cd yay_*_x86_64* && sudo cp yay /usr/bin",
 		}
 	default:
 		return nil
