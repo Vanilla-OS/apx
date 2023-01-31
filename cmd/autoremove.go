@@ -10,6 +10,7 @@ package cmd
 
 import (
 	"github.com/spf13/cobra"
+	"github.com/vanilla-os/apx/core"
 )
 
 func NewAutoRemoveCommand() *cobra.Command {
@@ -19,10 +20,19 @@ func NewAutoRemoveCommand() *cobra.Command {
 		Short:   "Remove all unused packages automatically",
 		RunE:    autoRemove,
 	}
+
+	cmd.Flags().BoolP("all", "a", false, "Apply for all containers.")
 	return cmd
 }
 
 func autoRemove(cmd *cobra.Command, args []string) error {
+	if cmd.Flag("all").Changed {
+		if err := core.ApplyForAll("autoremove", []string{}); err != nil {
+			return err
+		}
+
+		return nil
+	}
 
 	command := append([]string{}, container.GetPkgCommand("autoremove")...)
 	command = append(command, args...)

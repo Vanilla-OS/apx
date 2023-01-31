@@ -10,6 +10,7 @@ package cmd
 
 import (
 	"github.com/spf13/cobra"
+	"github.com/vanilla-os/apx/core"
 )
 
 func NewCleanCommand() *cobra.Command {
@@ -19,10 +20,18 @@ func NewCleanCommand() *cobra.Command {
 		Short:   "Clean the apx package manager cache",
 		RunE:    clean,
 	}
+	cmd.Flags().BoolP("all", "a", false, "Apply for all containers.")
 	return cmd
 }
 
 func clean(cmd *cobra.Command, args []string) error {
+	if cmd.Flag("all").Changed {
+		if err := core.ApplyForAll("clean", []string{}); err != nil {
+			return err
+		}
+
+		return nil
+	}
 
 	command := append([]string{}, container.GetPkgCommand("clean")...)
 	command = append(command, args...)

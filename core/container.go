@@ -35,6 +35,10 @@ const (
 	XBPS   ContainerType = iota // 5
 )
 
+// How many container types we offer. Must be always the same
+// as the number of options above!
+const CONTAINER_TYPES = 6
+
 type Container struct {
 	containerType ContainerType
 	customName    string
@@ -558,4 +562,24 @@ func (c *Container) Exists() bool {
 	// fmt.Println("output: ", string(output))
 
 	return len(output) > 0
+}
+
+func ApplyForAll(command string, flags []string) error {
+	for i := 0; i < CONTAINER_TYPES; i++ {
+		container := NewContainer(ContainerType(i))
+		name := container.GetContainerName()
+
+		log.Default().Println(fmt.Sprintf("Running %s in %s...", command, name))
+
+		command := append([]string{}, container.GetPkgCommand(command)...)
+		for _, flag := range flags {
+			command = append(command, flag)
+		}
+
+		if err := container.Run(command...); err != nil {
+			return err
+		}
+	}
+
+	return nil
 }
