@@ -10,6 +10,7 @@ package cmd
 
 import (
 	"github.com/spf13/cobra"
+	"github.com/vanilla-os/apx/core"
 )
 
 func NewUpdateCommand() *cobra.Command {
@@ -19,11 +20,24 @@ func NewUpdateCommand() *cobra.Command {
 		Short:   "Update the list of available packages",
 		RunE:    update,
 	}
+	cmd.Flags().BoolP("all", "a", false, "Apply for all containers.")
 	cmd.Flags().BoolP("assume-yes", "y", false, "Proceed without manual confirmation.")
 	return cmd
 }
 
 func update(cmd *cobra.Command, args []string) error {
+	if cmd.Flag("all").Changed {
+        var flags []string
+        if cmd.Flag("assume-yes").Value.String() == "true" {
+            flags = append(flags, "-y")
+        }
+
+		if err := core.ApplyForAll("update", flags); err != nil {
+			return err
+		}
+
+		return nil
+	}
 
 	command := append([]string{}, container.GetPkgCommand("update")...)
 	command = append(command, args...)
