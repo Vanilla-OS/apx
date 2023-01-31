@@ -259,10 +259,18 @@ func (c *Container) Create() error {
 		log.Fatalf("error creating container: %v", err)
 	}
 
-	spinner.Stop()
-
 	if c.containerType == AUR {
-		// Try to remove any older version downloaded by a previous Arch container
+		// Setup locales
+		spinner.Suffix = " Setting up locales..."
+		locales, err := GetArchLocales(c)
+		if err != nil {
+			log.Fatalf("error looking up locales: %v", err)
+		}
+		if err := InstallArchLocales(c, locales); err != nil {
+			log.Fatalf("error generating locales: %v", err)
+		}
+
+		// Try to remove older yay versions downloaded by a previous Arch container
 		home, err := os.UserHomeDir()
 		if err != nil {
 			log.Fatalf("error detecting user home directory: %v", err)
@@ -272,9 +280,14 @@ func (c *Container) Create() error {
 			log.Fatalf("error removing older yay version: %v", err)
 		}
 
+		// Download and install yay
+		spinner.Suffix = " Downloading and installing Yay..."
 		DownloadYay()
+		c.Output(GetAurPkgCommand("install-yay-deps")...)
 		c.Run(GetAurPkgCommand("install-yay")...)
 	}
+
+	spinner.Stop()
 
 	log.Default().Println("Container created")
 

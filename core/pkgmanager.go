@@ -8,6 +8,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"regexp"
 	"strconv"
 	"strings"
 
@@ -110,6 +111,11 @@ func GetAurPkgCommand(command string) []string {
 		return []string{bin, "-Su"}
 
 	// specials
+	case "install-yay-deps":
+		return []string{
+			// Also updates base packages because it would have to be done anyway
+			"bash", "-c", "sudo pacman -Syu --noconfirm git base-devel binutils",
+		}
 	case "install-yay":
 		return []string{
 			"bash", "-c", "cd ~/.local/src/yay  && tar -xf yay.tar.gz && cd yay_*_x86_64* && sudo cp yay /usr/bin",
@@ -330,4 +336,59 @@ func DownloadYay() {
 	if err != nil {
 		log.Fatalf("error writing yay tar: %v", err)
 	}
+}
+
+func GetArchLocales(c *Container) ([]string, error) {
+	var locales []string
+
+	out, err := c.Output("locale")
+	if err != nil {
+		return nil, err
+	}
+
+	// Find all unique entries given by the output
+	lines := strings.Split(out, "\n")
+	for _, line := range lines {
+		_, locale, found := strings.Cut(line, "=")
+		if !found {
+			continue
+		}
+
+		trimmed_locale := strings.Trim(locale, "\"")
+		unique := true
+		for _, loc := range locales {
+			if loc == trimmed_locale {
+				unique = false
+				break
+			}
+		}
+
+		if unique {
+			locales = append(locales, trimmed_locale)
+		}
+	}
+
+	return locales, nil
+}
+
+func InstallArchLocales(c *Container, locales []string) error {
+	// Modify /etc/locale.gen to uncomment all entries
+	for _, locale := range locales {
+		if locale == "" {
+			continue
+		}
+
+		escaped_locale := regexp.QuoteMeta(locale)
+		replace_pattern := fmt.Sprintf("'s/#%s/%s/'", escaped_locale, escaped_locale)
+
+		if err := c.Run("sh", "-c", fmt.Sprintf("sudo sed -r -i %s /etc/locale.gen", replace_pattern)); err != nil {
+			return err
+		}
+	}
+
+	if _, err := c.Output("sudo", "locale-gen"); err != nil {
+		return err
+	}
+
+	return nil
 }
