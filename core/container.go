@@ -262,6 +262,16 @@ func (c *Container) Create() error {
 	spinner.Stop()
 
 	if c.containerType == AUR {
+		// Try to remove any older version downloaded by a previous Arch container
+		home, err := os.UserHomeDir()
+		if err != nil {
+			log.Fatalf("error detecting user home directory: %v", err)
+		}
+		yay_dir := fmt.Sprintf("%v/.local/src/yay", home)
+		if err := os.RemoveAll(yay_dir); err != nil {
+			log.Fatalf("error removing older yay version: %v", err)
+		}
+
 		DownloadYay()
 		c.Run(GetAurPkgCommand("install-yay")...)
 	}
