@@ -573,6 +573,7 @@ func ApplyForAll(command string, flags []string) error {
 
 		name := container.GetContainerName()
 
+        fmt.Println()
 		log.Default().Println(fmt.Sprintf("Running %s in %s...", command, name))
 
 		command := append([]string{}, container.GetPkgCommand(command)...)
