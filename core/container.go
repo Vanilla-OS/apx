@@ -24,76 +24,28 @@ import (
 	"github.com/vanilla-os/apx/settings"
 )
 
-type ContainerType int
-
-const (
-	APT    ContainerType = iota // 0
-	AUR    ContainerType = iota // 1
-	DNF    ContainerType = iota // 2
-	APK    ContainerType = iota // 3
-	ZYPPER ContainerType = iota // 4
-	XBPS   ContainerType = iota // 5
-)
-
-// How many container types we offer. Must be always the same
-// as the number of options above!
-const CONTAINER_TYPES = 6
-
 type Container struct {
-	containerType ContainerType
+	containerType settings.DistroInfo
 	customName    string
 }
 
-func NewContainer(kind ContainerType) *Container {
+func NewContainer(kind settings.DistroInfo) *Container {
 	return &Container{
 		containerType: kind,
 	}
 }
-func NewNamedContainer(kind ContainerType, name string) *Container {
+
+func NewNamedContainer(kind settings.DistroInfo, name string) *Container {
 	return &Container{
 		containerType: kind,
 		customName:    name,
 	}
 }
-func (c *Container) GetContainerImage() (image string, err error) {
-	switch c.containerType {
-	case APT:
-		return GetHostImage()
-	case AUR:
-		return "docker.io/library/archlinux", nil
-	case DNF:
-		return "docker.io/library/fedora", nil
-	case APK:
-		return "docker.io/library/alpine", nil
-	case ZYPPER:
-		return "registry.opensuse.org/opensuse/tumbleweed:latest", nil
-	case XBPS:
-		return "ghcr.io/void-linux/void-linux:latest-full-x86_64", nil
-	default:
-		image = ""
-		err = errors.New("can't retrieve image for unknown container")
-	}
-	return image, err
-}
 
 func (c *Container) GetContainerName() (name string) {
 	var cn strings.Builder
-	switch c.containerType {
-	case APT:
-		cn.WriteString("apx_managed")
-	case AUR:
-		cn.WriteString("apx_managed_aur")
-	case DNF:
-		cn.WriteString("apx_managed_dnf")
-	case APK:
-		cn.WriteString("apx_managed_apk")
-	case ZYPPER:
-		cn.WriteString("apx_managed_zypper")
-	case XBPS:
-		cn.WriteString("apx_managed_xbps")
-	default:
-		log.Fatal(fmt.Errorf("unspecified container type"))
-	}
+	cn.WriteString(c.containerType.ContainerName)
+
 	if len(c.customName) > 0 {
 		cn.WriteString("_")
 		cn.WriteString(strings.Replace(c.customName, " ", "", -1))
@@ -114,26 +66,6 @@ func ContainerManager() string {
 
 	log.Fatal("no container engine found. Please install Podman or Docker.")
 	return ""
-}
-
-func GetHostImage() (img string, err error) {
-	if settings.Cnf.Image != "" {
-		return settings.Cnf.Image, nil
-	}
-
-	distro_raw, err := exec.Command("lsb_release", "-is").Output()
-	if err != nil {
-		return "", err
-	}
-	distro := strings.ToLower(strings.Trim(string(distro_raw), "\r\n"))
-
-	release_raw, err := exec.Command("lsb_release", "-rs").Output()
-	if err != nil {
-		return "", err
-	}
-	release := strings.ToLower(strings.Trim(string(release_raw), "\r\n"))
-
-	return fmt.Sprintf("%v:%v", distro, release), nil
 }
 
 func GetDistroboxVersion() (version string, err error) {
@@ -232,11 +164,6 @@ func (c *Container) Create() error {
 		return errors.New("failed to create container")
 	}
 
-	container_image, err := c.GetContainerImage()
-	if err != nil {
-		return err
-	}
-
 	container_name := c.GetContainerName()
 	spinner := spinner.New(spinner.CharSets[11], 100*time.Millisecond)
 	spinner.Suffix = " Creating container..."
@@ -245,7 +172,7 @@ func (c *Container) Create() error {
 
 	cmd := exec.Command(settings.Cnf.DistroboxPath, "create",
 		"--name", container_name,
-		"--image", container_image,
+		"--image", c.containerType.Image,
 		"--yes",
 		"--no-entry",
 		"--additional-flags",
@@ -258,12 +185,12 @@ func (c *Container) Create() error {
 	//cmd.Stderr = os.Stderr
 	//cmd.Stdin = os.Stdin
 	//err = cmd.Run()
-	_, err = cmd.Output()
+	_, err := cmd.Output()
 	if err != nil {
 		log.Fatalf("error creating container: %v", err)
 	}
 
-	if c.containerType == AUR {
+	if c.containerType.Pkgmanager == settings.Yay {
 		// Setup locales
 		spinner.Suffix = " Setting up locales..."
 		locales, err := GetArchLocales(c)
@@ -390,18 +317,18 @@ func (c *Container) ExportBinary(bin string) error {
 		for _, entry := range entries {
 			// If duplicate is located in ~/.local/bin, we'll handle it later
 			if entry.Name() == bin && !strings.Contains(path, "/.local/bin") {
-				switch c.containerType {
-				case APT:
+				switch c.containerType.Pkgmanager {
+				case settings.Apt:
 					bin_rename = fmt.Sprintf("apt_%s", bin)
-				case AUR:
+				case settings.Yay:
 					bin_rename = fmt.Sprintf("aur_%s", bin)
-				case DNF:
+				case settings.Dnf:
 					bin_rename = fmt.Sprintf("dnf_%s", bin)
-				case APK:
+				case settings.Apk:
 					bin_rename = fmt.Sprintf("apk_%s", bin)
-				case ZYPPER:
+				case settings.Zypper:
 					bin_rename = fmt.Sprintf("zypper_%s", bin)
-				case XBPS:
+				case settings.Xbps:
 					bin_rename = fmt.Sprintf("xbps_%s", bin)
 				default:
 					return errors.New("can't export binary from unknown container")
@@ -489,18 +416,18 @@ func (c *Container) RemoveBinary(bin string, fail_silently bool) error {
 	if _, err := os.Stat(local_bin_file); os.IsNotExist(err) {
 		// Try to look for a prefixed file
 		var prefix string
-		switch c.containerType {
-		case APT:
+		switch c.containerType.Pkgmanager {
+		case settings.Apt:
 			prefix = fmt.Sprintf("apt_%s", bin)
-		case AUR:
+		case settings.Yay:
 			prefix = fmt.Sprintf("aur_%s", bin)
-		case DNF:
+		case settings.Dnf:
 			prefix = fmt.Sprintf("dnf_%s", bin)
-		case APK:
+		case settings.Apk:
 			prefix = fmt.Sprintf("apk_%s", bin)
-		case ZYPPER:
+		case settings.Zypper:
 			prefix = fmt.Sprintf("zypper_%s", bin)
-		case XBPS:
+		case settings.Xbps:
 			prefix = fmt.Sprintf("xbps_%s", bin)
 		default:
 			return errors.New("can't unexport binary from unknown container")
@@ -565,15 +492,31 @@ func (c *Container) Exists() bool {
 }
 
 func ApplyForAll(command string, flags []string) error {
-	for i := 0; i < CONTAINER_TYPES; i++ {
-		container := NewContainer(ContainerType(i))
+	for i := 0; i < 6; i++ {
+		var distro settings.DistroInfo
+		switch i {
+		case 0:
+			distro = settings.DistroUbuntu
+		case 1:
+			distro = settings.DistroArch
+		case 2:
+			distro = settings.DistroFedora
+		case 3:
+			distro = settings.DistroAlpine
+		case 4:
+			distro = settings.DistroOpensuse
+		case 5:
+			distro = settings.DistroVoid
+		}
+
+		container := NewContainer(distro)
 		if !container.Exists() {
 			continue
 		}
 
 		name := container.GetContainerName()
 
-        fmt.Println()
+		fmt.Println()
 		log.Default().Println(fmt.Sprintf("Running %s in %s...", command, name))
 
 		command := append([]string{}, container.GetPkgCommand(command)...)

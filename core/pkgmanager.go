@@ -16,42 +16,21 @@ import (
 )
 
 func (c *Container) GetPkgCommand(command string) []string {
-	switch c.containerType {
-	case APT:
+	switch c.containerType.Pkgmanager {
+	case settings.Apt:
 		return GetAptPkgCommand(command)
-	case AUR:
+	case settings.Yay:
 		return GetAurPkgCommand(command)
-	case DNF:
+	case settings.Dnf:
 		return GetDnfPkgCommand(command)
-	case APK:
+	case settings.Apk:
 		return GetApkPkgCommand(command)
-	case ZYPPER:
+	case settings.Zypper:
 		return GetZypperPkgCommand(command)
-	case XBPS:
+	case settings.Xbps:
 		return GetXbpsPkgCommand(command)
 	default:
 		return nil
-	}
-}
-
-func GetDefaultPkgCommand(command string) []string {
-	pkgmanager := settings.Cnf.PkgManager
-
-	switch pkgmanager {
-	case "apt":
-		return GetAptPkgCommand(command)
-	case "aur":
-		return GetAurPkgCommand(command)
-	case "dnf":
-		return GetDnfPkgCommand(command)
-	case "apk":
-		return GetApkPkgCommand(command)
-	case "zypper":
-		return GetZypperPkgCommand(command)
-	case "xbps":
-		return GetXbpsPkgCommand(command)
-	default:
-		return []string{"echo", pkgmanager + " is not implemented yet!"}
 	}
 }
 
@@ -242,18 +221,18 @@ func GetXbpsPkgCommand(command string) []string {
 
 func (c *Container) IsPackageInstalled(pkgname string) (bool, error) {
 	var query_cmd string
-	switch c.containerType {
-	case APT:
+	switch c.containerType.Pkgmanager {
+	case settings.Apt:
 		query_cmd = "dpkg -s"
-	case AUR:
+	case settings.Yay:
 		query_cmd = "yay -Qi"
-	case DNF:
+	case settings.Dnf:
 		query_cmd = "rpm -q"
-	case APK:
+	case settings.Apk:
 		query_cmd = "apk -e info"
-	case ZYPPER:
+	case settings.Zypper:
 		query_cmd = "rpm -q"
-	case XBPS:
+	case settings.Xbps:
 		query_cmd = "xbps-query"
 	default:
 		return false, errors.New("Cannot query package from unknown container")

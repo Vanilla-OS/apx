@@ -20,6 +20,7 @@ import (
 )
 
 type Config struct {
+	DistroId      string `json:"distroid"`
 	ContainerName string `json:"containername"`
 	Image         string `json:"image"`
 	PkgManager    string `json:"pkgmanager"`
@@ -36,31 +37,54 @@ func init() {
 	err := viper.ReadInConfig()
 
 	if err != nil {
-		image, pkgmanager, err := GetHostInfo()
+		panic("Failed to read the config file")
+	}
+
+	err = viper.Unmarshal(&Cnf)
+
+	if err != nil {
+		log.Fatalf("Config error: %v\n" + err.Error())
+	}
+
+	if Cnf.DistroboxPath == "" {
+		panic("Config error: distroboxpath needs to be set")
+	}
+}
+
+func GetDistroFromSettings() DistroInfo {
+	if Cnf.DistroId == "" || Cnf.Image == "" || Cnf.PkgManager == "" {
+		distro, err := GetHostInfo()
 
 		if err != nil {
 			log.Fatal("Unsupported setup detected, set a default distro and package manager in the config file")
 		}
 
-		Cnf = &Config{ContainerName: "apx_managed", Image: image, PkgManager: pkgmanager, DistroboxPath: "/usr/lib/apx/distrobox"}
+		Cnf = &Config{ContainerName: "apx_managed", Image: distro.Image, PkgManager: string(distro.Pkgmanager), DistroboxPath: Cnf.DistroboxPath}
+		return distro
 	} else {
-		err = viper.Unmarshal(&Cnf)
-
-		if err != nil {
-			log.Fatalf("Config error: %v\n" + err.Error())
+		if Cnf.ContainerName == "" {
+			log.Fatal("Config error!\ncontainername has to be set")
 		}
 
-		if Cnf.ContainerName == "" || Cnf.Image == "" || Cnf.PkgManager == "" {
-			log.Fatal("Config error!\ncontainer_name, image and pkgmanager have to be set")
+		var supportedPackageManager = false
+		switch Cnf.PkgManager {
+		case Apt, Yay, Dnf, Apk:
+			supportedPackageManager = true
 		}
+
+		if !supportedPackageManager {
+			log.Fatal("Config error!\nInvalid package manager")
+		}
+
+		return DistroInfo{Id: Cnf.DistroId, Image: Cnf.Image, Pkgmanager: PackageManager(Cnf.PkgManager), ContainerName: Cnf.ContainerName}
 	}
 }
 
-func GetHostInfo() (img string, pkgmanager string, err error) {
+func GetHostInfo() (distro DistroInfo, err error) {
 	file, err := os.Open("/etc/os-release")
 
 	if err != nil {
-		return "", "", fmt.Errorf("Failed to open /etc/os-release: " + err.Error())
+		return DistroInfo{}, fmt.Errorf("Failed to open /etc/os-release: " + err.Error())
 	}
 
 	var distro_id string
@@ -76,32 +100,33 @@ func GetHostInfo() (img string, pkgmanager string, err error) {
 	}
 
 	if err := scanner.Err(); err != nil {
-		return "", "", fmt.Errorf("Failure while reading /etc/os-release: " + err.Error())
+		return DistroInfo{}, fmt.Errorf("Failure while reading /etc/os-release: " + err.Error())
 	}
 
 	defer file.Close()
 
 	if len(distro_id) == 0 {
-		return "", "", fmt.Errorf("Failed to read distro type")
+		return DistroInfo{}, fmt.Errorf("Failed to read distro type")
 	}
 	if len(distro_version) == 0 {
-		return "", "", fmt.Errorf("Failed to read distro version")
+		return DistroInfo{}, fmt.Errorf("Failed to read distro version")
 	}
 
 	switch distro_id {
 	case "ubuntu":
-		return "docker.io/library/ubuntu:" + distro_version, "apt", nil
+		return DistroUbuntu, nil
 	case "arch":
-		return "docker.io/library/archlinux:" + distro_version, "yay", nil
+		return DistroArch, nil
 	case "fedora":
-		return "docker.io/library/fedora:" + distro_version, "dnf", nil
+		return DistroFedora, nil
 	case "alpine":
-		return "docker.io/library/alpine:" + distro_version, "apk", nil
-	case "zypper":
-		return "registry.opensuse.org/opensuse/tumbleweed:latest" + distro_version, "zypper", nil
-	case "xbps":
-		return "ghcr.io/void-linux/void-linux:latest-full-x86_64" + distro_version, "xbps", nil
+		return DistroAlpine, nil
+	case "opensuse":
+		return DistroOpensuse, nil
+	case "void":
+		return DistroVoid, nil
+
 	default:
-		return "", "", fmt.Errorf("Unsupported distro detected")
+		return DistroInfo{}, fmt.Errorf("Unsupported distro detected")
 	}
 }
