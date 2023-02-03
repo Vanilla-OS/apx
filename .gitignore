@@ -8,3 +8,4 @@
 apx
 *.service
 *.mount
+build.sh

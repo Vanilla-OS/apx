@@ -10,16 +10,16 @@ package cmd
 
 import (
 	"log"
-	"os"
-	"os/exec"
 
 	"github.com/spf13/cobra"
+	"github.com/vanilla-os/apx/core"
 )
 
 func NewNixInstallCommand() *cobra.Command {
 	cmd := &cobra.Command{
-		Use:     "install",
+		Use:     "install <pkg>",
 		Short:   "Install nix package",
+		Long:    `Install a package from the nixpkgs repository as a flake.`,
 		Example: "apx nix install jq",
 		RunE:    installPackage,
 		Args:    cobra.ExactArgs(1),
@@ -28,17 +28,10 @@ func NewNixInstallCommand() *cobra.Command {
 	return cmd
 }
 func installPackage(cmd *cobra.Command, args []string) error {
-	install := exec.Command("nix", "profile", "install", "nixpkgs#"+args[0])
-	install.Stderr = os.Stderr
-	install.Stdin = os.Stdin
-	install.Stdout = os.Stdout
-
-	err := install.Run()
+	err := core.NixInstallPackage(args[0])
 	if err != nil {
-		log.Default().Printf("error installing package")
 		return err
 	}
-
 	log.Default().Printf("Package installation complete")
 	return nil
 

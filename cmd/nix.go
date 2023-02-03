@@ -16,6 +16,7 @@ func NewNixCommand() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "nix",
 		Short: "Manage nix installation",
+		Long:  "Manage a custom installation of nix in your $HOME directory.",
 	}
 	cmd.AddCommand(NewNixInitCommand())
 	cmd.AddCommand(NewNixInstallCommand())
