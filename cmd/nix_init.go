@@ -48,7 +48,7 @@ Confirm 'y' to continue. [y/N] `)
 	if err != nil {
 		return err
 	}
-	log.Default().Printf("Installation complete. Reboot to use nix.")
+	log.Default().Printf("Installation complete. Reboot to start using nix.")
 	return nil
 
 }
