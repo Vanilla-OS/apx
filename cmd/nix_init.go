@@ -33,7 +33,7 @@ setting up some SystemD units to mount it as /nix.`,
 func initNix(cmd *cobra.Command, args []string) error {
 	// prompt for confirmation
 	log.Default().Printf(`This will create a ".nix" folder in your home directory
-and some systemd units to mount that folder at /nix before running the installation
+and set up some SystemD units to mount that folder at /nix before running the installation
 Confirm 'y' to continue. [y/N] `)
 
 	var proceed string
