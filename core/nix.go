@@ -161,7 +161,7 @@ Confirm 'y' to continue. [y/N] `)
 		return err
 	}
 	// chown now so we can install
-	chown := exec.Command("sudo", "chown", "-R", "bjk:root", "/nix")
+	chown := exec.Command("sudo", "chown", "-R", user+":root", "/nix")
 	chown.Stderr = os.Stderr
 	chown.Stdin = os.Stdin
 	chown.Stdout = os.Stdout
