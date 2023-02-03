@@ -29,7 +29,6 @@ func NixInstallPackage(pkg string) error {
 		return err
 	}
 
-	log.Default().Printf("Package installation complete")
 	return nil
 
 }
@@ -202,7 +201,6 @@ Confirm 'y' to continue. [y/N] `)
 	if err != nil {
 		return err
 	}
-	log.Default().Printf("Installation complete. Reboot to use nix.")
 	return nil
 
 }
