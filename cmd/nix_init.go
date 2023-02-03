@@ -65,7 +65,7 @@ Confirm 'y' to continue. [y/N] `)
 		log.Default().Printf("unable to get home directory")
 		return err
 	}
-	nixDir := path.Join(homedir, ".nixu")
+	nixDir := path.Join(homedir, ".nix")
 	fi, err := os.Stat(nixDir)
 	if err != nil {
 		// it's ok if the directory doesn't exist
@@ -105,7 +105,16 @@ Confirm 'y' to continue. [y/N] `)
 		return err
 	}
 	log.Default().Printf("Enabling systemd units")
+	reload := exec.Command("sudo", "systemctl", "daemon-reload")
+	reload.Stderr = os.Stderr
+	reload.Stdin = os.Stdin
+	reload.Stdout = os.Stdout
 
+	err = reload.Run()
+	if err != nil {
+		log.Default().Printf("error reloading systemd daemon")
+		return err
+	}
 	// enable the mount unit, which depends on the others
 	enable := exec.Command("sudo", "systemctl", "enable", "--now", "/etc/systemd/system/nix.mount")
 	enable.Stderr = os.Stderr
@@ -117,6 +126,18 @@ Confirm 'y' to continue. [y/N] `)
 		log.Default().Printf("error enabling nix mount")
 		return err
 	}
+	// chown now so we can install
+	chown := exec.Command("sudo", "chown", "-R", "bjk:root", "/nix")
+	chown.Stderr = os.Stderr
+	chown.Stdin = os.Stdin
+	chown.Stdout = os.Stdout
+
+	err = chown.Run()
+	if err != nil {
+		log.Default().Printf("error changing ownership of /nix")
+		return err
+	}
+
 	nix := exec.Command("bash", "-c", singleUserCommand)
 	nix.Stderr = os.Stderr
 	nix.Stdin = os.Stdin
