@@ -14,7 +14,10 @@ import (
 )
 
 func NewSearchCommand() *cmdr.Command {
-	cmd := cmdr.NewCommand("search", apx.Trans("search.long"), apx.Trans("search.short"), search)
+	cmd := cmdr.NewCommand("search",
+		apx.Trans("search.long"),
+		apx.Trans("search.short"),
+		search)
 	/*
 			Example: "apx search neovim",
 			Use:     "search <packages>",
@@ -22,6 +25,7 @@ func NewSearchCommand() *cmdr.Command {
 			RunE:    search,
 		}
 	*/
+	cmd.Example = "apx search neovim"
 	return cmd
 }
 

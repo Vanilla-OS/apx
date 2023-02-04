@@ -9,7 +9,6 @@ package cmd
 */
 
 import (
-	"errors"
 	"fmt"
 	"os"
 
@@ -18,7 +17,17 @@ import (
 )
 
 func NewShowCommand() *cmdr.Command {
-	cmd := cmdr.NewCommand("snow", apx.Trans("show.long"), apx.Trans("show.short"), show)
+	cmd := cmdr.NewCommand("show <package>",
+		apx.Trans("show.long"),
+		apx.Trans("show.short"),
+		show).WithBoolFlag(
+		cmdr.NewBoolFlag(
+			"isinstalled",
+			"i",
+			apx.Trans("show.isInstalled"),
+			false,
+		),
+	)
 	/*
 			Example: "apx show htop",
 			Use:     "show <package>",
@@ -27,15 +36,14 @@ func NewShowCommand() *cmdr.Command {
 		}
 		cmd.Flags().BoolP("isinstalled", "i", false, "Returns only whether package is installed")
 	*/
+	cmd.Example = "apx show htop"
+	cmd.Args = cobra.ExactArgs(1)
 	return cmd
 }
 
 func show(cmd *cobra.Command, args []string) error {
-	if len(args) == 0 {
-		return errors.New("Please specify a package name.")
-	}
 
-	if cmd.Flag("isinstalled").Value.String() == "true" {
+	if cmd.Flag("isinstalled").Changed {
 		result, err := container.IsPackageInstalled(args[0])
 		if err != nil {
 			return err

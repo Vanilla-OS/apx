@@ -14,7 +14,10 @@ import (
 )
 
 func NewRunCommand() *cmdr.Command {
-	cmd := cmdr.NewCommand("run", apx.Trans("run.long"), apx.Trans("run.short"), run)
+	cmd := cmdr.NewCommand("run",
+		apx.Trans("run.long"),
+		apx.Trans("run.short"),
+		run)
 	/*
 			Example: "apx run htop",
 			Use:     "run <program>",
@@ -23,6 +26,9 @@ func NewRunCommand() *cmdr.Command {
 		}
 		cmd.Flags().SetInterspersed(false)
 	*/
+	cmd.Flags().SetInterspersed(false)
+	cmd.Example = "apx run htop"
+	cmd.Args = cobra.MinimumNArgs(1)
 	return cmd
 }
 

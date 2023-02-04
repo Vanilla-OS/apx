@@ -19,7 +19,19 @@ func NewListCommand() *cmdr.Command {
 		apx.Trans("list.long"),
 		apx.Trans("list.short"),
 		list,
-	)
+	).WithBoolFlag(
+		cmdr.NewBoolFlag(
+			"upgradable",
+			"u",
+			apx.Trans("list.upgradable"),
+			false,
+		)).WithBoolFlag(
+		cmdr.NewBoolFlag(
+			"installed",
+			"i",
+			apx.Trans("list.installed"),
+			false,
+		))
 	/*
 			Use:   "list",
 			Short: "List installed packages.",
@@ -29,6 +41,8 @@ func NewListCommand() *cmdr.Command {
 		cmd.Flags().BoolP("upgradable", "u", false, "List only upgradable packages.")
 		cmd.Flags().BoolP("installed", "i", false, "List only installed packages.")
 	*/
+	cmd.Flags().SetInterspersed(false)
+
 	return cmd
 }
 
@@ -36,10 +50,10 @@ func list(cmd *cobra.Command, args []string) error {
 
 	command := append([]string{}, container.GetPkgCommand("list")...)
 
-	if cmd.Flag("upgradable").Value.String() == "true" {
+	if cmd.Flag("upgradable").Changed {
 		command = append(command, "--upgradable")
 	}
-	if cmd.Flag("installed").Value.String() == "true" {
+	if cmd.Flag("installed").Changed {
 		command = append(command, "--installed")
 	}
 

@@ -14,7 +14,10 @@ import (
 )
 
 func NewPurgeCommand() *cmdr.Command {
-	cmd := cmdr.NewCommand("purge", apx.Trans("purge.long"), apx.Trans("purge.short"), purge)
+	cmd := cmdr.NewCommand("purge",
+		apx.Trans("purge.long"),
+		apx.Trans("purge.short"),
+		purge)
 	/*
 			Example: "apx purge htop",
 			Use:     "purge <packages>",
@@ -22,6 +25,8 @@ func NewPurgeCommand() *cmdr.Command {
 			RunE:    purge,
 		}
 	*/
+	cmd.Example = "apx purge htop"
+	cmd.Args = cobra.MinimumNArgs(1)
 	return cmd
 }
 

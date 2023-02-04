@@ -14,7 +14,16 @@ import (
 )
 
 func NewRemoveCommand() *cmdr.Command {
-	cmd := cmdr.NewCommand("remove", apx.Trans("remove.long"), apx.Trans("remove.short"), remove)
+	cmd := cmdr.NewCommand("remove <packages>",
+		apx.Trans("remove.long"),
+		apx.Trans("remove.short"),
+		remove).WithBoolFlag(
+		cmdr.NewBoolFlag(
+			"assume-yes",
+			"y",
+			apx.Trans("remove.assumeYes"),
+			false,
+		))
 	/*
 			Example: "apx remove htop",
 			Use:     "remove <packages>",
@@ -23,6 +32,8 @@ func NewRemoveCommand() *cmdr.Command {
 		}
 		cmd.Flags().BoolP("assume-yes", "y", false, "Proceed without manual confirmation.")
 	*/
+	cmd.Example = "apx remove htop"
+	cmd.Args = cobra.MinimumNArgs(1)
 	return cmd
 }
 

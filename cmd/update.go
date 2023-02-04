@@ -15,7 +15,22 @@ import (
 )
 
 func NewUpdateCommand() *cmdr.Command {
-	cmd := cmdr.NewCommand("update", apx.Trans("update.long"), apx.Trans("update.short"), update)
+	cmd := cmdr.NewCommand("update",
+		apx.Trans("update.long"),
+		apx.Trans("update.short"),
+		update).WithBoolFlag(
+		cmdr.NewBoolFlag(
+			"all",
+			"a",
+			apx.Trans("update.allFlag"),
+			false,
+		)).WithBoolFlag(
+		cmdr.NewBoolFlag(
+			"assume-yes",
+			"y",
+			apx.Trans("update.assumeYes"),
+			false,
+		))
 	/*
 			Example: "apx update",
 			Use:     "update",
@@ -31,7 +46,7 @@ func NewUpdateCommand() *cmdr.Command {
 func update(cmd *cobra.Command, args []string) error {
 	if cmd.Flag("all").Changed {
 		var flags []string
-		if cmd.Flag("assume-yes").Value.String() == "true" {
+		if cmd.Flag("assume-yes").Changed {
 			flags = append(flags, "-y")
 		}
 
@@ -45,7 +60,7 @@ func update(cmd *cobra.Command, args []string) error {
 	command := append([]string{}, container.GetPkgCommand("update")...)
 	command = append(command, args...)
 
-	if cmd.Flag("assume-yes").Value.String() == "true" {
+	if cmd.Flag("assume-yes").Changed {
 		command = append(command, "-y")
 	}
 
