@@ -19,7 +19,7 @@ func NewNixRemoveCommand() *cmdr.Command {
 		"remove <pkg>",
 		apx.Trans("nixremove.long"),
 		apx.Trans("nixremove.short"),
-		remove,
+		removePackage,
 	)
 	/*
 				Use:   "remove <pkg>",
