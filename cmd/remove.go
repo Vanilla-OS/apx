@@ -10,17 +10,19 @@ package cmd
 
 import (
 	"github.com/spf13/cobra"
+	"github.com/vanilla-os/orchid/cmdr"
 )
 
-func NewRemoveCommand() *cobra.Command {
-	cmd := &cobra.Command{
-		Example: "apx remove htop",
-		Use:     "remove <packages>",
-		Short:   "Remove packages inside a managed container.",
-		RunE:    remove,
-	}
-	cmd.Flags().BoolP("assume-yes", "y", false, "Proceed without manual confirmation.")
-
+func NewRemoveCommand() *cmdr.Command {
+	cmd := cmdr.NewCommand("remove", apx.Trans("remove.long"), apx.Trans("remove.short"), remove)
+	/*
+			Example: "apx remove htop",
+			Use:     "remove <packages>",
+			Short:   "Remove packages inside a managed container.",
+			RunE:    remove,
+		}
+		cmd.Flags().BoolP("assume-yes", "y", false, "Proceed without manual confirmation.")
+	*/
 	return cmd
 }
 

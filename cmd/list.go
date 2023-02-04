@@ -10,18 +10,25 @@ package cmd
 
 import (
 	"github.com/spf13/cobra"
+	"github.com/vanilla-os/orchid/cmdr"
 )
 
-func NewListCommand() *cobra.Command {
-	cmd := &cobra.Command{
-		Use:   "list",
-		Short: "List installed packages.",
-		RunE:  list,
-	}
-	cmd.Flags().SetInterspersed(false)
-	cmd.Flags().BoolP("upgradable", "u", false, "List only upgradable packages.")
-	cmd.Flags().BoolP("installed", "i", false, "List only installed packages.")
-
+func NewListCommand() *cmdr.Command {
+	cmd := cmdr.NewCommand(
+		"list",
+		apx.Trans("list.long"),
+		apx.Trans("list.short"),
+		list,
+	)
+	/*
+			Use:   "list",
+			Short: "List installed packages.",
+			RunE:  list,
+		}
+		cmd.Flags().SetInterspersed(false)
+		cmd.Flags().BoolP("upgradable", "u", false, "List only upgradable packages.")
+		cmd.Flags().BoolP("installed", "i", false, "List only installed packages.")
+	*/
 	return cmd
 }
 

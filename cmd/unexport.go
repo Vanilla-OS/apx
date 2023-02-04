@@ -13,16 +13,19 @@ import (
 	"fmt"
 
 	"github.com/spf13/cobra"
+	"github.com/vanilla-os/orchid/cmdr"
 )
 
-func NewUnexportCommand() *cobra.Command {
-	cmd := &cobra.Command{
-		Example: "apx unexport code",
-		Use:     "unexport <program>",
-		Short:   "Unexport/Remove a program's desktop entry from a managed container",
-		RunE:    unexport,
-	}
-	cmd.Flags().String("bin", "", "Unexport a previously exported binary.")
+func NewUnexportCommand() *cmdr.Command {
+	cmd := cmdr.NewCommand("unexport", apx.Trans("unexport.long"), apx.Trans("unexport.short"), unexport)
+	/*
+			Example: "apx unexport code",
+			Use:     "unexport <program>",
+			Short:   "Unexport/Remove a program's desktop entry from a managed container",
+			RunE:    unexport,
+		}
+		cmd.Flags().String("bin", "", "Unexport a previously exported binary.")
+	*/
 	return cmd
 }
 

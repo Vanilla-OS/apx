@@ -10,16 +10,19 @@ package cmd
 
 import (
 	"github.com/spf13/cobra"
+	"github.com/vanilla-os/orchid/cmdr"
 )
 
-func NewRunCommand() *cobra.Command {
-	cmd := &cobra.Command{
-		Example: "apx run htop",
-		Use:     "run <program>",
-		Short:   "Run a program inside a managed container.",
-		RunE:    run,
-	}
-	cmd.Flags().SetInterspersed(false)
+func NewRunCommand() *cmdr.Command {
+	cmd := cmdr.NewCommand("run", apx.Trans("run.long"), apx.Trans("run.short"), run)
+	/*
+			Example: "apx run htop",
+			Use:     "run <program>",
+			Short:   "Run a program inside a managed container.",
+			RunE:    run,
+		}
+		cmd.Flags().SetInterspersed(false)
+	*/
 	return cmd
 }
 

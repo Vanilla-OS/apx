@@ -11,18 +11,22 @@ package cmd
 import (
 	"errors"
 	"fmt"
-	"github.com/spf13/cobra"
 	"os"
+
+	"github.com/spf13/cobra"
+	"github.com/vanilla-os/orchid/cmdr"
 )
 
-func NewShowCommand() *cobra.Command {
-	cmd := &cobra.Command{
-		Example: "apx show htop",
-		Use:     "show <package>",
-		Short:   "Show details about a package",
-		RunE:    show,
-	}
-	cmd.Flags().BoolP("isinstalled", "i", false, "Returns only whether package is installed")
+func NewShowCommand() *cmdr.Command {
+	cmd := cmdr.NewCommand("snow", apx.Trans("show.long"), apx.Trans("show.short"), show)
+	/*
+			Example: "apx show htop",
+			Use:     "show <package>",
+			Short:   "Show details about a package",
+			RunE:    show,
+		}
+		cmd.Flags().BoolP("isinstalled", "i", false, "Returns only whether package is installed")
+	*/
 	return cmd
 }
 

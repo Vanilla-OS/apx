@@ -13,21 +13,29 @@ import (
 
 	"github.com/spf13/cobra"
 	"github.com/vanilla-os/apx/core"
+	"github.com/vanilla-os/orchid/cmdr"
 )
 
-func NewInstallCommand() *cobra.Command {
-	cmd := &cobra.Command{
-		Example: `apx install htop git
-apx install --sideload /path/to/file.deb`,
-		Use:   "install <packages>",
-		Short: "Install packages inside a managed container",
-		RunE:  install,
-	}
-	cmd.Flags().SetInterspersed(false)
-	cmd.Flags().BoolP("assume-yes", "y", false, "Proceed without manual confirmation.")
-	cmd.Flags().BoolP("fix-broken", "f", false, "Fix broken deps before installing.")
-	cmd.Flags().Bool("no-export", false, "Do not export a desktop entry after the installation.")
-	cmd.Flags().Bool("sideload", false, "Install a package from a local file.")
+func NewInstallCommand() *cmdr.Command {
+	cmd := cmdr.NewCommand(
+		"install",
+		apx.Trans("install.long"),
+		apx.Trans("install.short"),
+		install,
+	)
+	/*
+				Example: `apx install htop git
+		apx install --sideload /path/to/file.deb`,
+				Use:   "install <packages>",
+				Short: "Install packages inside a managed container",
+				RunE:  install,
+			}
+			cmd.Flags().SetInterspersed(false)
+			cmd.Flags().BoolP("assume-yes", "y", false, "Proceed without manual confirmation.")
+			cmd.Flags().BoolP("fix-broken", "f", false, "Fix broken deps before installing.")
+			cmd.Flags().Bool("no-export", false, "Do not export a desktop entry after the installation.")
+			cmd.Flags().Bool("sideload", false, "Install a package from a local file.")
+	*/
 	return cmd
 }
 

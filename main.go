@@ -109,6 +109,45 @@ func main() {
 	initialize.GroupID = containerGroup.ID
 	root.AddCommand(cmd.AddContainerFlags(initialize))
 
+	install := cmd.NewInstallCommand()
+	install.GroupID = containerGroup.ID
+	root.AddCommand(cmd.AddContainerFlags(install))
+
+	list := cmd.NewListCommand()
+	list.GroupID = containerGroup.ID
+	root.AddCommand(cmd.AddContainerFlags(list))
+
+	purge := cmd.NewPurgeCommand()
+	purge.GroupID = containerGroup.ID
+	root.AddCommand(cmd.AddContainerFlags(purge))
+
+	remove := cmd.NewRemoveCommand()
+	remove.GroupID = containerGroup.ID
+	root.AddCommand(cmd.AddContainerFlags(remove))
+
+	run := cmd.NewRunCommand()
+	run.GroupID = containerGroup.ID
+	root.AddCommand(cmd.AddContainerFlags(run))
+
+	search := cmd.NewSearchCommand()
+	search.GroupID = containerGroup.ID
+	root.AddCommand(cmd.AddContainerFlags(search))
+
+	show := cmd.NewShowCommand()
+	show.GroupID = containerGroup.ID
+	root.AddCommand(cmd.AddContainerFlags(show))
+
+	unexport := cmd.NewUnexportCommand()
+	unexport.GroupID = containerGroup.ID
+	root.AddCommand(cmd.AddContainerFlags(unexport))
+
+	upgrade := cmd.NewUpgradeCommand()
+	upgrade.GroupID = containerGroup.ID
+	root.AddCommand(cmd.AddContainerFlags(upgrade))
+
+	update := cmd.NewUpdateCommand()
+	update.GroupID = containerGroup.ID
+	root.AddCommand(cmd.AddContainerFlags(update))
 	nix := cmd.NewNixCommand()
 	nix.GroupID = nixGroup.ID
 	root.AddCommand(nix)
