@@ -11,16 +11,23 @@ package cmd
 import (
 	"github.com/spf13/cobra"
 	"github.com/vanilla-os/apx/core"
+	"github.com/vanilla-os/orchid/cmdr"
 )
 
-func NewCleanCommand() *cobra.Command {
-	cmd := &cobra.Command{
-		Example: "apx clean",
-		Use:     "clean",
-		Short:   "Clean the apx package manager cache",
-		RunE:    clean,
-	}
-	cmd.Flags().BoolP("all", "a", false, "Apply for all containers.")
+func NewCleanCommand() *cmdr.Command {
+	cmd := cmdr.NewCommand(
+		"clean",
+		apx.Trans("clean.long"),
+		apx.Trans("clean.short"),
+		clean,
+	).WithBoolFlag(
+		cmdr.NewBoolFlag(
+			"all",
+			"a",
+			apx.Trans("autoremove.allFlag"),
+			false,
+		))
+
 	return cmd
 }
 

@@ -9,44 +9,49 @@ package cmd
 */
 
 import (
-	"fmt"
-	"log"
-	"os"
-	"strings"
-
 	"github.com/spf13/cobra"
+	"github.com/vanilla-os/orchid/cmdr"
 )
 
-func NewInitializeCommand() *cobra.Command {
-	cmd := &cobra.Command{
-		Example: "apx init",
-		Use:     "init",
-		Short:   "Initialize the managed container",
-		RunE:    initialize,
-	}
+func NewInitializeCommand() *cmdr.Command {
+	cmd := cmdr.NewCommand(
+		"init",
+		apx.Trans("init.long"),
+		apx.Trans("init.short"),
+		initialize,
+	)
+	/*
+			Example: "apx init",
+			Use:     "init",
+			Short:   "Initialize the managed container",
+			RunE:    initialize,
+		}
+	*/
 	return cmd
 }
 
 func initialize(cmd *cobra.Command, args []string) error {
 
 	if container.Exists() {
-		log.Default().Printf(`Container already exists. Do you want to re-initialize it?\ 
-This operation will remove everything, including your files in the container. [y/N] `)
 
-		var proceed string
-		fmt.Scanln(&proceed)
-		proceed = strings.ToLower(proceed)
+		b, err := cmdr.Confirm.Show(apx.Trans("init.confirm"))
 
-		if proceed != "y" {
-			os.Exit(0)
+		if err != nil {
+			return err
+		}
+
+		if !b {
+			return nil
 		}
 	}
 
 	if err := container.Remove(); err != nil {
-		log.Fatal(fmt.Errorf("error removing container: %v", err))
+		cmdr.Error.Printf("error removing container: %v", err)
+		return err
 	}
 	if err := container.Create(); err != nil {
-		log.Fatal(fmt.Errorf("error creating container: %v", err))
+		cmdr.Error.Printf("error creating container: %v", err)
+		return err
 	}
 
 	return nil

@@ -1,13 +1,17 @@
 package cmd
 
 import (
+	"embed"
 	"os"
 	"path"
 
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 	"github.com/vanilla-os/apx/core"
+	"github.com/vanilla-os/orchid/cmdr"
 )
+
+var apx *cmdr.App
 
 // package level variables for viper flags
 var apt, aur, dnf, apk, zypper, xbps bool
@@ -17,48 +21,81 @@ var apt, aur, dnf, apk, zypper, xbps bool
 var container *core.Container
 var name string
 
-func NewApxCommand(Version string) *cobra.Command {
-	rootCmd := &cobra.Command{
-		Use:     "apx",
-		Short:   "Apx is a package manager with support for multiple sources allowing you to install packages in a managed container.",
-		Version: Version,
-		PersistentPreRun: func(cmd *cobra.Command, args []string) {
-			err := setStorage()
+const (
+	verboseFlag string = "verbose"
+)
 
-			cobra.CheckErr(err)
-
-			container = getContainer()
-		},
+func New(version string, fs embed.FS) *cmdr.App {
+	apx = cmdr.NewApp("apx", version, fs)
+	return apx
+}
+func NewRootCommand(version string) *cmdr.Command {
+	root := cmdr.NewCommand(
+		apx.Trans("apx.use"),
+		apx.Trans("apx.long"),
+		apx.Trans("apx.short"),
+		nil).
+		WithPersistentBoolFlag(
+			cmdr.NewBoolFlag(
+				verboseFlag,
+				"v",
+				apx.Trans("apx.verboseFlag"),
+				false))
+	root.PersistentPreRun = func(cmd *cobra.Command, args []string) {
+		err := setStorage()
+		cobra.CheckErr(err)
+		container = getContainer()
 	}
 
-	rootCmd.AddCommand(addContainerFlags(NewInitializeCommand()))
-	rootCmd.AddCommand(addContainerFlags(NewAutoRemoveCommand()))
-	rootCmd.AddCommand(addContainerFlags(NewInstallCommand()))
-	rootCmd.AddCommand(addContainerFlags(NewCleanCommand()))
-	rootCmd.AddCommand(addContainerFlags(NewEnterCommand()))
-	rootCmd.AddCommand(addContainerFlags(NewExportCommand()))
-	rootCmd.AddCommand(addContainerFlags(NewListCommand()))
-	rootCmd.AddCommand(addContainerFlags(NewPurgeCommand()))
-	rootCmd.AddCommand(addContainerFlags(NewRemoveCommand()))
-	rootCmd.AddCommand(addContainerFlags(NewRunCommand()))
-	rootCmd.AddCommand(addContainerFlags(NewSearchCommand()))
-	rootCmd.AddCommand(addContainerFlags(NewShowCommand()))
-	rootCmd.AddCommand(addContainerFlags(NewUnexportCommand()))
-	rootCmd.AddCommand(addContainerFlags(NewUpdateCommand()))
-	rootCmd.AddCommand(addContainerFlags(NewUpgradeCommand()))
-	rootCmd.AddCommand(NewNixCommand())
+	/*
+		rootCmd := &cobra.Command{
+			Use:     "apx",
+			Short:   "Apx is a package manager with support for multiple sources allowing you to install packages in a managed container.",
+			Version: Version,
+			PersistentPreRun: func(cmd *cobra.Command, args []string) {
+				err := setStorage()
 
-	return rootCmd
+				cobra.CheckErr(err)
+
+				container = getContainer()
+			},
+		}
+
+		rootCmd.AddCommand(addContainerFlags(NewInitializeCommand()))
+		rootCmd.AddCommand(addContainerFlags(NewAutoRemoveCommand()))
+		rootCmd.AddCommand(addContainerFlags(NewInstallCommand()))
+		rootCmd.AddCommand(addContainerFlags(NewCleanCommand()))
+		rootCmd.AddCommand(addContainerFlags(NewEnterCommand()))
+		rootCmd.AddCommand(addContainerFlags(NewExportCommand()))
+		rootCmd.AddCommand(addContainerFlags(NewListCommand()))
+		rootCmd.AddCommand(addContainerFlags(NewPurgeCommand()))
+		rootCmd.AddCommand(addContainerFlags(NewRemoveCommand()))
+		rootCmd.AddCommand(addContainerFlags(NewRunCommand()))
+		rootCmd.AddCommand(addContainerFlags(NewSearchCommand()))
+		rootCmd.AddCommand(addContainerFlags(NewShowCommand()))
+		rootCmd.AddCommand(addContainerFlags(NewUnexportCommand()))
+		rootCmd.AddCommand(addContainerFlags(NewUpdateCommand()))
+		rootCmd.AddCommand(addContainerFlags(NewUpgradeCommand()))
+		rootCmd.AddCommand(NewNixCommand())
+
+		return rootCmd
+	*/
+	root.Version = version
+	return root
 }
 
-func addContainerFlags(cmd *cobra.Command) *cobra.Command {
-	cmd.PersistentFlags().BoolVar(&apt, "apt", false, "Install packages from the Ubuntu repository.")
-	cmd.PersistentFlags().BoolVar(&aur, "aur", false, "Install packages from the AUR (Arch User Repository).")
-	cmd.PersistentFlags().BoolVar(&dnf, "dnf", false, "Install packages from the Fedora's DNF (Dandified YUM) repository.")
-	cmd.PersistentFlags().BoolVar(&apk, "apk", false, "Install packages from the Alpine repository.")
-	cmd.PersistentFlags().BoolVar(&zypper, "zypper", false, " Install packages from the OpenSUSE repository.")
-	cmd.PersistentFlags().BoolVar(&xbps, "xbps", false, " Install packages from the Void (Linux) repository.")
-	cmd.PersistentFlags().StringVarP(&name, "name", "n", "", "Create or use custom container with this name.")
+// AddContainerFlags applies flags that are only relevant
+// to apx commands that pertain to containers. e.g. not nix
+func AddContainerFlags(cmd *cmdr.Command) *cmdr.Command {
+	cmd.Flags().SortFlags = false
+	cmd.PersistentFlags().SortFlags = false
+	cmd.PersistentFlags().BoolVar(&apt, "apt", false, apx.Trans("flags.apt"))
+	cmd.PersistentFlags().BoolVar(&aur, "aur", false, apx.Trans("flags.aur"))
+	cmd.PersistentFlags().BoolVar(&dnf, "dnf", false, apx.Trans("flags.dnf"))
+	cmd.PersistentFlags().BoolVar(&apk, "apk", false, apx.Trans("flags.apk"))
+	cmd.PersistentFlags().BoolVar(&zypper, "zypper", false, apx.Trans("flags.zypper"))
+	cmd.PersistentFlags().BoolVar(&xbps, "xbps", false, apx.Trans("flags.xbps"))
+	cmd.PersistentFlags().StringVarP(&name, "name", "n", "", apx.Trans("flags.name"))
 	viper.BindPFlag("aur", cmd.PersistentFlags().Lookup("aur"))
 	viper.BindPFlag("apt", cmd.PersistentFlags().Lookup("apt"))
 	viper.BindPFlag("dnf", cmd.PersistentFlags().Lookup("dnf"))

@@ -9,26 +9,33 @@ package cmd
 */
 
 import (
-	"log"
-
 	"github.com/spf13/cobra"
 	"github.com/vanilla-os/apx/core"
+	"github.com/vanilla-os/orchid/cmdr"
 )
 
-func NewNixRemoveCommand() *cobra.Command {
-	cmd := &cobra.Command{
-		Use:   "remove <pkg>",
-		Short: "Remove a nix package",
-		Long: `Remove the first matching package installed in the
-default nix profile. Note that it is possible to have 
-multiple installations of the same package. If you need 
-more precision use 'nix profile list' and 'nix profile
-remove'.`,
+func NewNixRemoveCommand() *cmdr.Command {
+	cmd := cmdr.NewCommand(
+		"remove <pkg>",
+		apx.Trans("nixremove.long"),
+		apx.Trans("nixremove.short"),
+		remove,
+	)
+	/*
+				Use:   "remove <pkg>",
+				Short: "Remove a nix package",
+				Long: `Remove the first matching package installed in the
+		default nix profile. Note that it is possible to have
+		multiple installations of the same package. If you need
+		more precision use 'nix profile list' and 'nix profile
+		remove'.`,
 
-		RunE: removePackage,
-		Args: cobra.ExactArgs(1),
-	}
-
+				RunE: removePackage,
+				Args: cobra.ExactArgs(1),
+			}
+	*/
+	cmd.Args = cobra.ExactArgs(1)
+	cmd.Example = "apx nix remove jq"
 	return cmd
 }
 func removePackage(cmd *cobra.Command, args []string) error {
@@ -36,7 +43,7 @@ func removePackage(cmd *cobra.Command, args []string) error {
 	if err != nil {
 		return err
 	}
-	log.Default().Printf("Package removal complete")
+	cmdr.Success.Println("Package removal complete")
 	return nil
 
 }

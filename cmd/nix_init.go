@@ -16,18 +16,25 @@ import (
 
 	"github.com/spf13/cobra"
 	"github.com/vanilla-os/apx/core"
+	"github.com/vanilla-os/orchid/cmdr"
 )
 
-func NewNixInitCommand() *cobra.Command {
-	cmd := &cobra.Command{
-		Use:   "init",
-		Short: "Initialize nix repository",
-		Long: `Initializes a custom installation of nix by creating $HOME/.nix and
-setting up some SystemD units to mount it as /nix.`,
+func NewNixInitCommand() *cmdr.Command {
+	cmd := cmdr.NewCommand(
+		"init",
+		apx.Trans("nixinit.long"),
+		apx.Trans("nixinit.short"),
+		initNix,
+	)
+	/*
+				Use:   "init",
+				Short: "Initialize nix repository",
+				Long: `Initializes a custom installation of nix by creating $HOME/.nix and
+		setting up some SystemD units to mount it as /nix.`,
 
-		RunE: initNix,
-	}
-
+				RunE: initNix,
+			}
+	*/
 	return cmd
 }
 func initNix(cmd *cobra.Command, args []string) error {
@@ -48,7 +55,7 @@ Confirm 'y' to continue. [y/N] `)
 	if err != nil {
 		return err
 	}
-	log.Default().Printf("Installation complete. Reboot to start using nix.")
+	cmdr.Success.Println(apx.Trans("nixinit.success"))
 	return nil
 
 }
