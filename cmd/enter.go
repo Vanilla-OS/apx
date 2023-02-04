@@ -30,6 +30,6 @@ func enter(cmd *cobra.Command, args []string) error {
 		return err
 	}
 
-	cmdr.Info.Println("You are now outside the container.\n")
+	cmdr.Info.Println("You are now outside the container.")
 	return nil
 }

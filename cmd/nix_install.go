@@ -9,8 +9,6 @@ package cmd
 */
 
 import (
-	"log"
-
 	"github.com/spf13/cobra"
 	"github.com/vanilla-os/apx/core"
 	"github.com/vanilla-os/orchid/cmdr"
@@ -22,6 +20,13 @@ func NewNixInstallCommand() *cmdr.Command {
 		apx.Trans("nixinstall.long"),
 		apx.Trans("nixinstall.short"),
 		installPackage,
+	).WithBoolFlag(
+		cmdr.NewBoolFlag(
+			"allow-unfree",
+			"u",
+			apx.Trans("nixinstall.allowUnfree"),
+			false,
+		),
 	)
 	/*
 			Use:     "install <pkg>",
@@ -41,7 +46,7 @@ func installPackage(cmd *cobra.Command, args []string) error {
 	if err != nil {
 		return err
 	}
-	log.Default().Printf("Package installation complete")
+	cmdr.Success.Println("Package installation complete")
 	return nil
 
 }

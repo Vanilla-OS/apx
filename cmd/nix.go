@@ -12,7 +12,7 @@ import "github.com/vanilla-os/orchid/cmdr"
 
 func NewNixCommand() *cmdr.Command {
 	cmd := cmdr.NewCommand(
-		"nix",
+		"nix [command]",
 		apx.Trans("nix.long"),
 		apx.Trans("nix.short"),
 		nil,

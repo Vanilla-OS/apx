@@ -35,10 +35,12 @@ func NewNixInitCommand() *cmdr.Command {
 				RunE: initNix,
 			}
 	*/
+	cmd.Example = "apx nix init"
 	return cmd
 }
 func initNix(cmd *cobra.Command, args []string) error {
 	// prompt for confirmation
+	//TODO: cmdr
 	log.Default().Printf(`This will create a ".nix" folder in your home directory
 and set up some SystemD units to mount that folder at /nix before running the installation
 Confirm 'y' to continue. [y/N] `)

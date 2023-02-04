@@ -27,6 +27,7 @@ func NewInitializeCommand() *cmdr.Command {
 			RunE:    initialize,
 		}
 	*/
+	cmd.Example = "apx init"
 	return cmd
 }
 

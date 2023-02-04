@@ -22,6 +22,34 @@ func NewInstallCommand() *cmdr.Command {
 		apx.Trans("install.long"),
 		apx.Trans("install.short"),
 		install,
+	).WithBoolFlag(
+		cmdr.NewBoolFlag(
+			"assume-yes",
+			"y",
+			apx.Trans("install.assumeYes"),
+			false,
+		),
+	).WithBoolFlag(
+		cmdr.NewBoolFlag(
+			"fix-broken",
+			"f",
+			apx.Trans("install.fixBroken"),
+			false,
+		),
+	).WithBoolFlag(
+		cmdr.NewBoolFlag(
+			"no-export",
+			"",
+			apx.Trans("install.noExport"),
+			false,
+		),
+	).WithBoolFlag(
+		cmdr.NewBoolFlag(
+			"sideload",
+			"",
+			apx.Trans("install.sideload"),
+			false,
+		),
 	)
 	/*
 				Example: `apx install htop git
@@ -36,14 +64,16 @@ func NewInstallCommand() *cmdr.Command {
 			cmd.Flags().Bool("no-export", false, "Do not export a desktop entry after the installation.")
 			cmd.Flags().Bool("sideload", false, "Install a package from a local file.")
 	*/
+	cmd.Example = "apx install htop git"
+	cmd.Flags().SetInterspersed(false)
 	return cmd
 }
 
 func install(cmd *cobra.Command, args []string) error {
-	no_export := cmd.Flag("no-export").Value.String() == "true"
-	assume_yes := cmd.Flag("assume-yes").Value.String() == "true"
-	fix_broken := cmd.Flag("fix-broken").Value.String() == "true"
-	sideload := cmd.Flag("sideload").Value.String() == "true"
+	no_export := cmd.Flag("no-export").Changed
+	assume_yes := cmd.Flag("assume-yes").Changed
+	fix_broken := cmd.Flag("fix-broken").Changed
+	sideload := cmd.Flag("sideload").Changed
 
 	command := append([]string{}, container.GetPkgCommand("install")...)
 
@@ -56,6 +86,7 @@ func install(cmd *cobra.Command, args []string) error {
 
 	if sideload {
 		if len(args) != 1 {
+			//TODO-i18n
 			return fmt.Errorf("sideload requires the path to a local file")
 		}
 		path, err := core.MoveToUserTemp(args[0])
