@@ -42,6 +42,7 @@ func initialize(cmd *cobra.Command, args []string) error {
 		}
 
 		if !b {
+			cmdr.Info.Println("Canceled operation at user request")
 			return nil
 		}
 	}

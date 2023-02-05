@@ -9,7 +9,6 @@ package cmd
 */
 
 import (
-	"fmt"
 	"os"
 
 	"github.com/spf13/cobra"
@@ -50,10 +49,10 @@ func show(cmd *cobra.Command, args []string) error {
 		}
 
 		if result {
-			fmt.Printf("%s is installed", args[0])
+			cmdr.Info.Printf("%s is installed", args[0])
 			os.Exit(0)
 		} else {
-			fmt.Printf("%s is not installed", args[0])
+			cmdr.Info.Printf("%s is not installed", args[0])
 			os.Exit(1)
 		}
 

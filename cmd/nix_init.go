@@ -50,7 +50,7 @@ Confirm 'y' to continue. [y/N] `)
 	proceed = strings.ToLower(proceed)
 
 	if proceed != "y" {
-		log.Default().Printf("operation canceled at user request")
+		cmdr.Info.Printf("operation canceled at user request")
 		os.Exit(0)
 	}
 	err := core.NixInit()
