@@ -26,10 +26,10 @@ func NewEnterCommand() *cmdr.Command {
 func enter(cmd *cobra.Command, args []string) error {
 
 	if err := container.Enter(); err != nil {
-		cmdr.Error.Println("Failed to enter container: ", err)
+		cmdr.Error.Println(apx.Trans("enter.failedEnter"), err)
 		return err
 	}
 
-	cmdr.Info.Println("You are now outside the container.")
+	cmdr.Info.Println(apx.Trans("enter.outside"))
 	return nil
 }

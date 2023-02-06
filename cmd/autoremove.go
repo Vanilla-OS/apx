@@ -24,7 +24,7 @@ func NewAutoRemoveCommand() *cmdr.Command {
 		cmdr.NewBoolFlag(
 			"all",
 			"a",
-			apx.Trans("autoremove.allFlag"),
+			apx.Trans("apx.allFlag"),
 			false,
 		))
 	return cmd

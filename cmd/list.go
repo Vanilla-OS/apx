@@ -32,15 +32,7 @@ func NewListCommand() *cmdr.Command {
 			apx.Trans("list.installed"),
 			false,
 		))
-	/*
-			Use:   "list",
-			Short: "List installed packages.",
-			RunE:  list,
-		}
-		cmd.Flags().SetInterspersed(false)
-		cmd.Flags().BoolP("upgradable", "u", false, "List only upgradable packages.")
-		cmd.Flags().BoolP("installed", "i", false, "List only installed packages.")
-	*/
+
 	cmd.Flags().SetInterspersed(false)
 
 	return cmd

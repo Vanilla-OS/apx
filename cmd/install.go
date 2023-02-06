@@ -86,12 +86,12 @@ func install(cmd *cobra.Command, args []string) error {
 
 	if sideload {
 		if len(args) != 1 {
-			//TODO-i18n
-			return fmt.Errorf("sideload requires the path to a local file")
+
+			return fmt.Errorf(apx.Trans("install.sideArgs"))
 		}
 		path, err := core.MoveToUserTemp(args[0])
 		if err != nil {
-			return fmt.Errorf("can't move file to user temp: %s", err)
+			return fmt.Errorf(apx.Trans("install.sideUserTemp", err))
 		}
 		command = append(command, path)
 	} else {

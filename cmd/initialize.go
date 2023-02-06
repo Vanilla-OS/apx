@@ -20,13 +20,7 @@ func NewInitializeCommand() *cmdr.Command {
 		apx.Trans("init.short"),
 		initialize,
 	)
-	/*
-			Example: "apx init",
-			Use:     "init",
-			Short:   "Initialize the managed container",
-			RunE:    initialize,
-		}
-	*/
+
 	cmd.Example = "apx init"
 	return cmd
 }
@@ -42,17 +36,17 @@ func initialize(cmd *cobra.Command, args []string) error {
 		}
 
 		if !b {
-			cmdr.Info.Println("Canceled operation at user request")
+			cmdr.Info.Println(apx.Trans("apx.cxl"))
 			return nil
 		}
 	}
 
 	if err := container.Remove(); err != nil {
-		cmdr.Error.Printf("error removing container: %v", err)
+		cmdr.Error.Printf(apx.Trans("init.remove"), err)
 		return err
 	}
 	if err := container.Create(); err != nil {
-		cmdr.Error.Printf("error creating container: %v", err)
+		cmdr.Error.Printf(apx.Trans("init.create"), err)
 		return err
 	}
 
