@@ -17,7 +17,7 @@ import (
 )
 
 var (
-	Version = "1.5.0"
+	Version = "1.5.1"
 )
 
 //go:embed locales/*.yml
@@ -151,6 +151,8 @@ func main() {
 	nix := cmd.NewNixCommand()
 	nix.GroupID = nixGroup.ID
 	root.AddCommand(nix)
+
+	root = cmd.AddContainerFlags(root)
 	// run the app
 	err := apx.Run()
 	if err != nil {
