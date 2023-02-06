@@ -287,4 +287,4 @@ var singleUserCommand = "sh <(curl -L https://nixos.org/nix/install) --no-daemon
 
 var nixConf = "experimental-features = nix-command flakes"
 
-var xdgConfig = "XDG_DATA_DIRS=$HOME/.nix-profile/share:$XDG_DATA_DIRS"
+var xdgConfig = "export XDG_DATA_DIRS=$HOME/.nix-profile/share:$XDG_DATA_DIRS"
