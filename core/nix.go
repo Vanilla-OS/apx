@@ -3,29 +3,36 @@ package core
 import (
 	"bytes"
 	"errors"
-	"fmt"
 	"html/template"
 	"log"
 	"os"
 	"os/exec"
 	"path"
-	"strings"
+
+	"github.com/vanilla-os/orchid/cmdr"
 )
 
 type UnitData struct {
 	User string
 }
 
-func NixInstallPackage(pkg string) error {
-	install := exec.Command("nix", "profile", "install", "nixpkgs#"+pkg)
+func NixInstallPackage(pkg string, unfree bool) error {
+	cmd := []string{}
+	cmd = append(cmd, "nix", "profile", "install")
+	if unfree {
+		cmd = append(cmd, "--impure")
+	}
+	cmd = append(cmd, "nixpkgs#"+pkg)
+	install := exec.Command(cmd[0], cmd[1:]...)
+	install.Env = append(install.Env, "NIXPKGS_ALLOW_UNFREE=1")
 	install.Stderr = os.Stderr
 	install.Stdin = os.Stdin
 	install.Stdout = os.Stdout
 
 	err := install.Run()
 	if err != nil {
-		log.Default().Printf("error installing package")
-		log.Default().Println("have you run the `init` command yet?")
+		cmdr.Error.Println("error installing package")
+		cmdr.Error.Println("have you run the `init` command yet?")
 		return err
 	}
 
@@ -81,19 +88,6 @@ func NixInit() error {
 	}
 	unitData := UnitData{User: user}
 
-	// prompt for confirmation
-	log.Default().Printf(`This will create a ".nix" folder in your home directory
-and set up some SystemD units to mount that folder at /nix before running the installation
-Confirm 'y' to continue. [y/N] `)
-
-	var proceed string
-	fmt.Scanln(&proceed)
-	proceed = strings.ToLower(proceed)
-
-	if proceed != "y" {
-		log.Default().Printf("operation canceled at user request")
-		os.Exit(0)
-	}
 	homedir, err := os.UserHomeDir()
 	if err != nil {
 		log.Default().Printf("unable to get home directory")
@@ -138,6 +132,12 @@ Confirm 'y' to continue. [y/N] `)
 		log.Default().Printf("error creating directory ownership unit")
 		return err
 	}
+	err = makeUnit(unitData, "/etc/profile.d/xxNixXDG.sh", xdgConfig)
+	if err != nil {
+		log.Default().Printf("error creating directory ownership unit")
+		return err
+	}
+
 	log.Default().Printf("Enabling systemd units")
 	reload := exec.Command("sudo", "systemctl", "daemon-reload")
 	reload.Stderr = os.Stderr
@@ -271,3 +271,5 @@ ExecStart=chown -R {{.User}}:root /nix
 var singleUserCommand = "sh <(curl -L https://nixos.org/nix/install) --no-daemon"
 
 var nixConf = "experimental-features = nix-command flakes"
+
+var xdgConfig = "export XDG_DATA_DIRS=$HOME/.nix-profile/share:$XDG_DATA_DIRS"

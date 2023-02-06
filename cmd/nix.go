@@ -1,5 +1,7 @@
 package cmd
 
+import "github.com/vanilla-os/orchid/cmdr"
+
 /*	License: GPLv3
 	Authors:
 		Mirko Brombin <send@mirko.pm>
@@ -8,16 +10,14 @@ package cmd
 	Description: Apx is a wrapper around multiple package managers to install packages and run commands inside a managed container.
 */
 
-import (
-	"github.com/spf13/cobra"
-)
+func NewNixCommand() *cmdr.Command {
+	cmd := cmdr.NewCommand(
+		"nix [command]",
+		apx.Trans("nix.long"),
+		apx.Trans("nix.short"),
+		nil,
+	)
 
-func NewNixCommand() *cobra.Command {
-	cmd := &cobra.Command{
-		Use:   "nix",
-		Short: "Manage nix installation",
-		Long:  "Manage a custom installation of nix in your $HOME directory.",
-	}
 	cmd.AddCommand(NewNixInitCommand())
 	cmd.AddCommand(NewNixInstallCommand())
 	cmd.AddCommand(NewNixRemoveCommand())

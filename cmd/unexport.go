@@ -9,36 +9,41 @@ package cmd
 */
 
 import (
-	"errors"
 	"fmt"
 
 	"github.com/spf13/cobra"
+	"github.com/vanilla-os/orchid/cmdr"
 )
 
-func NewUnexportCommand() *cobra.Command {
-	cmd := &cobra.Command{
-		Example: "apx unexport code",
-		Use:     "unexport <program>",
-		Short:   "Unexport/Remove a program's desktop entry from a managed container",
-		RunE:    unexport,
-	}
-	cmd.Flags().String("bin", "", "Unexport a previously exported binary.")
+func NewUnexportCommand() *cmdr.Command {
+	cmd := cmdr.NewCommand("unexport",
+		apx.Trans("unexport.long"),
+		apx.Trans("unexport.short"),
+		unexport).WithBoolFlag(
+		cmdr.NewBoolFlag(
+			"bin",
+			"",
+			apx.Trans("unexport.binFlag"),
+			false,
+		),
+	)
+
+	cmd.Args = cobra.ExactArgs(1)
+	cmd.Example = "apx unexport code"
 	return cmd
 }
 
 func unexport(cmd *cobra.Command, args []string) error {
-	if cmd.Flag("bin").Value.String() != "" {
-		bin_name := cmd.Flag("bin").Value.String()
+	if cmd.Flag("bin").Changed {
+		bin_name := args[0]
 		if err := container.RemoveBinary(bin_name, false); err != nil {
 			fmt.Printf("Error: %s\n", err)
 		} else {
-			fmt.Printf("Successfully removed exported binary `%s`.", bin_name)
+			cmdr.Success.Println(apx.Trans("unexport.success", bin_name))
 		}
 		return nil
 	} else {
-		if len(args) == 0 {
-			return errors.New("Please specify a program to unexport.")
-		}
+
 		return container.RemoveDesktopEntry(args[0])
 	}
 }

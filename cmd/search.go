@@ -10,15 +10,16 @@ package cmd
 
 import (
 	"github.com/spf13/cobra"
+	"github.com/vanilla-os/orchid/cmdr"
 )
 
-func NewSearchCommand() *cobra.Command {
-	cmd := &cobra.Command{
-		Example: "apx search neovim",
-		Use:     "search <packages>",
-		Short:   "Search for packages in a managed container.",
-		RunE:    search,
-	}
+func NewSearchCommand() *cmdr.Command {
+	cmd := cmdr.NewCommand("search",
+		apx.Trans("search.long"),
+		apx.Trans("search.short"),
+		search)
+
+	cmd.Example = "apx search neovim"
 	return cmd
 }
 

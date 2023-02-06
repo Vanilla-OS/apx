@@ -11,17 +11,22 @@ package cmd
 import (
 	"github.com/spf13/cobra"
 	"github.com/vanilla-os/apx/core"
+	"github.com/vanilla-os/orchid/cmdr"
 )
 
-func NewAutoRemoveCommand() *cobra.Command {
-	cmd := &cobra.Command{
-		Example: "apx autoremove",
-		Use:     "autoremove",
-		Short:   "Remove all unused packages automatically",
-		RunE:    autoRemove,
-	}
-
-	cmd.Flags().BoolP("all", "a", false, "Apply for all containers.")
+func NewAutoRemoveCommand() *cmdr.Command {
+	cmd := cmdr.NewCommand(
+		"autoremove",
+		apx.Trans("autoremove.long"),
+		apx.Trans("autoremove.short"),
+		autoRemove,
+	).WithBoolFlag(
+		cmdr.NewBoolFlag(
+			"all",
+			"a",
+			apx.Trans("apx.allFlag"),
+			false,
+		))
 	return cmd
 }
 
@@ -30,7 +35,6 @@ func autoRemove(cmd *cobra.Command, args []string) error {
 		if err := core.ApplyForAll("autoremove", []string{}); err != nil {
 			return err
 		}
-
 		return nil
 	}
 

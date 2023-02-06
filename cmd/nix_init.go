@@ -9,46 +9,39 @@ package cmd
 */
 
 import (
-	"fmt"
-	"log"
-	"os"
-	"strings"
-
 	"github.com/spf13/cobra"
 	"github.com/vanilla-os/apx/core"
+	"github.com/vanilla-os/orchid/cmdr"
 )
 
-func NewNixInitCommand() *cobra.Command {
-	cmd := &cobra.Command{
-		Use:   "init",
-		Short: "Initialize nix repository",
-		Long: `Initializes a custom installation of nix by creating $HOME/.nix and
-setting up some SystemD units to mount it as /nix.`,
-
-		RunE: initNix,
-	}
-
+func NewNixInitCommand() *cmdr.Command {
+	cmd := cmdr.NewCommand(
+		"init",
+		apx.Trans("nixinit.long"),
+		apx.Trans("nixinit.short"),
+		initNix,
+	)
+	cmd.Example = "apx nix init"
 	return cmd
 }
 func initNix(cmd *cobra.Command, args []string) error {
 	// prompt for confirmation
-	log.Default().Printf(`This will create a ".nix" folder in your home directory
-and set up some SystemD units to mount that folder at /nix before running the installation
-Confirm 'y' to continue. [y/N] `)
 
-	var proceed string
-	fmt.Scanln(&proceed)
-	proceed = strings.ToLower(proceed)
+	b, err := cmdr.Confirm.Show(apx.Trans("nixinit.confirm"))
 
-	if proceed != "y" {
-		log.Default().Printf("operation canceled at user request")
-		os.Exit(0)
-	}
-	err := core.NixInit()
 	if err != nil {
 		return err
 	}
-	log.Default().Printf("Installation complete. Reboot to start using nix.")
+
+	if !b {
+		cmdr.Info.Println(apx.Trans("apx.cxl"))
+		return nil
+	}
+	err = core.NixInit()
+	if err != nil {
+		return err
+	}
+	cmdr.Success.Println(apx.Trans("nixinit.success"))
 	return nil
 
 }

@@ -9,32 +9,36 @@ package cmd
 */
 
 import (
-	"errors"
-	"fmt"
-
 	"github.com/spf13/cobra"
+	"github.com/vanilla-os/orchid/cmdr"
 )
 
-func NewExportCommand() *cobra.Command {
-	cmd := &cobra.Command{
-		Example: "apx export htop",
-		Use:     "export <program>",
-		Short:   "Export/Recreate a program's desktop entry from a managed container",
-		RunE:    export,
-	}
-	cmd.Flags().String("bin", "", "Export a binary instead.")
+func NewExportCommand() *cmdr.Command {
+	cmd := cmdr.NewCommand(
+		"export <application/binary>",
+		apx.Trans("export.long"),
+		apx.Trans("export.short"),
+		export,
+	).WithBoolFlag(
+		cmdr.NewBoolFlag(
+			"bin",
+			"",
+			apx.Trans("export.binFlag"),
+			false,
+		),
+	)
+	cmd.Example = "apx export htop\napx export --bin fzf"
+	cmd.Args = cobra.ExactArgs(1)
 	return cmd
 }
 
 func export(cmd *cobra.Command, args []string) error {
-	if cmd.Flag("bin").Value.String() != "" {
-		if err := container.ExportBinary(cmd.Flag("bin").Value.String()); err != nil {
-			fmt.Printf("Error: %s\n", err)
+	if cmd.Flag("bin").Changed {
+		if err := container.ExportBinary(args[0]); err != nil {
+			cmdr.Error.Printf("Error: %s\n", err)
+			return err
 		}
 	} else {
-		if len(args) == 0 {
-			return errors.New("Please specify a program to export.")
-		}
 		container.ExportDesktopEntry(args[0])
 	}
 	return nil

@@ -9,29 +9,27 @@ package cmd
 */
 
 import (
-	"fmt"
-	"log"
-
 	"github.com/spf13/cobra"
+	"github.com/vanilla-os/orchid/cmdr"
 )
 
-func NewEnterCommand() *cobra.Command {
-	cmd := &cobra.Command{
-		Example: "apx enter",
-		Use:     "enter",
-		Short:   "Enter in the container shell",
-		RunE:    enter,
-	}
+func NewEnterCommand() *cmdr.Command {
+	cmd := cmdr.NewCommand(
+		"enter",
+		apx.Trans("enter.long"),
+		apx.Trans("enter.short"),
+		enter,
+	)
 	return cmd
 }
 
 func enter(cmd *cobra.Command, args []string) error {
 
 	if err := container.Enter(); err != nil {
-		log.Default().Fatal("Failed to enter container: ", err)
+		cmdr.Error.Println(apx.Trans("enter.failedEnter"), err)
 		return err
 	}
 
-	fmt.Print("You are now outside the container.\n")
+	cmdr.Info.Println(apx.Trans("enter.outside"))
 	return nil
 }

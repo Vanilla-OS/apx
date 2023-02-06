@@ -10,15 +10,17 @@ package cmd
 
 import (
 	"github.com/spf13/cobra"
+	"github.com/vanilla-os/orchid/cmdr"
 )
 
-func NewPurgeCommand() *cobra.Command {
-	cmd := &cobra.Command{
-		Example: "apx purge htop",
-		Use:     "purge <packages>",
-		Short:   "Purge packages inside a managed container",
-		RunE:    purge,
-	}
+func NewPurgeCommand() *cmdr.Command {
+	cmd := cmdr.NewCommand("purge",
+		apx.Trans("purge.long"),
+		apx.Trans("purge.short"),
+		purge)
+
+	cmd.Example = "apx purge htop"
+	cmd.Args = cobra.MinimumNArgs(1)
 	return cmd
 }
 

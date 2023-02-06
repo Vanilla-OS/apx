@@ -10,17 +10,24 @@ package cmd
 
 import (
 	"github.com/spf13/cobra"
+	"github.com/vanilla-os/orchid/cmdr"
 )
 
-func NewRemoveCommand() *cobra.Command {
-	cmd := &cobra.Command{
-		Example: "apx remove htop",
-		Use:     "remove <packages>",
-		Short:   "Remove packages inside a managed container.",
-		RunE:    remove,
-	}
-	cmd.Flags().BoolP("assume-yes", "y", false, "Proceed without manual confirmation.")
+func NewRemoveCommand() *cmdr.Command {
+	cmd := cmdr.NewCommand("remove <packages>",
+		apx.Trans("remove.long"),
+		apx.Trans("remove.short"),
+		remove).WithBoolFlag(
+		cmdr.NewBoolFlag(
+			"assume-yes",
+			"y",
+			apx.Trans("apx.assumeYes"),
+			false,
+		))
 
+	cmd.Example = "apx remove htop"
+	cmd.Args = cobra.MinimumNArgs(1)
+	cmd.Flags().SetInterspersed(false)
 	return cmd
 }
 
@@ -29,7 +36,7 @@ func remove(cmd *cobra.Command, args []string) error {
 	command := append([]string{}, container.GetPkgCommand("remove")...)
 	command = append(command, args...)
 
-	if cmd.Flag("assume-yes").Value.String() == "true" {
+	if cmd.Flag("assume-yes").Changed {
 		command = append(command, "-y")
 	}
 
