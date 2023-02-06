@@ -147,7 +147,7 @@ Confirm 'y' to continue. [y/N] `)
 		log.Default().Printf("error creating directory ownership unit")
 		return err
 	}
-	err = makeUnit(u, "/etc/profile.d/xXDG.sh", xdgConfig)
+	err = makeUnit(unitData, "/etc/profile.d/xxNixXDG.sh", xdgConfig)
 	if err != nil {
 		log.Default().Printf("error creating directory ownership unit")
 		return err
