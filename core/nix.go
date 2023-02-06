@@ -3,13 +3,11 @@ package core
 import (
 	"bytes"
 	"errors"
-	"fmt"
 	"html/template"
 	"log"
 	"os"
 	"os/exec"
 	"path"
-	"strings"
 
 	"github.com/vanilla-os/orchid/cmdr"
 )
@@ -90,19 +88,6 @@ func NixInit() error {
 	}
 	unitData := UnitData{User: user}
 
-	// prompt for confirmation
-	log.Default().Printf(`This will create a ".nix" folder in your home directory
-and set up some SystemD units to mount that folder at /nix before running the installation
-Confirm 'y' to continue. [y/N] `)
-
-	var proceed string
-	fmt.Scanln(&proceed)
-	proceed = strings.ToLower(proceed)
-
-	if proceed != "y" {
-		log.Default().Printf("operation canceled at user request")
-		os.Exit(0)
-	}
 	homedir, err := os.UserHomeDir()
 	if err != nil {
 		log.Default().Printf("unable to get home directory")
