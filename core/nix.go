@@ -10,22 +10,31 @@ import (
 	"os/exec"
 	"path"
 	"strings"
+
+	"github.com/vanilla-os/orchid/cmdr"
 )
 
 type UnitData struct {
 	User string
 }
 
-func NixInstallPackage(pkg string) error {
-	install := exec.Command("nix", "profile", "install", "nixpkgs#"+pkg)
+func NixInstallPackage(pkg string, unfree bool) error {
+	cmd := []string{}
+	cmd = append(cmd, "nix", "profile", "install")
+	if unfree {
+		cmd = append(cmd, "--impure")
+	}
+	cmd = append(cmd, "nixpkgs#"+pkg)
+	install := exec.Command(cmd[0], cmd[1:]...)
+	install.Env = append(install.Env, "NIXPKGS_ALLOW_UNFREE=1")
 	install.Stderr = os.Stderr
 	install.Stdin = os.Stdin
 	install.Stdout = os.Stdout
 
 	err := install.Run()
 	if err != nil {
-		log.Default().Printf("error installing package")
-		log.Default().Println("have you run the `init` command yet?")
+		cmdr.Error.Println("error installing package")
+		cmdr.Error.Println("have you run the `init` command yet?")
 		return err
 	}
 

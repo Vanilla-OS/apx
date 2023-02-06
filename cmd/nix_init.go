@@ -9,11 +9,6 @@ package cmd
 */
 
 import (
-	"fmt"
-	"log"
-	"os"
-	"strings"
-
 	"github.com/spf13/cobra"
 	"github.com/vanilla-os/apx/core"
 	"github.com/vanilla-os/orchid/cmdr"
@@ -26,34 +21,23 @@ func NewNixInitCommand() *cmdr.Command {
 		apx.Trans("nixinit.short"),
 		initNix,
 	)
-	/*
-				Use:   "init",
-				Short: "Initialize nix repository",
-				Long: `Initializes a custom installation of nix by creating $HOME/.nix and
-		setting up some SystemD units to mount it as /nix.`,
-
-				RunE: initNix,
-			}
-	*/
 	cmd.Example = "apx nix init"
 	return cmd
 }
 func initNix(cmd *cobra.Command, args []string) error {
 	// prompt for confirmation
-	//TODO: cmdr
-	log.Default().Printf(`This will create a ".nix" folder in your home directory
-and set up some SystemD units to mount that folder at /nix before running the installation
-Confirm 'y' to continue. [y/N] `)
 
-	var proceed string
-	fmt.Scanln(&proceed)
-	proceed = strings.ToLower(proceed)
+	b, err := cmdr.Confirm.Show(apx.Trans("nixinit.confirm"))
 
-	if proceed != "y" {
-		cmdr.Info.Printf("operation canceled at user request")
-		os.Exit(0)
+	if err != nil {
+		return err
 	}
-	err := core.NixInit()
+
+	if !b {
+		cmdr.Info.Println(apx.Trans("apx.cxl"))
+		return nil
+	}
+	err = core.NixInit()
 	if err != nil {
 		return err
 	}

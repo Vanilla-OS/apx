@@ -27,15 +27,8 @@ func NewShowCommand() *cmdr.Command {
 			false,
 		),
 	)
-	/*
-			Example: "apx show htop",
-			Use:     "show <package>",
-			Short:   "Show details about a package",
-			RunE:    show,
-		}
-		cmd.Flags().BoolP("isinstalled", "i", false, "Returns only whether package is installed")
-	*/
-	cmd.Example = "apx show htop"
+
+	cmd.Example = "apx show htop\napx show -i neovim"
 	cmd.Args = cobra.ExactArgs(1)
 	return cmd
 }

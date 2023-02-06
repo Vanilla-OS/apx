@@ -22,24 +22,16 @@ func NewUpdateCommand() *cmdr.Command {
 		cmdr.NewBoolFlag(
 			"all",
 			"a",
-			apx.Trans("update.allFlag"),
+			apx.Trans("apx.allFlag"),
 			false,
 		)).WithBoolFlag(
 		cmdr.NewBoolFlag(
 			"assume-yes",
 			"y",
-			apx.Trans("update.assumeYes"),
+			apx.Trans("apx.assumeYes"),
 			false,
 		))
-	/*
-			Example: "apx update",
-			Use:     "update",
-			Short:   "Update the list of available packages",
-			RunE:    update,
-		}
-		cmd.Flags().BoolP("all", "a", false, "Apply for all containers.")
-		cmd.Flags().BoolP("assume-yes", "y", false, "Proceed without manual confirmation.")
-	*/
+
 	return cmd
 }
 

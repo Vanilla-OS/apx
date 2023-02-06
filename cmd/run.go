@@ -18,14 +18,6 @@ func NewRunCommand() *cmdr.Command {
 		apx.Trans("run.long"),
 		apx.Trans("run.short"),
 		run)
-	/*
-			Example: "apx run htop",
-			Use:     "run <program>",
-			Short:   "Run a program inside a managed container.",
-			RunE:    run,
-		}
-		cmd.Flags().SetInterspersed(false)
-	*/
 	cmd.Flags().SetInterspersed(false)
 	cmd.Example = "apx run htop"
 	cmd.Args = cobra.MinimumNArgs(1)

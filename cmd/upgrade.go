@@ -23,25 +23,17 @@ func NewUpgradeCommand() *cmdr.Command {
 		cmdr.NewBoolFlag(
 			"all",
 			"a",
-			apx.Trans("upgrade.allFlag"),
+			apx.Trans("apx.allFlag"),
 			false,
 		)).WithBoolFlag(
 		cmdr.NewBoolFlag(
 			"assume-yes",
 			"y",
-			apx.Trans("upgrade.assumeYes"),
+			apx.Trans("apx.assumeYes"),
 			false,
 		))
 	cmd.Example = "apx upgrade"
-	/*
-			Example: "apx upgrade",
-			Use:     "upgrade",
-			Short:   "Upgrade the system by installing/upgrading available packages.",
-			RunE:    upgrade,
-		}
-		cmd.Flags().BoolP("all", "a", false, "Apply for all containers.")
-		cmd.Flags().BoolP("assume-yes", "y", false, "Proceed without manual confirmation.")
-	*/
+
 	return cmd
 }
 

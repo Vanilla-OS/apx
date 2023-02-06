@@ -21,19 +21,13 @@ func NewRemoveCommand() *cmdr.Command {
 		cmdr.NewBoolFlag(
 			"assume-yes",
 			"y",
-			apx.Trans("remove.assumeYes"),
+			apx.Trans("apx.assumeYes"),
 			false,
 		))
-	/*
-			Example: "apx remove htop",
-			Use:     "remove <packages>",
-			Short:   "Remove packages inside a managed container.",
-			RunE:    remove,
-		}
-		cmd.Flags().BoolP("assume-yes", "y", false, "Proceed without manual confirmation.")
-	*/
+
 	cmd.Example = "apx remove htop"
 	cmd.Args = cobra.MinimumNArgs(1)
+	cmd.Flags().SetInterspersed(false)
 	return cmd
 }
 
@@ -42,7 +36,7 @@ func remove(cmd *cobra.Command, args []string) error {
 	command := append([]string{}, container.GetPkgCommand("remove")...)
 	command = append(command, args...)
 
-	if cmd.Flag("assume-yes").Value.String() == "true" {
+	if cmd.Flag("assume-yes").Changed {
 		command = append(command, "-y")
 	}
 

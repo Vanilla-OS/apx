@@ -42,7 +42,11 @@ func NewNixInstallCommand() *cmdr.Command {
 	return cmd
 }
 func installPackage(cmd *cobra.Command, args []string) error {
-	err := core.NixInstallPackage(args[0])
+	allowUnfree := false
+	if cmd.Flags().Changed("allow-unfree") {
+		allowUnfree = true
+	}
+	err := core.NixInstallPackage(args[0], allowUnfree)
 	if err != nil {
 		return err
 	}

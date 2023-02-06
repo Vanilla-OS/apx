@@ -18,13 +18,7 @@ func NewPurgeCommand() *cmdr.Command {
 		apx.Trans("purge.long"),
 		apx.Trans("purge.short"),
 		purge)
-	/*
-			Example: "apx purge htop",
-			Use:     "purge <packages>",
-			Short:   "Purge packages inside a managed container",
-			RunE:    purge,
-		}
-	*/
+
 	cmd.Example = "apx purge htop"
 	cmd.Args = cobra.MinimumNArgs(1)
 	return cmd

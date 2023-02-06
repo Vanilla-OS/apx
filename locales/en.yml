@@ -12,7 +12,8 @@ apx:
   short: "Apx is a package manager with support for multiple sources,\nallowing you to install packages in a managed container."
   verboseFlag: "show more detailed output"
   allFlag: "Apply for all containers."
-  cxl: "Canceled operation at user request."
+  cxl: "Operation canceled at user request."
+  assumeYes: "Proceed without manual confirmation."
 autoremove:
   use: "autoremove"
   long: "Remove all unused packages automatically"
@@ -69,7 +70,47 @@ nixremove:
   use: "remove"
   long: "Remove the first matching package installed in the default nix profile.\n\nNote: It is possible to have multiple installations of the same package.\n\nIf you need more precision use 'nix profile list' and 'nix profile remove'."
   short: "Remove a nix package"
+  success: "Package removal complete"
 nixinstall:
   use: "install <pkg>"
   long: "Install a package from the `nixpkgs` repository as a flake in the default nix profile."
   short: "Install nix package"
+  allowUnfree: "Allow packages with unfree licenses"
+  error: "error installing packages"
+  runInit: "Have you run the `init` command yet?"
+purge:
+  use: "purge <packages>"
+  long: "Purge packages inside a managed container"
+  short: "Purge packages inside a managed container"
+remove: 
+  use: "remove <package>"
+  long: "Remove packages inside a managed container."
+  short: "Remove packages inside a managed container."
+run:
+  use: "run <command>"
+  long: "Run a program inside a managed container."
+  short: "Run a program inside a managed container."
+search:
+  use: "search <packages>"
+  long: "Search for packages in a managed container."
+  short: "Search for packages in a managed container."
+show:
+  use: "show <package>"
+  long: "Show details about a package"
+  short: "Show details about a package"
+  isInstalled: "Only return whether the package is instaled"
+unexport:
+  use: "unexport <package>"
+  long: "Unexport/Remove a program's desktop entry from a managed container.\nIf --bin flag is provided, remove link to container binary."
+  short: "Unexport/Remove a program's desktop entry from a managed container"
+  binFlag: "Unexport a previously exported binary."
+  success: "Successfully removed exported binary `%s`."
+update:
+  use: "update"
+  long: "Update the list of available packages"
+  short: "Update the list of available packages"
+  allFlag: "Apply to all containers"
+upgrade:
+  use: "upgrade"
+  long: "Upgrade the system by installing/upgrading available packages."
+  short: "Upgrade the system by installing/upgrading available packages."

@@ -27,14 +27,7 @@ func NewUnexportCommand() *cmdr.Command {
 			false,
 		),
 	)
-	/*
-			Example: "apx unexport code",
-			Use:     "unexport <program>",
-			Short:   "Unexport/Remove a program's desktop entry from a managed container",
-			RunE:    unexport,
-		}
-		cmd.Flags().String("bin", "", "Unexport a previously exported binary.")
-	*/
+
 	cmd.Args = cobra.ExactArgs(1)
 	cmd.Example = "apx unexport code"
 	return cmd
@@ -46,7 +39,7 @@ func unexport(cmd *cobra.Command, args []string) error {
 		if err := container.RemoveBinary(bin_name, false); err != nil {
 			fmt.Printf("Error: %s\n", err)
 		} else {
-			fmt.Printf("Successfully removed exported binary `%s`.", bin_name)
+			cmdr.Success.Println(apx.Trans("unexport.success", bin_name))
 		}
 		return nil
 	} else {

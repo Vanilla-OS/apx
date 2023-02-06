@@ -21,19 +21,7 @@ func NewNixRemoveCommand() *cmdr.Command {
 		apx.Trans("nixremove.short"),
 		removePackage,
 	)
-	/*
-				Use:   "remove <pkg>",
-				Short: "Remove a nix package",
-				Long: `Remove the first matching package installed in the
-		default nix profile. Note that it is possible to have
-		multiple installations of the same package. If you need
-		more precision use 'nix profile list' and 'nix profile
-		remove'.`,
 
-				RunE: removePackage,
-				Args: cobra.ExactArgs(1),
-			}
-	*/
 	cmd.Args = cobra.ExactArgs(1)
 	cmd.Example = "apx nix remove jq"
 	return cmd
@@ -43,7 +31,7 @@ func removePackage(cmd *cobra.Command, args []string) error {
 	if err != nil {
 		return err
 	}
-	cmdr.Success.Println("Package removal complete")
+	cmdr.Success.Println(apx.Trans("nixremove.success"))
 	return nil
 
 }
