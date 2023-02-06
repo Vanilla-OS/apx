@@ -1,3 +1,10 @@
+apx (1.6.0) kinetic; urgency=medium
+
+  * New nix flag for the nix package manager
+  * Porting to the orchid library
+
+ -- Mirko brombin <send@mirko.pm>  Mon, 06 Feb 2023 17:45:03 +0200
+ 
 apx (1.5.0) kinetic; urgency=medium
 
   * New --zypper flag

@@ -160,7 +160,7 @@
  * Added [GetParsedDuration()](http://godoc.org/github.com/magiconair/properties#Properties.GetParsedDuration) and [MustGetParsedDuration()](http://godoc.org/github.com/magiconair/properties#Properties.MustGetParsedDuration) for values specified compatible with
    [time.ParseDuration()](http://golang.org/pkg/time/#ParseDuration).
 
-### [1.5.0](https://github.com/magiconair/properties/tree/v1.5.0) - 18 Nov 2014
+### [1.6.0](https://github.com/magiconair/properties/tree/v1.6.0) - 18 Nov 2014
 
  * Added support for single and multi-line comments (reading, writing and updating)
  * The order of keys is now preserved
