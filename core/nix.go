@@ -147,6 +147,12 @@ Confirm 'y' to continue. [y/N] `)
 		log.Default().Printf("error creating directory ownership unit")
 		return err
 	}
+	err = makeUnit(u, "/etc/profile.d/xXDG.sh", xdgConfig)
+	if err != nil {
+		log.Default().Printf("error creating directory ownership unit")
+		return err
+	}
+
 	log.Default().Printf("Enabling systemd units")
 	reload := exec.Command("sudo", "systemctl", "daemon-reload")
 	reload.Stderr = os.Stderr
@@ -280,3 +286,5 @@ ExecStart=chown -R {{.User}}:root /nix
 var singleUserCommand = "sh <(curl -L https://nixos.org/nix/install) --no-daemon"
 
 var nixConf = "experimental-features = nix-command flakes"
+
+var xdgConfig = "XDG_DATA_DIRS=$HOME/.nix-profile/share:$XDG_DATA_DIRS"
