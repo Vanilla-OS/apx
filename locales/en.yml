@@ -78,6 +78,7 @@ nixinstall:
   allowUnfree: "Allow packages with unfree licenses"
   error: "error installing packages"
   runInit: "Have you run the `init` command yet?"
+  success: "Successfully installed package."
 purge:
   use: "purge <packages>"
   long: "Purge packages inside a managed container"
@@ -99,6 +100,8 @@ show:
   long: "Show details about a package"
   short: "Show details about a package"
   isInstalled: "Only return whether the package is instaled"
+  found: "%s is installed"
+  notFound: "%s is not installed"
 unexport:
   use: "unexport <package>"
   long: "Unexport/Remove a program's desktop entry from a managed container.\nIf --bin flag is provided, remove link to container binary."

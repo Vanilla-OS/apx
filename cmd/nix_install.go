@@ -50,7 +50,7 @@ func installPackage(cmd *cobra.Command, args []string) error {
 	if err != nil {
 		return err
 	}
-	cmdr.Success.Println("Package installation complete")
+	cmdr.Success.Println(apx.Trans("nixinstall.success"))
 	return nil
 
 }

@@ -42,10 +42,10 @@ func show(cmd *cobra.Command, args []string) error {
 		}
 
 		if result {
-			cmdr.Info.Printf("%s is installed", args[0])
+			cmdr.Info.Printf(apx.Trans("show.found", args[0]))
 			os.Exit(0)
 		} else {
-			cmdr.Info.Printf("%s is not installed", args[0])
+			cmdr.Info.Printf(apx.Trans("show.notFound", args[0]))
 			os.Exit(1)
 		}
 
