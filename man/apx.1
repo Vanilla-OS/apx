@@ -16,7 +16,21 @@ Apx is a package manager with support for multiple sources,
 allowing you to install packages in a managed container\&.
 .RE
 .SH OPTIONS
-  -v, --verbose   show more detailed output
+  -v, --verbose       show more detailed output
+.PP
+      --apt           Install packages from the Ubuntu repository\&.
+.PP
+      --aur           Install packages from the AUR (Arch User Repository)\&.
+.PP
+      --dnf           Install packages from the Fedora's DNF (Dandified YUM) repository\&.
+.PP
+      --apk           Install packages from the Alpine repository\&.
+.PP
+      --zypper        Install packages from the OpenSUSE repository\&.
+.PP
+      --xbps          Install packages from the Void (Linux) repository\&.
+.PP
+  -n, --name string   Apply to custom container with this name\&.
 .PP
 .SH APX COMMANDS
 .RS 4
@@ -128,7 +142,21 @@ Remove all unused packages automatically
   -a, --all   Apply for all containers\&.
 .PP
 .SS GLOBAL OPTIONS
-  -v, --verbose   show more detailed output
+  -v, --verbose       show more detailed output
+.PP
+      --apt           Install packages from the Ubuntu repository\&.
+.PP
+      --aur           Install packages from the AUR (Arch User Repository)\&.
+.PP
+      --dnf           Install packages from the Fedora's DNF (Dandified YUM) repository\&.
+.PP
+      --apk           Install packages from the Alpine repository\&.
+.PP
+      --zypper        Install packages from the OpenSUSE repository\&.
+.PP
+      --xbps          Install packages from the Void (Linux) repository\&.
+.PP
+  -n, --name string   Apply to custom container with this name\&.
 .PP
 .SH SUBCOMMAND CLEAN
 .RS 4
@@ -147,7 +175,21 @@ Clean the apx package manager cache
   -a, --all   Apply for all containers\&.
 .PP
 .SS GLOBAL OPTIONS
-  -v, --verbose   show more detailed output
+  -v, --verbose       show more detailed output
+.PP
+      --apt           Install packages from the Ubuntu repository\&.
+.PP
+      --aur           Install packages from the AUR (Arch User Repository)\&.
+.PP
+      --dnf           Install packages from the Fedora's DNF (Dandified YUM) repository\&.
+.PP
+      --apk           Install packages from the Alpine repository\&.
+.PP
+      --zypper        Install packages from the OpenSUSE repository\&.
+.PP
+      --xbps          Install packages from the Void (Linux) repository\&.
+.PP
+  -n, --name string   Apply to custom container with this name\&.
 .PP
 .SH SUBCOMMAND ENTER
 .RS 4
@@ -164,7 +206,21 @@ Enter a shell in the managed container
 .RE
 .SS OPTIONS
 .SS GLOBAL OPTIONS
-  -v, --verbose   show more detailed output
+  -v, --verbose       show more detailed output
+.PP
+      --apt           Install packages from the Ubuntu repository\&.
+.PP
+      --aur           Install packages from the AUR (Arch User Repository)\&.
+.PP
+      --dnf           Install packages from the Fedora's DNF (Dandified YUM) repository\&.
+.PP
+      --apk           Install packages from the Alpine repository\&.
+.PP
+      --zypper        Install packages from the OpenSUSE repository\&.
+.PP
+      --xbps          Install packages from the Void (Linux) repository\&.
+.PP
+  -n, --name string   Apply to custom container with this name\&.
 .PP
 .SH SUBCOMMAND EXPORT
 .RS 4
@@ -183,11 +239,27 @@ Export/Recreate a program's desktop entry from a managed container
       --bin   Export binary command
 .PP
 .SS GLOBAL OPTIONS
-  -v, --verbose   show more detailed output
+  -v, --verbose       show more detailed output
+.PP
+      --apt           Install packages from the Ubuntu repository\&.
+.PP
+      --aur           Install packages from the AUR (Arch User Repository)\&.
+.PP
+      --dnf           Install packages from the Fedora's DNF (Dandified YUM) repository\&.
+.PP
+      --apk           Install packages from the Alpine repository\&.
+.PP
+      --zypper        Install packages from the OpenSUSE repository\&.
+.PP
+      --xbps          Install packages from the Void (Linux) repository\&.
+.PP
+  -n, --name string   Apply to custom container with this name\&.
 .PP
 .SS EXAMPLES
 .RS 4
 apx export htop
+.PP
+apx export --bin fzf
 .RE
 .SH SUBCOMMAND INIT
 .RS 4
@@ -204,7 +276,21 @@ Initialize a managed container
 .RE
 .SS OPTIONS
 .SS GLOBAL OPTIONS
-  -v, --verbose   show more detailed output
+  -v, --verbose       show more detailed output
+.PP
+      --apt           Install packages from the Ubuntu repository\&.
+.PP
+      --aur           Install packages from the AUR (Arch User Repository)\&.
+.PP
+      --dnf           Install packages from the Fedora's DNF (Dandified YUM) repository\&.
+.PP
+      --apk           Install packages from the Alpine repository\&.
+.PP
+      --zypper        Install packages from the OpenSUSE repository\&.
+.PP
+      --xbps          Install packages from the Void (Linux) repository\&.
+.PP
+  -n, --name string   Apply to custom container with this name\&.
 .PP
 .SS EXAMPLES
 .RS 4
@@ -233,7 +319,21 @@ Install packages inside a managed container\&.
       --sideload     Install a package from a local file\&.
 .PP
 .SS GLOBAL OPTIONS
-  -v, --verbose   show more detailed output
+  -v, --verbose       show more detailed output
+.PP
+      --apt           Install packages from the Ubuntu repository\&.
+.PP
+      --aur           Install packages from the AUR (Arch User Repository)\&.
+.PP
+      --dnf           Install packages from the Fedora's DNF (Dandified YUM) repository\&.
+.PP
+      --apk           Install packages from the Alpine repository\&.
+.PP
+      --zypper        Install packages from the OpenSUSE repository\&.
+.PP
+      --xbps          Install packages from the Void (Linux) repository\&.
+.PP
+  -n, --name string   Apply to custom container with this name\&.
 .PP
 .SS EXAMPLES
 .RS 4
@@ -258,7 +358,21 @@ List installed packages\&.
   -i, --installed    Show installed packages
 .PP
 .SS GLOBAL OPTIONS
-  -v, --verbose   show more detailed output
+  -v, --verbose       show more detailed output
+.PP
+      --apt           Install packages from the Ubuntu repository\&.
+.PP
+      --aur           Install packages from the AUR (Arch User Repository)\&.
+.PP
+      --dnf           Install packages from the Fedora's DNF (Dandified YUM) repository\&.
+.PP
+      --apk           Install packages from the Alpine repository\&.
+.PP
+      --zypper        Install packages from the OpenSUSE repository\&.
+.PP
+      --xbps          Install packages from the Void (Linux) repository\&.
+.PP
+  -n, --name string   Apply to custom container with this name\&.
 .PP
 .SH SUBCOMMAND PURGE
 .RS 4
@@ -275,7 +389,21 @@ Purge packages inside a managed container
 .RE
 .SS OPTIONS
 .SS GLOBAL OPTIONS
-  -v, --verbose   show more detailed output
+  -v, --verbose       show more detailed output
+.PP
+      --apt           Install packages from the Ubuntu repository\&.
+.PP
+      --aur           Install packages from the AUR (Arch User Repository)\&.
+.PP
+      --dnf           Install packages from the Fedora's DNF (Dandified YUM) repository\&.
+.PP
+      --apk           Install packages from the Alpine repository\&.
+.PP
+      --zypper        Install packages from the OpenSUSE repository\&.
+.PP
+      --xbps          Install packages from the Void (Linux) repository\&.
+.PP
+  -n, --name string   Apply to custom container with this name\&.
 .PP
 .SS EXAMPLES
 .RS 4
@@ -298,7 +426,21 @@ Remove packages inside a managed container\&.
   -y, --assume-yes   Proceed without manual confirmation\&.
 .PP
 .SS GLOBAL OPTIONS
-  -v, --verbose   show more detailed output
+  -v, --verbose       show more detailed output
+.PP
+      --apt           Install packages from the Ubuntu repository\&.
+.PP
+      --aur           Install packages from the AUR (Arch User Repository)\&.
+.PP
+      --dnf           Install packages from the Fedora's DNF (Dandified YUM) repository\&.
+.PP
+      --apk           Install packages from the Alpine repository\&.
+.PP
+      --zypper        Install packages from the OpenSUSE repository\&.
+.PP
+      --xbps          Install packages from the Void (Linux) repository\&.
+.PP
+  -n, --name string   Apply to custom container with this name\&.
 .PP
 .SS EXAMPLES
 .RS 4
@@ -319,7 +461,21 @@ Run a program inside a managed container\&.
 .RE
 .SS OPTIONS
 .SS GLOBAL OPTIONS
-  -v, --verbose   show more detailed output
+  -v, --verbose       show more detailed output
+.PP
+      --apt           Install packages from the Ubuntu repository\&.
+.PP
+      --aur           Install packages from the AUR (Arch User Repository)\&.
+.PP
+      --dnf           Install packages from the Fedora's DNF (Dandified YUM) repository\&.
+.PP
+      --apk           Install packages from the Alpine repository\&.
+.PP
+      --zypper        Install packages from the OpenSUSE repository\&.
+.PP
+      --xbps          Install packages from the Void (Linux) repository\&.
+.PP
+  -n, --name string   Apply to custom container with this name\&.
 .PP
 .SS EXAMPLES
 .RS 4
@@ -340,7 +496,21 @@ Search for packages in a managed container\&.
 .RE
 .SS OPTIONS
 .SS GLOBAL OPTIONS
-  -v, --verbose   show more detailed output
+  -v, --verbose       show more detailed output
+.PP
+      --apt           Install packages from the Ubuntu repository\&.
+.PP
+      --aur           Install packages from the AUR (Arch User Repository)\&.
+.PP
+      --dnf           Install packages from the Fedora's DNF (Dandified YUM) repository\&.
+.PP
+      --apk           Install packages from the Alpine repository\&.
+.PP
+      --zypper        Install packages from the OpenSUSE repository\&.
+.PP
+      --xbps          Install packages from the Void (Linux) repository\&.
+.PP
+  -n, --name string   Apply to custom container with this name\&.
 .PP
 .SS EXAMPLES
 .RS 4
@@ -363,7 +533,21 @@ Show details about a package
   -i, --isinstalled   Only return whether the package is instaled
 .PP
 .SS GLOBAL OPTIONS
-  -v, --verbose   show more detailed output
+  -v, --verbose       show more detailed output
+.PP
+      --apt           Install packages from the Ubuntu repository\&.
+.PP
+      --aur           Install packages from the AUR (Arch User Repository)\&.
+.PP
+      --dnf           Install packages from the Fedora's DNF (Dandified YUM) repository\&.
+.PP
+      --apk           Install packages from the Alpine repository\&.
+.PP
+      --zypper        Install packages from the OpenSUSE repository\&.
+.PP
+      --xbps          Install packages from the Void (Linux) repository\&.
+.PP
+  -n, --name string   Apply to custom container with this name\&.
 .PP
 .SS EXAMPLES
 .RS 4
@@ -390,7 +574,21 @@ If --bin flag is provided, remove link to container binary\&.
       --bin   Unexport a previously exported binary\&.
 .PP
 .SS GLOBAL OPTIONS
-  -v, --verbose   show more detailed output
+  -v, --verbose       show more detailed output
+.PP
+      --apt           Install packages from the Ubuntu repository\&.
+.PP
+      --aur           Install packages from the AUR (Arch User Repository)\&.
+.PP
+      --dnf           Install packages from the Fedora's DNF (Dandified YUM) repository\&.
+.PP
+      --apk           Install packages from the Alpine repository\&.
+.PP
+      --zypper        Install packages from the OpenSUSE repository\&.
+.PP
+      --xbps          Install packages from the Void (Linux) repository\&.
+.PP
+  -n, --name string   Apply to custom container with this name\&.
 .PP
 .SS EXAMPLES
 .RS 4
@@ -415,7 +613,21 @@ Update the list of available packages
   -y, --assume-yes   Proceed without manual confirmation\&.
 .PP
 .SS GLOBAL OPTIONS
-  -v, --verbose   show more detailed output
+  -v, --verbose       show more detailed output
+.PP
+      --apt           Install packages from the Ubuntu repository\&.
+.PP
+      --aur           Install packages from the AUR (Arch User Repository)\&.
+.PP
+      --dnf           Install packages from the Fedora's DNF (Dandified YUM) repository\&.
+.PP
+      --apk           Install packages from the Alpine repository\&.
+.PP
+      --zypper        Install packages from the OpenSUSE repository\&.
+.PP
+      --xbps          Install packages from the Void (Linux) repository\&.
+.PP
+  -n, --name string   Apply to custom container with this name\&.
 .PP
 .SS EXAMPLES
 .RS 4
@@ -440,7 +652,21 @@ Update the list of available packages
   -y, --assume-yes   Proceed without manual confirmation\&.
 .PP
 .SS GLOBAL OPTIONS
-  -v, --verbose   show more detailed output
+  -v, --verbose       show more detailed output
+.PP
+      --apt           Install packages from the Ubuntu repository\&.
+.PP
+      --aur           Install packages from the AUR (Arch User Repository)\&.
+.PP
+      --dnf           Install packages from the Fedora's DNF (Dandified YUM) repository\&.
+.PP
+      --apk           Install packages from the Alpine repository\&.
+.PP
+      --zypper        Install packages from the OpenSUSE repository\&.
+.PP
+      --xbps          Install packages from the Void (Linux) repository\&.
+.PP
+  -n, --name string   Apply to custom container with this name\&.
 .PP
 .SH SUBCOMMAND NIX
 .RS 4
@@ -464,7 +690,21 @@ nix without using the `apx nix` command\&.
 .RE
 .SS OPTIONS
 .SS GLOBAL OPTIONS
-  -v, --verbose   show more detailed output
+  -v, --verbose       show more detailed output
+.PP
+      --apt           Install packages from the Ubuntu repository\&.
+.PP
+      --aur           Install packages from the AUR (Arch User Repository)\&.
+.PP
+      --dnf           Install packages from the Fedora's DNF (Dandified YUM) repository\&.
+.PP
+      --apk           Install packages from the Alpine repository\&.
+.PP
+      --zypper        Install packages from the OpenSUSE repository\&.
+.PP
+      --xbps          Install packages from the Void (Linux) repository\&.
+.PP
+  -n, --name string   Apply to custom container with this name\&.
 .PP
 .SH INIT
 .RS 4
