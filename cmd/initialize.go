@@ -10,6 +10,7 @@ package cmd
 
 import (
 	"github.com/spf13/cobra"
+	"github.com/vanilla-os/apx/core"
 	"github.com/vanilla-os/orchid/cmdr"
 )
 
@@ -53,4 +54,25 @@ func initialize(cmd *cobra.Command, args []string) error {
 	}
 
 	return nil
+}
+func initNix(cmd *cobra.Command, args []string) error {
+	// prompt for confirmation
+
+	b, err := cmdr.Confirm.Show(apx.Trans("nixinit.confirm"))
+
+	if err != nil {
+		return err
+	}
+
+	if !b {
+		cmdr.Info.Println(apx.Trans("apx.cxl"))
+		return nil
+	}
+	err = core.NixInit()
+	if err != nil {
+		return err
+	}
+	cmdr.Success.Println(apx.Trans("nixinit.success"))
+	return nil
+
 }

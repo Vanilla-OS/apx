@@ -10,6 +10,7 @@ package cmd
 
 import (
 	"github.com/spf13/cobra"
+	"github.com/vanilla-os/apx/core"
 	"github.com/vanilla-os/orchid/cmdr"
 )
 
@@ -53,4 +54,13 @@ func remove(cmd *cobra.Command, args []string) error {
 	}
 
 	return nil
+}
+func removePackage(cmd *cobra.Command, args []string) error {
+	err := core.NixRemovePackage(args[0])
+	if err != nil {
+		return err
+	}
+	cmdr.Success.Println(apx.Trans("nixremove.success"))
+	return nil
+
 }
