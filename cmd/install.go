@@ -66,10 +66,15 @@ func NewInstallCommand() *cmdr.Command {
 	*/
 	cmd.Example = "apx install htop git"
 	cmd.Flags().SetInterspersed(false)
+	cmd.Args = cobra.MinimumNArgs(1)
 	return cmd
 }
 
 func install(cmd *cobra.Command, args []string) error {
+	if cmd.Flag("nix").Changed {
+		return installPackage(cmd, args)
+	}
+
 	no_export := cmd.Flag("no-export").Changed
 	assume_yes := cmd.Flag("assume-yes").Changed
 	fix_broken := cmd.Flag("fix-broken").Changed

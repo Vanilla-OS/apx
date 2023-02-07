@@ -14,18 +14,6 @@ import (
 	"github.com/vanilla-os/orchid/cmdr"
 )
 
-func NewNixRemoveCommand() *cmdr.Command {
-	cmd := cmdr.NewCommand(
-		"remove <pkg>",
-		apx.Trans("nixremove.long"),
-		apx.Trans("nixremove.short"),
-		removePackage,
-	)
-
-	cmd.Args = cobra.ExactArgs(1)
-	cmd.Example = "apx nix remove jq"
-	return cmd
-}
 func removePackage(cmd *cobra.Command, args []string) error {
 	err := core.NixRemovePackage(args[0])
 	if err != nil {

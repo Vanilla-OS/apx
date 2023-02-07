@@ -14,33 +14,6 @@ import (
 	"github.com/vanilla-os/orchid/cmdr"
 )
 
-func NewNixInstallCommand() *cmdr.Command {
-	cmd := cmdr.NewCommand(
-		"install <pkg>",
-		apx.Trans("nixinstall.long"),
-		apx.Trans("nixinstall.short"),
-		installPackage,
-	).WithBoolFlag(
-		cmdr.NewBoolFlag(
-			"allow-unfree",
-			"u",
-			apx.Trans("nixinstall.allowUnfree"),
-			false,
-		),
-	)
-	/*
-			Use:     "install <pkg>",
-			Short:   "Install nix package",
-			Long:    `Install a package from the nixpkgs repository as a flake.`,
-			Example: "apx nix install jq",
-			RunE:    installPackage,
-			Args:    cobra.ExactArgs(1),
-		}
-	*/
-	cmd.Args = cobra.ExactArgs(1)
-	cmd.Example = "apx nix install jq"
-	return cmd
-}
 func installPackage(cmd *cobra.Command, args []string) error {
 	allowUnfree := false
 	if cmd.Flags().Changed("allow-unfree") {

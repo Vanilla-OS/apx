@@ -9,6 +9,7 @@ package cmd
 */
 
 import (
+	"errors"
 	"fmt"
 
 	"github.com/spf13/cobra"
@@ -34,6 +35,10 @@ func NewUnexportCommand() *cmdr.Command {
 }
 
 func unexport(cmd *cobra.Command, args []string) error {
+	if cmd.Flag("nix").Changed {
+		return errors.New(apx.Trans("apx.notForNix"))
+
+	}
 	if cmd.Flag("bin").Changed {
 		bin_name := args[0]
 		if err := container.RemoveBinary(bin_name, false); err != nil {

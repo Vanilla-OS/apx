@@ -32,7 +32,9 @@ func NewRemoveCommand() *cmdr.Command {
 }
 
 func remove(cmd *cobra.Command, args []string) error {
-
+	if cmd.Flag("nix").Changed {
+		return removePackage(cmd, args)
+	}
 	command := append([]string{}, container.GetPkgCommand("remove")...)
 	command = append(command, args...)
 

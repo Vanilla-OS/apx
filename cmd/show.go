@@ -9,6 +9,7 @@ package cmd
 */
 
 import (
+	"errors"
 	"os"
 
 	"github.com/spf13/cobra"
@@ -34,7 +35,10 @@ func NewShowCommand() *cmdr.Command {
 }
 
 func show(cmd *cobra.Command, args []string) error {
+	if cmd.Flag("nix").Changed {
+		return errors.New(apx.Trans("apx.notForNix"))
 
+	}
 	if cmd.Flag("isinstalled").Changed {
 		result, err := container.IsPackageInstalled(args[0])
 		if err != nil {

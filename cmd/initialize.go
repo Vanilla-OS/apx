@@ -26,7 +26,9 @@ func NewInitializeCommand() *cmdr.Command {
 }
 
 func initialize(cmd *cobra.Command, args []string) error {
-
+	if cmd.Flag("nix").Changed {
+		return initNix(cmd, args)
+	}
 	if container.Exists() {
 
 		b, err := cmdr.Confirm.Show(apx.Trans("init.confirm"))

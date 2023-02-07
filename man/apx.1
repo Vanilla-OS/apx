@@ -1,4 +1,4 @@
-.TH APX 1 "2023-02-06" "apx" "User Manual"
+.TH APX 1 "2023-02-07" "apx" "User Manual"
 .SH NAME
 .RS 4
 apx - Apx is a package manager with support for multiple sources,
@@ -29,6 +29,8 @@ allowing you to install packages in a managed container\&.
       --zypper        Install packages from the OpenSUSE repository\&.
 .PP
       --xbps          Install packages from the Void (Linux) repository\&.
+.PP
+      --nix           Install packages from the Nix packages repository\&.
 .PP
   -n, --name string   Apply to custom container with this name\&.
 .PP
@@ -109,11 +111,6 @@ Upgrade the system by installing/upgrading available packages\&.
 Update the list of available packages
 .PP
 .RE
-\fBnix\fP
-.RS 4
-Manage nix installation
-.PP
-.RE
 .RE
 .SH AUTHORS
 .PP
@@ -156,6 +153,8 @@ Remove all unused packages automatically
 .PP
       --xbps          Install packages from the Void (Linux) repository\&.
 .PP
+      --nix           Install packages from the Nix packages repository\&.
+.PP
   -n, --name string   Apply to custom container with this name\&.
 .PP
 .SH SUBCOMMAND CLEAN
@@ -189,6 +188,8 @@ Clean the apx package manager cache
 .PP
       --xbps          Install packages from the Void (Linux) repository\&.
 .PP
+      --nix           Install packages from the Nix packages repository\&.
+.PP
   -n, --name string   Apply to custom container with this name\&.
 .PP
 .SH SUBCOMMAND ENTER
@@ -219,6 +220,8 @@ Enter a shell in the managed container
       --zypper        Install packages from the OpenSUSE repository\&.
 .PP
       --xbps          Install packages from the Void (Linux) repository\&.
+.PP
+      --nix           Install packages from the Nix packages repository\&.
 .PP
   -n, --name string   Apply to custom container with this name\&.
 .PP
@@ -252,6 +255,8 @@ Export/Recreate a program's desktop entry from a managed container
       --zypper        Install packages from the OpenSUSE repository\&.
 .PP
       --xbps          Install packages from the Void (Linux) repository\&.
+.PP
+      --nix           Install packages from the Nix packages repository\&.
 .PP
   -n, --name string   Apply to custom container with this name\&.
 .PP
@@ -289,6 +294,8 @@ Initialize a managed container
       --zypper        Install packages from the OpenSUSE repository\&.
 .PP
       --xbps          Install packages from the Void (Linux) repository\&.
+.PP
+      --nix           Install packages from the Nix packages repository\&.
 .PP
   -n, --name string   Apply to custom container with this name\&.
 .PP
@@ -333,6 +340,8 @@ Install packages inside a managed container\&.
 .PP
       --xbps          Install packages from the Void (Linux) repository\&.
 .PP
+      --nix           Install packages from the Nix packages repository\&.
+.PP
   -n, --name string   Apply to custom container with this name\&.
 .PP
 .SS EXAMPLES
@@ -372,6 +381,8 @@ List installed packages\&.
 .PP
       --xbps          Install packages from the Void (Linux) repository\&.
 .PP
+      --nix           Install packages from the Nix packages repository\&.
+.PP
   -n, --name string   Apply to custom container with this name\&.
 .PP
 .SH SUBCOMMAND PURGE
@@ -402,6 +413,8 @@ Purge packages inside a managed container
       --zypper        Install packages from the OpenSUSE repository\&.
 .PP
       --xbps          Install packages from the Void (Linux) repository\&.
+.PP
+      --nix           Install packages from the Nix packages repository\&.
 .PP
   -n, --name string   Apply to custom container with this name\&.
 .PP
@@ -440,6 +453,8 @@ Remove packages inside a managed container\&.
 .PP
       --xbps          Install packages from the Void (Linux) repository\&.
 .PP
+      --nix           Install packages from the Nix packages repository\&.
+.PP
   -n, --name string   Apply to custom container with this name\&.
 .PP
 .SS EXAMPLES
@@ -475,6 +490,8 @@ Run a program inside a managed container\&.
 .PP
       --xbps          Install packages from the Void (Linux) repository\&.
 .PP
+      --nix           Install packages from the Nix packages repository\&.
+.PP
   -n, --name string   Apply to custom container with this name\&.
 .PP
 .SS EXAMPLES
@@ -509,6 +526,8 @@ Search for packages in a managed container\&.
       --zypper        Install packages from the OpenSUSE repository\&.
 .PP
       --xbps          Install packages from the Void (Linux) repository\&.
+.PP
+      --nix           Install packages from the Nix packages repository\&.
 .PP
   -n, --name string   Apply to custom container with this name\&.
 .PP
@@ -546,6 +565,8 @@ Show details about a package
       --zypper        Install packages from the OpenSUSE repository\&.
 .PP
       --xbps          Install packages from the Void (Linux) repository\&.
+.PP
+      --nix           Install packages from the Nix packages repository\&.
 .PP
   -n, --name string   Apply to custom container with this name\&.
 .PP
@@ -588,6 +609,8 @@ If --bin flag is provided, remove link to container binary\&.
 .PP
       --xbps          Install packages from the Void (Linux) repository\&.
 .PP
+      --nix           Install packages from the Nix packages repository\&.
+.PP
   -n, --name string   Apply to custom container with this name\&.
 .PP
 .SS EXAMPLES
@@ -626,6 +649,8 @@ Update the list of available packages
       --zypper        Install packages from the OpenSUSE repository\&.
 .PP
       --xbps          Install packages from the Void (Linux) repository\&.
+.PP
+      --nix           Install packages from the Nix packages repository\&.
 .PP
   -n, --name string   Apply to custom container with this name\&.
 .PP
@@ -666,59 +691,8 @@ Update the list of available packages
 .PP
       --xbps          Install packages from the Void (Linux) repository\&.
 .PP
-  -n, --name string   Apply to custom container with this name\&.
-.PP
-.SH SUBCOMMAND NIX
-.RS 4
-Manage nix installation
-.RE
-.SS SYNOPSIS
-.RS 4
-\fBnix\fP [command] [flags] [arguments]
-.RE
-.SS DESCRIPTION
-.RS 4
-.TP 4
-Manage a custom installation of nix in your $HOME directory\&.
-.PP
-.PP
-The `apx nix` integration serves as a wrapper for the
-.PP
-default nix profile\&. Once installed, you are free to use any features of
-.PP
-nix without using the `apx nix` command\&.
-.RE
-.SS OPTIONS
-.SS GLOBAL OPTIONS
-  -v, --verbose       show more detailed output
-.PP
-      --apt           Install packages from the Ubuntu repository\&.
-.PP
-      --aur           Install packages from the AUR (Arch User Repository)\&.
-.PP
-      --dnf           Install packages from the Fedora's DNF (Dandified YUM) repository\&.
-.PP
-      --apk           Install packages from the Alpine repository\&.
-.PP
-      --zypper        Install packages from the OpenSUSE repository\&.
-.PP
-      --xbps          Install packages from the Void (Linux) repository\&.
+      --nix           Install packages from the Nix packages repository\&.
 .PP
   -n, --name string   Apply to custom container with this name\&.
 .PP
-.SH INIT
-.RS 4
-Initialize nix repository
-.PP
-.RE
-.SH INSTALL
-.RS 4
-Install nix package
-.PP
-.RE
-.SH REMOVE
-.RS 4
-Remove a nix package
-.PP
-.RE
 

@@ -9,6 +9,8 @@ package cmd
 */
 
 import (
+	"errors"
+
 	"github.com/spf13/cobra"
 	"github.com/vanilla-os/apx/core"
 	"github.com/vanilla-os/orchid/cmdr"
@@ -32,6 +34,10 @@ func NewCleanCommand() *cmdr.Command {
 }
 
 func clean(cmd *cobra.Command, args []string) error {
+	if cmd.Flag("nix").Changed {
+		return errors.New(apx.Trans("apx.notForNix"))
+
+	}
 	if cmd.Flag("all").Changed {
 		if err := core.ApplyForAll("clean", []string{}); err != nil {
 			return err

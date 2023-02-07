@@ -5,6 +5,7 @@ flags:
   apk: "Install packages from the Alpine repository."
   zypper: "Install packages from the OpenSUSE repository."
   xbps: "Install packages from the Void (Linux) repository."
+  nix: "Install packages from the Nix packages repository."
   name: "Apply to custom container with this name."
 apx:
   use: "apx"
@@ -14,6 +15,7 @@ apx:
   allFlag: "Apply for all containers."
   cxl: "Operation canceled at user request."
   assumeYes: "Proceed without manual confirmation."
+  notForNix: "This command does not apply to the nix environment."
 autoremove:
   use: "autoremove"
   long: "Remove all unused packages automatically"

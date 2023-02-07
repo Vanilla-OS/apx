@@ -14,16 +14,6 @@ import (
 	"github.com/vanilla-os/orchid/cmdr"
 )
 
-func NewNixInitCommand() *cmdr.Command {
-	cmd := cmdr.NewCommand(
-		"init",
-		apx.Trans("nixinit.long"),
-		apx.Trans("nixinit.short"),
-		initNix,
-	)
-	cmd.Example = "apx nix init"
-	return cmd
-}
 func initNix(cmd *cobra.Command, args []string) error {
 	// prompt for confirmation
 
