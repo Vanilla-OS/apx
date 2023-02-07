@@ -17,7 +17,7 @@ import (
 )
 
 var (
-	Version = "1.6.1"
+	Version = "1.6.2"
 )
 
 //go:embed locales/*.yml
@@ -148,9 +148,6 @@ func main() {
 	update := cmd.NewUpdateCommand()
 	update.GroupID = containerGroup.ID
 	root.AddCommand(cmd.AddContainerFlags(update))
-	nix := cmd.NewNixCommand()
-	nix.GroupID = nixGroup.ID
-	root.AddCommand(nix)
 	cmd.AddContainerFlags(root)
 	// run the app
 	err := apx.Run()

@@ -9,6 +9,8 @@ package cmd
 */
 
 import (
+	"errors"
+
 	"github.com/spf13/cobra"
 	"github.com/vanilla-os/orchid/cmdr"
 )
@@ -39,7 +41,10 @@ func NewListCommand() *cmdr.Command {
 }
 
 func list(cmd *cobra.Command, args []string) error {
+	if cmd.Flag("nix").Changed {
+		return errors.New(apx.Trans("apx.notForNix"))
 
+	}
 	command := append([]string{}, container.GetPkgCommand("list")...)
 
 	if cmd.Flag("upgradable").Changed {

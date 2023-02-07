@@ -9,6 +9,8 @@ package cmd
 */
 
 import (
+	"errors"
+
 	"github.com/spf13/cobra"
 	"github.com/vanilla-os/orchid/cmdr"
 )
@@ -24,7 +26,10 @@ func NewSearchCommand() *cmdr.Command {
 }
 
 func search(cmd *cobra.Command, args []string) error {
+	if cmd.Flag("nix").Changed {
+		return errors.New(apx.Trans("apx.notForNix"))
 
+	}
 	command := append([]string{}, container.GetPkgCommand("search")...)
 	command = append(command, args...)
 

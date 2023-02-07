@@ -9,6 +9,8 @@ package cmd
 */
 
 import (
+	"errors"
+
 	"github.com/spf13/cobra"
 	"github.com/vanilla-os/orchid/cmdr"
 )
@@ -25,7 +27,10 @@ func NewPurgeCommand() *cmdr.Command {
 }
 
 func purge(cmd *cobra.Command, args []string) error {
+	if cmd.Flag("nix").Changed {
+		return errors.New(apx.Trans("apx.notForNix"))
 
+	}
 	command := append([]string{}, container.GetPkgCommand("purge")...)
 	command = append(command, args...)
 

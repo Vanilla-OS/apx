@@ -9,6 +9,8 @@ package cmd
 */
 
 import (
+	"errors"
+
 	"github.com/spf13/cobra"
 	"github.com/vanilla-os/orchid/cmdr"
 )
@@ -33,6 +35,10 @@ func NewExportCommand() *cmdr.Command {
 }
 
 func export(cmd *cobra.Command, args []string) error {
+	if cmd.Flag("nix").Changed {
+		return errors.New(apx.Trans("apx.notForNix"))
+
+	}
 	if cmd.Flag("bin").Changed {
 		if err := container.ExportBinary(args[0]); err != nil {
 			cmdr.Error.Printf("Error: %s\n", err)

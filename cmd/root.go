@@ -14,7 +14,7 @@ import (
 var apx *cmdr.App
 
 // package level variables for viper flags
-var apt, aur, dnf, apk, zypper, xbps bool
+var apt, aur, dnf, apk, zypper, xbps, nix bool
 
 // package level variable for container name,
 // set in root command's PersistentPreRun function
@@ -95,6 +95,7 @@ func AddContainerFlags(cmd *cmdr.Command) *cmdr.Command {
 	cmd.PersistentFlags().BoolVar(&apk, "apk", false, apx.Trans("flags.apk"))
 	cmd.PersistentFlags().BoolVar(&zypper, "zypper", false, apx.Trans("flags.zypper"))
 	cmd.PersistentFlags().BoolVar(&xbps, "xbps", false, apx.Trans("flags.xbps"))
+	cmd.PersistentFlags().BoolVar(&nix, "nix", false, apx.Trans("flags.nix"))
 	cmd.PersistentFlags().StringVarP(&name, "name", "n", "", apx.Trans("flags.name"))
 	viper.BindPFlag("aur", cmd.PersistentFlags().Lookup("aur"))
 	viper.BindPFlag("apt", cmd.PersistentFlags().Lookup("apt"))
@@ -102,6 +103,7 @@ func AddContainerFlags(cmd *cmdr.Command) *cmdr.Command {
 	viper.BindPFlag("apk", cmd.PersistentFlags().Lookup("apk"))
 	viper.BindPFlag("zypper", cmd.PersistentFlags().Lookup("zypper"))
 	viper.BindPFlag("xbps", cmd.PersistentFlags().Lookup("xbps"))
+	viper.BindPFlag("nix", cmd.PersistentFlags().Lookup("nix"))
 	return cmd
 }
 

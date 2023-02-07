@@ -9,6 +9,8 @@ package cmd
 */
 
 import (
+	"errors"
+
 	"github.com/spf13/cobra"
 	"github.com/vanilla-os/orchid/cmdr"
 )
@@ -24,7 +26,10 @@ func NewEnterCommand() *cmdr.Command {
 }
 
 func enter(cmd *cobra.Command, args []string) error {
+	if cmd.Flag("nix").Changed {
+		return errors.New(apx.Trans("apx.notForNix"))
 
+	}
 	if err := container.Enter(); err != nil {
 		cmdr.Error.Println(apx.Trans("enter.failedEnter"), err)
 		return err
