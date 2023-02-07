@@ -1,4 +1,4 @@
-apx (1.6.1) kinetic; urgency=medium
+apx (1.6.2) kinetic; urgency=medium
 
   * New nix flag for the nix package manager
   * Porting to the orchid library
