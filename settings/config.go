@@ -30,6 +30,7 @@ var Cnf *Config
 
 func init() {
 	viper.AddConfigPath("/etc/apx/")
+	viper.AddConfigPath("/usr/share/apx/")
 	viper.AddConfigPath("config/")
 	viper.SetConfigName("config")
 	viper.SetConfigType("json")
