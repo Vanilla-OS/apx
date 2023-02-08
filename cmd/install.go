@@ -50,6 +50,13 @@ func NewInstallCommand() *cmdr.Command {
 			apx.Trans("install.sideload"),
 			false,
 		),
+	).WithBoolFlag(
+		cmdr.NewBoolFlag(
+			"allow-unfree",
+			"",
+			apx.Trans("nixinstall.allowUnfree"),
+			false,
+		),
 	)
 	/*
 				Example: `apx install htop git
