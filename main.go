@@ -83,11 +83,6 @@ func main() {
 		Title: "Managed Container Commands",
 	}
 	root.AddGroup(containerGroup)
-	nixGroup := &cobra.Group{
-		ID:    "nix",
-		Title: "Nix Commands",
-	}
-	root.AddGroup(nixGroup)
 
 	autoremove := cmd.NewAutoRemoveCommand()
 	autoremove.GroupID = containerGroup.ID
