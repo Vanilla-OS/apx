@@ -81,6 +81,8 @@ nixinstall:
   error: "error installing packages"
   runInit: "Have you run the `init` command yet?"
   success: "Successfully installed package."
+nixupgrade:
+  success: "Successfully upgraded package."
 purge:
   use: "purge <packages>"
   long: "Purge packages inside a managed container"

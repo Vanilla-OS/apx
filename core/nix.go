@@ -39,6 +39,43 @@ func NixInstallPackage(pkg string, unfree bool) error {
 	return nil
 
 }
+func NixUpgradePackage(pkg string) error {
+	list := exec.Command("nix", "profile", "list")
+	bb, err := list.Output()
+	if err != nil {
+		log.Default().Println("error getting installed packages")
+		log.Default().Println("have you run the `init` command yet?")
+		return err
+	}
+	lines := bytes.Split(bb, []byte("\n"))
+	needle := []byte("." + pkg)
+	var pkgNumber string
+	// output:
+	//5 flake:nixpkgs#legacyPackages.x86_64-linux.go github:NixOS/nixpkgs/79feedf38536de2a27d13fe2eaf200a9c05193ba#legacyPackages.x86_64-linux.go /nix/store/v6i0a6bfx3707airawpc2589pbbl465r-go-1.19.5
+	if len(lines) > 0 {
+		for _, line := range lines {
+			// split the line by fields, field[0] is the package number
+			// field[1] has the full package name
+			pieces := bytes.Split(line, []byte(" "))
+			if len(pieces) > 1 {
+				if bytes.Contains(pieces[1], needle) {
+					// this is our package
+					pkgNumber = string(pieces[0])
+					break
+				}
+			}
+		}
+		if pkgNumber == "" {
+			return errors.New("package not found")
+		}
+		upgrade := exec.Command("nix", "profile", "upgrade", pkgNumber)
+		err = upgrade.Run()
+		return err
+
+	}
+	return errors.New("no packages installed")
+
+}
 func NixRemovePackage(pkg string) error {
 	list := exec.Command("nix", "profile", "list")
 	bb, err := list.Output()
