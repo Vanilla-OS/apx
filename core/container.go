@@ -216,6 +216,11 @@ func (c *Container) Enter() error {
 
 	err := cmd.Run()
 	if err != nil {
+		// last command failed, not apx
+		if err.Error() == "exit status 1" {
+			return nil
+		}
+		// avoid panic on ctrl-c
 		if err.Error() != "exit status 130" {
 			return err
 		}
@@ -573,7 +578,7 @@ func ApplyForAll(command string, flags []string) error {
 
 		name := container.GetContainerName()
 
-        fmt.Println()
+		fmt.Println()
 		log.Default().Println(fmt.Sprintf("Running %s in %s...", command, name))
 
 		command := append([]string{}, container.GetPkgCommand(command)...)
