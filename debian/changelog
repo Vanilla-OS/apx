@@ -1,4 +1,4 @@
-apx (1.7.0) kinetic; urgency=medium
+apx (1.7.0-1) kinetic; urgency=medium
 
   * New translations
   * Fix command summary
