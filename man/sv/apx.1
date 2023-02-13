@@ -1,0 +1,694 @@
+.TH APX 1 "2023-02-13" "apx" "User Manual"
+.SH NAME
+.RS 4
+apx\&.use - apx\&.short
+.RE
+.SH SYNOPSIS
+.RS 4
+apx\&.use [command] [flags] [arguments]
+.RE
+.SH DESCRIPTION
+.RS 4
+apx\&.long
+.RE
+.SH OPTIONS
+  -v, --verbose       apx\&.verboseFlag
+.PP
+      --apt           flags\&.apt
+.PP
+      --aur           flags\&.aur
+.PP
+      --dnf           flags\&.dnf
+.PP
+      --apk           flags\&.apk
+.PP
+      --zypper        flags\&.zypper
+.PP
+      --xbps          flags\&.xbps
+.PP
+      --nix           flags\&.nix
+.PP
+  -n, --name string   flags\&.name
+.PP
+.SH APX.USE COMMANDS
+.RS 4
+\fBautoremove\fP
+.RS 4
+autoremove\&.short
+.PP
+.RE
+\fBclean\fP
+.RS 4
+clean\&.short
+.PP
+.RE
+\fBenter\fP
+.RS 4
+enter\&.short
+.PP
+.RE
+\fBexport\fP
+.RS 4
+export\&.short
+.PP
+.RE
+\fBinit\fP
+.RS 4
+init\&.short
+.PP
+.RE
+\fBinstall\fP
+.RS 4
+install\&.short
+.PP
+.RE
+\fBlist\fP
+.RS 4
+list\&.short
+.PP
+.RE
+\fBpurge\fP
+.RS 4
+purge\&.short
+.PP
+.RE
+\fBremove\fP
+.RS 4
+remove\&.short
+.PP
+.RE
+\fBrun\fP
+.RS 4
+run\&.short
+.PP
+.RE
+\fBsearch\fP
+.RS 4
+search\&.short
+.PP
+.RE
+\fBshow\fP
+.RS 4
+show\&.short
+.PP
+.RE
+\fBunexport\fP
+.RS 4
+unexport\&.short
+.PP
+.RE
+\fBupgrade\fP
+.RS 4
+upgrade\&.short
+.PP
+.RE
+\fBupdate\fP
+.RS 4
+update\&.short
+.PP
+.RE
+.RE
+.SH AUTHORS
+.PP
+Written by Vanilla OS contributors\&.
+.SH REPORT BUGS TO
+.PP
+https://github\&.com/vanilla-os/apx/issues
+.SH LICENSE
+.PP
+GPLv3+: GNU GPL version 3 or later <http://gnu\&.org/licenses/gpl\&.html>\&.
+.SH APX SUBCOMMANDS
+.SH SUBCOMMAND AUTOREMOVE
+.RS 4
+autoremove\&.short
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBautoremove\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+autoremove\&.long
+.RE
+.SS OPTIONS
+  -a, --all   apx\&.allFlag
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       apx\&.verboseFlag
+.PP
+      --apt           flags\&.apt
+.PP
+      --aur           flags\&.aur
+.PP
+      --dnf           flags\&.dnf
+.PP
+      --apk           flags\&.apk
+.PP
+      --zypper        flags\&.zypper
+.PP
+      --xbps          flags\&.xbps
+.PP
+      --nix           flags\&.nix
+.PP
+  -n, --name string   flags\&.name
+.PP
+.SH SUBCOMMAND CLEAN
+.RS 4
+clean\&.short
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBclean\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+clean\&.long
+.RE
+.SS OPTIONS
+  -a, --all   apx\&.allFlag
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       apx\&.verboseFlag
+.PP
+      --apt           flags\&.apt
+.PP
+      --aur           flags\&.aur
+.PP
+      --dnf           flags\&.dnf
+.PP
+      --apk           flags\&.apk
+.PP
+      --zypper        flags\&.zypper
+.PP
+      --xbps          flags\&.xbps
+.PP
+      --nix           flags\&.nix
+.PP
+  -n, --name string   flags\&.name
+.PP
+.SH SUBCOMMAND ENTER
+.RS 4
+enter\&.short
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBenter\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+enter\&.long
+.RE
+.SS OPTIONS
+.SS GLOBAL OPTIONS
+  -v, --verbose       apx\&.verboseFlag
+.PP
+      --apt           flags\&.apt
+.PP
+      --aur           flags\&.aur
+.PP
+      --dnf           flags\&.dnf
+.PP
+      --apk           flags\&.apk
+.PP
+      --zypper        flags\&.zypper
+.PP
+      --xbps          flags\&.xbps
+.PP
+      --nix           flags\&.nix
+.PP
+  -n, --name string   flags\&.name
+.PP
+.SH SUBCOMMAND EXPORT
+.RS 4
+export\&.short
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBexport\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+export\&.long
+.RE
+.SS OPTIONS
+      --bin   export\&.binFlag
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       apx\&.verboseFlag
+.PP
+      --apt           flags\&.apt
+.PP
+      --aur           flags\&.aur
+.PP
+      --dnf           flags\&.dnf
+.PP
+      --apk           flags\&.apk
+.PP
+      --zypper        flags\&.zypper
+.PP
+      --xbps          flags\&.xbps
+.PP
+      --nix           flags\&.nix
+.PP
+  -n, --name string   flags\&.name
+.PP
+.SS EXAMPLES
+.RS 4
+apx export htop
+.PP
+apx export --bin fzf
+.RE
+.SH SUBCOMMAND INIT
+.RS 4
+init\&.short
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBinit\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+init\&.long
+.RE
+.SS OPTIONS
+.SS GLOBAL OPTIONS
+  -v, --verbose       apx\&.verboseFlag
+.PP
+      --apt           flags\&.apt
+.PP
+      --aur           flags\&.aur
+.PP
+      --dnf           flags\&.dnf
+.PP
+      --apk           flags\&.apk
+.PP
+      --zypper        flags\&.zypper
+.PP
+      --xbps          flags\&.xbps
+.PP
+      --nix           flags\&.nix
+.PP
+  -n, --name string   flags\&.name
+.PP
+.SS EXAMPLES
+.RS 4
+apx init
+.RE
+.SH SUBCOMMAND INSTALL
+.RS 4
+install\&.short
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBinstall\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+install\&.long
+.RE
+.SS OPTIONS
+  -y, --assume-yes     install\&.assumeYes
+.PP
+  -f, --fix-broken     install\&.fixBroken
+.PP
+      --no-export      install\&.noExport
+.PP
+      --sideload       install\&.sideload
+.PP
+      --allow-unfree   nixinstall\&.allowUnfree
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       apx\&.verboseFlag
+.PP
+      --apt           flags\&.apt
+.PP
+      --aur           flags\&.aur
+.PP
+      --dnf           flags\&.dnf
+.PP
+      --apk           flags\&.apk
+.PP
+      --zypper        flags\&.zypper
+.PP
+      --xbps          flags\&.xbps
+.PP
+      --nix           flags\&.nix
+.PP
+  -n, --name string   flags\&.name
+.PP
+.SS EXAMPLES
+.RS 4
+apx install htop git
+.RE
+.SH SUBCOMMAND LIST
+.RS 4
+list\&.short
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBlist\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+list\&.long
+.RE
+.SS OPTIONS
+  -u, --upgradable   list\&.upgradable
+.PP
+  -i, --installed    list\&.installed
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       apx\&.verboseFlag
+.PP
+      --apt           flags\&.apt
+.PP
+      --aur           flags\&.aur
+.PP
+      --dnf           flags\&.dnf
+.PP
+      --apk           flags\&.apk
+.PP
+      --zypper        flags\&.zypper
+.PP
+      --xbps          flags\&.xbps
+.PP
+      --nix           flags\&.nix
+.PP
+  -n, --name string   flags\&.name
+.PP
+.SH SUBCOMMAND PURGE
+.RS 4
+purge\&.short
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBpurge\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+purge\&.long
+.RE
+.SS OPTIONS
+.SS GLOBAL OPTIONS
+  -v, --verbose       apx\&.verboseFlag
+.PP
+      --apt           flags\&.apt
+.PP
+      --aur           flags\&.aur
+.PP
+      --dnf           flags\&.dnf
+.PP
+      --apk           flags\&.apk
+.PP
+      --zypper        flags\&.zypper
+.PP
+      --xbps          flags\&.xbps
+.PP
+      --nix           flags\&.nix
+.PP
+  -n, --name string   flags\&.name
+.PP
+.SS EXAMPLES
+.RS 4
+apx purge htop
+.RE
+.SH SUBCOMMAND REMOVE
+.RS 4
+remove\&.short
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBremove\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+remove\&.long
+.RE
+.SS OPTIONS
+  -y, --assume-yes   apx\&.assumeYes
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       apx\&.verboseFlag
+.PP
+      --apt           flags\&.apt
+.PP
+      --aur           flags\&.aur
+.PP
+      --dnf           flags\&.dnf
+.PP
+      --apk           flags\&.apk
+.PP
+      --zypper        flags\&.zypper
+.PP
+      --xbps          flags\&.xbps
+.PP
+      --nix           flags\&.nix
+.PP
+  -n, --name string   flags\&.name
+.PP
+.SS EXAMPLES
+.RS 4
+apx remove htop
+.RE
+.SH SUBCOMMAND RUN
+.RS 4
+run\&.short
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBrun\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+run\&.long
+.RE
+.SS OPTIONS
+.SS GLOBAL OPTIONS
+  -v, --verbose       apx\&.verboseFlag
+.PP
+      --apt           flags\&.apt
+.PP
+      --aur           flags\&.aur
+.PP
+      --dnf           flags\&.dnf
+.PP
+      --apk           flags\&.apk
+.PP
+      --zypper        flags\&.zypper
+.PP
+      --xbps          flags\&.xbps
+.PP
+      --nix           flags\&.nix
+.PP
+  -n, --name string   flags\&.name
+.PP
+.SS EXAMPLES
+.RS 4
+apx run htop
+.RE
+.SH SUBCOMMAND SEARCH
+.RS 4
+search\&.short
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBsearch\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+search\&.long
+.RE
+.SS OPTIONS
+.SS GLOBAL OPTIONS
+  -v, --verbose       apx\&.verboseFlag
+.PP
+      --apt           flags\&.apt
+.PP
+      --aur           flags\&.aur
+.PP
+      --dnf           flags\&.dnf
+.PP
+      --apk           flags\&.apk
+.PP
+      --zypper        flags\&.zypper
+.PP
+      --xbps          flags\&.xbps
+.PP
+      --nix           flags\&.nix
+.PP
+  -n, --name string   flags\&.name
+.PP
+.SS EXAMPLES
+.RS 4
+apx search neovim
+.RE
+.SH SUBCOMMAND SHOW
+.RS 4
+show\&.short
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBshow\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+show\&.long
+.RE
+.SS OPTIONS
+  -i, --isinstalled   show\&.isInstalled
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       apx\&.verboseFlag
+.PP
+      --apt           flags\&.apt
+.PP
+      --aur           flags\&.aur
+.PP
+      --dnf           flags\&.dnf
+.PP
+      --apk           flags\&.apk
+.PP
+      --zypper        flags\&.zypper
+.PP
+      --xbps          flags\&.xbps
+.PP
+      --nix           flags\&.nix
+.PP
+  -n, --name string   flags\&.name
+.PP
+.SS EXAMPLES
+.RS 4
+apx show htop
+.PP
+apx show -i neovim
+.RE
+.SH SUBCOMMAND UNEXPORT
+.RS 4
+unexport\&.short
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBunexport\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+unexport\&.long
+.RE
+.SS OPTIONS
+      --bin   unexport\&.binFlag
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       apx\&.verboseFlag
+.PP
+      --apt           flags\&.apt
+.PP
+      --aur           flags\&.aur
+.PP
+      --dnf           flags\&.dnf
+.PP
+      --apk           flags\&.apk
+.PP
+      --zypper        flags\&.zypper
+.PP
+      --xbps          flags\&.xbps
+.PP
+      --nix           flags\&.nix
+.PP
+  -n, --name string   flags\&.name
+.PP
+.SS EXAMPLES
+.RS 4
+apx unexport code
+.RE
+.SH SUBCOMMAND UPGRADE
+.RS 4
+upgrade\&.short
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBupgrade\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+update\&.long
+.RE
+.SS OPTIONS
+  -a, --all          apx\&.allFlag
+.PP
+  -y, --assume-yes   apx\&.assumeYes
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       apx\&.verboseFlag
+.PP
+      --apt           flags\&.apt
+.PP
+      --aur           flags\&.aur
+.PP
+      --dnf           flags\&.dnf
+.PP
+      --apk           flags\&.apk
+.PP
+      --zypper        flags\&.zypper
+.PP
+      --xbps          flags\&.xbps
+.PP
+      --nix           flags\&.nix
+.PP
+  -n, --name string   flags\&.name
+.PP
+.SS EXAMPLES
+.RS 4
+apx upgrade
+.RE
+.SH SUBCOMMAND UPDATE
+.RS 4
+update\&.short
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBupdate\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+update\&.long
+.RE
+.SS OPTIONS
+  -a, --all          apx\&.allFlag
+.PP
+  -y, --assume-yes   apx\&.assumeYes
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       apx\&.verboseFlag
+.PP
+      --apt           flags\&.apt
+.PP
+      --aur           flags\&.aur
+.PP
+      --dnf           flags\&.dnf
+.PP
+      --apk           flags\&.apk
+.PP
+      --zypper        flags\&.zypper
+.PP
+      --xbps          flags\&.xbps
+.PP
+      --nix           flags\&.nix
+.PP
+  -n, --name string   flags\&.name
+.PP
+
