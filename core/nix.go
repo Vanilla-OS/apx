@@ -39,11 +39,33 @@ func NixInstallPackage(pkg string, unfree bool) error {
 	return nil
 
 }
+
+func NixSearchPackage(pkg string) error {
+	cmd := []string{}
+	cmd = append(cmd, "nix", "search", "nixpkgs", pkg)
+
+	search := exec.Command(cmd[0], cmd[1:]...)
+	search.Stderr = os.Stderr
+	search.Stdin = os.Stdin
+	search.Stdout = os.Stdout
+
+	err := search.Run()
+	if err != nil {
+		cmdr.Error.Println("error searching for package", err.Error())
+		return err
+	}
+
+	return nil
+
+}
+
 func NixUpgradePackage(pkg string) error {
 	list := exec.Command("nix", "profile", "list")
 	bb, err := list.Output()
 	if err != nil {
+
 		log.Default().Println("error getting installed packages")
+
 		log.Default().Println("have you run the `init` command yet?")
 		return err
 	}
