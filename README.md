@@ -65,3 +65,7 @@ to point to the desired package manger and image.
 
 To add new dependencies, use `go get` as usual, then run `go mod tidy` and finally `go mod vendor` before
 committing code.
+
+## Testing Translations locally
+
+To test translations made in the `.yml` file locally, perform `go build` first in the correct directory then execute this command `LANG=<language_code> ./apx man > man/<language_code>/apx.1` (i.e `LANG=sv ./apx man > man/sv/apx.1`).
