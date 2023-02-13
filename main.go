@@ -17,7 +17,7 @@ import (
 )
 
 var (
-	Version = "1.6.3"
+	Version = "1.7.0"
 )
 
 //go:embed locales/*.yml

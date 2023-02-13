@@ -1,3 +1,14 @@
+apx (1.7.0) kinetic; urgency=medium
+
+  * New translations
+  * Fix command summary
+  * Fix: don't show apx failure when shell command returns error
+  * Add sv man page to apx.install
+  * Added Nix search
+  * Added Nix upgrade
+
+ -- Mirko brombin <send@mirko.pm>  Mon, 13 Feb 2023 23:00:03 +0200
+
 apx (1.6.3) kinetic; urgency=medium
 
   * New nix flag for the nix package manager
