@@ -43,7 +43,7 @@ func NixUpgradePackage(pkg string) error {
 	list := exec.Command("nix", "profile", "list")
 	bb, err := list.Output()
 	if err != nil {
-		log.Default().Println("error getting installed packaged")
+		log.Default().Println("error getting installed packages")
 		log.Default().Println("have you run the `init` command yet?")
 		return err
 	}
