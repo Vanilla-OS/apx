@@ -1,110 +1,114 @@
 .TH APX 1 "2023-02-13" "apx" "User Manual"
 .SH NAME
 .RS 4
-apx\&.use - apx\&.short
+apx - Apx är en pakethanterare med stöd för flera källor,
+.PP
+så att du kan installera paket i en hanterad behållare\&.
 .RE
 .SH SYNOPSIS
 .RS 4
-apx\&.use [command] [flags] [arguments]
+apx [command] [flags] [arguments]
 .RE
 .SH DESCRIPTION
 .RS 4
-apx\&.long
+Apx är en pakethanterare med stöd för flera källor,
+.PP
+så att du kan installera paket i en hanterad behållare\&.
 .RE
 .SH OPTIONS
-  -v, --verbose       apx\&.verboseFlag
+  -v, --verbose       visa mer detaljerad utdata
 .PP
-      --apt           flags\&.apt
+      --apt           Installera paket från Ubuntu arkiv\&.
 .PP
-      --aur           flags\&.aur
+      --aur           Installera paket från the AUR (Arch User repository)\&.
 .PP
-      --dnf           flags\&.dnf
+      --dnf           Installera paket från Fedora's DNF (Dandified YUM) förråd\&.
 .PP
-      --apk           flags\&.apk
+      --apk            Installera paket från Alpine arkiv\&.
 .PP
-      --zypper        flags\&.zypper
+      --zypper        Installera paket från OpenSUSE förråd\&.
 .PP
-      --xbps          flags\&.xbps
+      --xbps          Installera paket från Void (Linux) arkiv\&.
 .PP
-      --nix           flags\&.nix
+      --nix           Installera paket från Nixpkgs (Nix paket) arkiv\&.
 .PP
-  -n, --name string   flags\&.name
+  -n, --name string   Applicera på anpassad behållare med detta namn\&.
 .PP
-.SH APX.USE COMMANDS
+.SH APX COMMANDS
 .RS 4
 \fBautoremove\fP
 .RS 4
-autoremove\&.short
+Ta bort alla oanvända paket automatiskt
 .PP
 .RE
 \fBclean\fP
 .RS 4
-clean\&.short
+Rensa apx-pakethanterarens cache
 .PP
 .RE
 \fBenter\fP
 .RS 4
-enter\&.short
+Gå med i ett skal i den hanterade behållaren
 .PP
 .RE
 \fBexport\fP
 .RS 4
-export\&.short
+Exportera/Återskapa ett programs skrivbordspost från en hanterad behållare
 .PP
 .RE
 \fBinit\fP
 .RS 4
-init\&.short
+Initiera en hanterad behållare
 .PP
 .RE
 \fBinstall\fP
 .RS 4
-install\&.short
+Installera paket i en hanterad behållare\&.
 .PP
 .RE
 \fBlist\fP
 .RS 4
-list\&.short
+Lista installerade paket\&.
 .PP
 .RE
 \fBpurge\fP
 .RS 4
-purge\&.short
+Rensa paket inuti en hanterad behållare
 .PP
 .RE
 \fBremove\fP
 .RS 4
-remove\&.short
+Ta bort paket inuti en hanterad behållare\&.
 .PP
 .RE
 \fBrun\fP
 .RS 4
-run\&.short
+Kör ett program inuti en hanterad behållare\&.
 .PP
 .RE
 \fBsearch\fP
 .RS 4
-search\&.short
+Sök efter paket i en hanterad behållare\&.
 .PP
 .RE
 \fBshow\fP
 .RS 4
-show\&.short
+Visa detaljer om ett paket
 .PP
 .RE
 \fBunexport\fP
 .RS 4
-unexport\&.short
+Avexportera/ta bort ett programs skrivbordspost från en hanterad behållare
 .PP
 .RE
 \fBupgrade\fP
 .RS 4
-upgrade\&.short
+Uppgradera systemet genom att installera/uppgradera tillgängliga paket\&.
 .PP
 .RE
 \fBupdate\fP
 .RS 4
-update\&.short
+Uppdatera listan över tillgängliga paket
 .PP
 .RE
 .RE
@@ -120,7 +124,7 @@ GPLv3+: GNU GPL version 3 or later <http://gnu\&.org/licenses/gpl\&.html>\&.
 .SH APX SUBCOMMANDS
 .SH SUBCOMMAND AUTOREMOVE
 .RS 4
-autoremove\&.short
+Ta bort alla oanvända paket automatiskt
 .RE
 .SS SYNOPSIS
 .RS 4
@@ -129,33 +133,33 @@ autoremove\&.short
 .SS DESCRIPTION
 .RS 4
 .TP 4
-autoremove\&.long
+Ta bort alla oanvända paket automatiskt
 .RE
 .SS OPTIONS
-  -a, --all   apx\&.allFlag
+  -a, --all   Verkställ för alla containrar\&.
 .PP
 .SS GLOBAL OPTIONS
-  -v, --verbose       apx\&.verboseFlag
+  -v, --verbose       visa mer detaljerad utdata
 .PP
-      --apt           flags\&.apt
+      --apt           Installera paket från Ubuntu arkiv\&.
 .PP
-      --aur           flags\&.aur
+      --aur           Installera paket från the AUR (Arch User repository)\&.
 .PP
-      --dnf           flags\&.dnf
+      --dnf           Installera paket från Fedora's DNF (Dandified YUM) förråd\&.
 .PP
-      --apk           flags\&.apk
+      --apk            Installera paket från Alpine arkiv\&.
 .PP
-      --zypper        flags\&.zypper
+      --zypper        Installera paket från OpenSUSE förråd\&.
 .PP
-      --xbps          flags\&.xbps
+      --xbps          Installera paket från Void (Linux) arkiv\&.
 .PP
-      --nix           flags\&.nix
+      --nix           Installera paket från Nixpkgs (Nix paket) arkiv\&.
 .PP
-  -n, --name string   flags\&.name
+  -n, --name string   Applicera på anpassad behållare med detta namn\&.
 .PP
 .SH SUBCOMMAND CLEAN
 .RS 4
-clean\&.short
+Rensa apx-pakethanterarens cache
 .RE
 .SS SYNOPSIS
 .RS 4
@@ -164,33 +168,33 @@ clean\&.short
 .SS DESCRIPTION
 .RS 4
 .TP 4
-clean\&.long
+Rensa apx-pakethanterarens cache
 .RE
 .SS OPTIONS
-  -a, --all   apx\&.allFlag
+  -a, --all   Verkställ för alla containrar\&.
 .PP
 .SS GLOBAL OPTIONS
-  -v, --verbose       apx\&.verboseFlag
+  -v, --verbose       visa mer detaljerad utdata
 .PP
-      --apt           flags\&.apt
+      --apt           Installera paket från Ubuntu arkiv\&.
 .PP
-      --aur           flags\&.aur
+      --aur           Installera paket från the AUR (Arch User repository)\&.
 .PP
-      --dnf           flags\&.dnf
+      --dnf           Installera paket från Fedora's DNF (Dandified YUM) förråd\&.
 .PP
-      --apk           flags\&.apk
+      --apk            Installera paket från Alpine arkiv\&.
 .PP
-      --zypper        flags\&.zypper
+      --zypper        Installera paket från OpenSUSE förråd\&.
 .PP
-      --xbps          flags\&.xbps
+      --xbps          Installera paket från Void (Linux) arkiv\&.
 .PP
-      --nix           flags\&.nix
+      --nix           Installera paket från Nixpkgs (Nix paket) arkiv\&.
 .PP
-  -n, --name string   flags\&.name
+  -n, --name string   Applicera på anpassad behållare med detta namn\&.
 .PP
 .SH SUBCOMMAND ENTER
 .RS 4
-enter\&.short
+Gå med i ett skal i den hanterade behållaren
 .RE
 .SS SYNOPSIS
 .RS 4
@@ -199,31 +203,31 @@ enter\&.short
 .SS DESCRIPTION
 .RS 4
 .TP 4
-enter\&.long
+Gå med i ett skal i den hanterade behållaren
 .RE
 .SS OPTIONS
 .SS GLOBAL OPTIONS
-  -v, --verbose       apx\&.verboseFlag
+  -v, --verbose       visa mer detaljerad utdata
 .PP
-      --apt           flags\&.apt
+      --apt           Installera paket från Ubuntu arkiv\&.
 .PP
-      --aur           flags\&.aur
+      --aur           Installera paket från the AUR (Arch User repository)\&.
 .PP
-      --dnf           flags\&.dnf
+      --dnf           Installera paket från Fedora's DNF (Dandified YUM) förråd\&.
 .PP
-      --apk           flags\&.apk
+      --apk            Installera paket från Alpine arkiv\&.
 .PP
-      --zypper        flags\&.zypper
+      --zypper        Installera paket från OpenSUSE förråd\&.
 .PP
-      --xbps          flags\&.xbps
+      --xbps          Installera paket från Void (Linux) arkiv\&.
 .PP
-      --nix           flags\&.nix
+      --nix           Installera paket från Nixpkgs (Nix paket) arkiv\&.
 .PP
-  -n, --name string   flags\&.name
+  -n, --name string   Applicera på anpassad behållare med detta namn\&.
 .PP
 .SH SUBCOMMAND EXPORT
 .RS 4
-export\&.short
+Exportera/Återskapa ett programs skrivbordspost från en hanterad behållare
 .RE
 .SS SYNOPSIS
 .RS 4
@@ -232,29 +236,29 @@ export\&.short
 .SS DESCRIPTION
 .RS 4
 .TP 4
-export\&.long
+Exportera/Återskapa ett programs skrivbordspost från en hanterad behållare
 .RE
 .SS OPTIONS
-      --bin   export\&.binFlag
+      --bin   Exportera binärtkommando
 .PP
 .SS GLOBAL OPTIONS
-  -v, --verbose       apx\&.verboseFlag
+  -v, --verbose       visa mer detaljerad utdata
 .PP
-      --apt           flags\&.apt
+      --apt           Installera paket från Ubuntu arkiv\&.
 .PP
-      --aur           flags\&.aur
+      --aur           Installera paket från the AUR (Arch User repository)\&.
 .PP
-      --dnf           flags\&.dnf
+      --dnf           Installera paket från Fedora's DNF (Dandified YUM) förråd\&.
 .PP
-      --apk           flags\&.apk
+      --apk            Installera paket från Alpine arkiv\&.
 .PP
-      --zypper        flags\&.zypper
+      --zypper        Installera paket från OpenSUSE förråd\&.
 .PP
-      --xbps          flags\&.xbps
+      --xbps          Installera paket från Void (Linux) arkiv\&.
 .PP
-      --nix           flags\&.nix
+      --nix           Installera paket från Nixpkgs (Nix paket) arkiv\&.
 .PP
-  -n, --name string   flags\&.name
+  -n, --name string   Applicera på anpassad behållare med detta namn\&.
 .PP
 .SS EXAMPLES
 .RS 4
@@ -264,7 +268,7 @@ apx export --bin fzf
 .RE
 .SH SUBCOMMAND INIT
 .RS 4
-init\&.short
+Initiera en hanterad behållare
 .RE
 .SS SYNOPSIS
 .RS 4
@@ -273,27 +277,27 @@ init\&.short
 .SS DESCRIPTION
 .RS 4
 .TP 4
-init\&.long
+Initiera en hanterad behållare
 .RE
 .SS OPTIONS
 .SS GLOBAL OPTIONS
-  -v, --verbose       apx\&.verboseFlag
+  -v, --verbose       visa mer detaljerad utdata
 .PP
-      --apt           flags\&.apt
+      --apt           Installera paket från Ubuntu arkiv\&.
 .PP
-      --aur           flags\&.aur
+      --aur           Installera paket från the AUR (Arch User repository)\&.
 .PP
-      --dnf           flags\&.dnf
+      --dnf           Installera paket från Fedora's DNF (Dandified YUM) förråd\&.
 .PP
-      --apk           flags\&.apk
+      --apk            Installera paket från Alpine arkiv\&.
 .PP
-      --zypper        flags\&.zypper
+      --zypper        Installera paket från OpenSUSE förråd\&.
 .PP
-      --xbps          flags\&.xbps
+      --xbps          Installera paket från Void (Linux) arkiv\&.
 .PP
-      --nix           flags\&.nix
+      --nix           Installera paket från Nixpkgs (Nix paket) arkiv\&.
 .PP
-  -n, --name string   flags\&.name
+  -n, --name string   Applicera på anpassad behållare med detta namn\&.
 .PP
 .SS EXAMPLES
 .RS 4
@@ -301,7 +305,7 @@ apx init
 .RE
 .SH SUBCOMMAND INSTALL
 .RS 4
-install\&.short
+Installera paket i en hanterad behållare\&.
 .RE
 .SS SYNOPSIS
 .RS 4
@@ -310,37 +314,37 @@ install\&.short
 .SS DESCRIPTION
 .RS 4
 .TP 4
-install\&.long
+Installera paket i en hanterad behållare\&.
 .RE
 .SS OPTIONS
-  -y, --assume-yes     install\&.assumeYes
+  -y, --assume-yes     Fortsätt utan manuell bekräftelse
 .PP
-  -f, --fix-broken     install\&.fixBroken
+  -f, --fix-broken     Åtgärda trasiga beroenden innan du installerar
 .PP
-      --no-export      install\&.noExport
+      --no-export      Exportera inte en skrivbordspost efter installationen\&.
 .PP
-      --sideload       install\&.sideload
+      --sideload       Installera ett paket från en lokal fil\&.
 .PP
-      --allow-unfree   nixinstall\&.allowUnfree
+      --allow-unfree   Tillåt paket med ofria licenser
 .PP
 .SS GLOBAL OPTIONS
-  -v, --verbose       apx\&.verboseFlag
+  -v, --verbose       visa mer detaljerad utdata
 .PP
-      --apt           flags\&.apt
+      --apt           Installera paket från Ubuntu arkiv\&.
 .PP
-      --aur           flags\&.aur
+      --aur           Installera paket från the AUR (Arch User repository)\&.
 .PP
-      --dnf           flags\&.dnf
+      --dnf           Installera paket från Fedora's DNF (Dandified YUM) förråd\&.
 .PP
-      --apk           flags\&.apk
+      --apk            Installera paket från Alpine arkiv\&.
 .PP
-      --zypper        flags\&.zypper
+      --zypper        Installera paket från OpenSUSE förråd\&.
 .PP
-      --xbps          flags\&.xbps
+      --xbps          Installera paket från Void (Linux) arkiv\&.
 .PP
-      --nix           flags\&.nix
+      --nix           Installera paket från Nixpkgs (Nix paket) arkiv\&.
 .PP
-  -n, --name string   flags\&.name
+  -n, --name string   Applicera på anpassad behållare med detta namn\&.
 .PP
 .SS EXAMPLES
 .RS 4
@@ -348,7 +352,7 @@ apx install htop git
 .RE
 .SH SUBCOMMAND LIST
 .RS 4
-list\&.short
+Lista installerade paket\&.
 .RE
 .SS SYNOPSIS
 .RS 4
@@ -357,35 +361,35 @@ list\&.short
 .SS DESCRIPTION
 .RS 4
 .TP 4
-list\&.long
+Lista installerade paket\&.
 .RE
 .SS OPTIONS
-  -u, --upgradable   list\&.upgradable
+  -u, --upgradable   Visa uppgraderingsbara paket
 .PP
-  -i, --installed    list\&.installed
+  -i, --installed    Visa installerade paket
 .PP
 .SS GLOBAL OPTIONS
-  -v, --verbose       apx\&.verboseFlag
+  -v, --verbose       visa mer detaljerad utdata
 .PP
-      --apt           flags\&.apt
+      --apt           Installera paket från Ubuntu arkiv\&.
 .PP
-      --aur           flags\&.aur
+      --aur           Installera paket från the AUR (Arch User repository)\&.
 .PP
-      --dnf           flags\&.dnf
+      --dnf           Installera paket från Fedora's DNF (Dandified YUM) förråd\&.
 .PP
-      --apk           flags\&.apk
+      --apk            Installera paket från Alpine arkiv\&.
 .PP
-      --zypper        flags\&.zypper
+      --zypper        Installera paket från OpenSUSE förråd\&.
 .PP
-      --xbps          flags\&.xbps
+      --xbps          Installera paket från Void (Linux) arkiv\&.
 .PP
-      --nix           flags\&.nix
+      --nix           Installera paket från Nixpkgs (Nix paket) arkiv\&.
 .PP
-  -n, --name string   flags\&.name
+  -n, --name string   Applicera på anpassad behållare med detta namn\&.
 .PP
 .SH SUBCOMMAND PURGE
 .RS 4
-purge\&.short
+Rensa paket inuti en hanterad behållare
 .RE
 .SS SYNOPSIS
 .RS 4
@@ -394,27 +398,27 @@ purge\&.short
 .SS DESCRIPTION
 .RS 4
 .TP 4
-purge\&.long
+Rensa paket inuti en hanterad behållare
 .RE
 .SS OPTIONS
 .SS GLOBAL OPTIONS
-  -v, --verbose       apx\&.verboseFlag
+  -v, --verbose       visa mer detaljerad utdata
 .PP
-      --apt           flags\&.apt
+      --apt           Installera paket från Ubuntu arkiv\&.
 .PP
-      --aur           flags\&.aur
+      --aur           Installera paket från the AUR (Arch User repository)\&.
 .PP
-      --dnf           flags\&.dnf
+      --dnf           Installera paket från Fedora's DNF (Dandified YUM) förråd\&.
 .PP
-      --apk           flags\&.apk
+      --apk            Installera paket från Alpine arkiv\&.
 .PP
-      --zypper        flags\&.zypper
+      --zypper        Installera paket från OpenSUSE förråd\&.
 .PP
-      --xbps          flags\&.xbps
+      --xbps          Installera paket från Void (Linux) arkiv\&.
 .PP
-      --nix           flags\&.nix
+      --nix           Installera paket från Nixpkgs (Nix paket) arkiv\&.
 .PP
-  -n, --name string   flags\&.name
+  -n, --name string   Applicera på anpassad behållare med detta namn\&.
 .PP
 .SS EXAMPLES
 .RS 4
@@ -422,7 +426,7 @@ apx purge htop
 .RE
 .SH SUBCOMMAND REMOVE
 .RS 4
-remove\&.short
+Ta bort paket inuti en hanterad behållare\&.
 .RE
 .SS SYNOPSIS
 .RS 4
@@ -431,29 +435,29 @@ remove\&.short
 .SS DESCRIPTION
 .RS 4
 .TP 4
-remove\&.long
+Ta bort paket inuti en hanterad behållare\&.
 .RE
 .SS OPTIONS
-  -y, --assume-yes   apx\&.assumeYes
+  -y, --assume-yes   Fortsätt utan manuell bekräftelse\&.
 .PP
 .SS GLOBAL OPTIONS
-  -v, --verbose       apx\&.verboseFlag
+  -v, --verbose       visa mer detaljerad utdata
 .PP
-      --apt           flags\&.apt
+      --apt           Installera paket från Ubuntu arkiv\&.
 .PP
-      --aur           flags\&.aur
+      --aur           Installera paket från the AUR (Arch User repository)\&.
 .PP
-      --dnf           flags\&.dnf
+      --dnf           Installera paket från Fedora's DNF (Dandified YUM) förråd\&.
 .PP
-      --apk           flags\&.apk
+      --apk            Installera paket från Alpine arkiv\&.
 .PP
-      --zypper        flags\&.zypper
+      --zypper        Installera paket från OpenSUSE förråd\&.
 .PP
-      --xbps          flags\&.xbps
+      --xbps          Installera paket från Void (Linux) arkiv\&.
 .PP
-      --nix           flags\&.nix
+      --nix           Installera paket från Nixpkgs (Nix paket) arkiv\&.
 .PP
-  -n, --name string   flags\&.name
+  -n, --name string   Applicera på anpassad behållare med detta namn\&.
 .PP
 .SS EXAMPLES
 .RS 4
@@ -461,7 +465,7 @@ apx remove htop
 .RE
 .SH SUBCOMMAND RUN
 .RS 4
-run\&.short
+Kör ett program inuti en hanterad behållare\&.
 .RE
 .SS SYNOPSIS
 .RS 4
@@ -470,27 +474,27 @@ run\&.short
 .SS DESCRIPTION
 .RS 4
 .TP 4
-run\&.long
+Kör ett program inuti en hanterad behållare\&.
 .RE
 .SS OPTIONS
 .SS GLOBAL OPTIONS
-  -v, --verbose       apx\&.verboseFlag
+  -v, --verbose       visa mer detaljerad utdata
 .PP
-      --apt           flags\&.apt
+      --apt           Installera paket från Ubuntu arkiv\&.
 .PP
-      --aur           flags\&.aur
+      --aur           Installera paket från the AUR (Arch User repository)\&.
 .PP
-      --dnf           flags\&.dnf
+      --dnf           Installera paket från Fedora's DNF (Dandified YUM) förråd\&.
 .PP
-      --apk           flags\&.apk
+      --apk            Installera paket från Alpine arkiv\&.
 .PP
-      --zypper        flags\&.zypper
+      --zypper        Installera paket från OpenSUSE förråd\&.
 .PP
-      --xbps          flags\&.xbps
+      --xbps          Installera paket från Void (Linux) arkiv\&.
 .PP
-      --nix           flags\&.nix
+      --nix           Installera paket från Nixpkgs (Nix paket) arkiv\&.
 .PP
-  -n, --name string   flags\&.name
+  -n, --name string   Applicera på anpassad behållare med detta namn\&.
 .PP
 .SS EXAMPLES
 .RS 4
@@ -498,7 +502,7 @@ apx run htop
 .RE
 .SH SUBCOMMAND SEARCH
 .RS 4
-search\&.short
+Sök efter paket i en hanterad behållare\&.
 .RE
 .SS SYNOPSIS
 .RS 4
@@ -507,27 +511,27 @@ search\&.short
 .SS DESCRIPTION
 .RS 4
 .TP 4
-search\&.long
+Sök efter paket i en hanterad behållare\&.
 .RE
 .SS OPTIONS
 .SS GLOBAL OPTIONS
-  -v, --verbose       apx\&.verboseFlag
+  -v, --verbose       visa mer detaljerad utdata
 .PP
-      --apt           flags\&.apt
+      --apt           Installera paket från Ubuntu arkiv\&.
 .PP
-      --aur           flags\&.aur
+      --aur           Installera paket från the AUR (Arch User repository)\&.
 .PP
-      --dnf           flags\&.dnf
+      --dnf           Installera paket från Fedora's DNF (Dandified YUM) förråd\&.
 .PP
-      --apk           flags\&.apk
+      --apk            Installera paket från Alpine arkiv\&.
 .PP
-      --zypper        flags\&.zypper
+      --zypper        Installera paket från OpenSUSE förråd\&.
 .PP
-      --xbps          flags\&.xbps
+      --xbps          Installera paket från Void (Linux) arkiv\&.
 .PP
-      --nix           flags\&.nix
+      --nix           Installera paket från Nixpkgs (Nix paket) arkiv\&.
 .PP
-  -n, --name string   flags\&.name
+  -n, --name string   Applicera på anpassad behållare med detta namn\&.
 .PP
 .SS EXAMPLES
 .RS 4
@@ -535,7 +539,7 @@ apx search neovim
 .RE
 .SH SUBCOMMAND SHOW
 .RS 4
-show\&.short
+Visa detaljer om ett paket
 .RE
 .SS SYNOPSIS
 .RS 4
@@ -544,29 +548,29 @@ show\&.short
 .SS DESCRIPTION
 .RS 4
 .TP 4
-show\&.long
+Visa detaljer om ett paket
 .RE
 .SS OPTIONS
-  -i, --isinstalled   show\&.isInstalled
+  -i, --isinstalled   Returnera endast om paketet är installerat
 .PP
 .SS GLOBAL OPTIONS
-  -v, --verbose       apx\&.verboseFlag
+  -v, --verbose       visa mer detaljerad utdata
 .PP
-      --apt           flags\&.apt
+      --apt           Installera paket från Ubuntu arkiv\&.
 .PP
-      --aur           flags\&.aur
+      --aur           Installera paket från the AUR (Arch User repository)\&.
 .PP
-      --dnf           flags\&.dnf
+      --dnf           Installera paket från Fedora's DNF (Dandified YUM) förråd\&.
 .PP
-      --apk           flags\&.apk
+      --apk            Installera paket från Alpine arkiv\&.
 .PP
-      --zypper        flags\&.zypper
+      --zypper        Installera paket från OpenSUSE förråd\&.
 .PP
-      --xbps          flags\&.xbps
+      --xbps          Installera paket från Void (Linux) arkiv\&.
 .PP
-      --nix           flags\&.nix
+      --nix           Installera paket från Nixpkgs (Nix paket) arkiv\&.
 .PP
-  -n, --name string   flags\&.name
+  -n, --name string   Applicera på anpassad behållare med detta namn\&.
 .PP
 .SS EXAMPLES
 .RS 4
@@ -576,7 +580,7 @@ apx show -i neovim
 .RE
 .SH SUBCOMMAND UNEXPORT
 .RS 4
-unexport\&.short
+Avexportera/ta bort ett programs skrivbordspost från en hanterad behållare
 .RE
 .SS SYNOPSIS
 .RS 4
@@ -585,29 +589,31 @@ unexport\&.short
 .SS DESCRIPTION
 .RS 4
 .TP 4
-unexport\&.long
+Avexportera/ta bort ett programs skrivbordspost från en hanterad behållare\&.
+.PP
+Om --bin-flaggan tillhandahålls, ta bort länken till binär container\&.
 .RE
 .SS OPTIONS
-      --bin   unexport\&.binFlag
+      --bin   Avexportera en tidigare exporterad binär fil\&.
 .PP
 .SS GLOBAL OPTIONS
-  -v, --verbose       apx\&.verboseFlag
+  -v, --verbose       visa mer detaljerad utdata
 .PP
-      --apt           flags\&.apt
+      --apt           Installera paket från Ubuntu arkiv\&.
 .PP
-      --aur           flags\&.aur
+      --aur           Installera paket från the AUR (Arch User repository)\&.
 .PP
-      --dnf           flags\&.dnf
+      --dnf           Installera paket från Fedora's DNF (Dandified YUM) förråd\&.
 .PP
-      --apk           flags\&.apk
+      --apk            Installera paket från Alpine arkiv\&.
 .PP
-      --zypper        flags\&.zypper
+      --zypper        Installera paket från OpenSUSE förråd\&.
 .PP
-      --xbps          flags\&.xbps
+      --xbps          Installera paket från Void (Linux) arkiv\&.
 .PP
-      --nix           flags\&.nix
+      --nix           Installera paket från Nixpkgs (Nix paket) arkiv\&.
 .PP
-  -n, --name string   flags\&.name
+  -n, --name string   Applicera på anpassad behållare med detta namn\&.
 .PP
 .SS EXAMPLES
 .RS 4
@@ -615,7 +621,7 @@ apx unexport code
 .RE
 .SH SUBCOMMAND UPGRADE
 .RS 4
-upgrade\&.short
+Uppgradera systemet genom att installera/uppgradera tillgängliga paket\&.
 .RE
 .SS SYNOPSIS
 .RS 4
@@ -624,31 +630,31 @@ upgrade\&.short
 .SS DESCRIPTION
 .RS 4
 .TP 4
-update\&.long
+Uppdatera listan över tillgängliga paket
 .RE
 .SS OPTIONS
-  -a, --all          apx\&.allFlag
+  -a, --all          Verkställ för alla containrar\&.
 .PP
-  -y, --assume-yes   apx\&.assumeYes
+  -y, --assume-yes   Fortsätt utan manuell bekräftelse\&.
 .PP
 .SS GLOBAL OPTIONS
-  -v, --verbose       apx\&.verboseFlag
+  -v, --verbose       visa mer detaljerad utdata
 .PP
-      --apt           flags\&.apt
+      --apt           Installera paket från Ubuntu arkiv\&.
 .PP
-      --aur           flags\&.aur
+      --aur           Installera paket från the AUR (Arch User repository)\&.
 .PP
-      --dnf           flags\&.dnf
+      --dnf           Installera paket från Fedora's DNF (Dandified YUM) förråd\&.
 .PP
-      --apk           flags\&.apk
+      --apk            Installera paket från Alpine arkiv\&.
 .PP
-      --zypper        flags\&.zypper
+      --zypper        Installera paket från OpenSUSE förråd\&.
 .PP
-      --xbps          flags\&.xbps
+      --xbps          Installera paket från Void (Linux) arkiv\&.
 .PP
-      --nix           flags\&.nix
+      --nix           Installera paket från Nixpkgs (Nix paket) arkiv\&.
 .PP
-  -n, --name string   flags\&.name
+  -n, --name string   Applicera på anpassad behållare med detta namn\&.
 .PP
 .SS EXAMPLES
 .RS 4
@@ -656,7 +662,7 @@ apx upgrade
 .RE
 .SH SUBCOMMAND UPDATE
 .RS 4
-update\&.short
+Uppdatera listan över tillgängliga paket
 .RE
 .SS SYNOPSIS
 .RS 4
@@ -665,30 +671,30 @@ update\&.short
 .SS DESCRIPTION
 .RS 4
 .TP 4
-update\&.long
+Uppdatera listan över tillgängliga paket
 .RE
 .SS OPTIONS
-  -a, --all          apx\&.allFlag
+  -a, --all          Verkställ för alla containrar\&.
 .PP
-  -y, --assume-yes   apx\&.assumeYes
+  -y, --assume-yes   Fortsätt utan manuell bekräftelse\&.
 .PP
 .SS GLOBAL OPTIONS
-  -v, --verbose       apx\&.verboseFlag
+  -v, --verbose       visa mer detaljerad utdata
 .PP
-      --apt           flags\&.apt
+      --apt           Installera paket från Ubuntu arkiv\&.
 .PP
-      --aur           flags\&.aur
+      --aur           Installera paket från the AUR (Arch User repository)\&.
 .PP
-      --dnf           flags\&.dnf
+      --dnf           Installera paket från Fedora's DNF (Dandified YUM) förråd\&.
 .PP
-      --apk           flags\&.apk
+      --apk            Installera paket från Alpine arkiv\&.
 .PP
-      --zypper        flags\&.zypper
+      --zypper        Installera paket från OpenSUSE förråd\&.
 .PP
-      --xbps          flags\&.xbps
+      --xbps          Installera paket från Void (Linux) arkiv\&.
 .PP
-      --nix           flags\&.nix
+      --nix           Installera paket från Nixpkgs (Nix paket) arkiv\&.
 .PP
-  -n, --name string   flags\&.name
+  -n, --name string   Applicera på anpassad behållare med detta namn\&.
 .PP
 
