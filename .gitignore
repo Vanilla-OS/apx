@@ -9,3 +9,4 @@ apx
 *.service
 *.mount
 build.sh
+dist/
