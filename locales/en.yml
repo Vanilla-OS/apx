@@ -83,6 +83,7 @@ nixinstall:
   success: "Successfully installed package."
 nixupgrade:
   success: "Successfully upgraded package."
+  atleastone: "At least one package name required."
 purge:
   use: "purge <packages>"
   long: "Purge packages inside a managed container"
