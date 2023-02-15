@@ -9,6 +9,8 @@ package cmd
 */
 
 import (
+	"errors"
+
 	"github.com/spf13/cobra"
 	"github.com/vanilla-os/apx/core"
 	"github.com/vanilla-os/orchid/cmdr"
@@ -68,7 +70,9 @@ func upgrade(cmd *cobra.Command, args []string) error {
 }
 
 func upgradePackage(cmd *cobra.Command, args []string) error {
-
+	if len(args) < 1 {
+		return errors.New(apx.Trans("nixupgrade.atleastone"))
+	}
 	err := core.NixUpgradePackage(args[0])
 	if err != nil {
 		return err
