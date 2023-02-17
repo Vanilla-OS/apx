@@ -25,11 +25,11 @@ clean:
   long: "Limpa o cache do gerenciador de pacotes apx"
   short: "Limpa o cache do gerenciador de pacotes apx"
 enter:
-  use: "enter"
-  long: "Enter a shell in the managed container"
-  short: "Enter a shell in the managed container"
-  failedEnter: "failed to enter managed container"
-  outside: "You are now outside the managed container."
+  use: "entrar"
+  long: "Insere um terminal no contêiner gerenciado"
+  short: "Insere um terminal no contêiner gerenciado"
+  failedEnter: "falha ao entrar no contêiner gerenciado"
+  outside: "Você está agora fora do contêiner gerenciado."
 export:
   use: "export <program/binary>"
   long: "Export/Recreate a program's desktop entry from a managed container"
