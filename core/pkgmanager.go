@@ -29,6 +29,8 @@ func (c *Container) GetPkgCommand(command string) []string {
 		return GetZypperPkgCommand(command)
 	case XBPS:
 		return GetXbpsPkgCommand(command)
+	case SWUPD:
+		return GetSwupdPkgCommand(command)
 	default:
 		return nil
 	}
@@ -50,6 +52,8 @@ func GetDefaultPkgCommand(command string) []string {
 		return GetZypperPkgCommand(command)
 	case "xbps":
 		return GetXbpsPkgCommand(command)
+	case "swupd":
+		return GetSwupdPkgCommand(command)
 	default:
 		return []string{"echo", pkgmanager + " is not implemented yet!"}
 	}
@@ -240,6 +244,22 @@ func GetXbpsPkgCommand(command string) []string {
 	}
 }
 
+func GetSwupdPkgCommand(command string) []string {
+	//TODO: Check swupd's manual and implement all other commands to match options for containesrs above.
+	switch command {
+
+	case "install":
+		return []string{"sudo", "swupd", "bundle-add"}
+	case "search":
+		return []string{"sudo", "swupd", "search"}
+
+	case "remove":
+		return []string{"sudo", "swupd", "bundle-remove"}
+	default:
+		return nil
+	}
+}
+
 func (c *Container) IsPackageInstalled(pkgname string) (bool, error) {
 	var query_cmd string
 	switch c.containerType {
@@ -255,6 +275,8 @@ func (c *Container) IsPackageInstalled(pkgname string) (bool, error) {
 		query_cmd = "rpm -q"
 	case XBPS:
 		query_cmd = "xbps-query"
+	case SWUPD:
+		query_cmd = "swupd bundle-list"
 	default:
 		return false, errors.New("Cannot query package from unknown container")
 	}

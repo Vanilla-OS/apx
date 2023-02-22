@@ -33,11 +33,12 @@ const (
 	APK    ContainerType = iota // 3
 	ZYPPER ContainerType = iota // 4
 	XBPS   ContainerType = iota // 5
+	SWUPD  ContainerType = iota // 6
 )
 
 // How many container types we offer. Must be always the same
 // as the number of options above!
-const CONTAINER_TYPES = 6
+const CONTAINER_TYPES = 7
 
 type Container struct {
 	containerType ContainerType
@@ -69,6 +70,8 @@ func (c *Container) GetContainerImage() (image string, err error) {
 		return "registry.opensuse.org/opensuse/tumbleweed:latest", nil
 	case XBPS:
 		return "ghcr.io/void-linux/void-linux:latest-full-x86_64", nil
+	case SWUPD:
+		return "docker.io/library/clearlinux", nil
 	default:
 		image = ""
 		err = errors.New("can't retrieve image for unknown container")
@@ -91,6 +94,8 @@ func (c *Container) GetContainerName() (name string) {
 		cn.WriteString("apx_managed_zypper")
 	case XBPS:
 		cn.WriteString("apx_managed_xbps")
+	case SWUPD:
+		cn.WriteString("apx_managed_swupd")
 	default:
 		log.Fatal(fmt.Errorf("unspecified container type"))
 	}
@@ -408,6 +413,8 @@ func (c *Container) ExportBinary(bin string) error {
 					bin_rename = fmt.Sprintf("zypper_%s", bin)
 				case XBPS:
 					bin_rename = fmt.Sprintf("xbps_%s", bin)
+				case SWUPD:
+					bin_rename = fmt.Sprintf("swupd_%s", bin)
 				default:
 					return errors.New("can't export binary from unknown container")
 				}
@@ -507,6 +514,8 @@ func (c *Container) RemoveBinary(bin string, fail_silently bool) error {
 			prefix = fmt.Sprintf("zypper_%s", bin)
 		case XBPS:
 			prefix = fmt.Sprintf("xbps_%s", bin)
+		case SWUPD:
+			prefix = fmt.Sprintf("swupd_%s", bin)
 		default:
 			return errors.New("can't unexport binary from unknown container")
 		}
