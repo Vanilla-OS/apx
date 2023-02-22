@@ -245,16 +245,29 @@ func GetXbpsPkgCommand(command string) []string {
 }
 
 func GetSwupdPkgCommand(command string) []string {
-	//TODO: Check swupd's manual and implement all other commands to match options for containesrs above.
+	//NOTE: These have been extrapolated to Clear's package manager "swupd" to the best of my ability, would love to be corrected.
 	switch command {
 
+	case "autoremove":
+		return []string{"sudo", "swupd", "bundle-remove", "--orphans"}
+	case "clean":
+		return []string{"sudo", "swupd", "clean"}
 	case "install":
 		return []string{"sudo", "swupd", "bundle-add"}
-	case "search":
-		return []string{"sudo", "swupd", "search"}
-
+	case "list":
+		return []string{"sudo", "swupd", "bundle-list", "--status"}
+	case "purge":
+		return []string{"sudo", "swupd", "bundle-remove", "-R"}
 	case "remove":
 		return []string{"sudo", "swupd", "bundle-remove"}
+	case "search":
+		return []string{"sudo", "swupd", "search"}
+	case "show":
+		return []string{"sudo", "swupd", "bundle-info"}
+	case "update":
+		return []string{"sudo", "swupd", "check-update"}
+	case "upgrade":
+		return []string{"sudo", "swupd", "update"}
 	default:
 		return nil
 	}
