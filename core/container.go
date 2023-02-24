@@ -358,17 +358,17 @@ func (c *Container) ExportDesktopEntry(program string) {
 	c.Run("sh", "-c", "distrobox-export --app "+program+" 2>/dev/null || true")
 }
 
-func (c *Container) ExportBinary(bin string) error {
+func (c *Container) ExportBinary(bin string) (string, error) {
 	// Get host's $PATH
 	out, err := c.Output("sh", "-c", "distrobox-host-exec $(readlink -fn $(getent passwd $USER | cut -f 7 -d :)) -l -i -c printenv | grep -E ^PATH=")
 	if err != nil {
-		return errors.New(fmt.Sprintf("Failed to execute printenv: %s", err))
+		return "", errors.New(fmt.Sprintf("Failed to execute printenv: %s", err))
 	}
 
 	// If bin name not in $PATH, export to .local/bin
 	// Otherwise, export with suffix based on container name
 	if !strings.HasPrefix(out, "PATH=") {
-		return errors.New("Failed to read host's $PATH")
+		return "", errors.New("Failed to read host's $PATH")
 	}
 	_, host_path, _ := strings.Cut(out, "=")
 
@@ -388,7 +388,7 @@ func (c *Container) ExportBinary(bin string) error {
 
 		entries, err := os.ReadDir(path)
 		if err != nil {
-			return errors.New(fmt.Sprintf("Could not read directory %s: %s", path, err))
+			return "", fmt.Errorf("Could not read directory %s: %s", path, err)
 		}
 
 		duplicate_found := false
@@ -409,7 +409,7 @@ func (c *Container) ExportBinary(bin string) error {
 				case XBPS:
 					bin_rename = fmt.Sprintf("xbps_%s", bin)
 				default:
-					return errors.New("can't export binary from unknown container")
+					return "", errors.New("can't export binary from unknown container")
 				}
 
 				fmt.Printf("Warning: another program with name `%s` already exists on host, exporting as `%s`.\n", bin, bin_rename)
@@ -427,27 +427,27 @@ func (c *Container) ExportBinary(bin string) error {
 	// If returns error, binary could not be found
 	bin_path, err := c.Output("sh", "-c", "command -v "+bin)
 	if err != nil {
-		return errors.New(fmt.Sprintf("Error: Could not find a binary with name `%s` in $PATH. Nothing to export.", bin))
+		return "", fmt.Errorf("Error: Could not find a binary with name `%s` in $PATH. Nothing to export.", bin)
 	}
 
 	// Binaries in ~/.local/bin are already accessible by the host
 	if strings.Contains(bin_path, "/.local/bin") {
-		fmt.Printf("`%s` is already shared with host system. There's no need to export it.\n", bin)
-		return nil
+		msg := fmt.Sprintf("`%s` is already shared with host system. There's no need to export it.\n", bin)
+		return msg, nil
 	}
 
 	c.Run("sh", "-c", "distrobox-export --bin "+string(bin_path)+" --export-path ~/.local/bin >/dev/null 2>/dev/null || true")
 	if bin_rename != "" {
 		if err := c.Run("sh", "-c", "mv ~/.local/bin/"+bin+" ~/.local/bin/"+bin_rename); err != nil {
-			return err
+			return "", err
 		}
 
-		fmt.Printf("Binary exported to `~/.local/bin/%s`.\n", bin_rename)
-		return nil
+		msg := fmt.Sprintf("Binary exported to `~/.local/bin/%s`.\n", bin_rename)
+		return msg, nil
 	}
 
-	fmt.Printf("Binary exported to `~/.local/bin/%s`.\n", bin)
-	return nil
+	msg := fmt.Sprintf("Binary exported to `~/.local/bin/%s`.\n", bin)
+	return msg, nil
 }
 
 func (c *Container) RemoveDesktopEntry(program string) error {
