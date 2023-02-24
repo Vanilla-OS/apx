@@ -52,6 +52,7 @@ install:
   sideload: "Install a package from a local file."
   sideArgs: "sideload requires the path to a local file"
   sideUserTemp: "can't move file to user temp: %s"
+  exportBinPrompt: "Export binary to host?"
 list:
   use: "list"
   long: "List installed packages."
