@@ -40,13 +40,11 @@ func export(cmd *cobra.Command, args []string) error {
 
 	}
 	if cmd.Flag("bin").Changed {
-		msg, err := container.ExportBinary(args[0])
+		err := container.ExportBinary(args[0])
 		if err != nil {
 			cmdr.Error.Printf("Error exporting binary: %s\n", err)
 			return err
 		}
-
-		cmdr.Info.Println(msg)
 	} else {
 		container.ExportDesktopEntry(args[0])
 	}

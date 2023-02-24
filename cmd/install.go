@@ -127,13 +127,11 @@ func install(cmd *cobra.Command, args []string) error {
 			}
 
 			if result {
-				msg, err := container.ExportBinary(pkg)
+				err := container.ExportBinary(pkg)
 				if err != nil {
-                    cmdr.Error.Printf("Error exporting binary: %s\n", err)
+					cmdr.Error.Printf("Error exporting binary: %s\n", err)
 					return err
 				}
-
-				cmdr.Info.Println(msg)
 			}
 
 			container.ExportDesktopEntry(pkg)
