@@ -3,6 +3,7 @@ package core
 import (
 	"bytes"
 	"errors"
+	"fmt"
 	"html/template"
 	"log"
 	"os"
@@ -17,6 +18,12 @@ type UnitData struct {
 }
 
 func NixInstallPackage(pkg string, unfree bool) error {
+	spinner, err := cmdr.Spinner.Start(fmt.Sprintf("Installing %s...", pkg))
+	if err != nil {
+		return err
+	}
+	defer spinner.Stop()
+
 	cmd := []string{}
 	cmd = append(cmd, "nix", "profile", "install")
 	if unfree {
@@ -25,19 +32,17 @@ func NixInstallPackage(pkg string, unfree bool) error {
 	cmd = append(cmd, "nixpkgs#"+pkg)
 	install := exec.Command(cmd[0], cmd[1:]...)
 	install.Env = append(install.Env, "NIXPKGS_ALLOW_UNFREE=1")
-	install.Stderr = os.Stderr
-	install.Stdin = os.Stdin
-	install.Stdout = os.Stdout
 
-	err := install.Run()
+	var errOut bytes.Buffer
+	install.Stderr = &errOut
+
+	err = install.Run()
 	if err != nil {
-		cmdr.Error.Println("error installing package")
-		cmdr.Error.Println("have you run the `init` command yet?")
+		spinner.Fail(fmt.Sprintf("Error installing package: %s", errOut.String()))
 		return err
 	}
 
 	return nil
-
 }
 
 func NixSearchPackage(pkg string) error {
