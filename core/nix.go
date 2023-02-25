@@ -17,8 +17,8 @@ type UnitData struct {
 	User string
 }
 
-func NixInstallPackage(pkg string, unfree bool) error {
-	spinner, err := cmdr.Spinner.Start(fmt.Sprintf("Installing %s...", pkg))
+func NixInstallPackage(pkgs []string, unfree bool) error {
+	spinner, err := cmdr.Spinner.Start(fmt.Sprintf("Installing %v...", pkgs))
 	if err != nil {
 		return err
 	}
@@ -26,10 +26,15 @@ func NixInstallPackage(pkg string, unfree bool) error {
 
 	cmd := []string{}
 	cmd = append(cmd, "nix", "profile", "install")
+
 	if unfree {
 		cmd = append(cmd, "--impure")
 	}
-	cmd = append(cmd, "nixpkgs#"+pkg)
+
+	for _, pkg := range pkgs {
+		cmd = append(cmd, "nixpkgs#"+pkg)
+	}
+
 	install := exec.Command(cmd[0], cmd[1:]...)
 	install.Env = append(install.Env, "NIXPKGS_ALLOW_UNFREE=1")
 
@@ -38,7 +43,7 @@ func NixInstallPackage(pkg string, unfree bool) error {
 
 	err = install.Run()
 	if err != nil {
-		spinner.Fail(fmt.Sprintf("Error installing package: %s", errOut.String()))
+		spinner.Fail(fmt.Sprintf("Error installing package(s): %s", errOut.String()))
 		return err
 	}
 
@@ -103,43 +108,51 @@ func NixUpgradePackage(pkg string) error {
 	return errors.New("no packages installed")
 
 }
-func NixRemovePackage(pkg string) error {
-	list := exec.Command("nix", "profile", "list")
-	bb, err := list.Output()
-	if err != nil {
-		log.Default().Println("error getting installed packaged")
-		log.Default().Println("have you run the `init` command yet?")
-		return err
-	}
-	lines := bytes.Split(bb, []byte("\n"))
-	needle := []byte("." + pkg)
-	var pkgNumber string
-	// output:
-	//5 flake:nixpkgs#legacyPackages.x86_64-linux.go github:NixOS/nixpkgs/79feedf38536de2a27d13fe2eaf200a9c05193ba#legacyPackages.x86_64-linux.go /nix/store/v6i0a6bfx3707airawpc2589pbbl465r-go-1.19.5
-	if len(lines) > 0 {
-		for _, line := range lines {
-			// split the line by fields, field[0] is the package number
-			// field[1] has the full package name
-			pieces := bytes.Split(line, []byte(" "))
-			if len(pieces) > 1 {
-				if bytes.Contains(pieces[1], needle) {
-					// this is our package
-					pkgNumber = string(pieces[0])
-					break
-				}
-			}
-		}
-		if pkgNumber == "" {
-			return errors.New("package not found")
-		}
-		remove := exec.Command("nix", "profile", "remove", pkgNumber)
-		err = remove.Run()
-		return err
 
-	}
-	return errors.New("no packages installed")
+func NixRemovePackage(pkgs []string) error {
+    for _, pkg := range pkgs {
+        list := exec.Command("nix", "profile", "list")
+        bb, err := list.Output()
+        if err != nil {
+            log.Default().Println("Error getting installed packages. Have you run the `init` command yet?")
+            return err
+        }
+
+        lines := bytes.Split(bb, []byte("\n"))
+        if len(lines) <= 0 {
+            return errors.New("Error getting installed packages.")
+        }
+        needle := []byte("." + pkg)
+
+        var pkgNumber string
+        for _, line := range lines {
+            // split the line by fields, field[0] is the package number
+            // field[1] has the full package name
+            pieces := bytes.Split(line, []byte(" "))
+            if len(pieces) > 1 {
+                if bytes.Contains(pieces[1], needle) {
+                    // this is our package
+                    pkgNumber = string(pieces[0])
+                    break
+                }
+            }
+        }
+
+        if pkgNumber == "" {
+            return fmt.Errorf("Package %s not found", pkg)
+        }
+
+        remove := exec.Command("nix", "profile", "remove", pkgNumber)
+        err = remove.Run()
+        if err != nil {
+            return err
+        }
+    }
+
+    return nil
 
 }
+
 func NixInit() error {
 	// get user name for the systemd units
 	user := os.Getenv("USER")
