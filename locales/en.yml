@@ -52,6 +52,7 @@ install:
   sideload: "Install a package from a local file."
   sideArgs: "sideload requires the path to a local file"
   sideUserTemp: "can't move file to user temp: %s"
+  exportBinPrompt: "Export binary %s to host?\nThis will let you call it directly from the shell without using \"apx run\".\nYou can also export it later using \"apx export --bin %s\""
 list:
   use: "list"
   long: "List installed packages."

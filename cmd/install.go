@@ -121,6 +121,26 @@ func install(cmd *cobra.Command, args []string) error {
 
 	if !sideload {
 		for _, pkg := range args {
+			binaries, err := container.BinariesProvidedByPackage(pkg)
+			if err != nil {
+				return err
+			}
+
+			for _, binary := range binaries {
+				choice, err := cmdr.Confirm.Show(fmt.Sprintf(apx.Trans("install.exportBinPrompt"), binary, binary))
+				if err != nil {
+					return err
+				}
+
+				if choice {
+					err := container.ExportBinary(binary)
+					if err != nil {
+						cmdr.Error.Printf("Error exporting binary: %s\n", err)
+						return err
+					}
+				}
+			}
+
 			container.ExportDesktopEntry(pkg)
 		}
 	}

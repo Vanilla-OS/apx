@@ -274,6 +274,41 @@ func (c *Container) IsPackageInstalled(pkgname string) (bool, error) {
 	return result_bool, nil
 }
 
+func (c *Container) BinariesProvidedByPackage(pkgname string) ([]string, error) {
+	var query_cmd string
+	switch c.containerType {
+	case APT:
+		query_cmd = "dpkg -L %s | grep /usr/bin/ | cut -f 4 -d /"
+	case AUR:
+		query_cmd = "pacman -Ql %s | grep /usr/bin/. | cut -f 4 -d /"
+	case DNF:
+		query_cmd = "rpm -ql %s | grep /usr/bin/ | cut -f 4 -d /"
+	case APK:
+		query_cmd = "apk info -L %s | grep usr/bin/ | cut -f 3 -d /"
+	case ZYPPER:
+		query_cmd = "rpm -ql %s | grep /usr/bin/ | cut -f 4 -d /"
+	case XBPS:
+		query_cmd = "xbps-query -f %s | grep /usr/bin/ | cut -f 4 -d /"
+	default:
+		return []string{}, errors.New("Cannot query package from unknown container")
+	}
+
+	query_check_str := fmt.Sprintf(query_cmd, pkgname)
+	result, err := c.Output("sh", "-c", query_check_str)
+	if err != nil {
+		return []string{}, err
+	}
+
+	binaries := []string{}
+	for _, line := range strings.Split(result, "\n") {
+		if line != "" {
+			binaries = append(binaries, line)
+		}
+	}
+
+	return binaries, nil
+}
+
 func GetLatestYay() string {
 	url := "https://api.github.com/repos/Jguer/yay/releases/latest"
 	resp, err := http.Get(url)
