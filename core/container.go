@@ -242,9 +242,11 @@ func (c *Container) Create() error {
 	}
 
 	container_name := c.GetContainerName()
-	spinner := cmdr.Spinner.WithText("Creating container...")
-
-	spinner.Start()
+	spinner, err := cmdr.Spinner.Start("Creating container...")
+    if err != nil {
+        return err
+    }
+    defer spinner.Stop()
 
 	cmd := exec.Command(settings.Cnf.DistroboxPath, "create",
 		"--name", container_name,
@@ -294,7 +296,7 @@ func (c *Container) Create() error {
 		c.Run(GetAurPkgCommand("install-yay")...)
 	}
 
-	spinner.Success("Container created.\n")
+	spinner.Success("Container created.")
 
 	return err
 }
@@ -303,13 +305,16 @@ func (c *Container) Stop() error {
 	ExitIfOverlayTypeFS()
 
 	container_name := c.GetContainerName()
-	spinner := cmdr.Spinner.WithText("Stopping container...")
-	spinner.Start()
+	spinner, err := cmdr.Spinner.Start("Stopping container...")
+    if err != nil {
+        return err
+    }
+    defer spinner.Stop()
 
 	cmd := exec.Command(settings.Cnf.DistroboxPath, "stop", container_name, "--yes")
-	_, err := cmd.Output()
+	_, err = cmd.Output()
 
-	spinner.Success("Container stopped.\n")
+	spinner.Success("Container stopped.")
 
 	if err != nil {
 		log.Fatalf("error stopping container: %v", err)
@@ -322,23 +327,25 @@ func (c *Container) Remove() error {
 	ExitIfOverlayTypeFS()
 
 	container_name := c.GetContainerName()
-	spinner := cmdr.Spinner.WithText("Removing container...")
+	spinner, err := cmdr.Spinner.Start("Removing container...")
+    if err != nil {
+        return err
+    }
+    defer spinner.Stop()
 
 	if !c.Exists() {
 		return nil
 	}
 
-	err := c.Stop()
+	err = c.Stop()
 	if err != nil {
 		return err
 	}
 
-	spinner.Start()
-
 	cmd := exec.Command(settings.Cnf.DistroboxPath, "rm", container_name, "--yes")
 	_, err = cmd.Output()
 
-	spinner.Success("Container removed.\n")
+	spinner.Success("Container removed.")
 
 	return err
 }
@@ -354,13 +361,15 @@ func (c *Container) ExportBinary(bin string) error {
 		return errors.New(fmt.Sprintf("Failed to execute printenv: %s", err))
 	}
 
-	spinner := cmdr.Spinner.WithText(fmt.Sprintf("Exporting binary: %v.", bin))
-	spinner.Start()
+	spinner, err := cmdr.Spinner.Start(fmt.Sprintf("Exporting binary: %v.", bin))
+    if err != nil {
+        return err
+    }
+    defer spinner.Stop()
 
 	// If bin name not in $PATH, export to .local/bin
 	// Otherwise, export with suffix based on container name
 	if !strings.HasPrefix(out, "PATH=") {
-		spinner.Stop()
 		return errors.New("Failed to read host's $PATH")
 	}
 	_, host_path, _ := strings.Cut(out, "=")
@@ -381,7 +390,6 @@ func (c *Container) ExportBinary(bin string) error {
 
 		entries, err := os.ReadDir(path)
 		if err != nil {
-			spinner.Stop()
 			return fmt.Errorf("Could not read directory %s: %s", path, err)
 		}
 
@@ -403,7 +411,6 @@ func (c *Container) ExportBinary(bin string) error {
 				case XBPS:
 					bin_rename = fmt.Sprintf("xbps_%s", bin)
 				default:
-					spinner.Stop()
 					return errors.New("can't export binary from unknown container")
 				}
 
@@ -422,7 +429,6 @@ func (c *Container) ExportBinary(bin string) error {
 	// If returns error, binary could not be found
 	bin_path, err := c.Output("sh", "-c", "command -v "+bin)
 	if err != nil {
-		spinner.Stop()
 		return fmt.Errorf("Error: Could not find a binary with name `%s` in $PATH. Nothing to export.", bin)
 	}
 
@@ -430,31 +436,30 @@ func (c *Container) ExportBinary(bin string) error {
 	if strings.Contains(bin_path, "/.local/bin") {
 		msg := fmt.Sprintf("`%s` is already shared with host system. There's no need to export it.\n", bin)
 		spinner.Info(msg)
-		spinner.Stop()
 		return nil
 	}
 
 	c.Run("sh", "-c", "distrobox-export --bin "+string(bin_path)+" --export-path ~/.local/bin >/dev/null 2>/dev/null || true")
 	if bin_rename != "" {
 		if err := c.Run("sh", "-c", "mv ~/.local/bin/"+bin+" ~/.local/bin/"+bin_rename); err != nil {
-			spinner.Stop()
 			return err
 		}
 
-		spinner.Success(fmt.Sprintf("Binary exported to `~/.local/bin/%s`.\n", bin_rename))
-		spinner.Stop()
+		spinner.Success(fmt.Sprintf("Binary exported to `~/.local/bin/%s`.", bin_rename))
 		return nil
 	}
 
-	spinner.Success(fmt.Sprintf("Binary exported to `~/.local/bin/%s`.\n", bin))
-	spinner.Stop()
+	spinner.Success(fmt.Sprintf("Binary exported to `~/.local/bin/%s`.", bin))
 	return nil
 }
 
 func (c *Container) RemoveDesktopEntry(program string) error {
 	container_name := c.GetContainerName()
-	spinner := cmdr.Spinner.WithText(fmt.Sprintf("Removing desktop entry: %v", program))
-	spinner.Start()
+	spinner, err := cmdr.Spinner.Start(fmt.Sprintf("Removing desktop entry: %v", program))
+    if err != nil {
+        return err
+    }
+    defer spinner.Stop()
 
 	home_dir, err := os.UserHomeDir()
 	if err != nil {
@@ -473,12 +478,12 @@ func (c *Container) RemoveDesktopEntry(program string) error {
 			if err != nil {
 				return err
 			}
-			spinner.Success(fmt.Sprintf("Desktop entry for %v removed.\n", program))
+			spinner.Success(fmt.Sprintf("Desktop entry for %v removed.", program))
 			return nil
 		}
 	}
 
-	spinner.Info(fmt.Sprintf("Desktop entry %v not found.\n", program))
+	spinner.Info(fmt.Sprintf("Desktop entry %v not found.", program))
 	return nil
 }
 
@@ -488,8 +493,11 @@ func (c *Container) RemoveDesktopEntry(program string) error {
 // fail_silently will still return an error on unexpected issues
 func (c *Container) RemoveBinary(bin string, fail_silently bool) error {
 	// Check file exists in ~/.local/bin
-	spinner := cmdr.Spinner.WithText(fmt.Sprintf("Removing binary export: %v.", bin))
-	spinner.Start()
+	spinner, err := cmdr.Spinner.Start(fmt.Sprintf("Removing binary export: %v.", bin))
+    if err != nil {
+        return err
+    }
+    defer spinner.Stop()
 
 	local_bin_file := fmt.Sprintf("/home/%s/.local/bin/%s", os.Getenv("USER"), bin)
 	if _, err := os.Stat(local_bin_file); os.IsNotExist(err) {
@@ -515,7 +523,7 @@ func (c *Container) RemoveBinary(bin string, fail_silently bool) error {
 		prefixed_bin_file := fmt.Sprintf("/home/%s/.local/bin/%s", os.Getenv("USER"), prefix)
 		if _, prefix_err := os.Stat(prefixed_bin_file); os.IsNotExist(prefix_err) {
 			if !fail_silently {
-				spinner.Info(fmt.Sprintf("Binary `%s` is not exported.\n", bin))
+				spinner.Info(fmt.Sprintf("Binary `%s` is not exported.", bin))
 			}
 
 			return nil
@@ -553,7 +561,7 @@ func (c *Container) RemoveBinary(bin string, fail_silently bool) error {
 		return err
 	}
 
-	spinner.Success(fmt.Sprintf("Binary %v unexported.\n", bin))
+	spinner.Success(fmt.Sprintf("Binary %v unexported.", bin))
 
 	return nil
 }

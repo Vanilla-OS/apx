@@ -43,14 +43,26 @@ func remove(cmd *cobra.Command, args []string) error {
 		command = append(command, "-y")
 	}
 
+	for _, pkg := range args {
+		container.RemoveDesktopEntry(pkg)
+
+        binaries, err := container.BinariesProvidedByPackage(pkg)
+        if err != nil {
+            return err
+        }
+
+        for _, binary := range binaries {
+            err := container.RemoveBinary(binary, false)
+            if err != nil {
+                cmdr.Error.Printf("Error unexporting binary: %s\n", err)
+                return err
+            }
+        }
+	}
+
 	err := container.Run(command...)
 	if err != nil {
 		return err
-	}
-
-	for _, pkg := range args {
-		container.RemoveDesktopEntry(pkg)
-		container.RemoveBinary(pkg, true)
 	}
 
 	return nil
