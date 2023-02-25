@@ -284,11 +284,11 @@ func (c *Container) BinariesProvidedByPackage(pkgname string) ([]string, error) 
 	case DNF:
 		query_cmd = "rpm -ql %s | grep /usr/bin/ | cut -f 4 -d /"
 	case APK:
-		query_cmd = "apk info -L neovim | grep usr/bin/ | cut -f 3 -d /"
+		query_cmd = "apk info -L %s | grep usr/bin/ | cut -f 3 -d /"
 	case ZYPPER:
 		query_cmd = "rpm -ql %s | grep /usr/bin/ | cut -f 4 -d /"
 	case XBPS:
-		query_cmd = "xbps-query -f neovim | grep /usr/bin/ | cut -f 4 -d /"
+		query_cmd = "xbps-query -f %s | grep /usr/bin/ | cut -f 4 -d /"
 	default:
 		return []string{}, errors.New("Cannot query package from unknown container")
 	}
