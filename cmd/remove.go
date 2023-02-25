@@ -34,7 +34,7 @@ func NewRemoveCommand() *cmdr.Command {
 
 func remove(cmd *cobra.Command, args []string) error {
 	if cmd.Flag("nix").Changed {
-		return removePackage(cmd, args)
+		return removePackage(args)
 	}
 	command := append([]string{}, container.GetPkgCommand("remove")...)
 	command = append(command, args...)
@@ -67,8 +67,9 @@ func remove(cmd *cobra.Command, args []string) error {
 
 	return nil
 }
-func removePackage(cmd *cobra.Command, args []string) error {
-	err := core.NixRemovePackage(args[0])
+
+func removePackage(args []string) error {
+	err := core.NixRemovePackage(args)
 	if err != nil {
 		return err
 	}

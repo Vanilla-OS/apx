@@ -147,12 +147,14 @@ func install(cmd *cobra.Command, args []string) error {
 
 	return nil
 }
+
 func installPackage(cmd *cobra.Command, args []string) error {
 	allowUnfree := false
 	if cmd.Flags().Changed("allow-unfree") {
 		allowUnfree = true
 	}
-	err := core.NixInstallPackage(args[0], allowUnfree)
+
+	err := core.NixInstallPackage(args, allowUnfree)
 	if err != nil {
 		return err
 	}

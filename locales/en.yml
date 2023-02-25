@@ -89,7 +89,7 @@ purge:
   use: "purge <packages>"
   long: "Purge packages inside a managed container"
   short: "Purge packages inside a managed container"
-remove: 
+remove:
   use: "remove <package>"
   long: "Remove packages inside a managed container."
   short: "Remove packages inside a managed container."
@@ -97,6 +97,7 @@ run:
   use: "run <command>"
   long: "Run a program inside a managed container."
   short: "Run a program inside a managed container."
+  nixMsg: "Do not use `apx run` for nix packages. Run them directly as you would with a native package."
 search:
   use: "search <packages>"
   long: "Search for packages in a managed container."
