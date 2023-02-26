@@ -139,9 +139,9 @@ func install(cmd *cobra.Command, args []string) error {
 						return err
 					}
 				}
-			}
 
-			container.ExportDesktopEntry(pkg)
+                container.ExportDesktopEntry(binary)
+			}
 		}
 	}
 
