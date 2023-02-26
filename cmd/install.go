@@ -101,7 +101,7 @@ func install(cmd *cobra.Command, args []string) error {
 
 			return fmt.Errorf(apx.Trans("install.sideArgs"))
 		}
-		path, err := core.MoveToUserTemp(args[0])
+		path, err := core.CopyToUserTemp(args[0])
 		if err != nil {
 			return fmt.Errorf(apx.Trans("install.sideUserTemp", err))
 		}
