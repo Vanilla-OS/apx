@@ -65,25 +65,22 @@ CD into where you cloned apx and perform ``go build`` inside the directory.
 
 in order for it to show up in your terminal you need to add it to a directory in your PATH:
 > for example: ``/usr/bin/`` or ``~/.local/bin`` for this we will use ``/usr/share/bin``
-
-``sudo cp apx /usr/bin``
-
+```
+sudo cp apx /usr/bin
+```
 finally make the needed directories used for configuring APX and to store distrobox with:
-
-``sudo mkdir /etc/apx``
-
-``sudo cp config/config.json /etc/apx/``
-
-``sudo mkdir /usr/lib/apx``
-
+```
+sudo mkdir /etc/apx
+sudo cp config/config.json /etc/apx/
+sudo mkdir /usr/lib/apx
+```
 then you need to install the distrobox binary:
 
 > typically apx uses its own fork but that is currently unavailable for non vanilla distros.
-
-``curl -s https://raw.githubusercontent.com/89luca89/distrobox/main/install | sh -s -- --prefix ~/.local``
-
-``sudo mv ~/.local/share/distrobox* /usr/lib/apx``
-
+```
+curl -s https://raw.githubusercontent.com/89luca89/distrobox/main/install | sh -s -- --prefix ~/.local
+sudo mv ~/.local/share/distrobox* /usr/lib/apx
+```
 in order to fix exporting desktop files you need to do:
 ``sudo chown <username> ~/.local/share/icons -R``
 
