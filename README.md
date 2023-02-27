@@ -56,7 +56,7 @@ The official **documentation and manpage** for `apx` are available at <https://d
 ## Other distros Overview
 
 #overview
-To use with another distro, you can compile the distro and copy the files to the needed paths.
+To use with another distro, you can compile the to the distro using ``go`` and copy the files to the needed paths.
 
 First, install ``go`` as a dependency
 > you may need to install ``git`` and or ``curl`` depending on the distro
