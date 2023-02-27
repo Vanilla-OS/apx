@@ -60,7 +60,8 @@ To use with another distro, you can compile the to the distro using ``go`` and c
 
 First, install ``go`` as a dependency
 > you may need to install ``git`` and or ``curl`` depending on the distro
-then cd into where you cloned apx and perform ``go build`` inside the directory.
+
+CD into where you cloned apx and perform ``go build`` inside the directory.
 
 in order for it to show up in your terminal you need to add it to a directory in your PATH:
 > for example: ``/usr/bin/`` or ``~/.local/bin`` for this we will use ``/usr/share/bin``
