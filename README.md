@@ -53,16 +53,31 @@ Use "apx [command] --help" for more information about a command.
 The official **documentation and manpage** for `apx` are available at <https://documentation.vanillaos.org/docs/apx/>.
 
 
-## Other distros
+## Other distros Overview
 
-> Please consider to keep the project name as `apx` to avoid confusion for users.
+#overview
+To use with another distro, you can compile the distro and copy the files to the needed paths.
 
-To use with another distro, you can compile the distro and copy the files to the needed paths
+First, install ``go`` as a dependency
+> you may need to install ``git`` and or ``curl`` depending on the distro
+then cd into where you cloned apx and perform ``go build`` inside the directory.
 
-`/usr/lib/apx/distrobox*` for the distrbox binaries that apx expects.
+in order for it to show up in your terminal you need to add it to a directory in your PATH:
+> for example: ``/usr/bin/`` or ``~/.local/bin`` for this we will use ``/usr/share/bin``
+``sudo cp apx /usr/bin``
 
-`/etc/apx/config.json` for the config location needed for operation.
+finally make the needed directories used for configuring APX and to store distrobox with:
+``sudo mkdir /etc/apx``
+``sudo cp config/config.json /etc/apx/``
+``sudo mkdir /usr/lib/apx``
 
+then you need to install the distrobox binary:
+> typically apx uses its own fork but that is currently unavailable for non vanilla distros.
+``curl -s https://raw.githubusercontent.com/89luca89/distrobox/main/install | sh -s -- --prefix ~/.local``
+``sudo mv ~/.local/share/distrobox* /usr/lib/apx``
+
+in order to fix exporting desktop files you need to do:
+``sudo chown <username> ~/.local/share/icons -R``
 
 ## Dependencies
 
