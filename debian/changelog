@@ -1,3 +1,17 @@
+apx (1.8.0) kinetic; urgency=medium
+
+  * Fix: Require package name for nix upgrade
+  * Setup Goreleaser
+  * Semi-auto export binary
+  * Use spinner from Orchid across application
+  * Fix: export/unexport desktop entries with binary names that differ from
+    package name work consistently
+  * Copy deb file instead of moving when sideloading
+  * Fix: Nix install/uninstall didn't accept multiple packages at once
+  * Nix commands have more consistent output
+
+ -- Mateus Melchiades <matbme@duck.com>  Tue, 28 Feb 2023 10:17:00 -0300
+
 apx (1.7.0-1) kinetic; urgency=medium
 
   * New translations
