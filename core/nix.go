@@ -287,7 +287,7 @@ func NixInit(allowUnfree bool) error {
 			log.Default().Printf("error creating user environment configuration directory")
 			return err
 		}
-		nixUnfreeFile := path.Join(nixConfDir, "00-nixunfree.conf")
+		nixUnfreeFile := path.Join(systemEnvDir, "00-nixunfree.conf")
 		unfreeEnv, err := os.Create(nixUnfreeFile)
 		if err != nil {
 			return err
