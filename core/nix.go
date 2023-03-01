@@ -110,50 +110,50 @@ func NixUpgradePackage(pkg string) error {
 }
 
 func NixRemovePackage(pkgs []string) error {
-    for _, pkg := range pkgs {
-        list := exec.Command("nix", "profile", "list")
-        bb, err := list.Output()
-        if err != nil {
-            log.Default().Println("Error getting installed packages. Have you run the `init` command yet?")
-            return err
-        }
+	for _, pkg := range pkgs {
+		list := exec.Command("nix", "profile", "list")
+		bb, err := list.Output()
+		if err != nil {
+			log.Default().Println("Error getting installed packages. Have you run the `init` command yet?")
+			return err
+		}
 
-        lines := bytes.Split(bb, []byte("\n"))
-        if len(lines) <= 0 {
-            return errors.New("Error getting installed packages.")
-        }
-        needle := []byte("." + pkg)
+		lines := bytes.Split(bb, []byte("\n"))
+		if len(lines) <= 0 {
+			return errors.New("Error getting installed packages.")
+		}
+		needle := []byte("." + pkg)
 
-        var pkgNumber string
-        for _, line := range lines {
-            // split the line by fields, field[0] is the package number
-            // field[1] has the full package name
-            pieces := bytes.Split(line, []byte(" "))
-            if len(pieces) > 1 {
-                if bytes.Contains(pieces[1], needle) {
-                    // this is our package
-                    pkgNumber = string(pieces[0])
-                    break
-                }
-            }
-        }
+		var pkgNumber string
+		for _, line := range lines {
+			// split the line by fields, field[0] is the package number
+			// field[1] has the full package name
+			pieces := bytes.Split(line, []byte(" "))
+			if len(pieces) > 1 {
+				if bytes.Contains(pieces[1], needle) {
+					// this is our package
+					pkgNumber = string(pieces[0])
+					break
+				}
+			}
+		}
 
-        if pkgNumber == "" {
-            return fmt.Errorf("Package %s not found", pkg)
-        }
+		if pkgNumber == "" {
+			return fmt.Errorf("Package %s not found", pkg)
+		}
 
-        remove := exec.Command("nix", "profile", "remove", pkgNumber)
-        err = remove.Run()
-        if err != nil {
-            return err
-        }
-    }
+		remove := exec.Command("nix", "profile", "remove", pkgNumber)
+		err = remove.Run()
+		if err != nil {
+			return err
+		}
+	}
 
-    return nil
+	return nil
 
 }
 
-func NixInit() error {
+func NixInit(allowUnfree bool) error {
 	// get user name for the systemd units
 	user := os.Getenv("USER")
 	if user == "" {
@@ -278,6 +278,25 @@ func NixInit() error {
 	if err != nil {
 		return err
 	}
+
+	if allowUnfree {
+		systemEnvDir := path.Join(homedir, ".config", "environment.d")
+
+		err = os.MkdirAll(systemEnvDir, 0755)
+		if err != nil {
+			log.Default().Printf("error creating user environment configuration directory")
+			return err
+		}
+		nixUnfreeFile := path.Join(nixConfDir, "00-nixunfree.conf")
+		unfreeEnv, err := os.Create(nixUnfreeFile)
+		if err != nil {
+			return err
+		}
+		_, err = unfreeEnv.Write([]byte(unfreeConf))
+		if err != nil {
+			return err
+		}
+	}
 	return nil
 
 }
@@ -348,5 +367,5 @@ ExecStart=chown -R {{.User}}:root /nix
 var singleUserCommand = "sh <(curl -L https://nixos.org/nix/install) --no-daemon"
 
 var nixConf = "experimental-features = nix-command flakes"
-
+var unfreeConf = "NIXPKGS_ALLOW_UNFREE=1"
 var xdgConfig = "export XDG_DATA_DIRS=$HOME/.nix-profile/share:$XDG_DATA_DIRS"
