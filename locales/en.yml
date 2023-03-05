@@ -68,6 +68,8 @@ nixinit:
   long: "Initializes a custom installation of nix by creating $HOME/.nix and setting up some SystemD units to mount it as /nix."
   short: "Initialize nix repository"
   confirm: "This will create a '.nix' folder in your home directory and set up some SystemD units to mount that folder at /nix before running the installation. Confirm 'y' to continue."
+  unfree: "Would you like to allow 'unfree' packages without Open Source licenses (Visual Studio Code, Spotify, etc)."
+  swcenter: "Would you like to install the Nix Software Center - a graphical software manager for Nix?"
   success: "Installation complete. Reboot to start using nix."
 nixremove:
   use: "remove"

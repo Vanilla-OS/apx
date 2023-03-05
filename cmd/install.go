@@ -71,7 +71,7 @@ func NewInstallCommand() *cmdr.Command {
 			cmd.Flags().Bool("no-export", false, "Do not export a desktop entry after the installation.")
 			cmd.Flags().Bool("sideload", false, "Install a package from a local file.")
 	*/
-	cmd.Example = "apx install htop git"
+	cmd.Example = "apx install htop git\napx --nix install --allow-unfree vscode"
 	cmd.Flags().SetInterspersed(false)
 	cmd.Args = cobra.MinimumNArgs(1)
 	return cmd
@@ -140,7 +140,7 @@ func install(cmd *cobra.Command, args []string) error {
 					}
 				}
 
-                container.ExportDesktopEntry(binary)
+				container.ExportDesktopEntry(binary)
 			}
 		}
 	}

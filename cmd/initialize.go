@@ -59,7 +59,6 @@ func initNix(cmd *cobra.Command, args []string) error {
 	// prompt for confirmation
 
 	b, err := cmdr.Confirm.Show(apx.Trans("nixinit.confirm"))
-
 	if err != nil {
 		return err
 	}
@@ -68,7 +67,13 @@ func initNix(cmd *cobra.Command, args []string) error {
 		cmdr.Info.Println(apx.Trans("apx.cxl"))
 		return nil
 	}
-	err = core.NixInit()
+
+	unfree, err := cmdr.Confirm.Show(apx.Trans("nixinit.unfree"))
+
+	if err != nil {
+		return err
+	}
+	err = core.NixInit(unfree)
 	if err != nil {
 		return err
 	}
