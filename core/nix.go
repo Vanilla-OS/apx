@@ -18,7 +18,7 @@ type UnitData struct {
 	User string
 }
 
-func NixInstallPackage(pkgs []string, unfree bool) error {
+func NixInstallPackage(pkgs []string, unfree, insecure bool) error {
 	spinner, err := cmdr.Spinner.Start(fmt.Sprintf("Installing %v...", pkgs))
 	if err != nil {
 		return err
@@ -43,7 +43,12 @@ func NixInstallPackage(pkgs []string, unfree bool) error {
 	}
 
 	install := exec.Command(cmd[0], cmd[1:]...)
-	install.Env = append(install.Env, "NIXPKGS_ALLOW_UNFREE=1")
+	if insecure {
+		install.Env = append(install.Env, "NIXPKGS_ALLOW_INSECURE=1")
+	}
+	if unfree {
+		install.Env = append(install.Env, "NIXPKGS_ALLOW_UNFREE=1")
+	}
 
 	var errOut bytes.Buffer
 	install.Stderr = &errOut

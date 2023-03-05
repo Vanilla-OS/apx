@@ -81,6 +81,7 @@ nixinstall:
   long: "Install a package from the `nixpkgs` repository as a flake in the default nix profile."
   short: "Install nix package"
   allowUnfree: "Allow packages with unfree licenses"
+  allowInsecure: "Allow packages with known vulnerabilities."
   error: "error installing packages"
   runInit: "Have you run the `init` command yet?"
   success: "Successfully installed package."
