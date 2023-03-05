@@ -69,11 +69,14 @@ func initNix(cmd *cobra.Command, args []string) error {
 	}
 
 	unfree, err := cmdr.Confirm.Show(apx.Trans("nixinit.unfree"))
-
 	if err != nil {
 		return err
 	}
-	err = core.NixInit(unfree)
+	insecure, err := cmdr.Confirm.Show(apx.Trans("nixinit.insecure"))
+	if err != nil {
+		return err
+	}
+	err = core.NixInit(unfree, insecure)
 	if err != nil {
 		return err
 	}
