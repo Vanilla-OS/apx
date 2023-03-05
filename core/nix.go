@@ -9,6 +9,7 @@ import (
 	"os"
 	"os/exec"
 	"path"
+	"strings"
 
 	"github.com/vanilla-os/orchid/cmdr"
 )
@@ -32,7 +33,13 @@ func NixInstallPackage(pkgs []string, unfree bool) error {
 	}
 
 	for _, pkg := range pkgs {
-		cmd = append(cmd, "nixpkgs#"+pkg)
+		// allow direct from github repository flake install
+		if !strings.Contains(pkg, ":") {
+			cmd = append(cmd, "nixpkgs#"+pkg)
+		} else {
+			cmd = append(cmd, pkg)
+
+		}
 	}
 
 	install := exec.Command(cmd[0], cmd[1:]...)
