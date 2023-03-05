@@ -165,7 +165,7 @@ func NixRemovePackage(pkgs []string) error {
 
 }
 
-func NixInit(allowUnfree bool) error {
+func NixInit(allowUnfree, allowInsecure bool) error {
 	// get user name for the systemd units
 	user := os.Getenv("USER")
 	if user == "" {
@@ -309,6 +309,24 @@ func NixInit(allowUnfree bool) error {
 			return err
 		}
 	}
+	if allowInsecure {
+		systemEnvDir := path.Join(homedir, ".config", "environment.d")
+
+		err = os.MkdirAll(systemEnvDir, 0755)
+		if err != nil {
+			log.Default().Printf("error creating user environment configuration directory")
+			return err
+		}
+		nixInsecureFile := path.Join(systemEnvDir, "01-nixinsecure.conf")
+		insecureEnv, err := os.Create(nixInsecureFile)
+		if err != nil {
+			return err
+		}
+		_, err = insecureEnv.Write([]byte(insecureConf))
+		if err != nil {
+			return err
+		}
+	}
 	return nil
 
 }
@@ -380,4 +398,5 @@ var singleUserCommand = "sh <(curl -L https://nixos.org/nix/install) --no-daemon
 
 var nixConf = "experimental-features = nix-command flakes"
 var unfreeConf = "NIXPKGS_ALLOW_UNFREE=1"
+var insecureConf = "NIXPKGS_ALLOW_UNFREE=1"
 var xdgConfig = "export XDG_DATA_DIRS=$HOME/.nix-profile/share:$XDG_DATA_DIRS"
