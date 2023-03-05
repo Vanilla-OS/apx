@@ -398,5 +398,5 @@ var singleUserCommand = "sh <(curl -L https://nixos.org/nix/install) --no-daemon
 
 var nixConf = "experimental-features = nix-command flakes"
 var unfreeConf = "NIXPKGS_ALLOW_UNFREE=1"
-var insecureConf = "NIXPKGS_ALLOW_UNFREE=1"
+var insecureConf = "NIXPKGS_ALLOW_INSECURE=1"
 var xdgConfig = "export XDG_DATA_DIRS=$HOME/.nix-profile/share:$XDG_DATA_DIRS"
