@@ -81,7 +81,7 @@ Apx has been designed in a distro-agnostic manner, allowing it to work with any 
 git clone https://github.com/Vanilla-OS/apx.git
 ```
 
-- You will have to enter the cloned repository and compile Apx with GO:-
+- You will have to enter the cloned repository and compile Apx with `go`:-
 
 ```bash
 cd apx
