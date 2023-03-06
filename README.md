@@ -111,7 +111,7 @@ curl -s https://raw.githubusercontent.com/89luca89/distrobox/main/install | sh -
 sudo mv ~/.local/share/distrobox* /usr/lib/apx
 ```
 
-> Note:- Apx uses a fork of Distrobox called `distrobox-micro`, but it is currently unavailable for other distributions, affecting the export of desktop entries.
+> Note:- Apx uses a fork of Distrobox called `micro-distrobox`, but it is currently unavailable for other distributions, affecting the export of desktop entries.
 
 - To fix exporting desktop entries, you will need to run the following command:-
 
