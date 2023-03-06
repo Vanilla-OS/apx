@@ -59,6 +59,7 @@ list:
   short: "List installed packages."
   upgradable: "Show upgradable packages"
   installed: "Show installed packages"
+  containers: "Show containers"
 nix:
   use: "nix"
   long: "Manage a custom installation of nix in your $HOME directory.\n\nThe `apx nix` integration serves as a wrapper for the\ndefault nix profile. Once installed, you are free to use any features of\nnix without using the `apx nix` command."

@@ -29,6 +29,7 @@ func New(version string, fs embed.FS) *cmdr.App {
 	apx = cmdr.NewApp("apx", version, fs)
 	return apx
 }
+
 func NewRootCommand(version string) *cmdr.Command {
 	root := cmdr.NewCommand(
 		apx.Trans("apx.use"),
