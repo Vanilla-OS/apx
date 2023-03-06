@@ -74,7 +74,7 @@ sudo mkdir /etc/apx
 sudo cp config/config.json /etc/apx/
 sudo mkdir /usr/lib/apx
 ```
-the you need to install the distrobox binary:
+then you need to install the distrobox binary:
 > Typically apx uses its own fork but that is currently unavailable for non vanilla distros.
 ```
 curl -s https://raw.githubusercontent.com/89luca89/distrobox/main/install | sh -s -- --prefix ~/.local
