@@ -63,30 +63,38 @@ To test translations made in the `.yml` file locally, perform `go build` first i
 
 ## Instructions for using Apx in other distributions
 
-Apx has been designed in a distro-agnostic manner allowing it to work with any distribution. (Note: Nix command in Apx requires systemd)
+Apx has been designed in a distro-agnostic manner, allowing it to work with any distribution. (Note: The Nix integration in Apx requires SystemD)
 
 ### Prerequisites
 
-- You must install `go` from your distribution's native repositories to compile `apx`.
-- You can install either `git` or `gh` to clone the repository.
+- You must have `go` installed from your distribution's native repositories to compile `apx`.
+- You must have `git` installed to clone the repository.
+- You must have `curl` installed for the Distrobox script.
+- You must have either `podman` or `docker` installed.
 
 ### Procedure
 
-- Navigate to your directory to clone the repository using `cd`.
-- Clone apx's repository using `git` or `gh`:-
+- Navigate to the directory you want to clone the repository in using `cd`.
+- Clone apx's repository using `git`:-
 
 ```bash
 git clone https://github.com/Vanilla-OS/apx.git
-gh repo clone Vanilla-OS/apx
 ```
 
--  For the Apx binary to work with the terminal, you need to add the cloned location to your PATH using the following command:-
+- You will have to enter the cloned repository and compile Apx with `go`:-
+
+```bash
+cd apx
+go build
+```
+
+- For the Apx binary to work in the terminal, you need to add the binary to your PATH using the following command:-
 
 ```bash
 sudo cp apx /usr/bin
 ```
 
-> In the above command, you can replace the path with: `/usr/bin/` or `~/.local/bin` if required.
+> In the above command, you can replace the path with: `/usr/local/bin/` or `~/.local/bin` if preferred.
 
 - Create a directory to store Distrobox and configure Apx using the following steps:-
 
@@ -96,16 +104,16 @@ sudo cp config/config.json /etc/apx/
 sudo mkdir /usr/lib/apx
 ```
 
-- Now, we need to install the distrobox binary using the following steps:-
+- Now, we need to install the Distrobox binary and move it using the following steps:-
 
 ```bash
 curl -s https://raw.githubusercontent.com/89luca89/distrobox/main/install | sh -s -- --prefix ~/.local
 sudo mv ~/.local/share/distrobox* /usr/lib/apx
 ```
 
-> Note:- Apx uses a fork of distrobox called `micro-distrobox`, but it is currently unavailable for other distributions, affecting the export of desktop entries.
+> Note:- Apx uses a fork of Distrobox called `micro-distrobox`, but it is currently unavailable for other distributions, affecting the export of desktop entries.
 
-- To fix exporting desktop entries, you need to perform the following step:-
+- To fix exporting desktop entries, you will need to run the following command:-
 
 ```bash
 sudo chown <username> ~/.local/share/icons -R
