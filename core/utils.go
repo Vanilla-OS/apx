@@ -37,7 +37,7 @@ func AskConfirmation(s string) bool {
 	return false
 }
 
-func CopyToUserTemp(path string) (string, error) {
+func MoveToUserTemp(path string) (string, error) {
 	user, err := user.Current()
 	if err != nil {
 		return "", err
@@ -52,21 +52,7 @@ func CopyToUserTemp(path string) (string, error) {
 
 	fileName := filepath.Base(path)
 	newPath := filepath.Join(cacheDir, fileName)
-
-	pathContents, err := os.Open(path)
-	if err != nil {
-		return "", err
-	}
-	defer pathContents.Close()
-
-	newPathContents, err := os.Create(newPath)
-	if err != nil {
-		return "", err
-	}
-	defer newPathContents.Close()
-
-	_, err = newPathContents.ReadFrom(pathContents)
-	if err != nil {
+	if err := os.Rename(path, newPath); err != nil {
 		return "", err
 	}
 

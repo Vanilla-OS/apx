@@ -9,6 +9,8 @@ package cmd
 */
 
 import (
+	"errors"
+
 	"github.com/spf13/cobra"
 	"github.com/vanilla-os/orchid/cmdr"
 )
@@ -26,8 +28,8 @@ func NewRunCommand() *cmdr.Command {
 
 func run(cmd *cobra.Command, args []string) error {
 	if cmd.Flag("nix").Changed {
-	    cmdr.Info.Println(apx.Trans("run.nixMsg"))
-        return nil
+		return errors.New(apx.Trans("apx.notForNix"))
+
 	}
 	container.Run(args...)
 

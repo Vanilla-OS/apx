@@ -124,7 +124,7 @@
  * [PR #16](https://github.com/magiconair/properties/pull/16): Keep gofmt happy
  * [PR #18](https://github.com/magiconair/properties/pull/18): Fix Delete() function
 
-### [1.7.0](https://github.com/magiconair/properties/tree/v1.7.0) - 20 Mar 2016
+### [1.7.0-1](https://github.com/magiconair/properties/tree/v1.7.0-1) - 20 Mar 2016
 
  * [Issue #10](https://github.com/magiconair/properties/issues/10): Add [LoadURL,LoadURLs,MustLoadURL,MustLoadURLs](http://godoc.org/github.com/magiconair/properties#LoadURL) method to load properties from a URL.
  * [Issue #11](https://github.com/magiconair/properties/issues/11): Add [LoadString,MustLoadString](http://godoc.org/github.com/magiconair/properties#LoadString) method to load properties from an UTF8 string.
@@ -160,7 +160,7 @@
  * Added [GetParsedDuration()](http://godoc.org/github.com/magiconair/properties#Properties.GetParsedDuration) and [MustGetParsedDuration()](http://godoc.org/github.com/magiconair/properties#Properties.MustGetParsedDuration) for values specified compatible with
    [time.ParseDuration()](http://golang.org/pkg/time/#ParseDuration).
 
-### [1.5.0](https://github.com/magiconair/properties/tree/v1.5.0) - 18 Nov 2014
+### [1.6.0](https://github.com/magiconair/properties/tree/v1.6.0) - 18 Nov 2014
 
  * Added support for single and multi-line comments (reading, writing and updating)
  * The order of keys is now preserved

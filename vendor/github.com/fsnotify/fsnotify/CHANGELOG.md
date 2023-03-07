@@ -118,7 +118,7 @@ but not documented). It also increases the minimum Linux version to 2.6.32.
 
 * Revert Add AddRaw to not follow symlinks [#394](https://github.com/fsnotify/fsnotify/pull/394)
 
-## [1.5.0] - 2021-08-20
+## [1.6.0] - 2021-08-20
 
 * Go: Increase minimum required version to Go 1.12 [#381](https://github.com/fsnotify/fsnotify/pull/381)
 * Feature: Add AddRaw method which does not follow symlinks when adding a watch [#289](https://github.com/fsnotify/fsnotify/pull/298)

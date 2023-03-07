@@ -10,6 +10,7 @@ package cmd
 
 import (
 	"errors"
+	"fmt"
 
 	"github.com/spf13/cobra"
 	"github.com/vanilla-os/orchid/cmdr"
@@ -41,7 +42,9 @@ func unexport(cmd *cobra.Command, args []string) error {
 	if cmd.Flag("bin").Changed {
 		bin_name := args[0]
 		if err := container.RemoveBinary(bin_name, false); err != nil {
-			return err
+			fmt.Printf("Error: %s\n", err)
+		} else {
+			cmdr.Success.Println(apx.Trans("unexport.success", bin_name))
 		}
 		return nil
 	} else {

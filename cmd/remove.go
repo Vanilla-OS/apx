@@ -34,7 +34,7 @@ func NewRemoveCommand() *cmdr.Command {
 
 func remove(cmd *cobra.Command, args []string) error {
 	if cmd.Flag("nix").Changed {
-		return removePackage(args)
+		return removePackage(cmd, args)
 	}
 	command := append([]string{}, container.GetPkgCommand("remove")...)
 	command = append(command, args...)
@@ -43,33 +43,20 @@ func remove(cmd *cobra.Command, args []string) error {
 		command = append(command, "-y")
 	}
 
-	for _, pkg := range args {
-        binaries, err := container.BinariesProvidedByPackage(pkg)
-        if err != nil {
-            return err
-        }
-
-        for _, binary := range binaries {
-            container.RemoveDesktopEntry(binary)
-
-            err := container.RemoveBinary(binary, false)
-            if err != nil {
-                cmdr.Error.Printf("Error unexporting binary: %s\n", err)
-                return err
-            }
-        }
-	}
-
 	err := container.Run(command...)
 	if err != nil {
 		return err
 	}
 
+	for _, pkg := range args {
+		container.RemoveDesktopEntry(pkg)
+		container.RemoveBinary(pkg, true)
+	}
+
 	return nil
 }
-
-func removePackage(args []string) error {
-	err := core.NixRemovePackage(args)
+func removePackage(cmd *cobra.Command, args []string) error {
+	err := core.NixRemovePackage(args[0])
 	if err != nil {
 		return err
 	}

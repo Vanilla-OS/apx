@@ -57,11 +57,8 @@ The official **documentation and manpage** for `apx` are available at <https://d
 
 > Please consider to keep the project name as `apx` to avoid confusion for users.
 
-To use with another distro, you can compile the distro and copy the files to the needed paths
-
-`/usr/lib/apx/distrobox*` for the distrbox binaries that apx expects.
-
-`/etc/apx/config.json` for the config location needed for operation.
+To use with another package manager, re-compile editing the `config.json` file
+to point to the desired package manger and image.
 
 
 ## Dependencies
