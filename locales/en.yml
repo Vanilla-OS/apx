@@ -53,6 +53,7 @@ install:
   sideload: "Install a package from a local file."
   sideArgs: "sideload requires the path to a local file"
   sideUserTemp: "can't move file to user temp: %s"
+  exportBinPrompt: "Export binary %s to host?\nThis will let you call it directly from the shell without using \"apx run\".\nYou can also export it later using \"apx export --bin %s\""
 list:
   use: "list"
   long: "List installed packages."
@@ -89,7 +90,7 @@ purge:
   use: "purge <packages>"
   long: "Purge packages inside a managed container"
   short: "Purge packages inside a managed container"
-remove: 
+remove:
   use: "remove <package>"
   long: "Remove packages inside a managed container."
   short: "Remove packages inside a managed container."
@@ -97,6 +98,7 @@ run:
   use: "run <command>"
   long: "Run a program inside a managed container."
   short: "Run a program inside a managed container."
+  nixMsg: "Do not use `apx run` for nix packages. Run them directly as you would with a native package."
 search:
   use: "search <packages>"
   long: "Search for packages in a managed container."

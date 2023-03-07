@@ -103,7 +103,7 @@ func GetHostInfo() (img string, pkgmanager string, err error) {
 	case "xbps":
 		return "ghcr.io/void-linux/void-linux:latest-full-x86_64" + distro_version, "xbps", nil
 	case "swupd":
-		return "dockep.io/library/clearlinux" + distro_version, "swupd", nil
+		return "docker.io/library/clearlinux:" + distro_version, "swupd", nil
 	default:
 		return "", "", fmt.Errorf("Unsupported distro detected")
 	}

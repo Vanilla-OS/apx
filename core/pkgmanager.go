@@ -245,7 +245,6 @@ func GetXbpsPkgCommand(command string) []string {
 }
 
 func GetSwupdPkgCommand(command string) []string {
-	//NOTE: These have been extrapolated to Clear's package manager "swupd" to the best of my ability, would love to be corrected.
 	switch command {
 
 	case "autoremove":
@@ -268,6 +267,10 @@ func GetSwupdPkgCommand(command string) []string {
 		return []string{"sudo", "swupd", "check-update"}
 	case "upgrade":
 		return []string{"sudo", "swupd", "update"}
+	case "install-os-core-search":
+		return []string{
+			"sudo", "swupd", "bundle-add", "-y", "os-core-search",
+		}
 	default:
 		return nil
 	}
@@ -275,6 +278,7 @@ func GetSwupdPkgCommand(command string) []string {
 
 func (c *Container) IsPackageInstalled(pkgname string) (bool, error) {
 	var query_cmd string
+    extra := ""
 	switch c.containerType {
 	case APT:
 		query_cmd = "dpkg -s"
@@ -289,12 +293,13 @@ func (c *Container) IsPackageInstalled(pkgname string) (bool, error) {
 	case XBPS:
 		query_cmd = "xbps-query"
 	case SWUPD:
-		query_cmd = "swupd bundle-list"
+		query_cmd = "LANG=C swupd search"
+        extra = " | grep -F \\(installed\\)"
 	default:
 		return false, errors.New("Cannot query package from unknown container")
 	}
 
-	query_check_str := fmt.Sprintf("if $(%s %s >/dev/null 2>/dev/null); then echo true; else echo false; fi", query_cmd, pkgname)
+	query_check_str := fmt.Sprintf("if $(%s %s%s >/dev/null 2>/dev/null); then echo true; else echo false; fi", query_cmd, pkgname, extra)
 
 	result, err := c.Output("sh", "-c", query_check_str)
 	if err != nil {
@@ -307,6 +312,43 @@ func (c *Container) IsPackageInstalled(pkgname string) (bool, error) {
 	}
 
 	return result_bool, nil
+}
+
+func (c *Container) BinariesProvidedByPackage(pkgname string) ([]string, error) {
+	var query_cmd string
+	switch c.containerType {
+	case APT:
+		query_cmd = "dpkg -L %s | grep /usr/bin/ | cut -f 4 -d /"
+	case AUR:
+		query_cmd = "pacman -Ql %s | grep /usr/bin/. | cut -f 4 -d /"
+	case DNF:
+		query_cmd = "rpm -ql %s | grep /usr/bin/ | cut -f 4 -d /"
+	case APK:
+		query_cmd = "apk info -L %s | grep usr/bin/ | cut -f 3 -d /"
+	case ZYPPER:
+		query_cmd = "rpm -ql %s | grep /usr/bin/ | cut -f 4 -d /"
+	case XBPS:
+		query_cmd = "xbps-query -f %s | grep /usr/bin/ | cut -f 4 -d /"
+	case SWUPD:
+		query_cmd = "sudo swupd search-file -Bm %s | grep /usr/bin/ | cut -f 4 -d / | cut -f 1 -d ,"
+	default:
+		return []string{}, errors.New("Cannot query package from unknown container")
+	}
+
+	query_check_str := fmt.Sprintf(query_cmd, pkgname)
+	result, err := c.Output("sh", "-c", query_check_str)
+	if err != nil {
+		return []string{}, err
+	}
+
+	binaries := []string{}
+	for _, line := range strings.Split(result, "\n") {
+		if line != "" {
+			binaries = append(binaries, line)
+		}
+	}
+
+	return binaries, nil
 }
 
 func GetLatestYay() string {

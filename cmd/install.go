@@ -101,7 +101,7 @@ func install(cmd *cobra.Command, args []string) error {
 
 			return fmt.Errorf(apx.Trans("install.sideArgs"))
 		}
-		path, err := core.MoveToUserTemp(args[0])
+		path, err := core.CopyToUserTemp(args[0])
 		if err != nil {
 			return fmt.Errorf(apx.Trans("install.sideUserTemp", err))
 		}
@@ -121,18 +121,40 @@ func install(cmd *cobra.Command, args []string) error {
 
 	if !sideload {
 		for _, pkg := range args {
-			container.ExportDesktopEntry(pkg)
+			binaries, err := container.BinariesProvidedByPackage(pkg)
+			if err != nil {
+				return err
+			}
+
+			for _, binary := range binaries {
+				choice, err := cmdr.Confirm.Show(fmt.Sprintf(apx.Trans("install.exportBinPrompt"), binary, binary))
+				if err != nil {
+					return err
+				}
+
+				if choice {
+					err := container.ExportBinary(binary)
+					if err != nil {
+						cmdr.Error.Printf("Error exporting binary: %s\n", err)
+						return err
+					}
+				}
+
+                container.ExportDesktopEntry(binary)
+			}
 		}
 	}
 
 	return nil
 }
+
 func installPackage(cmd *cobra.Command, args []string) error {
 	allowUnfree := false
 	if cmd.Flags().Changed("allow-unfree") {
 		allowUnfree = true
 	}
-	err := core.NixInstallPackage(args[0], allowUnfree)
+
+	err := core.NixInstallPackage(args, allowUnfree)
 	if err != nil {
 		return err
 	}
