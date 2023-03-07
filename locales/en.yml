@@ -53,6 +53,7 @@ install:
   sideload: "Install a package from a local file."
   sideArgs: "sideload requires the path to a local file"
   sideUserTemp: "can't move file to user temp: %s"
+  exportBinPrompt: "Export binary %s to host?\nThis will let you call it directly from the shell without using \"apx run\".\nYou can also export it later using \"apx export --bin %s\""
 list:
   use: "list"
   long: "List installed packages."
@@ -68,6 +69,9 @@ nixinit:
   long: "Initializes a custom installation of nix by creating $HOME/.nix and setting up some SystemD units to mount it as /nix."
   short: "Initialize nix repository"
   confirm: "This will create a '.nix' folder in your home directory and set up some SystemD units to mount that folder at /nix before running the installation. Confirm 'y' to continue."
+  unfree: "Would you like to allow 'unfree' packages without Open Source licenses (Visual Studio Code, Spotify, etc)?"
+  insecure: "Would you like to allow 'insecure' packages (software with known vulnerabilities)?"
+  swcenter: "Would you like to install the Nix Software Center - a graphical software manager for Nix?"
   success: "Installation complete. Reboot to start using nix."
 nixremove:
   use: "remove"
@@ -79,6 +83,7 @@ nixinstall:
   long: "Install a package from the `nixpkgs` repository as a flake in the default nix profile."
   short: "Install nix package"
   allowUnfree: "Allow packages with unfree licenses"
+  allowInsecure: "Allow packages with known vulnerabilities."
   error: "error installing packages"
   runInit: "Have you run the `init` command yet?"
   success: "Successfully installed package."
@@ -89,7 +94,7 @@ purge:
   use: "purge <packages>"
   long: "Purge packages inside a managed container"
   short: "Purge packages inside a managed container"
-remove: 
+remove:
   use: "remove <package>"
   long: "Remove packages inside a managed container."
   short: "Remove packages inside a managed container."
@@ -97,6 +102,7 @@ run:
   use: "run <command>"
   long: "Run a program inside a managed container."
   short: "Run a program inside a managed container."
+  nixMsg: "Do not use `apx run` for nix packages. Run them directly as you would with a native package."
 search:
   use: "search <packages>"
   long: "Search for packages in a managed container."

@@ -1,4 +1,4 @@
-## 1.6.0
+## 1.5.0
 
 * New option `IgnoreUntaggedFields` to ignore decoding to any fields
   without `mapstructure` (or the configured tag name) set [GH-277]
