@@ -64,7 +64,7 @@ Global Flags:
 		    --dnf           Install packages from the Fedora's DNF (Dandified YUM) repository.
 		    --zypper        Install packages from the openSUSE repository.
 		    --xbps          Install packages from the Void (Linux) repository.
-	  		--swupd: 		Install packages from the Clear Linux* store
+		    --swupd 		Install packages from the Clear Linux* store.
 		-h, --help          help for apx
 		-n, --name string   Create or use custom container with this name.
 		-v, --version       version for apx

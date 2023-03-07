@@ -248,10 +248,10 @@ func (c *Container) Create() error {
 
 	container_name := c.GetContainerName()
 	spinner, err := cmdr.Spinner.Start("Creating container...")
-    if err != nil {
-        return err
-    }
-    defer spinner.Stop()
+	if err != nil {
+		return err
+	}
+	defer spinner.Stop()
 
 	cmd := exec.Command(settings.Cnf.DistroboxPath, "create",
 		"--name", container_name,
@@ -301,6 +301,10 @@ func (c *Container) Create() error {
 		c.Run(GetAurPkgCommand("install-yay")...)
 	}
 
+	if c.containerType == SWUPD {
+		c.Run(GetSwupdPkgCommand("install-os-core-search")...)
+	}
+
 	spinner.Success("Container created.")
 
 	return err
@@ -311,10 +315,10 @@ func (c *Container) Stop() error {
 
 	container_name := c.GetContainerName()
 	spinner, err := cmdr.Spinner.Start("Stopping container...")
-    if err != nil {
-        return err
-    }
-    defer spinner.Stop()
+	if err != nil {
+		return err
+	}
+	defer spinner.Stop()
 
 	cmd := exec.Command(settings.Cnf.DistroboxPath, "stop", container_name, "--yes")
 	_, err = cmd.Output()
@@ -333,10 +337,10 @@ func (c *Container) Remove() error {
 
 	container_name := c.GetContainerName()
 	spinner, err := cmdr.Spinner.Start("Removing container...")
-    if err != nil {
-        return err
-    }
-    defer spinner.Stop()
+	if err != nil {
+		return err
+	}
+	defer spinner.Stop()
 
 	if !c.Exists() {
 		return nil
@@ -367,10 +371,10 @@ func (c *Container) ExportBinary(bin string) error {
 	}
 
 	spinner, err := cmdr.Spinner.Start(fmt.Sprintf("Exporting binary: %v.", bin))
-    if err != nil {
-        return err
-    }
-    defer spinner.Stop()
+	if err != nil {
+		return err
+	}
+	defer spinner.Stop()
 
 	// If bin name not in $PATH, export to .local/bin
 	// Otherwise, export with suffix based on container name
@@ -463,10 +467,10 @@ func (c *Container) ExportBinary(bin string) error {
 func (c *Container) RemoveDesktopEntry(program string) error {
 	container_name := c.GetContainerName()
 	spinner, err := cmdr.Spinner.Start(fmt.Sprintf("Removing desktop entry: %v", program))
-    if err != nil {
-        return err
-    }
-    defer spinner.Stop()
+	if err != nil {
+		return err
+	}
+	defer spinner.Stop()
 
 	home_dir, err := os.UserHomeDir()
 	if err != nil {
@@ -501,10 +505,10 @@ func (c *Container) RemoveDesktopEntry(program string) error {
 func (c *Container) RemoveBinary(bin string, fail_silently bool) error {
 	// Check file exists in ~/.local/bin
 	spinner, err := cmdr.Spinner.Start(fmt.Sprintf("Removing binary export: %v.", bin))
-    if err != nil {
-        return err
-    }
-    defer spinner.Stop()
+	if err != nil {
+		return err
+	}
+	defer spinner.Stop()
 
 	local_bin_file := fmt.Sprintf("/home/%s/.local/bin/%s", os.Getenv("USER"), bin)
 	if _, err := os.Stat(local_bin_file); os.IsNotExist(err) {
