@@ -152,20 +152,26 @@ func GetDistroboxVersion() (version string, err error) {
 func (c *Container) Exec(capture_output bool, args ...string) (string, error) {
 	ExitIfOverlayTypeFS()
 
-	if !c.Exists() {
-		err := c.Create()
-		if err != nil {
-			log.Default().Println("Failed to initialize the container. Try manually with `apx init`.")
-			return "", err
+	cmd := exec.Command("")
+	if args[0] == "list" && len(args) == 1 {
+		cmd = exec.Command(settings.Cnf.DistroboxPath, "list")
+	} else {
+
+		if !c.Exists() {
+			err := c.Create()
+			if err != nil {
+				log.Default().Println("Failed to initialize the container. Try manually with `apx init`.")
+				return "", err
+			}
 		}
+
+		container_name := c.GetContainerName()
+
+		cmd = exec.Command(settings.Cnf.DistroboxPath, "enter", container_name, "--")
+		cmd.Args = append(cmd.Args, args...)
+		cmd.Env = os.Environ()
+		cmd.Env = append(cmd.Env, "STORAGE_DRIVER=vfs")
 	}
-
-	container_name := c.GetContainerName()
-
-	cmd := exec.Command(settings.Cnf.DistroboxPath, "enter", container_name, "--")
-	cmd.Args = append(cmd.Args, args...)
-	cmd.Env = os.Environ()
-	cmd.Env = append(cmd.Env, "STORAGE_DRIVER=vfs")
 
 	if capture_output {
 		out, err := cmd.Output()
@@ -243,10 +249,10 @@ func (c *Container) Create() error {
 
 	container_name := c.GetContainerName()
 	spinner, err := cmdr.Spinner.Start("Creating container...")
-    if err != nil {
-        return err
-    }
-    defer spinner.Stop()
+	if err != nil {
+		return err
+	}
+	defer spinner.Stop()
 
 	cmd := exec.Command(settings.Cnf.DistroboxPath, "create",
 		"--name", container_name,
@@ -306,10 +312,10 @@ func (c *Container) Stop() error {
 
 	container_name := c.GetContainerName()
 	spinner, err := cmdr.Spinner.Start("Stopping container...")
-    if err != nil {
-        return err
-    }
-    defer spinner.Stop()
+	if err != nil {
+		return err
+	}
+	defer spinner.Stop()
 
 	cmd := exec.Command(settings.Cnf.DistroboxPath, "stop", container_name, "--yes")
 	_, err = cmd.Output()
@@ -328,10 +334,10 @@ func (c *Container) Remove() error {
 
 	container_name := c.GetContainerName()
 	spinner, err := cmdr.Spinner.Start("Removing container...")
-    if err != nil {
-        return err
-    }
-    defer spinner.Stop()
+	if err != nil {
+		return err
+	}
+	defer spinner.Stop()
 
 	if !c.Exists() {
 		return nil
@@ -362,10 +368,10 @@ func (c *Container) ExportBinary(bin string) error {
 	}
 
 	spinner, err := cmdr.Spinner.Start(fmt.Sprintf("Exporting binary: %v.", bin))
-    if err != nil {
-        return err
-    }
-    defer spinner.Stop()
+	if err != nil {
+		return err
+	}
+	defer spinner.Stop()
 
 	// If bin name not in $PATH, export to .local/bin
 	// Otherwise, export with suffix based on container name
@@ -456,10 +462,10 @@ func (c *Container) ExportBinary(bin string) error {
 func (c *Container) RemoveDesktopEntry(program string) error {
 	container_name := c.GetContainerName()
 	spinner, err := cmdr.Spinner.Start(fmt.Sprintf("Removing desktop entry: %v", program))
-    if err != nil {
-        return err
-    }
-    defer spinner.Stop()
+	if err != nil {
+		return err
+	}
+	defer spinner.Stop()
 
 	home_dir, err := os.UserHomeDir()
 	if err != nil {
@@ -494,10 +500,10 @@ func (c *Container) RemoveDesktopEntry(program string) error {
 func (c *Container) RemoveBinary(bin string, fail_silently bool) error {
 	// Check file exists in ~/.local/bin
 	spinner, err := cmdr.Spinner.Start(fmt.Sprintf("Removing binary export: %v.", bin))
-    if err != nil {
-        return err
-    }
-    defer spinner.Stop()
+	if err != nil {
+		return err
+	}
+	defer spinner.Stop()
 
 	local_bin_file := fmt.Sprintf("/home/%s/.local/bin/%s", os.Getenv("USER"), bin)
 	if _, err := os.Stat(local_bin_file); os.IsNotExist(err) {
