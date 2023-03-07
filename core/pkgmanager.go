@@ -29,6 +29,8 @@ func (c *Container) GetPkgCommand(command string) []string {
 		return GetZypperPkgCommand(command)
 	case XBPS:
 		return GetXbpsPkgCommand(command)
+	case NIX:
+		return GetNixPkgCommand(command)
 	default:
 		return nil
 	}
@@ -239,6 +241,34 @@ func GetXbpsPkgCommand(command string) []string {
 		return nil
 	}
 }
+func GetNixPkgCommand(command string) []string {
+	bin := "nix"
+
+	switch command {
+	case "autoremove":
+		return []string{"sudo", bin, "autoremove"}
+	case "clean":
+		return []string{"sudo", bin, "clean"}
+	case "install":
+		return []string{bin, "profile", "install"}
+	case "list":
+		return []string{bin, "profile", "list"}
+	case "purge":
+		return []string{"sudo", bin, "purge"}
+	case "remove":
+		return []string{bin, "profile", "remove"}
+	case "search":
+		return []string{"sudo", bin, "search"}
+	case "show":
+		return []string{"sudo", bin, "show"}
+	case "update":
+		return []string{bin, "profile", "update"}
+	case "upgrade":
+		return []string{"sudo", bin, "upgrade"}
+	default:
+		return nil
+	}
+}
 
 func (c *Container) IsPackageInstalled(pkgname string) (bool, error) {
 	var query_cmd string
@@ -256,7 +286,7 @@ func (c *Container) IsPackageInstalled(pkgname string) (bool, error) {
 	case XBPS:
 		query_cmd = "xbps-query"
 	default:
-		return false, errors.New("Cannot query package from unknown container")
+		return false, errors.New("cannot query package from unknown container")
 	}
 
 	query_check_str := fmt.Sprintf("if $(%s %s >/dev/null 2>/dev/null); then echo true; else echo false; fi", query_cmd, pkgname)
@@ -290,7 +320,7 @@ func (c *Container) BinariesProvidedByPackage(pkgname string) ([]string, error) 
 	case XBPS:
 		query_cmd = "xbps-query -f %s | grep /usr/bin/ | cut -f 4 -d /"
 	default:
-		return []string{}, errors.New("Cannot query package from unknown container")
+		return []string{}, errors.New("cannot query package from unknown container")
 	}
 
 	query_check_str := fmt.Sprintf(query_cmd, pkgname)

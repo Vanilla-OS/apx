@@ -132,7 +132,7 @@ func NixRemovePackage(pkgs []string) error {
 
 		lines := bytes.Split(bb, []byte("\n"))
 		if len(lines) <= 0 {
-			return errors.New("Error getting installed packages.")
+			return errors.New("error getting installed packages")
 		}
 		needle := []byte("." + pkg)
 
@@ -151,7 +151,7 @@ func NixRemovePackage(pkgs []string) error {
 		}
 
 		if pkgNumber == "" {
-			return fmt.Errorf("Package %s not found", pkg)
+			return fmt.Errorf("package %s not found", pkg)
 		}
 
 		remove := exec.Command("nix", "profile", "remove", pkgNumber)

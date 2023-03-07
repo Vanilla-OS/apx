@@ -85,14 +85,16 @@ func NewInstallCommand() *cmdr.Command {
 }
 
 func install(cmd *cobra.Command, args []string) error {
-	if cmd.Flag("nix").Changed {
-		return installPackage(cmd, args)
-	}
-
+	/*	if cmd.Flag("nix").Changed {
+			return installPackage(cmd, args)
+		}
+	*/
 	no_export := cmd.Flag("no-export").Changed
 	assume_yes := cmd.Flag("assume-yes").Changed
 	fix_broken := cmd.Flag("fix-broken").Changed
 	sideload := cmd.Flag("sideload").Changed
+	unfree := cmd.Flag("allow-unfree").Changed
+	insecure := cmd.Flag("allow-insecure").Changed
 
 	command := append([]string{}, container.GetPkgCommand("install")...)
 
@@ -101,6 +103,14 @@ func install(cmd *cobra.Command, args []string) error {
 	}
 	if fix_broken {
 		command = append(command, "-f")
+	}
+	if unfree {
+		container.AllowUnfree = true
+		command = append(command, "--impure")
+	}
+	if insecure {
+		container.AllowInsecure = true
+		command = append(command, "--impure")
 	}
 
 	if sideload {
@@ -122,7 +132,7 @@ func install(cmd *cobra.Command, args []string) error {
 		return err
 	}
 
-	if no_export {
+	if no_export || container.Runtime() == core.HOST {
 		return nil
 	}
 

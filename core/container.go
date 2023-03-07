@@ -32,15 +32,68 @@ const (
 	APK    ContainerType = iota // 3
 	ZYPPER ContainerType = iota // 4
 	XBPS   ContainerType = iota // 5
+	NIX    ContainerType = iota // 6
+)
+
+type RuntimeEnvironment int
+
+const (
+	CONTAINER RuntimeEnvironment = iota // 0
+	HOST      RuntimeEnvironment = iota // 1
 )
 
 // How many container types we offer. Must be always the same
 // as the number of options above!
-const CONTAINER_TYPES = 6
+const CONTAINER_TYPES = 7
 
 type Container struct {
 	containerType ContainerType
 	customName    string
+	//hack
+	AllowUnfree   bool
+	AllowInsecure bool
+}
+
+// Runtime returns the environment/engine used to execute
+// commands related to this container.
+func (c Container) Runtime() RuntimeEnvironment {
+	if c.containerType != NIX {
+		return CONTAINER
+	}
+	return HOST
+}
+
+// GetExecCommand returns the command used to execute
+// an apx command based on the runtime of the container
+func (c Container) GetExecCommand() *exec.Cmd {
+	var cmd *exec.Cmd
+	if c.Runtime() == CONTAINER {
+		container_name := c.GetContainerName()
+		cmd = exec.Command(settings.Cnf.DistroboxPath, "enter", container_name, "--")
+		return cmd
+	}
+	cmd = exec.Command("nix", "profile")
+	return cmd
+
+}
+
+// GetExecEnv returns the environment used when executing
+// an apx command based on the runtime of the container
+// and any flags set on the container. Currently flags
+// are `insecure` and `unfree`, both for nix.
+func (c Container) GetExecEnv() []string {
+	baseEnv := os.Environ()
+	if c.Runtime() == CONTAINER {
+		baseEnv = append(baseEnv, "STORAGE_DRIVER=vfs")
+		return baseEnv
+	}
+	if c.AllowInsecure {
+		baseEnv = append(baseEnv, "NIXPKGS_ALLOW_INSECURE=1")
+	}
+	if c.AllowUnfree {
+		baseEnv = append(baseEnv, "NIXPKGS_ALLOW_UNFREE=1")
+	}
+	return baseEnv
 }
 
 func NewContainer(kind ContainerType) *Container {
@@ -160,12 +213,9 @@ func (c *Container) Exec(capture_output bool, args ...string) (string, error) {
 		}
 	}
 
-	container_name := c.GetContainerName()
-
-	cmd := exec.Command(settings.Cnf.DistroboxPath, "enter", container_name, "--")
+	cmd := c.GetExecCommand()
 	cmd.Args = append(cmd.Args, args...)
-	cmd.Env = os.Environ()
-	cmd.Env = append(cmd.Env, "STORAGE_DRIVER=vfs")
+	cmd.Env = c.GetExecEnv()
 
 	if capture_output {
 		out, err := cmd.Output()
@@ -243,10 +293,10 @@ func (c *Container) Create() error {
 
 	container_name := c.GetContainerName()
 	spinner, err := cmdr.Spinner.Start("Creating container...")
-    if err != nil {
-        return err
-    }
-    defer spinner.Stop()
+	if err != nil {
+		return err
+	}
+	defer spinner.Stop()
 
 	cmd := exec.Command(settings.Cnf.DistroboxPath, "create",
 		"--name", container_name,
@@ -306,10 +356,10 @@ func (c *Container) Stop() error {
 
 	container_name := c.GetContainerName()
 	spinner, err := cmdr.Spinner.Start("Stopping container...")
-    if err != nil {
-        return err
-    }
-    defer spinner.Stop()
+	if err != nil {
+		return err
+	}
+	defer spinner.Stop()
 
 	cmd := exec.Command(settings.Cnf.DistroboxPath, "stop", container_name, "--yes")
 	_, err = cmd.Output()
@@ -328,10 +378,10 @@ func (c *Container) Remove() error {
 
 	container_name := c.GetContainerName()
 	spinner, err := cmdr.Spinner.Start("Removing container...")
-    if err != nil {
-        return err
-    }
-    defer spinner.Stop()
+	if err != nil {
+		return err
+	}
+	defer spinner.Stop()
 
 	if !c.Exists() {
 		return nil
@@ -358,19 +408,19 @@ func (c *Container) ExportBinary(bin string) error {
 	// Get host's $PATH
 	out, err := c.Output("sh", "-c", "distrobox-host-exec $(readlink -fn $(getent passwd $USER | cut -f 7 -d :)) -l -i -c printenv | grep -E ^PATH=")
 	if err != nil {
-		return errors.New(fmt.Sprintf("Failed to execute printenv: %s", err))
+		return fmt.Errorf("failed to execute printenv: %s", err)
 	}
 
 	spinner, err := cmdr.Spinner.Start(fmt.Sprintf("Exporting binary: %v.", bin))
-    if err != nil {
-        return err
-    }
-    defer spinner.Stop()
+	if err != nil {
+		return err
+	}
+	defer spinner.Stop()
 
 	// If bin name not in $PATH, export to .local/bin
 	// Otherwise, export with suffix based on container name
 	if !strings.HasPrefix(out, "PATH=") {
-		return errors.New("Failed to read host's $PATH")
+		return errors.New("failed to read host's $PATH")
 	}
 	_, host_path, _ := strings.Cut(out, "=")
 
@@ -390,7 +440,7 @@ func (c *Container) ExportBinary(bin string) error {
 
 		entries, err := os.ReadDir(path)
 		if err != nil {
-			return fmt.Errorf("Could not read directory %s: %s", path, err)
+			return fmt.Errorf("could not read directory %s: %s", path, err)
 		}
 
 		duplicate_found := false
@@ -429,7 +479,7 @@ func (c *Container) ExportBinary(bin string) error {
 	// If returns error, binary could not be found
 	bin_path, err := c.Output("sh", "-c", "command -v "+bin)
 	if err != nil {
-		return fmt.Errorf("Error: Could not find a binary with name `%s` in $PATH. Nothing to export.", bin)
+		return fmt.Errorf("could not find a binary with name `%s` in $PATH - nothing to export", bin)
 	}
 
 	// Binaries in ~/.local/bin are already accessible by the host
@@ -456,10 +506,10 @@ func (c *Container) ExportBinary(bin string) error {
 func (c *Container) RemoveDesktopEntry(program string) error {
 	container_name := c.GetContainerName()
 	spinner, err := cmdr.Spinner.Start(fmt.Sprintf("Removing desktop entry: %v", program))
-    if err != nil {
-        return err
-    }
-    defer spinner.Stop()
+	if err != nil {
+		return err
+	}
+	defer spinner.Stop()
 
 	home_dir, err := os.UserHomeDir()
 	if err != nil {
@@ -494,10 +544,10 @@ func (c *Container) RemoveDesktopEntry(program string) error {
 func (c *Container) RemoveBinary(bin string, fail_silently bool) error {
 	// Check file exists in ~/.local/bin
 	spinner, err := cmdr.Spinner.Start(fmt.Sprintf("Removing binary export: %v.", bin))
-    if err != nil {
-        return err
-    }
-    defer spinner.Stop()
+	if err != nil {
+		return err
+	}
+	defer spinner.Stop()
 
 	local_bin_file := fmt.Sprintf("/home/%s/.local/bin/%s", os.Getenv("USER"), bin)
 	if _, err := os.Stat(local_bin_file); os.IsNotExist(err) {
@@ -517,7 +567,7 @@ func (c *Container) RemoveBinary(bin string, fail_silently bool) error {
 		case XBPS:
 			prefix = fmt.Sprintf("xbps_%s", bin)
 		default:
-			return errors.New("Can't unexport binary from unknown container")
+			return errors.New("can't unexport binary from unknown container")
 		}
 
 		prefixed_bin_file := fmt.Sprintf("/home/%s/.local/bin/%s", os.Getenv("USER"), prefix)
@@ -545,7 +595,7 @@ func (c *Container) RemoveBinary(bin string, fail_silently bool) error {
 			text := scanner.Text()
 			if text != "# distrobox_binary" {
 				if !fail_silently {
-					return fmt.Errorf("`~/.local/bin/%s` is not an apx export, refusing to remove.", bin)
+					return fmt.Errorf("`~/.local/bin/%s` is not an apx export, refusing to remove", bin)
 				} else {
 					return nil
 				}
@@ -567,17 +617,21 @@ func (c *Container) RemoveBinary(bin string, fail_silently bool) error {
 }
 
 func (c *Container) Exists() bool {
-	container_name := c.GetContainerName()
-	manager := ContainerManager()
+	if c.Runtime() == CONTAINER {
+		container_name := c.GetContainerName()
+		manager := ContainerManager()
 
-	cmd := exec.Command(manager, "ps", "-a", "-q", "-f", "name="+container_name+"$")
-	output, _ := cmd.Output()
+		cmd := exec.Command(manager, "ps", "-a", "-q", "-f", "name="+container_name+"$")
+		output, _ := cmd.Output()
 
-	// fmt.Println("container_name: ", container_name)
-	// fmt.Println("command: ", cmd.String())
-	// fmt.Println("output: ", string(output))
+		// fmt.Println("container_name: ", container_name)
+		// fmt.Println("command: ", cmd.String())
+		// fmt.Println("output: ", string(output))
 
-	return len(output) > 0
+		return len(output) > 0
+	}
+	// TODO: need to check for nix installation?
+	return true
 }
 
 func ApplyForAll(command string, flags []string) error {
@@ -590,12 +644,11 @@ func ApplyForAll(command string, flags []string) error {
 		name := container.GetContainerName()
 
 		fmt.Println()
-		log.Default().Println(fmt.Sprintf("Running %s in %s...", command, name))
+		log.Default().Printf("Running %s in %s...", command, name)
 
 		command := append([]string{}, container.GetPkgCommand(command)...)
-		for _, flag := range flags {
-			command = append(command, flag)
-		}
+
+		command = append(command, flags...)
 
 		if err := container.Run(command...); err != nil {
 			return err

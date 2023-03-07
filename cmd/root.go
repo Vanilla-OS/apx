@@ -109,14 +109,13 @@ func AddContainerFlags(cmd *cmdr.Command) *cmdr.Command {
 
 func getContainer() *core.Container {
 	var kind core.ContainerType = core.APT
-	// in the future these should be moved to
-	// constants, and wrapped in package level calls
 	apt = viper.GetBool("apt")
 	aur = viper.GetBool("aur")
 	dnf = viper.GetBool("dnf")
 	apk = viper.GetBool("apk")
 	zypper = viper.GetBool("zypper")
 	xbps = viper.GetBool("xbps")
+	nix = viper.GetBool("nix")
 	if aur {
 		kind = core.AUR
 	} else if dnf {
@@ -127,6 +126,8 @@ func getContainer() *core.Container {
 		kind = core.ZYPPER
 	} else if xbps {
 		kind = core.XBPS
+	} else if nix {
+		kind = core.NIX
 	}
 	if len(name) > 0 {
 		return core.NewNamedContainer(kind, name)
