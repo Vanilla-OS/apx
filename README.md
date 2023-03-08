@@ -110,6 +110,7 @@ sudo mkdir /usr/lib/apx
 curl -s https://raw.githubusercontent.com/89luca89/distrobox/main/install | sh -s -- --prefix ~/.local
 sudo mv ~/.local/share/distrobox* /usr/lib/apx
 ```
+
 > In the above command, you can replace the path with: `/usr/local/lib/apx/`if preferred. You will also need to edit `/etc/apx/config.json` to look for distrobox in `/usr/local/lib/apx/`(This is required to install apx on some immutable distros that use OStree)
 
 
