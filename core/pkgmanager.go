@@ -242,29 +242,28 @@ func GetXbpsPkgCommand(command string) []string {
 	}
 }
 func GetNixPkgCommand(command string) []string {
-	bin := "nix"
 
 	switch command {
 	case "autoremove":
-		return []string{"sudo", bin, "autoremove"}
+		return []string{"autoremove"}
 	case "clean":
-		return []string{"sudo", bin, "clean"}
+		return []string{"clean"}
 	case "install":
-		return []string{bin, "profile", "install"}
+		return []string{"install"}
 	case "list":
-		return []string{bin, "profile", "list"}
+		return []string{"list"}
 	case "purge":
-		return []string{"sudo", bin, "purge"}
+		return []string{"purge"}
 	case "remove":
-		return []string{bin, "profile", "remove"}
+		return []string{"remove"}
 	case "search":
-		return []string{"sudo", bin, "search"}
+		return []string{"search"}
 	case "show":
-		return []string{"sudo", bin, "show"}
+		return []string{"show"}
 	case "update":
-		return []string{bin, "profile", "update"}
+		return []string{"update"}
 	case "upgrade":
-		return []string{"sudo", bin, "upgrade"}
+		return []string{"upgrade"}
 	default:
 		return nil
 	}

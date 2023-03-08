@@ -73,7 +73,7 @@ func (c Container) GetExecCommand(args []string) *exec.Cmd {
 		return cmd
 	}
 
-	cmd = exec.Command("nix")
+	cmd = exec.Command("nix", "profile")
 	return cmd
 
 }
@@ -218,21 +218,12 @@ func (c *Container) Exec(capture_output bool, args ...string) (string, error) {
 	cmd := c.GetExecCommand(args)
 	if c.containerType == NIX {
 		for i, a := range args {
-			//nix
+			//command
 			if i == 0 {
-				continue
-			}
-			//profile
-			if i == 1 {
 				cmd.Args = append(cmd.Args, a)
-			}
-			// command (install)
-			if i == 2 {
-				cmd.Args = append(cmd.Args, a)
-
 			}
 			// packages
-			if i > 2 {
+			if i > 0 {
 				// allow direct from github repository flake install
 				if !strings.Contains(a, ":") {
 					cmd.Args = append(cmd.Args, "nixpkgs#"+a)
