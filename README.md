@@ -113,9 +113,6 @@ sudo mv ~/.local/share/distrobox* /usr/lib/apx
 
 > In the above command, you can replace the path with: `/usr/local/lib/apx/`if preferred. You will also need to edit `/etc/apx/config.json` to look for distrobox in `/usr/local/lib/apx/`(This is required to install apx on some immutable distros that use OStree)
 
-
-
-
 > Note:- Apx uses a fork of Distrobox called `micro-distrobox`, but it is currently unavailable for other distributions, affecting the export of desktop entries.
 
 - To fix exporting desktop entries, you will need to run the following command:-
