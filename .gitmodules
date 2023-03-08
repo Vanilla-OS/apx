@@ -1,0 +1,3 @@
+[submodule "distrobox"]
+	path = distrobox
+	url = https://github.com/89luca89/distrobox
