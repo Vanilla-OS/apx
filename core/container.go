@@ -65,14 +65,15 @@ func (c Container) Runtime() RuntimeEnvironment {
 
 // GetExecCommand returns the command used to execute
 // an apx command based on the runtime of the container
-func (c Container) GetExecCommand() *exec.Cmd {
+func (c Container) GetExecCommand(args []string) *exec.Cmd {
 	var cmd *exec.Cmd
 	if c.Runtime() == CONTAINER {
 		container_name := c.GetContainerName()
 		cmd = exec.Command(settings.Cnf.DistroboxPath, "enter", container_name, "--")
 		return cmd
 	}
-	cmd = exec.Command("nix", "profile")
+
+	cmd = exec.Command("nix")
 	return cmd
 
 }
@@ -83,6 +84,7 @@ func (c Container) GetExecCommand() *exec.Cmd {
 // are `insecure` and `unfree`, both for nix.
 func (c Container) GetExecEnv() []string {
 	baseEnv := os.Environ()
+	fmt.Println(baseEnv)
 	if c.Runtime() == CONTAINER {
 		baseEnv = append(baseEnv, "STORAGE_DRIVER=vfs")
 		return baseEnv
@@ -213,8 +215,38 @@ func (c *Container) Exec(capture_output bool, args ...string) (string, error) {
 		}
 	}
 
-	cmd := c.GetExecCommand()
-	cmd.Args = append(cmd.Args, args...)
+	cmd := c.GetExecCommand(args)
+	if c.containerType == NIX {
+		for i, a := range args {
+			//nix
+			if i == 0 {
+				continue
+			}
+			//profile
+			if i == 1 {
+				cmd.Args = append(cmd.Args, a)
+			}
+			// command (install)
+			if i == 2 {
+				cmd.Args = append(cmd.Args, a)
+
+			}
+			// packages
+			if i > 2 {
+				// allow direct from github repository flake install
+				if !strings.Contains(a, ":") {
+					cmd.Args = append(cmd.Args, "nixpkgs#"+a)
+				} else {
+					cmd.Args = append(cmd.Args, a)
+				}
+			}
+		}
+	} else {
+		cmd.Args = append(cmd.Args, args...)
+
+	}
+	fmt.Println(cmd.Path)
+	fmt.Println(cmd.Args)
 	cmd.Env = c.GetExecEnv()
 
 	if capture_output {
