@@ -70,7 +70,7 @@ func (c *Container) GetContainerImage() (image string, err error) {
 	case XBPS:
 		return "ghcr.io/void-linux/void-linux:latest-full-x86_64", nil
 	case SWUPD:
-		return "docker.io/library/clearlinux", nil
+		return "docker.io/library/clearlinux:latest", nil
 	default:
 		image = ""
 		err = errors.New("can't retrieve image for unknown container")
