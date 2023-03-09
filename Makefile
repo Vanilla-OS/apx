@@ -5,7 +5,7 @@ BINARY_NAME=apx
 all: build
 
 build:
-	go build -o ${BINARY_NAME}
+	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -tags netgo -ldflags '-w -extldflags "-static"' -o ${BINARY_NAME}
 
 install:
 	install -Dm755 ${BINARY_NAME} ${DESTDIR}${PREFIX}/bin/${BINARY_NAME}
