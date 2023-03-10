@@ -2,5 +2,5 @@
     "containername": "apx_managed",
     "image": "docker.io/library/ubuntu",
     "pkgmanager": "apt",
-    "distroboxpath": "/usr/lib/apx/distrobox"
+    "distroboxpath": "/usr/share/apx/distrobox"
 }

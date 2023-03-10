@@ -71,44 +71,37 @@ Apx has been designed in a distro-agnostic manner, allowing it to work with any 
 - You must have `git` installed to clone the repository.
 - You must have `curl` installed for the Distrobox script.
 - You must have either `podman` or `docker` installed.
+- You must have `make` installed for the installation
 
 ### Procedure
 
-- Navigate to the directory you want to clone the repository in using `cd`.
-- Clone apx's repository using `git`:-
+- Clone apx's repository using `git` and enter it using `cd`:-
 
-```bash
-git clone https://github.com/Vanilla-OS/apx.git
-```
-
-- You will have to enter the cloned repository and compile Apx with `go`:-
-
-```bash
+``` bash
+git clone --recursive https://github.com/Vanilla-OS/apx.git
 cd apx
-go build
 ```
 
-- For the Apx binary to work in the terminal, you need to add the binary to your PATH using the following command:-
+- Use `make build` to build apx:-
 
-```bash
-sudo cp apx /usr/bin
+``` bash
+make build
 ```
 
-> In the above command, you can replace the path with: `/usr/local/bin/` or `~/.local/bin` if preferred.
+- Install apx using `make install`:-
 
-- Create a directory to store Distrobox and configure Apx using the following steps:-
-
-```bash
-sudo mkdir /etc/apx
-sudo cp config/config.json /etc/apx/
-sudo mkdir /usr/lib/apx
+``` bash
+make install
 ```
+The prefix or installation destination can be changed using `PREFIX` and `DESTDIR` respectively:
 
-- Now, we need to install the Distrobox binary and move it using the following steps:-
-
-```bash
-curl -s https://raw.githubusercontent.com/89luca89/distrobox/main/install | sh -s -- --prefix ~/.local
-sudo mv ~/.local/share/distrobox* /usr/lib/apx
+To install apx into `~/.local` for example:
+``` bash
+make install PREFIX=$HOME/.local
+```
+or into a seperate root:
+``` bash
+make install DESTDIR=$HOME/altroot
 ```
 
 > Note:- Apx uses a fork of Distrobox called `micro-distrobox`, but it is currently unavailable for other distributions, affecting the export of desktop entries.
