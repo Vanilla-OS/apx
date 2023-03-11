@@ -10,20 +10,19 @@
 ## Help
 
 ```
-Apx is a package manager with support for multiple sources allowing you to install packages in a managed container.
+Apx is a package manager with support for multiple sources,
+allowing you to install packages in a managed container.
 
 Usage:
   apx [command]
 
-Available Commands:
+Managed Container Commands
   autoremove  Remove all unused packages automatically
   clean       Clean the apx package manager cache
-  completion  Generate the autocompletion script for the specified shell
-  enter       Enter in the container shell
+  enter       Enter a shell in the managed container
   export      Export/Recreate a program's desktop entry from a managed container
-  help        Help about any command
-  init        Initialize the managed container
-  install     Install packages inside a managed container
+  init        Initialize a managed container
+  install     Install packages inside a managed container.
   list        List installed packages.
   purge       Purge packages inside a managed container
   remove      Remove packages inside a managed container.
@@ -34,16 +33,22 @@ Available Commands:
   update      Update the list of available packages
   upgrade     Upgrade the system by installing/upgrading available packages.
 
-Global Flags:
-      --apk           Install packages from the Alpine repository.
+Additional Commands:
+  completion  Generate the autocompletion script for the specified shell
+  help        Help about any command
+
+Flags:
+  -v, --verbose       show more detailed output
       --apt           Install packages from the Ubuntu repository.
       --aur           Install packages from the AUR (Arch User Repository).
       --dnf           Install packages from the Fedora's DNF (Dandified YUM) repository.
-      --zypper        Install packages from the openSUSE repository.
+      --apk           Install packages from the Alpine repository.
+      --zypper        Install packages from the OpenSUSE repository.
       --xbps          Install packages from the Void (Linux) repository.
+      --nix           Install packages from the Nixpkgs (Nix packages) repository.
+  -n, --name string   Apply to custom container with this name.
   -h, --help          help for apx
-  -n, --name string   Create or use custom container with this name.
-  -v, --version       version for apx
+      --version       version for apx
 
 Use "apx [command] --help" for more information about a command.
 ```
@@ -102,12 +107,4 @@ make install PREFIX=$HOME/.local
 or into a seperate root:
 ``` bash
 make install DESTDIR=$HOME/altroot
-```
-
-> Note:- Apx uses a fork of Distrobox called `micro-distrobox`, but it is currently unavailable for other distributions, affecting the export of desktop entries.
-
-- To fix exporting desktop entries, you will need to run the following command:-
-
-```bash
-sudo chown <username> ~/.local/share/icons -R
 ```
