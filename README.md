@@ -53,11 +53,11 @@ Flags:
 Use "apx [command] --help" for more information about a command.
 ```
 
-## Documentation
+## Documentation and Guides
 
-The official **documentation and manpage** for `apx` are available at <https://documentation.vanillaos.org/docs/apx/>.
+- The official **documentation and manpage** for `apx` are available at <https://documentation.vanillaos.org/docs/apx/>.
 
-A guide for Installing applications in `apx` is available at <https://handbook.vanillaos.org/2023/01/11/install-and-manage-applications.html>.
+- A guide for Installing applications in `apx` is available at <https://handbook.vanillaos.org/2023/01/11/install-and-manage-applications.html>.
 
 ## Dependencies
 
@@ -65,7 +65,7 @@ To add new dependencies, use `go get` as usual, then run `go mod tidy` and `go m
 
 ## Generating man pages for translations
 
-- Copy the en.yml file under the locales directory, rename it to your language code then translate the strings.
+- Copy the `en.yml` file under the `locales` directory, rename it to your language code then translate the strings.
 - Once the translation is complete, perform `go build` and execute this command `./apx man > man/<language_code>/man1/apx.1`. If the man page gets generated without any errors, open a PR for it here.
 
 ## Instructions for using Apx in other distributions
