@@ -101,7 +101,7 @@ sudo make install
 - Install the apx manpages:-
 
 ``` bash
-make install-manpages
+sudo make install-manpages
 ```
 
 The prefix or installation destination can be changed using `PREFIX` and `DESTDIR` respectively:
