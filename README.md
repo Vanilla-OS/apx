@@ -74,9 +74,8 @@ Apx has been designed in a distro-agnostic manner, allowing it to work with any 
 
 - You must have `go` installed from your distribution's native repositories to compile `apx`.
 - You must have `git` installed to clone the repository.
-- You must have `curl` installed for the Distrobox script.
 - You must have either `podman` or `docker` installed.
-- You must have `make` installed for the installation
+- You must have `make` installed for the installation.
 
 ### Procedure
 
@@ -93,18 +92,27 @@ cd apx
 make build
 ```
 
-- Install apx using `make install`:-
+- Install apx using `make`:-
 
 ``` bash
-make install
+sudo make install
 ```
+
+- Install the apx manpages:-
+
+``` bash
+sudo make install-manpages
+```
+
 The prefix or installation destination can be changed using `PREFIX` and `DESTDIR` respectively:
 
 To install apx into `~/.local` for example:
 ``` bash
 make install PREFIX=$HOME/.local
+make install-manpages PREFIX=$HOME/.local
 ```
 or into a seperate root:
 ``` bash
 make install DESTDIR=$HOME/altroot
+make install-manpages DESTDIR=$HOME/altroot
 ```
