@@ -1,6 +1,6 @@
 <div align="center">
   <img src="apx-logo.png" height="120">
-  <h1 align="center">apx</h1>
+  <h1 align="center">Apx</h1>
   <p align="center">Apx (/à·peks/) is the default package manager in Vanilla OS. It is a wrapper around multiple package managers to install packages and run commands inside a managed container.</p>
   <small>Special thanks to <a href="https://github.com/89luca89/distrobox">distrobox</a> for making this possible.</small>
 </div>
@@ -53,22 +53,24 @@ Flags:
 Use "apx [command] --help" for more information about a command.
 ```
 
-## Docs
+## Documentation
 
 The official **documentation and manpage** for `apx` are available at <https://documentation.vanillaos.org/docs/apx/>.
 
+A guide for Installing applications in `apx` is available at <https://handbook.vanillaos.org/2023/01/11/install-and-manage-applications.html>.
+
 ## Dependencies
 
-To add new dependencies, use `go get` as usual, then run `go mod tidy` and finally `go mod vendor` before
-committing code.
+To add new dependencies, use `go get` as usual, then run `go mod tidy` and `go mod vendor` before committing the code.
 
-## Testing Translations locally
+## Generating man pages for translations
 
-To test translations made in the `.yml` file locally, perform `go build` first in the correct directory then execute this command `LANG=<language_code> ./apx man > man/<language_code>/apx.1` (i.e `LANG=sv ./apx man > man/sv/apx.1`).
+- Copy the en.yml file under the locales directory, rename it to your language code then translate the strings.
+- Once the translation is complete, perform `go build` and execute this command `./apx man > man/<language_code>/man1/apx.1`. If the man page gets generated without any errors, open a PR for it here.
 
 ## Instructions for using Apx in other distributions
 
-Apx has been designed in a distro-agnostic manner, allowing it to work with any distribution. (Note: The Nix integration in Apx requires SystemD)
+Apx has been designed as a distro-agnostic tool, allowing it to work with any distribution. (Note: The Nix integration in Apx requires SystemD)
 
 ### Prerequisites
 
@@ -86,7 +88,7 @@ git clone --recursive https://github.com/Vanilla-OS/apx.git
 cd apx
 ```
 
-- Use `make build` to build apx:-
+- Build apx using `make`:-
 
 ``` bash
 make build
@@ -98,20 +100,23 @@ make build
 sudo make install
 ```
 
-- Install the apx manpages:-
+- Install the apx manpages using `make`:-
 
 ``` bash
 sudo make install-manpages
 ```
 
-The prefix or installation destination can be changed using `PREFIX` and `DESTDIR` respectively:
+The prefix or installation destination can be changed using `PREFIX` and `DESTDIR`.
 
-To install apx into `~/.local` for example:
+To install apx into `~/.local` for example:-
+
 ``` bash
 make install PREFIX=$HOME/.local
 make install-manpages PREFIX=$HOME/.local
 ```
-or into a seperate root:
+
+Or into a separate root:-
+
 ``` bash
 make install DESTDIR=$HOME/altroot
 make install-manpages DESTDIR=$HOME/altroot
