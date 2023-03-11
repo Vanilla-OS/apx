@@ -95,7 +95,7 @@ make build
 - Install apx using `make`:-
 
 ``` bash
-make install
+sudo make install
 ```
 
 - Install the apx manpages:-
