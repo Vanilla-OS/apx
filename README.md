@@ -97,13 +97,22 @@ make build
 ``` bash
 make install
 ```
+
+- Install the apx manpages:-
+
+``` bash
+make install-manpages
+```
+
 The prefix or installation destination can be changed using `PREFIX` and `DESTDIR` respectively:
 
 To install apx into `~/.local` for example:
 ``` bash
 make install PREFIX=$HOME/.local
+make install-manpages PREFIX=$HOME/.local
 ```
 or into a seperate root:
 ``` bash
 make install DESTDIR=$HOME/altroot
+make install-manpages DESTDIR=$HOME/altroot
 ```
