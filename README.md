@@ -74,9 +74,8 @@ Apx has been designed in a distro-agnostic manner, allowing it to work with any 
 
 - You must have `go` installed from your distribution's native repositories to compile `apx`.
 - You must have `git` installed to clone the repository.
-- You must have `curl` installed for the Distrobox script.
 - You must have either `podman` or `docker` installed.
-- You must have `make` installed for the installation
+- You must have `make` installed for the installation.
 
 ### Procedure
 
