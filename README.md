@@ -92,7 +92,7 @@ cd apx
 make build
 ```
 
-- Install apx using `make install`:-
+- Install apx using `make`:-
 
 ``` bash
 make install
