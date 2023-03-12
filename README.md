@@ -56,7 +56,11 @@ Use "apx [command] --help" for more information about a command.
 ## Installation
 
 
-### Arch
+### Arch (**Unofficial Package**)
+
+#### **Disclaimer**
+
+**This package is not affiliated with the development team. Use at your own mileage and report bugs first to [this page](https://aur.archlinux.org/packages/apx-git)**
 
 With an AUR manager installed (e.g. yay, run this command:
 `yay install apx-git`
