@@ -53,6 +53,18 @@ Flags:
 Use "apx [command] --help" for more information about a command.
 ```
 
+## Installation
+
+
+### Arch
+
+With an AUR manager installed (e.g. yay, run this command:
+`yay install apx-git`
+
+### Other Distros
+
+Check out "Instructions for building Apx down below"
+
 ## Documentation and Guides
 
 - The official **documentation and manpage** for `apx` are available at <https://documentation.vanillaos.org/docs/apx/>.
@@ -68,7 +80,7 @@ To add new dependencies, use `go get` as usual, then run `go mod tidy` and `go m
 - Copy the `en.yml` file under the `locales` directory, rename it to your language code then translate the strings.
 - Once the translation is complete, perform `go build` and execute this command `./apx man > man/<language_code>/man1/apx.1`. If the man page gets generated without any errors, open a PR for it here.
 
-## Instructions for using Apx in other distributions
+## Instructions for building Apx
 
 Apx has been designed as a distro-agnostic tool, allowing it to work with any distribution. (Note: The Nix integration in Apx requires SystemD)
 
