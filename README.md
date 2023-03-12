@@ -53,21 +53,6 @@ Flags:
 Use "apx [command] --help" for more information about a command.
 ```
 
-## Installation
-
-### Arch (**Unofficial Package**)
-
-#### **Disclaimer**
-
-**This package is not affiliated with the development team. Use at your own mileage and report bugs first to [this page](https://aur.archlinux.org/packages/apx-git)**
-
-With an AUR manager installed (e.g. yay, run this command:
-`yay install apx-git`
-
-### Other Distros
-
-Check out "Instructions for building Apx down below"
-
 ## Documentation and Guides
 
 - The official **documentation and manpage** for `apx` are available at <https://documentation.vanillaos.org/docs/apx/>.
@@ -136,3 +121,11 @@ Or into a separate root:-
 make install DESTDIR=$HOME/altroot
 make install-manpages DESTDIR=$HOME/altroot
 ```
+
+## Community Packages
+
+Apx is packaged in various sources by our community, if you aren't comfortable with building `apx` manually you can install a package listed below.
+
+(Note: These packages are unofficial if there are any issues with packaging report them to the respective maintainers if there are any issues with apx functionalities report them here.)
+
+[![Packaging status](https://repology.org/badge/vertical-allrepos/apx.svg)](https://repology.org/project/apx/versions)
