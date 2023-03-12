@@ -55,7 +55,6 @@ Use "apx [command] --help" for more information about a command.
 
 ## Installation
 
-
 ### Arch (**Unofficial Package**)
 
 #### **Disclaimer**
