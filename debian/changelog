@@ -1,3 +1,17 @@
+apx (1.8.1) unstable; urgency=medium
+
+  * Remove micro-distrobox as a dependency
+
+ -- Mateus Melchiades <matbme@duck.com>  Mon, 20 Mar 2023 19:27:00 -0300
+
+apx (1.8.0) unstable; urgency=medium
+
+  * Semi-automatic binary exporting
+  * Terminal UI element improvements
+  * Bugfixes for Nix
+
+ -- Mateus Melchiades <matbme@duck.com>  Tue Feb 28 10:19:20 2023 -0300
+
 apx (1.7.1) unstable; urgency=medium
 
   * New translations
