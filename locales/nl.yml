@@ -4,60 +4,60 @@ flags:
   dnf: "Pakketten vanuit Fedora's DNF (Dandified YUM) installeren"
   apk: "Pakketten vanuit de Alpine-repository installeren"
   zypper: "Pakketten vanuit de OpenSUSE-repository installeren"
-  xbps: "Install packages from the Void (Linux) repository."
-  nix: "Install packages from the Nixpkgs (Nix packages) repository."
-  name: "Apply to custom container with this name."
+  xbps: "Pakketten vanuit de Void-repository installeren"
+  nix: "Pakketten vanuit de Nixpkgs-repository installeren"
+  name: "Toepassen op aangepaste container met deze naam"
 apx:
   use: "apx"
-  long: "Apx is a package manager with support for multiple sources,\nallowing you\
-    \ to install packages in a managed container."
-  short: "Apx is a package manager with support for multiple sources,\nallowing you\
-    \ to install packages in a managed container."
+  long: "Apx is een pakketbeheerder met ondersteuning voor meerdere bronnen, waarmee\
+    \ u pakketten kunt installeren in een beheerde container."
+  short: "Apx is een pakketbeheerder met ondersteuning voor meerdere bronnen, waarmee\
+    \ u pakketten kunt installeren in een beheerde container."
   verboseFlag: "Gedetailleerdere uitvoer tonen"
   allFlag: "Toepassen op alle containers"
   cxl: "Handeling geannuleerd op verzoek van gebruiker"
   assumeYes: "Doorgaan zonder handmatige bevestiging"
-  notForNix: "This command does not apply to the nix environment."
+  notForNix: "Deze opdracht is niet van toepassing op de nix-omgeving"
 autoremove:
   use: "autoremove"
   long: "Alle ongebruikte pakketten automatisch verwijderen"
   short: "Alle ongebruikte pakketten automatisch verwijderen"
 clean:
-  use: ""
-  long: "Clean the apx package manager cache"
-  short: "Clean the apx package manager cache"
+  use: "clean"
+  long: "De apx-pakketbeheerders-cache opschonen"
+  short: "De apx-cache opschonen"
 enter:
-  use: ""
-  long: "Enter a shell in the managed container"
-  short: "Enter a shell in the managed container"
-  failedEnter: "failed to enter managed container"
-  outside: "You are now outside the managed container."
+  use: "enter"
+  long: "Een shell in de beheerde container binnengaan"
+  short: "Een shell in de container binnengaan"
+  failedEnter: "Beheerde container binnengaan mislukt"
+  outside: "U bent nu buiten de beheerde container"
 export:
   use: "export <programma>"
-  long: "Export/Recreate a program's desktop entry from a managed container"
-  short: "Export/Recreate a program's desktop entry from a managed container"
+  long: "App-pictogram (opnieuw) aanmaken vanuit een beheerde container"
+  short: "App-pictogram aanmaken vanuit container"
   binFlag: "Programmaopdracht exporteren"
 init:
   use: "init"
   long: "Beheerde container initialiseren"
   short: "Beheerde container initialiseren"
-  confirm: "Container already exists. Do you want to re-initialize it? This operation\
-    \ will remove everything, including your files in the container."
+  confirm: "De container bestaat al. Wilt u deze opnieuw initialiseren? Deze handeling\
+    \ zal alles verwijderen, inclusief uw bestanden in de container."
   remove: "Container verwijderen mislukt: %v"
   create: "Container aanmaken mislukt: %v"
 install:
   use: "apx install <pakket>"
-  long: "Install packages inside a managed container."
-  short: "Install packages inside a managed container."
+  long: "Pakketten installeren in een beheerde container"
+  short: "Pakketten installeren in een container"
   assumeYes: "Doorgaan zonder handmatige bevestiging"
-  fixBroken: "Fix broken dependencies before installing"
-  noExport: "Do not export a desktop entry after the installation."
-  sideload: "Install a package from a local file."
-  sideArgs: "sideload requires the path to a local file"
-  sideUserTemp: "can't move file to user temp: %s"
-  exportBinPrompt: "Export binary %s to host?\nThis will let you call it directly\
-    \ from the shell without using \"apx run\".\nYou can also export it later using\
-    \ \"apx export --bin %s\""
+  fixBroken: "Incorrecte afhankelijkheden repareren voor de installatie"
+  noExport: "Geen app-pictogram aanmaken na de installatie"
+  sideload: "Pakket installeren vanuit een lokaal bestand"
+  sideArgs: "Sideload vereist het pad naar een lokaal bestand"
+  sideUserTemp: "Kan bestand niet verplaatsen naar tijdelijke bestanden: %s"
+  exportBinPrompt: "Binaire %s exporteren naar host?\nHiermee kunt u het direct vanuit\
+    \ de shell aanroepen zonder \"apx run\" te gebruiken.\nU kunt het later ook exporteren\
+    \ met \"apx export --bin %s\"."
 list:
   use: "list"
   long: "Geïnstalleerde pakketten tonen"
@@ -138,7 +138,7 @@ unexport:
   success: "Successfully removed exported binary `%s`."
 update:
   use: "update"
-  long: "Update the list of available packages"
+  long: "De lijst met beschikbare pakketten bijwerken"
   short: "Update the list of available packages"
   allFlag: "Toepassen op alle containers"
 upgrade:
