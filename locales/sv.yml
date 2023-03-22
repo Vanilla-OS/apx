@@ -8,7 +8,6 @@ flags:
   nix: "Installera paket från Nixpkgs (Nix paket) arkiv."
   name: "Applicera på anpassad behållare med detta namn."
 apx:
-  use: "apx"
   long: "Apx är en pakethanterare med stöd för flera källor,\nså att du kan installera\
     \ paket i en hanterad behållare."
   short: "Apx är en pakethanterare med stöd för flera källor,\nså att du kan installera\

@@ -8,7 +8,6 @@ flags:
   nix: "Instalați pachete din depozitul Nixpkgs (pachete Nix)."
   name: "Aplicați la containerul personalizat cu acest nume."
 apx:
-  use: "apx"
   long: "Apx este un manager de pachete cu suport pentru mai multe surse,\npermițându-vă\
     \ să instalați pachete într-un container gestionat."
   short: "Apx este un manager de pachete cu suport pentru mai multe surse,\npermițându-vă\

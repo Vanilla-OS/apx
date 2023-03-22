@@ -8,7 +8,6 @@ flags:
   nix: "Install packages from the Nixpkgs (Nix packages) repository."
   name: "Apply to custom container with this name."
 apx:
-  use: "apx"
   long: "Apx is a package manager with support for multiple sources,\nallowing you\
     \ to install packages in a managed container."
   short: "Apx is a package manager with support for multiple sources,\nallowing you\
