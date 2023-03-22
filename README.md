@@ -7,7 +7,7 @@
 
 [weblate-url]: https://hosted.weblate.org/engage/vanilla-os/
 [weblate-image]: https://hosted.weblate.org/widgets/vanilla-os/-/apx/svg-badge.svg
-
+[weblate-status-image]: https://hosted.weblate.org/widgets/vanilla-os/-/apx/multi-auto.svg
 
   <p align="center">Apx (/à·peks/) is the default package manager in Vanilla OS. It is a wrapper around multiple package managers to install packages and run commands inside a managed container.</p>
   <small>Special thanks to <a href="https://github.com/89luca89/distrobox">distrobox</a> for making this possible.</small>
@@ -71,10 +71,15 @@ Use "apx [command] --help" for more information about a command.
 
 To add new dependencies, use `go get` as usual, then run `go mod tidy` and `go mod vendor` before committing the code.
 
-## Generating man pages for translations
+## Translations
 
-- Copy the `en.yml` file under the `locales` directory, rename it to your language code then translate the strings.
-- Once the translation is complete, perform `go build` and execute this command `./apx man > man/<language_code>/man1/apx.1`. If the man page gets generated without any errors, open a PR for it here.
+- Contribute translations for the manpage and help page in [Weblate](https://hosted.weblate.org/projects/vanilla-os/apx).
+
+[![Translation Status][weblate-status-image]][weblate-url]
+
+### Generating man pages for translations
+
+- Once the translation is complete in Weblate and the changes committed, perform `go build`, create a directory `man/<language_code>/man1`,  and execute this command `LANG=<language_code> ./apx man > man/<language_code>/man1/apx.1`. If the man page gets generated without errors, open a PR here.
 
 ## Instructions for using Apx in other distributions
 
