@@ -2,3 +2,4 @@ config/config.json /etc/apx/
 man/man1/apx.1 /usr/share/man/man1
 man/es/man1/apx.1 /usr/share/man/es/man1
 man/sv/man1/apx.1 /usr/share/man/sv/man1
+man/ro/man1/apx.1 /usr/share/man/ro/man1

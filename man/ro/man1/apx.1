@@ -1,0 +1,704 @@
+.TH APX 1 "2023-03-22" "apx" "User Manual"
+.SH NAME
+.RS 4
+apx - Apx este un manager de pachete cu suport pentru mai multe surse,
+.PP
+permițându-vă să instalați pachete într-un container gestionat\&.
+.RE
+.SH SYNOPSIS
+.RS 4
+apx [command] [flags] [arguments]
+.RE
+.SH DESCRIPTION
+.RS 4
+Apx este un manager de pachete cu suport pentru mai multe surse,
+.PP
+permițându-vă să instalați pachete într-un container gestionat\&.
+.RE
+.SH OPTIONS
+  -v, --verbose       afișează rezultate mai detaliate
+.PP
+      --apt           Instalați pachete din depozitul Ubuntu\&.
+.PP
+      --aur           Instalați pachete din AUR (Arch User Repository)\&.
+.PP
+      --dnf           Instalați pachetele din depozitul DNF (Dandified YUM) al Fedora\&.
+.PP
+      --apk           Instalați pachete din depozitul Alpine\&.
+.PP
+      --zypper        Instalați pachete din depozitul OpenSUSE\&.
+.PP
+      --xbps          Instalați pachete din depozitul Void (Linux)\&.
+.PP
+      --nix           Instalați pachete din depozitul Nixpkgs (pachete Nix)\&.
+.PP
+  -n, --name string   Aplicați la containerul personalizat cu acest nume\&.
+.PP
+.SH APX COMMANDS
+.RS 4
+\fBautoremove\fP
+.RS 4
+Eliminați automat toate pachetele nefolosite
+.PP
+.RE
+\fBclean\fP
+.RS 4
+Curățați memoria cache a managerului de pachete apx
+.PP
+.RE
+\fBenter\fP
+.RS 4
+Intrați într- un shell în containerul gestionat
+.PP
+.RE
+\fBexport\fP
+.RS 4
+Exportați/Recreați intrarea desktop a unui program dintr-un container gestionat
+.PP
+.RE
+\fBinit\fP
+.RS 4
+Inițializați un container gestionat
+.PP
+.RE
+\fBinstall\fP
+.RS 4
+Instalați pachete într-un container gestionat\&.
+.PP
+.RE
+\fBlist\fP
+.RS 4
+Listați pachetele instalate\&.
+.PP
+.RE
+\fBpurge\fP
+.RS 4
+Eliminați complet pachete din interiorul unui container gestionat
+.PP
+.RE
+\fBremove\fP
+.RS 4
+Eliminați pachete din interiorul unui container gestionat\&.
+.PP
+.RE
+\fBrun\fP
+.RS 4
+Rulați un program într-un container gestionat\&.
+.PP
+.RE
+\fBsearch\fP
+.RS 4
+Căutați pachete într-un container gestionat\&.
+.PP
+.RE
+\fBshow\fP
+.RS 4
+Afișați detalii despre un pachet
+.PP
+.RE
+\fBunexport\fP
+.RS 4
+Dezexportați/Eliminați intrarea desktop a unui program dintr-un container gestionat
+.PP
+.RE
+\fBupgrade\fP
+.RS 4
+Actualizați sistemul prin instalarea/actualizarea pachetelor disponibile\&.
+.PP
+.RE
+\fBupdate\fP
+.RS 4
+Actualizați lista pachetelor disponibile
+.PP
+.RE
+.RE
+.SH AUTHORS
+.PP
+Written by Vanilla OS contributors\&.
+.SH REPORT BUGS TO
+.PP
+https://github\&.com/vanilla-os/apx/issues
+.SH LICENSE
+.PP
+GPLv3+: GNU GPL version 3 or later <http://gnu\&.org/licenses/gpl\&.html>\&.
+.SH APX SUBCOMMANDS
+.SH SUBCOMMAND AUTOREMOVE
+.RS 4
+Eliminați automat toate pachetele nefolosite
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBautoremove\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Eliminați automat toate pachetele nefolosite
+.RE
+.SS OPTIONS
+  -a, --all   Aplicați pentru toate containerele\&.
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       afișează rezultate mai detaliate
+.PP
+      --apt           Instalați pachete din depozitul Ubuntu\&.
+.PP
+      --aur           Instalați pachete din AUR (Arch User Repository)\&.
+.PP
+      --dnf           Instalați pachetele din depozitul DNF (Dandified YUM) al Fedora\&.
+.PP
+      --apk           Instalați pachete din depozitul Alpine\&.
+.PP
+      --zypper        Instalați pachete din depozitul OpenSUSE\&.
+.PP
+      --xbps          Instalați pachete din depozitul Void (Linux)\&.
+.PP
+      --nix           Instalați pachete din depozitul Nixpkgs (pachete Nix)\&.
+.PP
+  -n, --name string   Aplicați la containerul personalizat cu acest nume\&.
+.PP
+.SH SUBCOMMAND CLEAN
+.RS 4
+Curățați memoria cache a managerului de pachete apx
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBclean\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Curățați memoria cache a managerului de pachete apx
+.RE
+.SS OPTIONS
+  -a, --all   Aplicați pentru toate containerele\&.
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       afișează rezultate mai detaliate
+.PP
+      --apt           Instalați pachete din depozitul Ubuntu\&.
+.PP
+      --aur           Instalați pachete din AUR (Arch User Repository)\&.
+.PP
+      --dnf           Instalați pachetele din depozitul DNF (Dandified YUM) al Fedora\&.
+.PP
+      --apk           Instalați pachete din depozitul Alpine\&.
+.PP
+      --zypper        Instalați pachete din depozitul OpenSUSE\&.
+.PP
+      --xbps          Instalați pachete din depozitul Void (Linux)\&.
+.PP
+      --nix           Instalați pachete din depozitul Nixpkgs (pachete Nix)\&.
+.PP
+  -n, --name string   Aplicați la containerul personalizat cu acest nume\&.
+.PP
+.SH SUBCOMMAND ENTER
+.RS 4
+Intrați într- un shell în containerul gestionat
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBenter\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Intrați într- un shell în containerul gestionat
+.RE
+.SS OPTIONS
+.SS GLOBAL OPTIONS
+  -v, --verbose       afișează rezultate mai detaliate
+.PP
+      --apt           Instalați pachete din depozitul Ubuntu\&.
+.PP
+      --aur           Instalați pachete din AUR (Arch User Repository)\&.
+.PP
+      --dnf           Instalați pachetele din depozitul DNF (Dandified YUM) al Fedora\&.
+.PP
+      --apk           Instalați pachete din depozitul Alpine\&.
+.PP
+      --zypper        Instalați pachete din depozitul OpenSUSE\&.
+.PP
+      --xbps          Instalați pachete din depozitul Void (Linux)\&.
+.PP
+      --nix           Instalați pachete din depozitul Nixpkgs (pachete Nix)\&.
+.PP
+  -n, --name string   Aplicați la containerul personalizat cu acest nume\&.
+.PP
+.SH SUBCOMMAND EXPORT
+.RS 4
+Exportați/Recreați intrarea desktop a unui program dintr-un container gestionat
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBexport\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Exportați/Recreați intrarea desktop a unui program dintr-un container gestionat
+.RE
+.SS OPTIONS
+      --bin   Exportați comanda pachetului
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       afișează rezultate mai detaliate
+.PP
+      --apt           Instalați pachete din depozitul Ubuntu\&.
+.PP
+      --aur           Instalați pachete din AUR (Arch User Repository)\&.
+.PP
+      --dnf           Instalați pachetele din depozitul DNF (Dandified YUM) al Fedora\&.
+.PP
+      --apk           Instalați pachete din depozitul Alpine\&.
+.PP
+      --zypper        Instalați pachete din depozitul OpenSUSE\&.
+.PP
+      --xbps          Instalați pachete din depozitul Void (Linux)\&.
+.PP
+      --nix           Instalați pachete din depozitul Nixpkgs (pachete Nix)\&.
+.PP
+  -n, --name string   Aplicați la containerul personalizat cu acest nume\&.
+.PP
+.SS EXAMPLES
+.RS 4
+apx export htop
+.PP
+apx export --bin fzf
+.RE
+.SH SUBCOMMAND INIT
+.RS 4
+Inițializați un container gestionat
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBinit\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Inițializați un container gestionat
+.RE
+.SS OPTIONS
+.SS GLOBAL OPTIONS
+  -v, --verbose       afișează rezultate mai detaliate
+.PP
+      --apt           Instalați pachete din depozitul Ubuntu\&.
+.PP
+      --aur           Instalați pachete din AUR (Arch User Repository)\&.
+.PP
+      --dnf           Instalați pachetele din depozitul DNF (Dandified YUM) al Fedora\&.
+.PP
+      --apk           Instalați pachete din depozitul Alpine\&.
+.PP
+      --zypper        Instalați pachete din depozitul OpenSUSE\&.
+.PP
+      --xbps          Instalați pachete din depozitul Void (Linux)\&.
+.PP
+      --nix           Instalați pachete din depozitul Nixpkgs (pachete Nix)\&.
+.PP
+  -n, --name string   Aplicați la containerul personalizat cu acest nume\&.
+.PP
+.SS EXAMPLES
+.RS 4
+apx init
+.RE
+.SH SUBCOMMAND INSTALL
+.RS 4
+Instalați pachete într-un container gestionat\&.
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBinstall\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Instalați pachete într-un container gestionat\&.
+.RE
+.SS OPTIONS
+  -y, --assume-yes       Continuați fără confirmare manuală
+.PP
+  -f, --fix-broken       Remediați dependențele defecte înainte de instalare
+.PP
+      --no-export        Nu exportați o intrare desktop după instalare\&.
+.PP
+      --sideload         Instalați un pachet dintr-un fișier local\&.
+.PP
+      --allow-unfree     Permiteți pachete cu licențe nelibere
+.PP
+      --allow-insecure   Permiteți pachete cu vulnerabilități cunoscute\&.
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       afișează rezultate mai detaliate
+.PP
+      --apt           Instalați pachete din depozitul Ubuntu\&.
+.PP
+      --aur           Instalați pachete din AUR (Arch User Repository)\&.
+.PP
+      --dnf           Instalați pachetele din depozitul DNF (Dandified YUM) al Fedora\&.
+.PP
+      --apk           Instalați pachete din depozitul Alpine\&.
+.PP
+      --zypper        Instalați pachete din depozitul OpenSUSE\&.
+.PP
+      --xbps          Instalați pachete din depozitul Void (Linux)\&.
+.PP
+      --nix           Instalați pachete din depozitul Nixpkgs (pachete Nix)\&.
+.PP
+  -n, --name string   Aplicați la containerul personalizat cu acest nume\&.
+.PP
+.SS EXAMPLES
+.RS 4
+apx install htop git
+.PP
+apx --nix install --allow-unfree vscode
+.RE
+.SH SUBCOMMAND LIST
+.RS 4
+Listați pachetele instalate\&.
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBlist\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Listați pachetele instalate\&.
+.RE
+.SS OPTIONS
+  -u, --upgradable   Afișați pachetele care pot fi actualizate
+.PP
+  -i, --installed    Afișați pachetele instalate
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       afișează rezultate mai detaliate
+.PP
+      --apt           Instalați pachete din depozitul Ubuntu\&.
+.PP
+      --aur           Instalați pachete din AUR (Arch User Repository)\&.
+.PP
+      --dnf           Instalați pachetele din depozitul DNF (Dandified YUM) al Fedora\&.
+.PP
+      --apk           Instalați pachete din depozitul Alpine\&.
+.PP
+      --zypper        Instalați pachete din depozitul OpenSUSE\&.
+.PP
+      --xbps          Instalați pachete din depozitul Void (Linux)\&.
+.PP
+      --nix           Instalați pachete din depozitul Nixpkgs (pachete Nix)\&.
+.PP
+  -n, --name string   Aplicați la containerul personalizat cu acest nume\&.
+.PP
+.SH SUBCOMMAND PURGE
+.RS 4
+Eliminați complet pachete din interiorul unui container gestionat
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBpurge\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Eliminați complet pachete din interiorul unui container gestionat
+.RE
+.SS OPTIONS
+.SS GLOBAL OPTIONS
+  -v, --verbose       afișează rezultate mai detaliate
+.PP
+      --apt           Instalați pachete din depozitul Ubuntu\&.
+.PP
+      --aur           Instalați pachete din AUR (Arch User Repository)\&.
+.PP
+      --dnf           Instalați pachetele din depozitul DNF (Dandified YUM) al Fedora\&.
+.PP
+      --apk           Instalați pachete din depozitul Alpine\&.
+.PP
+      --zypper        Instalați pachete din depozitul OpenSUSE\&.
+.PP
+      --xbps          Instalați pachete din depozitul Void (Linux)\&.
+.PP
+      --nix           Instalați pachete din depozitul Nixpkgs (pachete Nix)\&.
+.PP
+  -n, --name string   Aplicați la containerul personalizat cu acest nume\&.
+.PP
+.SS EXAMPLES
+.RS 4
+apx purge htop
+.RE
+.SH SUBCOMMAND REMOVE
+.RS 4
+Eliminați pachete din interiorul unui container gestionat\&.
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBremove\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Eliminați pachete din interiorul unui container gestionat\&.
+.RE
+.SS OPTIONS
+  -y, --assume-yes   Continuați fără confirmare manuală\&.
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       afișează rezultate mai detaliate
+.PP
+      --apt           Instalați pachete din depozitul Ubuntu\&.
+.PP
+      --aur           Instalați pachete din AUR (Arch User Repository)\&.
+.PP
+      --dnf           Instalați pachetele din depozitul DNF (Dandified YUM) al Fedora\&.
+.PP
+      --apk           Instalați pachete din depozitul Alpine\&.
+.PP
+      --zypper        Instalați pachete din depozitul OpenSUSE\&.
+.PP
+      --xbps          Instalați pachete din depozitul Void (Linux)\&.
+.PP
+      --nix           Instalați pachete din depozitul Nixpkgs (pachete Nix)\&.
+.PP
+  -n, --name string   Aplicați la containerul personalizat cu acest nume\&.
+.PP
+.SS EXAMPLES
+.RS 4
+apx remove htop
+.RE
+.SH SUBCOMMAND RUN
+.RS 4
+Rulați un program într-un container gestionat\&.
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBrun\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Rulați un program într-un container gestionat\&.
+.RE
+.SS OPTIONS
+.SS GLOBAL OPTIONS
+  -v, --verbose       afișează rezultate mai detaliate
+.PP
+      --apt           Instalați pachete din depozitul Ubuntu\&.
+.PP
+      --aur           Instalați pachete din AUR (Arch User Repository)\&.
+.PP
+      --dnf           Instalați pachetele din depozitul DNF (Dandified YUM) al Fedora\&.
+.PP
+      --apk           Instalați pachete din depozitul Alpine\&.
+.PP
+      --zypper        Instalați pachete din depozitul OpenSUSE\&.
+.PP
+      --xbps          Instalați pachete din depozitul Void (Linux)\&.
+.PP
+      --nix           Instalați pachete din depozitul Nixpkgs (pachete Nix)\&.
+.PP
+  -n, --name string   Aplicați la containerul personalizat cu acest nume\&.
+.PP
+.SS EXAMPLES
+.RS 4
+apx run htop
+.RE
+.SH SUBCOMMAND SEARCH
+.RS 4
+Căutați pachete într-un container gestionat\&.
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBsearch\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Căutați pachete într-un container gestionat\&.
+.RE
+.SS OPTIONS
+.SS GLOBAL OPTIONS
+  -v, --verbose       afișează rezultate mai detaliate
+.PP
+      --apt           Instalați pachete din depozitul Ubuntu\&.
+.PP
+      --aur           Instalați pachete din AUR (Arch User Repository)\&.
+.PP
+      --dnf           Instalați pachetele din depozitul DNF (Dandified YUM) al Fedora\&.
+.PP
+      --apk           Instalați pachete din depozitul Alpine\&.
+.PP
+      --zypper        Instalați pachete din depozitul OpenSUSE\&.
+.PP
+      --xbps          Instalați pachete din depozitul Void (Linux)\&.
+.PP
+      --nix           Instalați pachete din depozitul Nixpkgs (pachete Nix)\&.
+.PP
+  -n, --name string   Aplicați la containerul personalizat cu acest nume\&.
+.PP
+.SS EXAMPLES
+.RS 4
+apx search neovim
+.RE
+.SH SUBCOMMAND SHOW
+.RS 4
+Afișați detalii despre un pachet
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBshow\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Afișați detalii despre un pachet
+.RE
+.SS OPTIONS
+  -i, --isinstalled   Returnați doar dacă pachetul este instalat
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       afișează rezultate mai detaliate
+.PP
+      --apt           Instalați pachete din depozitul Ubuntu\&.
+.PP
+      --aur           Instalați pachete din AUR (Arch User Repository)\&.
+.PP
+      --dnf           Instalați pachetele din depozitul DNF (Dandified YUM) al Fedora\&.
+.PP
+      --apk           Instalați pachete din depozitul Alpine\&.
+.PP
+      --zypper        Instalați pachete din depozitul OpenSUSE\&.
+.PP
+      --xbps          Instalați pachete din depozitul Void (Linux)\&.
+.PP
+      --nix           Instalați pachete din depozitul Nixpkgs (pachete Nix)\&.
+.PP
+  -n, --name string   Aplicați la containerul personalizat cu acest nume\&.
+.PP
+.SS EXAMPLES
+.RS 4
+apx show htop
+.PP
+apx show -i neovim
+.RE
+.SH SUBCOMMAND UNEXPORT
+.RS 4
+Dezexportați/Eliminați intrarea desktop a unui program dintr-un container gestionat
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBunexport\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Dezexportați/Eliminați intrarea desktop a unui program dintr-un container gestionat\&.
+.PP
+Dacă este furnizat indicatorul --bin, eliminați linkul către containerul binar\&.
+.RE
+.SS OPTIONS
+      --bin   Dezexportați un binar exportat anterior\&.
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       afișează rezultate mai detaliate
+.PP
+      --apt           Instalați pachete din depozitul Ubuntu\&.
+.PP
+      --aur           Instalați pachete din AUR (Arch User Repository)\&.
+.PP
+      --dnf           Instalați pachetele din depozitul DNF (Dandified YUM) al Fedora\&.
+.PP
+      --apk           Instalați pachete din depozitul Alpine\&.
+.PP
+      --zypper        Instalați pachete din depozitul OpenSUSE\&.
+.PP
+      --xbps          Instalați pachete din depozitul Void (Linux)\&.
+.PP
+      --nix           Instalați pachete din depozitul Nixpkgs (pachete Nix)\&.
+.PP
+  -n, --name string   Aplicați la containerul personalizat cu acest nume\&.
+.PP
+.SS EXAMPLES
+.RS 4
+apx unexport code
+.RE
+.SH SUBCOMMAND UPGRADE
+.RS 4
+Actualizați sistemul prin instalarea/actualizarea pachetelor disponibile\&.
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBupgrade\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Actualizați sistemul prin instalarea/actualizarea pachetelor disponibile\&.
+.RE
+.SS OPTIONS
+  -a, --all          Aplicați pentru toate containerele\&.
+.PP
+  -y, --assume-yes   Continuați fără confirmare manuală\&.
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       afișează rezultate mai detaliate
+.PP
+      --apt           Instalați pachete din depozitul Ubuntu\&.
+.PP
+      --aur           Instalați pachete din AUR (Arch User Repository)\&.
+.PP
+      --dnf           Instalați pachetele din depozitul DNF (Dandified YUM) al Fedora\&.
+.PP
+      --apk           Instalați pachete din depozitul Alpine\&.
+.PP
+      --zypper        Instalați pachete din depozitul OpenSUSE\&.
+.PP
+      --xbps          Instalați pachete din depozitul Void (Linux)\&.
+.PP
+      --nix           Instalați pachete din depozitul Nixpkgs (pachete Nix)\&.
+.PP
+  -n, --name string   Aplicați la containerul personalizat cu acest nume\&.
+.PP
+.SS EXAMPLES
+.RS 4
+apx upgrade
+.RE
+.SH SUBCOMMAND UPDATE
+.RS 4
+Actualizați lista pachetelor disponibile
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBupdate\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Actualizați lista pachetelor disponibile
+.RE
+.SS OPTIONS
+  -a, --all          Aplicați pentru toate containerele\&.
+.PP
+  -y, --assume-yes   Continuați fără confirmare manuală\&.
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       afișează rezultate mai detaliate
+.PP
+      --apt           Instalați pachete din depozitul Ubuntu\&.
+.PP
+      --aur           Instalați pachete din AUR (Arch User Repository)\&.
+.PP
+      --dnf           Instalați pachetele din depozitul DNF (Dandified YUM) al Fedora\&.
+.PP
+      --apk           Instalați pachete din depozitul Alpine\&.
+.PP
+      --zypper        Instalați pachete din depozitul OpenSUSE\&.
+.PP
+      --xbps          Instalați pachete din depozitul Void (Linux)\&.
+.PP
+      --nix           Instalați pachete din depozitul Nixpkgs (pachete Nix)\&.
+.PP
+  -n, --name string   Aplicați la containerul personalizat cu acest nume\&.
+.PP
+
