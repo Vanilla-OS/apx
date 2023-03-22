@@ -55,14 +55,6 @@ install:
   sideload: "Pakket installeren vanuit een lokaal bestand"
   sideArgs: "Sideload vereist het pad naar een lokaal bestand"
   sideUserTemp: "Kan bestand niet verplaatsen naar tijdelijke bestanden: %s"
-  exportBinPrompt: "Binaire %s exporteren naar host?\nHiermee kunt u het direct vanuit\
-    \ de shell aanroepen zonder \"apx run\" te gebruiken.\nU kunt het later ook exporteren\
-    \ met \"apx export --bin %s\"."
-  fixBroken: "Incorrecte afhankelijkheden repareren voor de installatie"
-  noExport: "Geen app-pictogram aanmaken na de installatie"
-  sideload: "Pakket installeren vanuit een lokaal bestand"
-  sideArgs: "Sideload vereist het pad naar een lokaal bestand"
-  sideUserTemp: "Kan bestand niet verplaatsen naar tijdelijke bestanden: %s"
   exportBinPrompt: "Programma %s exporteren naar host?\nHiermee kunt u deze direct\
     \ vanuit de shell aanroepen zonder ‘apx run’ te hoeven gebruiken.\nU kunt het\
     \ programma ook later exporteren met ‘apx export --bin %s’."
