@@ -18,6 +18,7 @@ apx:
   cxl: "Åtgärden avbröts på användarens begäran."
   assumeYes: "Fortsätt utan manuell bekräftelse."
   notForNix: "Detta kommando gäller inte för nix-miljön."
+  use: apx
 autoremove:
   use: "autoremove"
   long: "Ta bort alla oanvända paket automatiskt"

@@ -18,6 +18,7 @@ apx:
   cxl: "Operation canceled at user request."
   assumeYes: "Proceed without manual confirmation."
   notForNix: "This command does not apply to the nix environment."
+  use: apx
 autoremove:
   use: "autoremove"
   long: "Remove all unused packages automatically"
