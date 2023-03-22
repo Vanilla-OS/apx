@@ -17,7 +17,6 @@ apx:
   cxl: "Operațiune anulată la cererea utilizatorului."
   assumeYes: "Continuați fără confirmare manuală."
   notForNix: "Această comandă nu se aplică mediului nix."
-  use: apx
 autoremove:
   use: "autoremove"
   long: "Eliminați automat toate pachetele nefolosite"
