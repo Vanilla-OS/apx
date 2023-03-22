@@ -93,7 +93,7 @@ nixremove:
   short: "Nix-pakket verwijderen"
   success: "Pakket verwijderd"
 nixinstall:
-  use: ""
+  use: "install <pkg>"
   long: "Pakket uit de `nixpkgs`-repository als een flake in het standaard-Nix-profiel\
     \ installeren"
   short: "Nix-pakket installeren"
