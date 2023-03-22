@@ -79,7 +79,7 @@ To add new dependencies, use `go get` as usual, then run `go mod tidy` and `go m
 
 ### Generating man pages for translations
 
-- Once the translation is complete in Weblate and the changes committed, perform `go build`, create a directory using the `mkdir man/<language_code> && mkdir man/<language_code>/man1` command,  and execute this command `LANG=<language_code> ./apx man > man/<language_code>/man1/apx.1`. If the man page gets generated without errors, open a PR here.
+- Once the translation is complete in Weblate and the changes committed, clone the repository using `git` and perform `go build`, create a directory using the `mkdir man/<language_code> && mkdir man/<language_code>/man1` command, and execute this command `LANG=<language_code> ./apx man > man/<language_code>/man1/apx.1`. Open a PR for the generated manpage here.
 
 ## Instructions for using Apx in other distributions
 
