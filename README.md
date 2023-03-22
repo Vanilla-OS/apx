@@ -1,6 +1,14 @@
 <div align="center">
   <img src="apx-logo.png" height="120">
   <h1 align="center">Apx</h1>
+
+
+[![Translation Status][weblate-image]][weblate-url]
+
+[weblate-url]: https://hosted.weblate.org/engage/vanilla-os/
+[weblate-image]: https://hosted.weblate.org/widgets/vanilla-os/-/apx/svg-badge.svg
+
+
   <p align="center">Apx (/à·peks/) is the default package manager in Vanilla OS. It is a wrapper around multiple package managers to install packages and run commands inside a managed container.</p>
   <small>Special thanks to <a href="https://github.com/89luca89/distrobox">distrobox</a> for making this possible.</small>
 </div>
