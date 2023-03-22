@@ -23,7 +23,7 @@ autoremove:
   long: "Eliminați automat toate pachetele nefolosite"
   short: "Eliminați automat toate pachetele nefolosite"
 clean:
-  use: "curat"
+  use: "clean"
   long: "Curățați memoria cache a managerului de pachete apx"
   short: "Curățați memoria cache a managerului de pachete apx"
 enter:
