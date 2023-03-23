@@ -1,6 +1,6 @@
 flags:
-  apt: "Install packages from the Ubuntu repository."
-  aur: "Install packages from the AUR (Arch User Repository)."
+  apt: "Instale paquetes desde el repositorio de Ubuntu."
+  aur: "Instalar paquetes desde el AUR (Arch User Repository)."
   dnf: "Install packages from the Fedora's DNF (Dandified YUM) repository."
   apk: "Install packages from the Alpine repository."
   zypper: "Install packages from the OpenSUSE repository."
@@ -14,8 +14,8 @@ apx:
   short: "Apx is a package manager with support for multiple sources,\nallowing you\
     \ to install packages in a managed container."
   verboseFlag: "show more detailed output"
-  allFlag: "Apply for all containers."
-  cxl: "Operation canceled at user request."
+  allFlag: "Aplicable para todos los tipos de contenedores."
+  cxl: "Operación cancelada por petición del usuario."
   assumeYes: "Proceed without manual confirmation."
   notForNix: "This command does not apply to the nix environment."
 autoremove:
@@ -49,8 +49,8 @@ install:
   use: "apx install <package>"
   long: "Install packages inside a managed container."
   short: "Install packages inside a managed container."
-  assumeYes: "Proceed without manual confirmation"
-  fixBroken: "Fix broken dependencies before installing"
+  assumeYes: "Realizar sin confirmación manual"
+  fixBroken: "Corregir las dependencias rotas antes de instalar"
   noExport: "Do not export a desktop entry after the installation."
   sideload: "Install a package from a local file."
   sideArgs: "sideload requires the path to a local file"
