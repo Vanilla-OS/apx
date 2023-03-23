@@ -126,7 +126,7 @@ show:
   use: "show <package>"
   long: "Show details about a package"
   short: "Show details about a package"
-  isInstalled: "Only return whether the package is instaled"
+  isInstalled: "Only return whether the package is installed"
   found: "%s is installed"
   notFound: "%s is not installed"
 unexport:

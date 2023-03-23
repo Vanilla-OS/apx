@@ -92,7 +92,7 @@ nixremove:
   short: "Remove a nix package"
   success: "Package removal complete"
 nixinstall:
-  use: ""
+  use: "install <pkg>"
   long: "Install a package from the `nixpkgs` repository as a flake in the default\
     \ nix profile."
   short: "Install nix package"
