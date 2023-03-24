@@ -9,8 +9,8 @@ flags:
   name: "将此名称应用于自定义容器。"
 apx:
   use: "apx"
-  long: "Apx 是支持多软件源的软件包管理器。\n允许用户在受管理的容器中安装软件包。"
-  short: "Apx 是支持多软件源的软件包管理器。\n允许用户在受管理的容器中安装软件包。"
+  long: "Apx 是支持多软件源的软件包管理器，\n允许用户在受管理的容器中安装软件包。"
+  short: "Apx 是支持多软件源的软件包管理器，\n允许用户在受管理的容器中安装软件包。"
   verboseFlag: "显示更详细的输出"
   allFlag: "为所有容器应用。"
   cxl: "应用户要求取消操作。"
@@ -40,7 +40,7 @@ init:
   long: "初始化受管理的容器"
   short: "初始化受管理的容器"
   confirm: "容器已经存在。您想重新初始化该容器吗？此操作将移除该容器的所有内容，包括您在容器中的文件。"
-  remove: "移除容器时出现错误：%v"
+  remove: "移除容器时发生错误：%v"
   create: "创建容器时发生错误：%v"
 install:
   use: "apx install <软件包>"
@@ -86,7 +86,7 @@ nixinstall:
   short: "安装 nix 软件包"
   allowUnfree: "允许使用非自由许可证的软件包"
   allowInsecure: "允许具有已知漏洞的软件包。"
-  error: "安装软件包时出现错误"
+  error: "安装软件包时发生错误"
   runInit: "您是否运行过 `init` 命令？"
   success: "已成功安装软件包。"
 nixupgrade:
