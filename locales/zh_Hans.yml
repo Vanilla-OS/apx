@@ -142,7 +142,7 @@ nixremove:
   short: "移除 nix 软件包"
   success: "软件包移除完成"
 nixinstall:
-  use: ""
+  use: "install <pkg>"
   long: "在默认 nix 配置文件中从 `nixpkgs` 仓库安装软件包作为 flake。"
   short: "安装 nix 软件包"
   allowUnfree: "允许使用非自由许可证的软件包"
