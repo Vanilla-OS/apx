@@ -1,5 +1,5 @@
 flags:
-  apt: "Install packages from the Ubuntu repository."
+  apt: "Ubuntu களஞ்சியத்தில் இருந்து தொகுப்புகளை நிறுவவும்."
   aur: "Install packages from the AUR (Arch User Repository)."
   dnf: "Install packages from the Fedora's DNF (Dandified YUM) repository."
   apk: "Install packages from the Alpine repository."
@@ -126,7 +126,7 @@ show:
   use: "show <package>"
   long: "Show details about a package"
   short: "Show details about a package"
-  isInstalled: "Only return whether the package is installed"
+  isInstalled: "Only return whether the package is instaled"
   found: "%s is installed"
   notFound: "%s is not installed"
 unexport:

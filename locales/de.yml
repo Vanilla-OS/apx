@@ -1,36 +1,36 @@
 flags:
-  apt: "Install packages from the Ubuntu repository."
-  aur: "Install packages from the AUR (Arch User Repository)."
-  dnf: "Install packages from the Fedora's DNF (Dandified YUM) repository."
-  apk: "Install packages from the Alpine repository."
-  zypper: "Install packages from the OpenSUSE repository."
-  xbps: "Install packages from the Void (Linux) repository."
-  nix: "Install packages from the Nixpkgs (Nix packages) repository."
-  name: "Apply to custom container with this name."
+  apt: "Installiere Pakete aus der Ubuntu Paketquelle."
+  aur: "Installiere Pakete aus dem AUR (Arch User Repository)."
+  dnf: "Installiere Pakete aus Fedoras DNF (Dandified YUM) Paketquelle."
+  apk: "Installiere Pakete aus der Alpine Paketquelle."
+  zypper: "Installiere Pakete aus den OpenSUSE Paketquellen."
+  xbps: "Installiere Pakete aus den Void (Linux) Paketquellen."
+  nix: "Installiere Pakete aus den Nixpkgs (Nix packages) Paketquellen."
+  name: "Auf den benutzerdefinierten Container mit diesem Namen anwenden."
 apx:
   use: "apx"
-  long: "Apx is a package manager with support for multiple sources,\nallowing you\
-    \ to install packages in a managed container."
-  short: "Apx is a package manager with support for multiple sources,\nallowing you\
-    \ to install packages in a managed container."
-  verboseFlag: "show more detailed output"
-  allFlag: "Apply for all containers."
+  long: "Apx ist ein Paketmanager mit Unterstützung für mehrere Quellen,\nder es Ihnen\
+    \ ermöglicht, Pakete in einem verwalteten Container zu installieren."
+  short: "Apx ist ein Paketmanager mit Unterstützung für mehrere Quellen,\nder es\
+    \ Ihnen ermöglicht, Pakete in einem verwalteten Container zu installieren."
+  verboseFlag: "detailliertere Ausgabe anzeigen"
+  allFlag: "Für alle Container anwenden."
   cxl: "Operation canceled at user request."
-  assumeYes: "Proceed without manual confirmation."
-  notForNix: "This command does not apply to the nix environment."
+  assumeYes: "Ohne manuelle Bestätigung fortfahren."
+  notForNix: "Dieser Befehl gilt nicht für die Nix-Umgebung."
 autoremove:
   use: "autoremove"
-  long: "Remove all unused packages automatically"
-  short: "Remove all unused packages automatically"
+  long: "Alle unbenutzten Pakete automatisch entfernen"
+  short: "Alle unbenutzten Pakete automatisch entfernen"
 clean:
   use: "clean"
-  long: "Clean the apx package manager cache"
-  short: "Clean the apx package manager cache"
+  long: "Den Zwischenspeicher des Apx Paketmanagers löschen"
+  short: "Den Zwischenspeicher des Apx Paketmanagers löschen"
 enter:
   use: "enter"
   long: "Enter a shell in the managed container"
   short: "Enter a shell in the managed container"
-  failedEnter: "failed to enter managed container"
+  failedEnter: "Betreten des verwalteten Containers gescheitert"
   outside: "You are now outside the managed container."
 export:
   use: "export <program/binary>"
@@ -126,7 +126,7 @@ show:
   use: "show <package>"
   long: "Show details about a package"
   short: "Show details about a package"
-  isInstalled: "Only return whether the package is installed"
+  isInstalled: "Only return whether the package is instaled"
   found: "%s is installed"
   notFound: "%s is not installed"
 unexport:

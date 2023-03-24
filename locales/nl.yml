@@ -1,0 +1,149 @@
+flags:
+  apt: "Pakketten vanuit de Ubuntu-repository installeren"
+  aur: "Pakketten vanuit de AUR (Arch User Repository) installeren"
+  dnf: "Pakketten vanuit Fedora's DNF (Dandified YUM) installeren"
+  apk: "Pakketten vanuit de Alpine-repository installeren"
+  zypper: "Pakketten vanuit de OpenSUSE-repository installeren"
+  xbps: "Pakketten vanuit de Void-repository installeren"
+  nix: "Pakketten vanuit de Nixpkgs-repository installeren"
+  name: "Toepassen op aangepaste container met deze naam"
+apx:
+  use: "apx"
+  long: "Apx is een pakketbeheerder met ondersteuning voor meerdere bronnen, waarmee\
+    \ u pakketten kunt installeren in een beheerde container."
+  short: "Apx is een pakketbeheerder met ondersteuning voor meerdere bronnen, waarmee\
+    \ u pakketten kunt installeren in een beheerde container."
+  verboseFlag: "Gedetailleerdere uitvoer tonen"
+  allFlag: "Toepassen op alle containers"
+  cxl: "Handeling geannuleerd op verzoek van gebruiker"
+  assumeYes: "Doorgaan zonder handmatige bevestiging"
+  notForNix: "Deze opdracht is niet van toepassing op de nix-omgeving"
+autoremove:
+  use: "autoremove"
+  long: "Alle ongebruikte pakketten automatisch verwijderen"
+  short: "Alle ongebruikte pakketten automatisch verwijderen"
+clean:
+  use: "clean"
+  long: "De apx-pakketbeheerders-cache opschonen"
+  short: "De apx-cache opschonen"
+enter:
+  use: "enter"
+  long: "Een shell in de beheerde container binnengaan"
+  short: "Een shell in de container binnengaan"
+  failedEnter: "Beheerde container binnengaan mislukt"
+  outside: "U bent nu buiten de beheerde container"
+export:
+  use: "export <programma>"
+  long: "App-pictogram (opnieuw) aanmaken vanuit een beheerde container"
+  short: "App-pictogram aanmaken vanuit container"
+  binFlag: "Programmaopdracht exporteren"
+init:
+  use: "init"
+  long: "Beheerde container initialiseren"
+  short: "Beheerde container initialiseren"
+  confirm: "De container bestaat al. Wilt u deze opnieuw initialiseren? Deze handeling\
+    \ zal alles verwijderen, inclusief uw bestanden in de container."
+  remove: "Container verwijderen mislukt: %v"
+  create: "Container aanmaken mislukt: %v"
+install:
+  use: "apx install <pakket>"
+  long: "Pakketten installeren in een beheerde container"
+  short: "Pakketten installeren in een container"
+  assumeYes: "Doorgaan zonder handmatige bevestiging"
+  fixBroken: "Incorrecte afhankelijkheden repareren voor de installatie"
+  noExport: "Geen app-pictogram aanmaken na de installatie"
+  sideload: "Pakket installeren vanuit een lokaal bestand"
+  sideArgs: "Sideload vereist het pad naar een lokaal bestand"
+  sideUserTemp: "Kan bestand niet verplaatsen naar tijdelijke bestanden: %s"
+  exportBinPrompt: "Programma %s exporteren naar host?\nHiermee kunt u deze direct\
+    \ vanuit de shell aanroepen zonder ‘apx run’ te hoeven gebruiken.\nU kunt het\
+    \ programma ook later exporteren met ‘apx export --bin %s’."
+list:
+  use: "list"
+  long: "Geïnstalleerde pakketten tonen"
+  short: "Geïnstalleerde pakketten tonen"
+  upgradable: "Pakketten met updates tonen"
+  installed: "Geïnstalleerde pakketten tonen"
+nix:
+  use: "nix"
+  long: "Beheer een aangepaste installatie van Nix in uw persoonlijke map.\n\nDe `apx\
+    \ nix`-integratie dient als een wrapper voor het standaard-Nix-profiel. Eenmaal\
+    \ geïnstalleerd, bent u vrij om alle mogelijkheden van Nix te gebruiken zonder\
+    \ de opdracht `apx nix` te gebruiken."
+  short: "Nix-installatie beheren"
+nixinit:
+  use: "init"
+  long: "Initialiseert een aangepaste installatie van Nix door ‘$HOME/.nix’ aan te\
+    \ maken en enkele systemd-eenheden in te stellen om deze als ‘/nix’ te koppelen."
+  short: "Nix-repository initialiseren"
+  confirm: "Dit zal de map ‘.nix’ aanmaken in uw gebruikersmap en enkele systemd-eenheden\
+    \ instellen om deze map te koppelen aan ‘/nix’ voordat de installatie wordt uitgevoerd.\
+    \ Bevestig met ‘y’ om door te gaan."
+  unfree: "Wilt u niet-vrije pakketten zonder open-source-licenties toestaan? (Visual\
+    \ Studio Code, Spotify, enz.)"
+  insecure: "Wilt u onveilige pakketten (software met bekende kwetsbaarheden) toestaan?"
+  swcenter: "Wilt u Nix Software Center (grafisch softwarebeheer voor Nix) installeren?"
+  success: "Installatie voltooid. Herstart om nix te gebruiken."
+nixremove:
+  use: "remove"
+  long: "Verwijder het eerste overeenkomende pakket dat in het standaard-Nix-profiel\
+    \ is geïnstalleerd.\n\nOpmerking: Het is mogelijk om meerdere installaties van\
+    \ hetzelfde pakket te hebben.\n\nGebruik ‘nix profile list’ en ‘nix profile remove’\
+    \ als u meer precisie nodig heeft."
+  short: "Nix-pakket verwijderen"
+  success: "Pakket verwijderd"
+nixinstall:
+  use: "install <pkg>"
+  long: "Pakket uit de `nixpkgs`-repository als een flake in het standaard-Nix-profiel\
+    \ installeren"
+  short: "Nix-pakket installeren"
+  allowUnfree: "Pakketten met niet-vrije licenties toestaan"
+  allowInsecure: "Pakketten met bekende kwetsbaarheden toestaan"
+  error: "Pakketten installeren mislukt"
+  runInit: "Heeft u de opdracht `init` al uitgevoerd?"
+  success: "Pakket succesvol geïnstalleerd"
+nixupgrade:
+  success: "Pakket succesvol bijgewerkt"
+  atleastone: "Minstens één pakketnaam vereist"
+purge:
+  use: "purge <pakketten>"
+  long: "Pakketten inclusief configuratiebestanden in een beheerde container verwijderen"
+  short: "Pakketten in een container purgen"
+remove:
+  use: "remove <pakket>"
+  long: "Pakketten in een beheerde container verwijderen en configuratiebestanden\
+    \ behouden"
+  short: "Pakketten in een beheerde container verwijderen"
+run:
+  use: "run <opdracht>"
+  long: "Een programma uitvoeren in een beheerde container"
+  short: "Een programma uitvoeren in een container"
+  nixMsg: "Gebruik `apx run` niet voor Nix-pakketten. Voer deze direct uit zoals u\
+    \ dat zou doen met een native pakket."
+search:
+  use: "search <pakketten>"
+  long: "Zoeken naar pakketten in een beheerde container"
+  short: "Zoeken naar pakketten in een container"
+show:
+  use: "show <pakket>"
+  long: "Details over een pakket tonen"
+  short: "Details over een pakket tonen"
+  isInstalled: "Alleen tonen of het pakket is geïnstalleerd"
+  found: "%s is geïnstalleerd"
+  notFound: "%s is niet geïnstalleerd"
+unexport:
+  use: "unexport <pakket>"
+  long: "Verwijdert het app-pictogram van een programma uit een beheerde container.\n\
+    Als de flag --bin is meegegeven, wordt de link naar de containerprogramma verwijderd."
+  short: "Verwijdert het app-pictogram van een programma uit een container"
+  binFlag: "Een eerder geëxporteerd programma niet meer exporteren"
+  success: "Programma `%s` niet meer geëxporteerd"
+update:
+  use: "update"
+  long: "De lijst met beschikbare pakketten bijwerken"
+  short: "Lijst met beschikbare pakketten bijwerken"
+  allFlag: "Toepassen op alle containers"
+upgrade:
+  use: "upgrade"
+  long: "Systeem bijwerken door beschikbare pakketten bij te werken of te installeren"
+  short: "Beschikbare pakketten bijwerken"

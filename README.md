@@ -79,6 +79,7 @@ To add new dependencies, use `go get` as usual, then run `go mod tidy` and `go m
 
 [![Translation Status][weblate-status-image]][weblate-url]
 
+
 ### Generating man pages for translations
 
 - Once the translation is complete in Weblate and the changes committed, clone the repository using `git` and perform `go build`, create a directory using the `mkdir man/<language_code> && mkdir man/<language_code>/man1` command, and execute this command `LANG=<language_code> ./apx man > man/<language_code>/man1/apx.1`. Open a PR for the generated manpage here.

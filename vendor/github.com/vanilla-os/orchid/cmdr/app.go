@@ -84,6 +84,9 @@ func (a *App) CreateRootCommand(c *Command) {
 	c.DisableAutoGenTag = true
 	manCmd := NewManCommand(a)
 	a.RootCommand.AddCommand(manCmd)
+
+	docsCmd := NewDocsCommand(a)
+	a.RootCommand.AddCommand(docsCmd)
 }
 
 func (a *App) Run() error {

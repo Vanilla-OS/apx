@@ -15,7 +15,6 @@ Package: apx
 Architecture: all
 Depends: ${shlibs:Depends},
          ${misc:Depends},
-         micro-distrobox,
          podman,
          golang-go
 Built-Using: ${misc:Built-Using}
