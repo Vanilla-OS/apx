@@ -4,10 +4,15 @@
 
 
 [![Translation Status][weblate-image]][weblate-url]
+[![build result][build-image]][build-url]
 
 [weblate-url]: https://hosted.weblate.org/engage/vanilla-os/
 [weblate-image]: https://hosted.weblate.org/widgets/vanilla-os/-/apx/svg-badge.svg
 [weblate-status-image]: https://hosted.weblate.org/widgets/vanilla-os/-/apx/multi-auto.svg
+[repology-url]: https://repology.org/project/apx-package-manager/versions
+[repology-image]: https://repology.org/badge/vertical-allrepos/apx-package-manager.svg
+[build-image]: https://build.opensuse.org/projects/home:fabricators:orchid/packages/apx/badge.svg?type=default
+[build-url]: https://build.opensuse.org/package/show/home:fabricators:orchid/apx
 
   <p align="center">Apx (/à·peks/) is the default package manager in Vanilla OS. It is a wrapper around multiple package managers to install packages and run commands inside a managed container.</p>
   <small>Special thanks to <a href="https://github.com/89luca89/distrobox">distrobox</a> for making this possible.</small>
@@ -134,3 +139,11 @@ Or into a separate root:-
 make install DESTDIR=$HOME/altroot
 make install-manpages DESTDIR=$HOME/altroot
 ```
+
+## Community Packages
+
+Apx is packaged in various sources by our community, if you aren't comfortable with building `apx` manually you can install a package listed below.
+
+(**Note:** These packages are unofficial if there are any issues with packaging report them to the respective maintainers, if there are any issues with apx functionalities report them here.)
+
+[![Packaging status][repology-image]][repology-url]
