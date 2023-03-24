@@ -1,147 +1,151 @@
 flags:
-  apt: "Install packages from the Ubuntu repository."
-  aur: "Install packages from the AUR (Arch User Repository)."
-  dnf: "Install packages from the Fedora's DNF (Dandified YUM) repository."
-  apk: "Install packages from the Alpine repository."
-  zypper: "Install packages from the OpenSUSE repository."
-  xbps: "Install packages from the Void (Linux) repository."
-  nix: "Install packages from the Nixpkgs (Nix packages) repository."
-  name: "Apply to custom container with this name."
+  apt: "Ubuntu deposundan paketleri yükleyin."
+  aur: "Paketleri AUR'den (Arch Kullanıcı Deposu) yükleyin."
+  dnf: "Fedora'nın DNF (Dandified YUM) deposundan paketleri yükleyin."
+  apk: "Alpine deposundan paketleri yükleyin."
+  zypper: "OpenSUSE deposundan paketleri yükleyin."
+  xbps: "Void (Linux) deposundan paketleri yükleyin."
+  nix: "Nixpkgs (Nix paketleri) deposundan paketleri yükleyin."
+  name: "Bu ada sahip özel konteynere uygulayın."
 apx:
   use: "apx"
-  long: "Apx is a package manager with support for multiple sources,\nallowing you\
-    \ to install packages in a managed container."
-  short: "Apx is a package manager with support for multiple sources,\nallowing you\
-    \ to install packages in a managed container."
-  verboseFlag: "show more detailed output"
-  allFlag: "Apply for all containers."
-  cxl: "Operation canceled at user request."
-  assumeYes: "Proceed without manual confirmation."
-  notForNix: "This command does not apply to the nix environment."
+  long: "Apx, birden fazla kaynağı destekleyen bir paket yöneticisidir,\nyönetilen\
+    \ bir Konteynera paket yüklemenize olanak tanır."
+  short: "Apx, birden fazla kaynağı destekleyen bir paket yöneticisidir,\nyönetilen\
+    \ bir Konteynera paket yüklemenize olanak tanır."
+  verboseFlag: "daha ayrıntılı çıktı göster"
+  allFlag: "Tüm konteynerler için geçerlidir."
+  cxl: "Kullanıcı isteği üzerine işlem iptal edildi."
+  assumeYes: "Manuel onay olmadan devam edin."
+  notForNix: "Bu komut nix ortamı için geçerli değildir."
 autoremove:
   use: "autoremove"
-  long: "Remove all unused packages automatically"
-  short: "Remove all unused packages automatically"
+  long: "Kullanılmayan tüm paketleri otomatik olarak kaldırın"
+  short: "Kullanılmayan tüm paketleri otomatik olarak kaldırın"
 clean:
   use: "clean"
-  long: "Clean the apx package manager cache"
-  short: "Clean the apx package manager cache"
+  long: "apx paket yöneticisi önbelleğini temizle"
+  short: "apx paket yöneticisi önbelleğini temizle"
 enter:
   use: "enter"
-  long: "Enter a shell in the managed container"
-  short: "Enter a shell in the managed container"
-  failedEnter: "failed to enter managed container"
-  outside: "You are now outside the managed container."
+  long: "Yönetilen Konteynera bir kabuk girin"
+  short: "Yönetilen Konteynera bir kabuk girin"
+  failedEnter: "yönetilen konteynere girilemedi"
+  outside: "Artık yönetilen konteynerin dışındasınız."
 export:
   use: "export <program/binary>"
-  long: "Export/Recreate a program's desktop entry from a managed container"
-  short: "Export/Recreate a program's desktop entry from a managed container"
-  binFlag: "Export binary command"
+  long: "Yönetilen bir Konteynerda bir programın masaüstü girişini dışa aktarma/yeniden\
+    \ oluşturma"
+  short: "Yönetilen bir Konteynerdan bir programın masaüstü girişini dışa aktarma/yeniden\
+    \ oluşturma"
+  binFlag: "İkili komutu dışarı aktar"
 init:
   use: "init"
-  long: "Initialize a managed container"
-  short: "Initialize a managed container"
-  confirm: "Container already exists. Do you want to re-initialize it? This operation\
-    \ will remove everything, including your files in the container."
-  remove: "error removing container: %v"
-  create: "error creating container: %v"
+  long: "Yönetilen bir Konteynerı başlat"
+  short: "Yönetilen bir Konteyner'ı başlat"
+  confirm: "Konteyner zaten mevcut. Yeniden kurmak istiyor musunuz? Bu işlem konteynerdeki\
+    \ dosyalarınız da dahil olmak üzere her şeyi kaldıracaktır."
+  remove: "konteyner kaldırılırken hata oluştu: %v"
+  create: "konteyner oluşturma hatası: %v"
 install:
-  use: "apx install <package>"
-  long: "Install packages inside a managed container."
-  short: "Install packages inside a managed container."
-  assumeYes: "Proceed without manual confirmation"
-  fixBroken: "Fix broken dependencies before installing"
-  noExport: "Do not export a desktop entry after the installation."
-  sideload: "Install a package from a local file."
-  sideArgs: "sideload requires the path to a local file"
-  sideUserTemp: "can't move file to user temp: %s"
-  exportBinPrompt: "Export binary %s to host?\nThis will let you call it directly\
-    \ from the shell without using \"apx run\".\nYou can also export it later using\
-    \ \"apx export --bin %s\""
+  use: "apx install <paket>"
+  long: "Paketleri yönetilen bir konteynerin içine yükle."
+  short: "Paketleri yönetilen bir konteynerin içine yükle."
+  assumeYes: "Manuel onay olmadan devam et"
+  fixBroken: "Yüklemeden önce bozuk bağımlılıkları düzelt"
+  noExport: "Kurulumdan sonra bir masaüstü girişini dışa aktarma."
+  sideload: "Yerel bir dosyadan bir paket yükle."
+  sideArgs: "sideload yerel bir dosyanın yolunu gerektirir"
+  sideUserTemp: "dosya, kullanıcı geçici belleğine taşınamıyor: %s"
+  exportBinPrompt: "İkili %s 'i ana bilgisayara aktar?\nBu, \"apx run\" kullanmadan\
+    \ doğrudan kabuktan çağırmanıza izin verecektir.\nDaha sonra \"apx export --bin\
+    \ %s\" kullanarak da dışa aktarabilirsiniz."
 list:
   use: "list"
-  long: "List installed packages."
-  short: "List installed packages."
-  upgradable: "Show upgradable packages"
-  installed: "Show installed packages"
+  long: "Yüklü paketleri listele."
+  short: "Yüklü paketleri listele."
+  upgradable: "Yükseltilebilir paketleri göster"
+  installed: "Yüklü paketleri göster"
 nix:
   use: "nix"
-  long: "Manage a custom installation of nix in your $HOME directory.\n\nThe `apx\
-    \ nix` integration serves as a wrapper for the\ndefault nix profile. Once installed,\
-    \ you are free to use any features of\nnix without using the `apx nix` command."
-  short: "Manage nix installation"
+  long: "$HOME dizininizde nix'in özel bir kurulumunu yönet.\n\n'apx nix` entegrasyonu,\
+    \ aşağıdaki sistemler için bir sarma görevi görür\nvarsayılan nix profili. Birkere\
+    \ kurulduktan sonra, . 'apx nix` komutunu kullanmadan\nnix'in herhangi bir özelliğini\
+    \ kullanmakta özgürsünüz."
+  short: "Nix kurulumunu yönet"
 nixinit:
   use: "init"
-  long: "Initializes a custom installation of nix by creating $HOME/.nix and setting\
-    \ up some SystemD units to mount it as /nix."
-  short: "Initialize nix repository"
-  confirm: "This will create a '.nix' folder in your home directory and set up some\
-    \ SystemD units to mount that folder at /nix before running the installation.\
-    \ Confirm 'y' to continue."
-  unfree: "Would you like to allow 'unfree' packages without Open Source licenses\
-    \ (Visual Studio Code, Spotify, etc)?"
-  insecure: "Would you like to allow 'insecure' packages (software with known vulnerabilities)?"
-  swcenter: "Would you like to install the Nix Software Center - a graphical software\
-    \ manager for Nix?"
-  success: "Installation complete. Reboot to start using nix."
+  long: "Özel bir nix kurulumunu $HOME/.nix oluşturarak ve /nix olarak bağlamak için,\
+    \ bazı SystemD birimlerini ayarlayarak başlatır."
+  short: "Nix deposunu başlat"
+  confirm: "Bu, ev dizininizde bir '.nix' klasörü oluşturacak ve kurulumu çalıştırmadan\
+    \ önce bu klasörü /nix'e bağlamak için bazı SystemD birimlerini ayarlayacaktır.\
+    \ Devam etmek için 'y' seçeneğini onaylayın."
+  unfree: "Açık kaynak lisansı olmayan 'ücretli' paketlere izin vermek ister misiniz\
+    \ (Visual Studio Code, Spotify, vb.)?"
+  insecure: "'Güvensiz' paketlere (bilinen güvenlik açıkları olan yazılımlar) izin\
+    \ vermek ister misiniz?"
+  swcenter: "Nix için grafiksel bir yazılım yöneticisi olan Nix Yazılım Merkezi'ni\
+    \ kurmak ister misiniz?"
+  success: "Kurulum tamamlandı. Nix kullanmaya başlamak için yeniden başlatın."
 nixremove:
   use: "remove"
-  long: "Remove the first matching package installed in the default nix profile.\n\
-    \nNote: It is possible to have multiple installations of the same package.\n\n\
-    If you need more precision use 'nix profile list' and 'nix profile remove'."
-  short: "Remove a nix package"
-  success: "Package removal complete"
+  long: "Varsayılan nix profilinde yüklü olan ilk eşleşen paketi kaldırın.\n\nNot:\
+    \ Aynı paketin birden fazla kurulumuna sahip olmak mümkündür.\n\nDaha fazla hassasiyete\
+    \ ihtiyacınız varsa 'nix profile list' ve 'nix profile remove' kullanın."
+  short: "Bir nix paketini kaldır"
+  success: "Paket çıkarma işlemi tamamlandı"
 nixinstall:
   use: "install <pkg>"
-  long: "Install a package from the `nixpkgs` repository as a flake in the default\
-    \ nix profile."
-  short: "Install nix package"
-  allowUnfree: "Allow packages with unfree licenses"
-  allowInsecure: "Allow packages with known vulnerabilities."
-  error: "error installing packages"
-  runInit: "Have you run the `init` command yet?"
-  success: "Successfully installed package."
+  long: "'nixpkgs` deposundan bir paketi varsayılan nix profiline bir flake olarak\
+    \ yükle."
+  short: "Nix paketini yükle"
+  allowUnfree: "ücretli(Özgür olmayan) lisanslara sahip paketlere izin ver"
+  allowInsecure: "Bilinen güvenlik açıkları olan paketlere izin ver."
+  error: "paket yükleme hatası"
+  runInit: "Henüz `init` komutunu çalıştırmadınız mı?"
+  success: "Paket başarıyla yüklendi."
 nixupgrade:
-  success: "Successfully upgraded package."
-  atleastone: "At least one package name required."
+  success: "Paket başarıyla yükseltildi."
+  atleastone: "En az bir paket adı gereklidir."
 purge:
-  use: "purge <packages>"
-  long: "Purge packages inside a managed container"
-  short: "Purge packages inside a managed container"
+  use: "purge <paket>"
+  long: "Yönetilen bir konteyner içindeki paketleri temizle"
+  short: "Yönetilen bir konteyner içindeki paketleri temizle"
 remove:
-  use: "remove <package>"
-  long: "Remove packages inside a managed container."
-  short: "Remove packages inside a managed container."
+  use: "remove <paket>"
+  long: "Yönetilen bir konteyner içindeki paketleri kaldır."
+  short: "Yönetilen bir konteyner içindeki paketleri kaldır."
 run:
-  use: "run <command>"
-  long: "Run a program inside a managed container."
-  short: "Run a program inside a managed container."
-  nixMsg: "Do not use `apx run` for nix packages. Run them directly as you would with\
-    \ a native package."
+  use: "run <komut>"
+  long: "Yönetilen bir konteyner içinde bir program çalıştır."
+  short: "Yönetilen bir konteyner içinde bir program çalıştır."
+  nixMsg: "Nix paketleri için `apx run` kullanmayın. Yerel bir pakette yaptığınız\
+    \ gibi doğrudan çalıştırın."
 search:
-  use: "search <packages>"
-  long: "Search for packages in a managed container."
-  short: "Search for packages in a managed container."
+  use: "search <paket>"
+  long: "Yönetilen bir konteyner içinde paketleri ara."
+  short: "Yönetilen bir konteyner içinde ki paketleri arayın."
 show:
-  use: "show <package>"
-  long: "Show details about a package"
-  short: "Show details about a package"
-  isInstalled: "Only return whether the package is installed"
-  found: "%s is installed"
-  notFound: "%s is not installed"
+  use: "show <paket>"
+  long: "Paket hakkındaki ayrıntıları göster"
+  short: "Paket hakkındaki ayrıntıları göster"
+  isInstalled: "Yalnızca paketin yüklü olup olmadığını döndürür"
+  found: "%s yüklendi"
+  notFound: "%s yüklenmedi"
 unexport:
-  use: "unexport <package>"
-  long: "Unexport/Remove a program's desktop entry from a managed container.\nIf --bin\
-    \ flag is provided, remove link to container binary."
-  short: "Unexport/Remove a program's desktop entry from a managed container"
-  binFlag: "Unexport a previously exported binary."
-  success: "Successfully removed exported binary `%s`."
+  use: "unexport <paket>"
+  long: "Bir programın masaüstü girdisini yönetilen bir konteynerdan kaldırır/çıkartır.\n\
+    Eğer --bin flag sağlanmışsa, konteyner ikilisine olan bağlantıyı kaldırır."
+  short: "Yönetilen bir konteynerdan bir programın masaüstü girişini çıkarma/kaldırma"
+  binFlag: "Önceden dışa aktarılmış bir ikiliyi dışa aktarmayı kaldır."
+  success: "Dışa aktarılan ikili `%s` başarıyla kaldırıldı."
 update:
   use: "update"
-  long: "Update the list of available packages"
-  short: "Update the list of available packages"
-  allFlag: "Apply to all containers"
+  long: "Mevcut paketlerin listesini güncelle"
+  short: "Mevcut paketlerin listesini güncelle"
+  allFlag: "Tüm konteynerlere uygula"
 upgrade:
   use: "upgrade"
-  long: "Upgrade the system by installing/upgrading available packages."
-  short: "Upgrade the system by installing/upgrading available packages."
+  long: "Mevcut paketleri yükleyerek/yükselterek sistemi yükseltin."
+  short: "Mevcut paketleri yükleyerek/yükselterek sistemi yükseltin."
