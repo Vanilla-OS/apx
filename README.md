@@ -1,6 +1,16 @@
 <div align="center">
   <img src="apx-logo.png" height="120">
   <h1 align="center">Apx</h1>
+
+
+[![Translation Status][weblate-image]][weblate-url]
+
+[weblate-url]: https://hosted.weblate.org/engage/vanilla-os/
+[weblate-image]: https://hosted.weblate.org/widgets/vanilla-os/-/apx/svg-badge.svg
+[weblate-status-image]: https://hosted.weblate.org/widgets/vanilla-os/-/apx/multi-auto.svg
+[repology-url]: https://repology.org/project/apx-package-manager/versions
+[repology-image]: https://repology.org/badge/vertical-allrepos/apx-package-manager.svg
+
   <p align="center">Apx (/à·peks/) is the default package manager in Vanilla OS. It is a wrapper around multiple package managers to install packages and run commands inside a managed container.</p>
   <small>Special thanks to <a href="https://github.com/89luca89/distrobox">distrobox</a> for making this possible.</small>
 </div>
@@ -63,12 +73,17 @@ Use "apx [command] --help" for more information about a command.
 
 To add new dependencies, use `go get` as usual, then run `go mod tidy` and `go mod vendor` before committing the code.
 
-## Generating man pages for translations
+## Translations
 
-- Copy the `en.yml` file under the `locales` directory, rename it to your language code then translate the strings.
-- Once the translation is complete, perform `go build` and execute this command `./apx man > man/<language_code>/man1/apx.1`. If the man page gets generated without any errors, open a PR for it here.
+- Contribute translations for the manpage and help page in [Weblate](https://hosted.weblate.org/projects/vanilla-os/apx).
 
-## Instructions for building Apx
+[![Translation Status][weblate-status-image]][weblate-url]
+
+### Generating man pages for translations
+
+- Once the translation is complete in Weblate and the changes committed, clone the repository using `git` and perform `go build`, create a directory using the `mkdir man/<language_code> && mkdir man/<language_code>/man1` command, and execute this command `LANG=<language_code> ./apx man > man/<language_code>/man1/apx.1`. Open a PR for the generated manpage here.
+
+## Instructions for using Apx in other distributions
 
 Apx has been designed as a distro-agnostic tool, allowing it to work with any distribution. (Note: The Nix integration in Apx requires SystemD)
 
@@ -126,6 +141,6 @@ make install-manpages DESTDIR=$HOME/altroot
 
 Apx is packaged in various sources by our community, if you aren't comfortable with building `apx` manually you can install a package listed below.
 
-(Note: These packages are unofficial if there are any issues with packaging report them to the respective maintainers if there are any issues with apx functionalities report them here.)
+(**Note:** These packages are unofficial if there are any issues with packaging report them to the respective maintainers, if there are any issues with apx functionalities report them here.)
 
-[![Packaging status](https://repology.org/badge/vertical-allrepos/apx.svg)](https://repology.org/project/apx/versions)
+[![Packaging status][repology-image]][repology-url]
