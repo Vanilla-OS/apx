@@ -26,6 +26,10 @@ uninstall:
 	sudo rm -rf ${DESTDIR}/etc/apx
 	sudo rm -rf ${DESTDIR}${PREFIX}/share/apx
 
+uninstall-manpages:
+	sudo rm -rf ${DESTDIR}${PREFIX}/share/man/man1/apx*
+	sudo rm -rf ${DESTDIR}${PREFIX}/share/man/*/man1/apx*
+
 clean:
 	rm -f ${BINARY_NAME}
 	go clean
