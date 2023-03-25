@@ -21,6 +21,11 @@ install-manpages:
 	cp -r man/* ${DESTDIR}${PREFIX}/share/man/.
 	chmod 644 ${DESTDIR}${PREFIX}/share/man/man1/*
 
+uninstall:
+	sudo rm ${DESTDIR}${PREFIX}/bin/apx
+	sudo rm -rf ${DESTDIR}/etc/apx
+	sudo rm -rf ${DESTDIR}${PREFIX}/share/apx
+
 clean:
 	rm -f ${BINARY_NAME}
 	go clean
