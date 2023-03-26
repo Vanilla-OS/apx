@@ -99,14 +99,14 @@ nixinstall:
   use: "install <pkg>"
   long: "Install a package from the `nixpkgs` repository as a flake in the default\
     \ nix profile."
-  short: "Install nix package"
-  allowUnfree: "Allow packages with unfree licenses"
-  allowInsecure: "Allow packages with known vulnerabilities."
+  short: "Instalar pacote nix"
+  allowUnfree: "Permitir pacotes com licenças não livres"
+  allowInsecure: "Permitir pacotes com vulnerabilidades conhecidas"
   error: "error installing packages"
   runInit: "Have you run the `init` command yet?"
-  success: "Successfully installed package."
+  success: "Pacote instalado com sucesso."
 nixupgrade:
-  success: "Successfully upgraded package."
+  success: "Pacote atualizado com sucesso."
   atleastone: "At least one package name required."
 purge:
   use: "purge <packages>"

@@ -15,7 +15,7 @@ apx:
     \ Ihnen ermöglicht, Pakete in einem verwalteten Container zu installieren."
   verboseFlag: "detailliertere Ausgabe anzeigen"
   allFlag: "Für alle Container anwenden."
-  cxl: "Operation canceled at user request."
+  cxl: "Operation abgebrochen auf Benutzeranfrage."
   assumeYes: "Ohne manuelle Bestätigung fortfahren."
   notForNix: "Dieser Befehl gilt nicht für die Nix-Umgebung."
 autoremove:
