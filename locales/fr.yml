@@ -1,8 +1,8 @@
 flags:
   apt: "Install packages from the Ubuntu repository."
-  aur: "Install packages from the AUR (Arch User Repository)."
+  aur: "Installer des paquets à partir d'AUR (Arch User Repository)."
   dnf: "Install packages from the Fedora's DNF (Dandified YUM) repository."
-  apk: "Install packages from the Alpine repository."
+  apk: "Installer des paquets à partir des dépôts Alpine."
   zypper: "Install packages from the OpenSUSE repository."
   xbps: "Install packages from the Void (Linux) repository."
   nix: "Install packages from the Nixpkgs (Nix packages) repository."
