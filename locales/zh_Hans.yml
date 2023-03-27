@@ -82,7 +82,7 @@ nixremove:
   success: "软件包移除完成"
 nixinstall:
   use: "install <pkg>"
-  long: "在默认 nix 配置文件中从 `nixpkgs` 仓库安装软件包作为 flake。"
+  long: "以 flake 的形式在默认 nix 配置文件中安裝来自 nixpkgs 仓库的软件包。"
   short: "安装 nix 软件包"
   allowUnfree: "允许使用非自由许可证的软件包"
   allowInsecure: "允许具有已知漏洞的软件包。"
