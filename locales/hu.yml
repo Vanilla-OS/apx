@@ -1,26 +1,26 @@
 flags:
-  apt: "Install packages from the Ubuntu repository."
-  aur: "Install packages from the AUR (Arch User Repository)."
-  dnf: "Install packages from the Fedora's DNF (Dandified YUM) repository."
-  apk: "Install packages from the Alpine repository."
-  zypper: "Install packages from the OpenSUSE repository."
-  xbps: "Install packages from the Void (Linux) repository."
-  nix: "Install packages from the Nixpkgs (Nix packages) repository."
-  name: "Apply to custom container with this name."
+  apt: "Csomagok telepítése az Ubuntu tárolóból."
+  aur: "Csomagok telepítése az AUR-ból (Arch User Repository)."
+  dnf: "Csomagok telepítése a Fedora DNF (Dandified YUM)tárolóból."
+  apk: "Csomagok telepítése az Alpine tárolóból."
+  zypper: "Csomagok telepítése az OpenSUSE tárolóból."
+  xbps: "Csomagok telepítése a Void (Linux) tárolóból."
+  nix: "Csomagok telepítése a Nixpkgs (Nix packages) tárolóból."
+  name: "Alkalmazza az egyéni tárolóra ezzel a névvel."
 apx:
   use: "apx"
-  long: "Apx is a package manager with support for multiple sources,\nallowing you\
-    \ to install packages in a managed container."
-  short: "Apx is a package manager with support for multiple sources,\nallowing you\
-    \ to install packages in a managed container."
-  verboseFlag: "show more detailed output"
-  allFlag: "Apply for all containers."
-  cxl: "Operation canceled at user request."
-  assumeYes: "Proceed without manual confirmation."
-  notForNix: "This command does not apply to the nix environment."
+  long: "Az Apx egy csomagkezelő, amely támogatja a több forrásból származó csomagokat,\n\
+    lehetővé teszi a csomagok telepítését egy kezelt tárolóban."
+  short: "Az Apx egy csomagkezelő, amely támogatja a több forrásból származó csomagokat,\n\
+    lehetővé teszi a csomagok telepítését egy kezelt tárolóban."
+  verboseFlag: "részletesebb kimenet megjelenítése"
+  allFlag: "Alkalmazás az összes tárolóra."
+  cxl: "A művelet a felhasználó kérésére megszakításra került."
+  assumeYes: "Folytatás kézi jóváhagyás nélkül."
+  notForNix: "Ez a parancs nem vonatkozik a nix környezetre."
 autoremove:
   use: "autoremove"
-  long: "Remove all unused packages automatically"
+  long: "Automatikusan eltávolít minden nem használt csomagot"
   short: "Remove all unused packages automatically"
 clean:
   use: "clean"
