@@ -10,11 +10,11 @@ flags:
 apx:
   use: "apx"
   long: "Apx é um gerenciador de pacotes com suporte para múltiplas fontes,\npermitindo\
-    \ a instalação de pacotes em um container gerenciado."
+    \ a instalação de pacotes em um contêiner gerenciado."
   short: "Apx é um gerenciador de pacotes com suporte para múltiplas fontes,\npermitindo\
-    \ a instalação de pacotes em um container gerenciado."
+    \ a instalação de pacotes em um contêiner gerenciado."
   verboseFlag: "mostrar saída mais detalhada"
-  allFlag: "Aplicar a todos os containers."
+  allFlag: "Aplicar para todos os Contêineres."
   cxl: "Operação cancelada a pedido do usuário."
   assumeYes: "Proceder sem confirmação manual."
   notForNix: "Este comando não se aplica ao ambiente nix."
@@ -28,20 +28,20 @@ clean:
   short: "Limpar o cache do gerenciador de pacotes apx"
 enter:
   use: "enter"
-  long: "Entrar um shell no contêiner administrado"
-  short: "Entrar um shell no contêiner administrado"
-  failedEnter: "falha ao entrar no contêiner administrado"
-  outside: "Agora você está fora do contêiner administrado."
+  long: "Adicione um shell no contêiner administrado"
+  short: "Adicione um shell no contêiner administrado"
+  failedEnter: "falha ao entrar no contêiner gerenciado"
+  outside: "Agora você está fora do contêiner gerenciado."
 export:
   use: "export <programa/binário>"
   long: "Exportar/Recriar a entrada desktop de um programa a partir de um contêiner\
     \ gerenciado"
   short: "Exportar/Recriar a entrada desktop de um programa a partir de um contêiner\
-    \ gerenciado"
+    \ administrado"
   binFlag: "Exportar comando binário"
 init:
   use: "init"
-  long: "Inicializar um contêiner administrado"
+  long: "Inicializar um contêiner gerenciado"
   short: "Inicializar um contêiner administrado"
   confirm: "O contêiner já existe. Você quer reinicializá-lo? Esta operação removerá\
     \ tudo, inclusive seus arquivos no contêiner."
@@ -49,12 +49,12 @@ init:
   create: "erro ao criar o contêiner: %v"
 install:
   use: "apx install <pacote>"
-  long: "Instalar pacotes dentro de um contêiner administrado."
-  short: "Instalar pacotes dentro de um contêiner administrado."
+  long: "Instalar pacotes dentro de um contêiner gerenciado."
+  short: "Instalar pacotes dentro de um contêiner gerenciado."
   assumeYes: "Proceder sem confirmação manual"
-  fixBroken: "Consertar dependências quebradas antes da instalação"
-  noExport: "Não exportar uma entrada desktop após a instalação."
-  sideload: "Instale um pacote a partir de um arquivo local."
+  fixBroken: "Consertar dependências quebradas antes de continuar a instalação"
+  noExport: "Não exportar uma entrada para a área de trabalho após a instalação."
+  sideload: "Instalar um pacote a partir de um arquivo local."
   sideArgs: "carregamento lateral (sideload) requer o caminho para um arquivo local"
   sideUserTemp: "não é possível mover o arquivo para a pasta temporária (temp) do\
     \ usuário: %s"
@@ -73,79 +73,80 @@ nix:
     A integração `apx nix` serve como um invólucro para o\nperfil nix padrão. Uma\
     \ vez instalado, você está livre para usar quaisquer características de\nnix sem\
     \ utilizar o comando `apx nix`."
-  short: "Manage nix installation"
+  short: "Gerenciar a instalação de nix"
 nixinit:
   use: "init"
-  long: "Initializes a custom installation of nix by creating $HOME/.nix and setting\
-    \ up some SystemD units to mount it as /nix."
-  short: "Initialize nix repository"
-  confirm: "This will create a '.nix' folder in your home directory and set up some\
-    \ SystemD units to mount that folder at /nix before running the installation.\
-    \ Confirm 'y' to continue."
-  unfree: "Would you like to allow 'unfree' packages without Open Source licenses\
-    \ (Visual Studio Code, Spotify, etc)?"
-  insecure: "Would you like to allow 'insecure' packages (software with known vulnerabilities)?"
-  swcenter: "Would you like to install the Nix Software Center - a graphical software\
-    \ manager for Nix?"
-  success: "Installation complete. Reboot to start using nix."
+  long: "Inicializar uma instalação customizada do nix criando $HOME/.nix e configurando\
+    \ algumas unidades do SystemD para montá-lo como /nix."
+  short: "Inicializar o repositório nix"
+  confirm: "Isto criará uma pasta '.nix' em seu diretório pessoal e configurará algumas\
+    \ unidades SystemD para montar essa pasta em /nix antes de executar a instalação.\
+    \ Confirme 'y' para continuar."
+  unfree: "Você gostaria de permitir pacotes 'não gratuitos' sem licenças Open Source\
+    \ (Visual Studio Code, Spotify, etc.)?"
+  insecure: "Você gostaria de permitir pacotes 'inseguros' (software com vulnerabilidades\
+    \ conhecidas)?"
+  swcenter: "Você gostaria de instalar o Nix Software Center - um gerenciador de software\
+    \ gráfico para o Nix?"
+  success: "Instalação completa. Reinicie para começar a usar nix."
 nixremove:
   use: "remove"
-  long: "Remove the first matching package installed in the default nix profile.\n\
-    \nNote: It is possible to have multiple installations of the same package.\n\n\
-    If you need more precision use 'nix profile list' and 'nix profile remove'."
-  short: "Remove a nix package"
-  success: "Package removal complete"
+  long: "Remover o primeiro pacote correspondente instalado no perfil nix padrão.\n\
+    \nNota: É possível ter múltiplas instalações de um mesmo pacote.\n\nSe você precisar\
+    \ de mais precisão, use 'lista de perfil nix' e 'remoção de perfil nix'."
+  short: "Remover um pacote de nix"
+  success: "Remoção do pacote completa"
 nixinstall:
-  use: "install <pkg>"
-  long: "Install a package from the `nixpkgs` repository as a flake in the default\
-    \ nix profile."
+  use: "instalar <pkg>"
+  long: "Instale um pacote do repositório `nixpkgs` como um floco no perfil nix padrão."
   short: "Instalar pacote nix"
-  allowUnfree: "Permitir pacotes com licenças não livres"
-  allowInsecure: "Permitir pacotes com vulnerabilidades conhecidas"
-  error: "error installing packages"
-  runInit: "Have you run the `init` command yet?"
+  allowUnfree: "Permitir pacotes com licenças não-livres"
+  allowInsecure: "Permitir pacotes com vulnerabilidades conhecidas."
+  error: "erro na instalação dos pacotes"
+  runInit: "Você já executou o comando `init`?"
   success: "Pacote instalado com sucesso."
 nixupgrade:
   success: "Pacote atualizado com sucesso."
-  atleastone: "At least one package name required."
+  atleastone: "É necessário pelo menos um nome de pacote."
 purge:
-  use: "purge <packages>"
-  long: "Purge packages inside a managed container"
-  short: "Purge packages inside a managed container"
+  use: "purge <pacotes>"
+  long: "Remover pacotes dentro de um contêiner gerenciado"
+  short: "Remover pacotes dentro de um contêiner gerenciado"
 remove:
-  use: "remove <package>"
-  long: "Remove packages inside a managed container."
-  short: "Remove packages inside a managed container."
+  use: "remove <pacotes>"
+  long: "Remover os pacotes dentro de um contêiner gerenciado."
+  short: "Remover os pacotes dentro de um contêiner gerenciado."
 run:
-  use: "run <command>"
-  long: "Run a program inside a managed container."
-  short: "Run a program inside a managed container."
-  nixMsg: "Do not use `apx run` for nix packages. Run them directly as you would with\
-    \ a native package."
+  use: "run <comando>"
+  long: "Executar um programa dentro de um contêiner administrado."
+  short: "Executar um programa dentro de um contêiner administrado."
+  nixMsg: "Não utilize `apx run` para pacotes nix. Execute-os diretamente como faria\
+    \ com um pacote nativo."
 search:
-  use: "search <packages>"
-  long: "Search for packages in a managed container."
-  short: "Search for packages in a managed container."
+  use: "search <pacotes>"
+  long: "Pesquise por pacotes em um contêiner administrado."
+  short: "Pesquise por pacotes em um contêiner gerenciado."
 show:
-  use: "show <package>"
-  long: "Show details about a package"
-  short: "Show details about a package"
-  isInstalled: "Only return whether the package is installed"
-  found: "%s is installed"
-  notFound: "%s is not installed"
+  use: "show <pacote>"
+  long: "Mostrar detalhes sobre um pacote"
+  short: "Mostrar detalhes sobre um pacote"
+  isInstalled: "Retornar somente se o pacote estiver instalado"
+  found: "%s está instalado"
+  notFound: "%s não está instalado"
 unexport:
-  use: "unexport <package>"
-  long: "Unexport/Remove a program's desktop entry from a managed container.\nIf --bin\
-    \ flag is provided, remove link to container binary."
-  short: "Unexport/Remove a program's desktop entry from a managed container"
-  binFlag: "Unexport a previously exported binary."
-  success: "Successfully removed exported binary `%s`."
+  use: "unexport <pacote>"
+  long: "Desexportar/remover a entrada de um programa da área de trabalho de um contêiner\
+    \ gerenciado.\nSe --bin flag for fornecido, remova o link para o binário do contêiner."
+  short: "Desexportar/remover a entrada de um programa da área de trabalho de um container\
+    \ gerenciado"
+  binFlag: "Desexportar um binário previamente exportado."
+  success: "Binário exportado `%s` foi removido com sucesso."
 update:
   use: "update"
-  long: "Update the list of available packages"
-  short: "Update the list of available packages"
-  allFlag: "Apply to all containers"
+  long: "Atualizar a lista de pacotes disponíveis"
+  short: "Atualizar a lista de pacotes disponíveis"
+  allFlag: "Aplicar a todos os contêineres"
 upgrade:
   use: "upgrade"
-  long: "Upgrade the system by installing/upgrading available packages."
-  short: "Upgrade the system by installing/upgrading available packages."
+  long: "Atualize o sistema instalando/atualizando os pacotes disponíveis."
+  short: "Atualize o sistema instalando/atualizando os pacotes disponíveis."
