@@ -124,6 +124,20 @@ sudo make install
 sudo make install-manpages
 ```
 
+- Uninstall apx using `make`:-
+
+```bash
+make uninstall
+```
+
+- Uninstall apx man pages using `make`:-
+
+```bash
+make uninstall-manpages
+```
+
+### Installing apx in a custom destination
+
 The prefix or installation destination can be changed using `PREFIX` and `DESTDIR`.
 
 To install apx into `~/.local` for example:-
