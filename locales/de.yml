@@ -36,17 +36,17 @@ export:
   use: "export <program/binary>"
   long: "Export/Recreate a program's desktop entry from a managed container"
   short: "Export/Recreate a program's desktop entry from a managed container"
-  binFlag: "Export binary command"
+  binFlag: "Binärbefehl exportieren"
 init:
   use: "init"
   long: "Initialize a managed container"
   short: "Initialize a managed container"
-  confirm: "Container already exists. Do you want to re-initialize it? This operation\
-    \ will remove everything, including your files in the container."
-  remove: "error removing container: %v"
-  create: "error creating container: %v"
+  confirm: "Container existiert Bereits. Möchten Sie Ihn  erneut  Initialisieren?\
+    \ Dieser Vorgang entfernt alles, eingeschlossen all Ihrer Dateien im Container."
+  remove: "Fehler beim Entfernen des Containers: %v"
+  create: "Fehler beim Erstellen des Containers: %v"
 install:
-  use: "apx install <package>"
+  use: "apx install <Paket>"
   long: "Install packages inside a managed container."
   short: "Install packages inside a managed container."
   assumeYes: "Proceed without manual confirmation"
