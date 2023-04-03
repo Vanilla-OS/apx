@@ -28,14 +28,16 @@ clean:
   short: "Den Zwischenspeicher des Apx Paketmanagers löschen"
 enter:
   use: "enter"
-  long: "Enter a shell in the managed container"
-  short: "Enter a shell in the managed container"
+  long: "Shell in dem verwalteten Container öffnen"
+  short: "Shell in dem verwalteten Container öffnen"
   failedEnter: "Betreten des verwalteten Containers gescheitert"
-  outside: "You are now outside the managed container."
+  outside: "Sie befinden sich nun außerhalb des verwalteten Containers."
 export:
-  use: "export <program/binary>"
-  long: "Export/Recreate a program's desktop entry from a managed container"
-  short: "Export/Recreate a program's desktop entry from a managed container"
+  use: "export <Program/Binärdatei>"
+  long: "Exportieren/Neuerstellen des Desktop-Eintrags eines Programms aus einem verwalteten\
+    \ Container"
+  short: "Exportieren/Neuerstellen des Desktop-Eintrags eines Programms aus einem\
+    \ verwalteten Container"
   binFlag: "Binärbefehl exportieren"
 init:
   use: "init"
