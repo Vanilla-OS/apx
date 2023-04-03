@@ -42,9 +42,9 @@ export:
 init:
   use: "init"
   long: "Initialisieren eines verwalteten Containers"
-  short: "Initialisiere verwalteten Container"
-  confirm: "Container existiert Bereits. Möchten Sie Ihn  erneut  Initialisieren?\
-    \ Dieser Vorgang entfernt alles, eingeschlossen all Ihrer Dateien im Container."
+  short: "Initialisieren eines verwalteten Containers"
+  confirm: "Der Container existiert bereits. Möchten Sie ihn neu initialisieren? Bei\
+    \ diesem Vorgang wird alles entfernt, auch Ihre Dateien im Container."
   remove: "Fehler beim Entfernen des Containers: %v"
   create: "Fehler beim Erstellen des Containers: %v"
 install:
