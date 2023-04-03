@@ -68,9 +68,13 @@ Use "apx [command] --help" for more information about a command.
 
 ## Documentation and Guides
 
-- The official **documentation and manpage** for `apx` are available at <https://documentation.vanillaos.org/docs/apx/>.
+### Documentation
 
-- A guide for Installing applications in `apx` is available at <https://handbook.vanillaos.org/2023/01/11/install-and-manage-applications.html>.
+The official **documentation and manpage** for `apx` are available at <https://documentation.vanillaos.org/docs/apx/>.
+
+### Guides
+
+A guide for Installing applications in `apx` is available at <https://handbook.vanillaos.org/2023/01/11/install-and-manage-applications.html>.
 
 ## Dependencies
 
@@ -78,13 +82,13 @@ To add new dependencies, use `go get` as usual, then run `go mod tidy` and `go m
 
 ## Translations
 
-- Contribute translations for the manpage and help page in [Weblate](https://hosted.weblate.org/projects/vanilla-os/apx).
+Contribute translations for the manpage and help page in [Weblate](https://hosted.weblate.org/projects/vanilla-os/apx).
 
 [![Translation Status][weblate-status-image]][weblate-url]
 
 ### Generating man pages for translations
 
-- Once the translation is complete in Weblate and the changes committed, clone the repository using `git` and perform `go build`, create a directory using the `mkdir man/<language_code> && mkdir man/<language_code>/man1` command, and execute this command `LANG=<language_code> ./apx man > man/<language_code>/man1/apx.1`. Open a PR for the generated manpage here.
+Once the translation is complete in Weblate and the changes committed, clone the repository using `git` and perform `go build`, create a directory using the `mkdir man/<language_code> && mkdir man/<language_code>/man1` command, and execute this command `LANG=<language_code> ./apx man > man/<language_code>/man1/apx.1`. Open a PR for the generated manpage here.
 
 ## Instructions for using Apx in other distributions
 
@@ -99,38 +103,38 @@ Apx has been designed as a distro-agnostic tool, allowing it to work with any di
 
 ### Procedure
 
-- Clone apx's repository using `git` and enter it using `cd`:-
+Clone apx's repository using `git` and enter it using `cd`:-
 
 ``` bash
 git clone --recursive https://github.com/Vanilla-OS/apx.git
 cd apx
 ```
 
-- Build apx using `make`:-
+Build apx using `make`:-
 
 ``` bash
 make build
 ```
 
-- Install apx using `make`:-
+Install apx using `make`:-
 
 ``` bash
 sudo make install
 ```
 
-- Install the apx manpages using `make`:-
+Install the apx manpages using `make`:-
 
 ``` bash
 sudo make install-manpages
 ```
 
-- Uninstall apx using `make`:-
+Uninstall apx using `make`:-
 
 ```bash
 make uninstall
 ```
 
-- Uninstall apx man pages using `make`:-
+Uninstall apx man pages using `make`:-
 
 ```bash
 make uninstall-manpages
