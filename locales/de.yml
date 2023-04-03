@@ -41,7 +41,7 @@ export:
   binFlag: "Binärbefehl exportieren"
 init:
   use: "init"
-  long: "Initialize a managed container"
+  long: "Initialisiere verwalteten Container"
   short: "Initialize a managed container"
   confirm: "Container existiert Bereits. Möchten Sie Ihn  erneut  Initialisieren?\
     \ Dieser Vorgang entfernt alles, eingeschlossen all Ihrer Dateien im Container."
