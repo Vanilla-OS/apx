@@ -42,7 +42,7 @@ export:
 init:
   use: "init"
   long: "Initialisieren eines verwalteten Containers"
-  short: "Initialize a managed container"
+  short: "Initialisiere verwalteten Container"
   confirm: "Container existiert Bereits. Möchten Sie Ihn  erneut  Initialisieren?\
     \ Dieser Vorgang entfernt alles, eingeschlossen all Ihrer Dateien im Container."
   remove: "Fehler beim Entfernen des Containers: %v"
