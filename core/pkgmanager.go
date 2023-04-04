@@ -96,7 +96,7 @@ func GetAurPkgCommand(command string) []string {
 	case "install":
 		return []string{bin, "-S"}
 	case "list":
-		return []string{bin, "-Qm"}
+		return []string{bin, "-Q"}
 	case "purge":
 		return []string{bin, "-Rn"}
 	case "remove":
