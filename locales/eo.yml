@@ -44,9 +44,9 @@ init:
   confirm: "Container already exists. Do you want to re-initialize it? This operation\
     \ will remove everything, including your files in the container."
   remove: "error removing container: %v"
-  create: "error creating container: %v"
+  create: "eraro kreante entenilon: %v"
 install:
-  use: "apx install <package>"
+  use: "apx install <pakon>"
   long: "Install packages inside a managed container."
   short: "Install packages inside a managed container."
   assumeYes: "Proceed without manual confirmation"
@@ -60,8 +60,8 @@ install:
     \ \"apx export --bin %s\""
 list:
   use: "list"
-  long: "List installed packages."
-  short: "List installed packages."
+  long: "Listigi instalitajn pakojn."
+  short: "Listigi instalitajn pakojn."
   upgradable: "Show upgradable packages"
   installed: "Show installed packages"
 nix:
