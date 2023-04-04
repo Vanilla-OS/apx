@@ -135,11 +135,12 @@ show:
   notFound: "%s não está instalado"
 unexport:
   use: "unexport <pacote>"
-  long: "Desexportar/remover a entrada de um programa da área de trabalho de um contêiner\
-    \ gerenciado.\nSe --bin flag for fornecido, remova o link para o binário do contêiner."
-  short: "Desexportar/remover a entrada de um programa da área de trabalho de um container\
-    \ gerenciado"
-  binFlag: "Desexportar um binário previamente exportado."
+  long: "Cancelar a exportação/Remover a entrada de um programa da área de trabalho\
+    \ de um contêiner gerenciado.\nSe --bin flag for fornecido, remova o link para\
+    \ o binário do contêiner."
+  short: "Cancelar a exportação/Remover a entrada de um programa da área de trabalho\
+    \ de um container gerenciado"
+  binFlag: "Desfazer a exportação de um binário previamente exportado."
   success: "Binário exportado `%s` foi removido com sucesso."
 update:
   use: "update"
