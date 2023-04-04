@@ -90,7 +90,7 @@ func GetAurPkgCommand(command string) []string {
 	switch command {
 	// defaults
 	case "autoremove":
-		return []string{"echo", "Not implemented yet! "}
+		return []string{bin, "-Yc"}
 	case "clean":
 		return []string{bin, "-Sc"}
 	case "install":
