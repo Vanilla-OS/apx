@@ -98,9 +98,9 @@ func GetAurPkgCommand(command string) []string {
 	case "list":
 		return []string{bin, "-Qm"}
 	case "purge":
-		return []string{bin, "-R"}
+		return []string{bin, "-Rn"}
 	case "remove":
-		return []string{bin, "-Rs"}
+		return []string{bin, "-R"}
 	case "search":
 		return []string{bin, "-Ss"}
 	case "show":
