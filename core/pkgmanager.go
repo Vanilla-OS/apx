@@ -90,25 +90,25 @@ func GetAurPkgCommand(command string) []string {
 	switch command {
 	// defaults
 	case "autoremove":
-		return []string{"echo", "Not implemented yet! "}
-	case "clean":
 		return []string{bin, "-Yc"}
+	case "clean":
+		return []string{bin, "-Sc"}
 	case "install":
 		return []string{bin, "-S"}
 	case "list":
-		return []string{bin, "-Qm"}
+		return []string{bin, "-Q"}
 	case "purge":
-		return []string{bin, "-R"}
+		return []string{bin, "-Rn"}
 	case "remove":
-		return []string{bin, "-Rs"}
+		return []string{bin, "-R"}
 	case "search":
 		return []string{bin, "-Ss"}
 	case "show":
 		return []string{bin, "-Si"}
 	case "update":
-		return []string{bin, "-Syu"}
+		return []string{"echo", "Not implemented for AUR. Use upgrade instead!"}
 	case "upgrade":
-		return []string{bin, "-Su"}
+		return []string{bin, "-Syu"}
 
 	// specials
 	case "install-yay-deps":
