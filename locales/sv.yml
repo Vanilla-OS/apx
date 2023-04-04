@@ -55,9 +55,9 @@ install:
   sideload: "Installera ett paket från en lokal fil."
   sideArgs: "sideload kräver sökvägen till en lokal fil"
   sideUserTemp: "kan inte flytta filen till användartemp: %s"
-  exportBinPrompt: "Export binary %s to host?\nThis will let you call it directly\
-    \ from the shell without using \"apx run\".\nYou can also export it later using\
-    \ \"apx export --bin %s\""
+  exportBinPrompt: "Exportera binär %s till värd?\nDetta låter dig kalla det direkt\
+    \ från skalet utan att använda \"apx run\".\nDu kan också exportera det senare\
+    \ genom att använda \"apx export --bin %s\""
 list:
   use: "list"
   long: "Lista installerade paket."
@@ -80,11 +80,11 @@ nixinit:
     \ SystemD-enheter för att montera den mappen på /nix innan installationen körs.\
     \ Bekräfta 'j' för att fortsätta."
   success: "Installationen är klar. Starta om för att börja använda nix."
-  unfree: Would you like to allow 'unfree' packages without Open Source licenses (Visual
-    Studio Code, Spotify, etc)?
-  insecure: Would you like to allow 'insecure' packages (software with known vulnerabilities)?
-  swcenter: Would you like to install the Nix Software Center - a graphical software
-    manager for Nix?
+  unfree: Vill du tillåta 'ofria' paket utan licenser som är öppen källkod (Visual
+    Studio Code, Spotify, osv)?
+  insecure: Vill du tillåta 'osäkra' paket (programvara med kända sårbarheter)?
+  swcenter: Vill du installera Nix Programcenter - en grafisk programhanterare för
+    Nix?
 nixremove:
   use: "remove"
   long: "Ta bort det första matchande paketet installerat i standard nix-profilen.\n\
@@ -100,7 +100,7 @@ nixinstall:
   error: "fel vid installation av paket"
   runInit: "Har du kört `init` kommandot än?"
   success: "Slutfört installerade paketet."
-  allowInsecure: Allow packages with known vulnerabilities.
+  allowInsecure: Tillåt paket med kända sårbarheter.
 purge:
   use: "purge <packages>"
   long: "Rensa paket inuti en hanterad behållare"
@@ -113,8 +113,8 @@ run:
   use: "run <command>"
   long: "Kör ett program inuti en hanterad behållare."
   short: "Kör ett program inuti en hanterad behållare."
-  nixMsg: Do not use `apx run` for nix packages. Run them directly as you would with
-    a native package.
+  nixMsg: Använd inte `apx run` för nix-paket. Kör dem direkt som du skulle göra med
+    ett inhemskt paket.
 search:
   use: "search <paket>"
   long: "Sök efter paket i en hanterad behållare."
@@ -123,7 +123,7 @@ show:
   use: "show <paket>"
   long: "Visa detaljer om ett paket"
   short: "Visa detaljer om ett paket"
-  isInstalled: "Returnera endast om paketet är installerat"
+  isInstalled: "Returnera endast om paketet finns installerat"
   found: "%s är installerat"
   notFound: "%s är inte installerat"
 unexport:
@@ -143,5 +143,5 @@ upgrade:
   long: "Uppgradera systemet genom att installera/uppgradera tillgängliga paket."
   short: "Uppgradera systemet genom att installera/uppgradera tillgängliga paket."
 nixupgrade:
-  success: Successfully upgraded package.
-  atleastone: At least one package name required.
+  success: Uppgraderade paket framgångsrikt.
+  atleastone: Minst ett paketnamn krävs.

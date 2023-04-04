@@ -28,120 +28,131 @@ clean:
   short: "Den Zwischenspeicher des Apx Paketmanagers löschen"
 enter:
   use: "enter"
-  long: "Enter a shell in the managed container"
-  short: "Enter a shell in the managed container"
+  long: "Shell in dem verwalteten Container öffnen"
+  short: "Shell in dem verwalteten Container öffnen"
   failedEnter: "Betreten des verwalteten Containers gescheitert"
-  outside: "You are now outside the managed container."
+  outside: "Sie befinden sich nun außerhalb des verwalteten Containers."
 export:
-  use: "export <program/binary>"
-  long: "Export/Recreate a program's desktop entry from a managed container"
-  short: "Export/Recreate a program's desktop entry from a managed container"
+  use: "export <Program/Binärdatei>"
+  long: "Exportieren/Neuerstellen des Desktop-Eintrags eines Programms aus einem verwalteten\
+    \ Container"
+  short: "Exportieren/Neuerstellen des Desktop-Eintrags eines Programms aus einem\
+    \ verwalteten Container"
   binFlag: "Binärbefehl exportieren"
 init:
   use: "init"
-  long: "Initialize a managed container"
-  short: "Initialize a managed container"
-  confirm: "Container existiert Bereits. Möchten Sie Ihn  erneut  Initialisieren?\
-    \ Dieser Vorgang entfernt alles, eingeschlossen all Ihrer Dateien im Container."
+  long: "Initialisieren eines verwalteten Containers"
+  short: "Initialisieren eines verwalteten Containers"
+  confirm: "Der Container existiert bereits. Möchten Sie ihn neu initialisieren? Bei\
+    \ diesem Vorgang wird alles entfernt, auch Ihre Dateien im Container."
   remove: "Fehler beim Entfernen des Containers: %v"
   create: "Fehler beim Erstellen des Containers: %v"
 install:
   use: "apx install <Paket>"
-  long: "Install packages inside a managed container."
-  short: "Install packages inside a managed container."
-  assumeYes: "Proceed without manual confirmation"
-  fixBroken: "Fix broken dependencies before installing"
-  noExport: "Do not export a desktop entry after the installation."
-  sideload: "Install a package from a local file."
-  sideArgs: "sideload requires the path to a local file"
-  sideUserTemp: "can't move file to user temp: %s"
-  exportBinPrompt: "Export binary %s to host?\nThis will let you call it directly\
-    \ from the shell without using \"apx run\".\nYou can also export it later using\
-    \ \"apx export --bin %s\""
+  long: "Pakete in einem verwalteten Container installieren."
+  short: "Pakete in einem verwalteten Container installieren."
+  assumeYes: "Fortfahren ohne manuelle Bestätigung"
+  fixBroken: "Fehlerhafte Abhängigkeiten vor der Installation beheben"
+  noExport: "Keinen Desktop-Eintrag nach der Installation exportieren."
+  sideload: "Paket aus lokaler Datei installieren."
+  sideArgs: "sideload erfordert den Pfad zu einer lokalen Datei"
+  sideUserTemp: "Datei kann nicht in den Benutzer-Temp-Bereich verschoben werden:\
+    \ %s"
+  exportBinPrompt: "Binärdatei %s zum Host exportieren?\nDamit können Sie es direkt\
+    \ von der Shell aufrufen, ohne \"apx run\" zu verwenden.\nSie können es auch später\
+    \ mit \"apx export --bin %s\" exportieren."
 list:
   use: "list"
-  long: "List installed packages."
-  short: "List installed packages."
-  upgradable: "Show upgradable packages"
-  installed: "Show installed packages"
+  long: "Installierte Pakete auflisten."
+  short: "Installierte Pakete auflisten."
+  upgradable: "Aktualisierbare Pakete anzeigen"
+  installed: "Installierte Pakete anzeigen"
 nix:
   use: "nix"
-  long: "Manage a custom installation of nix in your $HOME directory.\n\nThe `apx\
-    \ nix` integration serves as a wrapper for the\ndefault nix profile. Once installed,\
-    \ you are free to use any features of\nnix without using the `apx nix` command."
-  short: "Manage nix installation"
+  long: "Verwalten Sie eine benutzerdefinierte Installation von nix in Ihrem $HOME-Verzeichnis.\n\
+    \nDie `apx nix`-Integration dient als Wrapper für das\nStandard-Nix-Profil. Einmal\
+    \ installiert, können Sie alle Funktionen von\nnix nutzen, ohne den Befehl `apx\
+    \ nix` zu verwenden."
+  short: "Verwalten der Nix-Installation"
 nixinit:
   use: "init"
-  long: "Initializes a custom installation of nix by creating $HOME/.nix and setting\
-    \ up some SystemD units to mount it as /nix."
-  short: "Initialize nix repository"
-  confirm: "This will create a '.nix' folder in your home directory and set up some\
-    \ SystemD units to mount that folder at /nix before running the installation.\
-    \ Confirm 'y' to continue."
-  unfree: "Would you like to allow 'unfree' packages without Open Source licenses\
-    \ (Visual Studio Code, Spotify, etc)?"
-  insecure: "Would you like to allow 'insecure' packages (software with known vulnerabilities)?"
-  swcenter: "Would you like to install the Nix Software Center - a graphical software\
-    \ manager for Nix?"
-  success: "Installation complete. Reboot to start using nix."
+  long: "Initialisiert eine benutzerdefinierte Installation von Nix, indem es $HOME/.nix\
+    \ erstellt und einige SystemD-Einheiten einrichtet, um es als /nix einzuhängen."
+  short: "Nix-Repository initialisieren"
+  confirm: "Dadurch wird ein '.nix'-Ordner in Ihrem Home-Verzeichnis erstellt und\
+    \ einige SystemD-Einheiten werden so eingerichtet, dass dieser Ordner unter /nix\
+    \ eingehängt wird, bevor die Installation ausgeführt wird. Bestätigen Sie 'y',\
+    \ um fortzufahren."
+  unfree: "Möchten Sie \"unfreie\" Pakete ohne Open-Source-Lizenzen zulassen (Visual\
+    \ Studio Code, Spotify, etc.)?"
+  insecure: "Möchten Sie \"unsichere\" Pakete (Software mit bekannten Sicherheitslücken)\
+    \ zulassen?"
+  swcenter: "Möchten Sie das Nix Software Center - einen grafischen Softwaremanager\
+    \ für Nix - installieren?"
+  success: "Installation abgeschlossen. Neustart erforderlich, um nix zu verwenden."
 nixremove:
   use: "remove"
-  long: "Remove the first matching package installed in the default nix profile.\n\
-    \nNote: It is possible to have multiple installations of the same package.\n\n\
-    If you need more precision use 'nix profile list' and 'nix profile remove'."
-  short: "Remove a nix package"
-  success: "Package removal complete"
+  long: "Entfernen Sie das erste passende Paket, das im Standard-Nix-Profil installiert\
+    \ ist.\n\nHinweis: Es ist möglich, mehrere Installationen desselben Pakets zu\
+    \ haben.\n\nWenn Sie mehr Präzision benötigen, verwenden Sie 'nix profile list'\
+    \ und 'nix profile remove'."
+  short: "Ein Nix-Paket entfernen"
+  success: "Entfernung des Pakets abgeschlossen"
 nixinstall:
   use: "install <pkg>"
-  long: "Install a package from the `nixpkgs` repository as a flake in the default\
-    \ nix profile."
-  short: "Install nix package"
-  allowUnfree: "Allow packages with unfree licenses"
-  allowInsecure: "Allow packages with known vulnerabilities."
-  error: "error installing packages"
-  runInit: "Have you run the `init` command yet?"
-  success: "Successfully installed package."
+  long: "Installieren Sie ein Paket aus dem `nixpkgs`-Repository als Flake in das\
+    \ Standard-Nix-Profil."
+  short: "Nix-Paket installieren"
+  allowUnfree: "Pakete mit unfreien Lizenzen zulassen"
+  allowInsecure: "Pakete mit bekannten Sicherheitslücken zulassen."
+  error: "Fehler bei der Installation von Paketen"
+  runInit: "Haben Sie den Befehl `init` schon ausgeführt?"
+  success: "Das Paket wurde erfolgreich installiert."
 nixupgrade:
-  success: "Successfully upgraded package."
-  atleastone: "At least one package name required."
+  success: "Das Paket wurde erfolgreich aktualisiert."
+  atleastone: "Mindestens ein Paketname erforderlich."
 purge:
-  use: "purge <packages>"
-  long: "Purge packages inside a managed container"
-  short: "Purge packages inside a managed container"
+  use: "purge <Pakete>"
+  long: "Pakete innerhalb eines verwalteten Containers bereinigen"
+  short: "Pakete innerhalb eines verwalteten Containers bereinigen"
 remove:
-  use: "remove <package>"
-  long: "Remove packages inside a managed container."
-  short: "Remove packages inside a managed container."
+  use: "remove <Paket>"
+  long: "Entfernen von Paketen innerhalb eines verwalteten Containers."
+  short: "Entfernen von Paketen innerhalb eines verwalteten Containers."
 run:
-  use: "run <command>"
-  long: "Run a program inside a managed container."
-  short: "Run a program inside a managed container."
-  nixMsg: "Do not use `apx run` for nix packages. Run them directly as you would with\
-    \ a native package."
+  use: "run <Befehl>"
+  long: "Ein Programm innerhalb eines verwalteten Containers ausführen."
+  short: "Ein Programm innerhalb eines verwalteten Containers ausführen."
+  nixMsg: "Verwenden Sie nicht `apx run` für Nix-Pakete. Führen Sie sie direkt aus,\
+    \ wie Sie es mit einem nativen Paket tun würden."
 search:
-  use: "search <packages>"
-  long: "Search for packages in a managed container."
-  short: "Search for packages in a managed container."
+  use: "search <Paket>"
+  long: "Suche nach Paketen in einem verwalteten Container."
+  short: "Suche nach Paketen in einem verwalteten Container."
 show:
-  use: "show <package>"
-  long: "Show details about a package"
-  short: "Show details about a package"
-  isInstalled: "Only return whether the package is instaled"
-  found: "%s is installed"
-  notFound: "%s is not installed"
+  use: "show <Paket>"
+  long: "Details zu einem Paket anzeigen"
+  short: "Details zu einem Paket anzeigen"
+  isInstalled: "Gibt nur zurück, ob das Paket installiert ist"
+  found: "%s ist installiert"
+  notFound: "%s ist nicht installiert"
 unexport:
-  use: "unexport <package>"
-  long: "Unexport/Remove a program's desktop entry from a managed container.\nIf --bin\
-    \ flag is provided, remove link to container binary."
-  short: "Unexport/Remove a program's desktop entry from a managed container"
-  binFlag: "Unexport a previously exported binary."
-  success: "Successfully removed exported binary `%s`."
+  use: "unexport <Paket>"
+  long: "Exportieren rückgängig machen/Entfernen des Desktop-Eintrags eines Programms\
+    \ aus einem verwalteten Container.\nWenn das Flag --bin angegeben ist, wird der\
+    \ Link zur Container-Binärdatei entfernt."
+  short: "Exportieren rückgängig machen/Entfernen des Desktop-Eintrags eines Programms\
+    \ aus einem verwalteten Container"
+  binFlag: "Exportieren einer zuvor exportierten Binärdatei rückgängig machen."
+  success: "Exportierte Binärdatei `%s` erfolgreich entfernt."
 update:
   use: "update"
-  long: "Update the list of available packages"
-  short: "Update the list of available packages"
-  allFlag: "Apply to all containers"
+  long: "Liste der verfügbaren Pakete aktualisieren"
+  short: "Liste der verfügbaren Pakete aktualisieren"
+  allFlag: "Auf alle Containers anwenden"
 upgrade:
   use: "upgrade"
-  long: "Upgrade the system by installing/upgrading available packages."
-  short: "Upgrade the system by installing/upgrading available packages."
+  long: "Aktualisierung des Systems, durch Installieren/Aktualisieren verfügbarer\
+    \ Pakete."
+  short: "Aktualisierung des Systems, durch Installieren/Aktualisieren verfügbarer\
+    \ Pakete."
