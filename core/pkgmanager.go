@@ -106,9 +106,9 @@ func GetAurPkgCommand(command string) []string {
 	case "show":
 		return []string{bin, "-Si"}
 	case "update":
-		return []string{bin, "-Sy"}
+		return []string{"echo", "Not implemented for AUR. Use upgrade instead!"}
 	case "upgrade":
-		return []string{bin, "-Su"}
+		return []string{bin, "-Syu"}
 
 	// specials
 	case "install-yay-deps":
