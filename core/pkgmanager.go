@@ -106,7 +106,7 @@ func GetAurPkgCommand(command string) []string {
 	case "show":
 		return []string{bin, "-Si"}
 	case "update":
-		return []string{bin, "-Syu"}
+		return []string{bin, "-Sy"}
 	case "upgrade":
 		return []string{bin, "-Su"}
 
