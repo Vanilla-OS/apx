@@ -21,40 +21,42 @@ apx:
 autoremove:
   use: "autoremove"
   long: "Automatikusan eltávolít minden nem használt csomagot"
-  short: "Remove all unused packages automatically"
+  short: "Nem használt csomagok automatikus eltávolítása"
 clean:
   use: "clean"
-  long: "Clean the apx package manager cache"
-  short: "Clean the apx package manager cache"
+  long: "Az apx csomagkezelő gyorsítótárának tisztítása"
+  short: "Az apx csomagkezelő gyorsítótárának tisztítása"
 enter:
   use: "enter"
   long: "Enter a shell in the managed container"
   short: "Enter a shell in the managed container"
-  failedEnter: "failed to enter managed container"
-  outside: "You are now outside the managed container."
+  failedEnter: "nem sikerült belépni a kezelt konténerbe"
+  outside: "Ön most már a kezelt konténeren kívül van."
 export:
   use: "export <program/binary>"
-  long: "Export/Recreate a program's desktop entry from a managed container"
-  short: "Export/Recreate a program's desktop entry from a managed container"
-  binFlag: "Export binary command"
+  long: "Program asztali bejegyzésének exportálása/újra létrehozása egy felügyelt\
+    \ tárolóból"
+  short: "Program asztali bejegyzésének exportálása/újra létrehozása egy felügyelt\
+    \ tárolóból"
+  binFlag: "Bináris parancs exportálása"
 init:
   use: "init"
-  long: "Initialize a managed container"
-  short: "Initialize a managed container"
-  confirm: "Container already exists. Do you want to re-initialize it? This operation\
-    \ will remove everything, including your files in the container."
-  remove: "error removing container: %v"
-  create: "error creating container: %v"
+  long: "Kezelt konténer inicializálása"
+  short: "Kezelt konténer inicializálása"
+  confirm: "A konténer már létezik. Újra szeretné inicializálni? Ez a művelet mindent\
+    \ eltávolít, beleértve a konténerben lévő fájlokat is."
+  remove: "hiba a konténer eltávolításában: %v"
+  create: "hiba a konténer létrehozásában: %v"
 install:
-  use: "apx install <package>"
-  long: "Install packages inside a managed container."
-  short: "Install packages inside a managed container."
-  assumeYes: "Proceed without manual confirmation"
-  fixBroken: "Fix broken dependencies before installing"
-  noExport: "Do not export a desktop entry after the installation."
-  sideload: "Install a package from a local file."
-  sideArgs: "sideload requires the path to a local file"
-  sideUserTemp: "can't move file to user temp: %s"
+  use: "apx install <csomag>"
+  long: "Csomagok telepítése egy kezelt konténerbe."
+  short: "Csomagok telepítése egy kezelt konténerbe."
+  assumeYes: "Folytatás kézi jóváhagyás nélkül."
+  fixBroken: "Törött függőségek javítása telepítés előtt"
+  noExport: "A telepítés után ne exportáljon asztali bejegyzést."
+  sideload: "Csomag telepítése helyi fájlból."
+  sideArgs: "a sideload egy helyi fájl elérési útvonalát kéri"
+  sideUserTemp: "nem tudja áthelyezni a fájlt a felhasználói ideiglenes fájlba: %s"
   exportBinPrompt: "Export binary %s to host?\nThis will let you call it directly\
     \ from the shell without using \"apx run\".\nYou can also export it later using\
     \ \"apx export --bin %s\""
