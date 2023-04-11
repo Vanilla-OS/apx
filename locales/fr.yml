@@ -142,7 +142,7 @@ unexport:
   success: "Suppression réussie du binaire exporté `%s`."
 update:
   use: "update"
-  long: "Mise à jour de la liste des paquets disponibles"
+  long: "Mise à jour de la liste des paquets disponible"
   short: "Mise à jour de la liste des paquets disponibles"
   allFlag: "Appliquer à tous les conteneurs"
 upgrade:
