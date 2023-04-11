@@ -59,26 +59,8 @@ func GetAptPkgCommand(command string) []string {
 	bin := "apt"
 
 	switch command {
-	case "autoremove":
-		return []string{"sudo", bin, "autoremove"}
-	case "clean":
-		return []string{"sudo", bin, "clean"}
-	case "install":
-		return []string{"sudo", bin, "install"}
-	case "list":
-		return []string{"sudo", bin, "list"}
-	case "purge":
-		return []string{"sudo", bin, "purge"}
-	case "remove":
-		return []string{"sudo", bin, "remove"}
-	case "search":
-		return []string{"sudo", bin, "search"}
-	case "show":
-		return []string{"sudo", bin, "show"}
-	case "update":
-		return []string{"sudo", bin, "update"}
-	case "upgrade":
-		return []string{"sudo", bin, "upgrade"}
+	case "autoremove", "clean", "install", "list", "purge", "remove", "search", "show", "update", "upgrade":
+		return []string{"sudo", bin, command}
 	default:
 		return nil
 	}
@@ -129,26 +111,8 @@ func GetDnfPkgCommand(command string) []string {
 	bin := "dnf"
 
 	switch command {
-	case "autoremove":
-		return []string{"sudo", bin, "autoremove"}
-	case "clean":
-		return []string{"sudo", bin, "clean"}
-	case "install":
-		return []string{"sudo", bin, "install"}
-	case "list":
-		return []string{"sudo", bin, "list"}
-	case "purge":
-		return []string{"sudo", bin, "remove"}
-	case "remove":
-		return []string{"sudo", bin, "remove"}
-	case "search":
-		return []string{"sudo", bin, "search"}
-	case "show":
-		return []string{"sudo", bin, "info"}
-	case "update":
-		return []string{"sudo", bin, "upgrade", "--refresh"}
-	case "upgrade":
-		return []string{"sudo", bin, "upgrade"}
+	case "autoremove", "clean", "install", "list", "purge", "remove", "search", "show", "update", "upgrade":
+		return []string{"sudo", bin, command}
 	default:
 		return nil
 	}
