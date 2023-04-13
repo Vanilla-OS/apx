@@ -1,0 +1,704 @@
+.TH APX 1 "2023-04-13" "apx" "User Manual"
+.SH NAME
+.RS 4
+apx - Apx, birden fazla kaynağı destekleyen bir paket yöneticisidir,
+.PP
+yönetilen bir Konteynera paket yüklemenize olanak tanır\&.
+.RE
+.SH SYNOPSIS
+.RS 4
+apx [command] [flags] [arguments]
+.RE
+.SH DESCRIPTION
+.RS 4
+Apx, birden fazla kaynağı destekleyen bir paket yöneticisidir,
+.PP
+yönetilen bir Konteynera paket yüklemenize olanak tanır\&.
+.RE
+.SH OPTIONS
+  -v, --verbose       daha ayrıntılı çıktı göster
+.PP
+      --apt           Ubuntu deposundan paketleri yükleyin\&.
+.PP
+      --aur           Paketleri AUR'den (Arch Kullanıcı Deposu) yükleyin\&.
+.PP
+      --dnf           Fedora'nın DNF (Dandified YUM) deposundan paketleri yükleyin\&.
+.PP
+      --apk           Alpine deposundan paketleri yükleyin\&.
+.PP
+      --zypper        OpenSUSE deposundan paketleri yükleyin\&.
+.PP
+      --xbps          Void (Linux) deposundan paketleri yükleyin\&.
+.PP
+      --nix           Nixpkgs (Nix paketleri) deposundan paketleri yükleyin\&.
+.PP
+  -n, --name string   Bu ada sahip özel konteynere uygulayın\&.
+.PP
+.SH APX COMMANDS
+.RS 4
+\fBautoremove\fP
+.RS 4
+Kullanılmayan tüm paketleri otomatik olarak kaldırın
+.PP
+.RE
+\fBclean\fP
+.RS 4
+apx paket yöneticisi önbelleğini temizle
+.PP
+.RE
+\fBenter\fP
+.RS 4
+Yönetilen Konteynera bir kabuk girin
+.PP
+.RE
+\fBexport\fP
+.RS 4
+Yönetilen bir Konteynerdan bir programın masaüstü girişini dışa aktarma/yeniden oluşturma
+.PP
+.RE
+\fBinit\fP
+.RS 4
+Yönetilen bir Konteyner'ı başlat
+.PP
+.RE
+\fBinstall\fP
+.RS 4
+Paketleri yönetilen bir konteynerin içine yükle\&.
+.PP
+.RE
+\fBlist\fP
+.RS 4
+Yüklü paketleri listele\&.
+.PP
+.RE
+\fBpurge\fP
+.RS 4
+Yönetilen bir konteyner içindeki paketleri temizle
+.PP
+.RE
+\fBremove\fP
+.RS 4
+Yönetilen bir konteyner içindeki paketleri kaldır\&.
+.PP
+.RE
+\fBrun\fP
+.RS 4
+Yönetilen bir konteyner içinde bir program çalıştır\&.
+.PP
+.RE
+\fBsearch\fP
+.RS 4
+Yönetilen bir konteyner içinde ki paketleri arayın\&.
+.PP
+.RE
+\fBshow\fP
+.RS 4
+Paket hakkındaki ayrıntıları göster
+.PP
+.RE
+\fBunexport\fP
+.RS 4
+Yönetilen bir konteynerdan bir programın masaüstü girişini çıkarma/kaldırma
+.PP
+.RE
+\fBupgrade\fP
+.RS 4
+Mevcut paketleri yükleyerek/yükselterek sistemi yükseltin\&.
+.PP
+.RE
+\fBupdate\fP
+.RS 4
+Mevcut paketlerin listesini güncelle
+.PP
+.RE
+.RE
+.SH AUTHORS
+.PP
+Written by Vanilla OS contributors\&.
+.SH REPORT BUGS TO
+.PP
+https://github\&.com/vanilla-os/apx/issues
+.SH LICENSE
+.PP
+GPLv3+: GNU GPL version 3 or later <http://gnu\&.org/licenses/gpl\&.html>\&.
+.SH APX SUBCOMMANDS
+.SH SUBCOMMAND AUTOREMOVE
+.RS 4
+Kullanılmayan tüm paketleri otomatik olarak kaldırın
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBautoremove\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Kullanılmayan tüm paketleri otomatik olarak kaldırın
+.RE
+.SS OPTIONS
+  -a, --all   Tüm konteynerler için geçerlidir\&.
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       daha ayrıntılı çıktı göster
+.PP
+      --apt           Ubuntu deposundan paketleri yükleyin\&.
+.PP
+      --aur           Paketleri AUR'den (Arch Kullanıcı Deposu) yükleyin\&.
+.PP
+      --dnf           Fedora'nın DNF (Dandified YUM) deposundan paketleri yükleyin\&.
+.PP
+      --apk           Alpine deposundan paketleri yükleyin\&.
+.PP
+      --zypper        OpenSUSE deposundan paketleri yükleyin\&.
+.PP
+      --xbps          Void (Linux) deposundan paketleri yükleyin\&.
+.PP
+      --nix           Nixpkgs (Nix paketleri) deposundan paketleri yükleyin\&.
+.PP
+  -n, --name string   Bu ada sahip özel konteynere uygulayın\&.
+.PP
+.SH SUBCOMMAND CLEAN
+.RS 4
+apx paket yöneticisi önbelleğini temizle
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBclean\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+apx paket yöneticisi önbelleğini temizle
+.RE
+.SS OPTIONS
+  -a, --all   Tüm konteynerler için geçerlidir\&.
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       daha ayrıntılı çıktı göster
+.PP
+      --apt           Ubuntu deposundan paketleri yükleyin\&.
+.PP
+      --aur           Paketleri AUR'den (Arch Kullanıcı Deposu) yükleyin\&.
+.PP
+      --dnf           Fedora'nın DNF (Dandified YUM) deposundan paketleri yükleyin\&.
+.PP
+      --apk           Alpine deposundan paketleri yükleyin\&.
+.PP
+      --zypper        OpenSUSE deposundan paketleri yükleyin\&.
+.PP
+      --xbps          Void (Linux) deposundan paketleri yükleyin\&.
+.PP
+      --nix           Nixpkgs (Nix paketleri) deposundan paketleri yükleyin\&.
+.PP
+  -n, --name string   Bu ada sahip özel konteynere uygulayın\&.
+.PP
+.SH SUBCOMMAND ENTER
+.RS 4
+Yönetilen Konteynera bir kabuk girin
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBenter\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Yönetilen Konteynera bir kabuk girin
+.RE
+.SS OPTIONS
+.SS GLOBAL OPTIONS
+  -v, --verbose       daha ayrıntılı çıktı göster
+.PP
+      --apt           Ubuntu deposundan paketleri yükleyin\&.
+.PP
+      --aur           Paketleri AUR'den (Arch Kullanıcı Deposu) yükleyin\&.
+.PP
+      --dnf           Fedora'nın DNF (Dandified YUM) deposundan paketleri yükleyin\&.
+.PP
+      --apk           Alpine deposundan paketleri yükleyin\&.
+.PP
+      --zypper        OpenSUSE deposundan paketleri yükleyin\&.
+.PP
+      --xbps          Void (Linux) deposundan paketleri yükleyin\&.
+.PP
+      --nix           Nixpkgs (Nix paketleri) deposundan paketleri yükleyin\&.
+.PP
+  -n, --name string   Bu ada sahip özel konteynere uygulayın\&.
+.PP
+.SH SUBCOMMAND EXPORT
+.RS 4
+Yönetilen bir Konteynerdan bir programın masaüstü girişini dışa aktarma/yeniden oluşturma
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBexport\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Yönetilen bir Konteynerda bir programın masaüstü girişini dışa aktarma/yeniden oluşturma
+.RE
+.SS OPTIONS
+      --bin   İkili komutu dışarı aktar
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       daha ayrıntılı çıktı göster
+.PP
+      --apt           Ubuntu deposundan paketleri yükleyin\&.
+.PP
+      --aur           Paketleri AUR'den (Arch Kullanıcı Deposu) yükleyin\&.
+.PP
+      --dnf           Fedora'nın DNF (Dandified YUM) deposundan paketleri yükleyin\&.
+.PP
+      --apk           Alpine deposundan paketleri yükleyin\&.
+.PP
+      --zypper        OpenSUSE deposundan paketleri yükleyin\&.
+.PP
+      --xbps          Void (Linux) deposundan paketleri yükleyin\&.
+.PP
+      --nix           Nixpkgs (Nix paketleri) deposundan paketleri yükleyin\&.
+.PP
+  -n, --name string   Bu ada sahip özel konteynere uygulayın\&.
+.PP
+.SS EXAMPLES
+.RS 4
+apx export htop
+.PP
+apx export --bin fzf
+.RE
+.SH SUBCOMMAND INIT
+.RS 4
+Yönetilen bir Konteyner'ı başlat
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBinit\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Yönetilen bir Konteynerı başlat
+.RE
+.SS OPTIONS
+.SS GLOBAL OPTIONS
+  -v, --verbose       daha ayrıntılı çıktı göster
+.PP
+      --apt           Ubuntu deposundan paketleri yükleyin\&.
+.PP
+      --aur           Paketleri AUR'den (Arch Kullanıcı Deposu) yükleyin\&.
+.PP
+      --dnf           Fedora'nın DNF (Dandified YUM) deposundan paketleri yükleyin\&.
+.PP
+      --apk           Alpine deposundan paketleri yükleyin\&.
+.PP
+      --zypper        OpenSUSE deposundan paketleri yükleyin\&.
+.PP
+      --xbps          Void (Linux) deposundan paketleri yükleyin\&.
+.PP
+      --nix           Nixpkgs (Nix paketleri) deposundan paketleri yükleyin\&.
+.PP
+  -n, --name string   Bu ada sahip özel konteynere uygulayın\&.
+.PP
+.SS EXAMPLES
+.RS 4
+apx init
+.RE
+.SH SUBCOMMAND INSTALL
+.RS 4
+Paketleri yönetilen bir konteynerin içine yükle\&.
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBinstall\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Paketleri yönetilen bir konteynerin içine yükle\&.
+.RE
+.SS OPTIONS
+  -y, --assume-yes       Manuel onay olmadan devam et
+.PP
+  -f, --fix-broken       Yüklemeden önce bozuk bağımlılıkları düzelt
+.PP
+      --no-export        Kurulumdan sonra bir masaüstü girişini dışa aktarma\&.
+.PP
+      --sideload         Yerel bir dosyadan bir paket yükle\&.
+.PP
+      --allow-unfree     ücretli(Özgür olmayan) lisanslara sahip paketlere izin ver
+.PP
+      --allow-insecure   Bilinen güvenlik açıkları olan paketlere izin ver\&.
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       daha ayrıntılı çıktı göster
+.PP
+      --apt           Ubuntu deposundan paketleri yükleyin\&.
+.PP
+      --aur           Paketleri AUR'den (Arch Kullanıcı Deposu) yükleyin\&.
+.PP
+      --dnf           Fedora'nın DNF (Dandified YUM) deposundan paketleri yükleyin\&.
+.PP
+      --apk           Alpine deposundan paketleri yükleyin\&.
+.PP
+      --zypper        OpenSUSE deposundan paketleri yükleyin\&.
+.PP
+      --xbps          Void (Linux) deposundan paketleri yükleyin\&.
+.PP
+      --nix           Nixpkgs (Nix paketleri) deposundan paketleri yükleyin\&.
+.PP
+  -n, --name string   Bu ada sahip özel konteynere uygulayın\&.
+.PP
+.SS EXAMPLES
+.RS 4
+apx install htop git
+.PP
+apx --nix install --allow-unfree vscode
+.RE
+.SH SUBCOMMAND LIST
+.RS 4
+Yüklü paketleri listele\&.
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBlist\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Yüklü paketleri listele\&.
+.RE
+.SS OPTIONS
+  -u, --upgradable   Yükseltilebilir paketleri göster
+.PP
+  -i, --installed    Yüklü paketleri göster
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       daha ayrıntılı çıktı göster
+.PP
+      --apt           Ubuntu deposundan paketleri yükleyin\&.
+.PP
+      --aur           Paketleri AUR'den (Arch Kullanıcı Deposu) yükleyin\&.
+.PP
+      --dnf           Fedora'nın DNF (Dandified YUM) deposundan paketleri yükleyin\&.
+.PP
+      --apk           Alpine deposundan paketleri yükleyin\&.
+.PP
+      --zypper        OpenSUSE deposundan paketleri yükleyin\&.
+.PP
+      --xbps          Void (Linux) deposundan paketleri yükleyin\&.
+.PP
+      --nix           Nixpkgs (Nix paketleri) deposundan paketleri yükleyin\&.
+.PP
+  -n, --name string   Bu ada sahip özel konteynere uygulayın\&.
+.PP
+.SH SUBCOMMAND PURGE
+.RS 4
+Yönetilen bir konteyner içindeki paketleri temizle
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBpurge\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Yönetilen bir konteyner içindeki paketleri temizle
+.RE
+.SS OPTIONS
+.SS GLOBAL OPTIONS
+  -v, --verbose       daha ayrıntılı çıktı göster
+.PP
+      --apt           Ubuntu deposundan paketleri yükleyin\&.
+.PP
+      --aur           Paketleri AUR'den (Arch Kullanıcı Deposu) yükleyin\&.
+.PP
+      --dnf           Fedora'nın DNF (Dandified YUM) deposundan paketleri yükleyin\&.
+.PP
+      --apk           Alpine deposundan paketleri yükleyin\&.
+.PP
+      --zypper        OpenSUSE deposundan paketleri yükleyin\&.
+.PP
+      --xbps          Void (Linux) deposundan paketleri yükleyin\&.
+.PP
+      --nix           Nixpkgs (Nix paketleri) deposundan paketleri yükleyin\&.
+.PP
+  -n, --name string   Bu ada sahip özel konteynere uygulayın\&.
+.PP
+.SS EXAMPLES
+.RS 4
+apx purge htop
+.RE
+.SH SUBCOMMAND REMOVE
+.RS 4
+Yönetilen bir konteyner içindeki paketleri kaldır\&.
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBremove\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Yönetilen bir konteyner içindeki paketleri kaldır\&.
+.RE
+.SS OPTIONS
+  -y, --assume-yes   Manuel onay olmadan devam edin\&.
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       daha ayrıntılı çıktı göster
+.PP
+      --apt           Ubuntu deposundan paketleri yükleyin\&.
+.PP
+      --aur           Paketleri AUR'den (Arch Kullanıcı Deposu) yükleyin\&.
+.PP
+      --dnf           Fedora'nın DNF (Dandified YUM) deposundan paketleri yükleyin\&.
+.PP
+      --apk           Alpine deposundan paketleri yükleyin\&.
+.PP
+      --zypper        OpenSUSE deposundan paketleri yükleyin\&.
+.PP
+      --xbps          Void (Linux) deposundan paketleri yükleyin\&.
+.PP
+      --nix           Nixpkgs (Nix paketleri) deposundan paketleri yükleyin\&.
+.PP
+  -n, --name string   Bu ada sahip özel konteynere uygulayın\&.
+.PP
+.SS EXAMPLES
+.RS 4
+apx remove htop
+.RE
+.SH SUBCOMMAND RUN
+.RS 4
+Yönetilen bir konteyner içinde bir program çalıştır\&.
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBrun\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Yönetilen bir konteyner içinde bir program çalıştır\&.
+.RE
+.SS OPTIONS
+.SS GLOBAL OPTIONS
+  -v, --verbose       daha ayrıntılı çıktı göster
+.PP
+      --apt           Ubuntu deposundan paketleri yükleyin\&.
+.PP
+      --aur           Paketleri AUR'den (Arch Kullanıcı Deposu) yükleyin\&.
+.PP
+      --dnf           Fedora'nın DNF (Dandified YUM) deposundan paketleri yükleyin\&.
+.PP
+      --apk           Alpine deposundan paketleri yükleyin\&.
+.PP
+      --zypper        OpenSUSE deposundan paketleri yükleyin\&.
+.PP
+      --xbps          Void (Linux) deposundan paketleri yükleyin\&.
+.PP
+      --nix           Nixpkgs (Nix paketleri) deposundan paketleri yükleyin\&.
+.PP
+  -n, --name string   Bu ada sahip özel konteynere uygulayın\&.
+.PP
+.SS EXAMPLES
+.RS 4
+apx run htop
+.RE
+.SH SUBCOMMAND SEARCH
+.RS 4
+Yönetilen bir konteyner içinde ki paketleri arayın\&.
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBsearch\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Yönetilen bir konteyner içinde paketleri ara\&.
+.RE
+.SS OPTIONS
+.SS GLOBAL OPTIONS
+  -v, --verbose       daha ayrıntılı çıktı göster
+.PP
+      --apt           Ubuntu deposundan paketleri yükleyin\&.
+.PP
+      --aur           Paketleri AUR'den (Arch Kullanıcı Deposu) yükleyin\&.
+.PP
+      --dnf           Fedora'nın DNF (Dandified YUM) deposundan paketleri yükleyin\&.
+.PP
+      --apk           Alpine deposundan paketleri yükleyin\&.
+.PP
+      --zypper        OpenSUSE deposundan paketleri yükleyin\&.
+.PP
+      --xbps          Void (Linux) deposundan paketleri yükleyin\&.
+.PP
+      --nix           Nixpkgs (Nix paketleri) deposundan paketleri yükleyin\&.
+.PP
+  -n, --name string   Bu ada sahip özel konteynere uygulayın\&.
+.PP
+.SS EXAMPLES
+.RS 4
+apx search neovim
+.RE
+.SH SUBCOMMAND SHOW
+.RS 4
+Paket hakkındaki ayrıntıları göster
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBshow\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Paket hakkındaki ayrıntıları göster
+.RE
+.SS OPTIONS
+  -i, --isinstalled   Yalnızca paketin yüklü olup olmadığını döndürür
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       daha ayrıntılı çıktı göster
+.PP
+      --apt           Ubuntu deposundan paketleri yükleyin\&.
+.PP
+      --aur           Paketleri AUR'den (Arch Kullanıcı Deposu) yükleyin\&.
+.PP
+      --dnf           Fedora'nın DNF (Dandified YUM) deposundan paketleri yükleyin\&.
+.PP
+      --apk           Alpine deposundan paketleri yükleyin\&.
+.PP
+      --zypper        OpenSUSE deposundan paketleri yükleyin\&.
+.PP
+      --xbps          Void (Linux) deposundan paketleri yükleyin\&.
+.PP
+      --nix           Nixpkgs (Nix paketleri) deposundan paketleri yükleyin\&.
+.PP
+  -n, --name string   Bu ada sahip özel konteynere uygulayın\&.
+.PP
+.SS EXAMPLES
+.RS 4
+apx show htop
+.PP
+apx show -i neovim
+.RE
+.SH SUBCOMMAND UNEXPORT
+.RS 4
+Yönetilen bir konteynerdan bir programın masaüstü girişini çıkarma/kaldırma
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBunexport\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Bir programın masaüstü girdisini yönetilen bir konteynerdan kaldırır/çıkartır\&.
+.PP
+Eğer --bin flag sağlanmışsa, konteyner ikilisine olan bağlantıyı kaldırır\&.
+.RE
+.SS OPTIONS
+      --bin   Önceden dışa aktarılmış bir ikiliyi dışa aktarmayı kaldır\&.
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       daha ayrıntılı çıktı göster
+.PP
+      --apt           Ubuntu deposundan paketleri yükleyin\&.
+.PP
+      --aur           Paketleri AUR'den (Arch Kullanıcı Deposu) yükleyin\&.
+.PP
+      --dnf           Fedora'nın DNF (Dandified YUM) deposundan paketleri yükleyin\&.
+.PP
+      --apk           Alpine deposundan paketleri yükleyin\&.
+.PP
+      --zypper        OpenSUSE deposundan paketleri yükleyin\&.
+.PP
+      --xbps          Void (Linux) deposundan paketleri yükleyin\&.
+.PP
+      --nix           Nixpkgs (Nix paketleri) deposundan paketleri yükleyin\&.
+.PP
+  -n, --name string   Bu ada sahip özel konteynere uygulayın\&.
+.PP
+.SS EXAMPLES
+.RS 4
+apx unexport code
+.RE
+.SH SUBCOMMAND UPGRADE
+.RS 4
+Mevcut paketleri yükleyerek/yükselterek sistemi yükseltin\&.
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBupgrade\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Mevcut paketleri yükleyerek/yükselterek sistemi yükseltin\&.
+.RE
+.SS OPTIONS
+  -a, --all          Tüm konteynerler için geçerlidir\&.
+.PP
+  -y, --assume-yes   Manuel onay olmadan devam edin\&.
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       daha ayrıntılı çıktı göster
+.PP
+      --apt           Ubuntu deposundan paketleri yükleyin\&.
+.PP
+      --aur           Paketleri AUR'den (Arch Kullanıcı Deposu) yükleyin\&.
+.PP
+      --dnf           Fedora'nın DNF (Dandified YUM) deposundan paketleri yükleyin\&.
+.PP
+      --apk           Alpine deposundan paketleri yükleyin\&.
+.PP
+      --zypper        OpenSUSE deposundan paketleri yükleyin\&.
+.PP
+      --xbps          Void (Linux) deposundan paketleri yükleyin\&.
+.PP
+      --nix           Nixpkgs (Nix paketleri) deposundan paketleri yükleyin\&.
+.PP
+  -n, --name string   Bu ada sahip özel konteynere uygulayın\&.
+.PP
+.SS EXAMPLES
+.RS 4
+apx upgrade
+.RE
+.SH SUBCOMMAND UPDATE
+.RS 4
+Mevcut paketlerin listesini güncelle
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBupdate\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Mevcut paketlerin listesini güncelle
+.RE
+.SS OPTIONS
+  -a, --all          Tüm konteynerler için geçerlidir\&.
+.PP
+  -y, --assume-yes   Manuel onay olmadan devam edin\&.
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       daha ayrıntılı çıktı göster
+.PP
+      --apt           Ubuntu deposundan paketleri yükleyin\&.
+.PP
+      --aur           Paketleri AUR'den (Arch Kullanıcı Deposu) yükleyin\&.
+.PP
+      --dnf           Fedora'nın DNF (Dandified YUM) deposundan paketleri yükleyin\&.
+.PP
+      --apk           Alpine deposundan paketleri yükleyin\&.
+.PP
+      --zypper        OpenSUSE deposundan paketleri yükleyin\&.
+.PP
+      --xbps          Void (Linux) deposundan paketleri yükleyin\&.
+.PP
+      --nix           Nixpkgs (Nix paketleri) deposundan paketleri yükleyin\&.
+.PP
+  -n, --name string   Bu ada sahip özel konteynere uygulayın\&.
+.PP
+

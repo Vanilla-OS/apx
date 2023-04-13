@@ -1,4 +1,4 @@
-.TH APX 1 "2023-02-13" "apx" "User Manual"
+.TH APX 1 "2023-04-13" "apx" "User Manual"
 .SH NAME
 .RS 4
 apx - Apx är en pakethanterare med stöd för flera källor,
@@ -317,15 +317,17 @@ Installera paket i en hanterad behållare\&.
 Installera paket i en hanterad behållare\&.
 .RE
 .SS OPTIONS
-  -y, --assume-yes     Fortsätt utan manuell bekräftelse
+  -y, --assume-yes       Fortsätt utan manuell bekräftelse
 .PP
-  -f, --fix-broken     Åtgärda trasiga beroenden innan du installerar
+  -f, --fix-broken       Åtgärda trasiga beroenden innan du installerar
 .PP
-      --no-export      Exportera inte en skrivbordspost efter installationen\&.
+      --no-export        Exportera inte en skrivbordspost efter installationen\&.
 .PP
-      --sideload       Installera ett paket från en lokal fil\&.
+      --sideload         Installera ett paket från en lokal fil\&.
 .PP
-      --allow-unfree   Tillåt paket med ofria licenser
+      --allow-unfree     Tillåt paket med ofria licenser
+.PP
+      --allow-insecure   Tillåt paket med kända sårbarheter\&.
 .PP
 .SS GLOBAL OPTIONS
   -v, --verbose       visa mer detaljerad utdata
@@ -349,6 +351,8 @@ Installera paket i en hanterad behållare\&.
 .SS EXAMPLES
 .RS 4
 apx install htop git
+.PP
+apx --nix install --allow-unfree vscode
 .RE
 .SH SUBCOMMAND LIST
 .RS 4
@@ -551,7 +555,7 @@ Visa detaljer om ett paket
 Visa detaljer om ett paket
 .RE
 .SS OPTIONS
-  -i, --isinstalled   Returnera endast om paketet är installerat
+  -i, --isinstalled   Returnera endast om paketet finns installerat
 .PP
 .SS GLOBAL OPTIONS
   -v, --verbose       visa mer detaljerad utdata
@@ -630,7 +634,7 @@ Uppgradera systemet genom att installera/uppgradera tillgängliga paket\&.
 .SS DESCRIPTION
 .RS 4
 .TP 4
-Uppdatera listan över tillgängliga paket
+Uppgradera systemet genom att installera/uppgradera tillgängliga paket\&.
 .RE
 .SS OPTIONS
   -a, --all          Verkställ för alla containrar\&.

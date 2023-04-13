@@ -1,0 +1,704 @@
+.TH APX 1 "2023-04-13" "apx" "User Manual"
+.SH NAME
+.RS 4
+apx - Apx ist ein Paketmanager mit Unterstützung für mehrere Quellen,
+.PP
+der es Ihnen ermöglicht, Pakete in einem verwalteten Container zu installieren\&.
+.RE
+.SH SYNOPSIS
+.RS 4
+apx [command] [flags] [arguments]
+.RE
+.SH DESCRIPTION
+.RS 4
+Apx ist ein Paketmanager mit Unterstützung für mehrere Quellen,
+.PP
+der es Ihnen ermöglicht, Pakete in einem verwalteten Container zu installieren\&.
+.RE
+.SH OPTIONS
+  -v, --verbose       detailliertere Ausgabe anzeigen
+.PP
+      --apt           Installiere Pakete aus der Ubuntu Paketquelle\&.
+.PP
+      --aur           Installiere Pakete aus dem AUR (Arch User Repository)\&.
+.PP
+      --dnf           Installiere Pakete aus Fedoras DNF (Dandified YUM) Paketquelle\&.
+.PP
+      --apk           Installiere Pakete aus der Alpine Paketquelle\&.
+.PP
+      --zypper        Installiere Pakete aus den OpenSUSE Paketquellen\&.
+.PP
+      --xbps          Installiere Pakete aus den Void (Linux) Paketquellen\&.
+.PP
+      --nix           Installiere Pakete aus den Nixpkgs (Nix packages) Paketquellen\&.
+.PP
+  -n, --name string   Auf den benutzerdefinierten Container mit diesem Namen anwenden\&.
+.PP
+.SH APX COMMANDS
+.RS 4
+\fBautoremove\fP
+.RS 4
+Alle unbenutzten Pakete automatisch entfernen
+.PP
+.RE
+\fBclean\fP
+.RS 4
+Den Zwischenspeicher des Apx Paketmanagers löschen
+.PP
+.RE
+\fBenter\fP
+.RS 4
+Shell in dem verwalteten Container öffnen
+.PP
+.RE
+\fBexport\fP
+.RS 4
+Exportieren/Neuerstellen des Desktop-Eintrags eines Programms aus einem verwalteten Container
+.PP
+.RE
+\fBinit\fP
+.RS 4
+Initialisieren eines verwalteten Containers
+.PP
+.RE
+\fBinstall\fP
+.RS 4
+Pakete in einem verwalteten Container installieren\&.
+.PP
+.RE
+\fBlist\fP
+.RS 4
+Installierte Pakete auflisten\&.
+.PP
+.RE
+\fBpurge\fP
+.RS 4
+Pakete innerhalb eines verwalteten Containers bereinigen
+.PP
+.RE
+\fBremove\fP
+.RS 4
+Entfernen von Paketen innerhalb eines verwalteten Containers\&.
+.PP
+.RE
+\fBrun\fP
+.RS 4
+Ein Programm innerhalb eines verwalteten Containers ausführen\&.
+.PP
+.RE
+\fBsearch\fP
+.RS 4
+Suche nach Paketen in einem verwalteten Container\&.
+.PP
+.RE
+\fBshow\fP
+.RS 4
+Details zu einem Paket anzeigen
+.PP
+.RE
+\fBunexport\fP
+.RS 4
+Exportieren rückgängig machen/Entfernen des Desktop-Eintrags eines Programms aus einem verwalteten Container
+.PP
+.RE
+\fBupgrade\fP
+.RS 4
+Aktualisierung des Systems, durch Installieren/Aktualisieren verfügbarer Pakete\&.
+.PP
+.RE
+\fBupdate\fP
+.RS 4
+Liste der verfügbaren Pakete aktualisieren
+.PP
+.RE
+.RE
+.SH AUTHORS
+.PP
+Written by Vanilla OS contributors\&.
+.SH REPORT BUGS TO
+.PP
+https://github\&.com/vanilla-os/apx/issues
+.SH LICENSE
+.PP
+GPLv3+: GNU GPL version 3 or later <http://gnu\&.org/licenses/gpl\&.html>\&.
+.SH APX SUBCOMMANDS
+.SH SUBCOMMAND AUTOREMOVE
+.RS 4
+Alle unbenutzten Pakete automatisch entfernen
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBautoremove\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Alle unbenutzten Pakete automatisch entfernen
+.RE
+.SS OPTIONS
+  -a, --all   Für alle Container anwenden\&.
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       detailliertere Ausgabe anzeigen
+.PP
+      --apt           Installiere Pakete aus der Ubuntu Paketquelle\&.
+.PP
+      --aur           Installiere Pakete aus dem AUR (Arch User Repository)\&.
+.PP
+      --dnf           Installiere Pakete aus Fedoras DNF (Dandified YUM) Paketquelle\&.
+.PP
+      --apk           Installiere Pakete aus der Alpine Paketquelle\&.
+.PP
+      --zypper        Installiere Pakete aus den OpenSUSE Paketquellen\&.
+.PP
+      --xbps          Installiere Pakete aus den Void (Linux) Paketquellen\&.
+.PP
+      --nix           Installiere Pakete aus den Nixpkgs (Nix packages) Paketquellen\&.
+.PP
+  -n, --name string   Auf den benutzerdefinierten Container mit diesem Namen anwenden\&.
+.PP
+.SH SUBCOMMAND CLEAN
+.RS 4
+Den Zwischenspeicher des Apx Paketmanagers löschen
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBclean\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Den Zwischenspeicher des Apx Paketmanagers löschen
+.RE
+.SS OPTIONS
+  -a, --all   Für alle Container anwenden\&.
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       detailliertere Ausgabe anzeigen
+.PP
+      --apt           Installiere Pakete aus der Ubuntu Paketquelle\&.
+.PP
+      --aur           Installiere Pakete aus dem AUR (Arch User Repository)\&.
+.PP
+      --dnf           Installiere Pakete aus Fedoras DNF (Dandified YUM) Paketquelle\&.
+.PP
+      --apk           Installiere Pakete aus der Alpine Paketquelle\&.
+.PP
+      --zypper        Installiere Pakete aus den OpenSUSE Paketquellen\&.
+.PP
+      --xbps          Installiere Pakete aus den Void (Linux) Paketquellen\&.
+.PP
+      --nix           Installiere Pakete aus den Nixpkgs (Nix packages) Paketquellen\&.
+.PP
+  -n, --name string   Auf den benutzerdefinierten Container mit diesem Namen anwenden\&.
+.PP
+.SH SUBCOMMAND ENTER
+.RS 4
+Shell in dem verwalteten Container öffnen
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBenter\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Shell in dem verwalteten Container öffnen
+.RE
+.SS OPTIONS
+.SS GLOBAL OPTIONS
+  -v, --verbose       detailliertere Ausgabe anzeigen
+.PP
+      --apt           Installiere Pakete aus der Ubuntu Paketquelle\&.
+.PP
+      --aur           Installiere Pakete aus dem AUR (Arch User Repository)\&.
+.PP
+      --dnf           Installiere Pakete aus Fedoras DNF (Dandified YUM) Paketquelle\&.
+.PP
+      --apk           Installiere Pakete aus der Alpine Paketquelle\&.
+.PP
+      --zypper        Installiere Pakete aus den OpenSUSE Paketquellen\&.
+.PP
+      --xbps          Installiere Pakete aus den Void (Linux) Paketquellen\&.
+.PP
+      --nix           Installiere Pakete aus den Nixpkgs (Nix packages) Paketquellen\&.
+.PP
+  -n, --name string   Auf den benutzerdefinierten Container mit diesem Namen anwenden\&.
+.PP
+.SH SUBCOMMAND EXPORT
+.RS 4
+Exportieren/Neuerstellen des Desktop-Eintrags eines Programms aus einem verwalteten Container
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBexport\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Exportieren/Neuerstellen des Desktop-Eintrags eines Programms aus einem verwalteten Container
+.RE
+.SS OPTIONS
+      --bin   Binärbefehl exportieren
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       detailliertere Ausgabe anzeigen
+.PP
+      --apt           Installiere Pakete aus der Ubuntu Paketquelle\&.
+.PP
+      --aur           Installiere Pakete aus dem AUR (Arch User Repository)\&.
+.PP
+      --dnf           Installiere Pakete aus Fedoras DNF (Dandified YUM) Paketquelle\&.
+.PP
+      --apk           Installiere Pakete aus der Alpine Paketquelle\&.
+.PP
+      --zypper        Installiere Pakete aus den OpenSUSE Paketquellen\&.
+.PP
+      --xbps          Installiere Pakete aus den Void (Linux) Paketquellen\&.
+.PP
+      --nix           Installiere Pakete aus den Nixpkgs (Nix packages) Paketquellen\&.
+.PP
+  -n, --name string   Auf den benutzerdefinierten Container mit diesem Namen anwenden\&.
+.PP
+.SS EXAMPLES
+.RS 4
+apx export htop
+.PP
+apx export --bin fzf
+.RE
+.SH SUBCOMMAND INIT
+.RS 4
+Initialisieren eines verwalteten Containers
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBinit\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Initialisieren eines verwalteten Containers
+.RE
+.SS OPTIONS
+.SS GLOBAL OPTIONS
+  -v, --verbose       detailliertere Ausgabe anzeigen
+.PP
+      --apt           Installiere Pakete aus der Ubuntu Paketquelle\&.
+.PP
+      --aur           Installiere Pakete aus dem AUR (Arch User Repository)\&.
+.PP
+      --dnf           Installiere Pakete aus Fedoras DNF (Dandified YUM) Paketquelle\&.
+.PP
+      --apk           Installiere Pakete aus der Alpine Paketquelle\&.
+.PP
+      --zypper        Installiere Pakete aus den OpenSUSE Paketquellen\&.
+.PP
+      --xbps          Installiere Pakete aus den Void (Linux) Paketquellen\&.
+.PP
+      --nix           Installiere Pakete aus den Nixpkgs (Nix packages) Paketquellen\&.
+.PP
+  -n, --name string   Auf den benutzerdefinierten Container mit diesem Namen anwenden\&.
+.PP
+.SS EXAMPLES
+.RS 4
+apx init
+.RE
+.SH SUBCOMMAND INSTALL
+.RS 4
+Pakete in einem verwalteten Container installieren\&.
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBinstall\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Pakete in einem verwalteten Container installieren\&.
+.RE
+.SS OPTIONS
+  -y, --assume-yes       Fortfahren ohne manuelle Bestätigung
+.PP
+  -f, --fix-broken       Fehlerhafte Abhängigkeiten vor der Installation beheben
+.PP
+      --no-export        Keinen Desktop-Eintrag nach der Installation exportieren\&.
+.PP
+      --sideload         Paket aus lokaler Datei installieren\&.
+.PP
+      --allow-unfree     Pakete mit unfreien Lizenzen zulassen
+.PP
+      --allow-insecure   Pakete mit bekannten Sicherheitslücken zulassen\&.
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       detailliertere Ausgabe anzeigen
+.PP
+      --apt           Installiere Pakete aus der Ubuntu Paketquelle\&.
+.PP
+      --aur           Installiere Pakete aus dem AUR (Arch User Repository)\&.
+.PP
+      --dnf           Installiere Pakete aus Fedoras DNF (Dandified YUM) Paketquelle\&.
+.PP
+      --apk           Installiere Pakete aus der Alpine Paketquelle\&.
+.PP
+      --zypper        Installiere Pakete aus den OpenSUSE Paketquellen\&.
+.PP
+      --xbps          Installiere Pakete aus den Void (Linux) Paketquellen\&.
+.PP
+      --nix           Installiere Pakete aus den Nixpkgs (Nix packages) Paketquellen\&.
+.PP
+  -n, --name string   Auf den benutzerdefinierten Container mit diesem Namen anwenden\&.
+.PP
+.SS EXAMPLES
+.RS 4
+apx install htop git
+.PP
+apx --nix install --allow-unfree vscode
+.RE
+.SH SUBCOMMAND LIST
+.RS 4
+Installierte Pakete auflisten\&.
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBlist\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Installierte Pakete auflisten\&.
+.RE
+.SS OPTIONS
+  -u, --upgradable   Aktualisierbare Pakete anzeigen
+.PP
+  -i, --installed    Installierte Pakete anzeigen
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       detailliertere Ausgabe anzeigen
+.PP
+      --apt           Installiere Pakete aus der Ubuntu Paketquelle\&.
+.PP
+      --aur           Installiere Pakete aus dem AUR (Arch User Repository)\&.
+.PP
+      --dnf           Installiere Pakete aus Fedoras DNF (Dandified YUM) Paketquelle\&.
+.PP
+      --apk           Installiere Pakete aus der Alpine Paketquelle\&.
+.PP
+      --zypper        Installiere Pakete aus den OpenSUSE Paketquellen\&.
+.PP
+      --xbps          Installiere Pakete aus den Void (Linux) Paketquellen\&.
+.PP
+      --nix           Installiere Pakete aus den Nixpkgs (Nix packages) Paketquellen\&.
+.PP
+  -n, --name string   Auf den benutzerdefinierten Container mit diesem Namen anwenden\&.
+.PP
+.SH SUBCOMMAND PURGE
+.RS 4
+Pakete innerhalb eines verwalteten Containers bereinigen
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBpurge\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Pakete innerhalb eines verwalteten Containers bereinigen
+.RE
+.SS OPTIONS
+.SS GLOBAL OPTIONS
+  -v, --verbose       detailliertere Ausgabe anzeigen
+.PP
+      --apt           Installiere Pakete aus der Ubuntu Paketquelle\&.
+.PP
+      --aur           Installiere Pakete aus dem AUR (Arch User Repository)\&.
+.PP
+      --dnf           Installiere Pakete aus Fedoras DNF (Dandified YUM) Paketquelle\&.
+.PP
+      --apk           Installiere Pakete aus der Alpine Paketquelle\&.
+.PP
+      --zypper        Installiere Pakete aus den OpenSUSE Paketquellen\&.
+.PP
+      --xbps          Installiere Pakete aus den Void (Linux) Paketquellen\&.
+.PP
+      --nix           Installiere Pakete aus den Nixpkgs (Nix packages) Paketquellen\&.
+.PP
+  -n, --name string   Auf den benutzerdefinierten Container mit diesem Namen anwenden\&.
+.PP
+.SS EXAMPLES
+.RS 4
+apx purge htop
+.RE
+.SH SUBCOMMAND REMOVE
+.RS 4
+Entfernen von Paketen innerhalb eines verwalteten Containers\&.
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBremove\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Entfernen von Paketen innerhalb eines verwalteten Containers\&.
+.RE
+.SS OPTIONS
+  -y, --assume-yes   Ohne manuelle Bestätigung fortfahren\&.
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       detailliertere Ausgabe anzeigen
+.PP
+      --apt           Installiere Pakete aus der Ubuntu Paketquelle\&.
+.PP
+      --aur           Installiere Pakete aus dem AUR (Arch User Repository)\&.
+.PP
+      --dnf           Installiere Pakete aus Fedoras DNF (Dandified YUM) Paketquelle\&.
+.PP
+      --apk           Installiere Pakete aus der Alpine Paketquelle\&.
+.PP
+      --zypper        Installiere Pakete aus den OpenSUSE Paketquellen\&.
+.PP
+      --xbps          Installiere Pakete aus den Void (Linux) Paketquellen\&.
+.PP
+      --nix           Installiere Pakete aus den Nixpkgs (Nix packages) Paketquellen\&.
+.PP
+  -n, --name string   Auf den benutzerdefinierten Container mit diesem Namen anwenden\&.
+.PP
+.SS EXAMPLES
+.RS 4
+apx remove htop
+.RE
+.SH SUBCOMMAND RUN
+.RS 4
+Ein Programm innerhalb eines verwalteten Containers ausführen\&.
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBrun\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Ein Programm innerhalb eines verwalteten Containers ausführen\&.
+.RE
+.SS OPTIONS
+.SS GLOBAL OPTIONS
+  -v, --verbose       detailliertere Ausgabe anzeigen
+.PP
+      --apt           Installiere Pakete aus der Ubuntu Paketquelle\&.
+.PP
+      --aur           Installiere Pakete aus dem AUR (Arch User Repository)\&.
+.PP
+      --dnf           Installiere Pakete aus Fedoras DNF (Dandified YUM) Paketquelle\&.
+.PP
+      --apk           Installiere Pakete aus der Alpine Paketquelle\&.
+.PP
+      --zypper        Installiere Pakete aus den OpenSUSE Paketquellen\&.
+.PP
+      --xbps          Installiere Pakete aus den Void (Linux) Paketquellen\&.
+.PP
+      --nix           Installiere Pakete aus den Nixpkgs (Nix packages) Paketquellen\&.
+.PP
+  -n, --name string   Auf den benutzerdefinierten Container mit diesem Namen anwenden\&.
+.PP
+.SS EXAMPLES
+.RS 4
+apx run htop
+.RE
+.SH SUBCOMMAND SEARCH
+.RS 4
+Suche nach Paketen in einem verwalteten Container\&.
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBsearch\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Suche nach Paketen in einem verwalteten Container\&.
+.RE
+.SS OPTIONS
+.SS GLOBAL OPTIONS
+  -v, --verbose       detailliertere Ausgabe anzeigen
+.PP
+      --apt           Installiere Pakete aus der Ubuntu Paketquelle\&.
+.PP
+      --aur           Installiere Pakete aus dem AUR (Arch User Repository)\&.
+.PP
+      --dnf           Installiere Pakete aus Fedoras DNF (Dandified YUM) Paketquelle\&.
+.PP
+      --apk           Installiere Pakete aus der Alpine Paketquelle\&.
+.PP
+      --zypper        Installiere Pakete aus den OpenSUSE Paketquellen\&.
+.PP
+      --xbps          Installiere Pakete aus den Void (Linux) Paketquellen\&.
+.PP
+      --nix           Installiere Pakete aus den Nixpkgs (Nix packages) Paketquellen\&.
+.PP
+  -n, --name string   Auf den benutzerdefinierten Container mit diesem Namen anwenden\&.
+.PP
+.SS EXAMPLES
+.RS 4
+apx search neovim
+.RE
+.SH SUBCOMMAND SHOW
+.RS 4
+Details zu einem Paket anzeigen
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBshow\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Details zu einem Paket anzeigen
+.RE
+.SS OPTIONS
+  -i, --isinstalled   Gibt nur zurück, ob das Paket installiert ist
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       detailliertere Ausgabe anzeigen
+.PP
+      --apt           Installiere Pakete aus der Ubuntu Paketquelle\&.
+.PP
+      --aur           Installiere Pakete aus dem AUR (Arch User Repository)\&.
+.PP
+      --dnf           Installiere Pakete aus Fedoras DNF (Dandified YUM) Paketquelle\&.
+.PP
+      --apk           Installiere Pakete aus der Alpine Paketquelle\&.
+.PP
+      --zypper        Installiere Pakete aus den OpenSUSE Paketquellen\&.
+.PP
+      --xbps          Installiere Pakete aus den Void (Linux) Paketquellen\&.
+.PP
+      --nix           Installiere Pakete aus den Nixpkgs (Nix packages) Paketquellen\&.
+.PP
+  -n, --name string   Auf den benutzerdefinierten Container mit diesem Namen anwenden\&.
+.PP
+.SS EXAMPLES
+.RS 4
+apx show htop
+.PP
+apx show -i neovim
+.RE
+.SH SUBCOMMAND UNEXPORT
+.RS 4
+Exportieren rückgängig machen/Entfernen des Desktop-Eintrags eines Programms aus einem verwalteten Container
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBunexport\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Exportieren rückgängig machen/Entfernen des Desktop-Eintrags eines Programms aus einem verwalteten Container\&.
+.PP
+Wenn das Flag --bin angegeben ist, wird der Link zur Container-Binärdatei entfernt\&.
+.RE
+.SS OPTIONS
+      --bin   Exportieren einer zuvor exportierten Binärdatei rückgängig machen\&.
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       detailliertere Ausgabe anzeigen
+.PP
+      --apt           Installiere Pakete aus der Ubuntu Paketquelle\&.
+.PP
+      --aur           Installiere Pakete aus dem AUR (Arch User Repository)\&.
+.PP
+      --dnf           Installiere Pakete aus Fedoras DNF (Dandified YUM) Paketquelle\&.
+.PP
+      --apk           Installiere Pakete aus der Alpine Paketquelle\&.
+.PP
+      --zypper        Installiere Pakete aus den OpenSUSE Paketquellen\&.
+.PP
+      --xbps          Installiere Pakete aus den Void (Linux) Paketquellen\&.
+.PP
+      --nix           Installiere Pakete aus den Nixpkgs (Nix packages) Paketquellen\&.
+.PP
+  -n, --name string   Auf den benutzerdefinierten Container mit diesem Namen anwenden\&.
+.PP
+.SS EXAMPLES
+.RS 4
+apx unexport code
+.RE
+.SH SUBCOMMAND UPGRADE
+.RS 4
+Aktualisierung des Systems, durch Installieren/Aktualisieren verfügbarer Pakete\&.
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBupgrade\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Aktualisierung des Systems, durch Installieren/Aktualisieren verfügbarer Pakete\&.
+.RE
+.SS OPTIONS
+  -a, --all          Für alle Container anwenden\&.
+.PP
+  -y, --assume-yes   Ohne manuelle Bestätigung fortfahren\&.
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       detailliertere Ausgabe anzeigen
+.PP
+      --apt           Installiere Pakete aus der Ubuntu Paketquelle\&.
+.PP
+      --aur           Installiere Pakete aus dem AUR (Arch User Repository)\&.
+.PP
+      --dnf           Installiere Pakete aus Fedoras DNF (Dandified YUM) Paketquelle\&.
+.PP
+      --apk           Installiere Pakete aus der Alpine Paketquelle\&.
+.PP
+      --zypper        Installiere Pakete aus den OpenSUSE Paketquellen\&.
+.PP
+      --xbps          Installiere Pakete aus den Void (Linux) Paketquellen\&.
+.PP
+      --nix           Installiere Pakete aus den Nixpkgs (Nix packages) Paketquellen\&.
+.PP
+  -n, --name string   Auf den benutzerdefinierten Container mit diesem Namen anwenden\&.
+.PP
+.SS EXAMPLES
+.RS 4
+apx upgrade
+.RE
+.SH SUBCOMMAND UPDATE
+.RS 4
+Liste der verfügbaren Pakete aktualisieren
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBupdate\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Liste der verfügbaren Pakete aktualisieren
+.RE
+.SS OPTIONS
+  -a, --all          Für alle Container anwenden\&.
+.PP
+  -y, --assume-yes   Ohne manuelle Bestätigung fortfahren\&.
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       detailliertere Ausgabe anzeigen
+.PP
+      --apt           Installiere Pakete aus der Ubuntu Paketquelle\&.
+.PP
+      --aur           Installiere Pakete aus dem AUR (Arch User Repository)\&.
+.PP
+      --dnf           Installiere Pakete aus Fedoras DNF (Dandified YUM) Paketquelle\&.
+.PP
+      --apk           Installiere Pakete aus der Alpine Paketquelle\&.
+.PP
+      --zypper        Installiere Pakete aus den OpenSUSE Paketquellen\&.
+.PP
+      --xbps          Installiere Pakete aus den Void (Linux) Paketquellen\&.
+.PP
+      --nix           Installiere Pakete aus den Nixpkgs (Nix packages) Paketquellen\&.
+.PP
+  -n, --name string   Auf den benutzerdefinierten Container mit diesem Namen anwenden\&.
+.PP
+

@@ -1,0 +1,704 @@
+.TH APX 1 "2023-04-13" "apx" "User Manual"
+.SH NAME
+.RS 4
+apx - O Apx é um gestor de pacotes com suporte para múltiplas fontes,
+.PP
+permitindo a instalação de pacotes num "container" administrado\&.
+.RE
+.SH SYNOPSIS
+.RS 4
+apx [command] [flags] [arguments]
+.RE
+.SH DESCRIPTION
+.RS 4
+O Apx é um gestor de pacotes com suporte para múltiplas fontes,
+.PP
+permitindo a instalação de pacotes num "container" administrado\&.
+.RE
+.SH OPTIONS
+  -v, --verbose       mostrar resultado mais detalhado
+.PP
+      --apt           Instalar pacotes do repositório Ubuntu\&.
+.PP
+      --aur           Instalar pacotes do AUR (Arch User Repository)\&.
+.PP
+      --dnf           Instalar pacotes do repositório DNF (Dandified YUM) do Fedora\&.
+.PP
+      --apk           Instalar pacotes do repositório Alpine (Linux)\&.
+.PP
+      --zypper        Instalar pacotes do repositório OpenSUSE\&.
+.PP
+      --xbps          Instalar pacotes do repositório Void (Linux)\&.
+.PP
+      --nix           Instalar pacotes do repositório Nixpkgs (pacotes Nix)\&.
+.PP
+  -n, --name string   Aplicar ao "container" personalizado com este nome\&.
+.PP
+.SH APX COMMANDS
+.RS 4
+\fBautoremove\fP
+.RS 4
+Remover automaticamente todos os pacotes não utilizados
+.PP
+.RE
+\fBclean\fP
+.RS 4
+Limpar o cache do gestor de pacotes apx
+.PP
+.RE
+\fBenter\fP
+.RS 4
+Introduza um shell no "container" administrado
+.PP
+.RE
+\fBexport\fP
+.RS 4
+Exportar/Recriar a entrada desktop de um programa a partir de um "container" administrado
+.PP
+.RE
+\fBinit\fP
+.RS 4
+Inicializar um contentor administrado
+.PP
+.RE
+\fBinstall\fP
+.RS 4
+Instalar pacotes dentro de um contentor gerido\&.
+.PP
+.RE
+\fBlist\fP
+.RS 4
+Listar os pacotes instalados\&.
+.PP
+.RE
+\fBpurge\fP
+.RS 4
+Remover pacotes dentro de um contentor gerido
+.PP
+.RE
+\fBremove\fP
+.RS 4
+Remover os pacotes dentro de um contentor gerido\&.
+.PP
+.RE
+\fBrun\fP
+.RS 4
+Executar um programa dentro de um contentor administrado\&.
+.PP
+.RE
+\fBsearch\fP
+.RS 4
+Pesquise por pacotes em um contentor gerido\&.
+.PP
+.RE
+\fBshow\fP
+.RS 4
+Mostrar detalhes sobre um pacote
+.PP
+.RE
+\fBunexport\fP
+.RS 4
+Desexportar/remover a entrada de um programa da área de trabalho de um contentor gerido
+.PP
+.RE
+\fBupgrade\fP
+.RS 4
+Atualize o sistema instalando/atualizando os pacotes disponíveis\&.
+.PP
+.RE
+\fBupdate\fP
+.RS 4
+Atualizar a lista de pacotes disponíveis
+.PP
+.RE
+.RE
+.SH AUTHORS
+.PP
+Written by Vanilla OS contributors\&.
+.SH REPORT BUGS TO
+.PP
+https://github\&.com/vanilla-os/apx/issues
+.SH LICENSE
+.PP
+GPLv3+: GNU GPL version 3 or later <http://gnu\&.org/licenses/gpl\&.html>\&.
+.SH APX SUBCOMMANDS
+.SH SUBCOMMAND AUTOREMOVE
+.RS 4
+Remover automaticamente todos os pacotes não utilizados
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBautoremove\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Remover automaticamente todos os pacotes não utilizados
+.RE
+.SS OPTIONS
+  -a, --all   Aplicar a todos os "containers"\&.
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       mostrar resultado mais detalhado
+.PP
+      --apt           Instalar pacotes do repositório Ubuntu\&.
+.PP
+      --aur           Instalar pacotes do AUR (Arch User Repository)\&.
+.PP
+      --dnf           Instalar pacotes do repositório DNF (Dandified YUM) do Fedora\&.
+.PP
+      --apk           Instalar pacotes do repositório Alpine (Linux)\&.
+.PP
+      --zypper        Instalar pacotes do repositório OpenSUSE\&.
+.PP
+      --xbps          Instalar pacotes do repositório Void (Linux)\&.
+.PP
+      --nix           Instalar pacotes do repositório Nixpkgs (pacotes Nix)\&.
+.PP
+  -n, --name string   Aplicar ao "container" personalizado com este nome\&.
+.PP
+.SH SUBCOMMAND CLEAN
+.RS 4
+Limpar o cache do gestor de pacotes apx
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBclean\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Limpar o cache do gestor de pacotes apx
+.RE
+.SS OPTIONS
+  -a, --all   Aplicar a todos os "containers"\&.
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       mostrar resultado mais detalhado
+.PP
+      --apt           Instalar pacotes do repositório Ubuntu\&.
+.PP
+      --aur           Instalar pacotes do AUR (Arch User Repository)\&.
+.PP
+      --dnf           Instalar pacotes do repositório DNF (Dandified YUM) do Fedora\&.
+.PP
+      --apk           Instalar pacotes do repositório Alpine (Linux)\&.
+.PP
+      --zypper        Instalar pacotes do repositório OpenSUSE\&.
+.PP
+      --xbps          Instalar pacotes do repositório Void (Linux)\&.
+.PP
+      --nix           Instalar pacotes do repositório Nixpkgs (pacotes Nix)\&.
+.PP
+  -n, --name string   Aplicar ao "container" personalizado com este nome\&.
+.PP
+.SH SUBCOMMAND ENTER
+.RS 4
+Introduza um shell no "container" administrado
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBenter\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Introduza um shell no "container" administrado
+.RE
+.SS OPTIONS
+.SS GLOBAL OPTIONS
+  -v, --verbose       mostrar resultado mais detalhado
+.PP
+      --apt           Instalar pacotes do repositório Ubuntu\&.
+.PP
+      --aur           Instalar pacotes do AUR (Arch User Repository)\&.
+.PP
+      --dnf           Instalar pacotes do repositório DNF (Dandified YUM) do Fedora\&.
+.PP
+      --apk           Instalar pacotes do repositório Alpine (Linux)\&.
+.PP
+      --zypper        Instalar pacotes do repositório OpenSUSE\&.
+.PP
+      --xbps          Instalar pacotes do repositório Void (Linux)\&.
+.PP
+      --nix           Instalar pacotes do repositório Nixpkgs (pacotes Nix)\&.
+.PP
+  -n, --name string   Aplicar ao "container" personalizado com este nome\&.
+.PP
+.SH SUBCOMMAND EXPORT
+.RS 4
+Exportar/Recriar a entrada desktop de um programa a partir de um "container" administrado
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBexport\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Exportar/Recriar a entrada desktop de um programa a partir de um "container" administrado
+.RE
+.SS OPTIONS
+      --bin   Exportar comando binário
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       mostrar resultado mais detalhado
+.PP
+      --apt           Instalar pacotes do repositório Ubuntu\&.
+.PP
+      --aur           Instalar pacotes do AUR (Arch User Repository)\&.
+.PP
+      --dnf           Instalar pacotes do repositório DNF (Dandified YUM) do Fedora\&.
+.PP
+      --apk           Instalar pacotes do repositório Alpine (Linux)\&.
+.PP
+      --zypper        Instalar pacotes do repositório OpenSUSE\&.
+.PP
+      --xbps          Instalar pacotes do repositório Void (Linux)\&.
+.PP
+      --nix           Instalar pacotes do repositório Nixpkgs (pacotes Nix)\&.
+.PP
+  -n, --name string   Aplicar ao "container" personalizado com este nome\&.
+.PP
+.SS EXAMPLES
+.RS 4
+apx export htop
+.PP
+apx export --bin fzf
+.RE
+.SH SUBCOMMAND INIT
+.RS 4
+Inicializar um contentor administrado
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBinit\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Inicializar um contentor gerido
+.RE
+.SS OPTIONS
+.SS GLOBAL OPTIONS
+  -v, --verbose       mostrar resultado mais detalhado
+.PP
+      --apt           Instalar pacotes do repositório Ubuntu\&.
+.PP
+      --aur           Instalar pacotes do AUR (Arch User Repository)\&.
+.PP
+      --dnf           Instalar pacotes do repositório DNF (Dandified YUM) do Fedora\&.
+.PP
+      --apk           Instalar pacotes do repositório Alpine (Linux)\&.
+.PP
+      --zypper        Instalar pacotes do repositório OpenSUSE\&.
+.PP
+      --xbps          Instalar pacotes do repositório Void (Linux)\&.
+.PP
+      --nix           Instalar pacotes do repositório Nixpkgs (pacotes Nix)\&.
+.PP
+  -n, --name string   Aplicar ao "container" personalizado com este nome\&.
+.PP
+.SS EXAMPLES
+.RS 4
+apx init
+.RE
+.SH SUBCOMMAND INSTALL
+.RS 4
+Instalar pacotes dentro de um contentor gerido\&.
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBinstall\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Instalar pacotes dentro de um contentor gerido\&.
+.RE
+.SS OPTIONS
+  -y, --assume-yes       Proceder sem confirmação manual
+.PP
+  -f, --fix-broken       Consertar dependências quebradas antes de continuar a instalação
+.PP
+      --no-export        Não exportar uma entrada para a área de trabalho após a instalação\&.
+.PP
+      --sideload         Instalar um pacote a partir de um ficheiro local\&.
+.PP
+      --allow-unfree     Permitir pacotes com licenças não-livres
+.PP
+      --allow-insecure   Permitir pacotes com vulnerabilidades conhecidas\&.
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       mostrar resultado mais detalhado
+.PP
+      --apt           Instalar pacotes do repositório Ubuntu\&.
+.PP
+      --aur           Instalar pacotes do AUR (Arch User Repository)\&.
+.PP
+      --dnf           Instalar pacotes do repositório DNF (Dandified YUM) do Fedora\&.
+.PP
+      --apk           Instalar pacotes do repositório Alpine (Linux)\&.
+.PP
+      --zypper        Instalar pacotes do repositório OpenSUSE\&.
+.PP
+      --xbps          Instalar pacotes do repositório Void (Linux)\&.
+.PP
+      --nix           Instalar pacotes do repositório Nixpkgs (pacotes Nix)\&.
+.PP
+  -n, --name string   Aplicar ao "container" personalizado com este nome\&.
+.PP
+.SS EXAMPLES
+.RS 4
+apx install htop git
+.PP
+apx --nix install --allow-unfree vscode
+.RE
+.SH SUBCOMMAND LIST
+.RS 4
+Listar os pacotes instalados\&.
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBlist\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Listar os pacotes instalados\&.
+.RE
+.SS OPTIONS
+  -u, --upgradable   Mostrar pacotes atualizáveis
+.PP
+  -i, --installed    Mostrar pacotes instalados
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       mostrar resultado mais detalhado
+.PP
+      --apt           Instalar pacotes do repositório Ubuntu\&.
+.PP
+      --aur           Instalar pacotes do AUR (Arch User Repository)\&.
+.PP
+      --dnf           Instalar pacotes do repositório DNF (Dandified YUM) do Fedora\&.
+.PP
+      --apk           Instalar pacotes do repositório Alpine (Linux)\&.
+.PP
+      --zypper        Instalar pacotes do repositório OpenSUSE\&.
+.PP
+      --xbps          Instalar pacotes do repositório Void (Linux)\&.
+.PP
+      --nix           Instalar pacotes do repositório Nixpkgs (pacotes Nix)\&.
+.PP
+  -n, --name string   Aplicar ao "container" personalizado com este nome\&.
+.PP
+.SH SUBCOMMAND PURGE
+.RS 4
+Remover pacotes dentro de um contentor gerido
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBpurge\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Remover pacotes dentro de um contentor gerido
+.RE
+.SS OPTIONS
+.SS GLOBAL OPTIONS
+  -v, --verbose       mostrar resultado mais detalhado
+.PP
+      --apt           Instalar pacotes do repositório Ubuntu\&.
+.PP
+      --aur           Instalar pacotes do AUR (Arch User Repository)\&.
+.PP
+      --dnf           Instalar pacotes do repositório DNF (Dandified YUM) do Fedora\&.
+.PP
+      --apk           Instalar pacotes do repositório Alpine (Linux)\&.
+.PP
+      --zypper        Instalar pacotes do repositório OpenSUSE\&.
+.PP
+      --xbps          Instalar pacotes do repositório Void (Linux)\&.
+.PP
+      --nix           Instalar pacotes do repositório Nixpkgs (pacotes Nix)\&.
+.PP
+  -n, --name string   Aplicar ao "container" personalizado com este nome\&.
+.PP
+.SS EXAMPLES
+.RS 4
+apx purge htop
+.RE
+.SH SUBCOMMAND REMOVE
+.RS 4
+Remover os pacotes dentro de um contentor gerido\&.
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBremove\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Remover os pacotes dentro de um contentor gerido\&.
+.RE
+.SS OPTIONS
+  -y, --assume-yes   Proceder sem confirmação manual\&.
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       mostrar resultado mais detalhado
+.PP
+      --apt           Instalar pacotes do repositório Ubuntu\&.
+.PP
+      --aur           Instalar pacotes do AUR (Arch User Repository)\&.
+.PP
+      --dnf           Instalar pacotes do repositório DNF (Dandified YUM) do Fedora\&.
+.PP
+      --apk           Instalar pacotes do repositório Alpine (Linux)\&.
+.PP
+      --zypper        Instalar pacotes do repositório OpenSUSE\&.
+.PP
+      --xbps          Instalar pacotes do repositório Void (Linux)\&.
+.PP
+      --nix           Instalar pacotes do repositório Nixpkgs (pacotes Nix)\&.
+.PP
+  -n, --name string   Aplicar ao "container" personalizado com este nome\&.
+.PP
+.SS EXAMPLES
+.RS 4
+apx remove htop
+.RE
+.SH SUBCOMMAND RUN
+.RS 4
+Executar um programa dentro de um contentor administrado\&.
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBrun\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Executar um programa dentro de um contentor administrado\&.
+.RE
+.SS OPTIONS
+.SS GLOBAL OPTIONS
+  -v, --verbose       mostrar resultado mais detalhado
+.PP
+      --apt           Instalar pacotes do repositório Ubuntu\&.
+.PP
+      --aur           Instalar pacotes do AUR (Arch User Repository)\&.
+.PP
+      --dnf           Instalar pacotes do repositório DNF (Dandified YUM) do Fedora\&.
+.PP
+      --apk           Instalar pacotes do repositório Alpine (Linux)\&.
+.PP
+      --zypper        Instalar pacotes do repositório OpenSUSE\&.
+.PP
+      --xbps          Instalar pacotes do repositório Void (Linux)\&.
+.PP
+      --nix           Instalar pacotes do repositório Nixpkgs (pacotes Nix)\&.
+.PP
+  -n, --name string   Aplicar ao "container" personalizado com este nome\&.
+.PP
+.SS EXAMPLES
+.RS 4
+apx run htop
+.RE
+.SH SUBCOMMAND SEARCH
+.RS 4
+Pesquise por pacotes em um contentor gerido\&.
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBsearch\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Pesquise por pacotes em um contentor administrado\&.
+.RE
+.SS OPTIONS
+.SS GLOBAL OPTIONS
+  -v, --verbose       mostrar resultado mais detalhado
+.PP
+      --apt           Instalar pacotes do repositório Ubuntu\&.
+.PP
+      --aur           Instalar pacotes do AUR (Arch User Repository)\&.
+.PP
+      --dnf           Instalar pacotes do repositório DNF (Dandified YUM) do Fedora\&.
+.PP
+      --apk           Instalar pacotes do repositório Alpine (Linux)\&.
+.PP
+      --zypper        Instalar pacotes do repositório OpenSUSE\&.
+.PP
+      --xbps          Instalar pacotes do repositório Void (Linux)\&.
+.PP
+      --nix           Instalar pacotes do repositório Nixpkgs (pacotes Nix)\&.
+.PP
+  -n, --name string   Aplicar ao "container" personalizado com este nome\&.
+.PP
+.SS EXAMPLES
+.RS 4
+apx search neovim
+.RE
+.SH SUBCOMMAND SHOW
+.RS 4
+Mostrar detalhes sobre um pacote
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBshow\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Mostrar detalhes sobre um pacote
+.RE
+.SS OPTIONS
+  -i, --isinstalled   Retornar somente se o pacote estiver instalado
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       mostrar resultado mais detalhado
+.PP
+      --apt           Instalar pacotes do repositório Ubuntu\&.
+.PP
+      --aur           Instalar pacotes do AUR (Arch User Repository)\&.
+.PP
+      --dnf           Instalar pacotes do repositório DNF (Dandified YUM) do Fedora\&.
+.PP
+      --apk           Instalar pacotes do repositório Alpine (Linux)\&.
+.PP
+      --zypper        Instalar pacotes do repositório OpenSUSE\&.
+.PP
+      --xbps          Instalar pacotes do repositório Void (Linux)\&.
+.PP
+      --nix           Instalar pacotes do repositório Nixpkgs (pacotes Nix)\&.
+.PP
+  -n, --name string   Aplicar ao "container" personalizado com este nome\&.
+.PP
+.SS EXAMPLES
+.RS 4
+apx show htop
+.PP
+apx show -i neovim
+.RE
+.SH SUBCOMMAND UNEXPORT
+.RS 4
+Desexportar/remover a entrada de um programa da área de trabalho de um contentor gerido
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBunexport\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Desexportar/remover a entrada de um programa da área de trabalho de um contentor gerido\&.
+.PP
+Se --bin flag for fornecido, remova o link para o binário do contentor\&.
+.RE
+.SS OPTIONS
+      --bin   Desexportar um binário previamente exportado\&.
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       mostrar resultado mais detalhado
+.PP
+      --apt           Instalar pacotes do repositório Ubuntu\&.
+.PP
+      --aur           Instalar pacotes do AUR (Arch User Repository)\&.
+.PP
+      --dnf           Instalar pacotes do repositório DNF (Dandified YUM) do Fedora\&.
+.PP
+      --apk           Instalar pacotes do repositório Alpine (Linux)\&.
+.PP
+      --zypper        Instalar pacotes do repositório OpenSUSE\&.
+.PP
+      --xbps          Instalar pacotes do repositório Void (Linux)\&.
+.PP
+      --nix           Instalar pacotes do repositório Nixpkgs (pacotes Nix)\&.
+.PP
+  -n, --name string   Aplicar ao "container" personalizado com este nome\&.
+.PP
+.SS EXAMPLES
+.RS 4
+apx unexport code
+.RE
+.SH SUBCOMMAND UPGRADE
+.RS 4
+Atualize o sistema instalando/atualizando os pacotes disponíveis\&.
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBupgrade\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Atualize o sistema instalando/atualizando os pacotes disponíveis\&.
+.RE
+.SS OPTIONS
+  -a, --all          Aplicar a todos os "containers"\&.
+.PP
+  -y, --assume-yes   Proceder sem confirmação manual\&.
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       mostrar resultado mais detalhado
+.PP
+      --apt           Instalar pacotes do repositório Ubuntu\&.
+.PP
+      --aur           Instalar pacotes do AUR (Arch User Repository)\&.
+.PP
+      --dnf           Instalar pacotes do repositório DNF (Dandified YUM) do Fedora\&.
+.PP
+      --apk           Instalar pacotes do repositório Alpine (Linux)\&.
+.PP
+      --zypper        Instalar pacotes do repositório OpenSUSE\&.
+.PP
+      --xbps          Instalar pacotes do repositório Void (Linux)\&.
+.PP
+      --nix           Instalar pacotes do repositório Nixpkgs (pacotes Nix)\&.
+.PP
+  -n, --name string   Aplicar ao "container" personalizado com este nome\&.
+.PP
+.SS EXAMPLES
+.RS 4
+apx upgrade
+.RE
+.SH SUBCOMMAND UPDATE
+.RS 4
+Atualizar a lista de pacotes disponíveis
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBupdate\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Atualizar a lista de pacotes disponíveis
+.RE
+.SS OPTIONS
+  -a, --all          Aplicar a todos os "containers"\&.
+.PP
+  -y, --assume-yes   Proceder sem confirmação manual\&.
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       mostrar resultado mais detalhado
+.PP
+      --apt           Instalar pacotes do repositório Ubuntu\&.
+.PP
+      --aur           Instalar pacotes do AUR (Arch User Repository)\&.
+.PP
+      --dnf           Instalar pacotes do repositório DNF (Dandified YUM) do Fedora\&.
+.PP
+      --apk           Instalar pacotes do repositório Alpine (Linux)\&.
+.PP
+      --zypper        Instalar pacotes do repositório OpenSUSE\&.
+.PP
+      --xbps          Instalar pacotes do repositório Void (Linux)\&.
+.PP
+      --nix           Instalar pacotes do repositório Nixpkgs (pacotes Nix)\&.
+.PP
+  -n, --name string   Aplicar ao "container" personalizado com este nome\&.
+.PP
+
