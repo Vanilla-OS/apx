@@ -4,6 +4,7 @@ package core
 	Authors:
 		Mirko Brombin <send@mirko.pm>
 		Pietro di Caprio <pietro@fabricators.ltd>
+		Sean (TheOceanBreeze) <20156521+TheOceanBreeze@users.noreply.github.com>
 	Copyright: 2023
 	Description: Apx is a wrapper around apt to make it works inside a container
 	from outside, directly on the host.
@@ -78,18 +79,8 @@ func (c *Container) GetContainerImage() (image string, err error) {
 func (c *Container) GetContainerName() (name string) {
 	var cn strings.Builder
 	switch c.containerType {
-	case APT:
-		cn.WriteString("apx_managed")
-	case AUR:
-		cn.WriteString("apx_managed_aur")
-	case DNF:
-		cn.WriteString("apx_managed_dnf")
-	case APK:
-		cn.WriteString("apx_managed_apk")
-	case ZYPPER:
-		cn.WriteString("apx_managed_zypper")
-	case XBPS:
-		cn.WriteString("apx_managed_xbps")
+	case APT, AUR, DNF, APK, ZYPPER, XBPS:
+		cn.WriteString("apx_managed_" + c.containerType)
 	default:
 		log.Fatal(fmt.Errorf("unspecified container type"))
 	}
@@ -398,18 +389,8 @@ func (c *Container) ExportBinary(bin string) error {
 			// If duplicate is located in ~/.local/bin, we'll handle it later
 			if entry.Name() == bin && !strings.Contains(path, "/.local/bin") {
 				switch c.containerType {
-				case APT:
-					bin_rename = fmt.Sprintf("apt_%s", bin)
-				case AUR:
-					bin_rename = fmt.Sprintf("aur_%s", bin)
-				case DNF:
-					bin_rename = fmt.Sprintf("dnf_%s", bin)
-				case APK:
-					bin_rename = fmt.Sprintf("apk_%s", bin)
-				case ZYPPER:
-					bin_rename = fmt.Sprintf("zypper_%s", bin)
-				case XBPS:
-					bin_rename = fmt.Sprintf("xbps_%s", bin)
+				case APT, AUR, DNF, APK, ZYPPER, XBPS:
+					prefix = fmt.Sprintf(string.toLower(c.containerType), "_%s", bin)
 				default:
 					return errors.New("can't export binary from unknown container")
 				}
@@ -504,18 +485,9 @@ func (c *Container) RemoveBinary(bin string, fail_silently bool) error {
 		// Try to look for a prefixed file
 		var prefix string
 		switch c.containerType {
-		case APT:
-			prefix = fmt.Sprintf("apt_%s", bin)
-		case AUR:
-			prefix = fmt.Sprintf("aur_%s", bin)
-		case DNF:
-			prefix = fmt.Sprintf("dnf_%s", bin)
-		case APK:
-			prefix = fmt.Sprintf("apk_%s", bin)
-		case ZYPPER:
-			prefix = fmt.Sprintf("zypper_%s", bin)
-		case XBPS:
-			prefix = fmt.Sprintf("xbps_%s", bin)
+		
+		case APT, AUR, DNF, APK, ZYPPER, XBPS:
+			prefix = fmt.Sprintf(string.toLower(c.containerType), "_%s", bin)
 		default:
 			return errors.New("Can't unexport binary from unknown container")
 		}
