@@ -1,6 +1,6 @@
 flags:
   apt: ""
-  aur: ""
+  aur: "Install packages from the AUR (Arch User Repository)."
   dnf: "Install packages from the Fedora's DNF (Dandified YUM) repository."
   apk: "Install packages from the Alpine repository."
   zypper: "Install packages from the OpenSUSE repository."
