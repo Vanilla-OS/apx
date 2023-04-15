@@ -33,7 +33,7 @@ enter:
   failedEnter: "nem sikerült belépni a kezelt konténerbe"
   outside: "Ön most már a kezelt konténeren kívül van."
 export:
-  use: "export <program/binary>"
+  use: "export <program/bináris>"
   long: "Program asztali bejegyzésének exportálása/újra létrehozása egy felügyelt\
     \ tárolóból"
   short: "Program asztali bejegyzésének exportálása/újra létrehozása egy felügyelt\
@@ -57,9 +57,9 @@ install:
   sideload: "Csomag telepítése helyi fájlból."
   sideArgs: "a sideload egy helyi fájl elérési útvonalát kéri"
   sideUserTemp: "nem tudja áthelyezni a fájlt a felhasználói ideiglenes fájlba: %s"
-  exportBinPrompt: "Export binary %s to host?\nThis will let you call it directly\
-    \ from the shell without using \"apx run\".\nYou can also export it later using\
-    \ \"apx export --bin %s\""
+  exportBinPrompt: "Exportálás bináris %s a fogadóra?\nEz lehetővé teszi, hogy közvetlenül\
+    \ a shell-ből hívd meg az \"apx run\" használata nélkül.\nKésőbb is exportálhatod\
+    \ a \"apx export --bin %s\" paranccsal"
 list:
   use: "list"
   long: "List installed packages."
