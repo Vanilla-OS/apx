@@ -1,12 +1,12 @@
 flags:
-  apt: ""
-  aur: ""
-  dnf: ""
-  apk: ""
-  zypper: ""
-  xbps: ""
-  nix: ""
-  name: ""
+  apt: "Install packages from the Ubuntu repository."
+  aur: "Install packages from the AUR (Arch User Repository)."
+  dnf: "Install packages from the Fedora's DNF (Dandified YUM) repository."
+  apk: "Install packages from the Alpine repository."
+  zypper: "Install packages from the OpenSUSE repository."
+  xbps: "Install packages from the Void (Linux) repository."
+  nix: "Install packages from the Nixpkgs (Nix packages) repository."
+  name: "Apply to custom container with this name."
 apx:
   use: "apx"
   long: "Apx არის პაკეტის მენეჯერი მრავალი წყაროს მხარდაჭერით,\nსაშუალებას გაძლევთ\
@@ -19,11 +19,11 @@ apx:
   assumeYes: "გაგრძელება ხელით დადასტურების გარეშე."
   notForNix: "ეს ბრძანება არ ვრცელდება nix გარემოზე."
 autoremove:
-  use: ""
-  long: ""
-  short: ""
+  use: "autoremove"
+  long: "Remove all unused packages automatically"
+  short: "Remove all unused packages automatically"
 clean:
-  use: ""
+  use: "clean"
   long: "Clean the apx package manager cache"
   short: "Clean the apx package manager cache"
 enter:
