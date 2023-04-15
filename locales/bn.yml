@@ -30,51 +30,53 @@ enter:
   use: "enter"
   long: "একটি পরিচালিত কন্টেইনারের অভ্যন্তরীণ শেলে প্রবেশ করুন"
   short: "একটি পরিচালিত কন্টেইনারের অভ্যন্তরীণ শেলে প্রবেশ করুন"
-  failedEnter: "failed to enter managed container"
-  outside: "You are now outside the managed container."
+  failedEnter: "নিয়ন্ত্রিত কন্টেইনারে প্রবেশ করতে ব্যর্থ হয়েছে"
+  outside: "আপনি এখন নিয়ন্ত্রিত কন্টেইনারের বাইরে আছেন।"
 export:
   use: "export <program/binary>"
-  long: "Export/Recreate a program's desktop entry from a managed container"
-  short: "Export/Recreate a program's desktop entry from a managed container"
-  binFlag: "Export binary command"
+  long: "একটি নিয়ন্ত্রিত কন্টেইনার থেকে যে কোনো প্রোগ্রামের ডেস্কটপ এন্ট্রি এক্সপোর্ট/পুনরায়\
+    \ তৈরি করুন"
+  short: "একটি নিয়ন্ত্রিত কন্টেইনার থেকে কোনো একটি প্রোগ্রামের ডেস্কটপ এন্ট্রি এক্সপোর্ট/পুনরায়\
+    \ তৈরি করুন"
+  binFlag: "বাইনারি কমান্ড এক্সপোর্ট করুন"
 init:
   use: "init"
-  long: "Initialize a managed container"
-  short: "Initialize a managed container"
-  confirm: "Container already exists. Do you want to re-initialize it? This operation\
-    \ will remove everything, including your files in the container."
-  remove: "error removing container: %v"
-  create: "error creating container: %v"
+  long: "একটি নিয়ন্ত্রিত কন্টেইনার প্রক্রিয়াধীন করুন"
+  short: "একটি নিয়ন্ত্রিত কন্টেইনার প্রক্রিয়াধীন করুন"
+  confirm: "কন্টেইনারটি আগে থেকেই আছে। আপনি কি এটি পুনরায় আরম্ভ করতে চান? এই প্রক্রিয়াটি\
+    \ কন্টেইনারটিতে থাকা আপনার ফাইলগুলি সহ সবকিছু মুছে ফেলবে৷"
+  remove: "কন্টেইনার অপসারণে ত্রুটি: %v"
+  create: "কন্টেইনার তৈরিতে ত্রুটি: %v"
 install:
-  use: "apx install <package>"
-  long: "Install packages inside a managed container."
-  short: "Install packages inside a managed container."
-  assumeYes: "Proceed without manual confirmation"
-  fixBroken: "Fix broken dependencies before installing"
-  noExport: "Do not export a desktop entry after the installation."
-  sideload: "Install a package from a local file."
-  sideArgs: "sideload requires the path to a local file"
-  sideUserTemp: "can't move file to user temp: %s"
+  use: "apx install <প্যাকেজ>"
+  long: "একটি নিয়ন্ত্রিত কন্টেইনারের ভিতরে প্যাকেজসমূহ ইনস্টল করুন।"
+  short: "একটি নিয়ন্ত্রিত কন্টেইনারের ভিতরে প্যাকেজসমূহ ইনস্টল করুন।"
+  assumeYes: "ম্যানুয়াল নিশ্চিতকরণ ছাড়াই এগিয়ে যান"
+  fixBroken: "ইনস্টল করার পূর্বে ত্রুটিযুক্ত ডিপেন্ডেন্সিগুলি ঠিক করে নিন"
+  noExport: "ইনস্টলেশনের পর কোনো ডেস্কটপ এন্ট্রি এক্সপোর্ট করবেন না।"
+  sideload: "একটি স্থানীয় ফাইল থেকে কোনো প্যাকেজ ইনস্টল করুন।"
+  sideArgs: "সাইডলোডের জন্য একটি স্থানীয় ফাইলের ঠিকানা প্রয়োজন"
+  sideUserTemp: "ফাইলটি ব্যবহারকারীর টেম্প ডিরেক্টরিতে সরানো যাচ্ছে না: %s"
   exportBinPrompt: "Export binary %s to host?\nThis will let you call it directly\
     \ from the shell without using \"apx run\".\nYou can also export it later using\
     \ \"apx export --bin %s\""
 list:
   use: "list"
-  long: "List installed packages."
-  short: "List installed packages."
-  upgradable: "Show upgradable packages"
-  installed: "Show installed packages"
+  long: "ইনস্টল করা প্যাকেজগুলির তালিকা করুন।"
+  short: "ইনস্টল করা প্যাকেজগুলির তালিকা করুন।"
+  upgradable: "আপগ্রেডযোগ্য প্যাকেজগুলি দেখান"
+  installed: "ইনস্টল করা প্যাকেজগুলি দেখান"
 nix:
   use: "nix"
   long: "Manage a custom installation of nix in your $HOME directory.\n\nThe `apx\
     \ nix` integration serves as a wrapper for the\ndefault nix profile. Once installed,\
     \ you are free to use any features of\nnix without using the `apx nix` command."
-  short: "Manage nix installation"
+  short: "নিক্স ইনস্টলেশন পরিচালনা করুন"
 nixinit:
   use: "init"
   long: "Initializes a custom installation of nix by creating $HOME/.nix and setting\
     \ up some SystemD units to mount it as /nix."
-  short: "Initialize nix repository"
+  short: "নিক্স রিপোজিটরি প্রক্রিয়াধীন করুন"
   confirm: "This will create a '.nix' folder in your home directory and set up some\
     \ SystemD units to mount that folder at /nix before running the installation.\
     \ Confirm 'y' to continue."
@@ -89,58 +91,58 @@ nixremove:
   long: "Remove the first matching package installed in the default nix profile.\n\
     \nNote: It is possible to have multiple installations of the same package.\n\n\
     If you need more precision use 'nix profile list' and 'nix profile remove'."
-  short: "Remove a nix package"
-  success: "Package removal complete"
+  short: "একটি nix প্যাকেজ অপসারণ করুন"
+  success: "প্যাকেজ অপসারণ সম্পূর্ণ হয়েছে"
 nixinstall:
   use: "install <pkg>"
   long: "Install a package from the `nixpkgs` repository as a flake in the default\
     \ nix profile."
-  short: "Install nix package"
-  allowUnfree: "Allow packages with unfree licenses"
-  allowInsecure: "Allow packages with known vulnerabilities."
-  error: "error installing packages"
+  short: "নিক্স প্যাকেজ ইনস্টল করুন"
+  allowUnfree: "আনফ্রি লাইসেন্সযুক্ত প্যাকেজগুলিকে অনুমতি দিন"
+  allowInsecure: "পরিচিত দুর্বলতাসহ প্যাকেজগুলিকে অনুমতি দিন।"
+  error: "প্যাকেজ ইনস্টল করতে ত্রুটি"
   runInit: "Have you run the `init` command yet?"
-  success: "Successfully installed package."
+  success: "প্যাকেজ সফলভাবে ইনস্টল করা হয়েছে।"
 nixupgrade:
-  success: "Successfully upgraded package."
-  atleastone: "At least one package name required."
+  success: "সফলভাবে প্যাকেজ আপগ্রেড করা হয়েছে।"
+  atleastone: "কমপক্ষে একটি প্যাকেজের নাম আবশ্যক।"
 purge:
-  use: "purge <packages>"
-  long: "Purge packages inside a managed container"
-  short: "Purge packages inside a managed container"
+  use: "purge <প্যাকেজসমূহ>"
+  long: "একটি নিয়ন্ত্রিত কন্টেইনারের ভিতরে থাকা প্যাকেজসমূহ পরিষ্কার করুন"
+  short: "একটি নিয়ন্ত্রিত কন্টেইনারের ভিতরে থাকা প্যাকেজসমূহ পরিষ্কার করুন"
 remove:
-  use: "remove <package>"
+  use: "remove <প্যাকেজ>"
   long: "Remove packages inside a managed container."
   short: "Remove packages inside a managed container."
 run:
-  use: "run <command>"
+  use: "run <কমান্ড>"
   long: "Run a program inside a managed container."
   short: "Run a program inside a managed container."
   nixMsg: "Do not use `apx run` for nix packages. Run them directly as you would with\
     \ a native package."
 search:
-  use: "search <packages>"
+  use: "search <প্যাকেজসমূহ>"
   long: "Search for packages in a managed container."
   short: "Search for packages in a managed container."
 show:
-  use: "show <package>"
-  long: "Show details about a package"
-  short: "Show details about a package"
+  use: "show <প্যাকেজ>"
+  long: "একটি প্যাকেজ সম্পর্কে বিস্তারিত দেখান"
+  short: "একটি প্যাকেজ সম্পর্কে বিস্তারিত দেখান"
   isInstalled: "Only return whether the package is installed"
-  found: "%s is installed"
-  notFound: "%s is not installed"
+  found: "%s ইনস্টল করা হয়েছে"
+  notFound: "%s ইনস্টল করা হয়নি"
 unexport:
-  use: "unexport <package>"
+  use: "unexport <প্যাকেজ>"
   long: "Unexport/Remove a program's desktop entry from a managed container.\nIf --bin\
     \ flag is provided, remove link to container binary."
   short: "Unexport/Remove a program's desktop entry from a managed container"
-  binFlag: "Unexport a previously exported binary."
-  success: "Successfully removed exported binary `%s`."
+  binFlag: "পূর্বে এক্সপোর্ট করা বাইনারি আনএক্সপোর্ট করুন।"
+  success: "সফলভাবে এক্সপোর্টেড বাইনারি '%s' অপসারণ করা হয়েছে।"
 update:
   use: "update"
   long: "Update the list of available packages"
   short: "Update the list of available packages"
-  allFlag: "Apply to all containers"
+  allFlag: "সমস্ত কন্টেইনারে প্রয়োগ করুন"
 upgrade:
   use: "upgrade"
   long: "Upgrade the system by installing/upgrading available packages."

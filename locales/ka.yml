@@ -9,15 +9,15 @@ flags:
   name: "Apply to custom container with this name."
 apx:
   use: "apx"
-  long: "Apx is a package manager with support for multiple sources,\nallowing you\
-    \ to install packages in a managed container."
-  short: "Apx is a package manager with support for multiple sources,\nallowing you\
-    \ to install packages in a managed container."
+  long: "Apx არის პაკეტის მენეჯერი მრავალი წყაროს მხარდაჭერით,\nსაშუალებას გაძლევთ\
+    \ დააინსტალიროთ პაკეტები მართულ კონტეინერში."
+  short: "Apx არის პაკეტის მენეჯერი მრავალი წყაროს მხარდაჭერით,\nსაშუალებას გაძლევთ\
+    \ დააინსტალიროთ პაკეტები მართულ კონტეინერში."
   verboseFlag: "show more detailed output"
   allFlag: "Apply for all containers."
-  cxl: "Operation canceled at user request."
-  assumeYes: "Proceed without manual confirmation."
-  notForNix: "This command does not apply to the nix environment."
+  cxl: "ოპერაცია გაუქმდა მომხმარებლის მოთხოვნით."
+  assumeYes: "გაგრძელება ხელით დადასტურების გარეშე."
+  notForNix: "ეს ბრძანება არ ვრცელდება nix გარემოზე."
 autoremove:
   use: "autoremove"
   long: "Remove all unused packages automatically"
