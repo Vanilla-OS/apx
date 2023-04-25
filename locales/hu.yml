@@ -21,15 +21,15 @@ apx:
 autoremove:
   use: "autoremove"
   long: "Automatikusan eltávolít minden nem használt csomagot"
-  short: "Nem használt csomagok automatikus eltávolítása"
+  short: "Automatikusan eltávolít minden nem használt csomagot"
 clean:
   use: "clean"
   long: "Az apx csomagkezelő gyorsítótárának tisztítása"
   short: "Az apx csomagkezelő gyorsítótárának tisztítása"
 enter:
   use: "enter"
-  long: "Enter a shell in the managed container"
-  short: "Enter a shell in the managed container"
+  long: "Lépjen be egy héjba a kezelt konténerben"
+  short: "Lépjen be egy héjba a kezelt konténerben"
   failedEnter: "nem sikerült belépni a kezelt konténerbe"
   outside: "Ön most már a kezelt konténeren kívül van."
 export:
@@ -62,10 +62,10 @@ install:
     \ a \"apx export --bin %s\" paranccsal."
 list:
   use: "list"
-  long: "List installed packages."
-  short: "List installed packages."
-  upgradable: "Show upgradable packages"
-  installed: "Show installed packages"
+  long: "Telepített csomagok listázása."
+  short: "Telepített csomagok listázása."
+  upgradable: "Frissíthető csomagok megjelenítése"
+  installed: "Telepített csomagok megjelenítése"
 nix:
   use: "nix"
   long: "Manage a custom installation of nix in your $HOME directory.\n\nThe `apx\
