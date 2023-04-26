@@ -1,23 +1,23 @@
 flags:
   apt: "Instale paquetes desde el repositorio de Ubuntu."
   aur: "Instalar paquetes desde el AUR (Arch User Repository)."
-  dnf: "Install packages from the Fedora's DNF (Dandified YUM) repository."
-  apk: "Install packages from the Alpine repository."
-  zypper: "Install packages from the OpenSUSE repository."
-  xbps: "Install packages from the Void (Linux) repository."
-  nix: "Install packages from the Nixpkgs (Nix packages) repository."
-  name: "Apply to custom container with this name."
+  dnf: "Instale los paquetes desde el repositorio DNF (Dandified YUM) de Fedora."
+  apk: "Instale los paquetes desde el repositorio Alpine"
+  zypper: "Instalar paquetes desde el repositorio OpenSUSE."
+  xbps: "Instalar paquetes desde el repositorio de Void (Linux)."
+  nix: "Instalar los paquetes desde el repositorio Nixpkgs (paquetes de Nix)"
+  name: "Aplicar al contenedor personalizado con este nombre."
 apx:
   use: "apx"
-  long: "Apx is a package manager with support for multiple sources,\nallowing you\
-    \ to install packages in a managed container."
-  short: "Apx is a package manager with support for multiple sources,\nallowing you\
-    \ to install packages in a managed container."
-  verboseFlag: "show more detailed output"
+  long: "Apx es un gestor de paquetes con soporte para varias fuentes,\npermitiendote\
+    \ instalar paquetes en un contenedor administrado."
+  short: "Apx es un gestor de paquetes con soporte para multiples fuentes,\npermitendote\
+    \ instalar paquetes en un contenedor administrado."
+  verboseFlag: "mostrar salida mas detallada"
   allFlag: "Aplicable para todos los tipos de contenedores."
   cxl: "Operación cancelada por petición del usuario."
-  assumeYes: "Proceed without manual confirmation."
-  notForNix: "This command does not apply to the nix environment."
+  assumeYes: "Proceder sin confirmacion manual"
+  notForNix: "Esto comando no es aplicable al entorno nix"
 autoremove:
   use: "autoremove"
   long: "Remove all unused packages automatically"
