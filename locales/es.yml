@@ -13,11 +13,11 @@ apx:
     \ instalar paquetes en un contenedor administrado."
   short: "Apx es un gestor de paquetes con soporte para multiples fuentes,\npermitendote\
     \ instalar paquetes en un contenedor administrado."
-  verboseFlag: "show more detailed output"
+  verboseFlag: "mostrar salida mas detallada"
   allFlag: "Aplicable para todos los tipos de contenedores."
   cxl: "Operación cancelada por petición del usuario."
-  assumeYes: "Proceed without manual confirmation."
-  notForNix: "This command does not apply to the nix environment."
+  assumeYes: "Proceder sin confirmacion manual"
+  notForNix: "Esto comando no es aplicable al entorno nix"
 autoremove:
   use: "autoremove"
   long: "Remove all unused packages automatically"
