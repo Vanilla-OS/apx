@@ -15,7 +15,7 @@ apx:
     \ to install packages in a managed container."
   verboseFlag: "show more detailed output"
   allFlag: "Apply for all containers."
-  cxl: "Operation canceled at user request."
+  cxl: "Operation cancelled at user request."
   assumeYes: "Proceed without manual confirmation."
   notForNix: "This command does not apply to the nix environment."
 autoremove:
@@ -39,9 +39,9 @@ export:
   binFlag: "Export binary command"
 init:
   use: "init"
-  long: "Initialize a managed container"
-  short: "Initialize a managed container"
-  confirm: "Container already exists. Do you want to re-initialize it? This operation\
+  long: "Initialise a managed container"
+  short: "Initialise a managed container"
+  confirm: "Container already exists. Do you want to re-initialise it? This operation\
     \ will remove everything, including your files in the container."
   remove: "error removing container: %v"
   create: "error creating container: %v"
@@ -72,16 +72,16 @@ nix:
   short: "Manage nix installation"
 nixinit:
   use: "init"
-  long: "Initializes a custom installation of nix by creating $HOME/.nix and setting\
+  long: "Initialises a custom installation of nix by creating $HOME/.nix and setting\
     \ up some SystemD units to mount it as /nix."
-  short: "Initialize nix repository"
+  short: "Initialise nix repository"
   confirm: "This will create a '.nix' folder in your home directory and set up some\
     \ SystemD units to mount that folder at /nix before running the installation.\
     \ Confirm 'y' to continue."
-  unfree: "Would you like to allow 'unfree' packages without Open Source licenses\
+  unfree: "Would you like to allow 'unfree' packages without Open Source licences\
     \ (Visual Studio Code, Spotify, etc)?"
   insecure: "Would you like to allow 'insecure' packages (software with known vulnerabilities)?"
-  swcenter: "Would you like to install the Nix Software Center - a graphical software\
+  swcenter: "Would you like to install the Nix Software Centre - a graphical software\
     \ manager for Nix?"
   success: "Installation complete. Reboot to start using nix."
 nixremove:
@@ -96,7 +96,7 @@ nixinstall:
   long: "Install a package from the `nixpkgs` repository as a flake in the default\
     \ nix profile."
   short: "Install nix package"
-  allowUnfree: "Allow packages with unfree licenses"
+  allowUnfree: "Allow packages with unfree licences"
   allowInsecure: "Allow packages with known vulnerabilities."
   error: "error installing packages"
   runInit: "Have you run the `init` command yet?"
