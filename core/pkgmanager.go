@@ -29,6 +29,8 @@ func (c *Container) GetPkgCommand(command string) []string {
 		return GetZypperPkgCommand(command)
 	case XBPS:
 		return GetXbpsPkgCommand(command)
+	case SWUPD:
+		return GetSwupdPkgCommand(command)
 	default:
 		return nil
 	}
@@ -50,6 +52,8 @@ func GetDefaultPkgCommand(command string) []string {
 		return GetZypperPkgCommand(command)
 	case "xbps":
 		return GetXbpsPkgCommand(command)
+	case "swupd":
+		return GetSwupdPkgCommand(command)
 	default:
 		return []string{"echo", pkgmanager + " is not implemented yet!"}
 	}
@@ -240,8 +244,41 @@ func GetXbpsPkgCommand(command string) []string {
 	}
 }
 
+func GetSwupdPkgCommand(command string) []string {
+	switch command {
+
+	case "autoremove":
+		return []string{"sudo", "swupd", "bundle-remove", "--orphans"}
+	case "clean":
+		return []string{"sudo", "swupd", "clean"}
+	case "install":
+		return []string{"sudo", "swupd", "bundle-add"}
+	case "list":
+		return []string{"sudo", "swupd", "bundle-list", "--status"}
+	case "purge":
+		return []string{"sudo", "swupd", "bundle-remove", "-R"}
+	case "remove":
+		return []string{"sudo", "swupd", "bundle-remove"}
+	case "search":
+		return []string{"sudo", "swupd", "search"}
+	case "show":
+		return []string{"sudo", "swupd", "bundle-info"}
+	case "update":
+		return []string{"sudo", "swupd", "check-update"}
+	case "upgrade":
+		return []string{"sudo", "swupd", "update"}
+	case "install-os-core-search":
+		return []string{
+			"sudo", "swupd", "bundle-add", "-y", "os-core-search",
+		}
+	default:
+		return nil
+	}
+}
+
 func (c *Container) IsPackageInstalled(pkgname string) (bool, error) {
 	var query_cmd string
+    extra := ""
 	switch c.containerType {
 	case APT:
 		query_cmd = "dpkg -s"
@@ -255,11 +292,14 @@ func (c *Container) IsPackageInstalled(pkgname string) (bool, error) {
 		query_cmd = "rpm -q"
 	case XBPS:
 		query_cmd = "xbps-query"
+	case SWUPD:
+		query_cmd = "LANG=C swupd search"
+        extra = " | grep -F \\(installed\\)"
 	default:
 		return false, errors.New("Cannot query package from unknown container")
 	}
 
-	query_check_str := fmt.Sprintf("if $(%s %s >/dev/null 2>/dev/null); then echo true; else echo false; fi", query_cmd, pkgname)
+	query_check_str := fmt.Sprintf("if $(%s %s%s >/dev/null 2>/dev/null); then echo true; else echo false; fi", query_cmd, pkgname, extra)
 
 	result, err := c.Output("sh", "-c", query_check_str)
 	if err != nil {
@@ -289,6 +329,8 @@ func (c *Container) BinariesProvidedByPackage(pkgname string) ([]string, error) 
 		query_cmd = "rpm -ql %s | grep /usr/bin/ | cut -f 4 -d /"
 	case XBPS:
 		query_cmd = "xbps-query -f %s | grep /usr/bin/ | cut -f 4 -d /"
+	case SWUPD:
+		query_cmd = "sudo swupd search-file -Bm %s | grep /usr/bin/ | cut -f 4 -d / | cut -f 1 -d ,"
 	default:
 		return []string{}, errors.New("Cannot query package from unknown container")
 	}

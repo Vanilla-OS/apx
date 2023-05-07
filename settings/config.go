@@ -102,6 +102,8 @@ func GetHostInfo() (img string, pkgmanager string, err error) {
 		return "registry.opensuse.org/opensuse/tumbleweed:latest" + distro_version, "zypper", nil
 	case "xbps":
 		return "ghcr.io/void-linux/void-linux:latest-full-x86_64" + distro_version, "xbps", nil
+	case "swupd":
+		return "docker.io/library/clearlinux:latest" + distro_version, "swupd", nil
 	default:
 		return "", "", fmt.Errorf("Unsupported distro detected")
 	}

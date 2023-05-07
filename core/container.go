@@ -32,11 +32,12 @@ const (
 	APK    ContainerType = iota // 3
 	ZYPPER ContainerType = iota // 4
 	XBPS   ContainerType = iota // 5
+	SWUPD  ContainerType = iota // 6
 )
 
 // How many container types we offer. Must be always the same
 // as the number of options above!
-const CONTAINER_TYPES = 6
+const CONTAINER_TYPES = 7
 
 type Container struct {
 	containerType ContainerType
@@ -68,6 +69,8 @@ func (c *Container) GetContainerImage() (image string, err error) {
 		return "registry.opensuse.org/opensuse/tumbleweed:latest", nil
 	case XBPS:
 		return "ghcr.io/void-linux/void-linux:latest-full-x86_64", nil
+	case SWUPD:
+		return "docker.io/library/clearlinux:latest", nil
 	default:
 		image = ""
 		err = errors.New("can't retrieve image for unknown container")
@@ -90,6 +93,8 @@ func (c *Container) GetContainerName() (name string) {
 		cn.WriteString("apx_managed_zypper")
 	case XBPS:
 		cn.WriteString("apx_managed_xbps")
+	case SWUPD:
+		cn.WriteString("apx_managed_swupd")
 	default:
 		log.Fatal(fmt.Errorf("unspecified container type"))
 	}
@@ -243,10 +248,10 @@ func (c *Container) Create() error {
 
 	container_name := c.GetContainerName()
 	spinner, err := cmdr.Spinner.Start("Creating container...")
-    if err != nil {
-        return err
-    }
-    defer spinner.Stop()
+	if err != nil {
+		return err
+	}
+	defer spinner.Stop()
 
 	cmd := exec.Command(settings.Cnf.DistroboxPath, "create",
 		"--name", container_name,
@@ -296,6 +301,10 @@ func (c *Container) Create() error {
 		c.Run(GetAurPkgCommand("install-yay")...)
 	}
 
+	if c.containerType == SWUPD {
+		c.Run(GetSwupdPkgCommand("install-os-core-search")...)
+	}
+
 	spinner.Success("Container created.")
 
 	return err
@@ -306,10 +315,10 @@ func (c *Container) Stop() error {
 
 	container_name := c.GetContainerName()
 	spinner, err := cmdr.Spinner.Start("Stopping container...")
-    if err != nil {
-        return err
-    }
-    defer spinner.Stop()
+	if err != nil {
+		return err
+	}
+	defer spinner.Stop()
 
 	cmd := exec.Command(settings.Cnf.DistroboxPath, "stop", container_name, "--yes")
 	_, err = cmd.Output()
@@ -328,10 +337,10 @@ func (c *Container) Remove() error {
 
 	container_name := c.GetContainerName()
 	spinner, err := cmdr.Spinner.Start("Removing container...")
-    if err != nil {
-        return err
-    }
-    defer spinner.Stop()
+	if err != nil {
+		return err
+	}
+	defer spinner.Stop()
 
 	if !c.Exists() {
 		return nil
@@ -362,10 +371,10 @@ func (c *Container) ExportBinary(bin string) error {
 	}
 
 	spinner, err := cmdr.Spinner.Start(fmt.Sprintf("Exporting binary: %v.", bin))
-    if err != nil {
-        return err
-    }
-    defer spinner.Stop()
+	if err != nil {
+		return err
+	}
+	defer spinner.Stop()
 
 	// If bin name not in $PATH, export to .local/bin
 	// Otherwise, export with suffix based on container name
@@ -410,6 +419,8 @@ func (c *Container) ExportBinary(bin string) error {
 					bin_rename = fmt.Sprintf("zypper_%s", bin)
 				case XBPS:
 					bin_rename = fmt.Sprintf("xbps_%s", bin)
+				case SWUPD:
+					bin_rename = fmt.Sprintf("swupd_%s", bin)
 				default:
 					return errors.New("can't export binary from unknown container")
 				}
@@ -456,10 +467,10 @@ func (c *Container) ExportBinary(bin string) error {
 func (c *Container) RemoveDesktopEntry(program string) error {
 	container_name := c.GetContainerName()
 	spinner, err := cmdr.Spinner.Start(fmt.Sprintf("Removing desktop entry: %v", program))
-    if err != nil {
-        return err
-    }
-    defer spinner.Stop()
+	if err != nil {
+		return err
+	}
+	defer spinner.Stop()
 
 	home_dir, err := os.UserHomeDir()
 	if err != nil {
@@ -494,10 +505,10 @@ func (c *Container) RemoveDesktopEntry(program string) error {
 func (c *Container) RemoveBinary(bin string, fail_silently bool) error {
 	// Check file exists in ~/.local/bin
 	spinner, err := cmdr.Spinner.Start(fmt.Sprintf("Removing binary export: %v.", bin))
-    if err != nil {
-        return err
-    }
-    defer spinner.Stop()
+	if err != nil {
+		return err
+	}
+	defer spinner.Stop()
 
 	local_bin_file := fmt.Sprintf("/home/%s/.local/bin/%s", os.Getenv("USER"), bin)
 	if _, err := os.Stat(local_bin_file); os.IsNotExist(err) {
@@ -516,6 +527,8 @@ func (c *Container) RemoveBinary(bin string, fail_silently bool) error {
 			prefix = fmt.Sprintf("zypper_%s", bin)
 		case XBPS:
 			prefix = fmt.Sprintf("xbps_%s", bin)
+		case SWUPD:
+			prefix = fmt.Sprintf("swupd_%s", bin)
 		default:
 			return errors.New("Can't unexport binary from unknown container")
 		}
