@@ -10,6 +10,9 @@ package main
 
 import (
 	"embed"
+	"strings"
+	"os"
+	"strconv"
 
 	"github.com/spf13/cobra"
 	"github.com/vanilla-os/apx/cmd"
@@ -144,9 +147,18 @@ func main() {
 	update.GroupID = containerGroup.ID
 	root.AddCommand(cmd.AddContainerFlags(update))
 	cmd.AddContainerFlags(root)
+
 	// run the app
 	err := apx.Run()
+
 	if err != nil {
 		cmdr.Error.Println(err)
+
+		if strings.Contains(err.Error(), "exit status ") {
+			errorcode, _ := strconv.Atoi(strings.Trim(err.Error(), "exit status "))
+			os.Exit(errorcode)
+		}
+		// No error code present, just use error code 1
+		os.Exit(1)
 	}
 }
