@@ -7,6 +7,7 @@ flags:
   xbps: "Csomagok telepítése a Void (Linux) tárolóból."
   nix: "Csomagok telepítése a Nixpkgs (Nix packages) tárolóból."
   name: "Alkalmazza az egyéni tárolóra ezzel a névvel."
+  swupd: Install packages from the Clear Linux* store
 apx:
   use: "apx"
   long: "Az Apx egy csomagkezelő, amely támogatja a több forrásból származó csomagokat,\n\

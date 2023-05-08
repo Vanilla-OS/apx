@@ -7,6 +7,7 @@ flags:
   xbps: "从 Void (Linux) 软件仓库安装软件包。"
   nix: "从 Nixpkgs（Nix 软件包）仓库安装软件包。"
   name: "将此名称应用于自定义容器。"
+  swupd: Install packages from the Clear Linux* store
 apx:
   use: "apx"
   long: "Apx 是支持多软件源的软件包管理器，\n允许用户在受管理的容器中安装软件包。"

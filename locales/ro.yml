@@ -7,6 +7,7 @@ flags:
   xbps: "Instalați pachete din depozitul Void (Linux)."
   nix: "Instalați pachete din depozitul Nixpkgs (pachete Nix)."
   name: "Aplicați la containerul personalizat cu acest nume."
+  swupd: Install packages from the Clear Linux* store
 apx:
   use: "apx"
   long: "Apx este un manager de pachete cu suport pentru mai multe surse,\npermițându-vă\

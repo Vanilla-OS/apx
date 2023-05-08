@@ -7,6 +7,7 @@ flags:
   xbps: "Installer pakker fra Void (Linux) repository."
   nix: "Installer pakker fra Nixpkgs (Nix-pakker)-depotet."
   name: "Gjelder for tilpasset beholder med dette navnet."
+  swupd: Install packages from the Clear Linux* store
 apx:
   use: "apx"
   long: "Apx er en pakkeadministrator med støtte for flere kilder,\nslik at du kan\

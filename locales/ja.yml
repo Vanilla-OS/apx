@@ -7,6 +7,7 @@ flags:
   xbps: "Void (Linux)リポジトリからパッケージをインストールします。"
   nix: "Nixpkgs (Nix packages)リポジトリからパッケージをインストールします。"
   name: "この名前のカスタムコンテナに適用します"
+  swupd: Install packages from the Clear Linux* store
 apx:
   use: "apx"
   long: "Apxは、複数のソースをサポートするパッケージマネージャで、\n管理されたコンテナにパッケージをインストールすることができます。"

@@ -7,6 +7,7 @@ flags:
   xbps: "Installiere Pakete aus den Void (Linux) Paketquellen."
   nix: "Installiere Pakete aus den Nixpkgs (Nix packages) Paketquellen."
   name: "Auf den benutzerdefinierten Container mit diesem Namen anwenden."
+  swupd: Install packages from the Clear Linux* store
 apx:
   use: "apx"
   long: "Apx ist ein Paketmanager mit Unterstützung für mehrere Quellen,\nder es Ihnen\

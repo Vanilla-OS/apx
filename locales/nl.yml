@@ -7,6 +7,7 @@ flags:
   xbps: "Pakketten vanuit de Void-repository installeren"
   nix: "Pakketten vanuit de Nixpkgs-repository installeren"
   name: "Toepassen op aangepaste container met deze naam"
+  swupd: Install packages from the Clear Linux* store
 apx:
   use: "apx"
   long: "Apx is een pakketbeheerder met ondersteuning voor meerdere bronnen, waarmee\

@@ -7,6 +7,7 @@ flags:
   xbps: "Installa i pacchetti dal repository di Void (Linux)."
   nix: "Installa i pacchetti dal repository Nixpkgs (pacchetti Nix)."
   name: "Applica al container personalizzato con questo nome."
+  swupd: Install packages from the Clear Linux* store
 apx:
   use: "apx"
   long: "Apx è un gestore di pacchetti con supporto per più fonti,\nche consente di\

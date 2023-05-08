@@ -7,6 +7,7 @@ flags:
   xbps: "Void (Linux) deposundan paketleri yükleyin."
   nix: "Nixpkgs (Nix paketleri) deposundan paketleri yükleyin."
   name: "Bu ada sahip özel konteynere uygulayın."
+  swupd: Install packages from the Clear Linux* store
 apx:
   use: "apx"
   long: "Apx, birden fazla kaynağı destekleyen bir paket yöneticisidir,\nyönetilen\
