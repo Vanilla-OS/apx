@@ -1,3 +1,9 @@
+apx (1.8.2) unstable; urgency=medium
+
+  * Remove golang-go as a dependency
+
+ -- Mirko brombin <send@mirko.pm>  Mon, 08 May 2023 09:00:03 +0200
+
 apx (1.8.1) unstable; urgency=medium
 
   * Remove micro-distrobox as a dependency
