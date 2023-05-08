@@ -7,7 +7,7 @@ flags:
   xbps: "Install packages from the Void (Linux) repository."
   nix: "Install packages from the Nixpkgs (Nix packages) repository."
   swupd: "Install packages from the Clear Linux* store"
-  name: "Apply to custom container with this name."
+  name: " Apply to custom container with this name."
 apx:
   use: "apx"
   long: "Apx is a package manager with support for multiple sources,\nallowing you\

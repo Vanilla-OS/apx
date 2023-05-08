@@ -6,7 +6,8 @@ flags:
   zypper: "Installera paket från OpenSUSE förråd."
   xbps: "Installera paket från Void (Linux) arkiv."
   nix: "Installera paket från Nixpkgs (Nix paket) arkiv."
-  name: "Applicera på anpassad behållare med detta namn."
+  swupd: "Install packages from the Clear Linux* store"
+  name: " Applicera på anpassad behållare med detta namn."
 apx:
   use: "apx"
   long: "Apx är en pakethanterare med stöd för flera källor,\nså att du kan installera\

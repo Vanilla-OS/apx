@@ -6,7 +6,8 @@ flags:
   zypper: "Instalar paquetes desde el repositorio OpenSUSE."
   xbps: "Instalar paquetes desde el repositorio de Void (Linux)."
   nix: "Instalar los paquetes desde el repositorio Nixpkgs (paquetes de Nix)"
-  name: "Aplicar al contenedor personalizado con este nombre."
+  swupd: "Install packages from the Clear Linux* store"
+  name: " Aplicar al contenedor personalizado con este nombre."
 apx:
   use: "apx"
   long: "Apx es un gestor de paquetes con soporte para varias fuentes,\npermitiendote\
