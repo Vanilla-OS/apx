@@ -1,0 +1,151 @@
+flags:
+  apt: "Installa i pacchetti dal repository di Ubuntu."
+  aur: "Installa i pacchetti da AUR (Arch User Repository)."
+  dnf: "Installa i pacchetti dal repository DNF (Dandified YUM) di Fedora."
+  apk: "Installa i pacchetti dal repository di Alpine."
+  zypper: "Installa i pacchetti dal repository di OpenSUSE."
+  xbps: "Installa i pacchetti dal repository di Void (Linux)."
+  nix: "Installa i pacchetti dal repository Nixpkgs (pacchetti Nix)."
+  swupd: "Install packages from the Clear Linux* store"
+  name: " Applica al container personalizzato con questo nome."
+apx:
+  use: "apx"
+  long: "Apx è un gestore di pacchetti con supporto per più fonti,\nche consente di\
+    \ installare i pacchetti in un container gestito."
+  short: "Apx è un gestore di pacchetti con supporto per più fonti,\nche consente\
+    \ di installare i pacchetti in un container gestito."
+  verboseFlag: "mostra un output più dettagliato"
+  allFlag: "Applica a tutti i container."
+  cxl: "Operazione annullata su richiesta dell'utente."
+  assumeYes: "Procedi senza conferma manuale."
+  notForNix: "Questo comando non si applica all'ambiente nix."
+autoremove:
+  use: "autoremove"
+  long: "Rimuovi automaticamente tutti i pacchetti inutilizzati"
+  short: "Rimuovi automaticamente tutti i pacchetti inutilizzati"
+clean:
+  use: "clean"
+  long: "Pulisci la cache di apx"
+  short: "Pulisci la cache di apx"
+enter:
+  use: "enter"
+  long: "Entra nella shell del container gestito"
+  short: "Entra nella shell del container gestito"
+  failedEnter: "Impossibile entrate nella shell del container gestito"
+  outside: "Non sei più nella shell del container gestito."
+export:
+  use: "export <programma/binario>"
+  long: "Esporta/Ricrea la voce di un programma in un container gestito"
+  short: "Esporta/Ricrea la voce di un programma in un container gestito"
+  binFlag: "Comando per esportare un programma binario"
+init:
+  use: "init"
+  long: "Inizializza un container gestito"
+  short: "Inizializza un container gestito"
+  confirm: "Il container esiste già. Si desidera reinizializzarlo? Questa operazione\
+    \ rimuoverà tutto, compresi i file nel container."
+  remove: "Si è verificato un errore nella rimozione del container: %v"
+  create: "Si è verificato un errore nella rimozione del container: %v"
+install:
+  use: "apx install <pacchetto>"
+  long: "Installa pacchetti nel container gestito."
+  short: "Installa pacchetti nel container gestito."
+  assumeYes: "Procedi senza conferma manuale"
+  fixBroken: "Correggi le dipendenze non funzionanti prima dell' installazione"
+  noExport: "Non esportare una voce del desktop dopo l'installazione."
+  sideload: "Installa un pacchetto da un file locale."
+  sideArgs: "sideload richiede il percorso al file locale"
+  sideUserTemp: "Impossibile spostare il file nella temp dell' utente: %s"
+  exportBinPrompt: "Esporta il binario %s nell'host?\nIn questo modo sarà possibile\
+    \ richiamarlo direttamente dalla shell senza usare \"apx run\".\nSi può anche\
+    \ esportare in seguito con \"apx export --bin %s\""
+list:
+  use: "list"
+  long: "Elenca i pacchetti installati."
+  short: "Elenca i pacchetti installati."
+  upgradable: "Mostra i pacchetti aggiornabili"
+  installed: "Mostra i pacchetti installati"
+nix:
+  use: "nix"
+  long: "Gestisci un'installazione personalizzata di nix nella propria directory $HOME.\n\
+    \nL'integrazione `apx nix` serve come wrapper per il\nprofilo nix predefinito.\
+    \ Una volta installata, si è liberi di utilizzare tutte le funzionalità di\nnix\
+    \ senza usare il comando `apx nix`."
+  short: "Gestisci l'installazione di nix"
+nixinit:
+  use: "init"
+  long: "Inizializza un'installazione personalizzata di nix creando $HOME/.nix e impostando\
+    \ alcune unità SystemD per montarla come /nix."
+  short: "Inizializza il repository nix"
+  confirm: "In questo modo si creerà una cartella '.nix' nella propria home directory\
+    \ e si imposteranno alcune unità SystemD per montare tale cartella su /nix prima\
+    \ di eseguire l'installazione. Confermare 'y' per continuare."
+  unfree: "Vuoi consentire i pacchetti \"non liberi\" senza licenze Open Source (Visual\
+    \ Studio Code, Spotify, ecc.)?"
+  insecure: "Vuoi consentire i pacchetti \"insicuri\" (software con vulnerabilità\
+    \ note)?"
+  swcenter: "Vuoi installare il Nix Software Center, un gestore grafico di software\
+    \ per Nix?"
+  success: "Installazione completata. Riavvia per iniziare a usare nix."
+nixremove:
+  use: "remove"
+  long: "Rimuove il primo pacchetto corrispondente installato nel profilo nix predefinito.\n\
+    \nNota: è possibile avere più installazioni dello stesso pacchetto.\n\nSe si desidera\
+    \ una maggiore precisione, utilizzare \"nix profile list\" e \"nix profile remove\"\
+    ."
+  short: "Rimuovi un pacchetto nix"
+  success: "Rimozione del pacchetto completata"
+nixinstall:
+  use: "install <pkg>"
+  long: "Installa un pacchetto dal repository `nixpkgs' come flake nel profilo nix\
+    \ predefinito."
+  short: "Installa un pacchetto nix"
+  allowUnfree: "Consenti i pacchetti con licenze non gratuite"
+  allowInsecure: "Consenti i pacchetti con vulnerabilità note."
+  error: "errore nell'installazione dei pacchetti"
+  runInit: "Hai già eseguito il comando `init`?"
+  success: "Pacchetto installato con successo."
+nixupgrade:
+  success: "Il pacchetto è stato aggiornato con successo."
+  atleastone: "È richiesto almeno un nome del pacchetto."
+purge:
+  use: "purge <pacchetti>"
+  long: "Elimina i pacchetti all'interno di un container gestito"
+  short: "Elimina i pacchetti all'interno di un container gestito"
+remove:
+  use: "remove <pacchetti>"
+  long: "Rimuovi i pacchetti all'interno di un container gestito."
+  short: "Rimuovi i pacchetti all'interno di un container gestito."
+run:
+  use: "run <comando>"
+  long: "Esegui un programma in un container gestito."
+  short: "Esegui un programma in un container gestito."
+  nixMsg: "Non usare `apx run` per i pacchetti nix. Eseguiteli direttamente come faresti\
+    \ con un pacchetto nativo."
+search:
+  use: "search <pacchetti>"
+  long: "Cerca i pacchetti in un container gestito."
+  short: "Cerca i pacchetti in un container gestito."
+show:
+  use: "show <pacchetto>"
+  long: "Mostra i dettagli di un pacchetto"
+  short: "Mostra i dettagli di un pacchetto"
+  isInstalled: "Mostra solo se il pacchetto è installato"
+  found: "%s è installato"
+  notFound: "%s non è installato"
+unexport:
+  use: "unexport <pacchetto>"
+  long: "Rimuove la voce del desktop di un programma da un container gestito.\nSe\
+    \ viene fornito il flag --bin, rimuove il collegamento al binario del container."
+  short: "Rimuove la voce del desktop di un programma da un container gestito"
+  binFlag: "Rimuovi un binario precedentemente esportato."
+  success: "Rimosso con successo il binario esportato `%s`."
+update:
+  use: "update"
+  long: "Aggiorna l'elenco dei pacchetti disponibili"
+  short: "Aggiorna l'elenco dei pacchetti disponibili"
+  allFlag: "Applica a tutti i container"
+upgrade:
+  use: "upgrade"
+  long: "Aggiorna il sistema installando/aggiornando i pacchetti disponibili."
+  short: "Aggiorna il sistema installando/aggiornando i pacchetti disponibili."

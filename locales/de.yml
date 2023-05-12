@@ -1,0 +1,159 @@
+flags:
+  apt: "Installiere Pakete aus der Ubuntu Paketquelle."
+  aur: "Installiere Pakete aus dem AUR (Arch User Repository)."
+  dnf: "Installiere Pakete aus Fedoras DNF (Dandified YUM) Paketquelle."
+  apk: "Installiere Pakete aus der Alpine Paketquelle."
+  zypper: "Installiere Pakete aus den OpenSUSE Paketquellen."
+  xbps: "Installiere Pakete aus den Void (Linux) Paketquellen."
+  nix: "Installiere Pakete aus den Nixpkgs (Nix packages) Paketquellen."
+  swupd: "Install packages from the Clear Linux* store"
+  name: " Auf den benutzerdefinierten Container mit diesem Namen anwenden."
+apx:
+  use: "apx"
+  long: "Apx ist ein Paketmanager mit Unterstützung für mehrere Quellen,\nder es Ihnen\
+    \ ermöglicht, Pakete in einem verwalteten Container zu installieren."
+  short: "Apx ist ein Paketmanager mit Unterstützung für mehrere Quellen,\nder es\
+    \ Ihnen ermöglicht, Pakete in einem verwalteten Container zu installieren."
+  verboseFlag: "detailliertere Ausgabe anzeigen"
+  allFlag: "Für alle Container anwenden."
+  cxl: "Operation abgebrochen auf Benutzeranfrage."
+  assumeYes: "Ohne manuelle Bestätigung fortfahren."
+  notForNix: "Dieser Befehl gilt nicht für die Nix-Umgebung."
+autoremove:
+  use: "autoremove"
+  long: "Alle unbenutzten Pakete automatisch entfernen"
+  short: "Alle unbenutzten Pakete automatisch entfernen"
+clean:
+  use: "clean"
+  long: "Den Zwischenspeicher des Apx Paketmanagers löschen"
+  short: "Den Zwischenspeicher des Apx Paketmanagers löschen"
+enter:
+  use: "enter"
+  long: "Shell in dem verwalteten Container öffnen"
+  short: "Shell in dem verwalteten Container öffnen"
+  failedEnter: "Betreten des verwalteten Containers gescheitert"
+  outside: "Sie befinden sich nun außerhalb des verwalteten Containers."
+export:
+  use: "export <Program/Binärdatei>"
+  long: "Exportieren/Neuerstellen des Desktop-Eintrags eines Programms aus einem verwalteten\
+    \ Container"
+  short: "Exportieren/Neuerstellen des Desktop-Eintrags eines Programms aus einem\
+    \ verwalteten Container"
+  binFlag: "Binärbefehl exportieren"
+init:
+  use: "init"
+  long: "Initialisieren eines verwalteten Containers"
+  short: "Initialisieren eines verwalteten Containers"
+  confirm: "Der Container existiert bereits. Möchten Sie ihn neu initialisieren? Bei\
+    \ diesem Vorgang wird alles entfernt, auch Ihre Dateien im Container."
+  remove: "Fehler beim Entfernen des Containers: %v"
+  create: "Fehler beim Erstellen des Containers: %v"
+install:
+  use: "apx install <Paket>"
+  long: "Pakete in einem verwalteten Container installieren."
+  short: "Pakete in einem verwalteten Container installieren."
+  assumeYes: "Fortfahren ohne manuelle Bestätigung"
+  fixBroken: "Fehlerhafte Abhängigkeiten vor der Installation beheben"
+  noExport: "Keinen Desktop-Eintrag nach der Installation exportieren."
+  sideload: "Paket aus lokaler Datei installieren."
+  sideArgs: "sideload erfordert den Pfad zu einer lokalen Datei"
+  sideUserTemp: "Datei kann nicht in den Benutzer-Temp-Bereich verschoben werden:\
+    \ %s"
+  exportBinPrompt: "Binärdatei %s zum Host exportieren?\nDamit können Sie es direkt\
+    \ von der Shell aufrufen, ohne \"apx run\" zu verwenden.\nSie können es auch später\
+    \ mit \"apx export --bin %s\" exportieren."
+list:
+  use: "list"
+  long: "Installierte Pakete auflisten."
+  short: "Installierte Pakete auflisten."
+  upgradable: "Aktualisierbare Pakete anzeigen"
+  installed: "Installierte Pakete anzeigen"
+nix:
+  use: "nix"
+  long: "Verwalten Sie eine benutzerdefinierte Installation von nix in Ihrem $HOME-Verzeichnis.\n\
+    \nDie `apx nix`-Integration dient als Wrapper für das\nStandard-Nix-Profil. Einmal\
+    \ installiert, können Sie alle Funktionen von\nnix nutzen, ohne den Befehl `apx\
+    \ nix` zu verwenden."
+  short: "Verwalten der Nix-Installation"
+nixinit:
+  use: "init"
+  long: "Initialisiert eine benutzerdefinierte Installation von Nix, indem es $HOME/.nix\
+    \ erstellt und einige SystemD-Einheiten einrichtet, um es als /nix einzuhängen."
+  short: "Nix-Repository initialisieren"
+  confirm: "Dadurch wird ein '.nix'-Ordner in Ihrem Home-Verzeichnis erstellt und\
+    \ einige SystemD-Einheiten werden so eingerichtet, dass dieser Ordner unter /nix\
+    \ eingehängt wird, bevor die Installation ausgeführt wird. Bestätigen Sie 'y',\
+    \ um fortzufahren."
+  unfree: "Möchten Sie \"unfreie\" Pakete ohne Open-Source-Lizenzen zulassen (Visual\
+    \ Studio Code, Spotify, etc.)?"
+  insecure: "Möchten Sie \"unsichere\" Pakete (Software mit bekannten Sicherheitslücken)\
+    \ zulassen?"
+  swcenter: "Möchten Sie das Nix Software Center - einen grafischen Softwaremanager\
+    \ für Nix - installieren?"
+  success: "Installation abgeschlossen. Neustart erforderlich, um nix zu verwenden."
+nixremove:
+  use: "remove"
+  long: "Entfernen Sie das erste passende Paket, das im Standard-Nix-Profil installiert\
+    \ ist.\n\nHinweis: Es ist möglich, mehrere Installationen desselben Pakets zu\
+    \ haben.\n\nWenn Sie mehr Präzision benötigen, verwenden Sie 'nix profile list'\
+    \ und 'nix profile remove'."
+  short: "Ein Nix-Paket entfernen"
+  success: "Entfernung des Pakets abgeschlossen"
+nixinstall:
+  use: "install <pkg>"
+  long: "Installieren Sie ein Paket aus dem `nixpkgs`-Repository als Flake in das\
+    \ Standard-Nix-Profil."
+  short: "Nix-Paket installieren"
+  allowUnfree: "Pakete mit unfreien Lizenzen zulassen"
+  allowInsecure: "Pakete mit bekannten Sicherheitslücken zulassen."
+  error: "Fehler bei der Installation von Paketen"
+  runInit: "Haben Sie den Befehl `init` schon ausgeführt?"
+  success: "Das Paket wurde erfolgreich installiert."
+nixupgrade:
+  success: "Das Paket wurde erfolgreich aktualisiert."
+  atleastone: "Mindestens ein Paketname erforderlich."
+purge:
+  use: "purge <Pakete>"
+  long: "Pakete innerhalb eines verwalteten Containers bereinigen"
+  short: "Pakete innerhalb eines verwalteten Containers bereinigen"
+remove:
+  use: "remove <Paket>"
+  long: "Entfernen von Paketen innerhalb eines verwalteten Containers."
+  short: "Entfernen von Paketen innerhalb eines verwalteten Containers."
+run:
+  use: "run <Befehl>"
+  long: "Ein Programm innerhalb eines verwalteten Containers ausführen."
+  short: "Ein Programm innerhalb eines verwalteten Containers ausführen."
+  nixMsg: "Verwenden Sie nicht `apx run` für Nix-Pakete. Führen Sie sie direkt aus,\
+    \ wie Sie es mit einem nativen Paket tun würden."
+search:
+  use: "search <Paket>"
+  long: "Suche nach Paketen in einem verwalteten Container."
+  short: "Suche nach Paketen in einem verwalteten Container."
+show:
+  use: "show <Paket>"
+  long: "Details zu einem Paket anzeigen"
+  short: "Details zu einem Paket anzeigen"
+  isInstalled: "Gibt nur zurück, ob das Paket installiert ist"
+  found: "%s ist installiert"
+  notFound: "%s ist nicht installiert"
+unexport:
+  use: "unexport <Paket>"
+  long: "Exportieren rückgängig machen/Entfernen des Desktop-Eintrags eines Programms\
+    \ aus einem verwalteten Container.\nWenn das Flag --bin angegeben ist, wird der\
+    \ Link zur Container-Binärdatei entfernt."
+  short: "Exportieren rückgängig machen/Entfernen des Desktop-Eintrags eines Programms\
+    \ aus einem verwalteten Container"
+  binFlag: "Exportieren einer zuvor exportierten Binärdatei rückgängig machen."
+  success: "Exportierte Binärdatei `%s` erfolgreich entfernt."
+update:
+  use: "update"
+  long: "Liste der verfügbaren Pakete aktualisieren"
+  short: "Liste der verfügbaren Pakete aktualisieren"
+  allFlag: "Auf alle Containers anwenden"
+upgrade:
+  use: "upgrade"
+  long: "Aktualisierung des Systems, durch Installieren/Aktualisieren verfügbarer\
+    \ Pakete."
+  short: "Aktualisierung des Systems, durch Installieren/Aktualisieren verfügbarer\
+    \ Pakete."

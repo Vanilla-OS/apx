@@ -1,6 +1,19 @@
 <div align="center">
   <img src="apx-logo.png" height="120">
   <h1 align="center">Apx</h1>
+
+
+[![Translation Status][weblate-image]][weblate-url]
+[![build result][build-image]][build-url]
+
+[weblate-url]: https://hosted.weblate.org/engage/vanilla-os/
+[weblate-image]: https://hosted.weblate.org/widgets/vanilla-os/-/apx/svg-badge.svg
+[weblate-status-image]: https://hosted.weblate.org/widgets/vanilla-os/-/apx/multi-auto.svg
+[repology-url]: https://repology.org/project/apx-package-manager/versions
+[repology-image]: https://repology.org/badge/vertical-allrepos/apx-package-manager.svg
+[build-image]: https://build.opensuse.org/projects/home:fabricators:orchid/packages/apx/badge.svg?type=default
+[build-url]: https://build.opensuse.org/package/show/home:fabricators:orchid/apx
+
   <p align="center">Apx (/à·peks/) is the default package manager in Vanilla OS. It is a wrapper around multiple package managers to install packages and run commands inside a managed container.</p>
   <small>Special thanks to <a href="https://github.com/89luca89/distrobox">distrobox</a> for making this possible.</small>
 </div>
@@ -55,18 +68,27 @@ Use "apx [command] --help" for more information about a command.
 
 ## Documentation and Guides
 
-- The official **documentation and manpage** for `apx` are available at <https://documentation.vanillaos.org/docs/apx/>.
+### Documentation
 
-- A guide for Installing applications in `apx` is available at <https://handbook.vanillaos.org/2023/01/11/install-and-manage-applications.html>.
+The official **documentation and manpage** for `apx` are available at <https://documentation.vanillaos.org/docs/apx/>.
+
+### Guides
+
+A guide for Installing applications in `apx` is available at <https://handbook.vanillaos.org/2023/01/11/install-and-manage-applications.html>.
 
 ## Dependencies
 
 To add new dependencies, use `go get` as usual, then run `go mod tidy` and `go mod vendor` before committing the code.
 
-## Generating man pages for translations
+## Translations
 
-- Copy the `en.yml` file under the `locales` directory, rename it to your language code then translate the strings.
-- Once the translation is complete, perform `go build` and execute this command `./apx man > man/<language_code>/man1/apx.1`. If the man page gets generated without any errors, open a PR for it here.
+Contribute translations for the manpage and help page in [Weblate](https://hosted.weblate.org/projects/vanilla-os/apx).
+
+[![Translation Status][weblate-status-image]][weblate-url]
+
+### Generating man pages for translations
+
+Once the translation is complete in Weblate and the changes committed, clone the repository using `git` and perform `go build`, create a directory using the `mkdir man/<language_code> && mkdir man/<language_code>/man1` command, and execute this command `LANG=<language_code> ./apx man > man/<language_code>/man1/apx.1`. Open a PR for the generated manpage here.
 
 ## Instructions for using Apx in other distributions
 
@@ -81,30 +103,44 @@ Apx has been designed as a distro-agnostic tool, allowing it to work with any di
 
 ### Procedure
 
-- Clone apx's repository using `git` and enter it using `cd`:-
+Clone apx's repository using `git` and enter it using `cd`:-
 
 ``` bash
 git clone --recursive https://github.com/Vanilla-OS/apx.git
 cd apx
 ```
 
-- Build apx using `make`:-
+Build apx using `make`:-
 
 ``` bash
 make build
 ```
 
-- Install apx using `make`:-
+Install apx using `make`:-
 
 ``` bash
 sudo make install
 ```
 
-- Install the apx manpages using `make`:-
+Install the apx manpages using `make`:-
 
 ``` bash
 sudo make install-manpages
 ```
+
+Uninstall apx using `make`:-
+
+```bash
+make uninstall
+```
+
+Uninstall apx man pages using `make`:-
+
+```bash
+make uninstall-manpages
+```
+
+### Installing apx in a custom destination
 
 The prefix or installation destination can be changed using `PREFIX` and `DESTDIR`.
 
@@ -121,3 +157,11 @@ Or into a separate root:-
 make install DESTDIR=$HOME/altroot
 make install-manpages DESTDIR=$HOME/altroot
 ```
+
+## Community Packages
+
+Apx is packaged in various sources by our community, if you aren't comfortable with building `apx` manually you can install a package listed below.
+
+(**Note:** These packages are unofficial if there are any issues with packaging report them to the respective maintainers, if there are any issues with apx functionalities report them here.)
+
+[![Packaging status][repology-image]][repology-url]

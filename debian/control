@@ -15,7 +15,6 @@ Package: apx
 Architecture: all
 Depends: ${shlibs:Depends},
          ${misc:Depends},
-         podman,
-         golang-go
+         podman
 Built-Using: ${misc:Built-Using}
 Description: Apx is the default package manager in Vanilla OS.

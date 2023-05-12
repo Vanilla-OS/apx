@@ -139,7 +139,7 @@ unexport:
   success: "Successfully removed exported binary `%s`."
 update:
   use: "update"
-  long: "Update the list of available packages"
+  long: "Ενημέρωση της λίστας διαθέσιμων πακέτων"
   short: "Update the list of available packages"
   allFlag: "Apply to all containers"
 upgrade:

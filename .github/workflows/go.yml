@@ -1,0 +1,40 @@
+name: Go
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: registry.vanillaos.org/vanillaos/pico:main
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Go
+      uses: actions/setup-go@v3
+      with:
+        go-version: 1.19
+
+    - name: Install build dependencies
+      run: |
+          apt-get update
+          apt-get install -y pkg-config build-essential
+
+    - name: Build
+      run: go build -o apx
+    
+    - name: Compress
+      run: tar -czvf apx.tar.gz apx
+
+    - uses: "marvinpinto/action-automatic-releases@latest"
+      with:
+        repo_token: "${{ secrets.GITHUB_TOKEN }}"
+        automatic_release_tag: "continuous"
+        prerelease: true
+        title: "Continuous Build"
+        files: |
+          apx.tar.gz

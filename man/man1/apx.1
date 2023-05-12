@@ -1,4 +1,4 @@
-.TH APX 1 "2023-02-07" "apx" "User Manual"
+.TH APX 1 "2023-05-08" "apx" "User Manual"
 .SH NAME
 .RS 4
 apx - Apx is a package manager with support for multiple sources,
@@ -32,7 +32,9 @@ allowing you to install packages in a managed container\&.
 .PP
       --nix           Install packages from the Nixpkgs (Nix packages) repository\&.
 .PP
-  -n, --name string   Apply to custom container with this name\&.
+      --swupd         Install packages from the Clear Linux* store
+.PP
+  -n, --name string    Apply to custom container with this name\&.
 .PP
 .SH APX COMMANDS
 .RS 4
@@ -155,7 +157,9 @@ Remove all unused packages automatically
 .PP
       --nix           Install packages from the Nixpkgs (Nix packages) repository\&.
 .PP
-  -n, --name string   Apply to custom container with this name\&.
+      --swupd         Install packages from the Clear Linux* store
+.PP
+  -n, --name string    Apply to custom container with this name\&.
 .PP
 .SH SUBCOMMAND CLEAN
 .RS 4
@@ -190,7 +194,9 @@ Clean the apx package manager cache
 .PP
       --nix           Install packages from the Nixpkgs (Nix packages) repository\&.
 .PP
-  -n, --name string   Apply to custom container with this name\&.
+      --swupd         Install packages from the Clear Linux* store
+.PP
+  -n, --name string    Apply to custom container with this name\&.
 .PP
 .SH SUBCOMMAND ENTER
 .RS 4
@@ -223,7 +229,9 @@ Enter a shell in the managed container
 .PP
       --nix           Install packages from the Nixpkgs (Nix packages) repository\&.
 .PP
-  -n, --name string   Apply to custom container with this name\&.
+      --swupd         Install packages from the Clear Linux* store
+.PP
+  -n, --name string    Apply to custom container with this name\&.
 .PP
 .SH SUBCOMMAND EXPORT
 .RS 4
@@ -258,7 +266,9 @@ Export/Recreate a program's desktop entry from a managed container
 .PP
       --nix           Install packages from the Nixpkgs (Nix packages) repository\&.
 .PP
-  -n, --name string   Apply to custom container with this name\&.
+      --swupd         Install packages from the Clear Linux* store
+.PP
+  -n, --name string    Apply to custom container with this name\&.
 .PP
 .SS EXAMPLES
 .RS 4
@@ -295,9 +305,11 @@ Initialize a managed container
 .PP
       --xbps          Install packages from the Void (Linux) repository\&.
 .PP
-      --nix           Install packages from the Nix packages repository\&.
+      --nix           Install packages from the Nixpkgs (Nix packages) repository\&.
 .PP
-  -n, --name string   Apply to custom container with this name\&.
+      --swupd         Install packages from the Clear Linux* store
+.PP
+  -n, --name string    Apply to custom container with this name\&.
 .PP
 .SS EXAMPLES
 .RS 4
@@ -317,13 +329,17 @@ Install packages inside a managed container\&.
 Install packages inside a managed container\&.
 .RE
 .SS OPTIONS
-  -y, --assume-yes   Proceed without manual confirmation
+  -y, --assume-yes       Proceed without manual confirmation
 .PP
-  -f, --fix-broken   Fix broken dependencies before installing
+  -f, --fix-broken       Fix broken dependencies before installing
 .PP
-      --no-export    Do not export a desktop entry after the installation\&.
+      --no-export        Do not export a desktop entry after the installation\&.
 .PP
-      --sideload     Install a package from a local file\&.
+      --sideload         Install a package from a local file\&.
+.PP
+      --allow-unfree     Allow packages with unfree licenses
+.PP
+      --allow-insecure   Allow packages with known vulnerabilities\&.
 .PP
 .SS GLOBAL OPTIONS
   -v, --verbose       show more detailed output
@@ -340,13 +356,17 @@ Install packages inside a managed container\&.
 .PP
       --xbps          Install packages from the Void (Linux) repository\&.
 .PP
-      --nix           Install packages from the Nix packages repository\&.
+      --nix           Install packages from the Nixpkgs (Nix packages) repository\&.
 .PP
-  -n, --name string   Apply to custom container with this name\&.
+      --swupd         Install packages from the Clear Linux* store
+.PP
+  -n, --name string    Apply to custom container with this name\&.
 .PP
 .SS EXAMPLES
 .RS 4
 apx install htop git
+.PP
+apx --nix install --allow-unfree vscode
 .RE
 .SH SUBCOMMAND LIST
 .RS 4
@@ -381,9 +401,11 @@ List installed packages\&.
 .PP
       --xbps          Install packages from the Void (Linux) repository\&.
 .PP
-      --nix           Install packages from the Nix packages repository\&.
+      --nix           Install packages from the Nixpkgs (Nix packages) repository\&.
 .PP
-  -n, --name string   Apply to custom container with this name\&.
+      --swupd         Install packages from the Clear Linux* store
+.PP
+  -n, --name string    Apply to custom container with this name\&.
 .PP
 .SH SUBCOMMAND PURGE
 .RS 4
@@ -414,9 +436,11 @@ Purge packages inside a managed container
 .PP
       --xbps          Install packages from the Void (Linux) repository\&.
 .PP
-      --nix           Install packages from the Nix packages repository\&.
+      --nix           Install packages from the Nixpkgs (Nix packages) repository\&.
 .PP
-  -n, --name string   Apply to custom container with this name\&.
+      --swupd         Install packages from the Clear Linux* store
+.PP
+  -n, --name string    Apply to custom container with this name\&.
 .PP
 .SS EXAMPLES
 .RS 4
@@ -453,9 +477,11 @@ Remove packages inside a managed container\&.
 .PP
       --xbps          Install packages from the Void (Linux) repository\&.
 .PP
-      --nix           Install packages from the Nix packages repository\&.
+      --nix           Install packages from the Nixpkgs (Nix packages) repository\&.
 .PP
-  -n, --name string   Apply to custom container with this name\&.
+      --swupd         Install packages from the Clear Linux* store
+.PP
+  -n, --name string    Apply to custom container with this name\&.
 .PP
 .SS EXAMPLES
 .RS 4
@@ -490,9 +516,11 @@ Run a program inside a managed container\&.
 .PP
       --xbps          Install packages from the Void (Linux) repository\&.
 .PP
-      --nix           Install packages from the Nix packages repository\&.
+      --nix           Install packages from the Nixpkgs (Nix packages) repository\&.
 .PP
-  -n, --name string   Apply to custom container with this name\&.
+      --swupd         Install packages from the Clear Linux* store
+.PP
+  -n, --name string    Apply to custom container with this name\&.
 .PP
 .SS EXAMPLES
 .RS 4
@@ -527,9 +555,11 @@ Search for packages in a managed container\&.
 .PP
       --xbps          Install packages from the Void (Linux) repository\&.
 .PP
-      --nix           Install packages from the Nix packages repository\&.
+      --nix           Install packages from the Nixpkgs (Nix packages) repository\&.
 .PP
-  -n, --name string   Apply to custom container with this name\&.
+      --swupd         Install packages from the Clear Linux* store
+.PP
+  -n, --name string    Apply to custom container with this name\&.
 .PP
 .SS EXAMPLES
 .RS 4
@@ -549,7 +579,7 @@ Show details about a package
 Show details about a package
 .RE
 .SS OPTIONS
-  -i, --isinstalled   Only return whether the package is instaled
+  -i, --isinstalled   Only return whether the package is installed
 .PP
 .SS GLOBAL OPTIONS
   -v, --verbose       show more detailed output
@@ -568,7 +598,9 @@ Show details about a package
 .PP
       --nix           Install packages from the Nixpkgs (Nix packages) repository\&.
 .PP
-  -n, --name string   Apply to custom container with this name\&.
+      --swupd         Install packages from the Clear Linux* store
+.PP
+  -n, --name string    Apply to custom container with this name\&.
 .PP
 .SS EXAMPLES
 .RS 4
@@ -611,7 +643,9 @@ If --bin flag is provided, remove link to container binary\&.
 .PP
       --nix           Install packages from the Nixpkgs (Nix packages) repository\&.
 .PP
-  -n, --name string   Apply to custom container with this name\&.
+      --swupd         Install packages from the Clear Linux* store
+.PP
+  -n, --name string    Apply to custom container with this name\&.
 .PP
 .SS EXAMPLES
 .RS 4
@@ -628,7 +662,7 @@ Upgrade the system by installing/upgrading available packages\&.
 .SS DESCRIPTION
 .RS 4
 .TP 4
-Update the list of available packages
+Upgrade the system by installing/upgrading available packages\&.
 .RE
 .SS OPTIONS
   -a, --all          Apply for all containers\&.
@@ -652,7 +686,9 @@ Update the list of available packages
 .PP
       --nix           Install packages from the Nixpkgs (Nix packages) repository\&.
 .PP
-  -n, --name string   Apply to custom container with this name\&.
+      --swupd         Install packages from the Clear Linux* store
+.PP
+  -n, --name string    Apply to custom container with this name\&.
 .PP
 .SS EXAMPLES
 .RS 4
@@ -693,6 +729,8 @@ Update the list of available packages
 .PP
       --nix           Install packages from the Nixpkgs (Nix packages) repository\&.
 .PP
-  -n, --name string   Apply to custom container with this name\&.
+      --swupd         Install packages from the Clear Linux* store
+.PP
+  -n, --name string    Apply to custom container with this name\&.
 .PP
 

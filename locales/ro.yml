@@ -1,0 +1,153 @@
+flags:
+  apt: "Instalați pachete din depozitul Ubuntu."
+  aur: "Instalați pachete din AUR (Arch User Repository)."
+  dnf: "Instalați pachetele din depozitul DNF (Dandified YUM) al Fedora."
+  apk: "Instalați pachete din depozitul Alpine."
+  zypper: "Instalați pachete din depozitul OpenSUSE."
+  xbps: "Instalați pachete din depozitul Void (Linux)."
+  nix: "Instalați pachete din depozitul Nixpkgs (pachete Nix)."
+  swupd: "Install packages from the Clear Linux* store"
+  name: " Aplicați la containerul personalizat cu acest nume."
+apx:
+  use: "apx"
+  long: "Apx este un manager de pachete cu suport pentru mai multe surse,\npermițându-vă\
+    \ să instalați pachete într-un container gestionat."
+  short: "Apx este un manager de pachete cu suport pentru mai multe surse,\npermițându-vă\
+    \ să instalați pachete într-un container gestionat."
+  verboseFlag: "afișează rezultate mai detaliate"
+  allFlag: "Aplicați pentru toate containerele."
+  cxl: "Operațiune anulată la cererea utilizatorului."
+  assumeYes: "Continuați fără confirmare manuală."
+  notForNix: "Această comandă nu se aplică mediului nix."
+autoremove:
+  use: "autoremove"
+  long: "Eliminați automat toate pachetele nefolosite"
+  short: "Eliminați automat toate pachetele nefolosite"
+clean:
+  use: "clean"
+  long: "Curățați memoria cache a managerului de pachete apx"
+  short: "Curățați memoria cache a managerului de pachete apx"
+enter:
+  use: "enter"
+  long: "Intrați într- un shell în containerul gestionat"
+  short: "Intrați într- un shell în containerul gestionat"
+  failedEnter: "nu s-a putut intra în containerul gestionat"
+  outside: "Vă aflați acum în afara containerului gestionat."
+export:
+  use: "export <program/binary>"
+  long: "Exportați/Recreați intrarea desktop a unui program dintr-un container gestionat"
+  short: "Exportați/Recreați intrarea desktop a unui program dintr-un container gestionat"
+  binFlag: "Exportați comanda pachetului"
+init:
+  use: "init"
+  long: "Inițializați un container gestionat"
+  short: "Inițializați un container gestionat"
+  confirm: "Containerul există deja. Doriți să-l reinițializați? Această operațiune\
+    \ va elimina totul, inclusiv fișierele din container."
+  remove: "eroare la eliminarea containerului: %v"
+  create: "eroare la crearea containerului: %v"
+install:
+  use: "apx install <package>"
+  long: "Instalați pachete într-un container gestionat."
+  short: "Instalați pachete într-un container gestionat."
+  assumeYes: "Continuați fără confirmare manuală"
+  fixBroken: "Remediați dependențele defecte înainte de instalare"
+  noExport: "Nu exportați o intrare desktop după instalare."
+  sideload: "Instalați un pachet dintr-un fișier local."
+  sideArgs: "sideload necesită calea către un fișier local"
+  sideUserTemp: "nu poate muta fișierul în folderul temporar al utilizatorului: %s"
+  exportBinPrompt: "Exportați binarul %s la gazdă?\nAcest lucru vă va permite să îl\
+    \ apelați direct din shell fără a utiliza \"apx run\".\nDe asemenea, îl puteți\
+    \ exporta ulterior folosind \"apx export --bin %s\""
+list:
+  use: "list"
+  long: "Listați pachetele instalate."
+  short: "Listați pachetele instalate."
+  upgradable: "Afișați pachetele care pot fi actualizate"
+  installed: "Afișați pachetele instalate"
+nix:
+  use: "nix"
+  long: "Gestionați o instalare personalizată de nix în directorul $HOME.\n\nIntegrarea\
+    \ `apx nix` servește ca un înveliș pentru\nprofilul nix implicit. Odată instalat,\
+    \ sunteți liber să folosiți orice caracteristici ale\nnix fără a utiliza comanda\
+    \ `apx nix`."
+  short: "Gestionați instalarea nix"
+nixinit:
+  use: "init"
+  long: "Inițializează o instalare personalizată de nix prin crearea $HOME/.nix și\
+    \ configurarea unor unități SystemD pentru a o monta ca /nix."
+  short: "Inițializează depozitul nix"
+  confirm: "Acest lucru va crea un dosar \".nix\" în directorul dvs. personal și va\
+    \ configura unele unități SystemD pentru a monta acel dosar în /nix înainte de\
+    \ a rula instalarea. Confirmați \"y\" pentru a continua."
+  unfree: "Doriți să permiteți pachetele \"negratuite\" fără licențe Open Source (Visual\
+    \ Studio Code, Spotify, etc.)?"
+  insecure: "Doriți să permiteți pachete \"nesigure\" (software cu vulnerabilități\
+    \ cunoscute)?"
+  swcenter: "Doriți să instalați Nix Software Center - un manager grafic de software\
+    \ pentru Nix?"
+  success: "Instalare finalizată. Reporniți pentru a începe să utilizați nix."
+nixremove:
+  use: "remove"
+  long: "Eliminați primul pachet corespunzător instalat în profilul nix implicit.\n\
+    \nNotă: Este posibil să existe mai multe instalări ale aceluiași pachet.\n\nDacă\
+    \ aveți nevoie de mai multă precizie, utilizați 'nix profile list' și 'nix profile\
+    \ remove'."
+  short: "Eliminați un pachet nix"
+  success: "Eliminarea pachetului este completă"
+nixinstall:
+  use: "install <pkg>"
+  long: "Instalează un pachet din depozitul `nixpkgs` ca un flake în profilul nix\
+    \ implicit."
+  short: "Instalați pachetul nix"
+  allowUnfree: "Permiteți pachete cu licențe nelibere"
+  allowInsecure: "Permiteți pachete cu vulnerabilități cunoscute."
+  error: "eroare la instalarea pachetelor"
+  runInit: "Ați rulat comanda `init`?"
+  success: "Pachet instalat cu succes."
+nixupgrade:
+  success: "Pachet actualizat cu succes."
+  atleastone: "Este necesar cel puțin un nume de pachet."
+purge:
+  use: "purge <pachete>"
+  long: "Eliminați complet pachete din interiorul unui container gestionat"
+  short: "Eliminați complet pachete din interiorul unui container gestionat"
+remove:
+  use: "remove <pachet>"
+  long: "Eliminați pachete din interiorul unui container gestionat."
+  short: "Eliminați pachete din interiorul unui container gestionat."
+run:
+  use: "run <comandă>"
+  long: "Rulați un program într-un container gestionat."
+  short: "Rulați un program într-un container gestionat."
+  nixMsg: "Nu folosiți `apx run` pentru pachetele nix. Rulați-le direct, așa cum ați\
+    \ face cu un pachet nativ."
+search:
+  use: "search <pachete>"
+  long: "Căutați pachete într-un container gestionat."
+  short: "Căutați pachete într-un container gestionat."
+show:
+  use: "show <pachet>"
+  long: "Afișați detalii despre un pachet"
+  short: "Afișați detalii despre un pachet"
+  isInstalled: "Returnați doar dacă pachetul este instalat"
+  found: "%s este instalat"
+  notFound: "%s nu este instalat"
+unexport:
+  use: "unexport <pachet>"
+  long: "Dezexportați/Eliminați intrarea desktop a unui program dintr-un container\
+    \ gestionat.\nDacă este furnizat indicatorul --bin, eliminați linkul către containerul\
+    \ binar."
+  short: "Dezexportați/Eliminați intrarea desktop a unui program dintr-un container\
+    \ gestionat"
+  binFlag: "Dezexportați un binar exportat anterior."
+  success: "A fost eliminat cu succes binarul exportat `%s`."
+update:
+  use: "update"
+  long: "Actualizați lista pachetelor disponibile"
+  short: "Actualizați lista pachetelor disponibile"
+  allFlag: "Aplicați la toate containerele"
+upgrade:
+  use: "upgrade"
+  long: "Actualizați sistemul prin instalarea/actualizarea pachetelor disponibile."
+  short: "Actualizați sistemul prin instalarea/actualizarea pachetelor disponibile."

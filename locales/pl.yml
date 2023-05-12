@@ -1,0 +1,149 @@
+flags:
+  apt: "Zainstaluj pakiety z repozytorium Ubuntu."
+  aur: "Zainstaluj pakiety z AUR (Arch User Repository)."
+  dnf: "Zainstaluj pakiety z repozytorium DNF (Dandified YUM) Fedory."
+  apk: "Zainstaluj pakiety z repozytorium Alpine."
+  zypper: "Zainstaluj pakiety z repozytorium OpenSUSE."
+  xbps: "Zainstaluj pakiety z repozytorium Void (Linux)."
+  nix: "Zainstaluj pakiety z repozytorium Nixpkgs (pakiety Nix)."
+  swupd: "Install packages from the Clear Linux* store"
+  name: " Zastosuj do niestandardowego kontenera o tej nazwie."
+apx:
+  use: "apx"
+  long: "Apx to menedżer pakietów z obsługą wielu źródeł,\numożliwiając instalację\
+    \ pakietów w zarządzanym kontenerze."
+  short: "Apx to menedżer pakietów z obsługą wielu źródeł,\numożliwiając instalację\
+    \ pakietów w zarządzanym kontenerze."
+  verboseFlag: "pokaż bardziej szczegółowe dane wyjściowe"
+  allFlag: "Zastosuj do wszystkich kontenerów."
+  cxl: "Operacja anulowana na żądanie użytkownika."
+  assumeYes: "Kontynuuj bez ręcznego potwierdzenia."
+  notForNix: "To polecenie nie dotyczy środowiska nix."
+autoremove:
+  use: "autoremove"
+  long: "Usuń wszystkie nieużywane pakiety automatycznie"
+  short: "Usuń wszystkie nieużywane pakiety automatycznie"
+clean:
+  use: "clean"
+  long: "Wyczyść pamięć podręczną menedżera pakietów apx"
+  short: "Wyczyść pamięć podręczną menedżera pakietów apx"
+enter:
+  use: "enter"
+  long: "Wejdź w powłokę w zarządzanym kontenerze"
+  short: "Wejdź w powłokę w zarządzanym kontenerze"
+  failedEnter: "nie udało się wejść do zarządzanego kontenera"
+  outside: "Jesteś teraz poza zarządzanym kontenerem."
+export:
+  use: "export <program/binarny>"
+  long: "Eksportuj/twórz wpis na pulpicie programu z kontenera zarządzanego"
+  short: "Eksportuj/twórz wpis na pulpicie programu z kontenera zarządzanego"
+  binFlag: "Polecenie eksportu binarnego"
+init:
+  use: "init"
+  long: "Inicjalizacja kontenera zarządzanego"
+  short: "Inicjalizacja kontenera zarządzanego"
+  confirm: "Kontener już istnieje. Czy chcesz go ponownie zainicjować? Ta operacja\
+    \ usunie wszystko, w tym twoje pliki w kontenerze."
+  remove: "błąd usuwania kontenera: %v"
+  create: "błąd przy tworzeniu kontenera: %v"
+install:
+  use: "apx install <pakiet>"
+  long: "Zainstaluj pakiety wewnątrz zarządzanego kontenera."
+  short: "Zainstaluj pakiety wewnątrz zarządzanego kontenera."
+  assumeYes: "Kontynuuj bez ręcznego potwierdzenia"
+  fixBroken: "Napraw uszkodzone zależności przed instalacją"
+  noExport: "Nie eksportuj skrótu na pulpit po instalacji."
+  sideload: "Zainstaluj pakiet z pliku lokalnego."
+  sideArgs: "sideload wymaga ścieżki do lokalnego pliku"
+  sideUserTemp: "nie można przenieść pliku do temp użytkownika: %s"
+  exportBinPrompt: "Eksportować binarne %s do hosta?\nTo pozwoli ci wywołać go bezpośrednio\
+    \ z powłoki bez użycia \"apx run\".\nMożesz również wyeksportować go później za\
+    \ pomocą \"apx export --bin %s\""
+list:
+  use: "list"
+  long: "Lista zainstalowanych pakietów."
+  short: "Lista zainstalowanych pakietów."
+  upgradable: "Pokaż pakiety z możliwością aktualizacji"
+  installed: "Pokaż zainstalowane pakiety"
+nix:
+  use: "nix"
+  long: "Zarządzaj niestandardową instalacją nixa w swoim katalogu $HOME.\n\nIntegracja\
+    \ `apx nix` służy jako wrapper dla\ndomyślnego profilu nix. Po zainstalowaniu,\
+    \ możesz swobodnie używać dowolnych funkcji\nnixa bez użycia polecenia `apx nix`."
+  short: "Zarządzaj instalacją nixa"
+nixinit:
+  use: "init"
+  long: "Inicjalizuje niestandardową instalację nixa, tworząc $HOME/.nix i ustawiając\
+    \ niektóre jednostki SystemD do montowania go jako /nix."
+  short: "Inicjalizacja repozytorium nix"
+  confirm: "To stworzy folder '.nix' w twoim katalogu domowym i ustawi niektóre jednostki\
+    \ SystemD do zamontowania tego folderu w /nix przed uruchomieniem instalacji.\
+    \ Potwierdź 'y' aby kontynuować."
+  unfree: "Czy chciałbyś zezwolić na \"niewolne\" pakiety bez licencji Open Source\
+    \ (Visual Studio Code, Spotify, itp.)?"
+  insecure: "Czy chcesz zezwolić na \"niezabezpieczone\" pakiety (oprogramowanie ze\
+    \ znanymi lukami)?"
+  swcenter: "Czy chcesz zainstalować Nix Software Center - graficzny menedżer oprogramowania\
+    \ dla Nixa?"
+  success: "Instalacja zakończona. Uruchom ponownie komputer, aby zacząć używać nixa."
+nixremove:
+  use: "remove"
+  long: "Usuwa pierwszy pasujący pakiet zainstalowany w domyślnym profilu nix.\n\n\
+    Uwaga: Możliwe jest posiadanie wielu instalacji tego samego pakietu.\n\nJeśli\
+    \ potrzebujesz więcej precyzji użyj 'nix profile list' i 'nix profile remove'."
+  short: "Usuń pakiet nixa"
+  success: "Usuwanie pakietu zakończone"
+nixinstall:
+  use: "install <pkg>"
+  long: "Zainstaluj pakiet z repozytorium `nixpkgs` jako płatek w domyślnym profilu\
+    \ nix."
+  short: "Zainstaluj pakiet nix"
+  allowUnfree: "Zezwalaj na pakiety z niewolnymi licencjami"
+  allowInsecure: "Zezwalaj na pakiety ze znanymi lukami."
+  error: "błąd przy instalowaniu pakietów"
+  runInit: "Czy uruchomiłeś już komendę `init`?"
+  success: "Pomyślnie zainstalowany pakiet."
+nixupgrade:
+  success: "Pakiet został pomyślnie zaktualizowany."
+  atleastone: "Wymagana co najmniej jedna nazwa pakietu."
+purge:
+  use: "purge <pakiety>"
+  long: "Oczyszczanie pakietów wewnątrz kontenera zarządzanego"
+  short: "Oczyszczanie pakietów wewnątrz kontenera zarządzanego"
+remove:
+  use: "remove <pakiet>"
+  long: "Usuń pakiety wewnątrz zarządzanego kontenera."
+  short: "Usuń pakiety wewnątrz zarządzanego kontenera."
+run:
+  use: "run <komendę>"
+  long: "Uruchom program wewnątrz zarządzanego kontenera."
+  short: "Uruchom program wewnątrz zarządzanego kontenera."
+  nixMsg: "Nie używaj `apx run` dla pakietów nix. Uruchom je bezpośrednio, tak jak\
+    \ byś to zrobił z natywnym pakietem."
+search:
+  use: "search <pakietów>"
+  long: "Wyszukiwanie pakietów w zarządzanym kontenerze."
+  short: "Wyszukiwanie pakietów w zarządzanym kontenerze."
+show:
+  use: "show <pakiet>"
+  long: "Pokaż szczegóły dotyczące pakietu"
+  short: "Pokaż szczegóły dotyczące pakietu"
+  isInstalled: "Zwraca tylko czy pakiet jest zainstalowany"
+  found: "%s jest zainstalowany"
+  notFound: "%s nie jest zainstalowany"
+unexport:
+  use: "unexport <pakiet>"
+  long: "Odłącza/usuwa wpis na pulpicie programu z zarządzanego kontenera.\nJeśli\
+    \ podano flagę --bin, usunie link do binarki kontenera."
+  short: "Odłącz/usuń wpis na pulpicie programu z zarządzanego kontenera"
+  binFlag: "Usuń poprzednio wyeksportowaną binarkę."
+  success: "Pomyślnie usunięto wyeksportowaną binarkę `%s`."
+update:
+  use: "update"
+  long: "Aktualizacja listy dostępnych pakietów"
+  short: "Aktualizacja listy dostępnych pakietów"
+  allFlag: "Zastosuj do wszystkich kontenerów"
+upgrade:
+  use: "upgrade"
+  long: "Uaktualnienie systemu poprzez instalację/aktualizację dostępnych pakietów."
+  short: "Uaktualnienie systemu poprzez instalację/aktualizację dostępnych pakietów."

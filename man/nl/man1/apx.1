@@ -1,0 +1,700 @@
+.TH APX 1 "2023-04-13" "apx" "User Manual"
+.SH NAME
+.RS 4
+apx - Apx is een pakketbeheerder met ondersteuning voor meerdere bronnen, waarmee u pakketten kunt installeren in een beheerde container\&.
+.RE
+.SH SYNOPSIS
+.RS 4
+apx [command] [flags] [arguments]
+.RE
+.SH DESCRIPTION
+.RS 4
+Apx is een pakketbeheerder met ondersteuning voor meerdere bronnen, waarmee u pakketten kunt installeren in een beheerde container\&.
+.RE
+.SH OPTIONS
+  -v, --verbose       Gedetailleerdere uitvoer tonen
+.PP
+      --apt           Pakketten vanuit de Ubuntu-repository installeren
+.PP
+      --aur           Pakketten vanuit de AUR (Arch User Repository) installeren
+.PP
+      --dnf           Pakketten vanuit Fedora's DNF (Dandified YUM) installeren
+.PP
+      --apk           Pakketten vanuit de Alpine-repository installeren
+.PP
+      --zypper        Pakketten vanuit de OpenSUSE-repository installeren
+.PP
+      --xbps          Pakketten vanuit de Void-repository installeren
+.PP
+      --nix           Pakketten vanuit de Nixpkgs-repository installeren
+.PP
+  -n, --name string   Toepassen op aangepaste container met deze naam
+.PP
+.SH APX COMMANDS
+.RS 4
+\fBautoremove\fP
+.RS 4
+Alle ongebruikte pakketten automatisch verwijderen
+.PP
+.RE
+\fBclean\fP
+.RS 4
+De apx-cache opschonen
+.PP
+.RE
+\fBenter\fP
+.RS 4
+Een shell in de container binnengaan
+.PP
+.RE
+\fBexport\fP
+.RS 4
+App-pictogram aanmaken vanuit container
+.PP
+.RE
+\fBinit\fP
+.RS 4
+Beheerde container initialiseren
+.PP
+.RE
+\fBinstall\fP
+.RS 4
+Pakketten installeren in een container
+.PP
+.RE
+\fBlist\fP
+.RS 4
+Geïnstalleerde pakketten tonen
+.PP
+.RE
+\fBpurge\fP
+.RS 4
+Pakketten in een container purgen
+.PP
+.RE
+\fBremove\fP
+.RS 4
+Pakketten in een beheerde container verwijderen
+.PP
+.RE
+\fBrun\fP
+.RS 4
+Een programma uitvoeren in een container
+.PP
+.RE
+\fBsearch\fP
+.RS 4
+Zoeken naar pakketten in een container
+.PP
+.RE
+\fBshow\fP
+.RS 4
+Details over een pakket tonen
+.PP
+.RE
+\fBunexport\fP
+.RS 4
+Verwijdert het app-pictogram van een programma uit een container
+.PP
+.RE
+\fBupgrade\fP
+.RS 4
+Beschikbare pakketten bijwerken
+.PP
+.RE
+\fBupdate\fP
+.RS 4
+Lijst met beschikbare pakketten bijwerken
+.PP
+.RE
+.RE
+.SH AUTHORS
+.PP
+Written by Vanilla OS contributors\&.
+.SH REPORT BUGS TO
+.PP
+https://github\&.com/vanilla-os/apx/issues
+.SH LICENSE
+.PP
+GPLv3+: GNU GPL version 3 or later <http://gnu\&.org/licenses/gpl\&.html>\&.
+.SH APX SUBCOMMANDS
+.SH SUBCOMMAND AUTOREMOVE
+.RS 4
+Alle ongebruikte pakketten automatisch verwijderen
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBautoremove\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Alle ongebruikte pakketten automatisch verwijderen
+.RE
+.SS OPTIONS
+  -a, --all   Toepassen op alle containers
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       Gedetailleerdere uitvoer tonen
+.PP
+      --apt           Pakketten vanuit de Ubuntu-repository installeren
+.PP
+      --aur           Pakketten vanuit de AUR (Arch User Repository) installeren
+.PP
+      --dnf           Pakketten vanuit Fedora's DNF (Dandified YUM) installeren
+.PP
+      --apk           Pakketten vanuit de Alpine-repository installeren
+.PP
+      --zypper        Pakketten vanuit de OpenSUSE-repository installeren
+.PP
+      --xbps          Pakketten vanuit de Void-repository installeren
+.PP
+      --nix           Pakketten vanuit de Nixpkgs-repository installeren
+.PP
+  -n, --name string   Toepassen op aangepaste container met deze naam
+.PP
+.SH SUBCOMMAND CLEAN
+.RS 4
+De apx-cache opschonen
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBclean\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+De apx-pakketbeheerders-cache opschonen
+.RE
+.SS OPTIONS
+  -a, --all   Toepassen op alle containers
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       Gedetailleerdere uitvoer tonen
+.PP
+      --apt           Pakketten vanuit de Ubuntu-repository installeren
+.PP
+      --aur           Pakketten vanuit de AUR (Arch User Repository) installeren
+.PP
+      --dnf           Pakketten vanuit Fedora's DNF (Dandified YUM) installeren
+.PP
+      --apk           Pakketten vanuit de Alpine-repository installeren
+.PP
+      --zypper        Pakketten vanuit de OpenSUSE-repository installeren
+.PP
+      --xbps          Pakketten vanuit de Void-repository installeren
+.PP
+      --nix           Pakketten vanuit de Nixpkgs-repository installeren
+.PP
+  -n, --name string   Toepassen op aangepaste container met deze naam
+.PP
+.SH SUBCOMMAND ENTER
+.RS 4
+Een shell in de container binnengaan
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBenter\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Een shell in de beheerde container binnengaan
+.RE
+.SS OPTIONS
+.SS GLOBAL OPTIONS
+  -v, --verbose       Gedetailleerdere uitvoer tonen
+.PP
+      --apt           Pakketten vanuit de Ubuntu-repository installeren
+.PP
+      --aur           Pakketten vanuit de AUR (Arch User Repository) installeren
+.PP
+      --dnf           Pakketten vanuit Fedora's DNF (Dandified YUM) installeren
+.PP
+      --apk           Pakketten vanuit de Alpine-repository installeren
+.PP
+      --zypper        Pakketten vanuit de OpenSUSE-repository installeren
+.PP
+      --xbps          Pakketten vanuit de Void-repository installeren
+.PP
+      --nix           Pakketten vanuit de Nixpkgs-repository installeren
+.PP
+  -n, --name string   Toepassen op aangepaste container met deze naam
+.PP
+.SH SUBCOMMAND EXPORT
+.RS 4
+App-pictogram aanmaken vanuit container
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBexport\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+App-pictogram (opnieuw) aanmaken vanuit een beheerde container
+.RE
+.SS OPTIONS
+      --bin   Programmaopdracht exporteren
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       Gedetailleerdere uitvoer tonen
+.PP
+      --apt           Pakketten vanuit de Ubuntu-repository installeren
+.PP
+      --aur           Pakketten vanuit de AUR (Arch User Repository) installeren
+.PP
+      --dnf           Pakketten vanuit Fedora's DNF (Dandified YUM) installeren
+.PP
+      --apk           Pakketten vanuit de Alpine-repository installeren
+.PP
+      --zypper        Pakketten vanuit de OpenSUSE-repository installeren
+.PP
+      --xbps          Pakketten vanuit de Void-repository installeren
+.PP
+      --nix           Pakketten vanuit de Nixpkgs-repository installeren
+.PP
+  -n, --name string   Toepassen op aangepaste container met deze naam
+.PP
+.SS EXAMPLES
+.RS 4
+apx export htop
+.PP
+apx export --bin fzf
+.RE
+.SH SUBCOMMAND INIT
+.RS 4
+Beheerde container initialiseren
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBinit\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Beheerde container initialiseren
+.RE
+.SS OPTIONS
+.SS GLOBAL OPTIONS
+  -v, --verbose       Gedetailleerdere uitvoer tonen
+.PP
+      --apt           Pakketten vanuit de Ubuntu-repository installeren
+.PP
+      --aur           Pakketten vanuit de AUR (Arch User Repository) installeren
+.PP
+      --dnf           Pakketten vanuit Fedora's DNF (Dandified YUM) installeren
+.PP
+      --apk           Pakketten vanuit de Alpine-repository installeren
+.PP
+      --zypper        Pakketten vanuit de OpenSUSE-repository installeren
+.PP
+      --xbps          Pakketten vanuit de Void-repository installeren
+.PP
+      --nix           Pakketten vanuit de Nixpkgs-repository installeren
+.PP
+  -n, --name string   Toepassen op aangepaste container met deze naam
+.PP
+.SS EXAMPLES
+.RS 4
+apx init
+.RE
+.SH SUBCOMMAND INSTALL
+.RS 4
+Pakketten installeren in een container
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBinstall\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Pakketten installeren in een beheerde container
+.RE
+.SS OPTIONS
+  -y, --assume-yes       Doorgaan zonder handmatige bevestiging
+.PP
+  -f, --fix-broken       Incorrecte afhankelijkheden repareren voor de installatie
+.PP
+      --no-export        Geen app-pictogram aanmaken na de installatie
+.PP
+      --sideload         Pakket installeren vanuit een lokaal bestand
+.PP
+      --allow-unfree     Pakketten met niet-vrije licenties toestaan
+.PP
+      --allow-insecure   Pakketten met bekende kwetsbaarheden toestaan
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       Gedetailleerdere uitvoer tonen
+.PP
+      --apt           Pakketten vanuit de Ubuntu-repository installeren
+.PP
+      --aur           Pakketten vanuit de AUR (Arch User Repository) installeren
+.PP
+      --dnf           Pakketten vanuit Fedora's DNF (Dandified YUM) installeren
+.PP
+      --apk           Pakketten vanuit de Alpine-repository installeren
+.PP
+      --zypper        Pakketten vanuit de OpenSUSE-repository installeren
+.PP
+      --xbps          Pakketten vanuit de Void-repository installeren
+.PP
+      --nix           Pakketten vanuit de Nixpkgs-repository installeren
+.PP
+  -n, --name string   Toepassen op aangepaste container met deze naam
+.PP
+.SS EXAMPLES
+.RS 4
+apx install htop git
+.PP
+apx --nix install --allow-unfree vscode
+.RE
+.SH SUBCOMMAND LIST
+.RS 4
+Geïnstalleerde pakketten tonen
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBlist\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Geïnstalleerde pakketten tonen
+.RE
+.SS OPTIONS
+  -u, --upgradable   Pakketten met updates tonen
+.PP
+  -i, --installed    Geïnstalleerde pakketten tonen
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       Gedetailleerdere uitvoer tonen
+.PP
+      --apt           Pakketten vanuit de Ubuntu-repository installeren
+.PP
+      --aur           Pakketten vanuit de AUR (Arch User Repository) installeren
+.PP
+      --dnf           Pakketten vanuit Fedora's DNF (Dandified YUM) installeren
+.PP
+      --apk           Pakketten vanuit de Alpine-repository installeren
+.PP
+      --zypper        Pakketten vanuit de OpenSUSE-repository installeren
+.PP
+      --xbps          Pakketten vanuit de Void-repository installeren
+.PP
+      --nix           Pakketten vanuit de Nixpkgs-repository installeren
+.PP
+  -n, --name string   Toepassen op aangepaste container met deze naam
+.PP
+.SH SUBCOMMAND PURGE
+.RS 4
+Pakketten in een container purgen
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBpurge\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Pakketten inclusief configuratiebestanden in een beheerde container verwijderen
+.RE
+.SS OPTIONS
+.SS GLOBAL OPTIONS
+  -v, --verbose       Gedetailleerdere uitvoer tonen
+.PP
+      --apt           Pakketten vanuit de Ubuntu-repository installeren
+.PP
+      --aur           Pakketten vanuit de AUR (Arch User Repository) installeren
+.PP
+      --dnf           Pakketten vanuit Fedora's DNF (Dandified YUM) installeren
+.PP
+      --apk           Pakketten vanuit de Alpine-repository installeren
+.PP
+      --zypper        Pakketten vanuit de OpenSUSE-repository installeren
+.PP
+      --xbps          Pakketten vanuit de Void-repository installeren
+.PP
+      --nix           Pakketten vanuit de Nixpkgs-repository installeren
+.PP
+  -n, --name string   Toepassen op aangepaste container met deze naam
+.PP
+.SS EXAMPLES
+.RS 4
+apx purge htop
+.RE
+.SH SUBCOMMAND REMOVE
+.RS 4
+Pakketten in een beheerde container verwijderen
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBremove\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Pakketten in een beheerde container verwijderen en configuratiebestanden behouden
+.RE
+.SS OPTIONS
+  -y, --assume-yes   Doorgaan zonder handmatige bevestiging
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       Gedetailleerdere uitvoer tonen
+.PP
+      --apt           Pakketten vanuit de Ubuntu-repository installeren
+.PP
+      --aur           Pakketten vanuit de AUR (Arch User Repository) installeren
+.PP
+      --dnf           Pakketten vanuit Fedora's DNF (Dandified YUM) installeren
+.PP
+      --apk           Pakketten vanuit de Alpine-repository installeren
+.PP
+      --zypper        Pakketten vanuit de OpenSUSE-repository installeren
+.PP
+      --xbps          Pakketten vanuit de Void-repository installeren
+.PP
+      --nix           Pakketten vanuit de Nixpkgs-repository installeren
+.PP
+  -n, --name string   Toepassen op aangepaste container met deze naam
+.PP
+.SS EXAMPLES
+.RS 4
+apx remove htop
+.RE
+.SH SUBCOMMAND RUN
+.RS 4
+Een programma uitvoeren in een container
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBrun\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Een programma uitvoeren in een beheerde container
+.RE
+.SS OPTIONS
+.SS GLOBAL OPTIONS
+  -v, --verbose       Gedetailleerdere uitvoer tonen
+.PP
+      --apt           Pakketten vanuit de Ubuntu-repository installeren
+.PP
+      --aur           Pakketten vanuit de AUR (Arch User Repository) installeren
+.PP
+      --dnf           Pakketten vanuit Fedora's DNF (Dandified YUM) installeren
+.PP
+      --apk           Pakketten vanuit de Alpine-repository installeren
+.PP
+      --zypper        Pakketten vanuit de OpenSUSE-repository installeren
+.PP
+      --xbps          Pakketten vanuit de Void-repository installeren
+.PP
+      --nix           Pakketten vanuit de Nixpkgs-repository installeren
+.PP
+  -n, --name string   Toepassen op aangepaste container met deze naam
+.PP
+.SS EXAMPLES
+.RS 4
+apx run htop
+.RE
+.SH SUBCOMMAND SEARCH
+.RS 4
+Zoeken naar pakketten in een container
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBsearch\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Zoeken naar pakketten in een beheerde container
+.RE
+.SS OPTIONS
+.SS GLOBAL OPTIONS
+  -v, --verbose       Gedetailleerdere uitvoer tonen
+.PP
+      --apt           Pakketten vanuit de Ubuntu-repository installeren
+.PP
+      --aur           Pakketten vanuit de AUR (Arch User Repository) installeren
+.PP
+      --dnf           Pakketten vanuit Fedora's DNF (Dandified YUM) installeren
+.PP
+      --apk           Pakketten vanuit de Alpine-repository installeren
+.PP
+      --zypper        Pakketten vanuit de OpenSUSE-repository installeren
+.PP
+      --xbps          Pakketten vanuit de Void-repository installeren
+.PP
+      --nix           Pakketten vanuit de Nixpkgs-repository installeren
+.PP
+  -n, --name string   Toepassen op aangepaste container met deze naam
+.PP
+.SS EXAMPLES
+.RS 4
+apx search neovim
+.RE
+.SH SUBCOMMAND SHOW
+.RS 4
+Details over een pakket tonen
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBshow\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Details over een pakket tonen
+.RE
+.SS OPTIONS
+  -i, --isinstalled   Alleen tonen of het pakket is geïnstalleerd
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       Gedetailleerdere uitvoer tonen
+.PP
+      --apt           Pakketten vanuit de Ubuntu-repository installeren
+.PP
+      --aur           Pakketten vanuit de AUR (Arch User Repository) installeren
+.PP
+      --dnf           Pakketten vanuit Fedora's DNF (Dandified YUM) installeren
+.PP
+      --apk           Pakketten vanuit de Alpine-repository installeren
+.PP
+      --zypper        Pakketten vanuit de OpenSUSE-repository installeren
+.PP
+      --xbps          Pakketten vanuit de Void-repository installeren
+.PP
+      --nix           Pakketten vanuit de Nixpkgs-repository installeren
+.PP
+  -n, --name string   Toepassen op aangepaste container met deze naam
+.PP
+.SS EXAMPLES
+.RS 4
+apx show htop
+.PP
+apx show -i neovim
+.RE
+.SH SUBCOMMAND UNEXPORT
+.RS 4
+Verwijdert het app-pictogram van een programma uit een container
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBunexport\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Verwijdert het app-pictogram van een programma uit een beheerde container\&.
+.PP
+Als de flag --bin is meegegeven, wordt de link naar de containerprogramma verwijderd\&.
+.RE
+.SS OPTIONS
+      --bin   Een eerder geëxporteerd programma niet meer exporteren
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       Gedetailleerdere uitvoer tonen
+.PP
+      --apt           Pakketten vanuit de Ubuntu-repository installeren
+.PP
+      --aur           Pakketten vanuit de AUR (Arch User Repository) installeren
+.PP
+      --dnf           Pakketten vanuit Fedora's DNF (Dandified YUM) installeren
+.PP
+      --apk           Pakketten vanuit de Alpine-repository installeren
+.PP
+      --zypper        Pakketten vanuit de OpenSUSE-repository installeren
+.PP
+      --xbps          Pakketten vanuit de Void-repository installeren
+.PP
+      --nix           Pakketten vanuit de Nixpkgs-repository installeren
+.PP
+  -n, --name string   Toepassen op aangepaste container met deze naam
+.PP
+.SS EXAMPLES
+.RS 4
+apx unexport code
+.RE
+.SH SUBCOMMAND UPGRADE
+.RS 4
+Beschikbare pakketten bijwerken
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBupgrade\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Systeem bijwerken door beschikbare pakketten bij te werken of te installeren
+.RE
+.SS OPTIONS
+  -a, --all          Toepassen op alle containers
+.PP
+  -y, --assume-yes   Doorgaan zonder handmatige bevestiging
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       Gedetailleerdere uitvoer tonen
+.PP
+      --apt           Pakketten vanuit de Ubuntu-repository installeren
+.PP
+      --aur           Pakketten vanuit de AUR (Arch User Repository) installeren
+.PP
+      --dnf           Pakketten vanuit Fedora's DNF (Dandified YUM) installeren
+.PP
+      --apk           Pakketten vanuit de Alpine-repository installeren
+.PP
+      --zypper        Pakketten vanuit de OpenSUSE-repository installeren
+.PP
+      --xbps          Pakketten vanuit de Void-repository installeren
+.PP
+      --nix           Pakketten vanuit de Nixpkgs-repository installeren
+.PP
+  -n, --name string   Toepassen op aangepaste container met deze naam
+.PP
+.SS EXAMPLES
+.RS 4
+apx upgrade
+.RE
+.SH SUBCOMMAND UPDATE
+.RS 4
+Lijst met beschikbare pakketten bijwerken
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBupdate\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+De lijst met beschikbare pakketten bijwerken
+.RE
+.SS OPTIONS
+  -a, --all          Toepassen op alle containers
+.PP
+  -y, --assume-yes   Doorgaan zonder handmatige bevestiging
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       Gedetailleerdere uitvoer tonen
+.PP
+      --apt           Pakketten vanuit de Ubuntu-repository installeren
+.PP
+      --aur           Pakketten vanuit de AUR (Arch User Repository) installeren
+.PP
+      --dnf           Pakketten vanuit Fedora's DNF (Dandified YUM) installeren
+.PP
+      --apk           Pakketten vanuit de Alpine-repository installeren
+.PP
+      --zypper        Pakketten vanuit de OpenSUSE-repository installeren
+.PP
+      --xbps          Pakketten vanuit de Void-repository installeren
+.PP
+      --nix           Pakketten vanuit de Nixpkgs-repository installeren
+.PP
+  -n, --name string   Toepassen op aangepaste container met deze naam
+.PP
+

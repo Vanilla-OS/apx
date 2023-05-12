@@ -1,0 +1,704 @@
+.TH APX 1 "2023-04-13" "apx" "User Manual"
+.SH NAME
+.RS 4
+apx - Apx to menedżer pakietów z obsługą wielu źródeł,
+.PP
+umożliwiając instalację pakietów w zarządzanym kontenerze\&.
+.RE
+.SH SYNOPSIS
+.RS 4
+apx [command] [flags] [arguments]
+.RE
+.SH DESCRIPTION
+.RS 4
+Apx to menedżer pakietów z obsługą wielu źródeł,
+.PP
+umożliwiając instalację pakietów w zarządzanym kontenerze\&.
+.RE
+.SH OPTIONS
+  -v, --verbose       pokaż bardziej szczegółowe dane wyjściowe
+.PP
+      --apt           Zainstaluj pakiety z repozytorium Ubuntu\&.
+.PP
+      --aur           Zainstaluj pakiety z AUR (Arch User Repository)\&.
+.PP
+      --dnf           Zainstaluj pakiety z repozytorium DNF (Dandified YUM) Fedory\&.
+.PP
+      --apk           Zainstaluj pakiety z repozytorium Alpine\&.
+.PP
+      --zypper        Zainstaluj pakiety z repozytorium OpenSUSE\&.
+.PP
+      --xbps          Zainstaluj pakiety z repozytorium Void (Linux)\&.
+.PP
+      --nix           Zainstaluj pakiety z repozytorium Nixpkgs (pakiety Nix)\&.
+.PP
+  -n, --name string   Zastosuj do niestandardowego kontenera o tej nazwie\&.
+.PP
+.SH APX COMMANDS
+.RS 4
+\fBautoremove\fP
+.RS 4
+Usuń wszystkie nieużywane pakiety automatycznie
+.PP
+.RE
+\fBclean\fP
+.RS 4
+Wyczyść pamięć podręczną menedżera pakietów apx
+.PP
+.RE
+\fBenter\fP
+.RS 4
+Wejdź w powłokę w zarządzanym kontenerze
+.PP
+.RE
+\fBexport\fP
+.RS 4
+Eksportuj/twórz wpis na pulpicie programu z kontenera zarządzanego
+.PP
+.RE
+\fBinit\fP
+.RS 4
+Inicjalizacja kontenera zarządzanego
+.PP
+.RE
+\fBinstall\fP
+.RS 4
+Zainstaluj pakiety wewnątrz zarządzanego kontenera\&.
+.PP
+.RE
+\fBlist\fP
+.RS 4
+Lista zainstalowanych pakietów\&.
+.PP
+.RE
+\fBpurge\fP
+.RS 4
+Oczyszczanie pakietów wewnątrz kontenera zarządzanego
+.PP
+.RE
+\fBremove\fP
+.RS 4
+Usuń pakiety wewnątrz zarządzanego kontenera\&.
+.PP
+.RE
+\fBrun\fP
+.RS 4
+Uruchom program wewnątrz zarządzanego kontenera\&.
+.PP
+.RE
+\fBsearch\fP
+.RS 4
+Wyszukiwanie pakietów w zarządzanym kontenerze\&.
+.PP
+.RE
+\fBshow\fP
+.RS 4
+Pokaż szczegóły dotyczące pakietu
+.PP
+.RE
+\fBunexport\fP
+.RS 4
+Odłącz/usuń wpis na pulpicie programu z zarządzanego kontenera
+.PP
+.RE
+\fBupgrade\fP
+.RS 4
+Uaktualnienie systemu poprzez instalację/aktualizację dostępnych pakietów\&.
+.PP
+.RE
+\fBupdate\fP
+.RS 4
+Aktualizacja listy dostępnych pakietów
+.PP
+.RE
+.RE
+.SH AUTHORS
+.PP
+Written by Vanilla OS contributors\&.
+.SH REPORT BUGS TO
+.PP
+https://github\&.com/vanilla-os/apx/issues
+.SH LICENSE
+.PP
+GPLv3+: GNU GPL version 3 or later <http://gnu\&.org/licenses/gpl\&.html>\&.
+.SH APX SUBCOMMANDS
+.SH SUBCOMMAND AUTOREMOVE
+.RS 4
+Usuń wszystkie nieużywane pakiety automatycznie
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBautoremove\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Usuń wszystkie nieużywane pakiety automatycznie
+.RE
+.SS OPTIONS
+  -a, --all   Zastosuj do wszystkich kontenerów\&.
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       pokaż bardziej szczegółowe dane wyjściowe
+.PP
+      --apt           Zainstaluj pakiety z repozytorium Ubuntu\&.
+.PP
+      --aur           Zainstaluj pakiety z AUR (Arch User Repository)\&.
+.PP
+      --dnf           Zainstaluj pakiety z repozytorium DNF (Dandified YUM) Fedory\&.
+.PP
+      --apk           Zainstaluj pakiety z repozytorium Alpine\&.
+.PP
+      --zypper        Zainstaluj pakiety z repozytorium OpenSUSE\&.
+.PP
+      --xbps          Zainstaluj pakiety z repozytorium Void (Linux)\&.
+.PP
+      --nix           Zainstaluj pakiety z repozytorium Nixpkgs (pakiety Nix)\&.
+.PP
+  -n, --name string   Zastosuj do niestandardowego kontenera o tej nazwie\&.
+.PP
+.SH SUBCOMMAND CLEAN
+.RS 4
+Wyczyść pamięć podręczną menedżera pakietów apx
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBclean\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Wyczyść pamięć podręczną menedżera pakietów apx
+.RE
+.SS OPTIONS
+  -a, --all   Zastosuj do wszystkich kontenerów\&.
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       pokaż bardziej szczegółowe dane wyjściowe
+.PP
+      --apt           Zainstaluj pakiety z repozytorium Ubuntu\&.
+.PP
+      --aur           Zainstaluj pakiety z AUR (Arch User Repository)\&.
+.PP
+      --dnf           Zainstaluj pakiety z repozytorium DNF (Dandified YUM) Fedory\&.
+.PP
+      --apk           Zainstaluj pakiety z repozytorium Alpine\&.
+.PP
+      --zypper        Zainstaluj pakiety z repozytorium OpenSUSE\&.
+.PP
+      --xbps          Zainstaluj pakiety z repozytorium Void (Linux)\&.
+.PP
+      --nix           Zainstaluj pakiety z repozytorium Nixpkgs (pakiety Nix)\&.
+.PP
+  -n, --name string   Zastosuj do niestandardowego kontenera o tej nazwie\&.
+.PP
+.SH SUBCOMMAND ENTER
+.RS 4
+Wejdź w powłokę w zarządzanym kontenerze
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBenter\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Wejdź w powłokę w zarządzanym kontenerze
+.RE
+.SS OPTIONS
+.SS GLOBAL OPTIONS
+  -v, --verbose       pokaż bardziej szczegółowe dane wyjściowe
+.PP
+      --apt           Zainstaluj pakiety z repozytorium Ubuntu\&.
+.PP
+      --aur           Zainstaluj pakiety z AUR (Arch User Repository)\&.
+.PP
+      --dnf           Zainstaluj pakiety z repozytorium DNF (Dandified YUM) Fedory\&.
+.PP
+      --apk           Zainstaluj pakiety z repozytorium Alpine\&.
+.PP
+      --zypper        Zainstaluj pakiety z repozytorium OpenSUSE\&.
+.PP
+      --xbps          Zainstaluj pakiety z repozytorium Void (Linux)\&.
+.PP
+      --nix           Zainstaluj pakiety z repozytorium Nixpkgs (pakiety Nix)\&.
+.PP
+  -n, --name string   Zastosuj do niestandardowego kontenera o tej nazwie\&.
+.PP
+.SH SUBCOMMAND EXPORT
+.RS 4
+Eksportuj/twórz wpis na pulpicie programu z kontenera zarządzanego
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBexport\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Eksportuj/twórz wpis na pulpicie programu z kontenera zarządzanego
+.RE
+.SS OPTIONS
+      --bin   Polecenie eksportu binarnego
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       pokaż bardziej szczegółowe dane wyjściowe
+.PP
+      --apt           Zainstaluj pakiety z repozytorium Ubuntu\&.
+.PP
+      --aur           Zainstaluj pakiety z AUR (Arch User Repository)\&.
+.PP
+      --dnf           Zainstaluj pakiety z repozytorium DNF (Dandified YUM) Fedory\&.
+.PP
+      --apk           Zainstaluj pakiety z repozytorium Alpine\&.
+.PP
+      --zypper        Zainstaluj pakiety z repozytorium OpenSUSE\&.
+.PP
+      --xbps          Zainstaluj pakiety z repozytorium Void (Linux)\&.
+.PP
+      --nix           Zainstaluj pakiety z repozytorium Nixpkgs (pakiety Nix)\&.
+.PP
+  -n, --name string   Zastosuj do niestandardowego kontenera o tej nazwie\&.
+.PP
+.SS EXAMPLES
+.RS 4
+apx export htop
+.PP
+apx export --bin fzf
+.RE
+.SH SUBCOMMAND INIT
+.RS 4
+Inicjalizacja kontenera zarządzanego
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBinit\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Inicjalizacja kontenera zarządzanego
+.RE
+.SS OPTIONS
+.SS GLOBAL OPTIONS
+  -v, --verbose       pokaż bardziej szczegółowe dane wyjściowe
+.PP
+      --apt           Zainstaluj pakiety z repozytorium Ubuntu\&.
+.PP
+      --aur           Zainstaluj pakiety z AUR (Arch User Repository)\&.
+.PP
+      --dnf           Zainstaluj pakiety z repozytorium DNF (Dandified YUM) Fedory\&.
+.PP
+      --apk           Zainstaluj pakiety z repozytorium Alpine\&.
+.PP
+      --zypper        Zainstaluj pakiety z repozytorium OpenSUSE\&.
+.PP
+      --xbps          Zainstaluj pakiety z repozytorium Void (Linux)\&.
+.PP
+      --nix           Zainstaluj pakiety z repozytorium Nixpkgs (pakiety Nix)\&.
+.PP
+  -n, --name string   Zastosuj do niestandardowego kontenera o tej nazwie\&.
+.PP
+.SS EXAMPLES
+.RS 4
+apx init
+.RE
+.SH SUBCOMMAND INSTALL
+.RS 4
+Zainstaluj pakiety wewnątrz zarządzanego kontenera\&.
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBinstall\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Zainstaluj pakiety wewnątrz zarządzanego kontenera\&.
+.RE
+.SS OPTIONS
+  -y, --assume-yes       Kontynuuj bez ręcznego potwierdzenia
+.PP
+  -f, --fix-broken       Napraw uszkodzone zależności przed instalacją
+.PP
+      --no-export        Nie eksportuj skrótu na pulpit po instalacji\&.
+.PP
+      --sideload         Zainstaluj pakiet z pliku lokalnego\&.
+.PP
+      --allow-unfree     Zezwalaj na pakiety z niewolnymi licencjami
+.PP
+      --allow-insecure   Zezwalaj na pakiety ze znanymi lukami\&.
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       pokaż bardziej szczegółowe dane wyjściowe
+.PP
+      --apt           Zainstaluj pakiety z repozytorium Ubuntu\&.
+.PP
+      --aur           Zainstaluj pakiety z AUR (Arch User Repository)\&.
+.PP
+      --dnf           Zainstaluj pakiety z repozytorium DNF (Dandified YUM) Fedory\&.
+.PP
+      --apk           Zainstaluj pakiety z repozytorium Alpine\&.
+.PP
+      --zypper        Zainstaluj pakiety z repozytorium OpenSUSE\&.
+.PP
+      --xbps          Zainstaluj pakiety z repozytorium Void (Linux)\&.
+.PP
+      --nix           Zainstaluj pakiety z repozytorium Nixpkgs (pakiety Nix)\&.
+.PP
+  -n, --name string   Zastosuj do niestandardowego kontenera o tej nazwie\&.
+.PP
+.SS EXAMPLES
+.RS 4
+apx install htop git
+.PP
+apx --nix install --allow-unfree vscode
+.RE
+.SH SUBCOMMAND LIST
+.RS 4
+Lista zainstalowanych pakietów\&.
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBlist\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Lista zainstalowanych pakietów\&.
+.RE
+.SS OPTIONS
+  -u, --upgradable   Pokaż pakiety z możliwością aktualizacji
+.PP
+  -i, --installed    Pokaż zainstalowane pakiety
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       pokaż bardziej szczegółowe dane wyjściowe
+.PP
+      --apt           Zainstaluj pakiety z repozytorium Ubuntu\&.
+.PP
+      --aur           Zainstaluj pakiety z AUR (Arch User Repository)\&.
+.PP
+      --dnf           Zainstaluj pakiety z repozytorium DNF (Dandified YUM) Fedory\&.
+.PP
+      --apk           Zainstaluj pakiety z repozytorium Alpine\&.
+.PP
+      --zypper        Zainstaluj pakiety z repozytorium OpenSUSE\&.
+.PP
+      --xbps          Zainstaluj pakiety z repozytorium Void (Linux)\&.
+.PP
+      --nix           Zainstaluj pakiety z repozytorium Nixpkgs (pakiety Nix)\&.
+.PP
+  -n, --name string   Zastosuj do niestandardowego kontenera o tej nazwie\&.
+.PP
+.SH SUBCOMMAND PURGE
+.RS 4
+Oczyszczanie pakietów wewnątrz kontenera zarządzanego
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBpurge\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Oczyszczanie pakietów wewnątrz kontenera zarządzanego
+.RE
+.SS OPTIONS
+.SS GLOBAL OPTIONS
+  -v, --verbose       pokaż bardziej szczegółowe dane wyjściowe
+.PP
+      --apt           Zainstaluj pakiety z repozytorium Ubuntu\&.
+.PP
+      --aur           Zainstaluj pakiety z AUR (Arch User Repository)\&.
+.PP
+      --dnf           Zainstaluj pakiety z repozytorium DNF (Dandified YUM) Fedory\&.
+.PP
+      --apk           Zainstaluj pakiety z repozytorium Alpine\&.
+.PP
+      --zypper        Zainstaluj pakiety z repozytorium OpenSUSE\&.
+.PP
+      --xbps          Zainstaluj pakiety z repozytorium Void (Linux)\&.
+.PP
+      --nix           Zainstaluj pakiety z repozytorium Nixpkgs (pakiety Nix)\&.
+.PP
+  -n, --name string   Zastosuj do niestandardowego kontenera o tej nazwie\&.
+.PP
+.SS EXAMPLES
+.RS 4
+apx purge htop
+.RE
+.SH SUBCOMMAND REMOVE
+.RS 4
+Usuń pakiety wewnątrz zarządzanego kontenera\&.
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBremove\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Usuń pakiety wewnątrz zarządzanego kontenera\&.
+.RE
+.SS OPTIONS
+  -y, --assume-yes   Kontynuuj bez ręcznego potwierdzenia\&.
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       pokaż bardziej szczegółowe dane wyjściowe
+.PP
+      --apt           Zainstaluj pakiety z repozytorium Ubuntu\&.
+.PP
+      --aur           Zainstaluj pakiety z AUR (Arch User Repository)\&.
+.PP
+      --dnf           Zainstaluj pakiety z repozytorium DNF (Dandified YUM) Fedory\&.
+.PP
+      --apk           Zainstaluj pakiety z repozytorium Alpine\&.
+.PP
+      --zypper        Zainstaluj pakiety z repozytorium OpenSUSE\&.
+.PP
+      --xbps          Zainstaluj pakiety z repozytorium Void (Linux)\&.
+.PP
+      --nix           Zainstaluj pakiety z repozytorium Nixpkgs (pakiety Nix)\&.
+.PP
+  -n, --name string   Zastosuj do niestandardowego kontenera o tej nazwie\&.
+.PP
+.SS EXAMPLES
+.RS 4
+apx remove htop
+.RE
+.SH SUBCOMMAND RUN
+.RS 4
+Uruchom program wewnątrz zarządzanego kontenera\&.
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBrun\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Uruchom program wewnątrz zarządzanego kontenera\&.
+.RE
+.SS OPTIONS
+.SS GLOBAL OPTIONS
+  -v, --verbose       pokaż bardziej szczegółowe dane wyjściowe
+.PP
+      --apt           Zainstaluj pakiety z repozytorium Ubuntu\&.
+.PP
+      --aur           Zainstaluj pakiety z AUR (Arch User Repository)\&.
+.PP
+      --dnf           Zainstaluj pakiety z repozytorium DNF (Dandified YUM) Fedory\&.
+.PP
+      --apk           Zainstaluj pakiety z repozytorium Alpine\&.
+.PP
+      --zypper        Zainstaluj pakiety z repozytorium OpenSUSE\&.
+.PP
+      --xbps          Zainstaluj pakiety z repozytorium Void (Linux)\&.
+.PP
+      --nix           Zainstaluj pakiety z repozytorium Nixpkgs (pakiety Nix)\&.
+.PP
+  -n, --name string   Zastosuj do niestandardowego kontenera o tej nazwie\&.
+.PP
+.SS EXAMPLES
+.RS 4
+apx run htop
+.RE
+.SH SUBCOMMAND SEARCH
+.RS 4
+Wyszukiwanie pakietów w zarządzanym kontenerze\&.
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBsearch\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Wyszukiwanie pakietów w zarządzanym kontenerze\&.
+.RE
+.SS OPTIONS
+.SS GLOBAL OPTIONS
+  -v, --verbose       pokaż bardziej szczegółowe dane wyjściowe
+.PP
+      --apt           Zainstaluj pakiety z repozytorium Ubuntu\&.
+.PP
+      --aur           Zainstaluj pakiety z AUR (Arch User Repository)\&.
+.PP
+      --dnf           Zainstaluj pakiety z repozytorium DNF (Dandified YUM) Fedory\&.
+.PP
+      --apk           Zainstaluj pakiety z repozytorium Alpine\&.
+.PP
+      --zypper        Zainstaluj pakiety z repozytorium OpenSUSE\&.
+.PP
+      --xbps          Zainstaluj pakiety z repozytorium Void (Linux)\&.
+.PP
+      --nix           Zainstaluj pakiety z repozytorium Nixpkgs (pakiety Nix)\&.
+.PP
+  -n, --name string   Zastosuj do niestandardowego kontenera o tej nazwie\&.
+.PP
+.SS EXAMPLES
+.RS 4
+apx search neovim
+.RE
+.SH SUBCOMMAND SHOW
+.RS 4
+Pokaż szczegóły dotyczące pakietu
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBshow\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Pokaż szczegóły dotyczące pakietu
+.RE
+.SS OPTIONS
+  -i, --isinstalled   Zwraca tylko czy pakiet jest zainstalowany
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       pokaż bardziej szczegółowe dane wyjściowe
+.PP
+      --apt           Zainstaluj pakiety z repozytorium Ubuntu\&.
+.PP
+      --aur           Zainstaluj pakiety z AUR (Arch User Repository)\&.
+.PP
+      --dnf           Zainstaluj pakiety z repozytorium DNF (Dandified YUM) Fedory\&.
+.PP
+      --apk           Zainstaluj pakiety z repozytorium Alpine\&.
+.PP
+      --zypper        Zainstaluj pakiety z repozytorium OpenSUSE\&.
+.PP
+      --xbps          Zainstaluj pakiety z repozytorium Void (Linux)\&.
+.PP
+      --nix           Zainstaluj pakiety z repozytorium Nixpkgs (pakiety Nix)\&.
+.PP
+  -n, --name string   Zastosuj do niestandardowego kontenera o tej nazwie\&.
+.PP
+.SS EXAMPLES
+.RS 4
+apx show htop
+.PP
+apx show -i neovim
+.RE
+.SH SUBCOMMAND UNEXPORT
+.RS 4
+Odłącz/usuń wpis na pulpicie programu z zarządzanego kontenera
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBunexport\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Odłącza/usuwa wpis na pulpicie programu z zarządzanego kontenera\&.
+.PP
+Jeśli podano flagę --bin, usunie link do binarki kontenera\&.
+.RE
+.SS OPTIONS
+      --bin   Usuń poprzednio wyeksportowaną binarkę\&.
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       pokaż bardziej szczegółowe dane wyjściowe
+.PP
+      --apt           Zainstaluj pakiety z repozytorium Ubuntu\&.
+.PP
+      --aur           Zainstaluj pakiety z AUR (Arch User Repository)\&.
+.PP
+      --dnf           Zainstaluj pakiety z repozytorium DNF (Dandified YUM) Fedory\&.
+.PP
+      --apk           Zainstaluj pakiety z repozytorium Alpine\&.
+.PP
+      --zypper        Zainstaluj pakiety z repozytorium OpenSUSE\&.
+.PP
+      --xbps          Zainstaluj pakiety z repozytorium Void (Linux)\&.
+.PP
+      --nix           Zainstaluj pakiety z repozytorium Nixpkgs (pakiety Nix)\&.
+.PP
+  -n, --name string   Zastosuj do niestandardowego kontenera o tej nazwie\&.
+.PP
+.SS EXAMPLES
+.RS 4
+apx unexport code
+.RE
+.SH SUBCOMMAND UPGRADE
+.RS 4
+Uaktualnienie systemu poprzez instalację/aktualizację dostępnych pakietów\&.
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBupgrade\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Uaktualnienie systemu poprzez instalację/aktualizację dostępnych pakietów\&.
+.RE
+.SS OPTIONS
+  -a, --all          Zastosuj do wszystkich kontenerów\&.
+.PP
+  -y, --assume-yes   Kontynuuj bez ręcznego potwierdzenia\&.
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       pokaż bardziej szczegółowe dane wyjściowe
+.PP
+      --apt           Zainstaluj pakiety z repozytorium Ubuntu\&.
+.PP
+      --aur           Zainstaluj pakiety z AUR (Arch User Repository)\&.
+.PP
+      --dnf           Zainstaluj pakiety z repozytorium DNF (Dandified YUM) Fedory\&.
+.PP
+      --apk           Zainstaluj pakiety z repozytorium Alpine\&.
+.PP
+      --zypper        Zainstaluj pakiety z repozytorium OpenSUSE\&.
+.PP
+      --xbps          Zainstaluj pakiety z repozytorium Void (Linux)\&.
+.PP
+      --nix           Zainstaluj pakiety z repozytorium Nixpkgs (pakiety Nix)\&.
+.PP
+  -n, --name string   Zastosuj do niestandardowego kontenera o tej nazwie\&.
+.PP
+.SS EXAMPLES
+.RS 4
+apx upgrade
+.RE
+.SH SUBCOMMAND UPDATE
+.RS 4
+Aktualizacja listy dostępnych pakietów
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBupdate\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Aktualizacja listy dostępnych pakietów
+.RE
+.SS OPTIONS
+  -a, --all          Zastosuj do wszystkich kontenerów\&.
+.PP
+  -y, --assume-yes   Kontynuuj bez ręcznego potwierdzenia\&.
+.PP
+.SS GLOBAL OPTIONS
+  -v, --verbose       pokaż bardziej szczegółowe dane wyjściowe
+.PP
+      --apt           Zainstaluj pakiety z repozytorium Ubuntu\&.
+.PP
+      --aur           Zainstaluj pakiety z AUR (Arch User Repository)\&.
+.PP
+      --dnf           Zainstaluj pakiety z repozytorium DNF (Dandified YUM) Fedory\&.
+.PP
+      --apk           Zainstaluj pakiety z repozytorium Alpine\&.
+.PP
+      --zypper        Zainstaluj pakiety z repozytorium OpenSUSE\&.
+.PP
+      --xbps          Zainstaluj pakiety z repozytorium Void (Linux)\&.
+.PP
+      --nix           Zainstaluj pakiety z repozytorium Nixpkgs (pakiety Nix)\&.
+.PP
+  -n, --name string   Zastosuj do niestandardowego kontenera o tej nazwie\&.
+.PP
+

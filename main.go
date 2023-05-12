@@ -10,6 +10,9 @@ package main
 
 import (
 	"embed"
+	"os"
+	"strconv"
+	"strings"
 
 	"github.com/spf13/cobra"
 	"github.com/vanilla-os/apx/cmd"
@@ -17,7 +20,7 @@ import (
 )
 
 var (
-	Version = "1.7.2"
+	Version = "1.8.2"
 )
 
 //go:embed locales/*.yml
@@ -64,6 +67,7 @@ Global Flags:
 	    --dnf           Install packages from the Fedora's DNF (Dandified YUM) repository.
 	    --zypper        Install packages from the openSUSE repository.
 	    --xbps          Install packages from the Void (Linux) repository.
+	    --swupd 		Install packages from the Clear Linux* store.
 	-h, --help          help for apx
 	-n, --name string   Create or use custom container with this name.
 	-v, --version       version for apx
@@ -144,9 +148,18 @@ func main() {
 	update.GroupID = containerGroup.ID
 	root.AddCommand(cmd.AddContainerFlags(update))
 	cmd.AddContainerFlags(root)
+
 	// run the app
 	err := apx.Run()
+
 	if err != nil {
 		cmdr.Error.Println(err)
+
+		if strings.Contains(err.Error(), "exit status ") {
+			errorcode, _ := strconv.Atoi(strings.Trim(err.Error(), "exit status "))
+			os.Exit(errorcode)
+		}
+		// No error code present, just use error code 1
+		os.Exit(1)
 	}
 }

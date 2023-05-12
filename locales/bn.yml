@@ -1,0 +1,150 @@
+flags:
+  apt: "উবুন্টু সংগ্রহস্থল থেকে প্যাকেজসমূহ ইনস্টল করুন।"
+  aur: "AUR (Arch User Repository) থেকে প্যাকেজসমূহ ইনস্টল করুন।"
+  dnf: "Fedora এর DNF (Dandified YUM) সংগ্রহস্থল থেকে প্যাকেজসমূহ ইনস্টল করুন।"
+  apk: "আলপাইন সংগ্রহস্থল থেকে প্যাকেজসমূহ ইনস্টল করুন।"
+  zypper: "OpenSUSE সংগ্রহস্থল থেকে প্যাকেজসমূহ ইনস্টল করুন।"
+  xbps: "ভইড (লিনাক্স) সংগ্রহস্থল থেকে প্যাকেজসমূহ ইনস্টল করুন।"
+  nix: "Nixpkgs (Nix প্যাকেজ) সংগ্রহস্থল থেকে প্যাকেজসমূহ ইনস্টল করুন।"
+  swupd: "Install packages from the Clear Linux* store"
+  name: " এই নামের কাস্টম কন্টেইনারে প্রয়োগ করুন।"
+apx:
+  use: "apx"
+  long: "Apx হল একাধিক উৎস থেকে প্যাকেজ ইনস্টল সমর্থিত একটি প্যাকেজ ম্যানেজার,\nযা\
+    \ আপনাকে একটি পরিচালিত কন্টেইনারে প্যাকেজ ইনস্টল করার সুযোগ দেয়।"
+  short: "Apx হল একাধিক উৎস থেকে প্যাকেজ ইনস্টল সমর্থিত একটি প্যাকেজ ম্যানেজার,\n\
+    যা আপনাকে একটি পরিচালিত কন্টেইনারে প্যাকেজ ইনস্টল করার সুযোগ দেয়।"
+  verboseFlag: "আরো বিস্তারিত আউটপুট দেখান"
+  allFlag: "সমস্ত পাত্রের জন্য আবেদন করুন।"
+  cxl: "ব্যবহারকারীর অনুরোধে অপারেশন বাতিল করা হয়েছে।"
+  assumeYes: "ম্যানুয়াল নিশ্চিতকরণ ছাড়াই এগিয়ে যান।"
+  notForNix: "এই কমান্ডটি নিক্স পরিবেশে প্রযোজ্য নয়।"
+autoremove:
+  use: "autoremove"
+  long: "সমস্ত অব্যবহৃত প্যাকেজ স্বয়ংক্রিয়ভাবে অপসারণ করুন"
+  short: "সমস্ত অব্যবহৃত প্যাকেজ স্বয়ংক্রিয়ভাবে অপসারণ করুন"
+clean:
+  use: "clean"
+  long: "APX প্যাকেজ ম্যানেজারের ক্যাশ পরিষ্কার করুন"
+  short: "APX প্যাকেজ ম্যানেজারের ক্যাশ পরিষ্কার করুন"
+enter:
+  use: "enter"
+  long: "একটি পরিচালিত কন্টেইনারের অভ্যন্তরীণ শেলে প্রবেশ করুন"
+  short: "একটি পরিচালিত কন্টেইনারের অভ্যন্তরীণ শেলে প্রবেশ করুন"
+  failedEnter: "নিয়ন্ত্রিত কন্টেইনারে প্রবেশ করতে ব্যর্থ হয়েছে"
+  outside: "আপনি এখন নিয়ন্ত্রিত কন্টেইনারের বাইরে আছেন।"
+export:
+  use: "export <program/binary>"
+  long: "একটি নিয়ন্ত্রিত কন্টেইনার থেকে যে কোনো প্রোগ্রামের ডেস্কটপ এন্ট্রি এক্সপোর্ট/পুনরায়\
+    \ তৈরি করুন"
+  short: "একটি নিয়ন্ত্রিত কন্টেইনার থেকে কোনো একটি প্রোগ্রামের ডেস্কটপ এন্ট্রি এক্সপোর্ট/পুনরায়\
+    \ তৈরি করুন"
+  binFlag: "বাইনারি কমান্ড এক্সপোর্ট করুন"
+init:
+  use: "init"
+  long: "একটি নিয়ন্ত্রিত কন্টেইনার প্রক্রিয়াধীন করুন"
+  short: "একটি নিয়ন্ত্রিত কন্টেইনার প্রক্রিয়াধীন করুন"
+  confirm: "কন্টেইনারটি আগে থেকেই আছে। আপনি কি এটি পুনরায় আরম্ভ করতে চান? এই প্রক্রিয়াটি\
+    \ কন্টেইনারটিতে থাকা আপনার ফাইলগুলি সহ সবকিছু মুছে ফেলবে৷"
+  remove: "কন্টেইনার অপসারণে ত্রুটি: %v"
+  create: "কন্টেইনার তৈরিতে ত্রুটি: %v"
+install:
+  use: "apx install <প্যাকেজ>"
+  long: "একটি নিয়ন্ত্রিত কন্টেইনারের ভিতরে প্যাকেজসমূহ ইনস্টল করুন।"
+  short: "একটি নিয়ন্ত্রিত কন্টেইনারের ভিতরে প্যাকেজসমূহ ইনস্টল করুন।"
+  assumeYes: "ম্যানুয়াল নিশ্চিতকরণ ছাড়াই এগিয়ে যান"
+  fixBroken: "ইনস্টল করার পূর্বে ত্রুটিযুক্ত ডিপেন্ডেন্সিগুলি ঠিক করে নিন"
+  noExport: "ইনস্টলেশনের পর কোনো ডেস্কটপ এন্ট্রি এক্সপোর্ট করবেন না।"
+  sideload: "একটি স্থানীয় ফাইল থেকে কোনো প্যাকেজ ইনস্টল করুন।"
+  sideArgs: "সাইডলোডের জন্য একটি স্থানীয় ফাইলের ঠিকানা প্রয়োজন"
+  sideUserTemp: "ফাইলটি ব্যবহারকারীর টেম্প ডিরেক্টরিতে সরানো যাচ্ছে না: %s"
+  exportBinPrompt: "Export binary %s to host?\nThis will let you call it directly\
+    \ from the shell without using \"apx run\".\nYou can also export it later using\
+    \ \"apx export --bin %s\""
+list:
+  use: "list"
+  long: "ইনস্টল করা প্যাকেজগুলির তালিকা করুন।"
+  short: "ইনস্টল করা প্যাকেজগুলির তালিকা করুন।"
+  upgradable: "আপগ্রেডযোগ্য প্যাকেজগুলি দেখান"
+  installed: "ইনস্টল করা প্যাকেজগুলি দেখান"
+nix:
+  use: "nix"
+  long: "Manage a custom installation of nix in your $HOME directory.\n\nThe `apx\
+    \ nix` integration serves as a wrapper for the\ndefault nix profile. Once installed,\
+    \ you are free to use any features of\nnix without using the `apx nix` command."
+  short: "নিক্স ইনস্টলেশন পরিচালনা করুন"
+nixinit:
+  use: "init"
+  long: "Initializes a custom installation of nix by creating $HOME/.nix and setting\
+    \ up some SystemD units to mount it as /nix."
+  short: "নিক্স রিপোজিটরি প্রক্রিয়াধীন করুন"
+  confirm: "This will create a '.nix' folder in your home directory and set up some\
+    \ SystemD units to mount that folder at /nix before running the installation.\
+    \ Confirm 'y' to continue."
+  unfree: "Would you like to allow 'unfree' packages without Open Source licenses\
+    \ (Visual Studio Code, Spotify, etc)?"
+  insecure: "Would you like to allow 'insecure' packages (software with known vulnerabilities)?"
+  swcenter: "Would you like to install the Nix Software Center - a graphical software\
+    \ manager for Nix?"
+  success: "Installation complete. Reboot to start using nix."
+nixremove:
+  use: "remove"
+  long: "Remove the first matching package installed in the default nix profile.\n\
+    \nNote: It is possible to have multiple installations of the same package.\n\n\
+    If you need more precision use 'nix profile list' and 'nix profile remove'."
+  short: "একটি nix প্যাকেজ অপসারণ করুন"
+  success: "প্যাকেজ অপসারণ সম্পূর্ণ হয়েছে"
+nixinstall:
+  use: "install <pkg>"
+  long: "Install a package from the `nixpkgs` repository as a flake in the default\
+    \ nix profile."
+  short: "নিক্স প্যাকেজ ইনস্টল করুন"
+  allowUnfree: "আনফ্রি লাইসেন্সযুক্ত প্যাকেজগুলিকে অনুমতি দিন"
+  allowInsecure: "পরিচিত দুর্বলতাসহ প্যাকেজগুলিকে অনুমতি দিন।"
+  error: "প্যাকেজ ইনস্টল করতে ত্রুটি"
+  runInit: "Have you run the `init` command yet?"
+  success: "প্যাকেজ সফলভাবে ইনস্টল করা হয়েছে।"
+nixupgrade:
+  success: "সফলভাবে প্যাকেজ আপগ্রেড করা হয়েছে।"
+  atleastone: "কমপক্ষে একটি প্যাকেজের নাম আবশ্যক।"
+purge:
+  use: "purge <প্যাকেজসমূহ>"
+  long: "একটি নিয়ন্ত্রিত কন্টেইনারের ভিতরে থাকা প্যাকেজসমূহ পরিষ্কার করুন"
+  short: "একটি নিয়ন্ত্রিত কন্টেইনারের ভিতরে থাকা প্যাকেজসমূহ পরিষ্কার করুন"
+remove:
+  use: "remove <প্যাকেজ>"
+  long: "Remove packages inside a managed container."
+  short: "Remove packages inside a managed container."
+run:
+  use: "run <কমান্ড>"
+  long: "Run a program inside a managed container."
+  short: "Run a program inside a managed container."
+  nixMsg: "Do not use `apx run` for nix packages. Run them directly as you would with\
+    \ a native package."
+search:
+  use: "search <প্যাকেজসমূহ>"
+  long: "Search for packages in a managed container."
+  short: "Search for packages in a managed container."
+show:
+  use: "show <প্যাকেজ>"
+  long: "একটি প্যাকেজ সম্পর্কে বিস্তারিত দেখান"
+  short: "একটি প্যাকেজ সম্পর্কে বিস্তারিত দেখান"
+  isInstalled: "Only return whether the package is installed"
+  found: "%s ইনস্টল করা হয়েছে"
+  notFound: "%s ইনস্টল করা হয়নি"
+unexport:
+  use: "unexport <প্যাকেজ>"
+  long: "Unexport/Remove a program's desktop entry from a managed container.\nIf --bin\
+    \ flag is provided, remove link to container binary."
+  short: "Unexport/Remove a program's desktop entry from a managed container"
+  binFlag: "পূর্বে এক্সপোর্ট করা বাইনারি আনএক্সপোর্ট করুন।"
+  success: "সফলভাবে এক্সপোর্টেড বাইনারি '%s' অপসারণ করা হয়েছে।"
+update:
+  use: "update"
+  long: "Update the list of available packages"
+  short: "Update the list of available packages"
+  allFlag: "সমস্ত কন্টেইনারে প্রয়োগ করুন"
+upgrade:
+  use: "upgrade"
+  long: "Upgrade the system by installing/upgrading available packages."
+  short: "Upgrade the system by installing/upgrading available packages."
