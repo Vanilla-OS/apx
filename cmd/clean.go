@@ -30,6 +30,7 @@ func NewCleanCommand() *cmdr.Command {
 			false,
 		))
 
+	cmd.SilenceUsage = true
 	return cmd
 }
 

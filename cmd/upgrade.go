@@ -36,6 +36,7 @@ func NewUpgradeCommand() *cmdr.Command {
 		))
 	cmd.Example = "apx upgrade"
 
+	cmd.SilenceUsage = true
 	return cmd
 }
 

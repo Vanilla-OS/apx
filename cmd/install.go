@@ -127,6 +127,7 @@ func install(cmd *cobra.Command, args []string) error {
 	}
 
 	if !sideload {
+		cmd.SilenceUsage = true // Not a user error beyond this point
 		for _, pkg := range args {
 			binaries, err := container.BinariesProvidedByPackage(pkg)
 			if err != nil {

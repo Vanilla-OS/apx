@@ -31,6 +31,7 @@ func NewExportCommand() *cmdr.Command {
 	)
 	cmd.Example = "apx export htop\napx export --bin fzf"
 	cmd.Args = cobra.ExactArgs(1)
+	cmd.SilenceUsage = true
 	return cmd
 }
 

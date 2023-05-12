@@ -37,6 +37,7 @@ func NewListCommand() *cmdr.Command {
 
 	cmd.Flags().SetInterspersed(false)
 
+	cmd.SilenceUsage = true
 	return cmd
 }
 

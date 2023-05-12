@@ -22,6 +22,8 @@ func NewEnterCommand() *cmdr.Command {
 		apx.Trans("enter.short"),
 		enter,
 	)
+
+	cmd.SilenceUsage = true
 	return cmd
 }
 

@@ -29,6 +29,8 @@ func NewAutoRemoveCommand() *cmdr.Command {
 			apx.Trans("apx.allFlag"),
 			false,
 		))
+
+	cmd.SilenceUsage = true
 	return cmd
 }
 

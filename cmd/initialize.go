@@ -23,6 +23,7 @@ func NewInitializeCommand() *cmdr.Command {
 	)
 
 	cmd.Example = "apx init"
+	cmd.SilenceUsage = true
 	return cmd
 }
 

@@ -34,6 +34,7 @@ func NewUpdateCommand() *cmdr.Command {
 			false,
 		))
 
+	cmd.SilenceUsage = true
 	return cmd
 }
 
