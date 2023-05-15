@@ -6,7 +6,7 @@ flags:
   zypper: "Встановити пакети з репозиторію OpenSUSE."
   xbps: "Встановити пакети з репозиторію Void (Linux)."
   nix: "Встановіть пакунки з репозиторію Nixpkgs (пакунки Nix)."
-  swupd: "Install packages from the Clear Linux* store"
+  swupd: "Встановлення пакунків з магазину Clear Linux*"
   name: " Застосувати до користувацького контейнеру з такою назвою."
 apx:
   use: "apx"
