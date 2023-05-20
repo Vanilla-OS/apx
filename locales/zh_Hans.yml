@@ -6,7 +6,7 @@ flags:
   zypper: "从 OpenSUSE 软件仓库安装软件包。"
   xbps: "从 Void (Linux) 软件仓库安装软件包。"
   nix: "从 Nixpkgs（Nix 软件包）仓库安装软件包。"
-  swupd: "Install packages from the Clear Linux* store"
+  swupd: "从 Clear Linux* Store 安装软件包"
   name: " 将此名称应用于自定义容器。"
 apx:
   use: "apx"
@@ -53,8 +53,8 @@ install:
   sideload: "从本地文件安装软件包。"
   sideArgs: "旁加载/侧载（sideload）需要本地文件的路径"
   sideUserTemp: "无法将文件移动至用户临时文件夹：%s"
-  exportBinPrompt: "将二进制文件 %s 导出至宿主机吗？\n这将允许您直接从 shell 调用它而无须使用“apx run”。\n您也可以稍后使用“apx\
-    \ export --bin %s”导出"
+  exportBinPrompt: "将二进制文件 %s 导出至宿主机吗？\n这将允许您直接从 shell 调用它而无须使用“apx run”。\n您也可以稍后使用“apx
+    export --bin %s”导出"
 list:
   use: "list"
   long: "列出已安装的软件包。"
@@ -63,8 +63,8 @@ list:
   installed: "显示已安装的软件包"
 nix:
   use: "nix"
-  long: "在您的 $HOME 目录下管理一个自定义的 nix 安装。\n\n`apx nix` 集成是对默认 nix 配置文件的一个封装。\n安装完成后，你就可以自由地使用\
-    \ nix 的任何功能，\n而不必使用 `apx nix` 命令。"
+  long: "在您的 $HOME 目录下管理一个自定义的 nix 安装。\n\n`apx nix` 集成是对默认 nix 配置文件的一个封装。\n安装完成后，你就可以自由地使用
+    nix 的任何功能，\n而不必使用 `apx nix` 命令。"
   short: "管理 nix 安装"
 nixinit:
   use: "init"
@@ -77,8 +77,8 @@ nixinit:
   success: "安装完成。重新启动以开始使用 nix。"
 nixremove:
   use: "remove"
-  long: "移除默认 nix 配置文件中安装的第一个匹配的软件包。\n\n注意：同一个软件包有可能有多个安装。\n\n如果需要更精确，请使用“nix profile\
-    \ list”和“nix profile remove”。"
+  long: "移除默认 nix 配置文件中安装的第一个匹配的软件包。\n\n注意：同一个软件包有可能有多个安装。\n\n如果需要更精确，请使用“nix profile
+    list”和“nix profile remove”。"
   short: "移除 nix 软件包"
   success: "软件包移除完成"
 nixinstall:

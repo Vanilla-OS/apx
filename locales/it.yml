@@ -6,7 +6,7 @@ flags:
   zypper: "Installa i pacchetti dal repository di OpenSUSE."
   xbps: "Installa i pacchetti dal repository di Void (Linux)."
   nix: "Installa i pacchetti dal repository Nixpkgs (pacchetti Nix)."
-  swupd: "Install packages from the Clear Linux* store"
+  swupd: "Installa pacchetti dallo store di Clear Linux*"
   name: " Applica al container personalizzato con questo nome."
 apx:
   use: "apx"
