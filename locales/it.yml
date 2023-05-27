@@ -10,10 +10,10 @@ flags:
   name: " Applica al container personalizzato con questo nome."
 apx:
   use: "apx"
-  long: "Apx è un gestore di pacchetti con supporto per più fonti,\nche consente di\
-    \ installare i pacchetti in un container gestito."
-  short: "Apx è un gestore di pacchetti con supporto per più fonti,\nche consente\
-    \ di installare i pacchetti in un container gestito."
+  long: "Apx è un gestore di pacchetti con supporto per più fonti,\nche consente di
+    installare i pacchetti in un container gestito."
+  short: "Apx è un gestore di pacchetti con supporto per più fonti,\nche consente
+    di installare i pacchetti in un container gestito."
   verboseFlag: "mostra un output più dettagliato"
   allFlag: "Applica a tutti i container."
   cxl: "Operazione annullata su richiesta dell'utente."
@@ -42,8 +42,8 @@ init:
   use: "init"
   long: "Inizializza un container gestito"
   short: "Inizializza un container gestito"
-  confirm: "Il container esiste già. Si desidera reinizializzarlo? Questa operazione\
-    \ rimuoverà tutto, compresi i file nel container."
+  confirm: "Il container esiste già. Si desidera reinizializzarlo? Questa operazione
+    rimuoverà tutto, compresi i file nel container."
   remove: "Si è verificato un errore nella rimozione del container: %v"
   create: "Si è verificato un errore nella rimozione del container: %v"
 install:
@@ -56,9 +56,9 @@ install:
   sideload: "Installa un pacchetto da un file locale."
   sideArgs: "sideload richiede il percorso al file locale"
   sideUserTemp: "Impossibile spostare il file nella temp dell' utente: %s"
-  exportBinPrompt: "Esporta il binario %s nell'host?\nIn questo modo sarà possibile\
-    \ richiamarlo direttamente dalla shell senza usare \"apx run\".\nSi può anche\
-    \ esportare in seguito con \"apx export --bin %s\""
+  exportBinPrompt: "Esporta il binario %s nell'host?\nIn questo modo sarà possibile
+    richiamarlo direttamente dalla shell senza usare \"apx run\".\nSi può anche esportare
+    in seguito con \"apx export --bin %s\""
 list:
   use: "list"
   long: "Elenca i pacchetti installati."
@@ -68,37 +68,37 @@ list:
 nix:
   use: "nix"
   long: "Gestisci un'installazione personalizzata di nix nella propria directory $HOME.\n\
-    \nL'integrazione `apx nix` serve come wrapper per il\nprofilo nix predefinito.\
-    \ Una volta installata, si è liberi di utilizzare tutte le funzionalità di\nnix\
-    \ senza usare il comando `apx nix`."
+    \nL'integrazione `apx nix` serve come wrapper per il\nprofilo nix predefinito.
+    Una volta installata, si è liberi di utilizzare tutte le funzionalità di\nnix
+    senza usare il comando `apx nix`."
   short: "Gestisci l'installazione di nix"
 nixinit:
   use: "init"
-  long: "Inizializza un'installazione personalizzata di nix creando $HOME/.nix e impostando\
-    \ alcune unità SystemD per montarla come /nix."
+  long: "Inizializza un'installazione personalizzata di nix creando $HOME/.nix e impostando
+    alcune unità SystemD per montarla come /nix."
   short: "Inizializza il repository nix"
-  confirm: "In questo modo si creerà una cartella '.nix' nella propria home directory\
-    \ e si imposteranno alcune unità SystemD per montare tale cartella su /nix prima\
-    \ di eseguire l'installazione. Confermare 'y' per continuare."
-  unfree: "Vuoi consentire i pacchetti \"non liberi\" senza licenze Open Source (Visual\
-    \ Studio Code, Spotify, ecc.)?"
-  insecure: "Vuoi consentire i pacchetti \"insicuri\" (software con vulnerabilità\
-    \ note)?"
-  swcenter: "Vuoi installare il Nix Software Center, un gestore grafico di software\
-    \ per Nix?"
+  confirm: "In questo modo si creerà una cartella '.nix' nella propria home directory
+    e si imposteranno alcune unità SystemD per montare tale cartella su /nix prima
+    di eseguire l'installazione. Confermare 'y' per continuare."
+  unfree: "Vuoi consentire i pacchetti \"non liberi\" senza licenze Open Source (Visual
+    Studio Code, Spotify, ecc.)?"
+  insecure: "Vuoi consentire i pacchetti \"insicuri\" (software con vulnerabilità
+    note)?"
+  swcenter: "Vuoi installare il Nix Software Center, un gestore grafico di software
+    per Nix?"
   success: "Installazione completata. Riavvia per iniziare a usare nix."
 nixremove:
   use: "remove"
-  long: "Rimuove il primo pacchetto corrispondente installato nel profilo nix predefinito.\n\
-    \nNota: è possibile avere più installazioni dello stesso pacchetto.\n\nSe si desidera\
-    \ una maggiore precisione, utilizzare \"nix profile list\" e \"nix profile remove\"\
+  long: "Rimuove il primo pacchetto corrispondente installato nel profilo nix predefinito.\n
+    \nNota: è possibile avere più installazioni dello stesso pacchetto.\n\nSe si desidera
+    una maggiore precisione, utilizzare \"nix profile list\" e \"nix profile remove\"\
     ."
   short: "Rimuovi un pacchetto nix"
   success: "Rimozione del pacchetto completata"
 nixinstall:
   use: "install <pkg>"
-  long: "Installa un pacchetto dal repository `nixpkgs' come flake nel profilo nix\
-    \ predefinito."
+  long: "Installa un pacchetto dal repository `nixpkgs' come flake nel profilo nix
+    predefinito."
   short: "Installa un pacchetto nix"
   allowUnfree: "Consenti i pacchetti con licenze non gratuite"
   allowInsecure: "Consenti i pacchetti con vulnerabilità note."
@@ -120,8 +120,8 @@ run:
   use: "run <comando>"
   long: "Esegui un programma in un container gestito."
   short: "Esegui un programma in un container gestito."
-  nixMsg: "Non usare `apx run` per i pacchetti nix. Eseguiteli direttamente come faresti\
-    \ con un pacchetto nativo."
+  nixMsg: "Non usare `apx run` per i pacchetti nix. Eseguiteli direttamente come faresti
+    con un pacchetto nativo."
 search:
   use: "search <pacchetti>"
   long: "Cerca i pacchetti in un container gestito."
@@ -135,8 +135,8 @@ show:
   notFound: "%s non è installato"
 unexport:
   use: "unexport <pacchetto>"
-  long: "Rimuove la voce del desktop di un programma da un container gestito.\nSe\
-    \ viene fornito il flag --bin, rimuove il collegamento al binario del container."
+  long: "Rimuove la voce del desktop di un programma da un container gestito.\nSe
+    viene fornito il flag --bin, rimuove il collegamento al binario del container."
   short: "Rimuove la voce del desktop di un programma da un container gestito"
   binFlag: "Rimuovi un binario precedentemente esportato."
   success: "Rimosso con successo il binario esportato `%s`."
