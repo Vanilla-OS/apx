@@ -6,13 +6,13 @@ flags:
   zypper: "Installer des paquets du dépôt d'OpenSUSE."
   xbps: "Installer des paquets du dépôt Void (Linux)."
   nix: "Installer des paquets du dépôt Nixpkgs (Nix packages)."
-  swupd: "Install packages from the Clear Linux* store"
+  swupd: "Installer des paquets à partir de la boutique Clear Linux"
   name: " Appliquer pour modifier le conteneur avec ce nom."
 apx:
   use: "apx"
-  long: "Apx est un gestionnaire de paquet qui supporte de multiples sources,\net\
-    \ permet de les installer dans un conteneur."
-  short: "Apx est un gestionnaire de paquet qui supporte de multiples sources, \n\
+  long: "Apx est un gestionnaire de paquet qui supporte de multiples sources,\net
+    permet de les installer dans un conteneur."
+  short: "Apx est un gestionnaire de paquet qui supporte de multiples sources, \n
     et permet de les installer dans un conteneur."
   verboseFlag: "Afficher une sortie plus détaillée"
   allFlag: "Appliquer pour tous les conteneurs."
@@ -42,8 +42,8 @@ init:
   use: "init"
   long: "Créer un conteneur"
   short: "Créer un conteneur"
-  confirm: "Le conteneur existe déjà. Voulez-vous le réinitialiser ? Cette opération\
-    \ supprimera tout, y compris vos fichiers dans le conteneur."
+  confirm: "Le conteneur existe déjà. Voulez-vous le réinitialiser ? Cette opération
+    supprimera tout, y compris vos fichiers dans le conteneur."
   remove: "erreur lors de la suppression du conteneur : %v"
   create: "erreur lors de la création du conteneur : %v"
 install:
@@ -55,11 +55,11 @@ install:
   noExport: "Ne pas créer de raccourci du programme sur le bureau après l'installation."
   sideload: "Installer un paquet depuis un fichier local."
   sideArgs: "sideload nécessite le chemin d'accès à un fichier local"
-  sideUserTemp: "Impossible de déplacer le fichier dans le répertoire temporaire de\
-    \ l'utilisateur : %s"
-  exportBinPrompt: "Exporter le binaire %s vers l'hôte ?\nCela vous permettra de l'appeler\
-    \ directement depuis le shell sans utiliser \"apx run\".\nVous pouvez également\
-    \ l'exporter plus tard en utilisant \"apx export --bin %s\""
+  sideUserTemp: "Impossible de déplacer le fichier dans le répertoire temporaire de
+    l'utilisateur : %s"
+  exportBinPrompt: "Exporter le binaire %s vers l'hôte ?\nCela vous permettra de l'appeler
+    directement depuis le shell sans utiliser \"apx run\".\nVous pouvez également
+    l'exporter plus tard en utilisant \"apx export --bin %s\""
 list:
   use: "list"
   long: "Liste des paquets installés."
@@ -69,37 +69,37 @@ list:
 nix:
   use: "nix"
   long: "Gérer une installation personnalisée de nix dans votre répertoire $HOME.\n\
-    \nL'intégration `apx nix` sert d'enveloppe au profil nix par\ndéfaut pour le profil\
-    \ nix. Une fois installé, vous êtes libre d'utiliser toutes les fonctionnalités\
-    \ de\nnix sans utiliser la commande `apx nix`."
+    \nL'intégration `apx nix` sert d'enveloppe au profil nix par\ndéfaut pour le profil
+    nix. Une fois installé, vous êtes libre d'utiliser toutes les fonctionnalités
+    de\nnix sans utiliser la commande `apx nix`."
   short: "Gérer l'installation de nix"
 nixinit:
   use: "init"
-  long: "Initialise une installation personnalisée de nix en créant $HOME/.nix et\
-    \ en configurant certaines unités SystemD pour le monter en tant que /nix."
+  long: "Initialise une installation personnalisée de nix en créant $HOME/.nix et
+    en configurant certaines unités SystemD pour le monter en tant que /nix."
   short: "Initialiser le dépôt nix"
-  confirm: "Cela créera un dossier '.nix' dans votre répertoire personnel et configurera\
-    \ certaines unités SystemD pour monter ce dossier dans /nix avant de lancer l'installation.\
-    \ Confirmez 'y' pour continuer."
-  unfree: "Souhaitez-vous autoriser les paquets \"non libres\" sans licence Open Source\
-    \ (Visual Studio Code, Spotify, etc.) ?"
-  insecure: "Souhaitez-vous autoriser les paquets \"non sécurisés\" (logiciels dont\
-    \ les vulnérabilités sont connues) ?"
-  swcenter: "Souhaitez-vous installer le Nix Software Center - un gestionnaire graphique\
-    \ de logiciels pour Nix ?"
+  confirm: "Cela créera un dossier '.nix' dans votre répertoire personnel et configurera
+    certaines unités SystemD pour monter ce dossier dans /nix avant de lancer l'installation.
+    Confirmez 'y' pour continuer."
+  unfree: "Souhaitez-vous autoriser les paquets \"non libres\" sans licence Open Source
+    (Visual Studio Code, Spotify, etc.) ?"
+  insecure: "Souhaitez-vous autoriser les paquets \"non sécurisés\" (logiciels dont
+    les vulnérabilités sont connues) ?"
+  swcenter: "Souhaitez-vous installer le Nix Software Center - un gestionnaire graphique
+    de logiciels pour Nix ?"
   success: "L'installation est terminée. Redémarrez pour commencer à utiliser nix."
 nixremove:
   use: "remove"
-  long: "Supprime le premier paquet correspondant installé dans le profil nix par\
-    \ défaut.\n\nNote : Il est possible d'avoir plusieurs installations d'un même\
-    \ paquet.\n\nSi vous avez besoin de plus de précision, utilisez 'nix profile list'\
-    \ et 'nix profile remove'."
+  long: "Supprime le premier paquet correspondant installé dans le profil nix par
+    défaut.\n\nNote : Il est possible d'avoir plusieurs installations d'un même paquet.\n
+    \nSi vous avez besoin de plus de précision, utilisez 'nix profile list' et 'nix
+    profile remove'."
   short: "Supprimer un paquet nix"
   success: "Retrait du paquet terminé"
 nixinstall:
   use: "install <pkg>"
-  long: "Installer un paquet du dépôt `nixpkgs` en tant que flocon dans le profil\
-    \ nix par défaut."
+  long: "Installer un paquet du dépôt `nixpkgs` en tant que flocon dans le profil
+    nix par défaut."
   short: "Installer le paquet nix"
   allowUnfree: "Autoriser les paquets avec des licences non libres"
   allowInsecure: "Autoriser les paquets dont les vulnérabilités sont connues."
@@ -121,8 +121,8 @@ run:
   use: "run <commande>"
   long: "Exécuter un programme dans un conteneur."
   short: "Exécuter un programme dans un conteneur."
-  nixMsg: "N'utilisez pas `apx run` pour les paquets nix. Exécutez-les directement\
-    \ comme vous le feriez avec un paquet natif."
+  nixMsg: "N'utilisez pas `apx run` pour les paquets nix. Exécutez-les directement
+    comme vous le feriez avec un paquet natif."
 search:
   use: "search <paquet>"
   long: "Recherche de paquets dans un conteneur."
@@ -136,14 +136,14 @@ show:
   notFound: "%s n'est pas installée"
 unexport:
   use: "unexport <paquet>"
-  long: "Désexporter/supprimer l'entrée du bureau d'un programme d'un conteneur.\n\
+  long: "Désexporter/supprimer l'entrée du bureau d'un programme d'un conteneur.\n
     Si l'option --bin est fournie, supprimer le lien vers le binaire du conteneur."
   short: "Désexporter/supprimer l'entrée du bureau d'un programme d'un conteneur"
   binFlag: "Désexporter un binaire précédemment exporté."
   success: "Suppression réussie du binaire exporté `%s`."
 update:
   use: "update"
-  long: "Mise à jour de la liste des paquets disponible"
+  long: "Mettre à jour la liste des paquets disponibles"
   short: "Mise à jour de la liste des paquets disponibles"
   allFlag: "Appliquer à tous les conteneurs"
 upgrade:
