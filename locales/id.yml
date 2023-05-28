@@ -1,148 +1,150 @@
 flags:
-  apt: "Install packages from the Ubuntu repository."
-  aur: "Install packages from the AUR (Arch User Repository)."
-  dnf: "Install packages from the Fedora's DNF (Dandified YUM) repository."
-  apk: "Install packages from the Alpine repository."
-  zypper: "Install packages from the OpenSUSE repository."
-  xbps: "Install packages from the Void (Linux) repository."
-  nix: "Install packages from the Nixpkgs (Nix packages) repository."
-  swupd: "Install packages from the Clear Linux* store"
-  name: " Apply to custom container with this name."
+  apt: "Instal paket dari repositori Ubuntu."
+  aur: "Instal paket dari AUR (Arch User Repository)."
+  dnf: "Instal paket dari repositori DNF (Dandified YUM) Fedora."
+  apk: "Instal paket dari repositori Alpine."
+  zypper: "Instal paket dari repositori OpenSUSE."
+  xbps: "Instal paket dari repositori Void (Linux)."
+  nix: "Instal paket dari repositori Nixpkgs (paket Nix)."
+  swupd: "Instal paket dari Clear Linux* store"
+  name: " Terapkan pada kontainer khusus dengan nama ini."
 apx:
   use: "apx"
-  long: "Apx is a package manager with support for multiple sources,\nallowing you\
-    \ to install packages in a managed container."
-  short: "Apx is a package manager with support for multiple sources,\nallowing you\
-    \ to install packages in a managed container."
-  verboseFlag: "show more detailed output"
-  allFlag: "Apply for all containers."
-  cxl: "Operation canceled at user request."
-  assumeYes: "Proceed without manual confirmation."
-  notForNix: "This command does not apply to the nix environment."
+  long: "Apx adalah manajer paket dengan dukungan untuk beberapa sumber,\nmemungkinkan
+    Anda untuk menginstal paket dalam sebuah kontainer terkelola."
+  short: "Apx adalah manajer paket dengan dukungan untuk beberapa sumber,\nmemungkinkan
+    Anda untuk menginstal paket dalam sebuah kontainer terkelola."
+  verboseFlag: "menampilkan output yang lebih rinci"
+  allFlag: "Terapkan untuk semua kontainer."
+  cxl: "Operasi dibatalkan atas permintaan pengguna."
+  assumeYes: "Lanjutkan tanpa konfirmasi manual."
+  notForNix: "Perintah ini tidak berlaku untuk lingkungan nix."
 autoremove:
   use: "autoremove"
-  long: "Remove all unused packages automatically"
-  short: "Remove all unused packages automatically"
+  long: "Menghapus semua paket yang tidak digunakan secara otomatis"
+  short: "Menghapus semua paket yang tidak digunakan secara otomatis"
 clean:
   use: "clean"
-  long: "Clean the apx package manager cache"
-  short: "Clean the apx package manager cache"
+  long: "Bersihkan cache manajer paket apx"
+  short: "Bersihkan cache manajer paket apx"
 enter:
   use: "enter"
-  long: "Enter a shell in the managed container"
-  short: "Enter a shell in the managed container"
-  failedEnter: "failed to enter managed container"
-  outside: "You are now outside the managed container."
+  long: "Masuk ke shell dalam kontainer terkelola"
+  short: "Masuk ke shell dalam kontainer terkelola"
+  failedEnter: "gagal masuk ke kontainer terkelola"
+  outside: "Anda sekarang berada di luar kontainer terkelola."
 export:
   use: "export <program/binary>"
-  long: "Export/Recreate a program's desktop entry from a managed container"
-  short: "Export/Recreate a program's desktop entry from a managed container"
-  binFlag: "Export binary command"
+  long: "Ekspor/Buat ulang entri desktop program dari kontainer terkelola"
+  short: "Ekspor/Buat ulang entri desktop program dari kontainer terkelola"
+  binFlag: "Ekspor perintah binary"
 init:
   use: "init"
-  long: "Initialize a managed container"
-  short: "Initialize a managed container"
-  confirm: "Container already exists. Do you want to re-initialize it? This operation\
-    \ will remove everything, including your files in the container."
-  remove: "error removing container: %v"
-  create: "error creating container: %v"
+  long: "Menginisialisasi kontainer terkelola"
+  short: "Menginisialisasi kontainer terkelola"
+  confirm: "Kontainer sudah ada. Apakah Anda ingin menginisialisasi ulang? Operasi
+    ini akan menghapus semuanya, termasuk file Anda di dalam kontainer."
+  remove: "kesalahan menghapus kontainer: %v"
+  create: "kesalahan membuat kontainer: %v"
 install:
-  use: "apx install <package>"
-  long: "Install packages inside a managed container."
-  short: "Install packages inside a managed container."
-  assumeYes: "Proceed without manual confirmation"
-  fixBroken: "Fix broken dependencies before installing"
-  noExport: "Do not export a desktop entry after the installation."
-  sideload: "Install a package from a local file."
-  sideArgs: "sideload requires the path to a local file"
-  sideUserTemp: "can't move file to user temp: %s"
-  exportBinPrompt: "Export binary %s to host?\nThis will let you call it directly\
-    \ from the shell without using \"apx run\".\nYou can also export it later using\
-    \ \"apx export --bin %s\""
+  use: "apx install <paket>"
+  long: "Instal paket di dalam kontainer terkelola."
+  short: "Instal paket di dalam kontainer terkelola."
+  assumeYes: "Lanjutkan tanpa konfirmasi manual"
+  fixBroken: "Perbaiki dependensi yang rusak sebelum menginstal"
+  noExport: "Jangan mengekspor entri desktop setelah instalasi."
+  sideload: "Menginstal paket dari file lokal."
+  sideArgs: "sideload membutuhkan jalur ke file lokal"
+  sideUserTemp: "tidak dapat memindahkan file ke temp pengguna: %s"
+  exportBinPrompt: "Mengekspor binary %s ke host?\nIni akan memungkinkan Anda memanggilnya
+    secara langsung dari shell tanpa menggunakan \"apx run\".\nAnda juga dapat mengekspornya
+    nanti dengan menggunakan \"apx export --bin %s\""
 list:
   use: "list"
-  long: "List installed packages."
-  short: "List installed packages."
-  upgradable: "Show upgradable packages"
-  installed: "Show installed packages"
+  long: "Daftar paket yang terinstal."
+  short: "Daftar paket yang terinstal."
+  upgradable: "Menampilkan paket yang dapat di-upgrade"
+  installed: "Menampilkan paket yang terinstal"
 nix:
   use: "nix"
-  long: "Manage a custom installation of nix in your $HOME directory.\n\nThe `apx\
-    \ nix` integration serves as a wrapper for the\ndefault nix profile. Once installed,\
-    \ you are free to use any features of\nnix without using the `apx nix` command."
-  short: "Manage nix installation"
+  long: "Kelola instalasi kustom nix pada direktori $HOME Anda.\n\nIntegrasi `apx
+    nix` berfungsi sebagai pembungkus untuk\nprofil nix default. Setelah terinstal,
+    Anda bebas untuk menggunakan fitur-fitur\nnix tanpa menggunakan perintah `apx
+    nix`."
+  short: "Kelola instalasi nix"
 nixinit:
   use: "init"
-  long: "Initializes a custom installation of nix by creating $HOME/.nix and setting\
-    \ up some SystemD units to mount it as /nix."
-  short: "Initialize nix repository"
-  confirm: "This will create a '.nix' folder in your home directory and set up some\
-    \ SystemD units to mount that folder at /nix before running the installation.\
-    \ Confirm 'y' to continue."
-  unfree: "Would you like to allow 'unfree' packages without Open Source licenses\
-    \ (Visual Studio Code, Spotify, etc)?"
-  insecure: "Would you like to allow 'insecure' packages (software with known vulnerabilities)?"
-  swcenter: "Would you like to install the Nix Software Center - a graphical software\
-    \ manager for Nix?"
-  success: "Installation complete. Reboot to start using nix."
+  long: "Menginisialisasi instalasi kustom nix dengan membuat $HOME/.nix dan mengatur
+    beberapa unit SystemD untuk memasangnya sebagai /nix."
+  short: "Inisialisasi repositori nix"
+  confirm: "Ini akan membuat folder '.nix' pada direktori home Anda dan mengatur beberapa
+    unit SystemD untuk memasangkan folder tersebut pada /nix sebelum menjalankan instalasi.
+    Konfirmasikan 'y' untuk melanjutkan."
+  unfree: "Apakah Anda ingin mengizinkan paket 'tidak bebas' tanpa lisensi Open Source
+    (Visual Studio Code, Spotify, dll)?"
+  insecure: "Apakah Anda ingin mengizinkan paket 'tidak aman' (perangkat lunak dengan
+    kerentanan yang diketahui)?"
+  swcenter: "Apakah Anda ingin menginstal Nix Software Center - manajer perangkat
+    lunak grafis untuk Nix?"
+  success: "Instalasi selesai. Reboot untuk mulai menggunakan nix."
 nixremove:
   use: "remove"
-  long: "Remove the first matching package installed in the default nix profile.\n\
-    \nNote: It is possible to have multiple installations of the same package.\n\n\
-    If you need more precision use 'nix profile list' and 'nix profile remove'."
-  short: "Remove a nix package"
-  success: "Package removal complete"
+  long: "Hapus paket terinstal yang pertama kali cocok di profil nix default.\n\n
+    Catatan: Dimungkinkan untuk memiliki beberapa instalasi dari paket yang sama.\n
+    \nJika Anda membutuhkan presisi lebih, gunakan 'nix profile list' dan 'nix profile
+    remove'."
+  short: "Menghapus paket nix"
+  success: "Penghapusan paket selesai"
 nixinstall:
   use: "install <pkg>"
-  long: "Install a package from the `nixpkgs` repository as a flake in the default\
-    \ nix profile."
-  short: "Install nix package"
-  allowUnfree: "Allow packages with unfree licenses"
-  allowInsecure: "Allow packages with known vulnerabilities."
-  error: "error installing packages"
-  runInit: "Have you run the `init` command yet?"
-  success: "Successfully installed package."
+  long: "Instal paket dari repositori `nixpkgs` sebagai flake di profil nix default."
+  short: "Instal paket nix"
+  allowUnfree: "Izinkan paket dengan lisensi yang tidak bebas"
+  allowInsecure: "Izinkan paket dengan kerentanan yang diketahui."
+  error: "kesalahan menginstal paket"
+  runInit: "Sudahkah Anda menjalankan perintah `init`?"
+  success: "Paket berhasil diinstal."
 nixupgrade:
-  success: "Successfully upgraded package."
-  atleastone: "At least one package name required."
+  success: "Berhasil meng-upgrade paket."
+  atleastone: "Setidaknya satu nama paket diperlukan."
 purge:
-  use: "purge <packages>"
-  long: "Purge packages inside a managed container"
-  short: "Purge packages inside a managed container"
+  use: "purge <paket>"
+  long: "Membersihkan paket-paket di dalam kontainer terkelola"
+  short: "Membersihkan paket-paket di dalam kontainer terkelola"
 remove:
-  use: "remove <package>"
-  long: "Remove packages inside a managed container."
-  short: "Remove packages inside a managed container."
+  use: "remove <paket>"
+  long: "Menghapus paket di dalam kontainer terkelola."
+  short: "Menghapus paket di dalam kontainer terkelola."
 run:
-  use: "run <command>"
-  long: "Run a program inside a managed container."
-  short: "Run a program inside a managed container."
-  nixMsg: "Do not use `apx run` for nix packages. Run them directly as you would with\
-    \ a native package."
+  use: "run <perintah>"
+  long: "Menjalankan program di dalam kontainer terkelola."
+  short: "Menjalankan program di dalam kontainer terkelola."
+  nixMsg: "Jangan gunakan `apx run` untuk paket nix. Jalankan secara langsung seperti
+    yang Anda lakukan pada paket native."
 search:
-  use: "search <packages>"
-  long: "Search for packages in a managed container."
-  short: "Search for packages in a managed container."
+  use: "search <paket>"
+  long: "Cari paket dalam kontainer terkelola."
+  short: "Cari paket dalam kontainer terkelola."
 show:
-  use: "show <package>"
-  long: "Show details about a package"
-  short: "Show details about a package"
-  isInstalled: "Only return whether the package is installed"
-  found: "%s is installed"
-  notFound: "%s is not installed"
+  use: "show <paket>"
+  long: "Menampilkan rincian tentang suatu paket"
+  short: "Menampilkan rincian tentang suatu paket"
+  isInstalled: "Hanya kembalikan apakah paket sudah terinstal"
+  found: "%s sudah terinstal"
+  notFound: "%s tidak terinstal"
 unexport:
-  use: "unexport <package>"
-  long: "Unexport/Remove a program's desktop entry from a managed container.\nIf --bin\
-    \ flag is provided, remove link to container binary."
-  short: "Unexport/Remove a program's desktop entry from a managed container"
-  binFlag: "Unexport a previously exported binary."
-  success: "Successfully removed exported binary `%s`."
+  use: "unexport <paket>"
+  long: "Membatalkan ekspor/menghapus entri desktop program dari kontainer terkelola.\n
+    Jika flag --bin disertakan, hapus tautan ke binary kontainer."
+  short: "Membatalkan ekspor/Hapus entri desktop program dari kontainer terkelola"
+  binFlag: "Membatalkan ekspor binary yang telah diekspor sebelumnya."
+  success: "Berhasil menghapus binary `%s` yang diekspor."
 update:
   use: "update"
-  long: "Update the list of available packages"
-  short: "Update the list of available packages"
-  allFlag: "Apply to all containers"
+  long: "Memperbarui daftar paket yang tersedia"
+  short: "Memperbarui daftar paket yang tersedia"
+  allFlag: "Terapkan pada semua kontainer"
 upgrade:
   use: "upgrade"
-  long: "Upgrade the system by installing/upgrading available packages."
-  short: "Upgrade the system by installing/upgrading available packages."
+  long: "Upgrade sistem dengan menginstal/meng-upgrade paket yang tersedia."
+  short: "Upgrade sistem dengan menginstal/meng-upgrade paket yang tersedia."

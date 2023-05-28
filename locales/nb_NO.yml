@@ -3,17 +3,17 @@ flags:
   aur: "Installer pakker fra AUR (Arch User Repository)."
   dnf: "Installer pakker fra Fedoras DNF-arkiv (Dandified YUM)."
   apk: "Installer pakker fra Alpine repository."
-  zypper: "Install packages from the OpenSUSE repository."
+  zypper: "Installer pakker fra openSUSEs kodelager."
   xbps: "Installer pakker fra Void (Linux) repository."
   nix: "Installer pakker fra Nixpkgs (Nix-pakker)-depotet."
   swupd: "Install packages from the Clear Linux* store"
   name: " Gjelder for tilpasset beholder med dette navnet."
 apx:
   use: "apx"
-  long: "Apx er en pakkeadministrator med støtte for flere kilder,\nslik at du kan\
-    \ installere pakker i en administrert beholder."
-  short: "Apx er en pakkeadministrator med støtte for flere kilder,\nslik at du kan\
-    \ installere pakker i en administrert beholder."
+  long: "Apx er en pakkeadministrator med støtte for flere kilder,\nslik at du kan
+    installere pakker i en administrert beholder."
+  short: "Apx er en pakkeadministrator med støtte for flere kilder,\nslik at du kan
+    installere pakker i en administrert beholder."
   verboseFlag: "Vis mer detaljert output"
   allFlag: "Gjelder for alle beholdere."
   cxl: "Operasjon avbrutt på brukerens forespørsel."
@@ -35,17 +35,17 @@ enter:
   outside: "Du er nå utenfor den administrerte containeren."
 export:
   use: "eksporter <program/binær>"
-  long: "Eksportere/gjenopprette et programs skrivebordsoppføring fra en administrert\
-    \ container"
-  short: "Eksportere/gjenopprette et programs skrivebordsoppføring fra en administrert\
-    \ container"
+  long: "Eksportere/gjenopprette et programs skrivebordsoppføring fra en administrert
+    container"
+  short: "Eksportere/gjenopprette et programs skrivebordsoppføring fra en administrert
+    container"
   binFlag: "Eksporter binær kommando"
 init:
   use: "init"
   long: "Initialisere en administrert beholder"
   short: "Initialisere en administrert beholder"
-  confirm: "Beholderen finnes allerede. Vil du initialisere den på nytt? Denne operasjonen\
-    \ vil fjerne alt, inkludert filene dine i beholderen."
+  confirm: "Beholderen finnes allerede. Vil du initialisere den på nytt? Denne operasjonen
+    vil fjerne alt, inkludert filene dine i beholderen."
   remove: "feil ved fjerning av beholder: %v"
   create: "error creating container: %v"
 install:
@@ -57,10 +57,10 @@ install:
   noExport: "Ikke eksporter en skrivebordsoppføring etter installasjonen."
   sideload: "Installer en pakke fra en lokal fil."
   sideArgs: "sidelasting krever banen til en lokal fil"
-  sideUserTemp: "can't move file to user temp: %s"
-  exportBinPrompt: "Eksporter binær %s til vert?\nDette lar deg kalle det direkte\
-    \ fra skallet uten å bruke \"apx run\".\nDu kan også eksportere den senere ved\
-    \ å bruke \"apx export --bin %s\"."
+  sideUserTemp: "kan ikke flytte fil til brukerens midlertidig mappe: %s"
+  exportBinPrompt: "Eksporter binær %s til vert?\nDette lar deg kalle det direkte
+    fra skallet uten å bruke \"apx run\".\nDu kan også eksportere den senere ved å
+    bruke \"apx export --bin %s\"."
 list:
   use: "list"
   long: "List installed packages."
@@ -69,36 +69,36 @@ list:
   installed: "Vis installerte pakker"
 nix:
   use: "nix"
-  long: "Administrer en tilpasset installasjon av nix i $HOME-katalogen din.\n\nIntegrasjonen\
-    \ `apx nix` fungerer som en innpakning for profilen\nstandard nix-profilen. Når\
-    \ den er installert, står du fritt til å bruke alle funksjonene i\nnix uten å\
-    \ bruke kommandoen `apx nix`."
+  long: "Administrer en tilpasset installasjon av nix i $HOME-katalogen din.\n\nIntegrasjonen
+    `apx nix` fungerer som en innpakning for profilen\nstandard nix-profilen. Når
+    den er installert, står du fritt til å bruke alle funksjonene i\nnix uten å bruke
+    kommandoen `apx nix`."
   short: "Administrer nix-installasjon"
 nixinit:
   use: "init"
-  long: "Initialiserer en tilpasset installasjon av nix ved å opprette $HOME/.nix\
-    \ og sette opp noen SystemD-enheter for å montere den som /nix."
+  long: "Initialiserer en tilpasset installasjon av nix ved å opprette $HOME/.nix
+    og sette opp noen SystemD-enheter for å montere den som /nix."
   short: "Initialize nix repository"
-  confirm: "Dette vil opprette en '.nix'-mappe i hjemmekatalogen din og sette opp\
-    \ noen SystemD-enheter for å montere den mappen på /nix før du kjører installasjonen.\
-    \ Bekreft 'y' for å fortsette."
-  unfree: "Vil du tillate \"ufrie\" pakker uten åpen kildekode-lisenser (Visual Studio\
-    \ Code, Spotify osv.)?"
+  confirm: "Dette vil opprette en '.nix'-mappe i hjemmekatalogen din og sette opp
+    noen SystemD-enheter for å montere den mappen på /nix før du kjører installasjonen.
+    Bekreft 'y' for å fortsette."
+  unfree: "Vil du tillate \"ufrie\" pakker uten åpen kildekode-lisenser (Visual Studio
+    Code, Spotify osv.)?"
   insecure: "Vil du tillate \"usikre\" pakker (programvare med kjente sårbarheter)?"
-  swcenter: "Ønsker du å installere Nix Software Center - en grafisk programvareadministrator\
-    \ for Nix?"
+  swcenter: "Ønsker du å installere Nix Software Center - en grafisk programvareadministrator
+    for Nix?"
   success: "Installasjonen er fullført. Start på nytt for å begynne å bruke nix."
 nixremove:
   use: "remove"
-  long: "Remove the first matching package installed in the default nix profile.\n\
-    \nNote: It is possible to have multiple installations of the same package.\n\n\
+  long: "Remove the first matching package installed in the default nix profile.\n
+    \nNote: It is possible to have multiple installations of the same package.\n\n
     If you need more precision use 'nix profile list' and 'nix profile remove'."
   short: "Remove a nix package"
   success: "Package removal complete"
 nixinstall:
   use: "install <pkg>"
-  long: "Install a package from the `nixpkgs` repository as a flake in the default\
-    \ nix profile."
+  long: "Install a package from the `nixpkgs` repository as a flake in the default
+    nix profile."
   short: "Install nix package"
   allowUnfree: "Allow packages with unfree licenses"
   allowInsecure: "Allow packages with known vulnerabilities."
@@ -120,8 +120,8 @@ run:
   use: "run <command>"
   long: "Run a program inside a managed container."
   short: "Run a program inside a managed container."
-  nixMsg: "Do not use `apx run` for nix packages. Run them directly as you would with\
-    \ a native package."
+  nixMsg: "Do not use `apx run` for nix packages. Run them directly as you would with
+    a native package."
 search:
   use: "search <packages>"
   long: "Search for packages in a managed container."
@@ -135,8 +135,8 @@ show:
   notFound: "%s is not installed"
 unexport:
   use: "unexport <package>"
-  long: "Unexport/Remove a program's desktop entry from a managed container.\nIf --bin\
-    \ flag is provided, remove link to container binary."
+  long: "Unexport/Remove a program's desktop entry from a managed container.\nIf --bin
+    flag is provided, remove link to container binary."
   short: "Unexport/Remove a program's desktop entry from a managed container"
   binFlag: "Unexport a previously exported binary."
   success: "Successfully removed exported binary `%s`."
