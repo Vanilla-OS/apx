@@ -2,7 +2,6 @@
   <img src="apx-logo.png" height="120">
   <h1 align="center">Apx</h1>
 
-
 [![Translation Status][weblate-image]][weblate-url]
 [![build result][build-image]][build-url]
 
