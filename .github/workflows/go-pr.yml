@@ -1,8 +1,8 @@
-name: Go
+name: Go (PR)
 
-on:
-  push:
-    branches: [ "main" ]
+on:    
+  pull_request_target:
+    types: [opened, synchronize, reopened]
 
 jobs:
 
@@ -26,18 +26,7 @@ jobs:
 
     - name: Build
       run: go build -o apx
-    
-    - name: Compress
-      run: tar -czvf apx.tar.gz apx
 
-    - uses: softprops/action-gh-release@v1
-      with:
-        token: "${{ secrets.GITHUB_TOKEN }}"
-        tag_name: "continuous"
-        prerelease: true
-        name: "Continuous Build"
-        files: |
-          apx.tar.gz
   sonar:
     name: Sonar
     runs-on: ubuntu-latest
