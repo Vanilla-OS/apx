@@ -34,10 +34,10 @@ jobs:
 
     - uses: softprops/action-gh-release@v1
       with:
-        repo_token: "${{ secrets.GITHUB_TOKEN }}"
+        token: "${{ secrets.GITHUB_TOKEN }}"
         tag_name: "continuous"
         prerelease: true
-        title: "Continuous Build"
+        name: "Continuous Build"
         files: |
           apx.tar.gz
   sonar:
