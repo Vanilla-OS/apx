@@ -6,12 +6,12 @@ flags:
   zypper: "OpenSUSEリポジトリからパッケージをインストールします。"
   xbps: "Void (Linux)リポジトリからパッケージをインストールします。"
   nix: "Nixpkgs (Nix packages)リポジトリからパッケージをインストールします。"
-  swupd: "Install packages from the Clear Linux* store"
-  name: " この名前のカスタムコンテナに適用します"
+  swupd: "「Clear Linux*」ストアからパッケージをインストールします"
+  name: " こう言うカスタムコンテナに適用します"
 apx:
   use: "apx"
   long: "Apxは、複数のソースをサポートするパッケージマネージャで、\n管理されたコンテナにパッケージをインストールすることができます。"
-  short: "Apxは、複数のソースをサポートするパッケージマネージャで、管理されたコンテナにパッケージをインストールすることができます。"
+  short: "Apxは、複数のソースをサポートするパッケージマネージャで、\n管理されたコンテナにパッケージをインストールすることができます。"
   verboseFlag: "より詳細な出力を表示します"
   allFlag: "すべてのコンテナに適用します。"
   cxl: "ユーザーのリクエストにより操作がキャンセルされました。"
@@ -19,8 +19,8 @@ apx:
   notForNix: "このコマンドは、Nix環境には適用されません。"
 autoremove:
   use: "autoremove"
-  long: "すべての未使用パッケージを自動的に削除します。"
-  short: "すべての未使用パッケージを自動的に削除します。"
+  long: "すべての未使用パッケージを自動的に削除します"
+  short: "すべての未使用パッケージを自動的に削除します"
 clean:
   use: "clean"
   long: "Apxパッケージマネージャのキャッシュを空にします。"
@@ -53,7 +53,7 @@ install:
   sideload: "ローカルファイルからパッケージをインストールします。"
   sideArgs: "パッケージファイルからのインストールには、ローカルファイルへのパスが必要です。"
   sideUserTemp: "ファイルをユーザーの一時フォルダに移動できませんでした: %s"
-  exportBinPrompt: "バイナリ %s をホストにエクスポートしますか？\nこれにより、「apx run」を使用せずに直接シェルから呼び出すことができます。\n\
+  exportBinPrompt: "バイナリ %s をホストにエクスポートしますか？\nこれにより、「apx run」を使用せずに直接シェルから呼び出すことができます。\n
     後で「apx export --bin %s」を使用してエクスポートすることもできます。"
 list:
   use: "list"
@@ -63,29 +63,29 @@ list:
   installed: "インストールされているパッケージを表示します。"
 nix:
   use: "nix"
-  long: "$HOME ディレクトリにカスタムインストールした Nix を管理します。\n\napx nix 統合は、デフォルトの Nix プロファイルのラッパーとして機能します。\n\
+  long: "$HOME ディレクトリにカスタムインストールした Nix を管理します。\n\napx nix 統合は、デフォルトの Nix プロファイルのラッパーとして機能します。\n
     インストール後、apx nix コマンドを使用せずに Nix の任意の機能を自由に使用できます。"
   short: "Nix のインストールを管理します。"
 nixinit:
   use: "init"
   long: "$HOME/.nix を作成し、それを /nix としてマウントするためのいくつかの SystemD ユニットを設定することで、Nix のカスタムインストールを初期化します。"
   short: "Nix リポジトリを初期化します。"
-  confirm: "インストールを実行する前に、この操作はホームディレクトリに '.nix' フォルダを作成し、そのフォルダを /nix にマウントするためのいくつかの\
-    \ SystemD ユニットを設定します。続行するには 'y' を確認してください。"
+  confirm: "インストールを実行する前に、この操作はホームディレクトリに '.nix' フォルダを作成し、そのフォルダを /nix にマウントするためのいくつかの
+    SystemD ユニットを設定します。続行するには 'y' を確認してください。"
   unfree: "オープンソースライセンスのない非フリーパッケージ（Visual Studio Code、Spotifyなど）を許可しますか？"
   insecure: "既知の脆弱性を持つソフトウェアを含む『安全でない』パッケージを許可しますか？"
   swcenter: "Nixソフトウェアセンターをインストールしますか？Nix用のグラフィカルなソフトウェアマネージャーです。"
   success: "インストールが完了しました。nixを使用するには再起動してください。"
 nixremove:
   use: "remove"
-  long: "デフォルトのnixプロファイルにインストールされた最初にマッチするパッケージを削除します。\n\n注意：同じパッケージの複数のインストールが可能です。\n\
+  long: "デフォルトのnixプロファイルにインストールされた最初にマッチするパッケージを削除します。\n\n注意：同じパッケージの複数のインストールが可能です。\n
     \nより正確な操作が必要な場合は、 'nix profile list'および 'nix profile remove'を使用してください。"
   short: "Remove a nix package"
   success: "Package removal complete"
 nixinstall:
   use: "install <pkg>"
-  long: "Install a package from the `nixpkgs` repository as a flake in the default\
-    \ nix profile."
+  long: "Install a package from the `nixpkgs` repository as a flake in the default
+    nix profile."
   short: "Install nix package"
   allowUnfree: "Allow packages with unfree licenses"
   allowInsecure: "Allow packages with known vulnerabilities."
@@ -97,18 +97,18 @@ nixupgrade:
   atleastone: "At least one package name required."
 purge:
   use: "purge <packages>"
-  long: "Purge packages inside a managed container"
-  short: "Purge packages inside a managed container"
+  long: "マネージされているコンテナの中のパッケージをパージします"
+  short: "マネージされているコンテナの中のパッケージをパージします"
 remove:
-  use: "remove <package>"
-  long: "Remove packages inside a managed container."
-  short: "Remove packages inside a managed container."
+  use: "remove <パッケージ>"
+  long: "マネージドコンテナ内のパッケージを削除します"
+  short: "マネージドコンテナ内のパッケージを削除します。"
 run:
-  use: "run <command>"
-  long: "Run a program inside a managed container."
-  short: "Run a program inside a managed container."
-  nixMsg: "Do not use `apx run` for nix packages. Run them directly as you would with\
-    \ a native package."
+  use: "run <コマンド>"
+  long: "マネージドコンテナ内でプログラムを実行します。"
+  short: "マネージドコンテナ内でプログラムを実行します。"
+  nixMsg: "Do not use `apx run` for nix packages. Run them directly as you would with
+    a native package."
 search:
   use: "search <packages>"
   long: "Search for packages in a managed container."
@@ -122,8 +122,8 @@ show:
   notFound: "%s is not installed"
 unexport:
   use: "unexport <package>"
-  long: "Unexport/Remove a program's desktop entry from a managed container.\nIf --bin\
-    \ flag is provided, remove link to container binary."
+  long: "Unexport/Remove a program's desktop entry from a managed container.\nIf --bin
+    flag is provided, remove link to container binary."
   short: "Unexport/Remove a program's desktop entry from a managed container"
   binFlag: "Unexport a previously exported binary."
   success: "Successfully removed exported binary `%s`."
