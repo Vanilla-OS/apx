@@ -1,148 +1,154 @@
 flags:
-  apt: "Install packages from the Ubuntu repository."
-  aur: "Install packages from the AUR (Arch User Repository)."
-  dnf: "Install packages from the Fedora's DNF (Dandified YUM) repository."
-  apk: "Install packages from the Alpine repository."
-  zypper: "Install packages from the OpenSUSE repository."
-  xbps: "Install packages from the Void (Linux) repository."
-  nix: "Install packages from the Nixpkgs (Nix packages) repository."
-  swupd: "Install packages from the Clear Linux* store"
-  name: " Apply to custom container with this name."
+  apt: "Инсталирайте пакети от хранилището на Ubuntu."
+  aur: "Инсталирайте пакети от AUR (Arch User Repository)."
+  dnf: "Инсталирайте пакети от хранилището DNF (Dandified YUM) на Fedora."
+  apk: "Инсталирайте пакети от хранилището на Alpine."
+  zypper: "Инсталирайте пакети от хранилището на OpenSUSE."
+  xbps: "Инсталирайте пакети от хранилището Void (Linux)."
+  nix: "Инсталирайте пакети от хранилището Nixpkgs (пакети Nix)."
+  swupd: "Инсталиране на пакети от магазина на Clear Linux*"
+  name: " Прилага се към потребителски контейнер с това име."
 apx:
   use: "apx"
-  long: "Apx is a package manager with support for multiple sources,\nallowing you\
-    \ to install packages in a managed container."
-  short: "Apx is a package manager with support for multiple sources,\nallowing you\
-    \ to install packages in a managed container."
-  verboseFlag: "show more detailed output"
-  allFlag: "Apply for all containers."
-  cxl: "Operation canceled at user request."
-  assumeYes: "Proceed without manual confirmation."
-  notForNix: "This command does not apply to the nix environment."
+  long: "Apx е мениджър на пакети с поддръжка на множество източници,\nи ви позволява
+    да инсталирате пакети в управляван контейнер."
+  short: "Apx е мениджър на пакети с поддръжка на множество източници,\nи ви позволява
+    да инсталирате пакети в управляван контейнер."
+  verboseFlag: "покажете по-подробен изход"
+  allFlag: "Приложи за всички контейнери."
+  cxl: "Операцията е отменена по искане на потребителя."
+  assumeYes: "Продължете без ръчно потвърждение."
+  notForNix: "Тази команда не се прилага за средата nix."
 autoremove:
   use: "autoremove"
-  long: "Remove all unused packages automatically"
-  short: "Remove all unused packages automatically"
+  long: "Автоматично премахване на всички неизползвани пакети"
+  short: "Автоматично премахване на всички неизползвани пакети"
 clean:
   use: "clean"
-  long: "Clean the apx package manager cache"
-  short: "Clean the apx package manager cache"
+  long: "Почистване на кеша на мениджъра на пакети apx"
+  short: "Почистване на кеша на мениджъра на пакети apx"
 enter:
   use: "enter"
-  long: "Enter a shell in the managed container"
-  short: "Enter a shell in the managed container"
-  failedEnter: "failed to enter managed container"
-  outside: "You are now outside the managed container."
+  long: "Влезте в shell в управлявания контейнер"
+  short: "Въвеждане в shell в управлявания контейнер"
+  failedEnter: "не успя да влезе в управлявания контейнер"
+  outside: "Вече сте извън управлявания контейнер."
 export:
-  use: "export <program/binary>"
-  long: "Export/Recreate a program's desktop entry from a managed container"
-  short: "Export/Recreate a program's desktop entry from a managed container"
-  binFlag: "Export binary command"
+  use: "export <програма/бинарен файл>"
+  long: "Експортиране/създаване на запис на работния плот на програма от управляван
+    контейнер"
+  short: "Експортиране/създаване на запис на работния плот на програма от управляван
+    контейнер"
+  binFlag: "Команда за експортиране на двоичен файл"
 init:
   use: "init"
-  long: "Initialize a managed container"
-  short: "Initialize a managed container"
-  confirm: "Container already exists. Do you want to re-initialize it? This operation\
-    \ will remove everything, including your files in the container."
-  remove: "error removing container: %v"
-  create: "error creating container: %v"
+  long: "Иницииране на управляван контейнер"
+  short: "Иницииране на управляван контейнер"
+  confirm: "Контейнерът вече съществува. Искате ли да го инициализирате отново? Тази
+    операция ще премахне всичко, включително файловете ви в контейнера."
+  remove: "грешка при премахване на контейнер: %v"
+  create: "грешка при създаването на контейнер: %v"
 install:
-  use: "apx install <package>"
-  long: "Install packages inside a managed container."
-  short: "Install packages inside a managed container."
-  assumeYes: "Proceed without manual confirmation"
-  fixBroken: "Fix broken dependencies before installing"
-  noExport: "Do not export a desktop entry after the installation."
-  sideload: "Install a package from a local file."
-  sideArgs: "sideload requires the path to a local file"
-  sideUserTemp: "can't move file to user temp: %s"
-  exportBinPrompt: "Export binary %s to host?\nThis will let you call it directly\
-    \ from the shell without using \"apx run\".\nYou can also export it later using\
-    \ \"apx export --bin %s\""
+  use: "apx install <пакет>"
+  long: "Инсталиране на пакети в управляван контейнер."
+  short: "Инсталиране на пакети в управляван контейнер."
+  assumeYes: "Продължете без ръчно потвърждение"
+  fixBroken: "Поправяне на счупени зависимости преди инсталиране"
+  noExport: "Не експортирайте запис на работния плот след инсталацията."
+  sideload: "Инсталиране на пакет от локален файл."
+  sideArgs: "sideload изисква пътя до локален файл"
+  sideUserTemp: "не мога да преместя файл в потребителската памет: %s"
+  exportBinPrompt: "Експортиране на двоичен код %s към хост?\nТова ще ви позволи да
+    го извикате директно от шела, без да използвате \"apx run\".\nМожете също така
+    да го експортирате по-късно, като използвате \"apx export --bin %s\""
 list:
   use: "list"
-  long: "List installed packages."
-  short: "List installed packages."
-  upgradable: "Show upgradable packages"
-  installed: "Show installed packages"
+  long: "Списък на инсталираните пакети."
+  short: "Списък на инсталираните пакети."
+  upgradable: "Показване на пакетите за надграждане"
+  installed: "Показване на инсталираните пакети"
 nix:
   use: "nix"
-  long: "Manage a custom installation of nix in your $HOME directory.\n\nThe `apx\
-    \ nix` integration serves as a wrapper for the\ndefault nix profile. Once installed,\
-    \ you are free to use any features of\nnix without using the `apx nix` command."
-  short: "Manage nix installation"
+  long: "Управлявайте потребителска инсталация на nix в директорията си $HOME.\n\n
+    Интеграцията `apx nix` служи като обвивка за\nпрофила на nix по подразбиране.
+    След като сте инсталирали, можете да използвате всички функции на\nnix, без да
+    използвате командата `apx nix`."
+  short: "Управление на инсталацията на NIX"
 nixinit:
   use: "init"
-  long: "Initializes a custom installation of nix by creating $HOME/.nix and setting\
-    \ up some SystemD units to mount it as /nix."
-  short: "Initialize nix repository"
-  confirm: "This will create a '.nix' folder in your home directory and set up some\
-    \ SystemD units to mount that folder at /nix before running the installation.\
-    \ Confirm 'y' to continue."
-  unfree: "Would you like to allow 'unfree' packages without Open Source licenses\
-    \ (Visual Studio Code, Spotify, etc)?"
-  insecure: "Would you like to allow 'insecure' packages (software with known vulnerabilities)?"
-  swcenter: "Would you like to install the Nix Software Center - a graphical software\
-    \ manager for Nix?"
-  success: "Installation complete. Reboot to start using nix."
+  long: "Инициира потребителска инсталация на nix, като създава $HOME/.nix и настройва
+    някои SystemD единици да го монтират като /nix."
+  short: "Иницииране на хранилището на NIX"
+  confirm: "Това ще създаде папка \".nix\" в домашната ви директория и ще настрои
+    някои модули на SystemD да монтират тази папка в /nix, преди да стартирате инсталацията.
+    Потвърдете \"y\", за да продължите."
+  unfree: "Искате ли да разрешите \"несвободни\" пакети без лицензи за отворен код
+    (Visual Studio Code, Spotify и др.)?"
+  insecure: "Искате ли да разрешите \"несигурни\" пакети (софтуер с известни уязвимости)?"
+  swcenter: "Искате ли да инсталирате Nix Software Center - графичен софтуерен мениджър
+    за Nix?"
+  success: "Инсталацията е завършена. Рестартирайте, за да започнете да използвате
+    nix."
 nixremove:
   use: "remove"
-  long: "Remove the first matching package installed in the default nix profile.\n\
-    \nNote: It is possible to have multiple installations of the same package.\n\n\
-    If you need more precision use 'nix profile list' and 'nix profile remove'."
-  short: "Remove a nix package"
-  success: "Package removal complete"
+  long: "Премахване на първия съответстващ пакет, инсталиран в профила по подразбиране
+    на nix.\n\nЗабележка: Възможно е да има няколко инсталации на един и същ пакет.\n
+    \nАко се нуждаете от по-голяма точност, използвайте 'nix profile list' и 'nix
+    profile remove'."
+  short: "Премахване на пакет на NIX"
+  success: "Премахването на пакета е завършено"
 nixinstall:
   use: "install <pkg>"
-  long: "Install a package from the `nixpkgs` repository as a flake in the default\
-    \ nix profile."
-  short: "Install nix package"
-  allowUnfree: "Allow packages with unfree licenses"
-  allowInsecure: "Allow packages with known vulnerabilities."
-  error: "error installing packages"
-  runInit: "Have you run the `init` command yet?"
-  success: "Successfully installed package."
+  long: "Инсталиране на пакет от хранилището `nixpkgs` като flake в профила по подразбиране
+    на nix."
+  short: "Инсталиране на пакета NIX"
+  allowUnfree: "Разрешаване на пакети с несвободни лицензи"
+  allowInsecure: "Разрешаване на пакети с известни уязвимости."
+  error: "грешка при инсталиране на пакети"
+  runInit: "Изпълнихте ли вече командата `init`?"
+  success: "Успешно инсталиран пакет."
 nixupgrade:
-  success: "Successfully upgraded package."
-  atleastone: "At least one package name required."
+  success: "Успешно надграден пакет."
+  atleastone: "Изисква се поне едно име на пакет."
 purge:
-  use: "purge <packages>"
-  long: "Purge packages inside a managed container"
-  short: "Purge packages inside a managed container"
+  use: "purge <пакети>"
+  long: "Изчистване на пакети в управляван контейнер"
+  short: "Изчистване на пакети в управляван контейнер"
 remove:
-  use: "remove <package>"
-  long: "Remove packages inside a managed container."
-  short: "Remove packages inside a managed container."
+  use: "remove <пакет>"
+  long: "Премахване на пакети в управляван контейнер."
+  short: "Премахване на пакети в управляван контейнер."
 run:
-  use: "run <command>"
-  long: "Run a program inside a managed container."
-  short: "Run a program inside a managed container."
-  nixMsg: "Do not use `apx run` for nix packages. Run them directly as you would with\
-    \ a native package."
+  use: "run <команда>"
+  long: "Изпълнение на програма в управляван контейнер."
+  short: "Изпълнение на програма в управляван контейнер."
+  nixMsg: "Не използвайте `apx run` за пакети за NIX. Стартирайте ги директно, както
+    бихте направили с роден пакет."
 search:
-  use: "search <packages>"
-  long: "Search for packages in a managed container."
-  short: "Search for packages in a managed container."
+  use: "search <пакети>"
+  long: "Търсене на пакети в управляван контейнер."
+  short: "Търсене на пакети в управляван контейнер."
 show:
-  use: "show <package>"
-  long: "Show details about a package"
-  short: "Show details about a package"
-  isInstalled: "Only return whether the package is installed"
-  found: "%s is installed"
-  notFound: "%s is not installed"
+  use: "show <пакети>"
+  long: "Показване на подробна информация за даден пакет"
+  short: "Показване на подробна информация за даден пакет"
+  isInstalled: "Връща само дали пакетът е инсталиран"
+  found: "%s е инсталиран"
+  notFound: "„%s“ не е инсталиран"
 unexport:
-  use: "unexport <package>"
-  long: "Unexport/Remove a program's desktop entry from a managed container.\nIf --bin\
-    \ flag is provided, remove link to container binary."
-  short: "Unexport/Remove a program's desktop entry from a managed container"
-  binFlag: "Unexport a previously exported binary."
-  success: "Successfully removed exported binary `%s`."
+  use: "unexport <пакет>"
+  long: "Изваждане/премахване на записа на програмата на работния плот от управляван
+    контейнер.\nАко е зададен флаг --bin, премахнете връзката към двоичния файл на
+    контейнера."
+  short: "Извеждане/премахване на запис на десктопа на програма от управляван контейнер"
+  binFlag: "Изпращане на предварително експортиран двоичен файл."
+  success: "Успешно премахнахте експортирания двоичен файл `%s`."
 update:
   use: "update"
-  long: "Update the list of available packages"
-  short: "Update the list of available packages"
-  allFlag: "Apply to all containers"
+  long: "Актуализиране на списъка с налични пакети"
+  short: "Актуализиране на списъка с налични пакети"
+  allFlag: "Приложи за всички контейнери"
 upgrade:
   use: "upgrade"
-  long: "Upgrade the system by installing/upgrading available packages."
-  short: "Upgrade the system by installing/upgrading available packages."
+  long: "Обновяване на системата чрез инсталиране/обновяване на наличните пакети."
+  short: "Обновяване на системата чрез инсталиране/обновяване на наличните пакети."
