@@ -66,7 +66,7 @@ list:
   long: "Listar paquetes instalados."
   short: "Listar paquetes instalados."
   upgradable: "Mostrar paquetes actualizables"
-  installed: "Show installed packages"
+  installed: "Mostrar paquetes instalados"
 nix:
   use: "nix"
   long: "Gestiona una instalación personalizada de nix en tu directorio $HOME.\n\n
@@ -125,28 +125,29 @@ run:
     haría con un paquete nativo."
 search:
   use: "search <paquetes>"
-  long: "Search for packages in a managed container."
-  short: "Search for packages in a managed container."
+  long: "Buscar paquetes en un contenedor gestionado."
+  short: "Buscar paquetes en un contenedor gestionado."
 show:
-  use: "show <package>"
-  long: "Show details about a package"
-  short: "Show details about a package"
-  isInstalled: "Only return whether the package is instaled"
-  found: "%s is installed"
+  use: "mostrar <paquete>"
+  long: "Mostrar detalles sobre un paquete"
+  short: "Mostrar detalles sobre un paquete"
+  isInstalled: "Sólo devuelve si el paquete está instalado"
+  found: "%s está instalado"
   notFound: "%s is not installed"
 unexport:
-  use: "unexport <package>"
+  use: "unexport <paquete>"
   long: "Unexport/Remove a program's desktop entry from a managed container.\nIf --bin
     flag is provided, remove link to container binary."
-  short: "Unexport/Remove a program's desktop entry from a managed container"
-  binFlag: "Unexport a previously exported binary."
-  success: "Successfully removed exported binary `%s`."
+  short: "Desexportar/eliminar la entrada de escritorio de un programa de un contenedor
+    gestionado"
+  binFlag: "Desexportar un binario previamente exportado."
+  success: "Eliminado con éxito el binario exportado `%s`."
 update:
   use: "update"
   long: "Actualizar la lista de paquetes disponibles"
-  short: "Update the list of available packages"
-  allFlag: "Apply to all containers"
+  short: "Actualizar la lista de paquetes disponibles"
+  allFlag: "Aplicar a todos los contenedores"
 upgrade:
   use: "upgrade"
-  long: "Upgrade the system by installing/upgrading available packages."
-  short: "Upgrade the system by installing/upgrading available packages."
+  long: "Actualice el sistema instalando/actualizando los paquetes disponibles."
+  short: "Actualice el sistema instalando/actualizando los paquetes disponibles."
