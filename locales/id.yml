@@ -6,7 +6,7 @@ flags:
   zypper: "Instal paket dari repositori OpenSUSE."
   xbps: "Instal paket dari repositori Void (Linux)."
   nix: "Instal paket dari repositori Nixpkgs (paket Nix)."
-  swupd: "Instal paket dari Clear Linux* store"
+  swupd: "Instal paket dari toko Clear Linux*"
   name: " Terapkan pada kontainer khusus dengan nama ini."
 apx:
   use: "apx"
@@ -129,7 +129,7 @@ show:
   use: "show <paket>"
   long: "Menampilkan rincian tentang suatu paket"
   short: "Menampilkan rincian tentang suatu paket"
-  isInstalled: "Hanya kembalikan apakah paket sudah terinstal"
+  isInstalled: "Kembali hanya jika paket sudah diinstal"
   found: "%s sudah terinstal"
   notFound: "%s tidak terinstal"
 unexport:

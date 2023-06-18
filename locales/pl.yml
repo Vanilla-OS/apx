@@ -6,14 +6,14 @@ flags:
   zypper: "Zainstaluj pakiety z repozytorium OpenSUSE."
   xbps: "Zainstaluj pakiety z repozytorium Void (Linux)."
   nix: "Zainstaluj pakiety z repozytorium Nixpkgs (pakiety Nix)."
-  swupd: "Install packages from the Clear Linux* store"
+  swupd: "Zainstaluj pakiety ze sklepu Clear Linux*"
   name: " Zastosuj do niestandardowego kontenera o tej nazwie."
 apx:
   use: "apx"
-  long: "Apx to menedżer pakietów z obsługą wielu źródeł,\numożliwiając instalację\
-    \ pakietów w zarządzanym kontenerze."
-  short: "Apx to menedżer pakietów z obsługą wielu źródeł,\numożliwiając instalację\
-    \ pakietów w zarządzanym kontenerze."
+  long: "Apx to menedżer pakietów z obsługą wielu źródeł,\numożliwiając instalację
+    pakietów w zarządzanym kontenerze."
+  short: "Apx to menedżer pakietów z obsługą wielu źródeł,\numożliwiając instalację
+    pakietów w zarządzanym kontenerze."
   verboseFlag: "pokaż bardziej szczegółowe dane wyjściowe"
   allFlag: "Zastosuj do wszystkich kontenerów."
   cxl: "Operacja anulowana na żądanie użytkownika."
@@ -42,8 +42,8 @@ init:
   use: "init"
   long: "Inicjalizacja kontenera zarządzanego"
   short: "Inicjalizacja kontenera zarządzanego"
-  confirm: "Kontener już istnieje. Czy chcesz go ponownie zainicjować? Ta operacja\
-    \ usunie wszystko, w tym twoje pliki w kontenerze."
+  confirm: "Kontener już istnieje. Czy chcesz go ponownie zainicjować? Ta operacja
+    usunie wszystko, w tym twoje pliki w kontenerze."
   remove: "błąd usuwania kontenera: %v"
   create: "błąd przy tworzeniu kontenera: %v"
 install:
@@ -56,9 +56,9 @@ install:
   sideload: "Zainstaluj pakiet z pliku lokalnego."
   sideArgs: "sideload wymaga ścieżki do lokalnego pliku"
   sideUserTemp: "nie można przenieść pliku do temp użytkownika: %s"
-  exportBinPrompt: "Eksportować binarne %s do hosta?\nTo pozwoli ci wywołać go bezpośrednio\
-    \ z powłoki bez użycia \"apx run\".\nMożesz również wyeksportować go później za\
-    \ pomocą \"apx export --bin %s\""
+  exportBinPrompt: "Eksportować binarne %s do hosta?\nTo pozwoli ci wywołać go bezpośrednio
+    z powłoki bez użycia \"apx run\".\nMożesz również wyeksportować go później za
+    pomocą \"apx export --bin %s\""
 list:
   use: "list"
   long: "Lista zainstalowanych pakietów."
@@ -67,36 +67,36 @@ list:
   installed: "Pokaż zainstalowane pakiety"
 nix:
   use: "nix"
-  long: "Zarządzaj niestandardową instalacją nixa w swoim katalogu $HOME.\n\nIntegracja\
-    \ `apx nix` służy jako wrapper dla\ndomyślnego profilu nix. Po zainstalowaniu,\
-    \ możesz swobodnie używać dowolnych funkcji\nnixa bez użycia polecenia `apx nix`."
+  long: "Zarządzaj niestandardową instalacją nixa w swoim katalogu $HOME.\n\nIntegracja
+    `apx nix` służy jako wrapper dla\ndomyślnego profilu nix. Po zainstalowaniu, możesz
+    swobodnie używać dowolnych funkcji\nnixa bez użycia polecenia `apx nix`."
   short: "Zarządzaj instalacją nixa"
 nixinit:
   use: "init"
-  long: "Inicjalizuje niestandardową instalację nixa, tworząc $HOME/.nix i ustawiając\
-    \ niektóre jednostki SystemD do montowania go jako /nix."
+  long: "Inicjalizuje niestandardową instalację nixa, tworząc $HOME/.nix i ustawiając
+    niektóre jednostki SystemD do montowania go jako /nix."
   short: "Inicjalizacja repozytorium nix"
-  confirm: "To stworzy folder '.nix' w twoim katalogu domowym i ustawi niektóre jednostki\
-    \ SystemD do zamontowania tego folderu w /nix przed uruchomieniem instalacji.\
-    \ Potwierdź 'y' aby kontynuować."
-  unfree: "Czy chciałbyś zezwolić na \"niewolne\" pakiety bez licencji Open Source\
-    \ (Visual Studio Code, Spotify, itp.)?"
-  insecure: "Czy chcesz zezwolić na \"niezabezpieczone\" pakiety (oprogramowanie ze\
-    \ znanymi lukami)?"
-  swcenter: "Czy chcesz zainstalować Nix Software Center - graficzny menedżer oprogramowania\
-    \ dla Nixa?"
+  confirm: "To stworzy folder '.nix' w twoim katalogu domowym i ustawi niektóre jednostki
+    SystemD do zamontowania tego folderu w /nix przed uruchomieniem instalacji. Potwierdź
+    'y' aby kontynuować."
+  unfree: "Czy chciałbyś zezwolić na \"niewolne\" pakiety bez licencji Open Source
+    (Visual Studio Code, Spotify, itp.)?"
+  insecure: "Czy chcesz zezwolić na \"niezabezpieczone\" pakiety (oprogramowanie ze
+    znanymi lukami)?"
+  swcenter: "Czy chcesz zainstalować Nix Software Center - graficzny menedżer oprogramowania
+    dla Nixa?"
   success: "Instalacja zakończona. Uruchom ponownie komputer, aby zacząć używać nixa."
 nixremove:
   use: "remove"
-  long: "Usuwa pierwszy pasujący pakiet zainstalowany w domyślnym profilu nix.\n\n\
-    Uwaga: Możliwe jest posiadanie wielu instalacji tego samego pakietu.\n\nJeśli\
-    \ potrzebujesz więcej precyzji użyj 'nix profile list' i 'nix profile remove'."
+  long: "Usuwa pierwszy pasujący pakiet zainstalowany w domyślnym profilu nix.\n\n
+    Uwaga: Możliwe jest posiadanie wielu instalacji tego samego pakietu.\n\nJeśli
+    potrzebujesz więcej precyzji użyj 'nix profile list' i 'nix profile remove'."
   short: "Usuń pakiet nixa"
   success: "Usuwanie pakietu zakończone"
 nixinstall:
   use: "install <pkg>"
-  long: "Zainstaluj pakiet z repozytorium `nixpkgs` jako płatek w domyślnym profilu\
-    \ nix."
+  long: "Zainstaluj pakiet z repozytorium `nixpkgs` jako płatek w domyślnym profilu
+    nix."
   short: "Zainstaluj pakiet nix"
   allowUnfree: "Zezwalaj na pakiety z niewolnymi licencjami"
   allowInsecure: "Zezwalaj na pakiety ze znanymi lukami."
@@ -118,8 +118,8 @@ run:
   use: "run <komendę>"
   long: "Uruchom program wewnątrz zarządzanego kontenera."
   short: "Uruchom program wewnątrz zarządzanego kontenera."
-  nixMsg: "Nie używaj `apx run` dla pakietów nix. Uruchom je bezpośrednio, tak jak\
-    \ byś to zrobił z natywnym pakietem."
+  nixMsg: "Nie używaj `apx run` dla pakietów nix. Uruchom je bezpośrednio, tak jak
+    byś to zrobił z natywnym pakietem."
 search:
   use: "search <pakietów>"
   long: "Wyszukiwanie pakietów w zarządzanym kontenerze."
@@ -133,8 +133,8 @@ show:
   notFound: "%s nie jest zainstalowany"
 unexport:
   use: "unexport <pakiet>"
-  long: "Odłącza/usuwa wpis na pulpicie programu z zarządzanego kontenera.\nJeśli\
-    \ podano flagę --bin, usunie link do binarki kontenera."
+  long: "Odłącza/usuwa wpis na pulpicie programu z zarządzanego kontenera.\nJeśli
+    podano flagę --bin, usunie link do binarki kontenera."
   short: "Odłącz/usuń wpis na pulpicie programu z zarządzanego kontenera"
   binFlag: "Usuń poprzednio wyeksportowaną binarkę."
   success: "Pomyślnie usunięto wyeksportowaną binarkę `%s`."
