@@ -2,7 +2,7 @@ flags:
   apt: "Instale paquetes desde el repositorio de Ubuntu."
   aur: "Instalar paquetes desde el AUR (Arch User Repository)."
   dnf: "Instale los paquetes desde el repositorio DNF (Dandified YUM) de Fedora."
-  apk: "Instale los paquetes desde el repositorio Alpine"
+  apk: "Instalar paquetes desde el repositorio Alpine."
   zypper: "Instalar paquetes desde el repositorio OpenSUSE."
   xbps: "Instalar paquetes desde el repositorio de Void (Linux)."
   nix: "Instalar los paquetes desde el repositorio Nixpkgs (paquetes de Nix)"
@@ -26,10 +26,10 @@ autoremove:
 clean:
   use: "clean"
   long: "Limpiar la cache del gestor de paquetes apx"
-  short: "Clean the apx package manager cache"
+  short: "Limpiar la caché del gestor de paquetes apx"
 enter:
   use: "enter"
-  long: "Enter a shell in the managed container"
+  long: "Introduzca un intérprete de comandos en el contenedor gestionado"
   short: "Introduzca un intérprete de comandos en el contenedor gestionado"
   failedEnter: "fallo al entrar en el contenedor gestionado"
   outside: "Ahora se encuentra fuera del contenedor gestionado."
@@ -143,7 +143,7 @@ unexport:
   success: "Successfully removed exported binary `%s`."
 update:
   use: "update"
-  long: "Update the list of available packages"
+  long: "Actualizar la lista de paquetes disponibles"
   short: "Update the list of available packages"
   allFlag: "Apply to all containers"
 upgrade:
