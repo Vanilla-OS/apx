@@ -6,14 +6,14 @@ flags:
   zypper: "Instalar pacotes do repositório OpenSUSE."
   xbps: "Instalar pacotes do repositório Void (Linux)."
   nix: "Instalar pacotes do repositório Nixpkgs (pacotes Nix)."
-  swupd: "Install packages from the Clear Linux* store"
+  swupd: "Instalar pacotes da loja Clear Linux*"
   name: " Aplicar ao \"container\" personalizado com este nome."
 apx:
   use: "apx"
-  long: "O Apx é um gestor de pacotes com suporte para múltiplas fontes,\npermitindo\
-    \ a instalação de pacotes num \"container\" administrado."
-  short: "O Apx é um gestor de pacotes com suporte para múltiplas fontes,\npermitindo\
-    \ a instalação de pacotes num \"container\" administrado."
+  long: "O Apx é um gestor de pacotes com suporte para múltiplas fontes,\npermitindo
+    a instalação de pacotes num \"container\" administrado."
+  short: "O Apx é um gestor de pacotes com suporte para múltiplas fontes,\npermitindo
+    a instalação de pacotes num \"container\" administrado."
   verboseFlag: "mostrar resultado mais detalhado"
   allFlag: "Aplicar a todos os \"containers\"."
   cxl: "Operação cancelada a pedido do utilizador."
@@ -44,8 +44,8 @@ init:
   use: "init"
   long: "Inicializar um contentor gerido"
   short: "Inicializar um contentor administrado"
-  confirm: "O \"container\" já existe. Quer reinicializá-lo? Esta operação removerá\
-    \ tudo, inclusive os seus ficheiros no \"container\"."
+  confirm: "O \"container\" já existe. Quer reinicializá-lo? Esta operação removerá
+    tudo, inclusive os seus ficheiros no \"container\"."
   remove: "erro ao remover o \"container\": %v"
   create: "erro ao criar o \"container\": %v"
 install:
@@ -57,11 +57,11 @@ install:
   noExport: "Não exportar uma entrada para a área de trabalho após a instalação."
   sideload: "Instalar um pacote a partir de um ficheiro local."
   sideArgs: "carregamento lateral (sideload) requer o caminho para um ficheiro local"
-  sideUserTemp: "não é possível mover o ficheiro para a pasta temporária (temp) do\
-    \ usuário: %s"
-  exportBinPrompt: "Exportar o binário %s para o hospedeiro?\nIsto permitirá que o\
-    \ chame diretamente do shell sem usar \"apx run\".\nTambém pode exportá-lo posteriormente\
-    \ usando \"apx export --bin %s\""
+  sideUserTemp: "não é possível mover o ficheiro para a pasta temporária (temp) do
+    usuário: %s"
+  exportBinPrompt: "Exportar o binário %s para o hospedeiro?\nIsto permitirá que o
+    chame diretamente do shell sem usar \"apx run\".\nTambém pode exportá-lo posteriormente
+    usando \"apx export --bin %s\""
 list:
   use: "list"
   long: "Listar os pacotes instalados."
@@ -70,31 +70,31 @@ list:
   installed: "Mostrar pacotes instalados"
 nix:
   use: "nix"
-  long: "Faça a gestão de uma instalação personalizada do nix no seu diretório $HOME.\n\
-    \nA integração `apx nix` serve como um invólucro para o\nperfil nix padrão. Uma\
-    \ vez instalado, está livre para usar quaisquer funcionalidades do\nnix sem utilizar\
-    \ o comando `apx nix`."
+  long: "Faça a gestão de uma instalação personalizada do nix no seu diretório $HOME.\n
+    \nA integração `apx nix` serve como um invólucro para o\nperfil nix padrão. Uma
+    vez instalado, está livre para usar quaisquer funcionalidades do\nnix sem utilizar
+    o comando `apx nix`."
   short: "Gerir a instalação de nix"
 nixinit:
   use: "init"
-  long: "Inicializar uma instalação customizada do nix criando $HOME/.nix e configurando\
-    \ algumas unidades do SystemD para montá-lo como /nix."
+  long: "Inicializar uma instalação customizada do nix criando $HOME/.nix e configurando
+    algumas unidades do SystemD para montá-lo como /nix."
   short: "Inicializar o repositório nix"
-  confirm: "Isto criará uma pasta '.nix' no seu diretório pessoal e configurará algumas\
-    \ unidades SystemD para montar essa pasta em /nix antes de executar a instalação.\
-    \ Confirme 'y' para continuar."
-  unfree: "Gostaria de permitir pacotes 'não gratuitos' sem licenças Open Source (Visual\
-    \ Studio Code, Spotify, etc.)?"
-  insecure: "Gostaria de permitir pacotes 'inseguros' (software com vulnerabilidades\
-    \ conhecidas)?"
-  swcenter: "Gostaria de instalar o Nix Software Center - um gestor de software gráfico\
-    \ para o Nix?"
+  confirm: "Isto criará uma pasta '.nix' no seu diretório pessoal e configurará algumas
+    unidades SystemD para montar essa pasta em /nix antes de executar a instalação.
+    Confirme 'y' para continuar."
+  unfree: "Gostaria de permitir pacotes 'não gratuitos' sem licenças Open Source (Visual
+    Studio Code, Spotify, etc.)?"
+  insecure: "Gostaria de permitir pacotes 'inseguros' (software com vulnerabilidades
+    conhecidas)?"
+  swcenter: "Gostaria de instalar o Nix Software Center - um gestor de software gráfico
+    para o Nix?"
   success: "Instalação concluída. Reinicie para começar a usar nix."
 nixremove:
   use: "remove"
-  long: "Remover o primeiro pacote correspondente instalado no perfil nix padrão.\n\
-    \nNota: É possível ter múltiplas instalações de um mesmo pacote.\n\nSe precisar\
-    \ de mais precisão, use 'lista de perfil nix' e 'remoção de perfil nix'."
+  long: "Remover o primeiro pacote correspondente instalado no perfil nix padrão.\n
+    \nNota: É possível ter múltiplas instalações de um mesmo pacote.\n\nSe precisar
+    de mais precisão, use 'lista de perfil nix' e 'remoção de perfil nix'."
   short: "Remover um pacote de nix"
   success: "Remoção completa do pacote"
 nixinstall:
@@ -121,8 +121,8 @@ run:
   use: "run <comando>"
   long: "Executar um programa dentro de um contentor administrado."
   short: "Executar um programa dentro de um contentor administrado."
-  nixMsg: "Não utilize `apx run` para pacotes nix. Execute-os diretamente como faria\
-    \ com um pacote nativo."
+  nixMsg: "Não utilize `apx run` para pacotes nix. Execute-os diretamente como faria
+    com um pacote nativo."
 search:
   use: "search <pacotes>"
   long: "Pesquise por pacotes em um contentor administrado."
@@ -136,10 +136,10 @@ show:
   notFound: "%s não está instalado"
 unexport:
   use: "unexport <pacote>"
-  long: "Desexportar/remover a entrada de um programa da área de trabalho de um contentor\
-    \ gerido.\nSe --bin flag for fornecido, remova o link para o binário do contentor."
-  short: "Desexportar/remover a entrada de um programa da área de trabalho de um contentor\
-    \ gerido"
+  long: "Desexportar/remover a entrada de um programa da área de trabalho de um contentor
+    gerido.\nSe --bin flag for fornecido, remova o link para o binário do contentor."
+  short: "Desexportar/remover a entrada de um programa da área de trabalho de um contentor
+    gerido"
   binFlag: "Desexportar um binário previamente exportado."
   success: "Binário exportado `%s` foi removido com sucesso."
 update:
