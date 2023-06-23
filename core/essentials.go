@@ -126,3 +126,8 @@ func CheckAndCreateApxUserPkgManagersDirectory() error {
 
 	return nil
 }
+
+func hasNvidiaGPU() bool {
+	_, err := os.Stat("/dev/nvidia0")
+	return err == nil
+}

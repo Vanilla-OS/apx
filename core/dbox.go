@@ -180,6 +180,10 @@ func (d *dbox) CreateContainer(name string, image string, additionalPackages []s
 		"--yes",
 	}
 
+	if hasNvidiaGPU() {
+		args = append(args, "--nvidia")
+	}
+
 	if len(additionalPackages) > 0 {
 		args = append(args, "--additional-packages")
 		args = append(args, strings.Join(additionalPackages, " "))
