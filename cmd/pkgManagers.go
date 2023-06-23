@@ -174,6 +174,23 @@ func NewPkgManagersCommand() *cmdr.Command {
 	)
 	rmCmd.Example = "apx pkgmanagers rm myPkgManager"
 
+	rmCmd.WithStringFlag(
+		cmdr.NewStringFlag(
+			"name",
+			"n",
+			"Name of the package manager",
+			"",
+		),
+	)
+	rmCmd.WithBoolFlag(
+		cmdr.NewBoolFlag(
+			"force",
+			"f",
+			"Force removal of the package manager",
+			false,
+		),
+	)
+
 	// Add subcommands to pkgmanagers
 	cmd.AddCommand(listCmd)
 	cmd.AddCommand(showCmd)
@@ -330,12 +347,24 @@ func newPkgManager(cmd *cobra.Command, args []string) error {
 }
 
 func rmPkgManager(cmd *cobra.Command, args []string) error {
-	if len(args) == 0 {
+	pkgManagerName, _ := cmd.Flags().GetString("name")
+	if pkgManagerName == "" {
 		cmdr.Error.Println("Please specify the name of the package manager you want to remove.")
 		return nil
 	}
 
-	pkgManager, error := core.LoadPkgManager(args[0])
+	force, _ := cmd.Flags().GetBool("force")
+	if !force {
+		cmdr.Info.Printf("Are you sure you want to remove the package manager %s? [y/N]\n", pkgManagerName)
+		var confirmation string
+		fmt.Scanln(&confirmation)
+		if strings.ToLower(confirmation) != "y" {
+			cmdr.Info.Println("Aborting...")
+			return nil
+		}
+	}
+
+	pkgManager, error := core.LoadPkgManager(pkgManagerName)
 	if error != nil {
 		return error
 	}
