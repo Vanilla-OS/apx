@@ -141,7 +141,23 @@ func NewStacksCommand() *cmdr.Command {
 		removeStack,
 	)
 	rmStackCmd.Example = "apx stacks rm my-stack"
-	rmStackCmd.Args = cobra.MinimumNArgs(1)
+
+	rmStackCmd.WithStringFlag(
+		cmdr.NewStringFlag(
+			"name",
+			"n",
+			"Name of the stack",
+			"",
+		),
+	)
+	rmStackCmd.WithBoolFlag(
+		cmdr.NewBoolFlag(
+			"force",
+			"f",
+			"Force the removal of the stack",
+			false,
+		),
+	)
 
 	// Add subcommands to stacks
 	cmd.AddCommand(listCmd)
@@ -377,7 +393,24 @@ func updateStack(cmd *cobra.Command, args []string) error {
 }
 
 func removeStack(cmd *cobra.Command, args []string) error {
-	stack, error := core.LoadStack(args[0])
+	stackName, _ := cmd.Flags().GetString("name")
+	if stackName == "" {
+		cmdr.Error.Println("Please provide the name of the stack to remove.")
+		return nil
+	}
+
+	force, _ := cmd.Flags().GetBool("force")
+	if !force {
+		cmdr.Info.Printf("Are you sure you want to remove the stack %s? [y/N]\n", stackName)
+		var confirmation string
+		fmt.Scanln(&confirmation)
+		if strings.ToLower(confirmation) != "y" {
+			cmdr.Info.Println("Aborting...")
+			return nil
+		}
+	}
+
+	stack, error := core.LoadStack(stackName)
 	if error != nil {
 		return error
 	}
