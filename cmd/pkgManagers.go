@@ -28,7 +28,7 @@ func NewPkgManagersCommand() *cmdr.Command {
 		"pkgmanagers",
 		apx.Trans("pkgmanagers.long"),
 		apx.Trans("pkgmanagers.short"),
-		pkgmanagers,
+		nil,
 	)
 	cmd.Example = "apx pkgmanagers"
 
@@ -181,10 +181,6 @@ func NewPkgManagersCommand() *cmdr.Command {
 	cmd.AddCommand(rmCmd)
 
 	return cmd
-}
-
-func pkgmanagers(cmd *cobra.Command, args []string) error {
-	return cmd.Help()
 }
 
 func listPkgManagers(cmd *cobra.Command, args []string) error {

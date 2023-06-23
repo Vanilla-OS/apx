@@ -24,7 +24,7 @@ func NewSubSystemsCommand() *cmdr.Command {
 		"subsystems",
 		apx.Trans("subsystems.long"),
 		apx.Trans("subsystems.short"),
-		subsystems,
+		nil,
 	)
 	cmd.Example = "apx subsystems"
 
@@ -76,15 +76,11 @@ func NewSubSystemsCommand() *cmdr.Command {
 	*/
 
 	// Add subcommands to subsystems
-	cmd.AddCommand(listCmd, listCmd)
-	cmd.AddCommand(newCmd, newCmd)
+	cmd.AddCommand(listCmd)
+	cmd.AddCommand(newCmd)
 	// cmd.AddCommand(rmCmd, rmCmd)
 
 	return cmd
-}
-
-func subsystems(cmd *cobra.Command, args []string) error {
-	return cmd.Help()
 }
 
 func listSubSystems(cmd *cobra.Command, args []string) error {

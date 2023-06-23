@@ -26,7 +26,7 @@ func NewStacksCommand() *cmdr.Command {
 		"stacks",
 		apx.Trans("stacks.long"),
 		apx.Trans("stacks.short"),
-		stacks,
+		nil,
 	)
 	cmd.Example = "apx stacks"
 
@@ -151,10 +151,6 @@ func NewStacksCommand() *cmdr.Command {
 	cmd.AddCommand(rmStackCmd)
 
 	return cmd
-}
-
-func stacks(cmd *cobra.Command, args []string) error {
-	return cmd.Help()
 }
 
 func listStacks(cmd *cobra.Command, args []string) error {
