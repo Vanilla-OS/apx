@@ -138,3 +138,12 @@ func (s *SubSystem) Remove() error {
 
 	return dbox.ContainerDelete(s.InternalName)
 }
+
+func (s *SubSystem) Reset() error {
+	err := s.Remove()
+	if err != nil {
+		return err
+	}
+
+	return s.Create()
+}

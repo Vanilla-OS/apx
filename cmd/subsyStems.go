@@ -11,6 +11,7 @@ package cmd
 import (
 	"fmt"
 	"os"
+	"strings"
 
 	"github.com/spf13/cobra"
 
@@ -64,7 +65,6 @@ func NewSubSystemsCommand() *cmdr.Command {
 	)
 
 	// Rm subcommand
-
 	rmCmd := cmdr.NewCommand(
 		"rm",
 		apx.Trans("rmSubSystem.long"),
@@ -72,7 +72,49 @@ func NewSubSystemsCommand() *cmdr.Command {
 		rmSubSystem,
 	)
 	rmCmd.Example = "apx subsystems rm --name my-subsystem"
-	rmCmd.Args = cobra.ExactArgs(1)
+
+	rmCmd.WithStringFlag(
+		cmdr.NewStringFlag(
+			"name",
+			"n",
+			"The name of the subsystem",
+			"",
+		),
+	)
+	rmCmd.WithBoolFlag(
+		cmdr.NewBoolFlag(
+			"force",
+			"f",
+			"Force the removal of the subsystem",
+			false,
+		),
+	)
+
+	// Reset subcommand
+	resetCmd := cmdr.NewCommand(
+		"reset",
+		apx.Trans("resetSubSystem.long"),
+		apx.Trans("resetSubSystem.short"),
+		resetSubSystem,
+	)
+	resetCmd.Example = "apx subsystems reset --name my-subsystem"
+
+	resetCmd.WithStringFlag(
+		cmdr.NewStringFlag(
+			"name",
+			"n",
+			"The name of the subsystem",
+			"",
+		),
+	)
+	resetCmd.WithBoolFlag(
+		cmdr.NewBoolFlag(
+			"force",
+			"f",
+			"Force the reset of the subsystem",
+			false,
+		),
+	)
 
 	// Add subcommands to subsystems
 	cmd.AddCommand(listCmd)
@@ -157,6 +199,17 @@ func newSubSystem(cmd *cobra.Command, args []string) error {
 
 func rmSubSystem(cmd *cobra.Command, args []string) error {
 	subSystemName := args[0]
+	forceFlag, _ := cmd.Flags().GetBool("force")
+
+	if !forceFlag {
+		cmdr.Info.Printf("Are you sure you want to remove the subsystem %s? [y/N] ", subSystemName)
+		var confirmation string
+		fmt.Scanln(&confirmation)
+		if strings.ToLower(confirmation) != "y" {
+			cmdr.Info.Println("Aborting...")
+			return nil
+		}
+	}
 
 	subSystem, err := core.LoadSubSystem(subSystemName)
 	if err != nil {
@@ -169,6 +222,35 @@ func rmSubSystem(cmd *cobra.Command, args []string) error {
 	}
 
 	cmdr.Success.Printf("Subsystem %s removed successfully!\n", subSystemName)
+
+	return nil
+}
+
+func resetSubSystem(cmd *cobra.Command, args []string) error {
+	subSystemName := args[0]
+	forceFlag, _ := cmd.Flags().GetBool("force")
+
+	if !forceFlag {
+		cmdr.Info.Printf("Are you sure you want to reset the subsystem %s? [y/N] ", subSystemName)
+		var confirmation string
+		fmt.Scanln(&confirmation)
+		if strings.ToLower(confirmation) != "y" {
+			cmdr.Info.Println("Aborting...")
+			return nil
+		}
+	}
+
+	subSystem, err := core.LoadSubSystem(subSystemName)
+	if err != nil {
+		return err
+	}
+
+	err = subSystem.Reset()
+	if err != nil {
+		return err
+	}
+
+	cmdr.Success.Printf("Subsystem %s reset successfully!\n", subSystemName)
 
 	return nil
 }
