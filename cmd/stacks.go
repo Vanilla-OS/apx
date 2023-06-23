@@ -159,12 +159,58 @@ func NewStacksCommand() *cmdr.Command {
 		),
 	)
 
+	// Export subcommand
+	exportCmd := cmdr.NewCommand(
+		"export",
+		apx.Trans("exportStack.long"),
+		apx.Trans("exportStack.short"),
+		exportStack,
+	)
+	exportCmd.Example = "apx stacks export my-stack"
+
+	exportCmd.WithStringFlag(
+		cmdr.NewStringFlag(
+			"name",
+			"n",
+			"Name of the stack",
+			"",
+		),
+	)
+	exportCmd.WithStringFlag(
+		cmdr.NewStringFlag(
+			"output",
+			"o",
+			"Output location",
+			"",
+		),
+	)
+
+	// Import subcommand
+	importCmd := cmdr.NewCommand(
+		"import",
+		apx.Trans("importStack.long"),
+		apx.Trans("importStack.short"),
+		importStack,
+	)
+	importCmd.Example = "apx stacks import my-stack"
+
+	importCmd.WithStringFlag(
+		cmdr.NewStringFlag(
+			"input",
+			"i",
+			"Input file",
+			"",
+		),
+	)
+
 	// Add subcommands to stacks
 	cmd.AddCommand(listCmd)
 	cmd.AddCommand(showCmd)
 	cmd.AddCommand(newCmd)
 	cmd.AddCommand(updateCmd)
 	cmd.AddCommand(rmStackCmd)
+	cmd.AddCommand(exportCmd)
+	cmd.AddCommand(importCmd)
 
 	return cmd
 }
@@ -421,5 +467,53 @@ func removeStack(cmd *cobra.Command, args []string) error {
 	}
 
 	fmt.Printf("Stack %s removed successfully\n", stack.Name)
+	return nil
+}
+
+func exportStack(cmd *cobra.Command, args []string) error {
+	stackName, _ := cmd.Flags().GetString("name")
+	if stackName == "" {
+		cmdr.Error.Println("Please provide the name of the stack to export.")
+		return nil
+	}
+
+	stack, error := core.LoadStack(stackName)
+	if error != nil {
+		return error
+	}
+
+	output, _ := cmd.Flags().GetString("output")
+	if output == "" {
+		cmdr.Error.Println("Please provide the output location.")
+		return nil
+	}
+
+	error = stack.Export(output)
+	if error != nil {
+		return error
+	}
+
+	fmt.Printf("Stack %s exported successfully to %s\n", stack.Name, output)
+	return nil
+}
+
+func importStack(cmd *cobra.Command, args []string) error {
+	input, _ := cmd.Flags().GetString("input")
+	if input == "" {
+		cmdr.Error.Println("Please provide the input file.")
+		return nil
+	}
+
+	stack, error := core.LoadStackFromPath(input)
+	if error != nil {
+		cmdr.Error.Printf("Error while loading the stack from %s: %s\n", input, error)
+	}
+
+	error = stack.Save()
+	if error != nil {
+		return error
+	}
+
+	fmt.Printf("Stack %s imported successfully\n", stack.Name)
 	return nil
 }

@@ -42,15 +42,15 @@ func NewStack(name, base string, packages []string, pkgManager string, builtIn b
 
 // LoadStack loads a stack from the specified path.
 func LoadStack(name string) (*Stack, error) {
-	stack, err := loadStackFromPath(filepath.Join(settings.Cnf.UserStacksPath, name+".yaml"))
+	stack, err := LoadStackFromPath(filepath.Join(settings.Cnf.UserStacksPath, name+".yaml"))
 	if err != nil {
-		stack, err = loadStackFromPath(filepath.Join(settings.Cnf.StacksPath, name+".yaml"))
+		stack, err = LoadStackFromPath(filepath.Join(settings.Cnf.StacksPath, name+".yaml"))
 	}
 	return stack, err
 }
 
-// loadStackFromPath loads a stack from the specified path.
-func loadStackFromPath(path string) (*Stack, error) {
+// LoadStackFromPath loads a stack from the specified path.
+func LoadStackFromPath(path string) (*Stack, error) {
 	stack := &Stack{}
 
 	f, err := os.Open(path)
