@@ -227,7 +227,12 @@ func rmSubSystem(cmd *cobra.Command, args []string) error {
 }
 
 func resetSubSystem(cmd *cobra.Command, args []string) error {
-	subSystemName := args[0]
+	subSystemName, _ := cmd.Flags().GetString("name")
+	if subSystemName == "" {
+		cmdr.Error.Println("Please specify a subsystem name with --name")
+		return nil
+	}
+
 	forceFlag, _ := cmd.Flags().GetBool("force")
 
 	if !forceFlag {
