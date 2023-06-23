@@ -268,6 +268,15 @@ func newPkgManager(cmd *cobra.Command, args []string) error {
 		}
 	}
 
+	if !needSudo && !assumeYes {
+		cmdr.Info.Println("Does the package manager need sudo to run? [y/N]")
+		reader := bufio.NewReader(os.Stdin)
+		answer, _ := reader.ReadString('\n')
+		if strings.ToLower(strings.TrimSpace(answer)) == "y" {
+			needSudo = true
+		}
+	}
+
 	cmdMap := map[string]*string{
 		"autoRemove": &autoRemove,
 		"clean":      &clean,
