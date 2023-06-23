@@ -51,6 +51,30 @@ func (s *SubSystem) Create() error {
 	return nil
 }
 
+func LoadSubSystem(name string) (*SubSystem, error) {
+	dbox, err := NewDbox()
+	if err != nil {
+		return nil, err
+	}
+
+	container, err := dbox.GetContainer(fmt.Sprintf("apx-%s", name))
+	if err != nil {
+		return nil, err
+	}
+
+	stack, err := LoadStack(container.Labels["stack"])
+	if err != nil {
+		return nil, err
+	}
+
+	return &SubSystem{
+		InternalName: container.Name,
+		Name:         container.Labels["name"],
+		Stack:        stack,
+		Status:       container.Status,
+	}, nil
+}
+
 func ListSubSystems() ([]*SubSystem, error) {
 	dbox, err := NewDbox()
 	if err != nil {
@@ -104,4 +128,13 @@ func (s *SubSystem) Enter() error {
 	}
 
 	return dbox.ContainerEnter(s.InternalName)
+}
+
+func (s *SubSystem) Remove() error {
+	dbox, err := NewDbox()
+	if err != nil {
+		return err
+	}
+
+	return dbox.ContainerDelete(s.InternalName)
 }

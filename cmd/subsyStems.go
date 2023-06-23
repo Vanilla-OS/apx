@@ -64,21 +64,20 @@ func NewSubSystemsCommand() *cmdr.Command {
 	)
 
 	// Rm subcommand
-	/*
-		rmCmd := cmdr.NewCommand(
-			"rm",
-			apx.Trans("rmSubSystem.long"),
-			apx.Trans("rmSubSystem.short"),
-			rmSubSystem,
-		)
-		rmCmd.Example = "apx subsystems rm --name my-subsystem"
-		rmCmd.Args = cobra.ExactArgs(1)
-	*/
+
+	rmCmd := cmdr.NewCommand(
+		"rm",
+		apx.Trans("rmSubSystem.long"),
+		apx.Trans("rmSubSystem.short"),
+		rmSubSystem,
+	)
+	rmCmd.Example = "apx subsystems rm --name my-subsystem"
+	rmCmd.Args = cobra.ExactArgs(1)
 
 	// Add subcommands to subsystems
 	cmd.AddCommand(listCmd)
 	cmd.AddCommand(newCmd)
-	// cmd.AddCommand(rmCmd, rmCmd)
+	cmd.AddCommand(rmCmd, rmCmd)
 
 	return cmd
 }
@@ -156,7 +155,6 @@ func newSubSystem(cmd *cobra.Command, args []string) error {
 	return nil
 }
 
-/*
 func rmSubSystem(cmd *cobra.Command, args []string) error {
 	subSystemName := args[0]
 
@@ -174,4 +172,3 @@ func rmSubSystem(cmd *cobra.Command, args []string) error {
 
 	return nil
 }
-*/

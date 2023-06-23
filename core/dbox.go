@@ -173,6 +173,29 @@ func (d *dbox) ListContainers() ([]dboxContainer, error) {
 	return containers, nil
 }
 
+func (d *dbox) GetContainer(name string) (*dboxContainer, error) {
+	containers, err := d.ListContainers()
+	if err != nil {
+		return nil, err
+	}
+
+	for _, container := range containers {
+		if container.Name == name {
+			return &container, nil
+		}
+	}
+
+	return nil, errors.New("container not found")
+}
+
+func (d *dbox) ContainerDelete(name string) error {
+	_, err := d.RunCommand("rm", []string{
+		"--name", name,
+		"--force",
+	}, []string{}, false, false)
+	return err
+}
+
 func (d *dbox) CreateContainer(name string, image string, additionalPackages []string, labels map[string]string) error {
 	args := []string{
 		"--image", image,
