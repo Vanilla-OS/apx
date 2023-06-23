@@ -3,10 +3,10 @@ package lang
 /*	License: GPLv3
 	Authors:
 		Mirko Brombin <send@mirko.pm>
-		Pietro di Caprio <pietro@fabricators.ltd>
+		Vanilla OS Contributors <https://github.com/vanilla-os/>
 	Copyright: 2023
-	Description: Apx is a wrapper around apt to make it works inside a container
-	from outside, directly on the host.
+	Description:
+		Apx is a wrapper around multiple package managers to install packages and run commands inside a managed container.
 */
 
 import (

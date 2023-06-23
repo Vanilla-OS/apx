@@ -1,0 +1,5 @@
+{
+    "apxPath": "/usr/share/apx",
+    "distroboxpath": "/usr/lib/apx/distrobox",
+    "storageDriver": "btrfs"
+}
