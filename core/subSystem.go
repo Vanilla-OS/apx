@@ -96,3 +96,12 @@ func (s *SubSystem) Exec(args ...string) error {
 
 	return dbox.ContainerExec(s.InternalName, args...)
 }
+
+func (s *SubSystem) Enter() error {
+	dbox, err := NewDbox()
+	if err != nil {
+		return err
+	}
+
+	return dbox.ContainerEnter(s.InternalName)
+}

@@ -99,6 +99,18 @@ func NewRuntimeCommands() []*cmdr.Command {
 			"",
 			handleFunc(subSystem, runPkgCmd),
 		)
+		runCmd := cmdr.NewCommand(
+			"run",
+			"Run a command in the subsystem",
+			"",
+			handleFunc(subSystem, runPkgCmd),
+		)
+		enterCmd := cmdr.NewCommand(
+			"enter",
+			"Enter the subsystem",
+			"",
+			handleFunc(subSystem, runPkgCmd),
+		)
 
 		subSystemCmd.AddCommand(autoRemoveCmd)
 		subSystemCmd.AddCommand(cleanCmd)
@@ -110,6 +122,8 @@ func NewRuntimeCommands() []*cmdr.Command {
 		subSystemCmd.AddCommand(showCmd)
 		subSystemCmd.AddCommand(updateCmd)
 		subSystemCmd.AddCommand(upgradeCmd)
+		subSystemCmd.AddCommand(runCmd)
+		subSystemCmd.AddCommand(enterCmd)
 
 		commands = append(commands, subSystemCmd)
 	}
@@ -118,45 +132,62 @@ func NewRuntimeCommands() []*cmdr.Command {
 }
 
 func runPkgCmd(subSystem *core.SubSystem, command string, args []string) error {
-	if len(args) == 0 {
-		return fmt.Errorf("no packages specified")
+	if command != "enter" {
+		if len(args) == 0 {
+			return fmt.Errorf("no packages specified")
+		}
 	}
 
-	pkgManager, err := subSystem.Stack.GetPkgManager()
-	if err != nil {
-		return fmt.Errorf("error getting package manager: %s", err)
+	if command != "run" && command != "enter" {
+		pkgManager, err := subSystem.Stack.GetPkgManager()
+		if err != nil {
+			return fmt.Errorf("error getting package manager: %s", err)
+		}
+
+		var realCommand string
+		switch command {
+		case "autoremove":
+			realCommand = pkgManager.CmdAutoRemove
+		case "clean":
+			realCommand = pkgManager.CmdClean
+		case "install":
+			realCommand = pkgManager.CmdInstall
+		case "list":
+			realCommand = pkgManager.CmdList
+		case "purge":
+			realCommand = pkgManager.CmdPurge
+		case "remove":
+			realCommand = pkgManager.CmdRemove
+		case "search":
+			realCommand = pkgManager.CmdSearch
+		case "show":
+			realCommand = pkgManager.CmdShow
+		case "update":
+			realCommand = pkgManager.CmdUpdate
+		case "upgrade":
+			realCommand = pkgManager.CmdUpgrade
+		default:
+			return fmt.Errorf("unknown command: %s", command)
+		}
+
+		finalArgs := pkgManager.GenCmd(realCommand, args...)
+		err = subSystem.Exec(finalArgs...)
+		if err != nil {
+			return fmt.Errorf("error executing command: %s", err)
+		}
+	} else {
+		if command == "run" {
+			err := subSystem.Exec(args...)
+			if err != nil {
+				return fmt.Errorf("error executing command: %s", err)
+			}
+		} else {
+			err := subSystem.Enter()
+			if err != nil {
+				return fmt.Errorf("error entering subsystem: %s", err)
+			}
+		}
 	}
 
-	var realCommand string
-	switch command {
-	case "autoremove":
-		realCommand = pkgManager.CmdAutoRemove
-	case "clean":
-		realCommand = pkgManager.CmdClean
-	case "install":
-		realCommand = pkgManager.CmdInstall
-	case "list":
-		realCommand = pkgManager.CmdList
-	case "purge":
-		realCommand = pkgManager.CmdPurge
-	case "remove":
-		realCommand = pkgManager.CmdRemove
-	case "search":
-		realCommand = pkgManager.CmdSearch
-	case "show":
-		realCommand = pkgManager.CmdShow
-	case "update":
-		realCommand = pkgManager.CmdUpdate
-	case "upgrade":
-		realCommand = pkgManager.CmdUpgrade
-	default:
-		return fmt.Errorf("unknown command: %s", command)
-	}
-
-	finalArgs := pkgManager.GenCmd(realCommand, args...)
-	err = subSystem.Exec(finalArgs...)
-	if err != nil {
-		return fmt.Errorf("error executing command: %s", err)
-	}
 	return nil
 }

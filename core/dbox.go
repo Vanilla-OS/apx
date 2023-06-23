@@ -221,3 +221,14 @@ func (d *dbox) ContainerExec(name string, args ...string) error {
 	_, err := d.RunCommand("enter", finalArgs, engineFlags, false, false)
 	return err
 }
+
+func (d *dbox) ContainerEnter(name string) error {
+	finalArgs := []string{
+		name,
+	}
+
+	engineFlags := []string{}
+
+	_, err := d.RunCommand("enter", finalArgs, engineFlags, false, false)
+	return err
+}
