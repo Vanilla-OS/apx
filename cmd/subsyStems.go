@@ -177,6 +177,12 @@ func newSubSystem(cmd *cobra.Command, args []string) error {
 		}
 	}
 
+	checkSubSystem, err := core.LoadSubSystem(subSystemName)
+	if err == nil {
+		cmdr.Error.Printf("A subsystem with the name %s already exists\n", checkSubSystem.Name)
+		return nil
+	}
+
 	stack, err := core.LoadStack(stackName)
 	if err != nil {
 		return err
@@ -187,6 +193,7 @@ func newSubSystem(cmd *cobra.Command, args []string) error {
 		return err
 	}
 
+	cmdr.Info.Printf("Creating subsystem %s using stack %s. This may take a while...\n", subSystemName, stackName)
 	err = subSystem.Create()
 	if err != nil {
 		return err
