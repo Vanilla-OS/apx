@@ -108,9 +108,10 @@ func ListSubSystems() ([]*SubSystem, error) {
 		}
 
 		subsystem := &SubSystem{
-			Name:   container.Labels["name"],
-			Stack:  stack,
-			Status: container.Status,
+			InternalName: genInternalName(container.Labels["name"]),
+			Name:         container.Labels["name"],
+			Stack:        stack,
+			Status:       container.Status,
 		}
 
 		subsystems = append(subsystems, subsystem)
@@ -142,7 +143,7 @@ func (s *SubSystem) Enter() error {
 	if err != nil {
 		return err
 	}
-
+	fmt.Println(s.InternalName)
 	return dbox.ContainerEnter(s.InternalName)
 }
 
