@@ -24,9 +24,9 @@ func NewRuntimeCommands() []*cmdr.Command {
 		return []*cmdr.Command{}
 	}
 
-	handleFunc := func(subSystem *core.SubSystem, reqFunc func(*core.SubSystem, string, []string) error) func(cmd *cobra.Command, args []string) error {
+	handleFunc := func(subSystem *core.SubSystem, reqFunc func(*core.SubSystem, string, *cobra.Command, []string) error) func(cmd *cobra.Command, args []string) error {
 		return func(cmd *cobra.Command, args []string) error {
-			err := reqFunc(subSystem, cmd.Name(), args)
+			err := reqFunc(subSystem, cmd.Name(), cmd, args)
 			return err
 		}
 	}
@@ -112,6 +112,68 @@ func NewRuntimeCommands() []*cmdr.Command {
 			handleFunc(subSystem, runPkgCmd),
 		)
 
+		exportCmd := cmdr.NewCommand(
+			"export",
+			"Export a binary or an app from the subsystem",
+			"",
+			handleFunc(subSystem, runPkgCmd),
+		)
+		exportCmd.WithStringFlag(
+			cmdr.NewStringFlag(
+				"app-name",
+				"a",
+				"Name of the app to export",
+				"",
+			),
+		)
+		exportCmd.WithStringFlag(
+			cmdr.NewStringFlag(
+				"bin",
+				"b",
+				"Path of the binary to export",
+				"",
+			),
+		)
+		exportCmd.WithStringFlag(
+			cmdr.NewStringFlag(
+				"bin-output",
+				"o",
+				"Path of the binary output (default: ~/.local/bin/)",
+				"",
+			),
+		)
+
+		unexportCmd := cmdr.NewCommand(
+			"unexport",
+			"Unexport a binary or an app from the subsystem",
+			"",
+			handleFunc(subSystem, runPkgCmd),
+		)
+		unexportCmd.WithStringFlag(
+			cmdr.NewStringFlag(
+				"app-name",
+				"a",
+				"Name of the app to unexport",
+				"",
+			),
+		)
+		unexportCmd.WithStringFlag(
+			cmdr.NewStringFlag(
+				"bin",
+				"b",
+				"Path of the binary to unexport",
+				"",
+			),
+		)
+		unexportCmd.WithStringFlag(
+			cmdr.NewStringFlag(
+				"bin-output",
+				"o",
+				"Path of where the binary was exported (default: ~/.local/bin/)",
+				"",
+			),
+		)
+
 		subSystemCmd.AddCommand(autoRemoveCmd)
 		subSystemCmd.AddCommand(cleanCmd)
 		subSystemCmd.AddCommand(installCmd)
@@ -124,6 +186,8 @@ func NewRuntimeCommands() []*cmdr.Command {
 		subSystemCmd.AddCommand(upgradeCmd)
 		subSystemCmd.AddCommand(runCmd)
 		subSystemCmd.AddCommand(enterCmd)
+		subSystemCmd.AddCommand(exportCmd)
+		subSystemCmd.AddCommand(unexportCmd)
 
 		commands = append(commands, subSystemCmd)
 	}
@@ -131,14 +195,14 @@ func NewRuntimeCommands() []*cmdr.Command {
 	return commands
 }
 
-func runPkgCmd(subSystem *core.SubSystem, command string, args []string) error {
-	if command != "enter" {
+func runPkgCmd(subSystem *core.SubSystem, command string, cmd *cobra.Command, args []string) error {
+	if command != "enter" && command != "export" && command != "unexport" {
 		if len(args) == 0 {
 			return fmt.Errorf("no packages specified")
 		}
 	}
 
-	if command != "run" && command != "enter" {
+	if command != "run" && command != "enter" && command != "export" && command != "unexport" {
 		pkgManager, err := subSystem.Stack.GetPkgManager()
 		if err != nil {
 			return fmt.Errorf("error getting package manager: %s", err)
@@ -171,20 +235,68 @@ func runPkgCmd(subSystem *core.SubSystem, command string, args []string) error {
 		}
 
 		finalArgs := pkgManager.GenCmd(realCommand, args...)
-		err = subSystem.Exec(finalArgs...)
+		_, err = subSystem.Exec(false, finalArgs...)
 		if err != nil {
 			return fmt.Errorf("error executing command: %s", err)
 		}
-	} else {
-		if command == "run" {
-			err := subSystem.Exec(args...)
-			if err != nil {
-				return fmt.Errorf("error executing command: %s", err)
+
+		return nil
+	}
+
+	if command == "run" {
+		_, err := subSystem.Exec(false, args...)
+		if err != nil {
+			return fmt.Errorf("error executing command: %s", err)
+		}
+
+		return nil
+	}
+
+	if command == "enter" {
+		err := subSystem.Enter()
+		if err != nil {
+			return fmt.Errorf("error entering subsystem: %s", err)
+		}
+
+		return nil
+	}
+
+	if command == "export" || command == "unexport" {
+		appName, _ := cmd.Flags().GetString("app-name")
+		bin, _ := cmd.Flags().GetString("bin")
+		binOutput, _ := cmd.Flags().GetString("bin-output")
+
+		if appName == "" && bin == "" {
+			return fmt.Errorf("app-name and bin cannot be both empty")
+		}
+
+		if appName != "" && bin != "" {
+			return fmt.Errorf("app-name and bin cannot be both set")
+		}
+
+		if command == "export" {
+			if appName != "" {
+				err := subSystem.ExportDesktopEntry(appName)
+				if err != nil {
+					return fmt.Errorf("error exporting app: %s", err)
+				}
+			} else {
+				err := subSystem.ExportBin(bin, binOutput)
+				if err != nil {
+					return fmt.Errorf("error exporting bin: %s", err)
+				}
 			}
 		} else {
-			err := subSystem.Enter()
-			if err != nil {
-				return fmt.Errorf("error entering subsystem: %s", err)
+			if appName != "" {
+				err := subSystem.UnexportDesktopEntry(appName)
+				if err != nil {
+					return fmt.Errorf("error unexporting app: %s", err)
+				}
+			} else {
+				err := subSystem.UnexportBin(bin, binOutput)
+				if err != nil {
+					return fmt.Errorf("error unexporting bin: %s", err)
+				}
 			}
 		}
 	}

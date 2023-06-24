@@ -3,6 +3,7 @@ module github.com/vanilla-os/apx
 go 1.18
 
 require (
+	github.com/google/uuid v1.1.2
 	github.com/spf13/cobra v1.6.1
 	github.com/vanilla-os/orchid v0.4.0
 	gopkg.in/yaml.v2 v2.4.0

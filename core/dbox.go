@@ -78,7 +78,7 @@ func dboxGetVersion() (version string, err error) {
 	return splitted[1], nil
 }
 
-func (d *dbox) RunCommand(command string, args []string, engineFlags []string, useEngine bool, capture_output bool) ([]byte, error) {
+func (d *dbox) RunCommand(command string, args []string, engineFlags []string, useEngine bool, captureOutput bool) ([]byte, error) {
 	entrypoint := settings.Cnf.DistroboxPath
 	if useEngine {
 		entrypoint = d.EngineBinary
@@ -90,7 +90,7 @@ func (d *dbox) RunCommand(command string, args []string, engineFlags []string, u
 
 	cmd := exec.Command(entrypoint, finalArgs...)
 
-	if !capture_output {
+	if !captureOutput {
 		cmd.Stdout = os.Stdout
 	}
 	cmd.Stderr = os.Stderr
@@ -98,13 +98,14 @@ func (d *dbox) RunCommand(command string, args []string, engineFlags []string, u
 
 	cmd.Env = os.Environ()
 
+	// NOTE: the custom storage is not being used at the moment
 	if d.Engine == "podman" {
 		cmd.Env = append(cmd.Env, "CONTAINER_STORAGE_DRIVER="+settings.Cnf.StorageDriver)
-		cmd.Env = append(cmd.Env, "XDG_DATA_HOME="+settings.Cnf.ApxStoragePath)
+		// cmd.Env = append(cmd.Env, "XDG_DATA_HOME="+settings.Cnf.ApxStoragePath)
 
 	} else if d.Engine == "docker" {
 		cmd.Env = append(cmd.Env, "DOCKER_STORAGE_DRIVER="+settings.Cnf.StorageDriver) // TODO: check if this is correct
-		cmd.Env = append(cmd.Env, "DOCKER_DATA_ROOT="+settings.Cnf.ApxStoragePath)     // TODO: check if this is correct
+		// cmd.Env = append(cmd.Env, "DOCKER_DATA_ROOT="+settings.Cnf.ApxStoragePath)     // TODO: check if this is correct
 	}
 
 	if len(engineFlags) > 0 {
@@ -115,7 +116,7 @@ func (d *dbox) RunCommand(command string, args []string, engineFlags []string, u
 	cmd.Args = append(cmd.Args, args...)
 	// fmt.Println(cmd.String())
 
-	if capture_output {
+	if captureOutput {
 		output, err := cmd.Output()
 		return output, err
 	}
@@ -200,6 +201,7 @@ func (d *dbox) CreateContainer(name string, image string, additionalPackages []s
 	args := []string{
 		"--image", image,
 		"--name", name,
+		"--no-entry",
 		"--yes",
 	}
 
@@ -235,7 +237,7 @@ func (d *dbox) RunContainerCommand(name string, command []string) error {
 	return err
 }
 
-func (d *dbox) ContainerExec(name string, args ...string) error {
+func (d *dbox) ContainerExec(name string, captureOutput bool, args ...string) (string, error) {
 	finalArgs := []string{
 		// "--verbose",
 		name,
@@ -245,8 +247,8 @@ func (d *dbox) ContainerExec(name string, args ...string) error {
 	finalArgs = append(finalArgs, args...)
 	engineFlags := []string{}
 
-	_, err := d.RunCommand("enter", finalArgs, engineFlags, false, false)
-	return err
+	out, err := d.RunCommand("enter", finalArgs, engineFlags, false, captureOutput)
+	return string(out), err
 }
 
 func (d *dbox) ContainerEnter(name string) error {
@@ -258,4 +260,37 @@ func (d *dbox) ContainerEnter(name string) error {
 
 	_, err := d.RunCommand("enter", finalArgs, engineFlags, false, false)
 	return err
+}
+
+func (d *dbox) ContainerExport(name string, delete bool, args ...string) error {
+	finalArgs := []string{"distrobox-export"}
+
+	if delete {
+		finalArgs = append(finalArgs, "--delete")
+	}
+
+	finalArgs = append(finalArgs, args...)
+
+	_, err := d.ContainerExec(name, false, finalArgs...)
+	return err
+}
+
+func (d *dbox) ContainerExportDesktopEntry(containerName string, appName string, label string) error {
+	args := []string{"--app", appName, "--export-label", label}
+	return d.ContainerExport(containerName, false, args...)
+}
+
+func (d *dbox) ContainerUnexportDesktopEntry(containerName string, appName string) error {
+	args := []string{"--app", appName, "--delete"}
+	return d.ContainerExport(containerName, true, args...)
+}
+
+func (d *dbox) ContainerExportBin(containerName string, binary string, exportPath string) error {
+	args := []string{"--bin", binary, "--export-path", exportPath}
+	return d.ContainerExport(containerName, false, args...)
+}
+
+func (d *dbox) ContainerUnexportBin(containerName string, binary string, exportPath string) error {
+	args := []string{"--bin", binary, "--export-path", exportPath}
+	return d.ContainerExport(containerName, true, args...)
 }
