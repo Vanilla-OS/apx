@@ -78,7 +78,7 @@ func dboxGetVersion() (version string, err error) {
 	return splitted[1], nil
 }
 
-func (d *dbox) RunCommand(command string, args []string, engineFlags []string, useEngine bool, captureOutput bool) ([]byte, error) {
+func (d *dbox) RunCommand(command string, args []string, engineFlags []string, useEngine bool, captureOutput bool, muteOutput bool) ([]byte, error) {
 	entrypoint := settings.Cnf.DistroboxPath
 	if useEngine {
 		entrypoint = d.EngineBinary
@@ -90,10 +90,12 @@ func (d *dbox) RunCommand(command string, args []string, engineFlags []string, u
 
 	cmd := exec.Command(entrypoint, finalArgs...)
 
-	if !captureOutput {
+	if !captureOutput && !muteOutput {
 		cmd.Stdout = os.Stdout
 	}
-	cmd.Stderr = os.Stderr
+	if !muteOutput {
+		cmd.Stderr = os.Stderr
+	}
 	cmd.Stdin = os.Stdin
 
 	cmd.Env = os.Environ()
@@ -129,7 +131,7 @@ func (d *dbox) ListContainers() ([]dboxContainer, error) {
 	output, err := d.RunCommand("ps", []string{
 		"-a",
 		"--format", "{{.ID}}|{{.CreatedAt}}|{{.Status}}|{{.Labels}}|{{.Names}}",
-	}, []string{}, true, true)
+	}, []string{}, true, true, false)
 	if err != nil {
 		return nil, err
 	}
@@ -194,17 +196,9 @@ func (d *dbox) ContainerDelete(name string) error {
 	_, err := d.RunCommand("rm", []string{
 		"--force",
 		name,
-	}, []string{}, false, false)
+	}, []string{}, false, false, true)
 	return err
 }
-
-// func (d *dbox) ContainerDelete(name string) error {
-// 	_, err := d.RunCommand("rm", []string{
-// 		"-f",
-// 		name,
-// 	}, []string{}, true, false)
-// 	return err
-// }
 
 func (d *dbox) CreateContainer(name string, image string, additionalPackages []string, labels map[string]string) error {
 	args := []string{
@@ -229,7 +223,7 @@ func (d *dbox) CreateContainer(name string, image string, additionalPackages []s
 	}
 	engineFlags = append(engineFlags, "--label=manager=apx")
 
-	_, err := d.RunCommand("create", args, engineFlags, false, true)
+	_, err := d.RunCommand("create", args, engineFlags, false, true, true)
 	// fmt.Println(string(out))
 	return err
 }
@@ -242,7 +236,7 @@ func (d *dbox) RunContainerCommand(name string, command []string) error {
 
 	args = append(args, command...)
 
-	_, err := d.RunCommand("run", args, []string{}, false, false)
+	_, err := d.RunCommand("run", args, []string{}, false, false, false)
 	return err
 }
 
@@ -256,7 +250,7 @@ func (d *dbox) ContainerExec(name string, captureOutput bool, args ...string) (s
 	finalArgs = append(finalArgs, args...)
 	engineFlags := []string{}
 
-	out, err := d.RunCommand("enter", finalArgs, engineFlags, false, captureOutput)
+	out, err := d.RunCommand("enter", finalArgs, engineFlags, false, captureOutput, false)
 	return string(out), err
 }
 
@@ -267,7 +261,7 @@ func (d *dbox) ContainerEnter(name string) error {
 
 	engineFlags := []string{}
 
-	_, err := d.RunCommand("enter", finalArgs, engineFlags, false, false)
+	_, err := d.RunCommand("enter", finalArgs, engineFlags, false, false, false)
 	return err
 }
 
