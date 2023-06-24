@@ -98,14 +98,14 @@ func (d *dbox) RunCommand(command string, args []string, engineFlags []string, u
 
 	cmd.Env = os.Environ()
 
-	// NOTE: the custom storage is not being used at the moment
+	// NOTE: the custom storage is not being used since it prevent other
+	//		 utilities, like VSCode, to access the container.
 	if d.Engine == "podman" {
 		cmd.Env = append(cmd.Env, "CONTAINER_STORAGE_DRIVER="+settings.Cnf.StorageDriver)
 		// cmd.Env = append(cmd.Env, "XDG_DATA_HOME="+settings.Cnf.ApxStoragePath)
-
 	} else if d.Engine == "docker" {
-		cmd.Env = append(cmd.Env, "DOCKER_STORAGE_DRIVER="+settings.Cnf.StorageDriver) // TODO: check if this is correct
-		// cmd.Env = append(cmd.Env, "DOCKER_DATA_ROOT="+settings.Cnf.ApxStoragePath)     // TODO: check if this is correct
+		cmd.Env = append(cmd.Env, "DOCKER_STORAGE_DRIVER="+settings.Cnf.StorageDriver)
+		// cmd.Env = append(cmd.Env, "DOCKER_DATA_ROOT="+settings.Cnf.ApxStoragePath)
 	}
 
 	if len(engineFlags) > 0 {
@@ -181,6 +181,7 @@ func (d *dbox) GetContainer(name string) (*dboxContainer, error) {
 	}
 
 	for _, container := range containers {
+		fmt.Println("found container", container.Name, "requested", name)
 		if container.Name == name {
 			return &container, nil
 		}
@@ -191,11 +192,19 @@ func (d *dbox) GetContainer(name string) (*dboxContainer, error) {
 
 func (d *dbox) ContainerDelete(name string) error {
 	_, err := d.RunCommand("rm", []string{
-		"--name", name,
 		"--force",
+		name,
 	}, []string{}, false, false)
 	return err
 }
+
+// func (d *dbox) ContainerDelete(name string) error {
+// 	_, err := d.RunCommand("rm", []string{
+// 		"-f",
+// 		name,
+// 	}, []string{}, true, false)
+// 	return err
+// }
 
 func (d *dbox) CreateContainer(name string, image string, additionalPackages []string, labels map[string]string) error {
 	args := []string{
