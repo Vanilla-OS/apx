@@ -160,12 +160,31 @@ func newSubSystem(cmd *cobra.Command, args []string) error {
 	subSystemName, _ := cmd.Flags().GetString("name")
 
 	if stackName == "" {
-		cmdr.Info.Println("Please type a stack name:")
-		fmt.Scanln(&stackName)
-		if stackName == "" {
-			cmdr.Error.Println("Stack name cannot be empty")
+		stacks := core.ListStacks()
+		if len(stacks) == 0 {
+			cmdr.Error.Println("No stacks available")
 			return nil
 		}
+
+		cmdr.Info.Println("Please select a stack:")
+		for i, stack := range stacks {
+			fmt.Printf("%d. %s\n", i+1, stack.Name)
+		}
+		fmt.Printf("Select a stack [1-%d]: ", len(stacks))
+
+		var stackIndex int
+		_, err := fmt.Scanln(&stackIndex)
+		if err != nil {
+			cmdr.Error.Println("Invalid input")
+			return nil
+		}
+
+		if stackIndex < 1 || stackIndex > len(stacks) {
+			cmdr.Error.Println("Invalid stack selection")
+			return nil
+		}
+
+		stackName = stacks[stackIndex-1].Name
 	}
 
 	if subSystemName == "" {
