@@ -34,11 +34,19 @@ type Config struct {
 var Cnf *Config
 
 func init() {
+	userHome, err := os.UserHomeDir()
+	if err != nil {
+		panic(err)
+	}
+
 	// dev paths
 	viper.AddConfigPath("config/")
 
 	// tests paths
 	viper.AddConfigPath("../config/")
+
+	// user paths
+	viper.AddConfigPath(filepath.Join(userHome, ".config/apx/"))
 
 	// prod paths
 	viper.AddConfigPath("/etc/apx/")
@@ -46,7 +54,7 @@ func init() {
 
 	viper.SetConfigName("apx")
 	viper.SetConfigType("json")
-	err := viper.ReadInConfig()
+	err = viper.ReadInConfig()
 
 	if err != nil {
 		return
@@ -69,11 +77,6 @@ func init() {
 		UserStacksPath:      "",
 		PkgManagersPath:     "",
 		UserPkgManagersPath: "",
-	}
-
-	userHome, err := os.UserHomeDir()
-	if err != nil {
-		panic(err)
 	}
 
 	Cnf.UserApxPath = filepath.Join(userHome, ".local/share/apx")
