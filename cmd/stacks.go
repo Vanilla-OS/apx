@@ -299,17 +299,31 @@ func newStack(cmd *cobra.Command, args []string) error {
 	}
 
 	if pkgManager == "" {
-		if !assumeYes {
-			cmdr.Info.Println("Please type a package manager for the stack, (e.g. apt):")
-			fmt.Scanln(&pkgManager)
-			if pkgManager == "" {
-				cmdr.Error.Println("The package manager cannot be empty.")
-				return nil
-			}
-		} else {
-			cmdr.Error.Println("Please provide a package manager for the stack")
+		pkgManagers := core.ListPkgManagers()
+		if len(pkgManagers) == 0 {
+			cmdr.Error.Println("No package managers available")
 			return nil
 		}
+
+		cmdr.Info.Println("Please select a package manager:")
+		for i, manager := range pkgManagers {
+			fmt.Printf("%d. %s\n", i+1, manager.Name)
+		}
+		fmt.Printf("Select a package manager [1-%d]: ", len(pkgManagers))
+
+		var pkgManagerIndex int
+		_, err := fmt.Scanln(&pkgManagerIndex)
+		if err != nil {
+			cmdr.Error.Println("Invalid input")
+			return nil
+		}
+
+		if pkgManagerIndex < 1 || pkgManagerIndex > len(pkgManagers) {
+			cmdr.Error.Println("Invalid package manager selection")
+			return nil
+		}
+
+		pkgManager = pkgManagers[pkgManagerIndex-1].Name
 	}
 
 	ok = core.PkgManagerExists(pkgManager)
