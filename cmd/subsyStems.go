@@ -198,7 +198,7 @@ func newSubSystem(cmd *cobra.Command, args []string) error {
 }
 
 func rmSubSystem(cmd *cobra.Command, args []string) error {
-	subSystemName := args[0]
+	subSystemName, _ := cmd.Flags().GetString("name")
 	forceFlag, _ := cmd.Flags().GetBool("force")
 
 	if !forceFlag {
