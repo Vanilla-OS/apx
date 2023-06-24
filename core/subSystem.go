@@ -28,10 +28,14 @@ type SubSystem struct {
 
 func NewSubSystem(name string, stack *Stack) (*SubSystem, error) {
 	return &SubSystem{
-		InternalName: fmt.Sprintf("apx-%s-%s", stack.Name, name),
+		InternalName: genInternalName(name),
 		Name:         name,
 		Stack:        stack,
 	}, nil
+}
+
+func genInternalName(name string) string {
+	return fmt.Sprintf("apx-%s", strings.ReplaceAll(strings.ToLower(name), " ", "-"))
 }
 
 func (s *SubSystem) Create() error {
@@ -71,9 +75,8 @@ func LoadSubSystem(name string) (*SubSystem, error) {
 	if err != nil {
 		return nil, err
 	}
-
 	return &SubSystem{
-		InternalName: container.Name,
+		InternalName: genInternalName(name),
 		Name:         container.Labels["name"],
 		Stack:        stack,
 		Status:       container.Status,
@@ -105,10 +108,9 @@ func ListSubSystems() ([]*SubSystem, error) {
 		}
 
 		subsystem := &SubSystem{
-			InternalName: container.Name,
-			Name:         container.Labels["name"],
-			Stack:        stack,
-			Status:       container.Status,
+			Name:   container.Labels["name"],
+			Stack:  stack,
+			Status: container.Status,
 		}
 
 		subsystems = append(subsystems, subsystem)
@@ -162,10 +164,6 @@ func (s *SubSystem) Reset() error {
 	return s.Create()
 }
 
-func (s *SubSystem) GetMinName() string {
-	return strings.ReplaceAll(strings.ToLower(s.Name), " ", "-")
-}
-
 func (s *SubSystem) ExportDesktopEntry(appName string) error {
 	dbox, err := NewDbox()
 	if err != nil {
@@ -215,7 +213,7 @@ func (s *SubSystem) ExportBin(binary string, exportPath string) error {
 			return err
 		}
 
-		err = CopyFile(filepath.Join(tmpExportPath, binaryName), filepath.Join(exportPath, fmt.Sprintf("%s-%s", binaryName, s.GetMinName())))
+		err = CopyFile(filepath.Join(tmpExportPath, binaryName), filepath.Join(exportPath, fmt.Sprintf("%s-%s", binaryName, s.InternalName)))
 		if err != nil {
 			return err
 		}
@@ -225,7 +223,7 @@ func (s *SubSystem) ExportBin(binary string, exportPath string) error {
 			return err
 		}
 
-		err = os.Chmod(filepath.Join(exportPath, fmt.Sprintf("%s-%s", binaryName, s.GetMinName())), 0755)
+		err = os.Chmod(filepath.Join(exportPath, fmt.Sprintf("%s-%s", binaryName, s.InternalName)), 0755)
 		if err != nil {
 			return err
 		}
