@@ -24,8 +24,8 @@ func NewStacksCommand() *cmdr.Command {
 	// Root command
 	cmd := cmdr.NewCommand(
 		"stacks",
-		apx.Trans("stacks.long"),
-		apx.Trans("stacks.short"),
+		apx.Trans("stacks"),
+		apx.Trans("stacks"),
 		nil,
 	)
 	cmd.Example = "apx stacks"
@@ -33,8 +33,8 @@ func NewStacksCommand() *cmdr.Command {
 	// List subcommand
 	listCmd := cmdr.NewCommand(
 		"list",
-		apx.Trans("listStacks.long"),
-		apx.Trans("listStacks.short"),
+		apx.Trans("listStacks"),
+		apx.Trans("listStacks"),
 		listStacks,
 	)
 	listCmd.Example = "apx stacks list"
@@ -42,8 +42,8 @@ func NewStacksCommand() *cmdr.Command {
 	// Show subcommand
 	showCmd := cmdr.NewCommand(
 		"show",
-		apx.Trans("showStack.long"),
-		apx.Trans("showStack.short"),
+		apx.Trans("showStack"),
+		apx.Trans("showStack"),
 		showStack,
 	)
 	showCmd.Example = "apx stacks show my-stack"
@@ -52,8 +52,8 @@ func NewStacksCommand() *cmdr.Command {
 	// New subcommand
 	newCmd := cmdr.NewCommand(
 		"new",
-		apx.Trans("newStack.long"),
-		apx.Trans("newStack.short"),
+		apx.Trans("newStack"),
+		apx.Trans("newStack"),
 		newStack,
 	)
 	newCmd.Example = "apx stacks new --name my-stack --base vanillaos:pico --packages nano,git --pkg-manager apt"
@@ -102,8 +102,8 @@ func NewStacksCommand() *cmdr.Command {
 	// Update subcommand
 	updateCmd := cmdr.NewCommand(
 		"update",
-		apx.Trans("updateStack.long"),
-		apx.Trans("updateStack.short"),
+		apx.Trans("updateStack"),
+		apx.Trans("updateStack"),
 		updateStack,
 	)
 	updateCmd.Example = "apx stacks update --base vanillaos:pico --packages nano,git --pkg-manager apt"
@@ -136,8 +136,8 @@ func NewStacksCommand() *cmdr.Command {
 	// Rm subcommand
 	rmStackCmd := cmdr.NewCommand(
 		"rm",
-		apx.Trans("rmStack.long"),
-		apx.Trans("rmStack.short"),
+		apx.Trans("rmStack"),
+		apx.Trans("rmStack"),
 		removeStack,
 	)
 	rmStackCmd.Example = "apx stacks rm my-stack"
@@ -162,8 +162,8 @@ func NewStacksCommand() *cmdr.Command {
 	// Export subcommand
 	exportCmd := cmdr.NewCommand(
 		"export",
-		apx.Trans("exportStack.long"),
-		apx.Trans("exportStack.short"),
+		apx.Trans("exportStack"),
+		apx.Trans("exportStack"),
 		exportStack,
 	)
 	exportCmd.Example = "apx stacks export my-stack"
@@ -188,8 +188,8 @@ func NewStacksCommand() *cmdr.Command {
 	// Import subcommand
 	importCmd := cmdr.NewCommand(
 		"import",
-		apx.Trans("importStack.long"),
-		apx.Trans("importStack.short"),
+		apx.Trans("importStack"),
+		apx.Trans("importStack"),
 		importStack,
 	)
 	importCmd.Example = "apx stacks import my-stack"

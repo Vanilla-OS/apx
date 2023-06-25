@@ -23,8 +23,8 @@ func NewSubSystemsCommand() *cmdr.Command {
 	// Root command
 	cmd := cmdr.NewCommand(
 		"subsystems",
-		apx.Trans("subsystems.long"),
-		apx.Trans("subsystems.short"),
+		apx.Trans("subsystems"),
+		apx.Trans("subsystems"),
 		nil,
 	)
 	cmd.Example = "apx subsystems"
@@ -32,8 +32,8 @@ func NewSubSystemsCommand() *cmdr.Command {
 	// List subcommand
 	listCmd := cmdr.NewCommand(
 		"list",
-		apx.Trans("listSubSystems.long"),
-		apx.Trans("listSubSystems.short"),
+		apx.Trans("listSubSystems"),
+		apx.Trans("listSubSystems"),
 		listSubSystems,
 	)
 	listCmd.Example = "apx subsystems list"
@@ -41,8 +41,8 @@ func NewSubSystemsCommand() *cmdr.Command {
 	// New subcommand
 	newCmd := cmdr.NewCommand(
 		"new",
-		apx.Trans("newSubSystem.long"),
-		apx.Trans("newSubSystem.short"),
+		apx.Trans("newSubSystem"),
+		apx.Trans("newSubSystem"),
 		newSubSystem,
 	)
 	newCmd.Example = "apx subsystems new --name my-subsystem --stack my-stack"
@@ -67,8 +67,8 @@ func NewSubSystemsCommand() *cmdr.Command {
 	// Rm subcommand
 	rmCmd := cmdr.NewCommand(
 		"rm",
-		apx.Trans("rmSubSystem.long"),
-		apx.Trans("rmSubSystem.short"),
+		apx.Trans("rmSubSystem"),
+		apx.Trans("rmSubSystem"),
 		rmSubSystem,
 	)
 	rmCmd.Example = "apx subsystems rm --name my-subsystem"
@@ -93,8 +93,8 @@ func NewSubSystemsCommand() *cmdr.Command {
 	// Reset subcommand
 	resetCmd := cmdr.NewCommand(
 		"reset",
-		apx.Trans("resetSubSystem.long"),
-		apx.Trans("resetSubSystem.short"),
+		apx.Trans("resetSubSystem"),
+		apx.Trans("resetSubSystem"),
 		resetSubSystem,
 	)
 	resetCmd.Example = "apx subsystems reset --name my-subsystem"

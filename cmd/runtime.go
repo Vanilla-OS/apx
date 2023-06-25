@@ -34,105 +34,104 @@ func NewRuntimeCommands() []*cmdr.Command {
 	for _, subSystem := range subSystems {
 		subSystemCmd := cmdr.NewCommand(
 			subSystem.Name,
-			apx.Trans("runtimeCommand.long"),
-			apx.Trans("runtimeCommand.short"),
+			apx.Trans("runtimeCommand.description"),
+			apx.Trans("runtimeCommand.description"),
 			nil,
 		)
 
 		autoRemoveCmd := cmdr.NewCommand(
 			"autoremove",
-			"Remove unused packages from the subsystem",
-			"",
+			apx.Trans("runtimeCommand.autoremove.description"),
+			apx.Trans("runtimeCommand.autoremove.description"),
 			handleFunc(subSystem, runPkgCmd),
 		)
 		cleanCmd := cmdr.NewCommand(
 			"clean",
-			"Clean the subsystem",
-			"",
+			apx.Trans("runtimeCommand.clean.description"),
+			apx.Trans("runtimeCommand.clean.description"),
 			handleFunc(subSystem, runPkgCmd),
 		)
 
 		installCmd := cmdr.NewCommand(
 			"install",
-			"Install packages in the subsystem",
-			"",
+			apx.Trans("runtimeCommand.install.description"),
+			apx.Trans("runtimeCommand.install.description"),
 			handleFunc(subSystem, runPkgCmd),
 		)
 		installCmd.WithBoolFlag(
 			cmdr.NewBoolFlag(
 				"no-export",
 				"n",
-				"Do not export a desktop entry for the app",
+				apx.Trans("runtimeCommand.install.options.noExport.description"),
 				false,
 			),
 		)
 
 		listCmd := cmdr.NewCommand(
 			"list",
-			"List packages in the subsystem",
-			"",
+			apx.Trans("runtimeCommand.list.description"),
+			apx.Trans("runtimeCommand.list.description"),
 			handleFunc(subSystem, runPkgCmd),
 		)
 		purgeCmd := cmdr.NewCommand(
 			"purge",
-			"Purge packages from the subsystem",
-			"",
+			apx.Trans("runtimeCommand.purge.description"),
+			apx.Trans("runtimeCommand.purge.description"),
 			handleFunc(subSystem, runPkgCmd),
 		)
 		removeCmd := cmdr.NewCommand(
 			"remove",
-			"Remove packages from the subsystem",
-			"",
+			apx.Trans("runtimeCommand.remove.description"),
+			apx.Trans("runtimeCommand.remove.description"),
 			handleFunc(subSystem, runPkgCmd),
 		)
 		searchCmd := cmdr.NewCommand(
 			"search",
-			"Search packages in the subsystem",
-			"",
+			apx.Trans("runtimeCommand.search.description"),
+			apx.Trans("runtimeCommand.search.description"),
 			handleFunc(subSystem, runPkgCmd),
 		)
 		showCmd := cmdr.NewCommand(
 			"show",
-			"Show packages in the subsystem",
-			"",
+			apx.Trans("runtimeCommand.show.description"),
+			apx.Trans("runtimeCommand.show.description"),
 			handleFunc(subSystem, runPkgCmd),
 		)
 		updateCmd := cmdr.NewCommand(
 			"update",
-			"Update packages in the subsystem",
-			"",
+			apx.Trans("runtimeCommand.update.description"),
+			apx.Trans("runtimeCommand.update.description"),
 			handleFunc(subSystem, runPkgCmd),
 		)
 		upgradeCmd := cmdr.NewCommand(
 			"upgrade",
-			"Upgrade packages in the subsystem",
-			"",
+			apx.Trans("runtimeCommand.upgrade.description"),
+			apx.Trans("runtimeCommand.upgrade.description"),
 			handleFunc(subSystem, runPkgCmd),
 		)
 		runCmd := cmdr.NewCommand(
 			"run",
-			"Run a command in the subsystem",
-			"",
+			apx.Trans("runtimeCommand.run.description"),
+			apx.Trans("runtimeCommand.run.description"),
 			handleFunc(subSystem, runPkgCmd),
 		)
 		enterCmd := cmdr.NewCommand(
 			"enter",
-			"Enter the subsystem",
-			"",
+			apx.Trans("runtimeCommand.enter.description"),
+			apx.Trans("runtimeCommand.enter.description"),
 			handleFunc(subSystem, runPkgCmd),
 		)
-
 		exportCmd := cmdr.NewCommand(
 			"export",
-			"Export a binary or an app from the subsystem",
-			"",
+			apx.Trans("runtimeCommand.export.description"),
+			apx.Trans("runtimeCommand.export.description"),
 			handleFunc(subSystem, runPkgCmd),
 		)
 		exportCmd.WithStringFlag(
 			cmdr.NewStringFlag(
 				"app-name",
 				"a",
-				"Name of the app to export",
+				apx.Trans("runtimeCommand.export.options.appName.description"),
 				"",
 			),
 		)
@@ -140,7 +139,7 @@ func NewRuntimeCommands() []*cmdr.Command {
 			cmdr.NewStringFlag(
 				"bin",
 				"b",
-				"Path of the binary to export",
+				apx.Trans("runtimeCommand.export.options.bin.description"),
 				"",
 			),
 		)
@@ -148,22 +147,21 @@ func NewRuntimeCommands() []*cmdr.Command {
 			cmdr.NewStringFlag(
 				"bin-output",
 				"o",
-				"Path of the binary output (default: ~/.local/bin/)",
+				apx.Trans("runtimeCommand.export.options.binOutput.description"),
 				"",
 			),
 		)
-
 		unexportCmd := cmdr.NewCommand(
 			"unexport",
-			"Unexport a binary or an app from the subsystem",
-			"",
+			apx.Trans("runtimeCommand.unexport.description"),
+			apx.Trans("runtimeCommand.unexport.description"),
 			handleFunc(subSystem, runPkgCmd),
 		)
 		unexportCmd.WithStringFlag(
 			cmdr.NewStringFlag(
 				"app-name",
 				"a",
-				"Name of the app to unexport",
+				apx.Trans("runtimeCommand.unexport.options.appName.description"),
 				"",
 			),
 		)
@@ -171,7 +169,7 @@ func NewRuntimeCommands() []*cmdr.Command {
 			cmdr.NewStringFlag(
 				"bin",
 				"b",
-				"Path of the binary to unexport",
+				apx.Trans("runtimeCommand.unexport.options.bin.description"),
 				"",
 			),
 		)
@@ -179,7 +177,7 @@ func NewRuntimeCommands() []*cmdr.Command {
 			cmdr.NewStringFlag(
 				"bin-output",
 				"o",
-				"Path of where the binary was exported (default: ~/.local/bin/)",
+				apx.Trans("runtimeCommand.unexport.options.binOutput.description"),
 				"",
 			),
 		)

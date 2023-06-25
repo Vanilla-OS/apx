@@ -1,148 +1,72 @@
-flags:
-  apt: "Install packages from the Ubuntu repository."
-  aur: "Install packages from the AUR (Arch User Repository)."
-  dnf: "Install packages from the Fedora's DNF (Dandified YUM) repository."
-  apk: "Install packages from the Alpine repository."
-  zypper: "Install packages from the OpenSUSE repository."
-  xbps: "Install packages from the Void (Linux) repository."
-  nix: "Install packages from the Nixpkgs (Nix packages) repository."
-  swupd: "Install packages from the Clear Linux* store"
-  name: " Apply to custom container with this name."
 apx:
   use: "apx"
-  long: "Apx is a package manager with support for multiple sources,\nallowing you\
-    \ to install packages in a managed container."
-  short: "Apx is a package manager with support for multiple sources,\nallowing you\
-    \ to install packages in a managed container."
-  verboseFlag: "show more detailed output"
-  allFlag: "Apply for all containers."
-  cxl: "Operation canceled at user request."
-  assumeYes: "Proceed without manual confirmation."
-  notForNix: "This command does not apply to the nix environment."
-autoremove:
-  use: "autoremove"
-  long: "Remove all unused packages automatically"
-  short: "Remove all unused packages automatically"
-clean:
-  use: "clean"
-  long: "Clean the apx package manager cache"
-  short: "Clean the apx package manager cache"
-enter:
-  use: "enter"
-  long: "Enter a shell in the managed container"
-  short: "Enter a shell in the managed container"
-  failedEnter: "failed to enter managed container"
-  outside: "You are now outside the managed container."
-export:
-  use: "export <program/binary>"
-  long: "Export/Recreate a program's desktop entry from a managed container"
-  short: "Export/Recreate a program's desktop entry from a managed container"
-  binFlag: "Export binary command"
-init:
-  use: "init"
-  long: "Initialize a managed container"
-  short: "Initialize a managed container"
-  confirm: "Container already exists. Do you want to re-initialize it? This operation\
-    \ will remove everything, including your files in the container."
-  remove: "error removing container: %v"
-  create: "error creating container: %v"
-install:
-  use: "apx install <package>"
-  long: "Install packages inside a managed container."
-  short: "Install packages inside a managed container."
-  assumeYes: "Proceed without manual confirmation"
-  fixBroken: "Fix broken dependencies before installing"
-  noExport: "Do not export a desktop entry after the installation."
-  sideload: "Install a package from a local file."
-  sideArgs: "sideload requires the path to a local file"
-  sideUserTemp: "can't move file to user temp: %s"
-  exportBinPrompt: "Export binary %s to host?\nThis will let you call it directly\
-    \ from the shell without using \"apx run\".\nYou can also export it later using\
-    \ \"apx export --bin %s\""
-list:
-  use: "list"
-  long: "List installed packages."
-  short: "List installed packages."
-  upgradable: "Show upgradable packages"
-  installed: "Show installed packages"
-nix:
-  use: "nix"
-  long: "Manage a custom installation of nix in your $HOME directory.\n\nThe `apx\
-    \ nix` integration serves as a wrapper for the\ndefault nix profile. Once installed,\
-    \ you are free to use any features of\nnix without using the `apx nix` command."
-  short: "Manage nix installation"
-nixinit:
-  use: "init"
-  long: "Initializes a custom installation of nix by creating $HOME/.nix and setting\
-    \ up some SystemD units to mount it as /nix."
-  short: "Initialize nix repository"
-  confirm: "This will create a '.nix' folder in your home directory and set up some\
-    \ SystemD units to mount that folder at /nix before running the installation.\
-    \ Confirm 'y' to continue."
-  unfree: "Would you like to allow 'unfree' packages without Open Source licenses\
-    \ (Visual Studio Code, Spotify, etc)?"
-  insecure: "Would you like to allow 'insecure' packages (software with known vulnerabilities)?"
-  swcenter: "Would you like to install the Nix Software Center - a graphical software\
-    \ manager for Nix?"
-  success: "Installation complete. Reboot to start using nix."
-nixremove:
-  use: "remove"
-  long: "Remove the first matching package installed in the default nix profile.\n\
-    \nNote: It is possible to have multiple installations of the same package.\n\n\
-    If you need more precision use 'nix profile list' and 'nix profile remove'."
-  short: "Remove a nix package"
-  success: "Package removal complete"
-nixinstall:
-  use: "install <pkg>"
-  long: "Install a package from the `nixpkgs` repository as a flake in the default\
-    \ nix profile."
-  short: "Install nix package"
-  allowUnfree: "Allow packages with unfree licenses"
-  allowInsecure: "Allow packages with known vulnerabilities."
-  error: "error installing packages"
-  runInit: "Have you run the `init` command yet?"
-  success: "Successfully installed package."
-nixupgrade:
-  success: "Successfully upgraded package."
-  atleastone: "At least one package name required."
-purge:
-  use: "purge <packages>"
-  long: "Purge packages inside a managed container"
-  short: "Purge packages inside a managed container"
-remove:
-  use: "remove <package>"
-  long: "Remove packages inside a managed container."
-  short: "Remove packages inside a managed container."
-run:
-  use: "run <command>"
-  long: "Run a program inside a managed container."
-  short: "Run a program inside a managed container."
-  nixMsg: "Do not use `apx run` for nix packages. Run them directly as you would with\
-    \ a native package."
-search:
-  use: "search <packages>"
-  long: "Search for packages in a managed container."
-  short: "Search for packages in a managed container."
-show:
-  use: "show <package>"
-  long: "Show details about a package"
-  short: "Show details about a package"
-  isInstalled: "Only return whether the package is installed"
-  found: "%s is installed"
-  notFound: "%s is not installed"
-unexport:
-  use: "unexport <package>"
-  long: "Unexport/Remove a program's desktop entry from a managed container.\nIf --bin\
-    \ flag is provided, remove link to container binary."
-  short: "Unexport/Remove a program's desktop entry from a managed container"
-  binFlag: "Unexport a previously exported binary."
-  success: "Successfully removed exported binary `%s`."
-update:
-  use: "update"
-  long: "Update the list of available packages"
-  short: "Update the list of available packages"
-  allFlag: "Apply to all containers"
-upgrade:
-  use: "upgrade"
-  long: "Upgrade the system by installing/upgrading available packages."
-  short: "Upgrade the system by installing/upgrading available packages."
+  description: "Apx is a package manager with support for multiple sources, allowing you to install packages in subsystems."
+
+runtimeCommand:
+  use: "apx <subsystem> <command> [options]"
+  description: "Work with the specified subsystem, accessing the package manager and environment."
+  
+  autoremove:
+    use: "apx <subsystem> autoremove"
+    description: "Remove packages that are no longer required."
+  clean:
+    use: "apx <subsystem> clean"
+    description: "Clean the package manager's cache."
+  install:
+    use: "apx <subsystem> install <package> [options]"
+    description: "Install the specified package."
+    options:
+      noExport:
+        use: "--no-export"
+        description: "Do not export a desktop entry."
+  list:
+    use: "apx <subsystem> list"
+    description: "List all installed packages."
+  purge:
+    use: "apx <subsystem> purge <package>"
+    description: "Purge the specified packages."
+  remove:
+    use: "apx <subsystem> remove <package>"
+    description: "Remove the specified packages."
+  search:
+    use: "apx <subsystem> search <query>"
+    description: "Search for packages matching the specified query."
+  show:
+    use: "apx <subsystem> show <package>"
+    description: "Show information about the specified package."
+  update:
+    use: "apx <subsystem> update"
+    description: "Update the list of available packages."
+  upgrade:
+    use: "apx <subsystem> upgrade"
+    description: "Upgrade all installed packages."
+  enter:
+    use: "apx <subsystem> enter"
+    description: "Enter the subsystem's environment."
+  export:
+    use: "apx <subsystem> export [options]"
+    description: "Export an application or binary from the subsystem."
+    options:
+      appName:
+        use: "--app-name <name>"
+        description: "The name of the application to export."
+      bin:
+        use: "--bin <name>"
+        description: "The name of the binary to export."
+      binOutput:
+        use: "--bin-output <path>"
+        description: "Path of the binary output (default: ~/.local/bin/)."
+  unexport:
+    use: "apx <subsystem> unexport [options]"
+    description: "Unexport an application or binary from the subsystem."
+    options:
+      appName:
+        use: "--app-name <name>"
+        description: "The name of the application to unexport."
+      bin:
+        use: "--bin <name>"
+        description: "The name of the binary to unexport."
+      binOutput:
+        use: "--bin-output <path>"
+        description: "Path of the binary output (default: ~/.local/bin/)."
+        

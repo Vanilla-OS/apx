@@ -26,8 +26,8 @@ func NewPkgManagersCommand() *cmdr.Command {
 	// Root command
 	cmd := cmdr.NewCommand(
 		"pkgmanagers",
-		apx.Trans("pkgmanagers.long"),
-		apx.Trans("pkgmanagers.short"),
+		apx.Trans("pkgmanagers"),
+		apx.Trans("pkgmanagers"),
 		nil,
 	)
 	cmd.Example = "apx pkgmanagers"
@@ -35,8 +35,8 @@ func NewPkgManagersCommand() *cmdr.Command {
 	// List subcommand
 	listCmd := cmdr.NewCommand(
 		"list",
-		apx.Trans("pkgmanagers.long"),
-		apx.Trans("pkgmanagers.short"),
+		apx.Trans("pkgmanagers"),
+		apx.Trans("pkgmanagers"),
 		listPkgManagers,
 	)
 	listCmd.Example = "apx pkgmanagers list"
@@ -44,8 +44,8 @@ func NewPkgManagersCommand() *cmdr.Command {
 	// Show subcommand
 	showCmd := cmdr.NewCommand(
 		"show",
-		apx.Trans("showPkgManager.long"),
-		apx.Trans("showPkgManager.short"),
+		apx.Trans("showPkgManager"),
+		apx.Trans("showPkgManager"),
 		showPkgManager,
 	)
 	showCmd.Example = "apx pkgmanagers show myPkgManager"
@@ -54,8 +54,8 @@ func NewPkgManagersCommand() *cmdr.Command {
 	// New subcommand
 	newCmd := cmdr.NewCommand(
 		"new",
-		apx.Trans("newPkgManager.long"),
-		apx.Trans("newPkgManager.short"),
+		apx.Trans("newPkgManager"),
+		apx.Trans("newPkgManager"),
 		newPkgManager,
 	)
 	newCmd.Example = "apx pkgmanagers new -n myPkgManager -a \"autoremove\" -c \"clean\" -i \"install\" -l \"list\" -p \"purge\" -r \"remove\" -s \"search\" -w \"show\" -u \"update\" -U \"upgrade\""
@@ -168,8 +168,8 @@ func NewPkgManagersCommand() *cmdr.Command {
 	// Rm subcommand
 	rmCmd := cmdr.NewCommand(
 		"rm",
-		apx.Trans("rmPkgManager.long"),
-		apx.Trans("rmPkgManager.short"),
+		apx.Trans("rmPkgManager"),
+		apx.Trans("rmPkgManager"),
 		rmPkgManager,
 	)
 	rmCmd.Example = "apx pkgmanagers rm myPkgManager"
