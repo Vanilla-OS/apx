@@ -201,7 +201,7 @@ func listPkgManagers(cmd *cobra.Command, args []string) error {
 	pkgManagers := core.ListPkgManagers()
 	pkgManagersCount := len(pkgManagers)
 	if pkgManagersCount == 0 {
-		fmt.Println("No package managers available. Create a new one with 'apx pkgmanagers new' or contact the system administrator.")
+		cmdr.Info.Printfln(apx.Trans("pkgmanagers.list.info.noPkgManagers"))
 		return nil
 	}
 
@@ -266,20 +266,20 @@ func newPkgManager(cmd *cobra.Command, args []string) error {
 
 	if name == "" {
 		if !assumeYes {
-			cmdr.Info.Println("Please type a name for the package manager:")
+			cmdr.Info.Println(apx.Trans("pkgmanagers.new.info.askName"))
 			fmt.Scanln(&name)
 			if name == "" {
-				cmdr.Error.Println("The name cannot be empty.")
+				cmdr.Error.Println(apx.Trans("pkgmanagers.new.error.emptyName"))
 				return nil
 			}
 		} else {
-			cmdr.Error.Println("Please provide a name for the package manager.")
+			cmdr.Error.Println(apx.Trans("pkgmanagers.new.error.noName"))
 			return nil
 		}
 	}
 
 	if !needSudo && !assumeYes {
-		cmdr.Info.Println("Does the package manager need sudo to run? [y/N]")
+		cmdr.Info.Println(apx.Trans("pkgmanagers.new.info.askSudo") + ` [y/N]`)
 		reader := bufio.NewReader(os.Stdin)
 		answer, _ := reader.ReadString('\n')
 		if strings.ToLower(strings.TrimSpace(answer)) == "y" {
@@ -303,14 +303,14 @@ func newPkgManager(cmd *cobra.Command, args []string) error {
 	for cmdName, cmd := range cmdMap {
 		if *cmd == "" {
 			if !assumeYes {
-				cmdr.Info.Printf("Please type the command for %s:\n", cmdName)
+				cmdr.Info.Printf(apx.Trans("pkgmanagers.new.info.askCommand"), cmdName)
 				fmt.Scanln(cmd)
 				if *cmd == "" {
-					cmdr.Error.Printf("The command for %s cannot be empty.\n", cmdName)
+					cmdr.Error.Printf(apx.Trans("pkgmanagers.new.error.emptyCommand"), cmdName)
 					return nil
 				}
 			} else {
-				cmdr.Error.Printf("Please provide the command for %s.\n", cmdName)
+				cmdr.Error.Printf(apx.Trans("pkgmanagers.new.error.noCommand"), cmdName)
 				return nil
 			}
 		}
@@ -318,15 +318,15 @@ func newPkgManager(cmd *cobra.Command, args []string) error {
 
 	if _, err := os.Stat(filepath.Join(settings.Cnf.PkgManagersPath, name+".yml")); err == nil {
 		if !assumeYes {
-			cmdr.Info.Printf("A package manager with the name %s already exists. Do you want to overwrite it? [y/N]\n", name)
+			cmdr.Info.Printf(apx.Trans("pkgmanagers.new.info.askOverwrite"), name)
 			reader := bufio.NewReader(os.Stdin)
 			answer, _ := reader.ReadString('\n')
 			if strings.ToLower(strings.TrimSpace(answer)) != "y" {
-				cmdr.Info.Println("Aborting.")
+				cmdr.Info.Println(apx.Trans("apx.info.aborting"))
 				return nil
 			}
 		} else {
-			cmdr.Error.Println("A package manager with the same name already exists.")
+			cmdr.Error.Println(apx.Trans("pkgmanagers.new.error.alreadyExists"), name)
 			return nil
 		}
 	}
@@ -338,7 +338,7 @@ func newPkgManager(cmd *cobra.Command, args []string) error {
 		return nil
 	}
 
-	cmdr.Success.Printf("Package manager %s created successfully!\n", name)
+	cmdr.Success.Printf(apx.Trans("pkgmanagers.new.success"), name)
 
 	return nil
 }
@@ -346,19 +346,8 @@ func newPkgManager(cmd *cobra.Command, args []string) error {
 func rmPkgManager(cmd *cobra.Command, args []string) error {
 	pkgManagerName, _ := cmd.Flags().GetString("name")
 	if pkgManagerName == "" {
-		cmdr.Error.Println("Please specify the name of the package manager you want to remove.")
+		cmdr.Error.Println(apx.Trans("pkgmanagers.rm.error.noName"))
 		return nil
-	}
-
-	force, _ := cmd.Flags().GetBool("force")
-	if !force {
-		cmdr.Info.Printf("Are you sure you want to remove the package manager %s? [y/N]\n", pkgManagerName)
-		var confirmation string
-		fmt.Scanln(&confirmation)
-		if strings.ToLower(confirmation) != "y" {
-			cmdr.Info.Println("Aborting...")
-			return nil
-		}
 	}
 
 	pkgManager, error := core.LoadPkgManager(pkgManagerName)
@@ -368,7 +357,7 @@ func rmPkgManager(cmd *cobra.Command, args []string) error {
 
 	stacks := core.ListStackForPkgManager(pkgManager.Name)
 	if len(stacks) > 0 {
-		fmt.Printf("The package manager %s is used by %d stacks:\n", pkgManager.Name, len(stacks))
+		cmdr.Error.Printf(apx.Trans("pkgmanagers.rm.error.inUse"), len(stacks))
 		table := core.CreateApxTable(os.Stdout)
 		table.SetHeader([]string{"Name", "Base", "Packages", "PkgManager", "Built-in"})
 		for _, stack := range stacks {
@@ -379,6 +368,18 @@ func rmPkgManager(cmd *cobra.Command, args []string) error {
 			table.Append([]string{stack.Name, stack.Base, strings.Join(stack.Packages, ", "), stack.PkgManager, builtIn})
 		}
 		table.Render()
+		return nil
+	}
+
+	force, _ := cmd.Flags().GetBool("force")
+	if !force {
+		cmdr.Info.Printf(apx.Trans("pkgmanagers.rm.info.askConfirmation"), pkgManagerName)
+		var confirmation string
+		fmt.Scanln(&confirmation)
+		if strings.ToLower(confirmation) != "y" {
+			cmdr.Info.Println(apx.Trans("pkgmanagers.rm.info.aborting"))
+			return nil
+		}
 	}
 
 	error = pkgManager.Remove()
@@ -386,6 +387,6 @@ func rmPkgManager(cmd *cobra.Command, args []string) error {
 		return error
 	}
 
-	fmt.Printf("Package manager %s removed successfully\n", pkgManager.Name)
+	fmt.Printf(apx.Trans("pkgmanagers.rm.info.success"), pkgManagerName)
 	return nil
 }

@@ -2,6 +2,8 @@ apx:
   description: "Apx is a package manager with support for multiple sources, allowing you to install packages in subsystems."
   errors:
     unknownCommand: "Unknown command: %s"
+  info:
+    aborting: "Aborting as requested."
 
 runtimeCommand:
   description: "Work with the specified subsystem, accessing the package manager and environment."
@@ -71,10 +73,26 @@ pkgmanagers:
 
   list:
     description: "List all available package managers."
+    info:
+      noPkgManagers: "No package managers available. Create a new one with 'apx pkgmanagers new' or contact the system administrator."
   show:
     description: "Show information about the specified package manager."
   new:
     description: "Create a new package manager."
+
+    error:
+      emptyName: "The name cannot be empty."
+      noName: "No name specified."
+      emptyCommand: "The command cannot be empty."
+      noCommand: "No command specified for '%s'."
+      alreadyExists: "A package manager with the name '%s' already exists."
+    info:
+      askName: "Choose a name:"
+      askSudo: "Does the package manager need sudo to run?"
+      askCommand: "Enter the command for '%s':"
+      askOverwrite: "A package manager with the name '%s' already exists. Overwrite it?"
+      success: "Created package manager '%s'."
+      
     options:
       assumeYes:
         description: "Assume yes to all prompts."
@@ -102,8 +120,15 @@ pkgmanagers:
         description: "The command to run to update the list of available packages."
       upgrade:
         description: "The command to run to upgrade packages."
-  rm:
+  rm: 
     description: "Remove the specified package manager."
+
+    error:
+      noName: "No name specified."
+      inUse: "The package manager is used in %d stacks:\n"
+    info:
+      askConfirmation: "Are you sure you want to remove '%s'?"
+      success: "Removed package manager '%s'."
     options:
       force:
         description: "Force removal of the package manager."
