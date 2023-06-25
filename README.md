@@ -4,7 +4,6 @@
 
 
 [![Translation Status][weblate-image]][weblate-url]
-[![build result][build-image]][build-url]
 
 [weblate-url]: https://hosted.weblate.org/engage/vanilla-os/
 [weblate-image]: https://hosted.weblate.org/widgets/vanilla-os/-/apx/svg-badge.svg
@@ -29,39 +28,17 @@ allowing you to install packages in a managed container.
 Usage:
   apx [command]
 
-Managed Container Commands
-  autoremove  Remove all unused packages automatically
-  clean       Clean the apx package manager cache
-  enter       Enter a shell in the managed container
-  export      Export/Recreate a program's desktop entry from a managed container
-  init        Initialize a managed container
-  install     Install packages inside a managed container.
-  list        List installed packages.
-  purge       Purge packages inside a managed container
-  remove      Remove packages inside a managed container.
-  run         Run a program inside a managed container.
-  search      Search for packages in a managed container.
-  show        Show details about a package
-  unexport    Unexport/Remove a program's desktop entry from a managed container
-  update      Update the list of available packages
-  upgrade     Upgrade the system by installing/upgrading available packages.
-
-Additional Commands:
+Available Commands:
+  [subsystem] Work with the specified subsystem, accessing the package manager and environment.
   completion  Generate the autocompletion script for the specified shell
   help        Help about any command
+  pkgmanagers Work with the package managers that are available in Apx.
+  stacks      Work with the stacks that are available in Apx.
+  subsystems  subsystems
 
 Flags:
-  -v, --verbose       show more detailed output
-      --apt           Install packages from the Ubuntu repository.
-      --aur           Install packages from the AUR (Arch User Repository).
-      --dnf           Install packages from the Fedora's DNF (Dandified YUM) repository.
-      --apk           Install packages from the Alpine repository.
-      --zypper        Install packages from the OpenSUSE repository.
-      --xbps          Install packages from the Void (Linux) repository.
-      --nix           Install packages from the Nixpkgs (Nix packages) repository.
-  -n, --name string   Apply to custom container with this name.
-  -h, --help          help for apx
-      --version       version for apx
+  -h, --help      help for apx
+  -v, --version   version for apx
 
 Use "apx [command] --help" for more information about a command.
 ```
@@ -98,7 +75,7 @@ Apx has been designed as a distro-agnostic tool, allowing it to work with any di
 
 - You must have `go` installed from your distribution's native repositories to compile `apx`.
 - You must have `git` installed to clone the repository.
-- You must have either `podman` or `docker` installed.
+- You must have either `podman` (suggested) or `docker` installed.
 - You must have `make` installed for the installation.
 
 ### Procedure
