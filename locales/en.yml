@@ -238,3 +238,57 @@ stacks:
     options:
       input:
         description: "The path to import the stack from."
+
+subsystems:
+  description: "Work with the subsystems that are available in Apx."
+
+  list:
+    description: "List all available subsystems."
+    error:
+    info:
+      noSubsystems: "No subsystems available. Create a new one with 'apx subsystems new' or contact the system administrator."
+      foundSubsystems: "Found %d subsystems:\n"
+  new:
+    description: "Create a new subsystem."
+    error:
+      noStacks: "A stack is needed to create a subsystem. Create a new one with 'apx stacks new' or contact the system administrator."
+      emptyName: "The name cannot be empty."
+      noName: "No name specified."
+      emptyStack: "The stack cannot be empty."
+      noStack: "No stack specified."
+      stackDoesNotExist: "The specified stack does not exist. Create it with 'apx stacks new' or contact the system administrator."
+      alreadyExists: "A subsystem with the name '%s' already exists."
+    info:
+      askName: "Choose a name:"
+      selectStack: "Select a stack [1-%d]:"
+      success: "Created subsystem '%s'."
+      creatingSubsystem: "Created subsystem '%s' with stack '%s'..."
+    options:
+      name:
+        description: "The name of the subsystem."
+      stack:
+        description: "The stack to use."
+  rm:
+    description: "Remove the specified subsystem."
+    error:
+      noName: "No name specified."
+    info:
+      askConfirmation: "Are you sure you want to remove '%s'?"
+      success: "Removed subsystem '%s'."
+    options:
+      force:
+        description: "Force removal of the subsystem."
+      name:
+        description: "The name of the subsystem to remove."
+  reset:
+    description: "Reset the specified subsystem."
+    error:
+      noName: "No name specified."
+    info:
+      askConfirmation: "Are you sure you want to reset '%s'?"
+      success: "The subsystem '%s' has been reset."
+    options:
+      force:
+        description: "Force reset of the subsystem."
+      name:
+        description: "The name of the subsystem to reset."

@@ -27,31 +27,28 @@ func NewSubSystemsCommand() *cmdr.Command {
 		apx.Trans("subsystems"),
 		nil,
 	)
-	cmd.Example = "apx subsystems"
 
 	// List subcommand
 	listCmd := cmdr.NewCommand(
 		"list",
-		apx.Trans("listSubSystems"),
-		apx.Trans("listSubSystems"),
+		apx.Trans("subsystems.list.description"),
+		apx.Trans("subsystems.list.description"),
 		listSubSystems,
 	)
-	listCmd.Example = "apx subsystems list"
 
 	// New subcommand
 	newCmd := cmdr.NewCommand(
 		"new",
-		apx.Trans("newSubSystem"),
-		apx.Trans("newSubSystem"),
+		apx.Trans("subsystems.new.description"),
+		apx.Trans("subsystems.new.description"),
 		newSubSystem,
 	)
-	newCmd.Example = "apx subsystems new --name my-subsystem --stack my-stack"
 
 	newCmd.WithStringFlag(
 		cmdr.NewStringFlag(
 			"stack",
 			"s",
-			"The stack to be used for the subsystem",
+			apx.Trans("subsystems.new.options.stack"),
 			"",
 		),
 	)
@@ -59,7 +56,7 @@ func NewSubSystemsCommand() *cmdr.Command {
 		cmdr.NewStringFlag(
 			"name",
 			"n",
-			"The name of the subsystem",
+			apx.Trans("subsystems.new.options.name"),
 			"",
 		),
 	)
@@ -67,17 +64,16 @@ func NewSubSystemsCommand() *cmdr.Command {
 	// Rm subcommand
 	rmCmd := cmdr.NewCommand(
 		"rm",
-		apx.Trans("rmSubSystem"),
-		apx.Trans("rmSubSystem"),
+		apx.Trans("subsystems.rm.description"),
+		apx.Trans("subsystems.rm.description"),
 		rmSubSystem,
 	)
-	rmCmd.Example = "apx subsystems rm --name my-subsystem"
 
 	rmCmd.WithStringFlag(
 		cmdr.NewStringFlag(
 			"name",
 			"n",
-			"The name of the subsystem",
+			apx.Trans("subsystems.rm.options.name"),
 			"",
 		),
 	)
@@ -85,7 +81,7 @@ func NewSubSystemsCommand() *cmdr.Command {
 		cmdr.NewBoolFlag(
 			"force",
 			"f",
-			"Force the removal of the subsystem",
+			apx.Trans("subsystems.rm.options.force"),
 			false,
 		),
 	)
@@ -93,17 +89,16 @@ func NewSubSystemsCommand() *cmdr.Command {
 	// Reset subcommand
 	resetCmd := cmdr.NewCommand(
 		"reset",
-		apx.Trans("resetSubSystem"),
-		apx.Trans("resetSubSystem"),
+		apx.Trans("subsystems.reset.description"),
+		apx.Trans("subsystems.reset.description"),
 		resetSubSystem,
 	)
-	resetCmd.Example = "apx subsystems reset --name my-subsystem"
 
 	resetCmd.WithStringFlag(
 		cmdr.NewStringFlag(
 			"name",
 			"n",
-			"The name of the subsystem",
+			apx.Trans("subsystems.reset.options.name"),
 			"",
 		),
 	)
@@ -111,7 +106,7 @@ func NewSubSystemsCommand() *cmdr.Command {
 		cmdr.NewBoolFlag(
 			"force",
 			"f",
-			"Force the reset of the subsystem",
+			apx.Trans("subsystems.reset.options.force"),
 			false,
 		),
 	)
@@ -132,11 +127,11 @@ func listSubSystems(cmd *cobra.Command, args []string) error {
 
 	subSystemsCount := len(subSystems)
 	if subSystemsCount == 0 {
-		fmt.Println("No subsystems available. Create a new one with 'apx subsystems new' or contact the system administrator.")
+		cmdr.Info.Println(apx.Trans("subsystems.list.info.noSubsystems"))
 		return nil
 	}
 
-	fmt.Printf("Found %d subsystems:\n", subSystemsCount)
+	fmt.Printf(apx.Trans("subsystems.list.info.foundSubsystems"), subSystemsCount)
 
 	table := core.CreateApxTable(os.Stdout)
 	table.SetHeader([]string{"Name", "Stack", "Status", "Pkgs"})
@@ -159,36 +154,14 @@ func newSubSystem(cmd *cobra.Command, args []string) error {
 	stackName, _ := cmd.Flags().GetString("stack")
 	subSystemName, _ := cmd.Flags().GetString("name")
 
-	if stackName == "" {
-		stacks := core.ListStacks()
-		if len(stacks) == 0 {
-			cmdr.Error.Println("No stacks available")
-			return nil
-		}
-
-		cmdr.Info.Println("Please select a stack:")
-		for i, stack := range stacks {
-			fmt.Printf("%d. %s\n", i+1, stack.Name)
-		}
-		fmt.Printf("Select a stack [1-%d]: ", len(stacks))
-
-		var stackIndex int
-		_, err := fmt.Scanln(&stackIndex)
-		if err != nil {
-			cmdr.Error.Println("Invalid input")
-			return nil
-		}
-
-		if stackIndex < 1 || stackIndex > len(stacks) {
-			cmdr.Error.Println("Invalid stack selection")
-			return nil
-		}
-
-		stackName = stacks[stackIndex-1].Name
+	stacks := core.ListStacks()
+	if len(stacks) == 0 {
+		cmdr.Error.Println(apx.Trans("subsystems.new.error.noStacks"))
+		return nil
 	}
 
 	if subSystemName == "" {
-		cmdr.Info.Println("Please type a subsystem name:")
+		cmdr.Info.Println(apx.Trans("subsystems.new.info.askName"))
 		fmt.Scanln(&subSystemName)
 		if subSystemName == "" {
 			cmdr.Error.Println("Subsystem name cannot be empty")
@@ -196,9 +169,31 @@ func newSubSystem(cmd *cobra.Command, args []string) error {
 		}
 	}
 
+	if stackName == "" {
+		cmdr.Info.Println(apx.Trans("subsystems.new.info.askStack"))
+		for i, stack := range stacks {
+			fmt.Printf("%d. %s\n", i+1, stack.Name)
+		}
+		fmt.Printf(apx.Trans("subsystems.new.info.selectStack"), len(stacks))
+
+		var stackIndex int
+		_, err := fmt.Scanln(&stackIndex)
+		if err != nil {
+			cmdr.Error.Println(apx.Trans("apx.error.invalidInput"))
+			return nil
+		}
+
+		if stackIndex < 1 || stackIndex > len(stacks) {
+			cmdr.Error.Println(apx.Trans("apx.error.invalidInput"))
+			return nil
+		}
+
+		stackName = stacks[stackIndex-1].Name
+	}
+
 	checkSubSystem, err := core.LoadSubSystem(subSystemName)
 	if err == nil {
-		cmdr.Error.Printf("A subsystem with the name %s already exists\n", checkSubSystem.Name)
+		cmdr.Error.Printf(apx.Trans("subsystems.new.error.alreadyExists"), checkSubSystem.Name)
 		return nil
 	}
 
@@ -212,13 +207,13 @@ func newSubSystem(cmd *cobra.Command, args []string) error {
 		return err
 	}
 
-	cmdr.Info.Printf("Creating subsystem %s using stack %s. This may take a while...\n", subSystemName, stackName)
+	cmdr.Info.Printf(apx.Trans("subsystems.new.info.creatingSubsystem"), subSystemName, stackName)
 	err = subSystem.Create()
 	if err != nil {
 		return err
 	}
 
-	cmdr.Success.Printf("Subsystem %s created successfully!\n", subSystemName)
+	cmdr.Success.Printf(apx.Trans("subsystems.new.info.success"), subSystemName)
 
 	return nil
 }
@@ -228,16 +223,16 @@ func rmSubSystem(cmd *cobra.Command, args []string) error {
 	forceFlag, _ := cmd.Flags().GetBool("force")
 
 	if subSystemName == "" {
-		cmdr.Error.Println("Please specify a subsystem name with --name")
+		cmdr.Error.Println(apx.Trans("subsystems.rm.error.noName"))
 		return nil
 	}
 
 	if !forceFlag {
-		cmdr.Info.Printf("Are you sure you want to remove the subsystem %s? [y/N] ", subSystemName)
+		cmdr.Info.Printf(apx.Trans("subsystems.rm.info.askConfirmation"), subSystemName)
 		var confirmation string
 		fmt.Scanln(&confirmation)
 		if strings.ToLower(confirmation) != "y" {
-			cmdr.Info.Println("Aborting...")
+			cmdr.Info.Println(apx.Trans("apx.info.aborting"))
 			return nil
 		}
 	}
@@ -252,7 +247,7 @@ func rmSubSystem(cmd *cobra.Command, args []string) error {
 		return err
 	}
 
-	cmdr.Success.Printf("Subsystem %s removed successfully!\n", subSystemName)
+	cmdr.Success.Printf(apx.Trans("subsystems.rm.info.success"), subSystemName)
 
 	return nil
 }
@@ -260,18 +255,18 @@ func rmSubSystem(cmd *cobra.Command, args []string) error {
 func resetSubSystem(cmd *cobra.Command, args []string) error {
 	subSystemName, _ := cmd.Flags().GetString("name")
 	if subSystemName == "" {
-		cmdr.Error.Println("Please specify a subsystem name with --name")
+		cmdr.Error.Println(apx.Trans("subsystems.reset.error.noName"))
 		return nil
 	}
 
 	forceFlag, _ := cmd.Flags().GetBool("force")
 
 	if !forceFlag {
-		cmdr.Info.Printf("Are you sure you want to reset the subsystem %s? [y/N] ", subSystemName)
+		cmdr.Info.Printf(apx.Trans("subsystems.reset.info.askConfirmation"), subSystemName)
 		var confirmation string
 		fmt.Scanln(&confirmation)
 		if strings.ToLower(confirmation) != "y" {
-			cmdr.Info.Println("Aborting...")
+			cmdr.Info.Println(apx.Trans("apx.info.aborting"))
 			return nil
 		}
 	}
@@ -286,7 +281,7 @@ func resetSubSystem(cmd *cobra.Command, args []string) error {
 		return err
 	}
 
-	cmdr.Success.Printf("Subsystem %s reset successfully!\n", subSystemName)
+	cmdr.Success.Printf(apx.Trans("subsystems.reset.info.success"), subSystemName)
 
 	return nil
 }
