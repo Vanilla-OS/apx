@@ -51,12 +51,22 @@ func NewRuntimeCommands() []*cmdr.Command {
 			"",
 			handleFunc(subSystem, runPkgCmd),
 		)
+
 		installCmd := cmdr.NewCommand(
 			"install",
 			"Install packages in the subsystem",
 			"",
 			handleFunc(subSystem, runPkgCmd),
 		)
+		installCmd.WithBoolFlag(
+			cmdr.NewBoolFlag(
+				"no-export",
+				"n",
+				"Do not export a desktop entry for the app",
+				false,
+			),
+		)
+
 		listCmd := cmdr.NewCommand(
 			"list",
 			"List packages in the subsystem",
@@ -240,6 +250,13 @@ func runPkgCmd(subSystem *core.SubSystem, command string, cmd *cobra.Command, ar
 			return fmt.Errorf("error executing command: %s", err)
 		}
 
+		if command == "install" && !cmd.Flag("no-export").Changed {
+			exportedN, err := subSystem.ExportDesktopEntries(args...)
+			if err == nil {
+				cmdr.Info.Printf("Exported %d desktop entries\n", exportedN)
+			}
+		}
+
 		return nil
 	}
 
@@ -280,11 +297,15 @@ func runPkgCmd(subSystem *core.SubSystem, command string, cmd *cobra.Command, ar
 				if err != nil {
 					return fmt.Errorf("error exporting app: %s", err)
 				}
+
+				cmdr.Info.Printf("Exported app %s\n", appName)
 			} else {
 				err := subSystem.ExportBin(bin, binOutput)
 				if err != nil {
 					return fmt.Errorf("error exporting bin: %s", err)
 				}
+
+				cmdr.Info.Printf("Exported binary %s\n", bin)
 			}
 		} else {
 			if appName != "" {
@@ -292,11 +313,15 @@ func runPkgCmd(subSystem *core.SubSystem, command string, cmd *cobra.Command, ar
 				if err != nil {
 					return fmt.Errorf("error unexporting app: %s", err)
 				}
+
+				cmdr.Info.Printf("Unexported app %s\n", appName)
 			} else {
 				err := subSystem.UnexportBin(bin, binOutput)
 				if err != nil {
 					return fmt.Errorf("error unexporting bin: %s", err)
 				}
+
+				cmdr.Info.Printf("Unexported binary %s\n", bin)
 			}
 		}
 	}

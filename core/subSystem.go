@@ -126,7 +126,7 @@ func (s *SubSystem) Exec(captureOutput bool, args ...string) (string, error) {
 		return "", err
 	}
 
-	out, err := dbox.ContainerExec(s.InternalName, captureOutput, args...)
+	out, err := dbox.ContainerExec(s.InternalName, captureOutput, false, args...)
 	if err != nil {
 		return "", err
 	}
@@ -172,6 +172,21 @@ func (s *SubSystem) ExportDesktopEntry(appName string) error {
 	}
 
 	return dbox.ContainerExportDesktopEntry(s.InternalName, appName, s.Name)
+}
+
+func (s *SubSystem) ExportDesktopEntries(args ...string) (int, error) {
+	exportedN := 0
+
+	for _, appName := range args {
+		err := s.ExportDesktopEntry(appName)
+		if err != nil {
+			return exportedN, err
+		}
+
+		exportedN++
+	}
+
+	return exportedN, nil
 }
 
 func (s *SubSystem) ExportBin(binary string, exportPath string) error {

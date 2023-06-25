@@ -240,7 +240,7 @@ func (d *dbox) RunContainerCommand(name string, command []string) error {
 	return err
 }
 
-func (d *dbox) ContainerExec(name string, captureOutput bool, args ...string) (string, error) {
+func (d *dbox) ContainerExec(name string, captureOutput bool, muteOutput bool, args ...string) (string, error) {
 	finalArgs := []string{
 		// "--verbose",
 		name,
@@ -250,7 +250,7 @@ func (d *dbox) ContainerExec(name string, captureOutput bool, args ...string) (s
 	finalArgs = append(finalArgs, args...)
 	engineFlags := []string{}
 
-	out, err := d.RunCommand("enter", finalArgs, engineFlags, false, captureOutput, false)
+	out, err := d.RunCommand("enter", finalArgs, engineFlags, false, captureOutput, muteOutput)
 	return string(out), err
 }
 
@@ -274,7 +274,7 @@ func (d *dbox) ContainerExport(name string, delete bool, args ...string) error {
 
 	finalArgs = append(finalArgs, args...)
 
-	_, err := d.ContainerExec(name, false, finalArgs...)
+	_, err := d.ContainerExec(name, false, true, finalArgs...)
 	return err
 }
 
