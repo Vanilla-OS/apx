@@ -205,7 +205,7 @@ func listPkgManagers(cmd *cobra.Command, args []string) error {
 		return nil
 	}
 
-	fmt.Printf("Found %d pkgManagers:\n", pkgManagersCount)
+	fmt.Printf(apx.Trans("pkgmanagers.list.info.foundPkgManagers"), pkgManagersCount)
 
 	table := core.CreateApxTable(os.Stdout)
 	table.SetHeader([]string{"Name", "Built-in"})

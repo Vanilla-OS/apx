@@ -2,6 +2,7 @@ apx:
   description: "Apx is a package manager with support for multiple sources, allowing you to install packages in subsystems."
   errors:
     unknownCommand: "Unknown command: %s"
+    invalidInput: "Invalid input."
   info:
     aborting: "Aborting as requested."
 
@@ -75,6 +76,7 @@ pkgmanagers:
     description: "List all available package managers."
     info:
       noPkgManagers: "No package managers available. Create a new one with 'apx pkgmanagers new' or contact the system administrator."
+      foundPkgManagers: "Found %d package managers:\n"
   show:
     description: "Show information about the specified package manager."
   new:
@@ -134,3 +136,105 @@ pkgmanagers:
         description: "Force removal of the package manager."
       name:
         description: "The name of the package manager to remove."
+
+stacks:
+  description: "Work with the stacks that are available in Apx."
+
+  list:
+    description: "List all available stacks."
+    info:
+      noStacks: "No stacks available. Create a new one with 'apx stacks new' or contact the system administrator."
+      foundStacks: "Found %d stacks:\n"
+  show:
+    description: "Show information about the specified stack."
+  new:
+    description: "Create a new stack."
+    error:
+      emptyName: "The name cannot be empty."
+      noName: "No name specified."
+      emptyBase: "The base cannot be empty."
+      noBase: "No base specified."
+      emptyPkgManager: "The package manager cannot be empty."
+      noPkgManager: "No package manager specified."
+      pkgManagerDoesNotExist: "The specified package manager does not exist. Create it with 'apx pkgmanagers new' or contact the system administrator."
+      emptyPackages: "The packages cannot be empty."
+      noPackages: "No packages specified."
+      alreadyExists: "A stack with the name '%s' already exists."
+    info:
+      askName: "Choose a name:"
+      askBase: "Choose a base (e.g. 'vanillaos/pico'):"
+      askPkgManager: "Choose a package manager:"
+      selectPkgManager: "Select a package manager [1-%d]:"
+      noPackages: "You have not provided any package to install in the stack. Do you want to add some now?"
+      confirmPackages: "Do you want to confirm the current packages list?"
+      askPackages: "Please type the packages you want to install in the stack, separated by a space:"
+      success: "Created stack '%s'."
+    options:
+      assumeYes:
+        description: "Assume yes to all prompts."
+      name:
+        description: "The name of the stack."
+      base:
+        description: "The base subsystem to use."
+      packages:
+        description: "The packages to install."
+      pkgManager:
+        description: "The package manager to use."
+  update:
+    description: "Update the specified stack."
+    error:
+      noName: "No name specified."
+      noBase: "No base specified."
+      noPkgManager: "No package manager specified."
+      pkgManagerDoesNotExist: "The specified package manager does not exist. Create it with 'apx pkgmanagers new' or contact the system administrator."
+    info:
+      askBase: "Type a new base or confirm the current one (%s):"
+      askPkgManager: "Choose a new package manager or confirm the current one (%s):"
+      askPackages: "Type the packages you want to install in the stack, separated by a space, or confirm the current ones (%s):"
+      success: "Updated stack '%s'."
+
+    options:
+      assumeYes:
+        description: "Assume yes to all prompts."
+      name:
+        description: "The name of the stack."
+      base:
+        description: "The base subsystem to use."
+      packages:
+        description: "The packages to install."
+      pkgManager:
+        description: "The package manager to use."
+  rm:
+    description: "Remove the specified stack."
+    error:
+      noName: "No name specified."
+    info:
+      askConfirmation: "Are you sure you want to remove '%s'?"
+      success: "Removed stack '%s'."
+    options:
+      force:
+        description: "Force removal of the stack."
+      name:
+        description: "The name of the stack to remove."
+  export:
+    description: "Export the specified stack."
+    error:
+      noName: "No name specified."
+      noOutput: "No output specified."
+    info:
+      success: "Exported stack '%s' to '%s'."
+    options:
+      name:
+        description: "The name of the stack to export."
+      output:
+        description: "The path to export the stack to."
+  import:
+    description: "Import the specified stack."
+    error:
+      noInput: "No input specified."
+      cannotLoad: "Cannot load stack from '%s'."
+    info:
+      success: "Imported stack from '%s'."
+    options:
+      input:
+        description: "The path to import the stack from."
