@@ -26,8 +26,8 @@ func NewPkgManagersCommand() *cmdr.Command {
 	// Root command
 	cmd := cmdr.NewCommand(
 		"pkgmanagers",
-		apx.Trans("pkgmanagers"),
-		apx.Trans("pkgmanagers"),
+		apx.Trans("pkgmanagers.description"),
+		apx.Trans("pkgmanagers.description"),
 		nil,
 	)
 	cmd.Example = "apx pkgmanagers"
@@ -35,8 +35,8 @@ func NewPkgManagersCommand() *cmdr.Command {
 	// List subcommand
 	listCmd := cmdr.NewCommand(
 		"list",
-		apx.Trans("pkgmanagers"),
-		apx.Trans("pkgmanagers"),
+		apx.Trans("pkgmanagers.list.description"),
+		apx.Trans("pkgmanagers.list.description"),
 		listPkgManagers,
 	)
 	listCmd.Example = "apx pkgmanagers list"
@@ -44,27 +44,25 @@ func NewPkgManagersCommand() *cmdr.Command {
 	// Show subcommand
 	showCmd := cmdr.NewCommand(
 		"show",
-		apx.Trans("showPkgManager"),
-		apx.Trans("showPkgManager"),
+		apx.Trans("pkgmanagers.show.description"),
+		apx.Trans("pkgmanagers.show.description"),
 		showPkgManager,
 	)
-	showCmd.Example = "apx pkgmanagers show myPkgManager"
 	showCmd.Args = cobra.MinimumNArgs(1)
 
 	// New subcommand
 	newCmd := cmdr.NewCommand(
 		"new",
-		apx.Trans("newPkgManager"),
-		apx.Trans("newPkgManager"),
+		apx.Trans("pkgmanagers.new.description"),
+		apx.Trans("pkgmanagers.new.description"),
 		newPkgManager,
 	)
-	newCmd.Example = "apx pkgmanagers new -n myPkgManager -a \"autoremove\" -c \"clean\" -i \"install\" -l \"list\" -p \"purge\" -r \"remove\" -s \"search\" -w \"show\" -u \"update\" -U \"upgrade\""
 
 	newCmd.WithBoolFlag(
 		cmdr.NewBoolFlag(
 			"assume-yes",
 			"y",
-			"Assume yes; assume that the answer to any question which would be asked is yes",
+			apx.Trans("pkgmanagers.new.options.assumeYes.description"),
 			false,
 		),
 	)
@@ -72,7 +70,7 @@ func NewPkgManagersCommand() *cmdr.Command {
 		cmdr.NewStringFlag(
 			"name",
 			"n",
-			"Name of the package manager",
+			apx.Trans("pkgmanagers.new.options.name.description"),
 			"",
 		),
 	)
@@ -80,7 +78,7 @@ func NewPkgManagersCommand() *cmdr.Command {
 		cmdr.NewBoolFlag(
 			"need-sudo",
 			"S",
-			"Whether the package manager needs sudo to run",
+			apx.Trans("pkgmanagers.new.options.needSudo.description"),
 			false,
 		),
 	)
@@ -88,7 +86,7 @@ func NewPkgManagersCommand() *cmdr.Command {
 		cmdr.NewStringFlag(
 			"autoremove",
 			"a",
-			"Command to autoremove packages",
+			apx.Trans("pkgmanagers.new.options.autoremove.description"),
 			"",
 		),
 	)
@@ -96,7 +94,7 @@ func NewPkgManagersCommand() *cmdr.Command {
 		cmdr.NewStringFlag(
 			"clean",
 			"c",
-			"Command to clean the package manager",
+			apx.Trans("pkgmanagers.new.options.clean.description"),
 			"",
 		),
 	)
@@ -104,7 +102,7 @@ func NewPkgManagersCommand() *cmdr.Command {
 		cmdr.NewStringFlag(
 			"install",
 			"i",
-			"Command to install packages",
+			apx.Trans("pkgmanagers.new.options.install.description"),
 			"",
 		),
 	)
@@ -112,7 +110,7 @@ func NewPkgManagersCommand() *cmdr.Command {
 		cmdr.NewStringFlag(
 			"list",
 			"l",
-			"Command to list installed packages",
+			apx.Trans("pkgmanagers.new.options.list.description"),
 			"",
 		),
 	)
@@ -120,7 +118,7 @@ func NewPkgManagersCommand() *cmdr.Command {
 		cmdr.NewStringFlag(
 			"purge",
 			"p",
-			"Command to purge packages",
+			apx.Trans("pkgmanagers.new.options.purge.description"),
 			"",
 		),
 	)
@@ -128,7 +126,7 @@ func NewPkgManagersCommand() *cmdr.Command {
 		cmdr.NewStringFlag(
 			"remove",
 			"r",
-			"Command to remove packages",
+			apx.Trans("pkgmanagers.new.options.remove.description"),
 			"",
 		),
 	)
@@ -136,7 +134,7 @@ func NewPkgManagersCommand() *cmdr.Command {
 		cmdr.NewStringFlag(
 			"search",
 			"s",
-			"Command to search packages",
+			apx.Trans("pkgmanagers.new.options.search.description"),
 			"",
 		),
 	)
@@ -144,7 +142,7 @@ func NewPkgManagersCommand() *cmdr.Command {
 		cmdr.NewStringFlag(
 			"show",
 			"w",
-			"Command to show package info",
+			apx.Trans("pkgmanagers.new.options.show.description"),
 			"",
 		),
 	)
@@ -152,7 +150,7 @@ func NewPkgManagersCommand() *cmdr.Command {
 		cmdr.NewStringFlag(
 			"update",
 			"u",
-			"Command to update the package manager",
+			apx.Trans("pkgmanagers.new.options.update.description"),
 			"",
 		),
 	)
@@ -160,7 +158,7 @@ func NewPkgManagersCommand() *cmdr.Command {
 		cmdr.NewStringFlag(
 			"upgrade",
 			"U",
-			"Command to upgrade packages",
+			apx.Trans("pkgmanagers.new.options.upgrade.description"),
 			"",
 		),
 	)
@@ -168,17 +166,16 @@ func NewPkgManagersCommand() *cmdr.Command {
 	// Rm subcommand
 	rmCmd := cmdr.NewCommand(
 		"rm",
-		apx.Trans("rmPkgManager"),
-		apx.Trans("rmPkgManager"),
+		apx.Trans("rmPkgManager.rm.description"),
+		apx.Trans("rmPkgManager.rm.description"),
 		rmPkgManager,
 	)
-	rmCmd.Example = "apx pkgmanagers rm myPkgManager"
 
 	rmCmd.WithStringFlag(
 		cmdr.NewStringFlag(
 			"name",
 			"n",
-			"Name of the package manager",
+			apx.Trans("rmPkgManager.rm.options.name.description"),
 			"",
 		),
 	)
@@ -186,7 +183,7 @@ func NewPkgManagersCommand() *cmdr.Command {
 		cmdr.NewBoolFlag(
 			"force",
 			"f",
-			"Force removal of the package manager",
+			apx.Trans("rmPkgManager.rm.options.force.description"),
 			false,
 		),
 	)

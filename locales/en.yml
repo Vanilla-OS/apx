@@ -1,72 +1,93 @@
 apx:
-  use: "apx"
   description: "Apx is a package manager with support for multiple sources, allowing you to install packages in subsystems."
 
 runtimeCommand:
-  use: "apx <subsystem> <command> [options]"
   description: "Work with the specified subsystem, accessing the package manager and environment."
   
   autoremove:
-    use: "apx <subsystem> autoremove"
     description: "Remove packages that are no longer required."
   clean:
-    use: "apx <subsystem> clean"
     description: "Clean the package manager's cache."
   install:
-    use: "apx <subsystem> install <package> [options]"
     description: "Install the specified package."
     options:
       noExport:
-        use: "--no-export"
         description: "Do not export a desktop entry."
   list:
-    use: "apx <subsystem> list"
     description: "List all installed packages."
   purge:
-    use: "apx <subsystem> purge <package>"
     description: "Purge the specified packages."
   remove:
-    use: "apx <subsystem> remove <package>"
     description: "Remove the specified packages."
   search:
-    use: "apx <subsystem> search <query>"
     description: "Search for packages matching the specified query."
   show:
-    use: "apx <subsystem> show <package>"
     description: "Show information about the specified package."
   update:
-    use: "apx <subsystem> update"
     description: "Update the list of available packages."
   upgrade:
-    use: "apx <subsystem> upgrade"
     description: "Upgrade all installed packages."
   enter:
-    use: "apx <subsystem> enter"
     description: "Enter the subsystem's environment."
   export:
-    use: "apx <subsystem> export [options]"
     description: "Export an application or binary from the subsystem."
     options:
       appName:
-        use: "--app-name <name>"
         description: "The name of the application to export."
       bin:
-        use: "--bin <name>"
         description: "The name of the binary to export."
       binOutput:
-        use: "--bin-output <path>"
         description: "Path of the binary output (default: ~/.local/bin/)."
   unexport:
-    use: "apx <subsystem> unexport [options]"
     description: "Unexport an application or binary from the subsystem."
     options:
       appName:
-        use: "--app-name <name>"
         description: "The name of the application to unexport."
       bin:
-        use: "--bin <name>"
         description: "The name of the binary to unexport."
       binOutput:
-        use: "--bin-output <path>"
         description: "Path of the binary output (default: ~/.local/bin/)."
-        
+
+pkgmanagers:
+  description: "Work with the package managers that are available in Apx."
+
+  list:
+    description: "List all available package managers."
+  show:
+    description: "Show information about the specified package manager."
+  new:
+    description: "Create a new package manager."
+    options:
+      assumeYes:
+        description: "Assume yes to all prompts."
+      name:
+        description: "The name of the package manager."
+      needSudo:
+        description: "Whether the package manager needs sudo to run."
+      autoremove:
+        description: "The command to run to autoremove packages."
+      clean:
+        description: "The command to run to clean the package manager's cache."
+      install:
+        description: "The command to run to install packages."
+      list:
+        description: "The command to run to list installed packages."
+      purge:
+        description: "The command to run to purge packages."
+      remove:
+        description: "The command to run to remove packages."
+      search:
+        description: "The command to run to search for packages."
+      show:
+        description: "The command to run to show information about packages."
+      update:
+        description: "The command to run to update the list of available packages."
+      upgrade:
+        description: "The command to run to upgrade packages."
+  rm:
+    description: "Remove the specified package manager."
+    options:
+      force:
+        description: "Force removal of the package manager."
+      name:
+        description: "The name of the package manager to remove."
