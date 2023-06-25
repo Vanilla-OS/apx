@@ -206,14 +206,14 @@ func NewRuntimeCommands() []*cmdr.Command {
 func runPkgCmd(subSystem *core.SubSystem, command string, cmd *cobra.Command, args []string) error {
 	if command != "enter" && command != "export" && command != "unexport" {
 		if len(args) == 0 {
-			return fmt.Errorf("no packages specified")
+			return fmt.Errorf(apx.Trans("runtimeCommand.error.noPackageSpecified"))
 		}
 	}
 
 	if command != "run" && command != "enter" && command != "export" && command != "unexport" {
 		pkgManager, err := subSystem.Stack.GetPkgManager()
 		if err != nil {
-			return fmt.Errorf("error getting package manager: %s", err)
+			return fmt.Errorf(apx.Trans("runtimeCommand.error.cantAccessPkgManager"), err)
 		}
 
 		var realCommand string
@@ -239,26 +239,25 @@ func runPkgCmd(subSystem *core.SubSystem, command string, cmd *cobra.Command, ar
 		case "upgrade":
 			realCommand = pkgManager.CmdUpgrade
 		default:
-			return fmt.Errorf("unknown command: %s", command)
+			return fmt.Errorf(apx.Trans("apx.error.unknownCommand"), command)
 		}
-
 		if command == "remove" {
 			exportedN, err := subSystem.UnexportDesktopEntries(args...)
 			if err == nil {
-				cmdr.Info.Printf("Unexported %d desktop entries\n", exportedN)
+				cmdr.Info.Printf(apx.Trans("runtimeCommand.info.unexportedApps"), exportedN)
 			}
 		}
 
 		finalArgs := pkgManager.GenCmd(realCommand, args...)
 		_, err = subSystem.Exec(false, finalArgs...)
 		if err != nil {
-			return fmt.Errorf("error executing command: %s", err)
+			return fmt.Errorf(apx.Trans("runtimeCommand.error.executingCommand"), err)
 		}
 
 		if command == "install" && !cmd.Flag("no-export").Changed {
 			exportedN, err := subSystem.ExportDesktopEntries(args...)
 			if err == nil {
-				cmdr.Info.Printf("Exported %d desktop entries\n", exportedN)
+				cmdr.Info.Printf(apx.Trans("runtimeCommand.info.exportedApps"), exportedN)
 			}
 		}
 
@@ -268,7 +267,7 @@ func runPkgCmd(subSystem *core.SubSystem, command string, cmd *cobra.Command, ar
 	if command == "run" {
 		_, err := subSystem.Exec(false, args...)
 		if err != nil {
-			return fmt.Errorf("error executing command: %s", err)
+			return fmt.Errorf(apx.Trans("runtimeCommand.error.executingCommand"), err)
 		}
 
 		return nil
@@ -277,7 +276,7 @@ func runPkgCmd(subSystem *core.SubSystem, command string, cmd *cobra.Command, ar
 	if command == "enter" {
 		err := subSystem.Enter()
 		if err != nil {
-			return fmt.Errorf("error entering subsystem: %s", err)
+			return fmt.Errorf(apx.Trans("runtimeCommand.error.enteringContainer"), err)
 		}
 
 		return nil
@@ -289,44 +288,44 @@ func runPkgCmd(subSystem *core.SubSystem, command string, cmd *cobra.Command, ar
 		binOutput, _ := cmd.Flags().GetString("bin-output")
 
 		if appName == "" && bin == "" {
-			return fmt.Errorf("app-name and bin cannot be both empty")
+			return fmt.Errorf(apx.Trans("runtimeCommand.error.noAppNameOrBin"))
 		}
 
 		if appName != "" && bin != "" {
-			return fmt.Errorf("app-name and bin cannot be both set")
+			return fmt.Errorf(apx.Trans("runtimeCommand.error.sameAppOrBin"))
 		}
 
 		if command == "export" {
 			if appName != "" {
 				err := subSystem.ExportDesktopEntry(appName)
 				if err != nil {
-					return fmt.Errorf("error exporting app: %s", err)
+					return fmt.Errorf(apx.Trans("runtimeCommand.error.exportingApp"), err)
 				}
 
-				cmdr.Info.Printf("Exported app %s\n", appName)
+				cmdr.Info.Printf(apx.Trans("runtimeCommand.info.exportedApp"), appName)
 			} else {
 				err := subSystem.ExportBin(bin, binOutput)
 				if err != nil {
-					return fmt.Errorf("error exporting bin: %s", err)
+					return fmt.Errorf(apx.Trans("runtimeCommand.error.exportingBin"), err)
 				}
 
-				cmdr.Info.Printf("Exported binary %s\n", bin)
+				cmdr.Info.Printf(apx.Trans("runtimeCommand.info.exportedBin"), bin)
 			}
 		} else {
 			if appName != "" {
 				err := subSystem.UnexportDesktopEntry(appName)
 				if err != nil {
-					return fmt.Errorf("error unexporting app: %s", err)
+					return fmt.Errorf(apx.Trans("runtimeCommand.error.unexportingApp"), err)
 				}
 
-				cmdr.Info.Printf("Unexported app %s\n", appName)
+				cmdr.Info.Printf(apx.Trans("runtimeCommand.info.unexportedApp"), appName)
 			} else {
 				err := subSystem.UnexportBin(bin, binOutput)
 				if err != nil {
-					return fmt.Errorf("error unexporting bin: %s", err)
+					return fmt.Errorf(apx.Trans("runtimeCommand.error.unexportingBin"), err)
 				}
 
-				cmdr.Info.Printf("Unexported binary %s\n", bin)
+				cmdr.Info.Printf(apx.Trans("runtimeCommand.info.unexportedBin"), bin)
 			}
 		}
 	}

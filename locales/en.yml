@@ -1,9 +1,27 @@
 apx:
   description: "Apx is a package manager with support for multiple sources, allowing you to install packages in subsystems."
+  errors:
+    unknownCommand: "Unknown command: %s"
 
 runtimeCommand:
   description: "Work with the specified subsystem, accessing the package manager and environment."
-  
+  error:
+    noPackageSpecified: "No packages specified."
+    cantAccessPkgManager: "An error occurred while accessing the package manager: %s"
+    executingCommand: "An error occurred while executing the command: %s"
+    noAppNameOrBin: "--app-name or --bin must be specified."
+    sameAppOrBin: "--app-name and --bin cannot be both specified."
+    exportingApp: "An error occurred while exporting the application: %s"
+    exportingBin: "An error occurred while exporting the binary: %s"
+    unexportingApp: "An error occurred while unexporting the application: %s"
+    unexportingBin: "An error occurred while unexporting the binary: %s"
+  info:
+    unexportedApps: "Unexported %d applications\n"
+    exportedApps: "Exported %d applications\n"
+    exportedApp: "Exported application %s\n"
+    exportedBin: "Exported binary %s\n"
+    unexportedApp: "Unexported application %s\n"
+    unexportedBin: "Unexported binary %s\n"
   autoremove:
     description: "Remove packages that are no longer required."
   clean:
