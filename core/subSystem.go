@@ -189,6 +189,21 @@ func (s *SubSystem) ExportDesktopEntries(args ...string) (int, error) {
 	return exportedN, nil
 }
 
+func (s *SubSystem) UnexportDesktopEntries(args ...string) (int, error) {
+	exportedN := 0
+
+	for _, appName := range args {
+		err := s.UnexportDesktopEntry(appName)
+		if err != nil {
+			return exportedN, err
+		}
+
+		exportedN++
+	}
+
+	return exportedN, nil
+}
+
 func (s *SubSystem) ExportBin(binary string, exportPath string) error {
 	if !strings.HasPrefix(binary, "/") {
 		binaryPath, err := s.Exec(true, "which", binary)

@@ -227,6 +227,11 @@ func rmSubSystem(cmd *cobra.Command, args []string) error {
 	subSystemName, _ := cmd.Flags().GetString("name")
 	forceFlag, _ := cmd.Flags().GetBool("force")
 
+	if subSystemName == "" {
+		cmdr.Error.Println("Please specify a subsystem name with --name")
+		return nil
+	}
+
 	if !forceFlag {
 		cmdr.Info.Printf("Are you sure you want to remove the subsystem %s? [y/N] ", subSystemName)
 		var confirmation string
