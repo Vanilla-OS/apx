@@ -171,7 +171,7 @@ func (s *SubSystem) ExportDesktopEntry(appName string) error {
 		return err
 	}
 
-	return dbox.ContainerExportDesktopEntry(s.InternalName, appName, s.Name)
+	return dbox.ContainerExportDesktopEntry(s.InternalName, appName, fmt.Sprintf("on %s", s.Name))
 }
 
 func (s *SubSystem) ExportDesktopEntries(args ...string) (int, error) {
