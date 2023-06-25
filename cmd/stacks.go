@@ -230,12 +230,12 @@ func listStacks(cmd *cobra.Command, args []string) error {
 	fmt.Printf(apx.Trans("stacks.list.info.foundStacks"), stacksCount)
 
 	table := core.CreateApxTable(os.Stdout)
-	table.SetHeader([]string{"Name", "Base", "Built-in", "Pkgs", "Pkg manager"})
+	table.SetHeader([]string{apx.Trans("stacks.labels.name"), "Base", apx.Trans("stacks.labels.builtIn"), "Pkgs", "Pkg manager"})
 
 	for _, stack := range stacks {
-		builtIn := "No"
+		builtIn := apx.Trans("apx.terminal.no")
 		if stack.BuiltIn {
-			builtIn = "Yes"
+			builtIn = apx.Trans("apx.terminal.yes")
 		}
 		table.Append([]string{stack.Name, stack.Base, builtIn, fmt.Sprintf("%d", len(stack.Packages)), stack.PkgManager})
 	}
@@ -252,7 +252,7 @@ func showStack(cmd *cobra.Command, args []string) error {
 	}
 
 	table := core.CreateApxTable(os.Stdout)
-	table.Append([]string{"Name", stack.Name})
+	table.Append([]string{apx.Trans("stacks.labels.name"), stack.Name})
 	table.Append([]string{"Base", stack.Base})
 	table.Append([]string{"Packages", strings.Join(stack.Packages, ", ")})
 	table.Append([]string{"Package manager", stack.PkgManager})

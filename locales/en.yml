@@ -5,6 +5,9 @@ apx:
     invalidInput: "Invalid input."
   info:
     aborting: "Aborting as requested."
+  terminal:
+    yes: "yes"
+    no: "no"
 
 runtimeCommand:
   description: "Work with the specified subsystem, accessing the package manager and environment."
@@ -71,6 +74,9 @@ runtimeCommand:
 
 pkgmanagers:
   description: "Work with the package managers that are available in Apx."
+  labels:
+    name: "Name"
+    builtIn: "Built-in"
 
   list:
     description: "List all available package managers."
@@ -139,6 +145,9 @@ pkgmanagers:
 
 stacks:
   description: "Work with the stacks that are available in Apx."
+  labels:
+    name: "Name"
+    builtIn: "Built-in"
 
   list:
     description: "List all available stacks."
@@ -241,6 +250,9 @@ stacks:
 
 subsystems:
   description: "Work with the subsystems that are available in Apx."
+  labels:
+    name: "Name"
+    status: "Status"
 
   list:
     description: "List all available subsystems."

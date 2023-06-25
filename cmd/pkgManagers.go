@@ -208,12 +208,12 @@ func listPkgManagers(cmd *cobra.Command, args []string) error {
 	fmt.Printf(apx.Trans("pkgmanagers.list.info.foundPkgManagers"), pkgManagersCount)
 
 	table := core.CreateApxTable(os.Stdout)
-	table.SetHeader([]string{"Name", "Built-in"})
+	table.SetHeader([]string{apx.Trans("pkgmanagers.labels.name"), apx.Trans("pkgmanagers.labels.builtIn")})
 
 	for _, stack := range pkgManagers {
-		builtIn := "No"
+		builtIn := apx.Trans("apx.terminal.no")
 		if stack.BuiltIn {
-			builtIn = "Yes"
+			builtIn = apx.Trans("apx.terminal.yes")
 		}
 		table.Append([]string{stack.Name, builtIn})
 	}
@@ -232,7 +232,7 @@ func showPkgManager(cmd *cobra.Command, args []string) error {
 	}
 
 	table := core.CreateApxTable(os.Stdout)
-	table.Append([]string{"Name", pkgManager.Name})
+	table.Append([]string{apx.Trans("pkgmanagers.labels.name"), pkgManager.Name})
 	table.Append([]string{"NeedSudo", fmt.Sprintf("%t", pkgManager.NeedSudo)})
 	table.Append([]string{"AutoRemove", pkgManager.CmdAutoRemove})
 	table.Append([]string{"Clean", pkgManager.CmdClean})
@@ -359,11 +359,11 @@ func rmPkgManager(cmd *cobra.Command, args []string) error {
 	if len(stacks) > 0 {
 		cmdr.Error.Printf(apx.Trans("pkgmanagers.rm.error.inUse"), len(stacks))
 		table := core.CreateApxTable(os.Stdout)
-		table.SetHeader([]string{"Name", "Base", "Packages", "PkgManager", "Built-in"})
+		table.SetHeader([]string{apx.Trans("pkgmanagers.labels.name"), "Base", "Packages", "PkgManager", apx.Trans("pkgmanagers.labels.builtIn")})
 		for _, stack := range stacks {
-			builtIn := "No"
+			builtIn := apx.Trans("apx.terminal.no")
 			if stack.BuiltIn {
-				builtIn = "Yes"
+				builtIn = apx.Trans("apx.terminal.yes")
 			}
 			table.Append([]string{stack.Name, stack.Base, strings.Join(stack.Packages, ", "), stack.PkgManager, builtIn})
 		}

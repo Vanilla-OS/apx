@@ -134,7 +134,7 @@ func listSubSystems(cmd *cobra.Command, args []string) error {
 	fmt.Printf(apx.Trans("subsystems.list.info.foundSubsystems"), subSystemsCount)
 
 	table := core.CreateApxTable(os.Stdout)
-	table.SetHeader([]string{"Name", "Stack", "Status", "Pkgs"})
+	table.SetHeader([]string{apx.Trans("subsystems.labels.name"), "Stack", apx.Trans("subsystems.labels.status"), "Pkgs"})
 
 	for _, subSystem := range subSystems {
 		table.Append([]string{
@@ -164,7 +164,7 @@ func newSubSystem(cmd *cobra.Command, args []string) error {
 		cmdr.Info.Println(apx.Trans("subsystems.new.info.askName"))
 		fmt.Scanln(&subSystemName)
 		if subSystemName == "" {
-			cmdr.Error.Println("Subsystem name cannot be empty")
+			cmdr.Error.Println(apx.Trans("apx.error.noName"))
 			return nil
 		}
 	}
