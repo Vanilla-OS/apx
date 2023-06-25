@@ -116,7 +116,11 @@ func (d *dbox) RunCommand(command string, args []string, engineFlags []string, u
 	}
 
 	cmd.Args = append(cmd.Args, args...)
-	// fmt.Println(cmd.String())
+
+	if os.Getenv("APX_VERBOSE") == "1" {
+		fmt.Println("running command:")
+		fmt.Println(cmd.String())
+	}
 
 	if captureOutput {
 		output, err := cmd.Output()
@@ -284,7 +288,7 @@ func (d *dbox) ContainerExportDesktopEntry(containerName string, appName string,
 }
 
 func (d *dbox) ContainerUnexportDesktopEntry(containerName string, appName string) error {
-	args := []string{"--app", appName, "--delete"}
+	args := []string{"--app", appName}
 	return d.ContainerExport(containerName, true, args...)
 }
 
