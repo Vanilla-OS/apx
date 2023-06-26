@@ -11,7 +11,7 @@ install:
 	install -Dm755 ${BINARY_NAME} ${DESTDIR}${PREFIX}/bin/${BINARY_NAME}
 	sudo mkdir -p ${DESTDIR}/etc/apx
 	sed -i 's|/usr/share/apx/distrobox|${PREFIX}/share/apx/distrobox|g' config/apx.json
-	sudo install -Dm644 config/apx.json ${DESTDIR}/etc/apx/config.json
+	sudo install -Dm644 config/apx.json ${DESTDIR}/etc/apx/apx.json
 	mkdir -p ${DESTDIR}${PREFIX}/share/apx
 	sh distrobox/install --prefix ${DESTDIR}${PREFIX}/share/apx
 	mv ${DESTDIR}${PREFIX}/share/apx/bin/distrobox* ${DESTDIR}${PREFIX}/share/apx/.
