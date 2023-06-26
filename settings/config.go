@@ -10,6 +10,7 @@ package settings
 */
 
 import (
+	"fmt"
 	"os"
 	"path/filepath"
 
@@ -54,10 +55,11 @@ func init() {
 
 	viper.SetConfigName("apx")
 	viper.SetConfigType("json")
-	err = viper.ReadInConfig()
 
+	err = viper.ReadInConfig()
 	if err != nil {
-		return
+		fmt.Printf("Unable to read config file: \n\t%s\n", err)
+		os.Exit(1)
 	}
 
 	// if viper.ConfigFileUsed() != "/etc/apx/apx.json" || viper.ConfigFileUsed() != "/usr/share/apx/apx.json" {
