@@ -2,16 +2,12 @@
   <img src="apx-logo.png" height="120">
   <h1 align="center">Apx</h1>
 
-
 [![Translation Status][weblate-image]][weblate-url]
 
 [weblate-url]: https://hosted.weblate.org/engage/vanilla-os/
 [weblate-image]: https://hosted.weblate.org/widgets/vanilla-os/-/apx/svg-badge.svg
-[weblate-status-image]: https://hosted.weblate.org/widgets/vanilla-os/-/apx/multi-auto.svg
 [repology-url]: https://repology.org/project/apx-package-manager/versions
 [repology-image]: https://repology.org/badge/vertical-allrepos/apx-package-manager.svg
-[build-image]: https://build.opensuse.org/projects/home:fabricators:orchid/packages/apx/badge.svg?type=default
-[build-url]: https://build.opensuse.org/package/show/home:fabricators:orchid/apx
 
   <p align="center">Apx (/à·peks/) is the default package manager in Vanilla OS. It is a wrapper around multiple package managers to install packages and run commands inside a managed container.</p>
   <small>Special thanks to <a href="https://github.com/89luca89/distrobox">distrobox</a> for making this possible.</small>
@@ -22,8 +18,7 @@
 ## Help
 
 ```
-Apx is a package manager with support for multiple sources,
-allowing you to install packages in a managed container.
+Apx is a package manager with support for multiple sources, allowing you to install packages in subsystems.
 
 Usage:
   apx [command]
@@ -32,9 +27,9 @@ Available Commands:
   [subsystem] Work with the specified subsystem, accessing the package manager and environment.
   completion  Generate the autocompletion script for the specified shell
   help        Help about any command
-  pkgmanagers Work with the package managers that are available in Apx.
-  stacks      Work with the stacks that are available in Apx.
-  subsystems  subsystems
+  pkgmanagers Work with the package managers that are available in apx.
+  stacks      Work with the stacks that are available in apx.
+  subsystems  Work with the subsystems that are available in apx.
 
 Flags:
   -h, --help      help for apx
@@ -60,8 +55,6 @@ To add new dependencies, use `go get` as usual, then run `go mod tidy` and `go m
 ## Translations
 
 Contribute translations for the manpage and help page in [Weblate](https://hosted.weblate.org/projects/vanilla-os/apx).
-
-[![Translation Status][weblate-status-image]][weblate-url]
 
 ### Generating man pages for translations
 

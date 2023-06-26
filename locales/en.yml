@@ -73,7 +73,7 @@ runtimeCommand:
         description: "Path of the binary output (default: ~/.local/bin/)."
 
 pkgmanagers:
-  description: "Work with the package managers that are available in Apx."
+  description: "Work with the package managers that are available in apx."
   labels:
     name: "Name"
     builtIn: "Built-in"
@@ -144,7 +144,7 @@ pkgmanagers:
         description: "The name of the package manager to remove."
 
 stacks:
-  description: "Work with the stacks that are available in Apx."
+  description: "Work with the stacks that are available in apx."
   labels:
     name: "Name"
     builtIn: "Built-in"
@@ -249,7 +249,7 @@ stacks:
         description: "The path to import the stack from."
 
 subsystems:
-  description: "Work with the subsystems that are available in Apx."
+  description: "Work with the subsystems that are available in apx."
   labels:
     name: "Name"
     status: "Status"
