@@ -23,8 +23,8 @@ func NewSubSystemsCommand() *cmdr.Command {
 	// Root command
 	cmd := cmdr.NewCommand(
 		"subsystems",
-		apx.Trans("subsystems"),
-		apx.Trans("subsystems"),
+		apx.Trans("subsystems.description"),
+		apx.Trans("subsystems.description"),
 		nil,
 	)
 
@@ -114,7 +114,8 @@ func NewSubSystemsCommand() *cmdr.Command {
 	// Add subcommands to subsystems
 	cmd.AddCommand(listCmd)
 	cmd.AddCommand(newCmd)
-	cmd.AddCommand(rmCmd, rmCmd)
+	cmd.AddCommand(rmCmd)
+	cmd.AddCommand(resetCmd)
 
 	return cmd
 }

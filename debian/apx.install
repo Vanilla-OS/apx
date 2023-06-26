@@ -1,13 +1,2 @@
-config/config.json /etc/apx/
+config/apx.json /etc/apx/
 man/man1/apx.1 /usr/share/man/man1
-man/de/man1/apx.1 /usr/share/man/de/man1
-man/es/man1/apx.1 /usr/share/man/es/man1
-man/fr/man1/apx.1 /usr/share/man/fr/man1
-man/it/man1/apx.1 /usr/share/man/it/man1
-man/nl/man1/apx.1 /usr/share/man/nl/man1
-man/pl/man1/apx.1 /usr/share/man/pl/man1
-man/pt/man1/apx.1 /usr/share/man/pt/man1
-man/pt_BR/man1/apx.1 /usr/share/man/pt_BR/man1
-man/ro/man1/apx.1 /usr/share/man/ro/man1
-man/ru/man1/apx.1 /usr/share/man/ru/man1
-man/sv/man1/apx.1 /usr/share/man/sv/man1

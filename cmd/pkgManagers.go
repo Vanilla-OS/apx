@@ -166,8 +166,8 @@ func NewPkgManagersCommand() *cmdr.Command {
 	// Rm subcommand
 	rmCmd := cmdr.NewCommand(
 		"rm",
-		apx.Trans("rmPkgManager.rm.description"),
-		apx.Trans("rmPkgManager.rm.description"),
+		apx.Trans("pkgmanagers.rm.description"),
+		apx.Trans("pkgmanagers.rm.description"),
 		rmPkgManager,
 	)
 
@@ -175,7 +175,7 @@ func NewPkgManagersCommand() *cmdr.Command {
 		cmdr.NewStringFlag(
 			"name",
 			"n",
-			apx.Trans("rmPkgManager.rm.options.name.description"),
+			apx.Trans("pkgmanagers.rm.options.name.description"),
 			"",
 		),
 	)
@@ -183,7 +183,7 @@ func NewPkgManagersCommand() *cmdr.Command {
 		cmdr.NewBoolFlag(
 			"force",
 			"f",
-			apx.Trans("rmPkgManager.rm.options.force.description"),
+			apx.Trans("pkgmanagers.rm.options.force.description"),
 			false,
 		),
 	)

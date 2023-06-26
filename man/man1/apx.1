@@ -1,9 +1,7 @@
-.TH APX 1 "2023-05-08" "apx" "User Manual"
+.TH APX 1 "2023-06-26" "apx" "User Manual"
 .SH NAME
 .RS 4
-apx - Apx is a package manager with support for multiple sources,
-.PP
-allowing you to install packages in a managed container\&.
+apx - apx
 .RE
 .SH SYNOPSIS
 .RS 4
@@ -11,106 +9,24 @@ apx [command] [flags] [arguments]
 .RE
 .SH DESCRIPTION
 .RS 4
-Apx is a package manager with support for multiple sources,
-.PP
-allowing you to install packages in a managed container\&.
+apx
 .RE
 .SH OPTIONS
-  -v, --verbose       show more detailed output
-.PP
-      --apt           Install packages from the Ubuntu repository\&.
-.PP
-      --aur           Install packages from the AUR (Arch User Repository)\&.
-.PP
-      --dnf           Install packages from the Fedora's DNF (Dandified YUM) repository\&.
-.PP
-      --apk           Install packages from the Alpine repository\&.
-.PP
-      --zypper        Install packages from the OpenSUSE repository\&.
-.PP
-      --xbps          Install packages from the Void (Linux) repository\&.
-.PP
-      --nix           Install packages from the Nixpkgs (Nix packages) repository\&.
-.PP
-      --swupd         Install packages from the Clear Linux* store
-.PP
-  -n, --name string    Apply to custom container with this name\&.
-.PP
 .SH APX COMMANDS
 .RS 4
-\fBautoremove\fP
+\fBstacks\fP
 .RS 4
-Remove all unused packages automatically
+Work with the stacks that are available in Apx\&.
 .PP
 .RE
-\fBclean\fP
+\fBsubsystems\fP
 .RS 4
-Clean the apx package manager cache
+Work with the subsystems that are available in Apx\&.
 .PP
 .RE
-\fBenter\fP
+\fBpkgmanagers\fP
 .RS 4
-Enter a shell in the managed container
-.PP
-.RE
-\fBexport\fP
-.RS 4
-Export/Recreate a program's desktop entry from a managed container
-.PP
-.RE
-\fBinit\fP
-.RS 4
-Initialize a managed container
-.PP
-.RE
-\fBinstall\fP
-.RS 4
-Install packages inside a managed container\&.
-.PP
-.RE
-\fBlist\fP
-.RS 4
-List installed packages\&.
-.PP
-.RE
-\fBpurge\fP
-.RS 4
-Purge packages inside a managed container
-.PP
-.RE
-\fBremove\fP
-.RS 4
-Remove packages inside a managed container\&.
-.PP
-.RE
-\fBrun\fP
-.RS 4
-Run a program inside a managed container\&.
-.PP
-.RE
-\fBsearch\fP
-.RS 4
-Search for packages in a managed container\&.
-.PP
-.RE
-\fBshow\fP
-.RS 4
-Show details about a package
-.PP
-.RE
-\fBunexport\fP
-.RS 4
-Unexport/Remove a program's desktop entry from a managed container
-.PP
-.RE
-\fBupgrade\fP
-.RS 4
-Upgrade the system by installing/upgrading available packages\&.
-.PP
-.RE
-\fBupdate\fP
-.RS 4
-Update the list of available packages
+Work with the package managers that are available in Apx\&.
 .PP
 .RE
 .RE
@@ -124,613 +40,128 @@ https://github\&.com/vanilla-os/apx/issues
 .PP
 GPLv3+: GNU GPL version 3 or later <http://gnu\&.org/licenses/gpl\&.html>\&.
 .SH APX SUBCOMMANDS
-.SH SUBCOMMAND AUTOREMOVE
+.SH SUBCOMMAND STACKS
 .RS 4
-Remove all unused packages automatically
+Work with the stacks that are available in Apx\&.
 .RE
 .SS SYNOPSIS
 .RS 4
-\fBautoremove\fP [command] [flags] [arguments]
+\fBstacks\fP [command] [flags] [arguments]
 .RE
 .SS DESCRIPTION
 .RS 4
 .TP 4
-Remove all unused packages automatically
+Work with the stacks that are available in Apx\&.
 .RE
 .SS OPTIONS
-  -a, --all   Apply for all containers\&.
-.PP
 .SS GLOBAL OPTIONS
-  -v, --verbose       show more detailed output
-.PP
-      --apt           Install packages from the Ubuntu repository\&.
-.PP
-      --aur           Install packages from the AUR (Arch User Repository)\&.
-.PP
-      --dnf           Install packages from the Fedora's DNF (Dandified YUM) repository\&.
-.PP
-      --apk           Install packages from the Alpine repository\&.
-.PP
-      --zypper        Install packages from the OpenSUSE repository\&.
-.PP
-      --xbps          Install packages from the Void (Linux) repository\&.
-.PP
-      --nix           Install packages from the Nixpkgs (Nix packages) repository\&.
-.PP
-      --swupd         Install packages from the Clear Linux* store
-.PP
-  -n, --name string    Apply to custom container with this name\&.
-.PP
-.SH SUBCOMMAND CLEAN
+.SH LIST
 .RS 4
-Clean the apx package manager cache
+List all available stacks\&.
+.PP
+.RE
+.SH SHOW
+.RS 4
+Show information about the specified stack\&.
+.PP
+.RE
+.SH NEW
+.RS 4
+Create a new stack\&.
+.PP
+.RE
+.SH UPDATE
+.RS 4
+Update the specified stack\&.
+.PP
+.RE
+.SH RM
+.RS 4
+Remove the specified stack\&.
+.PP
+.RE
+.SH EXPORT
+.RS 4
+Export the specified stack\&.
+.PP
+.RE
+.SH IMPORT
+.RS 4
+Import the specified stack\&.
+.PP
+.RE
+.SH SUBCOMMAND SUBSYSTEMS
+.RS 4
+Work with the subsystems that are available in Apx\&.
 .RE
 .SS SYNOPSIS
 .RS 4
-\fBclean\fP [command] [flags] [arguments]
+\fBsubsystems\fP [command] [flags] [arguments]
 .RE
 .SS DESCRIPTION
 .RS 4
 .TP 4
-Clean the apx package manager cache
+Work with the subsystems that are available in Apx\&.
 .RE
 .SS OPTIONS
-  -a, --all   Apply for all containers\&.
-.PP
 .SS GLOBAL OPTIONS
-  -v, --verbose       show more detailed output
-.PP
-      --apt           Install packages from the Ubuntu repository\&.
-.PP
-      --aur           Install packages from the AUR (Arch User Repository)\&.
-.PP
-      --dnf           Install packages from the Fedora's DNF (Dandified YUM) repository\&.
-.PP
-      --apk           Install packages from the Alpine repository\&.
-.PP
-      --zypper        Install packages from the OpenSUSE repository\&.
-.PP
-      --xbps          Install packages from the Void (Linux) repository\&.
-.PP
-      --nix           Install packages from the Nixpkgs (Nix packages) repository\&.
-.PP
-      --swupd         Install packages from the Clear Linux* store
-.PP
-  -n, --name string    Apply to custom container with this name\&.
-.PP
-.SH SUBCOMMAND ENTER
+.SH LIST
 .RS 4
-Enter a shell in the managed container
+List all available subsystems\&.
+.PP
+.RE
+.SH NEW
+.RS 4
+Create a new subsystem\&.
+.PP
+.RE
+.SH RM
+.RS 4
+Remove the specified subsystem\&.
+.PP
+.RE
+.SH RESET
+.RS 4
+Reset the specified subsystem\&.
+.PP
+.RE
+.SH SUBCOMMAND PKGMANAGERS
+.RS 4
+Work with the package managers that are available in Apx\&.
 .RE
 .SS SYNOPSIS
 .RS 4
-\fBenter\fP [command] [flags] [arguments]
+\fBpkgmanagers\fP [command] [flags] [arguments]
 .RE
 .SS DESCRIPTION
 .RS 4
 .TP 4
-Enter a shell in the managed container
+Work with the package managers that are available in Apx\&.
 .RE
 .SS OPTIONS
 .SS GLOBAL OPTIONS
-  -v, --verbose       show more detailed output
-.PP
-      --apt           Install packages from the Ubuntu repository\&.
-.PP
-      --aur           Install packages from the AUR (Arch User Repository)\&.
-.PP
-      --dnf           Install packages from the Fedora's DNF (Dandified YUM) repository\&.
-.PP
-      --apk           Install packages from the Alpine repository\&.
-.PP
-      --zypper        Install packages from the OpenSUSE repository\&.
-.PP
-      --xbps          Install packages from the Void (Linux) repository\&.
-.PP
-      --nix           Install packages from the Nixpkgs (Nix packages) repository\&.
-.PP
-      --swupd         Install packages from the Clear Linux* store
-.PP
-  -n, --name string    Apply to custom container with this name\&.
-.PP
-.SH SUBCOMMAND EXPORT
+.SH LIST
 .RS 4
-Export/Recreate a program's desktop entry from a managed container
+List all available package managers\&.
+.PP
 .RE
-.SS SYNOPSIS
+.SH SHOW
 .RS 4
-\fBexport\fP [command] [flags] [arguments]
+Show information about the specified package manager\&.
+.PP
 .RE
-.SS DESCRIPTION
+.SH NEW
 .RS 4
-.TP 4
-Export/Recreate a program's desktop entry from a managed container
+Create a new package manager\&.
+.PP
 .RE
-.SS OPTIONS
-      --bin   Export binary command
+.SH RM
+.RS 4
+Remove the specified package manager\&.
 .PP
-.SS GLOBAL OPTIONS
-  -v, --verbose       show more detailed output
-.PP
-      --apt           Install packages from the Ubuntu repository\&.
-.PP
-      --aur           Install packages from the AUR (Arch User Repository)\&.
-.PP
-      --dnf           Install packages from the Fedora's DNF (Dandified YUM) repository\&.
-.PP
-      --apk           Install packages from the Alpine repository\&.
-.PP
-      --zypper        Install packages from the OpenSUSE repository\&.
-.PP
-      --xbps          Install packages from the Void (Linux) repository\&.
-.PP
-      --nix           Install packages from the Nixpkgs (Nix packages) repository\&.
-.PP
-      --swupd         Install packages from the Clear Linux* store
-.PP
-  -n, --name string    Apply to custom container with this name\&.
-.PP
+.RE
 .SS EXAMPLES
 .RS 4
-apx export htop
-.PP
-apx export --bin fzf
+apx pkgmanagers
 .RE
-.SH SUBCOMMAND INIT
-.RS 4
-Initialize a managed container
-.RE
-.SS SYNOPSIS
-.RS 4
-\fBinit\fP [command] [flags] [arguments]
-.RE
-.SS DESCRIPTION
-.RS 4
-.TP 4
-Initialize a managed container
-.RE
-.SS OPTIONS
-.SS GLOBAL OPTIONS
-  -v, --verbose       show more detailed output
-.PP
-      --apt           Install packages from the Ubuntu repository\&.
-.PP
-      --aur           Install packages from the AUR (Arch User Repository)\&.
-.PP
-      --dnf           Install packages from the Fedora's DNF (Dandified YUM) repository\&.
-.PP
-      --apk           Install packages from the Alpine repository\&.
-.PP
-      --zypper        Install packages from the OpenSUSE repository\&.
-.PP
-      --xbps          Install packages from the Void (Linux) repository\&.
-.PP
-      --nix           Install packages from the Nixpkgs (Nix packages) repository\&.
-.PP
-      --swupd         Install packages from the Clear Linux* store
-.PP
-  -n, --name string    Apply to custom container with this name\&.
-.PP
-.SS EXAMPLES
-.RS 4
-apx init
-.RE
-.SH SUBCOMMAND INSTALL
-.RS 4
-Install packages inside a managed container\&.
-.RE
-.SS SYNOPSIS
-.RS 4
-\fBinstall\fP [command] [flags] [arguments]
-.RE
-.SS DESCRIPTION
-.RS 4
-.TP 4
-Install packages inside a managed container\&.
-.RE
-.SS OPTIONS
-  -y, --assume-yes       Proceed without manual confirmation
-.PP
-  -f, --fix-broken       Fix broken dependencies before installing
-.PP
-      --no-export        Do not export a desktop entry after the installation\&.
-.PP
-      --sideload         Install a package from a local file\&.
-.PP
-      --allow-unfree     Allow packages with unfree licenses
-.PP
-      --allow-insecure   Allow packages with known vulnerabilities\&.
-.PP
-.SS GLOBAL OPTIONS
-  -v, --verbose       show more detailed output
-.PP
-      --apt           Install packages from the Ubuntu repository\&.
-.PP
-      --aur           Install packages from the AUR (Arch User Repository)\&.
-.PP
-      --dnf           Install packages from the Fedora's DNF (Dandified YUM) repository\&.
-.PP
-      --apk           Install packages from the Alpine repository\&.
-.PP
-      --zypper        Install packages from the OpenSUSE repository\&.
-.PP
-      --xbps          Install packages from the Void (Linux) repository\&.
-.PP
-      --nix           Install packages from the Nixpkgs (Nix packages) repository\&.
-.PP
-      --swupd         Install packages from the Clear Linux* store
-.PP
-  -n, --name string    Apply to custom container with this name\&.
-.PP
-.SS EXAMPLES
-.RS 4
-apx install htop git
-.PP
-apx --nix install --allow-unfree vscode
-.RE
-.SH SUBCOMMAND LIST
-.RS 4
-List installed packages\&.
-.RE
-.SS SYNOPSIS
-.RS 4
-\fBlist\fP [command] [flags] [arguments]
-.RE
-.SS DESCRIPTION
-.RS 4
-.TP 4
-List installed packages\&.
-.RE
-.SS OPTIONS
-  -u, --upgradable   Show upgradable packages
-.PP
-  -i, --installed    Show installed packages
-.PP
-.SS GLOBAL OPTIONS
-  -v, --verbose       show more detailed output
-.PP
-      --apt           Install packages from the Ubuntu repository\&.
-.PP
-      --aur           Install packages from the AUR (Arch User Repository)\&.
-.PP
-      --dnf           Install packages from the Fedora's DNF (Dandified YUM) repository\&.
-.PP
-      --apk           Install packages from the Alpine repository\&.
-.PP
-      --zypper        Install packages from the OpenSUSE repository\&.
-.PP
-      --xbps          Install packages from the Void (Linux) repository\&.
-.PP
-      --nix           Install packages from the Nixpkgs (Nix packages) repository\&.
-.PP
-      --swupd         Install packages from the Clear Linux* store
-.PP
-  -n, --name string    Apply to custom container with this name\&.
-.PP
-.SH SUBCOMMAND PURGE
-.RS 4
-Purge packages inside a managed container
-.RE
-.SS SYNOPSIS
-.RS 4
-\fBpurge\fP [command] [flags] [arguments]
-.RE
-.SS DESCRIPTION
-.RS 4
-.TP 4
-Purge packages inside a managed container
-.RE
-.SS OPTIONS
-.SS GLOBAL OPTIONS
-  -v, --verbose       show more detailed output
-.PP
-      --apt           Install packages from the Ubuntu repository\&.
-.PP
-      --aur           Install packages from the AUR (Arch User Repository)\&.
-.PP
-      --dnf           Install packages from the Fedora's DNF (Dandified YUM) repository\&.
-.PP
-      --apk           Install packages from the Alpine repository\&.
-.PP
-      --zypper        Install packages from the OpenSUSE repository\&.
-.PP
-      --xbps          Install packages from the Void (Linux) repository\&.
-.PP
-      --nix           Install packages from the Nixpkgs (Nix packages) repository\&.
-.PP
-      --swupd         Install packages from the Clear Linux* store
-.PP
-  -n, --name string    Apply to custom container with this name\&.
-.PP
-.SS EXAMPLES
-.RS 4
-apx purge htop
-.RE
-.SH SUBCOMMAND REMOVE
-.RS 4
-Remove packages inside a managed container\&.
-.RE
-.SS SYNOPSIS
-.RS 4
-\fBremove\fP [command] [flags] [arguments]
-.RE
-.SS DESCRIPTION
-.RS 4
-.TP 4
-Remove packages inside a managed container\&.
-.RE
-.SS OPTIONS
-  -y, --assume-yes   Proceed without manual confirmation\&.
-.PP
-.SS GLOBAL OPTIONS
-  -v, --verbose       show more detailed output
-.PP
-      --apt           Install packages from the Ubuntu repository\&.
-.PP
-      --aur           Install packages from the AUR (Arch User Repository)\&.
-.PP
-      --dnf           Install packages from the Fedora's DNF (Dandified YUM) repository\&.
-.PP
-      --apk           Install packages from the Alpine repository\&.
-.PP
-      --zypper        Install packages from the OpenSUSE repository\&.
-.PP
-      --xbps          Install packages from the Void (Linux) repository\&.
-.PP
-      --nix           Install packages from the Nixpkgs (Nix packages) repository\&.
-.PP
-      --swupd         Install packages from the Clear Linux* store
-.PP
-  -n, --name string    Apply to custom container with this name\&.
-.PP
-.SS EXAMPLES
-.RS 4
-apx remove htop
-.RE
-.SH SUBCOMMAND RUN
-.RS 4
-Run a program inside a managed container\&.
-.RE
-.SS SYNOPSIS
-.RS 4
-\fBrun\fP [command] [flags] [arguments]
-.RE
-.SS DESCRIPTION
-.RS 4
-.TP 4
-Run a program inside a managed container\&.
-.RE
-.SS OPTIONS
-.SS GLOBAL OPTIONS
-  -v, --verbose       show more detailed output
-.PP
-      --apt           Install packages from the Ubuntu repository\&.
-.PP
-      --aur           Install packages from the AUR (Arch User Repository)\&.
-.PP
-      --dnf           Install packages from the Fedora's DNF (Dandified YUM) repository\&.
-.PP
-      --apk           Install packages from the Alpine repository\&.
-.PP
-      --zypper        Install packages from the OpenSUSE repository\&.
-.PP
-      --xbps          Install packages from the Void (Linux) repository\&.
-.PP
-      --nix           Install packages from the Nixpkgs (Nix packages) repository\&.
-.PP
-      --swupd         Install packages from the Clear Linux* store
-.PP
-  -n, --name string    Apply to custom container with this name\&.
-.PP
-.SS EXAMPLES
-.RS 4
-apx run htop
-.RE
-.SH SUBCOMMAND SEARCH
-.RS 4
-Search for packages in a managed container\&.
-.RE
-.SS SYNOPSIS
-.RS 4
-\fBsearch\fP [command] [flags] [arguments]
-.RE
-.SS DESCRIPTION
-.RS 4
-.TP 4
-Search for packages in a managed container\&.
-.RE
-.SS OPTIONS
-.SS GLOBAL OPTIONS
-  -v, --verbose       show more detailed output
-.PP
-      --apt           Install packages from the Ubuntu repository\&.
-.PP
-      --aur           Install packages from the AUR (Arch User Repository)\&.
-.PP
-      --dnf           Install packages from the Fedora's DNF (Dandified YUM) repository\&.
-.PP
-      --apk           Install packages from the Alpine repository\&.
-.PP
-      --zypper        Install packages from the OpenSUSE repository\&.
-.PP
-      --xbps          Install packages from the Void (Linux) repository\&.
-.PP
-      --nix           Install packages from the Nixpkgs (Nix packages) repository\&.
-.PP
-      --swupd         Install packages from the Clear Linux* store
-.PP
-  -n, --name string    Apply to custom container with this name\&.
-.PP
-.SS EXAMPLES
-.RS 4
-apx search neovim
-.RE
-.SH SUBCOMMAND SHOW
-.RS 4
-Show details about a package
-.RE
-.SS SYNOPSIS
-.RS 4
-\fBshow\fP [command] [flags] [arguments]
-.RE
-.SS DESCRIPTION
-.RS 4
-.TP 4
-Show details about a package
-.RE
-.SS OPTIONS
-  -i, --isinstalled   Only return whether the package is installed
-.PP
-.SS GLOBAL OPTIONS
-  -v, --verbose       show more detailed output
-.PP
-      --apt           Install packages from the Ubuntu repository\&.
-.PP
-      --aur           Install packages from the AUR (Arch User Repository)\&.
-.PP
-      --dnf           Install packages from the Fedora's DNF (Dandified YUM) repository\&.
-.PP
-      --apk           Install packages from the Alpine repository\&.
-.PP
-      --zypper        Install packages from the OpenSUSE repository\&.
-.PP
-      --xbps          Install packages from the Void (Linux) repository\&.
-.PP
-      --nix           Install packages from the Nixpkgs (Nix packages) repository\&.
-.PP
-      --swupd         Install packages from the Clear Linux* store
-.PP
-  -n, --name string    Apply to custom container with this name\&.
-.PP
-.SS EXAMPLES
-.RS 4
-apx show htop
-.PP
-apx show -i neovim
-.RE
-.SH SUBCOMMAND UNEXPORT
-.RS 4
-Unexport/Remove a program's desktop entry from a managed container
-.RE
-.SS SYNOPSIS
-.RS 4
-\fBunexport\fP [command] [flags] [arguments]
-.RE
-.SS DESCRIPTION
-.RS 4
-.TP 4
-Unexport/Remove a program's desktop entry from a managed container\&.
-.PP
-If --bin flag is provided, remove link to container binary\&.
-.RE
-.SS OPTIONS
-      --bin   Unexport a previously exported binary\&.
-.PP
-.SS GLOBAL OPTIONS
-  -v, --verbose       show more detailed output
-.PP
-      --apt           Install packages from the Ubuntu repository\&.
-.PP
-      --aur           Install packages from the AUR (Arch User Repository)\&.
-.PP
-      --dnf           Install packages from the Fedora's DNF (Dandified YUM) repository\&.
-.PP
-      --apk           Install packages from the Alpine repository\&.
-.PP
-      --zypper        Install packages from the OpenSUSE repository\&.
-.PP
-      --xbps          Install packages from the Void (Linux) repository\&.
-.PP
-      --nix           Install packages from the Nixpkgs (Nix packages) repository\&.
-.PP
-      --swupd         Install packages from the Clear Linux* store
-.PP
-  -n, --name string    Apply to custom container with this name\&.
-.PP
-.SS EXAMPLES
-.RS 4
-apx unexport code
-.RE
-.SH SUBCOMMAND UPGRADE
-.RS 4
-Upgrade the system by installing/upgrading available packages\&.
-.RE
-.SS SYNOPSIS
-.RS 4
-\fBupgrade\fP [command] [flags] [arguments]
-.RE
-.SS DESCRIPTION
-.RS 4
-.TP 4
-Upgrade the system by installing/upgrading available packages\&.
-.RE
-.SS OPTIONS
-  -a, --all          Apply for all containers\&.
-.PP
-  -y, --assume-yes   Proceed without manual confirmation\&.
-.PP
-.SS GLOBAL OPTIONS
-  -v, --verbose       show more detailed output
-.PP
-      --apt           Install packages from the Ubuntu repository\&.
-.PP
-      --aur           Install packages from the AUR (Arch User Repository)\&.
-.PP
-      --dnf           Install packages from the Fedora's DNF (Dandified YUM) repository\&.
-.PP
-      --apk           Install packages from the Alpine repository\&.
-.PP
-      --zypper        Install packages from the OpenSUSE repository\&.
-.PP
-      --xbps          Install packages from the Void (Linux) repository\&.
-.PP
-      --nix           Install packages from the Nixpkgs (Nix packages) repository\&.
-.PP
-      --swupd         Install packages from the Clear Linux* store
-.PP
-  -n, --name string    Apply to custom container with this name\&.
-.PP
-.SS EXAMPLES
-.RS 4
-apx upgrade
-.RE
-.SH SUBCOMMAND UPDATE
-.RS 4
-Update the list of available packages
-.RE
-.SS SYNOPSIS
-.RS 4
-\fBupdate\fP [command] [flags] [arguments]
-.RE
-.SS DESCRIPTION
-.RS 4
-.TP 4
-Update the list of available packages
-.RE
-.SS OPTIONS
-  -a, --all          Apply for all containers\&.
-.PP
-  -y, --assume-yes   Proceed without manual confirmation\&.
-.PP
-.SS GLOBAL OPTIONS
-  -v, --verbose       show more detailed output
-.PP
-      --apt           Install packages from the Ubuntu repository\&.
-.PP
-      --aur           Install packages from the AUR (Arch User Repository)\&.
-.PP
-      --dnf           Install packages from the Fedora's DNF (Dandified YUM) repository\&.
-.PP
-      --apk           Install packages from the Alpine repository\&.
-.PP
-      --zypper        Install packages from the OpenSUSE repository\&.
-.PP
-      --xbps          Install packages from the Void (Linux) repository\&.
-.PP
-      --nix           Install packages from the Nixpkgs (Nix packages) repository\&.
-.PP
-      --swupd         Install packages from the Clear Linux* store
-.PP
-  -n, --name string    Apply to custom container with this name\&.
-.PP
 
