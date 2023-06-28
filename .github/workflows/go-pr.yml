@@ -2,7 +2,7 @@ name: Go (PR)
 
 on:    
   pull_request_target:
-    branches: [ "main" ]
+    branches: [ "v2" ]
     types: [opened, synchronize, reopened]
 
 jobs:
