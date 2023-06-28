@@ -100,7 +100,7 @@ pkgmanagers:
       askCommand: "Enter the command for '%s':"
       askOverwrite: "A package manager with the name '%s' already exists. Overwrite it?"
       success: "Created package manager '%s'."
-      
+     
     options:
       assumeYes:
         description: "Assume yes to all prompts."
@@ -128,7 +128,7 @@ pkgmanagers:
         description: "The command to run to update the list of available packages."
       upgrade:
         description: "The command to run to upgrade packages."
-  rm: 
+  rm:
     description: "Remove the specified package manager."
 
     error:
