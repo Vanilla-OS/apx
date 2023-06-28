@@ -1,0 +1,40 @@
+name: Go (PR)
+
+on:    
+  pull_request_target:
+    branches: [ "main" ]
+    types: [opened, synchronize, reopened]
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: registry.vanillaos.org/vanillaos/pico:main
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Go
+      uses: actions/setup-go@v4
+      with:
+        go-version: 1.19
+
+    - name: Install build dependencies
+      run: |
+          apt-get update
+          apt-get install -y pkg-config build-essential
+    - name: Build
+      run: go build -o apx
+
+  sonar:
+    name: Sonar
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+      - uses: sonarsource/sonarqube-scan-action@master
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
