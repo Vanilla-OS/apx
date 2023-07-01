@@ -10,6 +10,7 @@ package cmd
 
 import (
 	"bufio"
+	"encoding/json"
 	"fmt"
 	"os"
 	"strings"
@@ -35,6 +36,15 @@ func NewStacksCommand() *cmdr.Command {
 		apx.Trans("stacks.list.description"),
 		apx.Trans("stacks.list.description"),
 		listStacks,
+	)
+
+	listCmd.WithBoolFlag(
+		cmdr.NewBoolFlag(
+			"json",
+			"j",
+			apx.Trans("stacks.list.options.json"),
+			false,
+		),
 	)
 
 	// Show subcommand
@@ -220,27 +230,39 @@ func NewStacksCommand() *cmdr.Command {
 }
 
 func listStacks(cmd *cobra.Command, args []string) error {
+	jsonFlag, _ := cmd.Flags().GetBool("json")
+
 	stacks := core.ListStacks()
-	stacksCount := len(stacks)
-	if stacksCount == 0 {
-		fmt.Println(apx.Trans("stacks.list.noStacks"))
-		return nil
-	}
 
-	fmt.Printf(apx.Trans("stacks.list.info.foundStacks"), stacksCount)
-
-	table := core.CreateApxTable(os.Stdout)
-	table.SetHeader([]string{apx.Trans("stacks.labels.name"), "Base", apx.Trans("stacks.labels.builtIn"), "Pkgs", "Pkg manager"})
-
-	for _, stack := range stacks {
-		builtIn := apx.Trans("apx.terminal.no")
-		if stack.BuiltIn {
-			builtIn = apx.Trans("apx.terminal.yes")
+	if !jsonFlag {
+		stacksCount := len(stacks)
+		if stacksCount == 0 {
+			fmt.Println(apx.Trans("stacks.list.noStacks"))
+			return nil
 		}
-		table.Append([]string{stack.Name, stack.Base, builtIn, fmt.Sprintf("%d", len(stack.Packages)), stack.PkgManager})
-	}
 
-	table.Render()
+		fmt.Printf(apx.Trans("stacks.list.info.foundStacks"), stacksCount)
+
+		table := core.CreateApxTable(os.Stdout)
+		table.SetHeader([]string{apx.Trans("stacks.labels.name"), "Base", apx.Trans("stacks.labels.builtIn"), "Pkgs", "Pkg manager"})
+
+		for _, stack := range stacks {
+			builtIn := apx.Trans("apx.terminal.no")
+			if stack.BuiltIn {
+				builtIn = apx.Trans("apx.terminal.yes")
+			}
+			table.Append([]string{stack.Name, stack.Base, builtIn, fmt.Sprintf("%d", len(stack.Packages)), stack.PkgManager})
+		}
+
+		table.Render()
+	} else {
+		jsonStacks, err := json.MarshalIndent(stacks, "", "  ")
+		if err != nil {
+			return err
+		}
+
+		fmt.Println(string(jsonStacks))
+	}
 
 	return nil
 }

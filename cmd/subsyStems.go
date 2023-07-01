@@ -9,6 +9,7 @@ package cmd
 */
 
 import (
+	"encoding/json"
 	"fmt"
 	"os"
 	"strings"
@@ -34,6 +35,15 @@ func NewSubSystemsCommand() *cmdr.Command {
 		apx.Trans("subsystems.list.description"),
 		apx.Trans("subsystems.list.description"),
 		listSubSystems,
+	)
+
+	listCmd.WithBoolFlag(
+		cmdr.NewBoolFlag(
+			"json",
+			"j",
+			apx.Trans("subsystems.list.options.json"),
+			false,
+		),
 	)
 
 	// New subcommand
@@ -121,32 +131,43 @@ func NewSubSystemsCommand() *cmdr.Command {
 }
 
 func listSubSystems(cmd *cobra.Command, args []string) error {
+	jsonFlag, _ := cmd.Flags().GetBool("json")
+
 	subSystems, err := core.ListSubSystems()
 	if err != nil {
 		return err
 	}
 
-	subSystemsCount := len(subSystems)
-	if subSystemsCount == 0 {
-		cmdr.Info.Println(apx.Trans("subsystems.list.info.noSubsystems"))
-		return nil
+	if !jsonFlag {
+		subSystemsCount := len(subSystems)
+		if subSystemsCount == 0 {
+			cmdr.Info.Println(apx.Trans("subsystems.list.info.noSubsystems"))
+			return nil
+		}
+
+		fmt.Printf(apx.Trans("subsystems.list.info.foundSubsystems"), subSystemsCount)
+
+		table := core.CreateApxTable(os.Stdout)
+		table.SetHeader([]string{apx.Trans("subsystems.labels.name"), "Stack", apx.Trans("subsystems.labels.status"), "Pkgs"})
+
+		for _, subSystem := range subSystems {
+			table.Append([]string{
+				subSystem.Name,
+				subSystem.Stack.Name,
+				subSystem.Status,
+				fmt.Sprintf("%d", len(subSystem.Stack.Packages)),
+			})
+		}
+
+		table.Render()
+	} else {
+		jsonSubSystems, err := json.MarshalIndent(subSystems, "", "  ")
+		if err != nil {
+			return err
+		}
+
+		fmt.Println(string(jsonSubSystems))
 	}
-
-	fmt.Printf(apx.Trans("subsystems.list.info.foundSubsystems"), subSystemsCount)
-
-	table := core.CreateApxTable(os.Stdout)
-	table.SetHeader([]string{apx.Trans("subsystems.labels.name"), "Stack", apx.Trans("subsystems.labels.status"), "Pkgs"})
-
-	for _, subSystem := range subSystems {
-		table.Append([]string{
-			subSystem.Name,
-			subSystem.Stack.Name,
-			subSystem.Status,
-			fmt.Sprintf("%d", len(subSystem.Stack.Packages)),
-		})
-	}
-
-	table.Render()
 
 	return nil
 }
