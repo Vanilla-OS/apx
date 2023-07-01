@@ -44,7 +44,7 @@ func NewPkgManagersCommand() *cmdr.Command {
 		cmdr.NewBoolFlag(
 			"json",
 			"j",
-			apx.Trans("pkgmanagers.list.options.json"),
+			apx.Trans("pkgmanagers.list.options.json.description"),
 			false,
 		),
 	)

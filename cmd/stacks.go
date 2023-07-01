@@ -42,7 +42,7 @@ func NewStacksCommand() *cmdr.Command {
 		cmdr.NewBoolFlag(
 			"json",
 			"j",
-			apx.Trans("stacks.list.options.json"),
+			apx.Trans("stacks.list.options.json.description"),
 			false,
 		),
 	)

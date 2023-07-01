@@ -41,7 +41,7 @@ func NewSubSystemsCommand() *cmdr.Command {
 		cmdr.NewBoolFlag(
 			"json",
 			"j",
-			apx.Trans("subsystems.list.options.json"),
+			apx.Trans("subsystems.list.options.json.description"),
 			false,
 		),
 	)
@@ -58,7 +58,7 @@ func NewSubSystemsCommand() *cmdr.Command {
 		cmdr.NewStringFlag(
 			"stack",
 			"s",
-			apx.Trans("subsystems.new.options.stack"),
+			apx.Trans("subsystems.new.options.stack.description"),
 			"",
 		),
 	)
@@ -91,7 +91,7 @@ func NewSubSystemsCommand() *cmdr.Command {
 		cmdr.NewBoolFlag(
 			"force",
 			"f",
-			apx.Trans("subsystems.rm.options.force"),
+			apx.Trans("subsystems.rm.options.force.description"),
 			false,
 		),
 	)
@@ -108,7 +108,7 @@ func NewSubSystemsCommand() *cmdr.Command {
 		cmdr.NewStringFlag(
 			"name",
 			"n",
-			apx.Trans("subsystems.reset.options.name"),
+			apx.Trans("subsystems.reset.options.name.description"),
 			"",
 		),
 	)
@@ -116,7 +116,7 @@ func NewSubSystemsCommand() *cmdr.Command {
 		cmdr.NewBoolFlag(
 			"force",
 			"f",
-			apx.Trans("subsystems.reset.options.force"),
+			apx.Trans("subsystems.reset.options.force.description"),
 			false,
 		),
 	)

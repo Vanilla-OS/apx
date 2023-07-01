@@ -83,6 +83,9 @@ pkgmanagers:
     info:
       noPkgManagers: "No package managers available. Create a new one with 'apx pkgmanagers new' or contact the system administrator."
       foundPkgManagers: "Found %d package managers:\n"
+    options:
+      json:
+        description: "Output in JSON format."
   show:
     description: "Show information about the specified package manager."
   new:
@@ -154,6 +157,9 @@ stacks:
     info:
       noStacks: "No stacks available. Create a new one with 'apx stacks new' or contact the system administrator."
       foundStacks: "Found %d stacks:\n"
+    options:
+      json:
+        description: "Output in JSON format."
   show:
     description: "Show information about the specified stack."
   new:
@@ -260,6 +266,9 @@ subsystems:
     info:
       noSubsystems: "No subsystems available. Create a new one with 'apx subsystems new' or contact the system administrator."
       foundSubsystems: "Found %d subsystems:\n"
+    options:
+      json:
+        description: "Output in JSON format."
   new:
     description: "Create a new subsystem."
     error:
