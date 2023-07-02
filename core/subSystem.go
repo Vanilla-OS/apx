@@ -2,6 +2,7 @@ package core
 
 import (
 	"fmt"
+	"io/ioutil"
 	"log"
 	"os"
 	"path/filepath"
@@ -20,15 +21,17 @@ import (
 */
 
 type SubSystem struct {
-	InternalName string
-	Name         string
-	Stack        *Stack
-	Status       string
+	InternalName     string
+	Name             string
+	Stack            *Stack
+	Status           string
+	ExportedPrograms map[string]string
 }
 
 func NewSubSystem(name string, stack *Stack) (*SubSystem, error) {
+	internalName := genInternalName(name)
 	return &SubSystem{
-		InternalName: genInternalName(name),
+		InternalName: internalName,
 		Name:         name,
 		Stack:        stack,
 	}, nil
@@ -36,6 +39,51 @@ func NewSubSystem(name string, stack *Stack) (*SubSystem, error) {
 
 func genInternalName(name string) string {
 	return fmt.Sprintf("apx-%s", strings.ReplaceAll(strings.ToLower(name), " ", "-"))
+}
+
+func findExportedPrograms(internalName string, name string) map[string]string {
+	home, err := os.UserHomeDir()
+	if err != nil {
+		return map[string]string{}
+	}
+
+	files, err := filepath.Glob(fmt.Sprintf("%s/.local/share/applications/%s-*.desktop", home, internalName))
+	if err != nil {
+		return map[string]string{}
+	}
+
+	programs := map[string]string{}
+	for _, file := range files {
+		f, err := os.Open(file)
+		if err != nil {
+			return map[string]string{}
+		}
+		defer f.Close()
+
+		data, err := ioutil.ReadAll(f)
+		if err != nil {
+			continue
+		}
+
+		pName := ""
+		pExec := ""
+		for _, line := range strings.Split(string(data), "\n") {
+			if strings.HasPrefix(line, "Name=") {
+				pName = strings.TrimPrefix(line, "Name=")
+				pName = strings.ReplaceAll(pName, fmt.Sprintf(" on %s", name), "")
+			}
+
+			if strings.HasPrefix(line, "Exec=") {
+				pExec = strings.TrimPrefix(line, "Exec=")
+			}
+		}
+
+		if pName != "" && pExec != "" {
+			programs[pName] = pExec
+		}
+	}
+
+	return programs
 }
 
 func (s *SubSystem) Create() error {
@@ -107,11 +155,13 @@ func ListSubSystems() ([]*SubSystem, error) {
 			continue
 		}
 
+		internalName := genInternalName(container.Labels["name"])
 		subsystem := &SubSystem{
-			InternalName: genInternalName(container.Labels["name"]),
-			Name:         container.Labels["name"],
-			Stack:        stack,
-			Status:       container.Status,
+			InternalName:     internalName,
+			Name:             container.Labels["name"],
+			Stack:            stack,
+			Status:           container.Status,
+			ExportedPrograms: findExportedPrograms(internalName, container.Labels["name"]),
 		}
 
 		subsystems = append(subsystems, subsystem)
