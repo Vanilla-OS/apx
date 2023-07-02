@@ -25,7 +25,7 @@ type SubSystem struct {
 	Name             string
 	Stack            *Stack
 	Status           string
-	ExportedPrograms map[string]string
+	ExportedPrograms map[string]map[string]string
 }
 
 func NewSubSystem(name string, stack *Stack) (*SubSystem, error) {
@@ -41,22 +41,22 @@ func genInternalName(name string) string {
 	return fmt.Sprintf("apx-%s", strings.ReplaceAll(strings.ToLower(name), " ", "-"))
 }
 
-func findExportedPrograms(internalName string, name string) map[string]string {
+func findExportedPrograms(internalName string, name string) map[string]map[string]string {
 	home, err := os.UserHomeDir()
 	if err != nil {
-		return map[string]string{}
+		return map[string]map[string]string{}
 	}
 
 	files, err := filepath.Glob(fmt.Sprintf("%s/.local/share/applications/%s-*.desktop", home, internalName))
 	if err != nil {
-		return map[string]string{}
+		return map[string]map[string]string{}
 	}
 
-	programs := map[string]string{}
+	programs := map[string]map[string]string{}
 	for _, file := range files {
 		f, err := os.Open(file)
 		if err != nil {
-			return map[string]string{}
+			return map[string]map[string]string{}
 		}
 		defer f.Close()
 
@@ -67,6 +67,7 @@ func findExportedPrograms(internalName string, name string) map[string]string {
 
 		pName := ""
 		pExec := ""
+		pIcon := ""
 		for _, line := range strings.Split(string(data), "\n") {
 			if strings.HasPrefix(line, "Name=") {
 				pName = strings.TrimPrefix(line, "Name=")
@@ -76,10 +77,17 @@ func findExportedPrograms(internalName string, name string) map[string]string {
 			if strings.HasPrefix(line, "Exec=") {
 				pExec = strings.TrimPrefix(line, "Exec=")
 			}
+
+			if strings.HasPrefix(line, "Icon=") {
+				pIcon = strings.TrimPrefix(line, "Icon=")
+			}
 		}
 
 		if pName != "" && pExec != "" {
-			programs[pName] = pExec
+			programs[pName] = map[string]string{
+				"Exec": pExec,
+				"Icon": pIcon,
+			}
 		}
 	}
 
