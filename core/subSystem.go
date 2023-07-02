@@ -129,7 +129,8 @@ func LoadSubSystem(name string) (*SubSystem, error) {
 		return nil, err
 	}
 
-	container, err := dbox.GetContainer(fmt.Sprintf("apx-%s", name))
+	internalName := genInternalName(name)
+	container, err := dbox.GetContainer(internalName)
 	if err != nil {
 		return nil, err
 	}
@@ -139,7 +140,7 @@ func LoadSubSystem(name string) (*SubSystem, error) {
 		return nil, err
 	}
 	return &SubSystem{
-		InternalName: genInternalName(name),
+		InternalName: internalName,
 		Name:         container.Labels["name"],
 		Stack:        stack,
 		Status:       container.Status,
