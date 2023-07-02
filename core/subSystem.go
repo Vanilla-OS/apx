@@ -68,6 +68,7 @@ func findExportedPrograms(internalName string, name string) map[string]map[strin
 		pName := ""
 		pExec := ""
 		pIcon := ""
+		pGenericName := ""
 		for _, line := range strings.Split(string(data), "\n") {
 			if strings.HasPrefix(line, "Name=") {
 				pName = strings.TrimPrefix(line, "Name=")
@@ -81,12 +82,18 @@ func findExportedPrograms(internalName string, name string) map[string]map[strin
 			if strings.HasPrefix(line, "Icon=") {
 				pIcon = strings.TrimPrefix(line, "Icon=")
 			}
+
+			if strings.HasPrefix(line, "GenericName=") {
+				pGenericName = strings.TrimPrefix(line, "GenericName=")
+			}
 		}
 
 		if pName != "" && pExec != "" {
 			programs[pName] = map[string]string{
-				"Exec": pExec,
-				"Icon": pIcon,
+				"Exec":        pExec,
+				"Icon":        pIcon,
+				"Name":        pName,
+				"GenericName": pGenericName,
 			}
 		}
 	}
