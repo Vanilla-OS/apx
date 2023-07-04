@@ -1,8 +1,9 @@
-name: Go
+name: Go (PR)
 
-on:
-  push:
+on:    
+  pull_request_target:
     branches: [ "v2" ]
+    types: [opened, synchronize, reopened]
 
 jobs:
 
@@ -23,21 +24,9 @@ jobs:
       run: |
           apt-get update
           apt-get install -y pkg-config build-essential
-
     - name: Build
       run: go build -o apx
-    
-    - name: Compress
-      run: tar -czvf apx.tar.gz apx
 
-    - uses: softprops/action-gh-release@v1
-      with:
-        token: "${{ secrets.GITHUB_TOKEN }}"
-        tag_name: "continuous"
-        prerelease: true
-        name: "Continuous Build"
-        files: |
-          apx.tar.gz
   sonar:
     name: Sonar
     runs-on: ubuntu-latest
