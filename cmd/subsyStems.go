@@ -9,6 +9,7 @@ package cmd
 */
 
 import (
+	"encoding/json"
 	"fmt"
 	"os"
 	"strings"
@@ -36,6 +37,15 @@ func NewSubSystemsCommand() *cmdr.Command {
 		listSubSystems,
 	)
 
+	listCmd.WithBoolFlag(
+		cmdr.NewBoolFlag(
+			"json",
+			"j",
+			apx.Trans("subsystems.list.options.json.description"),
+			false,
+		),
+	)
+
 	// New subcommand
 	newCmd := cmdr.NewCommand(
 		"new",
@@ -48,7 +58,7 @@ func NewSubSystemsCommand() *cmdr.Command {
 		cmdr.NewStringFlag(
 			"stack",
 			"s",
-			apx.Trans("subsystems.new.options.stack"),
+			apx.Trans("subsystems.new.options.stack.description"),
 			"",
 		),
 	)
@@ -81,7 +91,7 @@ func NewSubSystemsCommand() *cmdr.Command {
 		cmdr.NewBoolFlag(
 			"force",
 			"f",
-			apx.Trans("subsystems.rm.options.force"),
+			apx.Trans("subsystems.rm.options.force.description"),
 			false,
 		),
 	)
@@ -98,7 +108,7 @@ func NewSubSystemsCommand() *cmdr.Command {
 		cmdr.NewStringFlag(
 			"name",
 			"n",
-			apx.Trans("subsystems.reset.options.name"),
+			apx.Trans("subsystems.reset.options.name.description"),
 			"",
 		),
 	)
@@ -106,7 +116,7 @@ func NewSubSystemsCommand() *cmdr.Command {
 		cmdr.NewBoolFlag(
 			"force",
 			"f",
-			apx.Trans("subsystems.reset.options.force"),
+			apx.Trans("subsystems.reset.options.force.description"),
 			false,
 		),
 	)
@@ -121,32 +131,43 @@ func NewSubSystemsCommand() *cmdr.Command {
 }
 
 func listSubSystems(cmd *cobra.Command, args []string) error {
+	jsonFlag, _ := cmd.Flags().GetBool("json")
+
 	subSystems, err := core.ListSubSystems()
 	if err != nil {
 		return err
 	}
 
-	subSystemsCount := len(subSystems)
-	if subSystemsCount == 0 {
-		cmdr.Info.Println(apx.Trans("subsystems.list.info.noSubsystems"))
-		return nil
+	if !jsonFlag {
+		subSystemsCount := len(subSystems)
+		if subSystemsCount == 0 {
+			cmdr.Info.Println(apx.Trans("subsystems.list.info.noSubsystems"))
+			return nil
+		}
+
+		fmt.Printf(apx.Trans("subsystems.list.info.foundSubsystems"), subSystemsCount)
+
+		table := core.CreateApxTable(os.Stdout)
+		table.SetHeader([]string{apx.Trans("subsystems.labels.name"), "Stack", apx.Trans("subsystems.labels.status"), "Pkgs"})
+
+		for _, subSystem := range subSystems {
+			table.Append([]string{
+				subSystem.Name,
+				subSystem.Stack.Name,
+				subSystem.Status,
+				fmt.Sprintf("%d", len(subSystem.Stack.Packages)),
+			})
+		}
+
+		table.Render()
+	} else {
+		jsonSubSystems, err := json.MarshalIndent(subSystems, "", "  ")
+		if err != nil {
+			return err
+		}
+
+		fmt.Println(string(jsonSubSystems))
 	}
-
-	fmt.Printf(apx.Trans("subsystems.list.info.foundSubsystems"), subSystemsCount)
-
-	table := core.CreateApxTable(os.Stdout)
-	table.SetHeader([]string{apx.Trans("subsystems.labels.name"), "Stack", apx.Trans("subsystems.labels.status"), "Pkgs"})
-
-	for _, subSystem := range subSystems {
-		table.Append([]string{
-			subSystem.Name,
-			subSystem.Stack.Name,
-			subSystem.Status,
-			fmt.Sprintf("%d", len(subSystem.Stack.Packages)),
-		})
-	}
-
-	table.Render()
 
 	return nil
 }

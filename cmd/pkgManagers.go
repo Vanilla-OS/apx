@@ -10,6 +10,7 @@ package cmd
 
 import (
 	"bufio"
+	"encoding/json"
 	"fmt"
 	"os"
 	"path/filepath"
@@ -30,7 +31,6 @@ func NewPkgManagersCommand() *cmdr.Command {
 		apx.Trans("pkgmanagers.description"),
 		nil,
 	)
-	cmd.Example = "apx pkgmanagers"
 
 	// List subcommand
 	listCmd := cmdr.NewCommand(
@@ -39,7 +39,15 @@ func NewPkgManagersCommand() *cmdr.Command {
 		apx.Trans("pkgmanagers.list.description"),
 		listPkgManagers,
 	)
-	listCmd.Example = "apx pkgmanagers list"
+
+	listCmd.WithBoolFlag(
+		cmdr.NewBoolFlag(
+			"json",
+			"j",
+			apx.Trans("pkgmanagers.list.options.json.description"),
+			false,
+		),
+	)
 
 	// Show subcommand
 	showCmd := cmdr.NewCommand(
@@ -198,27 +206,35 @@ func NewPkgManagersCommand() *cmdr.Command {
 }
 
 func listPkgManagers(cmd *cobra.Command, args []string) error {
+	jsonFlag, _ := cmd.Flags().GetBool("json")
+
 	pkgManagers := core.ListPkgManagers()
-	pkgManagersCount := len(pkgManagers)
-	if pkgManagersCount == 0 {
-		cmdr.Info.Printfln(apx.Trans("pkgmanagers.list.info.noPkgManagers"))
-		return nil
-	}
 
-	fmt.Printf(apx.Trans("pkgmanagers.list.info.foundPkgManagers"), pkgManagersCount)
-
-	table := core.CreateApxTable(os.Stdout)
-	table.SetHeader([]string{apx.Trans("pkgmanagers.labels.name"), apx.Trans("pkgmanagers.labels.builtIn")})
-
-	for _, stack := range pkgManagers {
-		builtIn := apx.Trans("apx.terminal.no")
-		if stack.BuiltIn {
-			builtIn = apx.Trans("apx.terminal.yes")
+	if !jsonFlag {
+		pkgManagersCount := len(pkgManagers)
+		if pkgManagersCount == 0 {
+			cmdr.Info.Printfln(apx.Trans("pkgmanagers.list.info.noPkgManagers"))
+			return nil
 		}
-		table.Append([]string{stack.Name, builtIn})
-	}
 
-	table.Render()
+		fmt.Printf(apx.Trans("pkgmanagers.list.info.foundPkgManagers"), pkgManagersCount)
+
+		table := core.CreateApxTable(os.Stdout)
+		table.SetHeader([]string{apx.Trans("pkgmanagers.labels.name"), apx.Trans("pkgmanagers.labels.builtIn")})
+
+		for _, stack := range pkgManagers {
+			builtIn := apx.Trans("apx.terminal.no")
+			if stack.BuiltIn {
+				builtIn = apx.Trans("apx.terminal.yes")
+			}
+			table.Append([]string{stack.Name, builtIn})
+		}
+
+		table.Render()
+	} else {
+		jsonPkgManagers, _ := json.MarshalIndent(pkgManagers, "", "  ")
+		fmt.Println(string(jsonPkgManagers))
+	}
 
 	return nil
 }

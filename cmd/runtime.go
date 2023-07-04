@@ -241,6 +241,7 @@ func runPkgCmd(subSystem *core.SubSystem, command string, cmd *cobra.Command, ar
 		default:
 			return fmt.Errorf(apx.Trans("apx.error.unknownCommand"), command)
 		}
+
 		if command == "remove" {
 			exportedN, err := subSystem.UnexportDesktopEntries(args...)
 			if err == nil {
