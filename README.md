@@ -62,7 +62,7 @@ Once the translation is complete in Weblate and the changes committed, clone the
 
 ## Instructions for using Apx in other distributions
 
-Apx has been designed as a distro-agnostic tool, allowing it to work with any distribution. (Note: The Nix integration in Apx requires SystemD)
+Apx has been designed as a distro-agnostic tool, allowing it to work with any distribution.
 
 ### Prerequisites
 
