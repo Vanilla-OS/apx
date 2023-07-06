@@ -157,20 +157,26 @@ func GetDistroboxVersion() (version string, err error) {
 func (c *Container) Exec(capture_output bool, args ...string) (string, error) {
 	ExitIfOverlayTypeFS()
 
-	if !c.Exists() {
-		err := c.Create()
-		if err != nil {
-			log.Default().Println("Failed to initialize the container. Try manually with `apx init`.")
-			return "", err
+	cmd := exec.Command("")
+	if args[0] == "list" && len(args) == 1 {
+		cmd = exec.Command(settings.Cnf.DistroboxPath, "list")
+	} else {
+
+		if !c.Exists() {
+			err := c.Create()
+			if err != nil {
+				log.Default().Println("Failed to initialize the container. Try manually with `apx init`.")
+				return "", err
+			}
 		}
+
+		container_name := c.GetContainerName()
+
+		cmd = exec.Command(settings.Cnf.DistroboxPath, "enter", container_name, "--")
+		cmd.Args = append(cmd.Args, args...)
+		cmd.Env = os.Environ()
+		cmd.Env = append(cmd.Env, "STORAGE_DRIVER=vfs")
 	}
-
-	container_name := c.GetContainerName()
-
-	cmd := exec.Command(settings.Cnf.DistroboxPath, "enter", container_name, "--")
-	cmd.Args = append(cmd.Args, args...)
-	cmd.Env = os.Environ()
-	cmd.Env = append(cmd.Env, "STORAGE_DRIVER=vfs")
 
 	if capture_output {
 		out, err := cmd.Output()

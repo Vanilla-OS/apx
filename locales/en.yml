@@ -65,6 +65,7 @@ list:
   short: "List installed packages."
   upgradable: "Show upgradable packages"
   installed: "Show installed packages"
+  containers: "Show containers"
 nix:
   use: "nix"
   long: "Manage a custom installation of nix in your $HOME directory.\n\nThe `apx\

@@ -15,6 +15,13 @@ import (
 	"github.com/vanilla-os/orchid/cmdr"
 )
 
+type MetadataStruct struct {
+	ImageName string `json:"image-name"`
+	ImageID   string `json:"image-id"`
+	Name      string `json:"name"`
+	CreatedAt int    `json:"created-at"`
+}
+
 func NewListCommand() *cmdr.Command {
 	cmd := cmdr.NewCommand(
 		"list",
@@ -23,11 +30,18 @@ func NewListCommand() *cmdr.Command {
 		list,
 	).WithBoolFlag(
 		cmdr.NewBoolFlag(
-			"upgradable",
-			"u",
-			apx.Trans("list.upgradable"),
+			"containers",
+			"c",
+			apx.Trans("list.containers"),
 			false,
-		)).WithBoolFlag(
+		)).
+		WithBoolFlag(
+			cmdr.NewBoolFlag(
+				"upgradable",
+				"u",
+				apx.Trans("list.upgradable"),
+				false,
+			)).WithBoolFlag(
 		cmdr.NewBoolFlag(
 			"installed",
 			"i",
@@ -42,6 +56,12 @@ func NewListCommand() *cmdr.Command {
 }
 
 func list(cmd *cobra.Command, args []string) error {
+	if cmd.Flag("containers").Changed {
+		command := "list"
+		container.Run(command)
+		return nil
+	}
+
 	if cmd.Flag("nix").Changed {
 		return errors.New(apx.Trans("apx.notForNix"))
 
