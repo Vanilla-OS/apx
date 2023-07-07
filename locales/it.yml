@@ -1,70 +1,75 @@
 apx:
-  description: "Apx is a package manager with support for multiple sources, allowing
-    you to install packages in subsystems."
+  description: "Apx è un gestore di pacchetti con supporto per sorgenti multiple che
+    permette di installare pacchetti in sottosistemi."
   errors:
-    unknownCommand: "Unknown command: %s"
-    invalidInput: "Invalid input."
+    unknownCommand: "Comando sconosciuto: %s"
+    invalidInput: "Input non valido."
   info:
-    aborting: "Aborting as requested."
+    aborting: "Annullato, come richiesto."
   terminal:
-    yes: "yes"
+    yes: "si"
     no: "no"
 
 runtimeCommand:
-  description: "Work with the specified subsystem, accessing the package manager and
-    environment."
+  description: "Usa il sottosistema specificato, accesso al gestore di pacchetti e
+    all'ambiente."
   error:
-    noPackageSpecified: "No packages specified."
-    cantAccessPkgManager: "An error occurred while accessing the package manager:
+    noPackageSpecified: "Nessun pacchetto specificato."
+    cantAccessPkgManager: "Si è verificato un errore durante l'accesso al gestore
+      di pacchetti: %s"
+    executingCommand: "Si è verificato un errore durante l'esecuzione del comando:
       %s"
-    executingCommand: "An error occurred while executing the command: %s"
-    noAppNameOrBin: "--app-name or --bin must be specified."
-    sameAppOrBin: "--app-name and --bin cannot be both specified."
-    exportingApp: "An error occurred while exporting the application: %s"
-    exportingBin: "An error occurred while exporting the binary: %s"
-    unexportingApp: "An error occurred while unexporting the application: %s"
-    unexportingBin: "An error occurred while unexporting the binary: %s"
+    noAppNameOrBin: "--app-name o --bin devono essere specificati."
+    sameAppOrBin: "--app-name e --bin non possono essere specificati assieme."
+    exportingApp: "Si è verificato un errore durante l'esportazione dell'applicazione:
+      %s"
+    exportingBin: "Si è verificato un errore durante l'esportazione del file binario:
+      %s"
+    unexportingApp: "Si è verificato un errore durante l'annullamento dell'esportazione
+      dell'applicazione: %s"
+    unexportingBin: "Si è verificato un errore durante l'annullamento dell'esportazione
+      del file binario: %s"
   info:
-    unexportedApps: "Unexported %d applications\n"
-    exportedApps: "Exported %d applications\n"
-    exportedApp: "Exported application %s\n"
-    exportedBin: "Exported binary %s\n"
-    unexportedApp: "Unexported application %s\n"
-    unexportedBin: "Unexported binary %s\n"
+    unexportedApps: "Annullata esportazione di %d applicazioni\n"
+    exportedApps: "Esportate %d applicazioni\n"
+    exportedApp: "Applicazione esportata %s\n"
+    exportedBin: "File binario esportato %s\n"
+    unexportedApp: "Applicazione rimossa %s\n"
+    unexportedBin: "File binario rimosso %s\n"
   autoremove:
-    description: "Remove packages that are no longer required."
+    description: "Rimuovere pacchetti non più necessari."
   clean:
-    description: "Clean the package manager's cache."
+    description: "Pulire la cache del gestore di pacchetti."
   install:
-    description: "Install the specified package."
+    description: "Installare il pacchetto specificato."
     options:
       noExport:
-        description: "Do not export a desktop entry."
+        description: "Non esportare una voce per desktop."
   list:
-    description: "List all installed packages."
+    description: "Elenca tutti i pacchetti installati."
   purge:
-    description: "Purge the specified packages."
+    description: "Ripulire i pacchetti specificati."
   remove:
-    description: "Remove the specified packages."
+    description: "Rimuovere i pacchetti specificati."
   search:
-    description: "Search for packages matching the specified query."
+    description: "Cercare pacchetti che corrispondo alla richiesta specificata."
   show:
-    description: "Show information about the specified package."
+    description: "Mostra informazioni sul pacchetto specificato."
   update:
-    description: "Update the list of available packages."
+    description: "Aggiorna la lista dei pacchetti disponibili."
   upgrade:
-    description: "Upgrade all installed packages."
+    description: "Esegue l'upgrade di tutti i pacchetti installati."
   enter:
-    description: "Enter the subsystem's environment."
+    description: "Accedere all'ambiente del sottosistema."
   export:
-    description: "Export an application or binary from the subsystem."
+    description: "Esporta un applicazione o un file binario dal sottosistema."
     options:
       appName:
-        description: "The name of the application to export."
+        description: "Il nome dell'applicazione da esportare."
       bin:
-        description: "The name of the binary to export."
+        description: "Il nome del file binario da esportare."
       binOutput:
-        description: "Path of the binary output (default: ~/.local/bin/)."
+        description: "Percorso dell'output binario (default: ~/.local/bin/)."
   unexport:
     description: "Unexport an application or binary from the subsystem."
     options:
