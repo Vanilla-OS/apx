@@ -1,328 +1,326 @@
 apx:
-  description: "Apx is a package manager with support for multiple sources, allowing
-    you to install packages in subsystems."
+  description: "Apx je správce balíčků s podporou mnoha zdrojů, který vám dovolí instalovat
+    balíčky pomocí subsystémů."
   errors:
-    unknownCommand: "Unknown command: %s"
-    invalidInput: "Invalid input."
+    unknownCommand: "Neznámý příkaz: %s"
+    invalidInput: "Neplatný vstup."
   info:
-    aborting: "Aborting as requested."
+    aborting: "Přerušuji."
   terminal:
-    yes: "yes"
-    no: "no"
+    yes: "ano"
+    no: "ne"
 
 runtimeCommand:
-  description: "Work with the specified subsystem, accessing the package manager and
-    environment."
+  description: "Pracovat se specifikovaným subsystémem a tím získat přístup k jeho
+    správci balíčků a prostředí."
   error:
-    noPackageSpecified: "No packages specified."
-    cantAccessPkgManager: "An error occurred while accessing the package manager:
-      %s"
-    executingCommand: "An error occurred while executing the command: %s"
-    noAppNameOrBin: "--app-name or --bin must be specified."
-    sameAppOrBin: "--app-name and --bin cannot be both specified."
-    exportingApp: "An error occurred while exporting the application: %s"
-    exportingBin: "An error occurred while exporting the binary: %s"
-    unexportingApp: "An error occurred while unexporting the application: %s"
-    unexportingBin: "An error occurred while unexporting the binary: %s"
+    noPackageSpecified: "Nebyly zadány balíčky."
+    cantAccessPkgManager: "Při práci se správcem balíčků nastala chyba: %s"
+    executingCommand: "Nastala chyba při spouštění příkazu: %s"
+    noAppNameOrBin: "--app-name nebo --bin musí být specifikováno."
+    sameAppOrBin: "nelze použít --app-name a --bin najednou."
+    exportingApp: "Nastala chyba během exportování aplikace: %s"
+    exportingBin: "Nastala chyba během exportování binárního souboru: %s"
+    unexportingApp: "Nastala chyba během odexportování aplikace: %s"
+    unexportingBin: "Nastala chyba během odexportování binárního souboru: %s"
   info:
-    unexportedApps: "Unexported %d applications\n"
-    exportedApps: "Exported %d applications\n"
-    exportedApp: "Exported application %s\n"
-    exportedBin: "Exported binary %s\n"
-    unexportedApp: "Unexported application %s\n"
-    unexportedBin: "Unexported binary %s\n"
+    unexportedApps: "Odexportováno %d aplikací\n"
+    exportedApps: "Exportováno %d aplikací\n"
+    exportedApp: "Aplikace %s exportována\n"
+    exportedBin: "Binární soubor %s exportován\n"
+    unexportedApp: "Aplikace %s odexportována\n"
+    unexportedBin: "Binární soubor %s odexportován\n"
   autoremove:
-    description: "Remove packages that are no longer required."
+    description: "Smazat balíčky, které už nejsou potřebné."
   clean:
-    description: "Clean the package manager's cache."
+    description: "Smazat mezipaměť správce balíčků."
   install:
-    description: "Install the specified package."
+    description: "Instalovat zadaný balíček."
     options:
       noExport:
-        description: "Do not export a desktop entry."
+        description: "Neexportovat zástupce na plochu."
   list:
-    description: "List all installed packages."
+    description: "Zobrazit všechny instalované balíčky."
   purge:
-    description: "Purge the specified packages."
+    description: "Smazat zadané balíčky a jejich konfiguraci."
   remove:
-    description: "Remove the specified packages."
+    description: "Smazat zadané balíčky."
   search:
-    description: "Search for packages matching the specified query."
+    description: "Hledat balíčky, které se shodují se zadaným textem."
   show:
-    description: "Show information about the specified package."
+    description: "Zobrazit informace o zadaném balíčku."
   update:
-    description: "Update the list of available packages."
+    description: "Aktualizovat seznam dostupných balíčků."
   upgrade:
-    description: "Upgrade all installed packages."
+    description: "Aktualizovat všechny nainstalované balíčky."
   enter:
-    description: "Enter the subsystem's environment."
+    description: "Vstoupit do prostředí subsystému."
   export:
-    description: "Export an application or binary from the subsystem."
+    description: "Exportovat aplikaci nebo binární soubor ze subsystému."
     options:
       appName:
-        description: "The name of the application to export."
+        description: "Název aplikace, která se má exportovat."
       bin:
-        description: "The name of the binary to export."
+        description: "Název binárního souboru, který se má exportovat."
       binOutput:
-        description: "Path of the binary output (default: ~/.local/bin/)."
+        description: "Cesta k binárnímu souboru (default: ~/.local/bin/)."
   unexport:
-    description: "Unexport an application or binary from the subsystem."
+    description: "Odexportovat aplikaci nebo binární soubor ze subsystému."
     options:
       appName:
-        description: "The name of the application to unexport."
+        description: "Název aplikace, která se má odexportovat."
       bin:
-        description: "The name of the binary to unexport."
+        description: "Název binárního souboru, který se má odexportovat."
       binOutput:
-        description: "Path of the binary output (default: ~/.local/bin/)."
+        description: "Cesta k binárnímu souboru (default: ~/.local/bin/)."
 
 pkgmanagers:
-  description: "Work with the package managers that are available in apx."
+  description: "Pracovat se správci balíčků, které jsou dostupné v apx."
   labels:
-    name: "Name"
-    builtIn: "Built-in"
+    name: "Název"
+    builtIn: "Vestavěné"
 
   list:
-    description: "List all available package managers."
+    description: "Zobrazit všechny dostupné správce balíčků."
     info:
-      noPkgManagers: "No package managers available. Create a new one with 'apx pkgmanagers
-        new' or contact the system administrator."
-      foundPkgManagers: "Found %d package managers:\n"
+      noPkgManagers: "Správce balíčků nejsou dostupné. Vytvořte nový pomocí 'apx pkgmanagers
+        new' nebo kontaktujte Vašeho systémového správce."
+      foundPkgManagers: "Nalezeno %d správců balíčků:\n"
     options:
       json:
-        description: "Output in JSON format."
+        description: "Vypsat ve formátu JSON."
   show:
-    description: "Show information about the specified package manager."
+    description: "Zobrazit informace o zadaném správci balíčků."
   new:
-    description: "Create a new package manager."
+    description: "Vytvořit nový správce balíčků."
 
     error:
-      emptyName: "The name cannot be empty."
-      noName: "No name specified."
-      emptyCommand: "The command cannot be empty."
-      noCommand: "No command specified for '%s'."
-      alreadyExists: "A package manager with the name '%s' already exists."
+      emptyName: "Název nemůže být prázdný."
+      noName: "Název není uveden."
+      emptyCommand: "Příkaz nemůže být prázdný."
+      noCommand: "Nebyl specifikován příkaz pro '%s'."
+      alreadyExists: "Správce balíčků s názvem '%s' již existuje."
     info:
-      askName: "Choose a name:"
-      askSudo: "Does the package manager need sudo to run?"
-      askCommand: "Enter the command for '%s':"
-      askOverwrite: "A package manager with the name '%s' already exists. Overwrite
-        it?"
-      success: "Created package manager '%s'."
+      askName: "Vyberte název:"
+      askSudo: "Vyžaduje správce balíčků sudo?"
+      askCommand: "Zadejte příkaz pro '%s':"
+      askOverwrite: "Správce balíčků s názvem '%s' již existuje. Přepsat ho?"
+      success: "Správce balíčků '%s' vytvořen."
     options:
       assumeYes:
-        description: "Assume yes to all prompts."
+        description: "Automaticky zadat ano pro všechny dotazy."
       name:
-        description: "The name of the package manager."
+        description: "Název správce balíčků."
       needSudo:
-        description: "Whether the package manager needs sudo to run."
+        description: "Zda správce balíčků vyžaduje sudo."
       autoremove:
-        description: "The command to run to autoremove packages."
+        description: "Příkaz pro spuštění automatického odstranění balíčků."
       clean:
-        description: "The command to run to clean the package manager's cache."
+        description: "Příkaz pro vymazání mezipaměti správce balíčků."
       install:
-        description: "The command to run to install packages."
+        description: "Příkaz pro instalaci balíčků."
       list:
-        description: "The command to run to list installed packages."
+        description: "Příkaz pro výpis instalovaných balíčků."
       purge:
-        description: "The command to run to purge packages."
+        description: "Příkaz pro odstranění balíčků a jejich konfigurace."
       remove:
-        description: "The command to run to remove packages."
+        description: "Příkaz pro odstranění balíčků."
       search:
-        description: "The command to run to search for packages."
+        description: "Příkaz pro vyhledání balíčků."
       show:
-        description: "The command to run to show information about packages."
+        description: "Příkaz pro výpis informací o balíčků."
       update:
-        description: "The command to run to update the list of available packages."
+        description: "Příkaz pro aktualizaci seznamu dostupných balíčků."
       upgrade:
-        description: "The command to run to upgrade packages."
+        description: "Příkaz pro aktualizaci balíčků."
   rm:
-    description: "Remove the specified package manager."
+    description: "Smazat zadaný správce balíčků."
 
     error:
-      noName: "No name specified."
-      inUse: "The package manager is used in %d stacks:\n"
+      noName: "Název není uveden."
+      inUse: "Správce balíčků se používá v %d zásobnících:\n"
     info:
-      askConfirmation: "Are you sure you want to remove '%s'?"
-      success: "Removed package manager '%s'."
+      askConfirmation: "Jste si jisti, že chcete odstranit '%s'?"
+      success: "Odstraněn správce balíčků '%s'."
     options:
       force:
-        description: "Force removal of the package manager."
+        description: "Vynucení odstranění správce balíčků."
       name:
-        description: "The name of the package manager to remove."
+        description: "Název správce balíčků, který má být odebrán."
 
 stacks:
-  description: "Work with the stacks that are available in apx."
+  description: "Práce se stacky, které jsou k dispozici v apx."
   labels:
-    name: "Name"
-    builtIn: "Built-in"
+    name: "Název"
+    builtIn: "Vestavěný"
 
   list:
-    description: "List all available stacks."
+    description: "Zobrazit všechny dostupné stacky."
     info:
-      noStacks: "No stacks available. Create a new one with 'apx stacks new' or contact
-        the system administrator."
-      foundStacks: "Found %d stacks:\n"
+      noStacks: "Stacky nejsou k dizpozici. Vytvořte nový pomocí 'apx stacks new'
+        nebo kontaktujte vašeho systémového správce."
+      foundStacks: "%d stacků nalezeno:\n"
     options:
       json:
-        description: "Output in JSON format."
+        description: "Vypsat ve formátu JSON."
   show:
-    description: "Show information about the specified stack."
+    description: "Zobrazit informace o zadaném stacku."
   new:
-    description: "Create a new stack."
+    description: "Vytvořit nový stack."
     error:
-      emptyName: "The name cannot be empty."
-      noName: "No name specified."
-      emptyBase: "The base cannot be empty."
-      noBase: "No base specified."
-      emptyPkgManager: "The package manager cannot be empty."
-      noPkgManager: "No package manager specified."
-      pkgManagerDoesNotExist: "The specified package manager does not exist. Create
-        it with 'apx pkgmanagers new' or contact the system administrator."
-      emptyPackages: "The packages cannot be empty."
-      noPackages: "No packages specified."
-      alreadyExists: "A stack with the name '%s' already exists."
+      emptyName: "Název nemůže být prázdný."
+      noName: "Název není uveden."
+      emptyBase: "Základ nemůže být prázdný."
+      noBase: "Není uveden žádný základ."
+      emptyPkgManager: "Správce balíčků nemůže být prázdný."
+      noPkgManager: "Není zadán žádný správce balíčků."
+      pkgManagerDoesNotExist: "Zadaný správce balíčků neexistuje. Vytvořte jej pomocí
+        příkazu 'apx pkgmanagers new' nebo kontaktujte správce systému."
+      emptyPackages: "Balíčky nemůžou být prázdné."
+      noPackages: "Nebyly zadány balíčky."
+      alreadyExists: "Stack s názvem '%s' již existuje."
     info:
-      askName: "Choose a name:"
-      askBase: "Choose a base (e.g. 'vanillaos/pico'):"
-      askPkgManager: "Choose a package manager:"
-      selectPkgManager: "Select a package manager [1-%d]:"
-      noPackages: "You have not provided any package to install in the stack. Do you
-        want to add some now?"
-      confirmPackages: "Do you want to confirm the current packages list?"
-      askPackages: "Please type the packages you want to install in the stack, separated
-        by a space:"
-      success: "Created stack '%s'."
+      askName: "Vyberte název:"
+      askBase: "Vyberte základ (např. 'vanillaos/pico'):"
+      askPkgManager: "Vyberte správce balíčků:"
+      selectPkgManager: "Vyberte správce balíčků [1-%d]:"
+      noPackages: "Nezadali jste žádný balíček, který by měl být ve stacku nainstalovaný.
+        Chcete nyní nějaký přidat?"
+      confirmPackages: "Chcete potvrdit aktuální seznam balíčků?"
+      askPackages: "Zadejte balíčky, které chcete nainstalovat do stacku, oddělené
+        mezerou:"
+      success: "Stack '%s' vytvořen."
     options:
       assumeYes:
-        description: "Assume yes to all prompts."
+        description: "Automaticky zadat ano pro všechny dotazy."
       name:
-        description: "The name of the stack."
+        description: "Název stacku."
       base:
-        description: "The base subsystem to use."
+        description: "Základní subsystém, který se má použít."
       packages:
-        description: "The packages to install."
+        description: "Balíčky k instalaci."
       pkgManager:
-        description: "The package manager to use."
+        description: "Správce balíčků, který se má použít."
   update:
-    description: "Update the specified stack."
+    description: "Aktualizovat zadaný stack."
     error:
-      noName: "No name specified."
-      noBase: "No base specified."
-      noPkgManager: "No package manager specified."
-      pkgManagerDoesNotExist: "The specified package manager does not exist. Create
-        it with 'apx pkgmanagers new' or contact the system administrator."
+      noName: "Název není uveden."
+      noBase: "Není zadán základ."
+      noPkgManager: "Není zadán správce balíčků."
+      pkgManagerDoesNotExist: "Zadaný správce balíčků neexistuje. Vytvořte ho pomocí
+        'apx pkgmanagers new' nebo kontaktujte Vašeho správce systému."
     info:
-      askBase: "Type a new base or confirm the current one (%s):"
-      askPkgManager: "Choose a new package manager or confirm the current one (%s):"
-      askPackages: "Type the packages you want to install in the stack, separated
-        by a space, or confirm the current ones (%s):"
-      success: "Updated stack '%s'."
+      askBase: "Zadejte nový základ nebo potvrďte aktuální (%s):"
+      askPkgManager: "Zvolte nový správce balíčků nebo potvrďte aktuální (%s):"
+      askPackages: "Zadejte balíčky, které chcete ve stacku nainstalovat, oddělené
+        mezerou nebo potvrďte aktuální (%s):"
+      success: "Stack '%s' aktualizován."
 
     options:
       assumeYes:
-        description: "Assume yes to all prompts."
+        description: "Automaticky zadat ano pro všechny dotazy."
       name:
-        description: "The name of the stack."
+        description: "Název stacku."
       base:
-        description: "The base subsystem to use."
+        description: "Základní subsystém, který se má použít."
       packages:
-        description: "The packages to install."
+        description: "Balíčky k instalaci."
       pkgManager:
-        description: "The package manager to use."
+        description: "Správce balíčků, který se má použít."
   rm:
-    description: "Remove the specified stack."
+    description: "Odstranit zadaný stack."
     error:
-      noName: "No name specified."
+      noName: "Název není uveden."
     info:
-      askConfirmation: "Are you sure you want to remove '%s'?"
-      success: "Removed stack '%s'."
+      askConfirmation: "Jste si jisti, že chcete odstranit '%s'?"
+      success: "Odstraněn stack '%s'."
     options:
       force:
-        description: "Force removal of the stack."
+        description: "Vynutit odstranění stacku."
       name:
-        description: "The name of the stack to remove."
+        description: "Název stacku pro odstranění."
   export:
-    description: "Export the specified stack."
+    description: "Exportovat zadaný stack."
     error:
-      noName: "No name specified."
-      noOutput: "No output specified."
+      noName: "Název není uveden."
+      noOutput: "Výstup není uveden."
     info:
-      success: "Exported stack '%s' to '%s'."
+      success: "Exportován stack '%s' do '%s'."
     options:
       name:
-        description: "The name of the stack to export."
+        description: "Název stacku pro exportování."
       output:
-        description: "The path to export the stack to."
+        description: "Cesta, kam se má stack exportovat."
   import:
-    description: "Import the specified stack."
+    description: "Importovat zadaný stack."
     error:
-      noInput: "No input specified."
-      cannotLoad: "Cannot load stack from '%s'."
+      noInput: "Vstup není uveden."
+      cannotLoad: "Nelze načíst stack z '%s'."
     info:
-      success: "Imported stack from '%s'."
+      success: "Stack z '%s' importován."
     options:
       input:
-        description: "The path to import the stack from."
+        description: "Cesta, ze které se má stack importovat."
 
 subsystems:
-  description: "Work with the subsystems that are available in apx."
+  description: "Pracovat se subsystémy, které jsou k dispozici v apx."
   labels:
-    name: "Name"
-    status: "Status"
+    name: "Název"
+    status: "Stav"
 
   list:
-    description: "List all available subsystems."
+    description: "Vypsat všechny dostupné subsystémy."
     error:
     info:
-      noSubsystems: "No subsystems available. Create a new one with 'apx subsystems
-        new' or contact the system administrator."
-      foundSubsystems: "Found %d subsystems:\n"
+      noSubsystems: "Nejsou k dispozici žádné subsystémy. Vytvořte nový pomocí příkazu
+        'apx subsystems new' nebo kontaktujte správce systému."
+      foundSubsystems: "Nalezeno %d subsystémů:\n"
     options:
       json:
-        description: "Output in JSON format."
+        description: "Vypsat ve formátu JSON."
   new:
-    description: "Create a new subsystem."
+    description: "Vytvořit nový subsystém."
     error:
-      noStacks: "A stack is needed to create a subsystem. Create a new one with 'apx
-        stacks new' or contact the system administrator."
-      emptyName: "The name cannot be empty."
-      noName: "No name specified."
-      emptyStack: "The stack cannot be empty."
-      noStack: "No stack specified."
-      stackDoesNotExist: "The specified stack does not exist. Create it with 'apx
-        stacks new' or contact the system administrator."
-      alreadyExists: "A subsystem with the name '%s' already exists."
+      noStacks: "K vytvoření subsystému je zapotřebí stack. Vytvořte nový pomocí příkazu
+        'apx stacks new' nebo se obraťte na správce systému."
+      emptyName: "Název nesmí být prázdný."
+      noName: "Název není uveden."
+      emptyStack: "Stack nesmí být prázdný."
+      noStack: "Nebyl zadán stack."
+      stackDoesNotExist: "Zadaný stack neexistuje. Vytvořte jej pomocí příkazu 'apx
+        stacks new' nebo kontaktujte správce systému."
+      alreadyExists: "Subsystém s názvem '%s' již existuje."
     info:
-      askName: "Choose a name:"
-      selectStack: "Select a stack [1-%d]:"
-      success: "Created subsystem '%s'."
-      creatingSubsystem: "Created subsystem '%s' with stack '%s'…"
+      askName: "Vyberte název:"
+      selectStack: "Vyberte stack [1-%d]:"
+      success: "Subsystém '%s' vytvořen."
+      creatingSubsystem: "Subsystém '%s' se stackem '%s' vytvořen…"
     options:
       name:
-        description: "The name of the subsystem."
+        description: "Název subsystému."
       stack:
-        description: "The stack to use."
+        description: "Stack, který se má použít."
   rm:
-    description: "Remove the specified subsystem."
+    description: "Smazat zadaný subsystém."
     error:
-      noName: "No name specified."
+      noName: "Název není uveden."
     info:
-      askConfirmation: "Are you sure you want to remove '%s'?"
-      success: "Removed subsystem '%s'."
+      askConfirmation: "Jste si jisti, že chcete odstranit '%s'?"
+      success: "Subsystém '%s' odstraněn."
     options:
       force:
-        description: "Force removal of the subsystem."
+        description: "Vynutit odstranění subsystému."
       name:
-        description: "The name of the subsystem to remove."
+        description: "Název subsystému, který má být odstraněn."
   reset:
-    description: "Reset the specified subsystem."
+    description: "Reset zadaného subsystému."
     error:
-      noName: "No name specified."
+      noName: "Název není uveden."
     info:
-      askConfirmation: "Are you sure you want to reset '%s'?"
-      success: "The subsystem '%s' has been reset."
+      askConfirmation: "Jste si jisti, že chcete resetovat '%s'?"
+      success: "Subsystém \"%s\" byl resetován."
     options:
       force:
-        description: "Force reset of the subsystem."
+        description: "Vynutit reset subsystému."
       name:
-        description: "The name of the subsystem to reset."
+        description: "Název subsystému, který má být resetován."
