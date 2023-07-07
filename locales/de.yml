@@ -1,113 +1,116 @@
 apx:
-  description: "Apx is a package manager with support for multiple sources, allowing
-    you to install packages in subsystems."
+  description: "Apx ist ein Package Manager mit Unterstützung für verschiedene Quellen,
+    welcher es Dir erlaubt, Pakete in Subsystems zu installieren."
   errors:
-    unknownCommand: "Unknown command: %s"
-    invalidInput: "Invalid input."
+    unknownCommand: "Unbekannter Befehl: %s"
+    invalidInput: "Ungültige Eingabe."
   info:
     aborting: "Aborting as requested."
   terminal:
-    yes: "yes"
-    no: "no"
+    yes: "ja"
+    no: "nein"
 
 runtimeCommand:
   description: "Work with the specified subsystem, accessing the package manager and
     environment."
   error:
-    noPackageSpecified: "No packages specified."
-    cantAccessPkgManager: "An error occurred while accessing the package manager:
+    noPackageSpecified: "Keine Pakete angegeben."
+    cantAccessPkgManager: "Beim Zugriff auf den Package Manager ist ein Fehler aufgetreten:
       %s"
-    executingCommand: "An error occurred while executing the command: %s"
-    noAppNameOrBin: "--app-name or --bin must be specified."
-    sameAppOrBin: "--app-name and --bin cannot be both specified."
-    exportingApp: "An error occurred while exporting the application: %s"
-    exportingBin: "An error occurred while exporting the binary: %s"
-    unexportingApp: "An error occurred while unexporting the application: %s"
-    unexportingBin: "An error occurred while unexporting the binary: %s"
+    executingCommand: "Beim ausführen des folgenden Befehls ist ein Fehler aufgetreten:
+      %s"
+    noAppNameOrBin: "--app-name oder --bin muss angegeben werden."
+    sameAppOrBin: "--app-name and --bin kann nicht festgelegt werden."
+    exportingApp: "Beim Exportieren der Anwendung ist ein Fehler aufgetreten: %s"
+    exportingBin: "Beim Exportieren der Binärdatei ist ein Fehler aufgetreten: %s"
+    unexportingApp: "Beim Deexportieren der Anwendung ist ein Fehler aufgetreten:
+      %s"
+    unexportingBin: "Beim De-Exportieren der Binärdatei ist ein Fehler aufgetreten:
+      %s"
   info:
-    unexportedApps: "Unexported %d applications\n"
-    exportedApps: "Exported %d applications\n"
-    exportedApp: "Exported application %s\n"
-    exportedBin: "Exported binary %s\n"
-    unexportedApp: "Unexported application %s\n"
-    unexportedBin: "Unexported binary %s\n"
+    unexportedApps: "Anwendungen %d De-Exportiert.\n"
+    exportedApps: "Anwendungen %d exportiert.\n"
+    exportedApp: "Anwendung %s exportiert.\n"
+    exportedBin: "Binärdatei %s exportiert.\n"
+    unexportedApp: "Nicht exportierte Anwendung %s\n"
+    unexportedBin: "Nicht exportierte Binärdatei %s\n"
   autoremove:
-    description: "Remove packages that are no longer required."
+    description: "Pakete entfernen, die nicht mehr länger benötigt werden."
   clean:
-    description: "Clean the package manager's cache."
+    description: "Bereinigen Sie den Cache des Paketmanagers."
   install:
-    description: "Install the specified package."
+    description: "Installieren Sie das angegebene Paket."
     options:
       noExport:
-        description: "Do not export a desktop entry."
+        description: "Exportieren Sie keinen Desktop-Eintrag."
   list:
-    description: "List all installed packages."
+    description: "Alle installierten Pakete auflisten."
   purge:
-    description: "Purge the specified packages."
+    description: "Bereinigen Sie die angegebenen Pakete."
   remove:
-    description: "Remove the specified packages."
+    description: "Entfernen Sie die angegebenen Pakete."
   search:
-    description: "Search for packages matching the specified query."
+    description: "Suche nach Paketen, die der angegebenen Abfrage entsprechen."
   show:
-    description: "Show information about the specified package."
+    description: "Zeigt Informationen über das angegebene Paket an."
   update:
-    description: "Update the list of available packages."
+    description: "Liste der verfügbaren Pakete aktualisieren."
   upgrade:
-    description: "Upgrade all installed packages."
+    description: "Aktualisieren Sie alle installierten Pakete."
   enter:
-    description: "Enter the subsystem's environment."
+    description: "Geben Sie die Umgebung des Subsystems ein."
   export:
-    description: "Export an application or binary from the subsystem."
+    description: "Exportieren Sie eine Anwendung oder eine Binärdatei aus dem Subsystem."
     options:
       appName:
-        description: "The name of the application to export."
+        description: "Der Name der zu exportierenden Anwendung."
       bin:
-        description: "The name of the binary to export."
+        description: "Der Name der zu exportierenden Binärdatei."
       binOutput:
-        description: "Path of the binary output (default: ~/.local/bin/)."
+        description: "Pfad der Binärausgabe (Standard: ~/.local/bin/)."
   unexport:
-    description: "Unexport an application or binary from the subsystem."
+    description: "Eine Anwendung oder eine Binärdatei aus dem Subsystem exportieren."
     options:
       appName:
-        description: "The name of the application to unexport."
+        description: "Der Name der Anwendung, die nicht exportiert werden soll."
       bin:
-        description: "The name of the binary to unexport."
+        description: "Der Name der zu exportierenden Binärdatei."
       binOutput:
-        description: "Path of the binary output (default: ~/.local/bin/)."
+        description: "Pfad der Binärausgabe (Standard: ~/.local/bin/)."
 
 pkgmanagers:
-  description: "Work with the package managers that are available in apx."
+  description: "Arbeiten Sie mit den Paketmanagern, die in apx verfügbar sind."
   labels:
     name: "Name"
-    builtIn: "Built-in"
+    builtIn: "Eingebaut"
 
   list:
-    description: "List all available package managers."
+    description: "Alle verfügbaren Paketmanager auflisten."
     info:
-      noPkgManagers: "No package managers available. Create a new one with 'apx pkgmanagers
-        new' or contact the system administrator."
-      foundPkgManagers: "Found %d package managers:\n"
+      noPkgManagers: "Keine Paketmanager verfügbar. Erstellen Sie einen neuen mit
+        'apx pkgmanagers new' oder wenden Sie sich an den Systemadministrator."
+      foundPkgManagers: "%d Paketmanager gefunden:\n"
     options:
       json:
-        description: "Output in JSON format."
+        description: "Ausgabe im JSON-Format."
   show:
-    description: "Show information about the specified package manager."
+    description: "Zeigt Informationen über den angegebenen Paketmanager an."
   new:
-    description: "Create a new package manager."
+    description: "Erstellen Sie einen neuen Paketmanager."
 
     error:
-      emptyName: "The name cannot be empty."
-      noName: "No name specified."
-      emptyCommand: "The command cannot be empty."
-      noCommand: "No command specified for '%s'."
-      alreadyExists: "A package manager with the name '%s' already exists."
+      emptyName: "Der Name darf nicht leer sein."
+      noName: "Kein Name angegeben."
+      emptyCommand: "Der Befehl darf nicht leer sein."
+      noCommand: "Für '%s' wurde kein Befehl angegeben."
+      alreadyExists: "Ein Paketmanager mit dem Namen '%s' existiert bereits."
     info:
-      askName: "Choose a name:"
-      askSudo: "Does the package manager need sudo to run?"
-      askCommand: "Enter the command for '%s':"
-      askOverwrite: "A package manager with the name '%s' already exists. Overwrite
-        it?"
-      success: "Created package manager '%s'."
+      askName: "Wählen Sie einen Namen:"
+      askSudo: "Benötigt der Paketmanager sudo zur Ausführung?"
+      askCommand: "Geben Sie den Befehl für '%s' ein:"
+      askOverwrite: "Ein Paketmanager mit dem Namen '%s' existiert bereits. Überschreiben
+        Sie ihn?"
+      success: "Paketmanager '%s' erstellt."
     options:
       assumeYes:
         description: "Assume yes to all prompts."
