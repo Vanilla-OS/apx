@@ -1,20 +1,20 @@
 apx:
-  description: "Apx is a package manager with support for multiple sources, allowing
-    you to install packages in subsystems."
+  description: "Apx is een pakketbeheer met ondersteuning voor meerdere bronnen, waardoor
+    u pakketten in subsystemen kunt installeren."
   errors:
-    unknownCommand: "Unknown command: %s"
-    invalidInput: "Invalid input."
+    unknownCommand: "Onbekende opdracht: %s"
+    invalidInput: "Ongeldige invoer."
   info:
-    aborting: "Aborting as requested."
+    aborting: "Afbreken zoals verzocht."
   terminal:
-    yes: "yes"
-    no: "no"
+    yes: "ja"
+    no: "nee"
 
 runtimeCommand:
   description: "Work with the specified subsystem, accessing the package manager and
     environment."
   error:
-    noPackageSpecified: "No packages specified."
+    noPackageSpecified: "Geen pakketten opgegeven."
     cantAccessPkgManager: "An error occurred while accessing the package manager:
       %s"
     executingCommand: "An error occurred while executing the command: %s"
@@ -25,12 +25,12 @@ runtimeCommand:
     unexportingApp: "An error occurred while unexporting the application: %s"
     unexportingBin: "An error occurred while unexporting the binary: %s"
   info:
-    unexportedApps: "Unexported %d applications\n"
-    exportedApps: "Exported %d applications\n"
-    exportedApp: "Exported application %s\n"
-    exportedBin: "Exported binary %s\n"
-    unexportedApp: "Unexported application %s\n"
-    unexportedBin: "Unexported binary %s\n"
+    unexportedApps: "%d apps niet langer geëxporteerd\n"
+    exportedApps: "%d apps geëxporteerd\n"
+    exportedApp: "App %s geëxporteerd\n"
+    exportedBin: "Programmabestand %s geëxporteerd\n"
+    unexportedApp: "App %s niet langer geëxporteerd\n"
+    unexportedBin: "Programmabestand %s niet langer geëxporteerd\n"
   autoremove:
     description: "Remove packages that are no longer required."
   clean:
@@ -78,8 +78,8 @@ runtimeCommand:
 pkgmanagers:
   description: "Work with the package managers that are available in apx."
   labels:
-    name: "Name"
-    builtIn: "Built-in"
+    name: "Naam"
+    builtIn: "Ingebouwd"
 
   list:
     description: "List all available package managers."
@@ -97,12 +97,12 @@ pkgmanagers:
 
     error:
       emptyName: "The name cannot be empty."
-      noName: "No name specified."
+      noName: "Geen naam opgegeven."
       emptyCommand: "The command cannot be empty."
       noCommand: "No command specified for '%s'."
       alreadyExists: "A package manager with the name '%s' already exists."
     info:
-      askName: "Choose a name:"
+      askName: "Kies een naam:"
       askSudo: "Does the package manager need sudo to run?"
       askCommand: "Enter the command for '%s':"
       askOverwrite: "A package manager with the name '%s' already exists. Overwrite
@@ -153,8 +153,8 @@ pkgmanagers:
 stacks:
   description: "Work with the stacks that are available in apx."
   labels:
-    name: "Name"
-    builtIn: "Built-in"
+    name: "Naam"
+    builtIn: "Ingebouwd"
 
   list:
     description: "List all available stacks."
@@ -267,7 +267,7 @@ stacks:
 subsystems:
   description: "Work with the subsystems that are available in apx."
   labels:
-    name: "Name"
+    name: "Naam"
     status: "Status"
 
   list:
