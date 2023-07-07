@@ -1,34 +1,33 @@
 apx:
-  description: "Apx is a package manager with support for multiple sources, allowing
-    you to install packages in subsystems."
+  description: "O Apx é um gerenciador de pacotes com suporte para várias origens,
+    permitindo que você instale pacotes em subsistemas."
   errors:
-    unknownCommand: "Unknown command: %s"
-    invalidInput: "Invalid input."
+    unknownCommand: "Comando desconhecido: %s"
+    invalidInput: "Entrada inválida."
   info:
-    aborting: "Aborting as requested."
+    aborting: "Abortando conforme solicitado."
   terminal:
-    yes: "yes"
-    no: "no"
+    yes: "sim"
+    no: "não"
 
 runtimeCommand:
-  description: "Work with the specified subsystem, accessing the package manager and
-    environment."
+  description: "Trabalhe com o subsistema especificado, acessando o gerenciador de
+    pacotes e o ambiente."
   error:
-    noPackageSpecified: "No packages specified."
-    cantAccessPkgManager: "An error occurred while accessing the package manager:
-      %s"
-    executingCommand: "An error occurred while executing the command: %s"
-    noAppNameOrBin: "--app-name or --bin must be specified."
-    sameAppOrBin: "--app-name and --bin cannot be both specified."
-    exportingApp: "An error occurred while exporting the application: %s"
-    exportingBin: "An error occurred while exporting the binary: %s"
-    unexportingApp: "An error occurred while unexporting the application: %s"
-    unexportingBin: "An error occurred while unexporting the binary: %s"
+    noPackageSpecified: "Não há pacotes especificados."
+    cantAccessPkgManager: "Ocorreu um erro ao acessar o gerenciador de pacotes: %s"
+    executingCommand: "Ocorreu um erro durante a execução do comando: %s"
+    noAppNameOrBin: "--app-name ou --bin devem ser especificados."
+    sameAppOrBin: "--app-name e --bin não podem ser especificados simultaneamente."
+    exportingApp: "Ocorreu um erro ao exportar o aplicativo: %s"
+    exportingBin: "Ocorreu um erro ao exportar o binário: %s"
+    unexportingApp: "Ocorreu um erro ao desexportar o aplicativo: %s"
+    unexportingBin: "Ocorreu um erro ao desfazer a exportação do binário: %s"
   info:
-    unexportedApps: "Unexported %d applications\n"
-    exportedApps: "Exported %d applications\n"
-    exportedApp: "Exported application %s\n"
-    exportedBin: "Exported binary %s\n"
+    unexportedApps: "Desfez a exportação de %d aplicativos\n"
+    exportedApps: "Exportados %d aplicativos\n"
+    exportedApp: "Aplicativo %s exportado\n"
+    exportedBin: "Binário %s exportado\n"
     unexportedApp: "Unexported application %s\n"
     unexportedBin: "Unexported binary %s\n"
   autoremove:

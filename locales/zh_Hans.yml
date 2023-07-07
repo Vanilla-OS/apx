@@ -1,0 +1,314 @@
+apx:
+  description: "Apx 是支持多软件源的软件包管理器，允许用户在子系统中安装软件包。"
+  errors:
+    unknownCommand: "未知的命令：%s"
+    invalidInput: "无效的输入。"
+  info:
+    aborting: "应用户要求取消操作。"
+  terminal:
+    yes: "是"
+    no: "否"
+
+runtimeCommand:
+  description: "操作指定的子系统，访问包管理器及环境。"
+  error:
+    noPackageSpecified: "没有指定软件包。"
+    cantAccessPkgManager: "访问软件包管理器时发生错误：%s"
+    executingCommand: "执行命令时发生错误：%s"
+    noAppNameOrBin: "必须指定 --app-name 或 --bin。"
+    sameAppOrBin: "不能同时指定 --app-name 和 --bin。"
+    exportingApp: "导出应用程序时发生错误：%s"
+    exportingBin: "导出二进制文件时发生错误：%s"
+    unexportingApp: "移除导出的应用程序时发生错误：%s"
+    unexportingBin: "移除导出的二进制文件时发生错误：%s"
+  info:
+    unexportedApps: "已移除导出的 %d 个应用程序\n"
+    exportedApps: "已导出 %d 个应用程序\n"
+    exportedApp: "已导出应用程序 %s\n"
+    exportedBin: "已导出二进制文件 %s\n"
+    unexportedApp: "已移除导出的应用程序 %s\n"
+    unexportedBin: "已移除导出的二进制文件 %s\n"
+  autoremove:
+    description: "移除不再需要的软件包。"
+  clean:
+    description: "清理软件包管理器的缓存。"
+  install:
+    description: "安装指定的软件包。"
+    options:
+      noExport:
+        description: "不导出桌面条目。"
+  list:
+    description: "列出所有已安装的软件包。"
+  purge:
+    description: "清除（purge）指定的软件包。"
+  remove:
+    description: "移除指定的软件包。"
+  search:
+    description: "搜索匹配指定查询的软件包。"
+  show:
+    description: "显示有关指定软件包的信息。"
+  update:
+    description: "更新可用软件包的列表。"
+  upgrade:
+    description: "升级所有已安装的软件包。"
+  enter:
+    description: "进入子系统的环境。"
+  export:
+    description: "从子系统导出应用程序或二进制文件。"
+    options:
+      appName:
+        description: "要导出的应用程序的名称。"
+      bin:
+        description: "要导出的二进制文件的名称。"
+      binOutput:
+        description: "二进制输出的路径（默认为 ~/.local/bin/）。"
+  unexport:
+    description: "移除从子系统中导出的应用程序或二进制文件。"
+    options:
+      appName:
+        description: "要移除的导出的应用程序的名称。"
+      bin:
+        description: "要移除的导出的二进制文件的名称。"
+      binOutput:
+        description: "二进制输出的路径（默认为 ~/.local/bin/）。"
+
+pkgmanagers:
+  description: "操作 apx 中可用的软件包管理器。"
+  labels:
+    name: "名称"
+    builtIn: "内置"
+
+  list:
+    description: "列出所有可用的软件包管理器。"
+    info:
+      noPkgManagers: "没有可用的软件包管理器。请使用 'apx pkgmanagers new' 创建新的软件包管理器，或者联系系统管理员。"
+      foundPkgManagers: "找到 %d 个软件包管理器：\n"
+    options:
+      json:
+        description: "以 JSON 格式输出。"
+  show:
+    description: "显示有关指定软件包管理器的信息。"
+  new:
+    description: "创建新的软件包管理器。"
+
+    error:
+      emptyName: "名称不能为空。"
+      noName: "没有指定名称。"
+      emptyCommand: "命令不能为空。"
+      noCommand: "没有为 '%s' 指定命令。"
+      alreadyExists: "名字为 '%s' 的软件包管理器已经存在。"
+    info:
+      askName: "选择名称："
+      askSudo: "软件包管理器是否需要 sudo 才能运行？"
+      askCommand: "输入 '%s' 的命令："
+      askOverwrite: "名为 '%s' 的软件包管理器已经存在。要覆盖吗？"
+      success: "已创建软件包管理器 '%s'。"
+    options:
+      assumeYes:
+        description: "为所有操作指定“是”。"
+      name:
+        description: "软件包管理器的名称。"
+      needSudo:
+        description: "软件包管理器是否需要 sudo 才能运行。"
+      autoremove:
+        description: "执行自动移除软件包的命令。"
+      clean:
+        description: "执行清除软件包管理器缓存的命令。"
+      install:
+        description: "执行安装软件包的命令。"
+      list:
+        description: "执行列出所有已安装软件包的命令。"
+      purge:
+        description: "执行清除（purge）软件包的命令。"
+      remove:
+        description: "执行移除软件包的命令。"
+      search:
+        description: "执行搜索软件包的命令。"
+      show:
+        description: "执行显示软件包信息的命令。"
+      update:
+        description: "执行更新可用软件包列表的命令。"
+      upgrade:
+        description: "执行升级软件包的命令。"
+  rm:
+    description: "移除指定的软件包管理器。"
+
+    error:
+      noName: "没有指定名称。"
+      inUse: "软件包管理器被用于 %d 个包捆中：\n"
+    info:
+      askConfirmation: "确定要移除 '%s' 吗？"
+      success: "已移除软件包管理器 '%s'。"
+    options:
+      force:
+        description: "强制移除软件包管理器。"
+      name:
+        description: "要移除的软件包管理器的名称。"
+
+stacks:
+  description: "操作 apx 中可用的包捆。"
+  labels:
+    name: "名称"
+    builtIn: "内置"
+
+  list:
+    description: "列出所有可用的包捆。"
+    info:
+      noStacks: "没有可用的包捆。请使用 'apx stacks new' 创建新的包捆，或者联系系统管理员。"
+      foundStacks: "发现 %d 个包捆：\n"
+    options:
+      json:
+        description: "以 JSON 格式输出。"
+  show:
+    description: "显示有关指定包捆的信息。"
+  new:
+    description: "创建新包捆。"
+    error:
+      emptyName: "名称不能为空。"
+      noName: "没有指定名称。"
+      emptyBase: "基础映像不能为空。"
+      noBase: "没有指定基础映像。"
+      emptyPkgManager: "软件包管理器不能为空。"
+      noPkgManager: "没有指定软件包管理器。"
+      pkgManagerDoesNotExist: "指定的软件包管理器不存在。请使用 'apx pkgmanagers new' 创建或者联系系统管理员。"
+      emptyPackages: "软件包不能为空。"
+      noPackages: "没有指定软件包。"
+      alreadyExists: "名为 '%s' 的包捆已存在。"
+    info:
+      askName: "选择名称："
+      askBase: "选择基础映像（如 'vanillaos/pico'）："
+      askPkgManager: "选择软件包管理器："
+      selectPkgManager: "选择软件包管理器 [1-%d]："
+      noPackages: "您没有提供任何要安装在包捆中的软件包。需要添加一些吗？"
+      confirmPackages: "您需要确认目前的软件包列表吗？"
+      askPackages: "请输入您要安装到包捆中的软件包，用空格隔开："
+      success: "已创建包捆 '%s'。"
+    options:
+      assumeYes:
+        description: "为所有操作指定“是”。"
+      name:
+        description: "包捆的名称。"
+      base:
+        description: "要使用的基础子系统。"
+      packages:
+        description: "要安装的软件包。"
+      pkgManager:
+        description: "要使用的软件包管理器。"
+  update:
+    description: "更新指定的包捆。"
+    error:
+      noName: "没有指定名称。"
+      noBase: "没有指定基础映像。"
+      noPkgManager: "没有指定软件包管理器。"
+      pkgManagerDoesNotExist: "指定的软件包管理器不存在。请使用 'apx pkgmanagers new' 创建或者联系系统管理员。"
+    info:
+      askBase: "输入新的基础映像或确认使用目前的（%s）："
+      askPkgManager: "选择新的软件包管理器或确认使用目前的（%s）："
+      askPackages: "输入想要安装在包捆中的软件包，用空格隔开，或确认使用目前的（%s）："
+      success: "已更新包捆 '%s'。"
+
+    options:
+      assumeYes:
+        description: "为所有操作指定“是”。"
+      name:
+        description: "包捆的名称。"
+      base:
+        description: "要使用的基础子系统。"
+      packages:
+        description: "要安装的软件包。"
+      pkgManager:
+        description: "要使用的软件包管理器。"
+  rm:
+    description: "移除指定的包捆。"
+    error:
+      noName: "没有指定名称。"
+    info:
+      askConfirmation: "确定要移除 '%s' 吗？"
+      success: "已移除包捆 '%s'。"
+    options:
+      force:
+        description: "强制移除包捆。"
+      name:
+        description: "要移除的包捆的名称。"
+  export:
+    description: "导出指定的包捆。"
+    error:
+      noName: "没有指定名称。"
+      noOutput: "没有指定输出。"
+    info:
+      success: "已导出包捆 '%s' 到 '%s'。"
+    options:
+      name:
+        description: "要导出的包捆的名称。"
+      output:
+        description: "要导出的包捆的导出路径。"
+  import:
+    description: "导入指定的包捆。"
+    error:
+      noInput: "没有指定输入。"
+      cannotLoad: "无法从 '%s' 加载包捆。"
+    info:
+      success: "已从 '%s' 导入包捆。"
+    options:
+      input:
+        description: "要导入的包捆的路径。"
+
+subsystems:
+  description: "操作 apx 中可用的子系统。"
+  labels:
+    name: "名称"
+    status: "状态"
+
+  list:
+    description: "列出所有可用的子系统。"
+    error:
+    info:
+      noSubsystems: "没有可用的子系统。请使用 'apx subsystems new' 创建新的子系统，或者联系系统管理员。"
+      foundSubsystems: "发现 %d 个子系统：\n"
+    options:
+      json:
+        description: "以 JSON 格式输出。"
+  new:
+    description: "创建新的子系统。"
+    error:
+      noStacks: "创建子系统需要包捆。请使用 'apx stacks new' 创建新包捆，或者联系系统管理员。"
+      emptyName: "名称不能为空。"
+      noName: "没有指定名称。"
+      emptyStack: "包捆不能为空。"
+      noStack: "没有指定包捆。"
+      stackDoesNotExist: "指定的包捆不存在。请使用 'apx stacks new' 创建或者联系系统管理员。"
+      alreadyExists: "名为 '%s' 的子系统已经存在。"
+    info:
+      askName: "选择名称："
+      selectStack: "选择包捆 [1-%d]："
+      success: "已创建子系统 '%s'。"
+      creatingSubsystem: "已创建子系统 '%s'，使用包捆 '%s'…"
+    options:
+      name:
+        description: "子系统的名称。"
+      stack:
+        description: "要使用的包捆。"
+  rm:
+    description: "移除指定的子系统。"
+    error:
+      noName: "没有指定名称。"
+    info:
+      askConfirmation: "确定要移除 '%s' 吗？"
+      success: "已移除子系统 '%s'。"
+    options:
+      force:
+        description: "强制移除子系统。"
+      name:
+        description: "要移除的子系统的名称。"
+  reset:
+    description: "重置指定的子系统。"
+    error:
+      noName: "没有指定名称。"
+    info:
+      askConfirmation: "确定要重置 '%s' 吗？"
+      success: "已重置子系统 '%s'。"
+    options:
+      force:
+        description: "强制重置子系统。"
+      name:
+        description: "要重置的子系统的名称。"

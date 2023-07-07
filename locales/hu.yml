@@ -2,26 +2,25 @@ apx:
   description: "Apx is a package manager with support for multiple sources, allowing
     you to install packages in subsystems."
   errors:
-    unknownCommand: "Unknown command: %s"
-    invalidInput: "Invalid input."
+    unknownCommand: "Ismeretlen parancs: %s"
+    invalidInput: "Érvénytelen bemenet."
   info:
-    aborting: "Aborting as requested."
+    aborting: "Megszakítás kérés szerint."
   terminal:
-    yes: "yes"
-    no: "no"
+    yes: "igen"
+    no: "nem"
 
 runtimeCommand:
   description: "Work with the specified subsystem, accessing the package manager and
     environment."
   error:
-    noPackageSpecified: "No packages specified."
-    cantAccessPkgManager: "An error occurred while accessing the package manager:
-      %s"
-    executingCommand: "An error occurred while executing the command: %s"
+    noPackageSpecified: "Nincsenek meghatározott csomagok."
+    cantAccessPkgManager: "Hiba történt a csomagkezelő elérésekor: %s"
+    executingCommand: "Hiba történt a parancs végrehajtása közben: %s"
     noAppNameOrBin: "--app-name or --bin must be specified."
     sameAppOrBin: "--app-name and --bin cannot be both specified."
-    exportingApp: "An error occurred while exporting the application: %s"
-    exportingBin: "An error occurred while exporting the binary: %s"
+    exportingApp: "Hiba történt az alkalmazás exportálása során: %s"
+    exportingBin: "Hiba történt a bináris fájl exportálása során: %s"
     unexportingApp: "An error occurred while unexporting the application: %s"
     unexportingBin: "An error occurred while unexporting the binary: %s"
   info:
