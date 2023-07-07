@@ -1,14 +1,14 @@
 apx:
-  description: "Apx is a package manager with support for multiple sources, allowing
-    you to install packages in subsystems."
+  description: "Apx est un gestionnaire de packets qui support des sources multiples
+    vous permettant d'installer des packets dans les sous-systèmes."
   errors:
-    unknownCommand: "Unknown command: %s"
-    invalidInput: "Invalid input."
+    unknownCommand: "Commande inconnue : %s"
+    invalidInput: "Entrée invalide."
   info:
-    aborting: "Aborting as requested."
+    aborting: "Annulation."
   terminal:
-    yes: "yes"
-    no: "no"
+    yes: "oui"
+    no: "non"
 
 runtimeCommand:
   description: "Work with the specified subsystem, accessing the package manager and
