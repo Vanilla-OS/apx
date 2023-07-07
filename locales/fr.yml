@@ -11,23 +11,27 @@ apx:
     no: "non"
 
 runtimeCommand:
-  description: "Work with the specified subsystem, accessing the package manager and
-    environment."
+  description: "Travaillez avec le sous-système spécifié, en accédant au gestionnaire
+    de packages et à l'environnement."
   error:
-    noPackageSpecified: "No packages specified."
-    cantAccessPkgManager: "An error occurred while accessing the package manager:
+    noPackageSpecified: "Aucun paquet spécifié."
+    cantAccessPkgManager: "Une erreur s'est produite lors de l'accès au gestionnaire
+      de packages: %s"
+    executingCommand: "Une erreur s'est produite lors de l'exécution de la commande:
       %s"
-    executingCommand: "An error occurred while executing the command: %s"
-    noAppNameOrBin: "--app-name or --bin must be specified."
+    noAppNameOrBin: "--app-name ou --bin doit être spécifié."
     sameAppOrBin: "--app-name and --bin cannot be both specified."
-    exportingApp: "An error occurred while exporting the application: %s"
-    exportingBin: "An error occurred while exporting the binary: %s"
-    unexportingApp: "An error occurred while unexporting the application: %s"
-    unexportingBin: "An error occurred while unexporting the binary: %s"
+    exportingApp: "Une erreur s'est produite lors de l'exportation de l'application:
+      %s"
+    exportingBin: "Une erreur s'est produite lors de l'exportation du binaire: %s"
+    unexportingApp: "Une erreur s'est produite lors de la désexportation de l'application:
+      %s"
+    unexportingBin: "Une erreur s'est produite lors de la désexportation du binaire:
+      %s"
   info:
-    unexportedApps: "Unexported %d applications\n"
-    exportedApps: "Exported %d applications\n"
-    exportedApp: "Exported application %s\n"
+    unexportedApps: "%d applications non exportées\n"
+    exportedApps: "%d applications exportées\n"
+    exportedApp: "Application exportée %s\n"
     exportedBin: "Exported binary %s\n"
     unexportedApp: "Unexported application %s\n"
     unexportedBin: "Unexported binary %s\n"
