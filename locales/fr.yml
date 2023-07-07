@@ -20,7 +20,7 @@ runtimeCommand:
     executingCommand: "Une erreur s'est produite lors de l'exécution de la commande:
       %s"
     noAppNameOrBin: "--app-name ou --bin doit être spécifié."
-    sameAppOrBin: "--app-name and --bin cannot be both specified."
+    sameAppOrBin: "--app-name et --bin ne peuvent pas être spécifiés tous les deux."
     exportingApp: "Une erreur s'est produite lors de l'exportation de l'application:
       %s"
     exportingBin: "Une erreur s'est produite lors de l'exportation du binaire: %s"
@@ -32,43 +32,43 @@ runtimeCommand:
     unexportedApps: "%d applications non exportées\n"
     exportedApps: "%d applications exportées\n"
     exportedApp: "Application exportée %s\n"
-    exportedBin: "Exported binary %s\n"
-    unexportedApp: "Unexported application %s\n"
-    unexportedBin: "Unexported binary %s\n"
+    exportedBin: "Binaire exporté %s\n"
+    unexportedApp: "Application non exportée %s\n"
+    unexportedBin: "Binaire non exporté %s\n"
   autoremove:
-    description: "Remove packages that are no longer required."
+    description: "Supprimer les paquets qui ne sont plus nécessaires."
   clean:
-    description: "Clean the package manager's cache."
+    description: "Nettoyer le cache du gestionnaire de paquets."
   install:
-    description: "Install the specified package."
+    description: "Installer le paquet spécifié."
     options:
       noExport:
-        description: "Do not export a desktop entry."
+        description: "Ne pas ajouter une entrée de bureau."
   list:
-    description: "List all installed packages."
+    description: "Lister tous les paquets installés."
   purge:
-    description: "Purge the specified packages."
+    description: "Eliminer les paquets spécifiés"
   remove:
-    description: "Remove the specified packages."
+    description: "Supprimer les paquets spécifiés."
   search:
-    description: "Search for packages matching the specified query."
+    description: "Rechercher les paquets correspondant à la requête spécifiée."
   show:
-    description: "Show information about the specified package."
+    description: "Afficher les informations sur le paquet spécifié."
   update:
-    description: "Update the list of available packages."
+    description: "Mettre à jour la liste des paquets disponibles."
   upgrade:
-    description: "Upgrade all installed packages."
+    description: "Mettre à jour tous les paquets installés."
   enter:
-    description: "Enter the subsystem's environment."
+    description: "Entrer dans l'environnement du sous-système."
   export:
-    description: "Export an application or binary from the subsystem."
+    description: "Exporter une application ou un binaire depuis le sous-système."
     options:
       appName:
-        description: "The name of the application to export."
+        description: "Le nom de l'application à exporter."
       bin:
-        description: "The name of the binary to export."
+        description: "Le nom du binaire à exporter."
       binOutput:
-        description: "Path of the binary output (default: ~/.local/bin/)."
+        description: "Chemin de sortie du binaire (par défaut : ~/.local/bin/)."
   unexport:
     description: "Unexport an application or binary from the subsystem."
     options:
@@ -77,10 +77,10 @@ runtimeCommand:
       bin:
         description: "The name of the binary to unexport."
       binOutput:
-        description: "Path of the binary output (default: ~/.local/bin/)."
+        description: "Chemin de sortie du binaire (par défaut : ~/.local/bin/)."
 
 pkgmanagers:
-  description: "Work with the package managers that are available in apx."
+  description: "Travailler avec les gestionnaires de paquets disponibles dans apx."
   labels:
     name: "Name"
     builtIn: "Built-in"
