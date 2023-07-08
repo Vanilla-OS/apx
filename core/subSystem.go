@@ -115,6 +115,7 @@ func (s *SubSystem) Create() error {
 			"stack": s.Stack.Name,
 			"name":  s.Name,
 		},
+		false,
 	)
 	if err != nil {
 		return err

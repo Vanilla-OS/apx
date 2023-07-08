@@ -204,7 +204,7 @@ func (d *dbox) ContainerDelete(name string) error {
 	return err
 }
 
-func (d *dbox) CreateContainer(name string, image string, additionalPackages []string, labels map[string]string) error {
+func (d *dbox) CreateContainer(name string, image string, additionalPackages []string, labels map[string]string, withInit bool) error {
 	args := []string{
 		"--image", image,
 		"--name", name,
@@ -214,6 +214,10 @@ func (d *dbox) CreateContainer(name string, image string, additionalPackages []s
 
 	if hasNvidiaGPU() {
 		args = append(args, "--nvidia")
+	}
+
+	if withInit {
+		args = append(args, "--init")
 	}
 
 	if len(additionalPackages) > 0 {
