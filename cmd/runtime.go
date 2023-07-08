@@ -19,7 +19,7 @@ import (
 func NewRuntimeCommands() []*cmdr.Command {
 	var commands []*cmdr.Command
 
-	subSystems, err := core.ListSubSystems()
+	subSystems, err := core.ListSubSystems(false)
 	if err != nil {
 		return []*cmdr.Command{}
 	}

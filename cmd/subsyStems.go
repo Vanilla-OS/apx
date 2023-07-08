@@ -133,7 +133,7 @@ func NewSubSystemsCommand() *cmdr.Command {
 func listSubSystems(cmd *cobra.Command, args []string) error {
 	jsonFlag, _ := cmd.Flags().GetBool("json")
 
-	subSystems, err := core.ListSubSystems()
+	subSystems, err := core.ListSubSystems(false)
 	if err != nil {
 		return err
 	}
@@ -224,7 +224,7 @@ func newSubSystem(cmd *cobra.Command, args []string) error {
 		return err
 	}
 
-	subSystem, err := core.NewSubSystem(subSystemName, stack)
+	subSystem, err := core.NewSubSystem(subSystemName, stack, false, false)
 	if err != nil {
 		return err
 	}

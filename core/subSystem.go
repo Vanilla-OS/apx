@@ -26,14 +26,18 @@ type SubSystem struct {
 	Stack            *Stack
 	Status           string
 	ExportedPrograms map[string]map[string]string
+	HasInit          bool
+	IsManaged        bool
 }
 
-func NewSubSystem(name string, stack *Stack) (*SubSystem, error) {
+func NewSubSystem(name string, stack *Stack, hasInit bool, isManaged bool) (*SubSystem, error) {
 	internalName := genInternalName(name)
 	return &SubSystem{
 		InternalName: internalName,
 		Name:         name,
 		Stack:        stack,
+		HasInit:      hasInit,
+		IsManaged:    isManaged,
 	}, nil
 }
 
@@ -107,15 +111,25 @@ func (s *SubSystem) Create() error {
 		return err
 	}
 
+	labels := map[string]string{
+		"stack": s.Stack.Name,
+		"name":  s.Name,
+	}
+
+	if s.IsManaged {
+		labels["managed"] = "true"
+	}
+
+	if s.HasInit {
+		labels["hasInit"] = "true"
+	}
+
 	err = dbox.CreateContainer(
 		s.InternalName,
 		s.Stack.Base,
 		[]string{},
-		map[string]string{
-			"stack": s.Stack.Name,
-			"name":  s.Name,
-		},
-		false,
+		labels,
+		s.HasInit,
 	)
 	if err != nil {
 		return err
@@ -145,10 +159,12 @@ func LoadSubSystem(name string) (*SubSystem, error) {
 		Name:         container.Labels["name"],
 		Stack:        stack,
 		Status:       container.Status,
+		HasInit:      container.Labels["hasInit"] == "true",
+		IsManaged:    container.Labels["managed"] == "true",
 	}, nil
 }
 
-func ListSubSystems() ([]*SubSystem, error) {
+func ListSubSystems(includeManaged bool) ([]*SubSystem, error) {
 	dbox, err := NewDbox()
 	if err != nil {
 		return nil, err
@@ -162,8 +178,14 @@ func ListSubSystems() ([]*SubSystem, error) {
 	subsystems := []*SubSystem{}
 	for _, container := range containers {
 		if _, ok := container.Labels["name"]; !ok {
-			log.Printf("Container %s has no name label, skipping", container.Name)
+			// log.Printf("Container %s has no name label, skipping", container.Name)
 			continue
+		}
+
+		if !includeManaged {
+			if _, ok := container.Labels["managed"]; ok {
+				continue
+			}
 		}
 
 		stack, err := LoadStack(container.Labels["stack"])
