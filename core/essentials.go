@@ -18,7 +18,6 @@ import (
 	"strings"
 )
 
-// func init() {
 func (a *Apx) EssentialChecks() error {
 	err := a.CheckContainerTools()
 	if err != nil {
@@ -48,7 +47,6 @@ Please refer to our documentation at https://documentation.vanillaos.org/`)
 	return nil
 }
 
-// func CheckContainerTools() error {
 func (a *Apx) CheckContainerTools() error {
 	_, err := os.Stat(a.Cnf.DistroboxPath)
 	if err != nil {
@@ -83,7 +81,6 @@ func ExitIfOverlayTypeFS() {
 	}
 }
 
-// func CheckAndCreateUserStacksDirectory() error {
 func (a *Apx) CheckAndCreateUserStacksDirectory() error {
 	_, err := os.Stat(a.Cnf.UserStacksPath)
 	if err != nil {
@@ -100,7 +97,6 @@ func (a *Apx) CheckAndCreateUserStacksDirectory() error {
 	return nil
 }
 
-// func CheckAndCreateApxStorageDirectory() error {
 func (a *Apx) CheckAndCreateApxStorageDirectory() error {
 	_, err := os.Stat(a.Cnf.ApxStoragePath)
 	if err != nil {
@@ -117,7 +113,6 @@ func (a *Apx) CheckAndCreateApxStorageDirectory() error {
 	return nil
 }
 
-// func CheckAndCreateApxUserPkgManagersDirectory() error {
 func (a *Apx) CheckAndCreateApxUserPkgManagersDirectory() error {
 	_, err := os.Stat(a.Cnf.UserPkgManagersPath)
 	if err != nil {

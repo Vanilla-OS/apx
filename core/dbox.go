@@ -32,7 +32,6 @@ type dboxContainer struct {
 	Name      string
 }
 
-// func NewDbox() (*dbox, error) {
 func NewDbox() (*dbox, error) {
 	engineBinary, engine := getEngine()
 
