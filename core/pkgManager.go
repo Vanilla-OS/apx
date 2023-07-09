@@ -16,8 +16,6 @@ import (
 	"path/filepath"
 
 	"gopkg.in/yaml.v2"
-
-	"github.com/vanilla-os/apx/settings"
 )
 
 // PkgManager represents a package manager in Apx, a set of instructions to handle a package manager.
@@ -58,9 +56,9 @@ func NewPkgManager(name string, needSudo bool, autoRemove, clean, install, list,
 
 // LoadPkgManager loads a package manager from the specified path.
 func LoadPkgManager(name string) (*PkgManager, error) {
-	pkgManager, err := loadPkgManagerFromPath(filepath.Join(settings.Cnf.UserPkgManagersPath, name+".yaml"))
+	pkgManager, err := loadPkgManagerFromPath(filepath.Join(apx.Cnf.UserPkgManagersPath, name+".yaml"))
 	if err != nil {
-		pkgManager, err = loadPkgManagerFromPath(filepath.Join(settings.Cnf.PkgManagersPath, name+".yaml"))
+		pkgManager, err = loadPkgManagerFromPath(filepath.Join(apx.Cnf.PkgManagersPath, name+".yaml"))
 	}
 	return pkgManager, err
 }
@@ -94,7 +92,7 @@ func (pkgManager *PkgManager) Save() error {
 		return err
 	}
 
-	filePath := filepath.Join(settings.Cnf.UserPkgManagersPath, pkgManager.Name+".yaml")
+	filePath := filepath.Join(apx.Cnf.UserPkgManagersPath, pkgManager.Name+".yaml")
 	err = ioutil.WriteFile(filePath, data, 0644)
 	return err
 }
@@ -105,7 +103,7 @@ func (pkgManager *PkgManager) Remove() error {
 		return errors.New("cannot remove built-in package manager")
 	}
 
-	filePath := filepath.Join(settings.Cnf.UserPkgManagersPath, pkgManager.Name+".yaml")
+	filePath := filepath.Join(apx.Cnf.UserPkgManagersPath, pkgManager.Name+".yaml")
 	err := os.Remove(filePath)
 	return err
 }
@@ -129,10 +127,10 @@ func (pkgManager *PkgManager) GenCmd(cmd string, args ...string) []string {
 func ListPkgManagers() []*PkgManager {
 	pkgManagers := make([]*PkgManager, 0)
 
-	pkgManagersFromEtc := listPkgManagersFromPath(settings.Cnf.UserPkgManagersPath)
+	pkgManagersFromEtc := listPkgManagersFromPath(apx.Cnf.UserPkgManagersPath)
 	pkgManagers = append(pkgManagers, pkgManagersFromEtc...)
 
-	pkgManagersFromShare := listPkgManagersFromPath(settings.Cnf.PkgManagersPath)
+	pkgManagersFromShare := listPkgManagersFromPath(apx.Cnf.PkgManagersPath)
 	pkgManagers = append(pkgManagers, pkgManagersFromShare...)
 
 	return pkgManagers

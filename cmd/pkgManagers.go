@@ -13,13 +13,11 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
-	"path/filepath"
 	"strings"
 
 	"github.com/spf13/cobra"
 
 	"github.com/vanilla-os/apx/core"
-	"github.com/vanilla-os/apx/settings"
 	"github.com/vanilla-os/orchid/cmdr"
 )
 
@@ -332,7 +330,7 @@ func newPkgManager(cmd *cobra.Command, args []string) error {
 		}
 	}
 
-	if _, err := os.Stat(filepath.Join(settings.Cnf.PkgManagersPath, name+".yml")); err == nil {
+	if core.PkgManagerExists(name) {
 		if !assumeYes {
 			cmdr.Info.Printf(apx.Trans("pkgmanagers.new.info.askOverwrite"), name)
 			reader := bufio.NewReader(os.Stdin)
@@ -403,6 +401,6 @@ func rmPkgManager(cmd *cobra.Command, args []string) error {
 		return error
 	}
 
-	fmt.Printf(apx.Trans("pkgmanagers.rm.info.success"), pkgManagerName)
+	cmdr.Info.Printfln(apx.Trans("pkgmanagers.rm.info.success"), pkgManagerName)
 	return nil
 }

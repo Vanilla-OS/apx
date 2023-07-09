@@ -16,8 +16,6 @@ import (
 	"os"
 	"os/exec"
 	"strings"
-
-	"github.com/vanilla-os/apx/settings"
 )
 
 type dbox struct {
@@ -34,6 +32,7 @@ type dboxContainer struct {
 	Name      string
 }
 
+// func NewDbox() (*dbox, error) {
 func NewDbox() (*dbox, error) {
 	engineBinary, engine := getEngine()
 
@@ -65,7 +64,7 @@ func getEngine() (string, string) {
 }
 
 func dboxGetVersion() (version string, err error) {
-	output, err := exec.Command(settings.Cnf.DistroboxPath, "version").Output()
+	output, err := exec.Command(apx.Cnf.DistroboxPath, "version").Output()
 	if err != nil {
 		return "", err
 	}
@@ -79,7 +78,7 @@ func dboxGetVersion() (version string, err error) {
 }
 
 func (d *dbox) RunCommand(command string, args []string, engineFlags []string, useEngine bool, captureOutput bool, muteOutput bool) ([]byte, error) {
-	entrypoint := settings.Cnf.DistroboxPath
+	entrypoint := apx.Cnf.DistroboxPath
 	if useEngine {
 		entrypoint = d.EngineBinary
 	}
@@ -103,11 +102,11 @@ func (d *dbox) RunCommand(command string, args []string, engineFlags []string, u
 	// NOTE: the custom storage is not being used since it prevent other
 	//		 utilities, like VSCode, to access the container.
 	if d.Engine == "podman" {
-		cmd.Env = append(cmd.Env, "CONTAINER_STORAGE_DRIVER="+settings.Cnf.StorageDriver)
-		// cmd.Env = append(cmd.Env, "XDG_DATA_HOME="+settings.Cnf.ApxStoragePath)
+		cmd.Env = append(cmd.Env, "CONTAINER_STORAGE_DRIVER="+apx.Cnf.StorageDriver)
+		// cmd.Env = append(cmd.Env, "XDG_DATA_HOME="+apx.Cnf.ApxStoragePath)
 	} else if d.Engine == "docker" {
-		cmd.Env = append(cmd.Env, "DOCKER_STORAGE_DRIVER="+settings.Cnf.StorageDriver)
-		// cmd.Env = append(cmd.Env, "DOCKER_DATA_ROOT="+settings.Cnf.ApxStoragePath)
+		cmd.Env = append(cmd.Env, "DOCKER_STORAGE_DRIVER="+apx.Cnf.StorageDriver)
+		// cmd.Env = append(cmd.Env, "DOCKER_DATA_ROOT="+apx.Cnf.ApxStoragePath)
 	}
 
 	if len(engineFlags) > 0 {
@@ -187,7 +186,7 @@ func (d *dbox) GetContainer(name string) (*dboxContainer, error) {
 	}
 
 	for _, container := range containers {
-		fmt.Println("found container", container.Name, "requested", name)
+		// fmt.Println("found container", container.Name, "requested", name)
 		if container.Name == name {
 			return &container, nil
 		}

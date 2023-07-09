@@ -32,12 +32,10 @@ type Config struct {
 	UserPkgManagersPath string
 }
 
-var Cnf *Config
-
-func init() {
+func GetApxDefaultConfig() (*Config, error) {
 	userHome, err := os.UserHomeDir()
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	// dev paths
@@ -66,7 +64,7 @@ func init() {
 	// 	fmt.Printf("Using config file: %s\n\n", viper.ConfigFileUsed())
 	// }
 
-	Cnf = &Config{
+	Cnf := &Config{
 		// Common
 		ApxPath:       viper.GetString("apxPath"),
 		DistroboxPath: viper.GetString("distroboxPath"),
@@ -87,4 +85,6 @@ func init() {
 	Cnf.UserStacksPath = filepath.Join(Cnf.UserApxPath, "stacks")
 	Cnf.PkgManagersPath = filepath.Join(Cnf.ApxPath, "package-managers")
 	Cnf.UserPkgManagersPath = filepath.Join(Cnf.UserApxPath, "package-managers")
+
+	return Cnf, nil
 }

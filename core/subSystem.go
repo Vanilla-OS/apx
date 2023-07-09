@@ -232,7 +232,6 @@ func (s *SubSystem) Enter() error {
 	if err != nil {
 		return err
 	}
-	fmt.Println(s.InternalName)
 	return dbox.ContainerEnter(s.InternalName)
 }
 

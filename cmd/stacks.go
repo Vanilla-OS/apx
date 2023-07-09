@@ -380,7 +380,7 @@ func newStack(cmd *cobra.Command, args []string) error {
 		return err
 	}
 
-	fmt.Printf(apx.Trans("stacks.new.info.success"), name)
+	cmdr.Info.Printfln(apx.Trans("stacks.new.info.success"), name)
 
 	return nil
 }
@@ -474,7 +474,7 @@ func updateStack(cmd *cobra.Command, args []string) error {
 		return err
 	}
 
-	fmt.Printf(apx.Trans("stacks.update.info.success"), name)
+	cmdr.Info.Printfln(apx.Trans("stacks.update.info.success"), name)
 
 	return nil
 }
@@ -507,7 +507,7 @@ func removeStack(cmd *cobra.Command, args []string) error {
 		return error
 	}
 
-	fmt.Printf(apx.Trans("stacks.rm.info.success"), stackName)
+	cmdr.Info.Printfln(apx.Trans("stacks.rm.info.success"), stackName)
 	return nil
 }
 
@@ -555,6 +555,6 @@ func importStack(cmd *cobra.Command, args []string) error {
 		return error
 	}
 
-	fmt.Printf(apx.Trans("stacks.import.info.success"), stack.Name)
+	cmdr.Info.Printfln(apx.Trans("stacks.import.info.success"), stack.Name)
 	return nil
 }

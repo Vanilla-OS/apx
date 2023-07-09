@@ -16,8 +16,6 @@ import (
 	"path/filepath"
 
 	"gopkg.in/yaml.v2"
-
-	"github.com/vanilla-os/apx/settings"
 )
 
 // Stack represents a stack in Apx, a set of instructions to build a container.
@@ -42,9 +40,9 @@ func NewStack(name, base string, packages []string, pkgManager string, builtIn b
 
 // LoadStack loads a stack from the specified path.
 func LoadStack(name string) (*Stack, error) {
-	stack, err := LoadStackFromPath(filepath.Join(settings.Cnf.UserStacksPath, name+".yaml"))
+	stack, err := LoadStackFromPath(filepath.Join(apx.Cnf.UserStacksPath, name+".yaml"))
 	if err != nil {
-		stack, err = LoadStackFromPath(filepath.Join(settings.Cnf.StacksPath, name+".yaml"))
+		stack, err = LoadStackFromPath(filepath.Join(apx.Cnf.StacksPath, name+".yaml"))
 	}
 	return stack, err
 }
@@ -78,7 +76,7 @@ func (stack *Stack) Save() error {
 		return err
 	}
 
-	filePath := filepath.Join(settings.Cnf.UserStacksPath, stack.Name+".yaml")
+	filePath := filepath.Join(apx.Cnf.UserStacksPath, stack.Name+".yaml")
 	err = ioutil.WriteFile(filePath, data, 0644)
 	return err
 }
@@ -99,7 +97,7 @@ func (stack *Stack) Remove() error {
 		return errors.New("cannot remove built-in stack")
 	}
 
-	filePath := filepath.Join(settings.Cnf.UserStacksPath, stack.Name+".yaml")
+	filePath := filepath.Join(apx.Cnf.UserStacksPath, stack.Name+".yaml")
 	err := os.Remove(filePath)
 	return err
 }
@@ -131,10 +129,10 @@ func (stack *Stack) Export(path string) error {
 func ListStacks() []*Stack {
 	stacks := make([]*Stack, 0)
 
-	stacksFromEtc := listStacksFromPath(settings.Cnf.UserStacksPath)
+	stacksFromEtc := listStacksFromPath(apx.Cnf.UserStacksPath)
 	stacks = append(stacks, stacksFromEtc...)
 
-	stacksFromShare := listStacksFromPath(settings.Cnf.StacksPath)
+	stacksFromShare := listStacksFromPath(apx.Cnf.StacksPath)
 	stacks = append(stacks, stacksFromShare...)
 
 	return stacks
@@ -144,14 +142,14 @@ func ListStacks() []*Stack {
 func ListStackForPkgManager(pkgManager string) []*Stack {
 	stacks := make([]*Stack, 0)
 
-	stacksFromEtc := listStacksFromPath(settings.Cnf.UserStacksPath)
+	stacksFromEtc := listStacksFromPath(apx.Cnf.UserStacksPath)
 	for _, stack := range stacksFromEtc {
 		if stack.PkgManager == pkgManager {
 			stacks = append(stacks, stack)
 		}
 	}
 
-	stacksFromShare := listStacksFromPath(settings.Cnf.StacksPath)
+	stacksFromShare := listStacksFromPath(apx.Cnf.StacksPath)
 	for _, stack := range stacksFromShare {
 		if stack.PkgManager == pkgManager {
 			stacks = append(stacks, stack)

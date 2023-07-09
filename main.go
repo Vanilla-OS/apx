@@ -12,6 +12,7 @@ import (
 	"embed"
 
 	"github.com/vanilla-os/apx/cmd"
+	"github.com/vanilla-os/apx/core"
 	"github.com/vanilla-os/orchid/cmdr"
 )
 
@@ -24,6 +25,8 @@ var fs embed.FS
 var apx *cmdr.App
 
 func main() {
+	core.NewStandardApx()
+
 	apx = cmd.New(Version, fs)
 
 	// root command

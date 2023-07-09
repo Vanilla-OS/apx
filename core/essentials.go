@@ -16,37 +16,41 @@ import (
 	"os"
 	"os/exec"
 	"strings"
-
-	"github.com/vanilla-os/apx/settings"
 )
 
-func init() {
-	err := CheckContainerTools()
+// func init() {
+func (a *Apx) EssentialChecks() error {
+	err := a.CheckContainerTools()
 	if err != nil {
 		fmt.Println(`One or more core components are not available. 
 Please refer to our documentation at https://documentation.vanillaos.org/`)
-		log.Fatal(err)
+		return err
 	}
 
-	err = CheckAndCreateUserStacksDirectory()
+	err = a.CheckAndCreateUserStacksDirectory()
 	if err != nil {
-		log.Fatal(err)
+		fmt.Println(`Failed to create stacks directory.`)
+		return err
 	}
 
-	err = CheckAndCreateApxStorageDirectory()
+	err = a.CheckAndCreateApxStorageDirectory()
 	if err != nil {
-		log.Fatal(err)
+		fmt.Println(`Failed to create apx storage directory.`)
+		return err
 	}
 
-	err = CheckAndCreateApxUserPkgManagersDirectory()
+	err = a.CheckAndCreateApxUserPkgManagersDirectory()
 	if err != nil {
-		log.Fatal(err)
+		fmt.Println(`Failed to create apx user pkg managers directory.`)
+		return err
 	}
 
+	return nil
 }
 
-func CheckContainerTools() error {
-	_, err := os.Stat(settings.Cnf.DistroboxPath)
+// func CheckContainerTools() error {
+func (a *Apx) CheckContainerTools() error {
+	_, err := os.Stat(a.Cnf.DistroboxPath)
 	if err != nil {
 		if os.IsNotExist(err) {
 			return errors.New("distrobox is not installed")
@@ -79,11 +83,12 @@ func ExitIfOverlayTypeFS() {
 	}
 }
 
-func CheckAndCreateUserStacksDirectory() error {
-	_, err := os.Stat(settings.Cnf.UserStacksPath)
+// func CheckAndCreateUserStacksDirectory() error {
+func (a *Apx) CheckAndCreateUserStacksDirectory() error {
+	_, err := os.Stat(a.Cnf.UserStacksPath)
 	if err != nil {
 		if os.IsNotExist(err) {
-			err = os.MkdirAll(settings.Cnf.UserStacksPath, 0755)
+			err = os.MkdirAll(a.Cnf.UserStacksPath, 0755)
 			if err != nil {
 				return fmt.Errorf("failed to create stacks directory: %w", err)
 			}
@@ -95,11 +100,12 @@ func CheckAndCreateUserStacksDirectory() error {
 	return nil
 }
 
-func CheckAndCreateApxStorageDirectory() error {
-	_, err := os.Stat(settings.Cnf.ApxStoragePath)
+// func CheckAndCreateApxStorageDirectory() error {
+func (a *Apx) CheckAndCreateApxStorageDirectory() error {
+	_, err := os.Stat(a.Cnf.ApxStoragePath)
 	if err != nil {
 		if os.IsNotExist(err) {
-			err = os.MkdirAll(settings.Cnf.ApxStoragePath, 0755)
+			err = os.MkdirAll(a.Cnf.ApxStoragePath, 0755)
 			if err != nil {
 				return fmt.Errorf("failed to create apx storage directory: %w", err)
 			}
@@ -111,11 +117,12 @@ func CheckAndCreateApxStorageDirectory() error {
 	return nil
 }
 
-func CheckAndCreateApxUserPkgManagersDirectory() error {
-	_, err := os.Stat(settings.Cnf.UserPkgManagersPath)
+// func CheckAndCreateApxUserPkgManagersDirectory() error {
+func (a *Apx) CheckAndCreateApxUserPkgManagersDirectory() error {
+	_, err := os.Stat(a.Cnf.UserPkgManagersPath)
 	if err != nil {
 		if os.IsNotExist(err) {
-			err = os.MkdirAll(settings.Cnf.UserPkgManagersPath, 0755)
+			err = os.MkdirAll(a.Cnf.UserPkgManagersPath, 0755)
 			if err != nil {
 				return fmt.Errorf("failed to create apx user pkg managers directory: %w", err)
 			}
