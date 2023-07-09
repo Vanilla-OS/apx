@@ -11,9 +11,16 @@ type Apx struct {
 }
 
 func NewApx(cnf *settings.Config) *Apx {
-	return &Apx{
+	apx = &Apx{
 		Cnf: cnf,
 	}
+
+	err := apx.EssentialChecks()
+	if err != nil {
+		panic(err)
+	}
+
+	return apx
 }
 
 func NewStandardApx() *Apx {
