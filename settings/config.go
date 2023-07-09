@@ -64,11 +64,25 @@ func GetApxDefaultConfig() (*Config, error) {
 	// 	fmt.Printf("Using config file: %s\n\n", viper.ConfigFileUsed())
 	// }
 
+	Cnf := NewApxConfig(
+		viper.GetString("apxPath"),
+		viper.GetString("distroboxPath"),
+		viper.GetString("storageDriver"),
+	)
+	return Cnf, nil
+}
+
+func NewApxConfig(apxPath, distroboxPath, storageDriver string) *Config {
+	userHome, err := os.UserHomeDir()
+	if err != nil {
+		panic(err)
+	}
+
 	Cnf := &Config{
 		// Common
-		ApxPath:       viper.GetString("apxPath"),
-		DistroboxPath: viper.GetString("distroboxPath"),
-		StorageDriver: viper.GetString("storageDriver"),
+		ApxPath:       apxPath,
+		DistroboxPath: distroboxPath,
+		StorageDriver: storageDriver,
 
 		// Virtual
 		ApxStoragePath:      "",
@@ -86,5 +100,5 @@ func GetApxDefaultConfig() (*Config, error) {
 	Cnf.PkgManagersPath = filepath.Join(Cnf.ApxPath, "package-managers")
 	Cnf.UserPkgManagersPath = filepath.Join(Cnf.UserApxPath, "package-managers")
 
-	return Cnf, nil
+	return Cnf
 }
