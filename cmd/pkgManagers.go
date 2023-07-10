@@ -278,26 +278,43 @@ func newPkgManager(cmd *cobra.Command, args []string) error {
 	update, _ := cmd.Flags().GetString("update")
 	upgrade, _ := cmd.Flags().GetString("upgrade")
 
+	reader := bufio.NewReader(os.Stdin)
+
 	if name == "" {
-		if !assumeYes {
-			cmdr.Info.Println(apx.Trans("pkgmanagers.new.info.askName"))
-			fmt.Scanln(&name)
-			if name == "" {
-				cmdr.Error.Println(apx.Trans("pkgmanagers.new.error.emptyName"))
-				return nil
-			}
-		} else {
+		if assumeYes {
 			cmdr.Error.Println(apx.Trans("pkgmanagers.new.error.noName"))
+			return nil
+		}
+
+		cmdr.Info.Println(apx.Trans("pkgmanagers.new.info.askName"))
+		name, _ = reader.ReadString('\n')
+		name = strings.ReplaceAll(name, "\n", "")
+		name = strings.ReplaceAll(name, " ", "")
+		if name == "" {
+			cmdr.Error.Println(apx.Trans("pkgmanagers.new.error.emptyName"))
 			return nil
 		}
 	}
 
 	if !needSudo && !assumeYes {
-		cmdr.Info.Println(apx.Trans("pkgmanagers.new.info.askSudo") + ` [y/N]`)
-		reader := bufio.NewReader(os.Stdin)
-		answer, _ := reader.ReadString('\n')
-		if strings.ToLower(strings.TrimSpace(answer)) == "y" {
-			needSudo = true
+		validChoice := false
+		for !validChoice {
+			cmdr.Info.Println(apx.Trans("pkgmanagers.new.info.askSudo") + ` [y/N]`)
+			answer, _ := reader.ReadString('\n')
+			if answer == "\n" {
+				answer = "n\n"
+			}
+			answer = strings.ToLower(strings.ReplaceAll(answer, " ", ""))
+			switch answer {
+			case "y\n":
+				needSudo = true
+				validChoice = true
+			case "n\n":
+				needSudo = false
+				validChoice = true
+			default:
+				cmdr.Warning.Println(apx.Trans("apx.errors.invalidChoice"))
+			}
 		}
 	}
 
@@ -316,31 +333,33 @@ func newPkgManager(cmd *cobra.Command, args []string) error {
 
 	for cmdName, cmd := range cmdMap {
 		if *cmd == "" {
-			if !assumeYes {
-				cmdr.Info.Printf(apx.Trans("pkgmanagers.new.info.askCommand"), cmdName)
-				fmt.Scanln(cmd)
-				if *cmd == "" {
-					cmdr.Error.Printf(apx.Trans("pkgmanagers.new.error.emptyCommand"), cmdName)
-					return nil
-				}
-			} else {
+			if assumeYes {
 				cmdr.Error.Printf(apx.Trans("pkgmanagers.new.error.noCommand"), cmdName)
+				return nil
+			}
+
+			cmdr.Info.Printf(apx.Trans("pkgmanagers.new.info.askCommand"), cmdName)
+			*cmd, _ = reader.ReadString('\n')
+			*cmd = strings.ReplaceAll(*cmd, "\n", "")
+			if *cmd == "" {
+				cmdr.Error.Printf(apx.Trans("pkgmanagers.new.error.emptyCommand"), cmdName)
 				return nil
 			}
 		}
 	}
 
 	if core.PkgManagerExists(name) {
-		if !assumeYes {
-			cmdr.Info.Printf(apx.Trans("pkgmanagers.new.info.askOverwrite"), name)
-			reader := bufio.NewReader(os.Stdin)
-			answer, _ := reader.ReadString('\n')
-			if strings.ToLower(strings.TrimSpace(answer)) != "y" {
-				cmdr.Info.Println(apx.Trans("apx.info.aborting"))
-				return nil
-			}
-		} else {
+		if assumeYes {
 			cmdr.Error.Println(apx.Trans("pkgmanagers.new.error.alreadyExists"), name)
+			return nil
+		}
+
+		cmdr.Info.Printf(apx.Trans("pkgmanagers.new.info.askOverwrite"), name)
+		answer, _ := reader.ReadString('\n')
+		answer = strings.ReplaceAll(answer, "\n", "")
+
+		if strings.ToLower(strings.TrimSpace(answer)) != "y" {
+			cmdr.Info.Println(apx.Trans("apx.info.aborting"))
 			return nil
 		}
 	}
