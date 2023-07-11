@@ -164,6 +164,7 @@ stacks:
       noStacks: "No stacks available. Create a new one with 'apx stacks new' or contact
         the system administrator."
       foundStacks: "Found %d stacks:\n"
+      aborting: "Aborting removal of stack '%s'."
     options:
       json:
         description: "Output in JSON format."

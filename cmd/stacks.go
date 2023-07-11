@@ -487,13 +487,28 @@ func removeStack(cmd *cobra.Command, args []string) error {
 	}
 
 	force, _ := cmd.Flags().GetBool("force")
+
 	if !force {
-		cmdr.Info.Printf(apx.Trans("stacks.rm.info.askConfirmation"), stackName)
-		var confirmation string
-		fmt.Scanln(&confirmation)
-		if strings.ToLower(confirmation) != "y" {
-			cmdr.Info.Println(apx.Trans("apx.info.aborting"))
-			return nil
+		reader := bufio.NewReader(os.Stdin)
+		validChoice := false
+		for !validChoice {
+			cmdr.Info.Printf(apx.Trans("stacks.rm.info.askConfirmation") + ` [y/N]`, stackName)
+			answer, _ := reader.ReadString('\n')
+			if answer == "\n" {
+				answer = "n\n"
+			}
+			answer = strings.ToLower(strings.ReplaceAll(answer, " ", ""))
+			switch answer {
+			case "y\n":
+				validChoice = true
+			case "n\n":
+				validChoice = true
+				cmdr.Info.Println(apx.Trans("stacks.rm.info.aborting"))
+				return nil
+			default:
+				cmdr.Info.Println(apx.Trans("apx.errors.invalidChoice"))
+				return nil
+			}
 		}
 	}
 
