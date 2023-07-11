@@ -405,13 +405,27 @@ func rmPkgManager(cmd *cobra.Command, args []string) error {
 	}
 
 	force, _ := cmd.Flags().GetBool("force")
+
 	if !force {
-		cmdr.Info.Printf(apx.Trans("pkgmanagers.rm.info.askConfirmation"), pkgManagerName)
-		var confirmation string
-		fmt.Scanln(&confirmation)
-		if strings.ToLower(confirmation) != "y" {
-			cmdr.Info.Println(apx.Trans("pkgmanagers.rm.info.aborting"))
-			return nil
+		validChoice := false
+		for !validChoice {
+			cmdr.Info.Printf(apx.Trans("pkgmanagers.rm.info.askConfirmation") + ` [y/N]`, pkgManagerName)
+			answer, _ := reader.ReadString('\n')
+			if answer == "\n" {
+				answer = "n\n"
+			}
+			answer = strings.ToLower(strings.ReplaceAll(answer, " ", ""))
+			switch answer {
+			case "y\n":
+				validChoice = true
+			case "n\n":
+				validChoice = true
+				cmdr.Info.Println(apx.Trans("pkgmanagers.rm.info.aborting"))
+				return nil
+			default:
+				cmdr.Info.Println(apx.Trans("apx.errors.invalidChoice"))
+				return nil
+			}
 		}
 	}
 
