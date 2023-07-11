@@ -130,6 +130,11 @@ func ListPkgManagers() []*PkgManager {
 	pkgManagersFromEtc := listPkgManagersFromPath(apx.Cnf.UserPkgManagersPath)
 	pkgManagers = append(pkgManagers, pkgManagersFromEtc...)
 
+	if apx.Cnf.PkgManagersPath == apx.Cnf.UserPkgManagersPath {
+		// user install
+		return pkgManagers
+	}
+
 	pkgManagersFromShare := listPkgManagersFromPath(apx.Cnf.PkgManagersPath)
 	pkgManagers = append(pkgManagers, pkgManagersFromShare...)
 

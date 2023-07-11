@@ -132,6 +132,11 @@ func ListStacks() []*Stack {
 	stacksFromEtc := listStacksFromPath(apx.Cnf.UserStacksPath)
 	stacks = append(stacks, stacksFromEtc...)
 
+	if apx.Cnf.UserStacksPath == apx.Cnf.StacksPath {
+		// user install
+		return stacks
+	}
+
 	stacksFromShare := listStacksFromPath(apx.Cnf.StacksPath)
 	stacks = append(stacks, stacksFromShare...)
 
