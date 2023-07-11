@@ -419,15 +419,18 @@ func rmPkgManager(cmd *cobra.Command, args []string) error {
 			switch answer {
 			case "y\n":
 				validChoice = true
+				force = true
 			case "n\n":
 				validChoice = true
-				cmdr.Info.Println(apx.Trans("pkgmanagers.rm.info.aborting"))
-				return nil
 			default:
 				cmdr.Info.Println(apx.Trans("apx.errors.invalidChoice"))
-				return nil
 			}
 		}
+	}
+
+	if !force {
+		cmdr.Info.Println(apx.Trans("pkgmanagers.rm.info.aborting"))
+		return nil
 	}
 
 	error = pkgManager.Remove()
