@@ -423,7 +423,7 @@ func rmPkgManager(cmd *cobra.Command, args []string) error {
 			case "n\n":
 				validChoice = true
 			default:
-				cmdr.Info.Println(apx.Trans("apx.errors.invalidChoice"))
+				cmdr.Warning.Println(apx.Trans("apx.errors.invalidChoice"))
 			}
 		}
 	}
