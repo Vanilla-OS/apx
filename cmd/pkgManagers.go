@@ -429,7 +429,7 @@ func rmPkgManager(cmd *cobra.Command, args []string) error {
 	}
 
 	if !force {
-		cmdr.Info.Println(apx.Trans("pkgmanagers.rm.info.aborting"))
+		cmdr.Info.Printfln(apx.Trans("pkgmanagers.rm.info.aborting"), pkgManagerName)
 		return nil
 	}
 
