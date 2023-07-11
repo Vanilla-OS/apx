@@ -407,6 +407,7 @@ func rmPkgManager(cmd *cobra.Command, args []string) error {
 	force, _ := cmd.Flags().GetBool("force")
 
 	if !force {
+		reader := bufio.NewReader(os.Stdin)
 		validChoice := false
 		for !validChoice {
 			cmdr.Info.Printf(apx.Trans("pkgmanagers.rm.info.askConfirmation") + ` [y/N]`, pkgManagerName)
