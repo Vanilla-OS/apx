@@ -1,329 +1,315 @@
 apx:
-  description: "Apx is a package manager with support for multiple sources, allowing
-    you to install packages in subsystems."
+  description: "Apx 是支援多種軟體包來源的軟體包管理器，允許使用者在子系統中安裝軟體包。"
   errors:
-    unknownCommand: "Unknown command: %s"
+    unknownCommand: "未知的命令：%s"
     invalidInput: "輸入無效。"
-    invalidChoice: Invalid choice.
+    invalidChoice: 選項無效。
   info:
-    aborting: "Aborting as requested."
+    aborting: "應使用者要求中止操作。"
   terminal:
     yes: "是"
     no: "否"
 
 runtimeCommand:
-  description: "Work with the specified subsystem, accessing the package manager and
-    environment."
+  description: "操作指定的子系統，存取軟體包管理器及環境。"
   error:
-    noPackageSpecified: "No packages specified."
-    cantAccessPkgManager: "An error occurred while accessing the package manager:
-      %s"
-    executingCommand: "An error occurred while executing the command: %s"
-    noAppNameOrBin: "--app-name or --bin must be specified."
-    sameAppOrBin: "--app-name and --bin cannot be both specified."
-    exportingApp: "An error occurred while exporting the application: %s"
-    exportingBin: "An error occurred while exporting the binary: %s"
-    unexportingApp: "An error occurred while unexporting the application: %s"
-    unexportingBin: "An error occurred while unexporting the binary: %s"
+    noPackageSpecified: "沒有指定軟體包。"
+    cantAccessPkgManager: "存取軟體包管理器時發生錯誤：%s"
+    executingCommand: "執行命令時發生錯誤：%s"
+    noAppNameOrBin: "必須指定 --app-name 或是 --bin。"
+    sameAppOrBin: "不能同時指定 --app-name 及 --bin。"
+    exportingApp: "匯出應用程式時發生錯誤：%s"
+    exportingBin: "匯出二進位檔案時發生錯誤：%s"
+    unexportingApp: "移除匯出的應用程式時發生錯誤：%s"
+    unexportingBin: "移除匯出的二進位檔案時發生錯誤：%s"
   info:
-    unexportedApps: "Unexported %d applications\n"
+    unexportedApps: "已移除匯出的 %d 個應用程式\n"
     exportedApps: "已匯出 %d 個應用程式\n"
     exportedApp: "已匯出應用程式 %s\n"
-    exportedBin: "Exported binary %s\n"
-    unexportedApp: "Unexported application %s\n"
-    unexportedBin: "Unexported binary %s\n"
+    exportedBin: "已匯出二進位檔案 %s\n"
+    unexportedApp: "已移除匯出的應用程式 %s\n"
+    unexportedBin: "已移除匯出的二進位檔案 %s\n"
   autoremove:
-    description: "Remove packages that are no longer required."
+    description: "移除不再需要的軟體包。"
   clean:
-    description: "Clean the package manager's cache."
+    description: "清理軟體包管理器的快取。"
   install:
-    description: "Install the specified package."
+    description: "安裝指定的軟體包。"
     options:
       noExport:
-        description: "Do not export a desktop entry."
+        description: "不匯出桌面條目。"
   list:
-    description: "List all installed packages."
+    description: "列出所有已安裝的軟體包。"
   purge:
-    description: "Purge the specified packages."
+    description: "清除（purge）指定的軟體包。"
   remove:
-    description: "Remove the specified packages."
+    description: "移除指定的軟體包。"
   search:
-    description: "Search for packages matching the specified query."
+    description: "搜尋符合指定查詢的軟體包。"
   show:
-    description: "Show information about the specified package."
+    description: "顯示有關指定軟體包的資訊。"
   update:
-    description: "Update the list of available packages."
+    description: "更新可提供軟體包的清單。"
   upgrade:
-    description: "Upgrade all installed packages."
+    description: "升級所有已安裝的軟體包。"
   enter:
-    description: "Enter the subsystem's environment."
+    description: "進入子系統的環境。"
   export:
-    description: "Export an application or binary from the subsystem."
+    description: "從子系統匯出應用程式或二進位檔案。"
     options:
       appName:
-        description: "The name of the application to export."
+        description: "要匯出的應用程式的名稱。"
       bin:
-        description: "The name of the binary to export."
+        description: "要匯出的二進位檔案的名稱。"
       binOutput:
-        description: "Path of the binary output (default: ~/.local/bin/)."
+        description: "二進位輸出的路徑（預設為 ~/.local/bin/）。"
   unexport:
-    description: "Unexport an application or binary from the subsystem."
+    description: "移除從子系統中匯出的應用程式或二進位檔案。"
     options:
       appName:
-        description: "The name of the application to unexport."
+        description: "要移除的匯出的應用程式的名稱。"
       bin:
-        description: "The name of the binary to unexport."
+        description: "要移除的匯出的二進位檔案的名稱。"
       binOutput:
-        description: "Path of the binary output (default: ~/.local/bin/)."
+        description: "二進位輸出的路徑（預設為 ~/.local/bin/）。"
 
 pkgmanagers:
-  description: "Work with the package managers that are available in apx."
+  description: "操作 apx 中可使用的軟體包管理器。"
   labels:
-    name: "Name"
+    name: "名稱"
     builtIn: "內建"
 
   list:
-    description: "List all available package managers."
+    description: "列出所有可使用的軟體包管理器。"
     info:
-      noPkgManagers: "No package managers available. Create a new one with 'apx pkgmanagers
-        new' or contact the system administrator."
-      foundPkgManagers: "Found %d package managers:\n"
+      noPkgManagers: "沒有可使用的軟體包管理器。請使用 'apx pkgmanagers new' 建立新的軟體包管理器，或是聯絡系統管理員。"
+      foundPkgManagers: "找到 %d 個軟體包管理器：\n"
     options:
       json:
-        description: "Output in JSON format."
+        description: "以 JSON 格式輸出。"
   show:
-    description: "Show information about the specified package manager."
+    description: "顯示有關指定軟體包管理器的資訊。"
   new:
-    description: "Create a new package manager."
+    description: "建立新的軟體包管理器。"
 
     error:
-      emptyName: "The name cannot be empty."
-      noName: "No name specified."
-      emptyCommand: "The command cannot be empty."
-      noCommand: "No command specified for '%s'."
-      alreadyExists: "A package manager with the name '%s' already exists."
+      emptyName: "名稱不能為空。"
+      noName: "沒有指定名稱。"
+      emptyCommand: "命令不能為空。"
+      noCommand: "沒有為 '%s' 指定命令。"
+      alreadyExists: "名為 '%s' 的軟體包管理器已經存在。"
     info:
-      askName: "Choose a name:"
-      askSudo: "Does the package manager need sudo to run?"
-      askCommand: "Enter the command for '%s':"
-      askOverwrite: "A package manager with the name '%s' already exists. Overwrite
-        it?"
-      success: "Created package manager '%s'."
+      askName: "選擇名稱："
+      askSudo: "軟體包管理器是否需要 sudo 才能執行？"
+      askCommand: "輸入 '%s' 的命令："
+      askOverwrite: "名為 '%s' 的軟體包管理器已經存在。要覆寫嗎？"
+      success: "已建立軟體包管理器 '%s'。"
     options:
       assumeYes:
-        description: "Assume yes to all prompts."
+        description: "為所有操作指定「是」。"
       name:
-        description: "The name of the package manager."
+        description: "軟體包管理器的名稱。"
       needSudo:
-        description: "Whether the package manager needs sudo to run."
+        description: "軟體包管理器是否需要 sudo 才能執行。"
       autoremove:
-        description: "The command to run to autoremove packages."
+        description: "執行自動移除軟體包的命令。"
       clean:
-        description: "The command to run to clean the package manager's cache."
+        description: "執行清除軟體包管理器快取的命令。"
       install:
-        description: "The command to run to install packages."
+        description: "執行安裝軟體包的命令。"
       list:
-        description: "The command to run to list installed packages."
+        description: "執行列出所有已安裝軟體包的命令。"
       purge:
-        description: "The command to run to purge packages."
+        description: "執行清除（purge）軟體包的命令。"
       remove:
-        description: "The command to run to remove packages."
+        description: "執行移除軟體包的命令。"
       search:
-        description: "The command to run to search for packages."
+        description: "執行搜尋軟體包的命令。"
       show:
-        description: "The command to run to show information about packages."
+        description: "執行顯示軟體包資訊的命令。"
       update:
-        description: "The command to run to update the list of available packages."
+        description: "執行更新可提供軟體包清單的命令。"
       upgrade:
-        description: "The command to run to upgrade packages."
+        description: "執行升級軟體包的命令。"
   rm:
-    description: "Remove the specified package manager."
+    description: "移除指定的軟體包管理器。"
 
     error:
-      noName: "No name specified."
-      inUse: "The package manager is used in %d stacks:\n"
+      noName: "沒有指定名稱。"
+      inUse: "軟體包管理器被用於 %d 個包捆中：\n"
     info:
-      askConfirmation: "Are you sure you want to remove '%s'?"
-      success: "Removed package manager '%s'."
+      askConfirmation: "是否確實要刪除 '%s'？"
+      success: "已移除軟體包管理器 '%s'。"
     options:
       force:
-        description: "Force removal of the package manager."
+        description: "強制移除軟體包管理器。"
       name:
-        description: "The name of the package manager to remove."
+        description: "要移除的軟體包管理器的名稱。"
 
 stacks:
-  description: "Work with the stacks that are available in apx."
+  description: "操作 apx 中可使用的包捆。"
   labels:
-    name: "Name"
-    builtIn: "Built-in"
+    name: "名稱"
+    builtIn: "內建"
 
   list:
-    description: "List all available stacks."
+    description: "列出所有可使用的包捆。"
     info:
-      noStacks: "No stacks available. Create a new one with 'apx stacks new' or contact
-        the system administrator."
-      foundStacks: "Found %d stacks:\n"
+      noStacks: "沒有可使用的包捆。請使用 'apx stacks new' 建立新的包捆，或是聯絡系統管理員。"
+      foundStacks: "找到 %d 個包捆：\n"
     options:
       json:
-        description: "Output in JSON format."
+        description: "以 JSON 格式輸出。"
   show:
-    description: "Show information about the specified stack."
+    description: "顯示有關指定包捆的資訊。"
   new:
-    description: "Create a new stack."
+    description: "建立新包捆。"
     error:
-      emptyName: "The name cannot be empty."
-      noName: "No name specified."
-      emptyBase: "The base cannot be empty."
-      noBase: "No base specified."
-      emptyPkgManager: "The package manager cannot be empty."
-      noPkgManager: "No package manager specified."
-      pkgManagerDoesNotExist: "The specified package manager does not exist. Create
-        it with 'apx pkgmanagers new' or contact the system administrator."
-      emptyPackages: "The packages cannot be empty."
-      noPackages: "No packages specified."
-      alreadyExists: "A stack with the name '%s' already exists."
+      emptyName: "名稱不能為空。"
+      noName: "沒有指定名稱。"
+      emptyBase: "基礎映像不能為空。"
+      noBase: "沒有指定基礎映像。"
+      emptyPkgManager: "軟體包管理器不能為空。"
+      noPkgManager: "沒有指定軟體包管理器。"
+      pkgManagerDoesNotExist: "指定的軟體包管理器不存在。請使用 'apx pkgmanagers new' 建立或是聯絡系統管理員。"
+      emptyPackages: "軟體包不能為空。"
+      noPackages: "沒有指定軟體包。"
+      alreadyExists: "名為 '%s' 的包捆已經存在。"
     info:
-      askName: "Choose a name:"
-      askBase: "Choose a base (e.g. 'vanillaos/pico'):"
-      askPkgManager: "Choose a package manager:"
-      selectPkgManager: "Select a package manager [1-%d]:"
-      noPackages: "You have not provided any package to install in the stack. Do you
-        want to add some now?"
-      confirmPackages: "Do you want to confirm the current packages list?"
-      askPackages: "Please type the packages you want to install in the stack, separated
-        by a space:"
-      success: "Created stack '%s'."
+      askName: "選擇名稱："
+      askBase: "選擇基礎映像（如 'vanillaos/pico'）："
+      askPkgManager: "選擇軟體包管理器："
+      selectPkgManager: "選取軟體包管理器 [1-%d]："
+      noPackages: "您沒有提供任何要安裝在包捆中的軟體包。需要加入一些嗎？"
+      confirmPackages: "您需要確認目前的軟體包清單嗎？"
+      askPackages: "請輸入您要安裝到包捆中的軟體包，用空白字元隔開："
+      success: "已建立包捆 '%s'。"
     options:
       assumeYes:
-        description: "Assume yes to all prompts."
+        description: "為所有操作指定「是」。"
       name:
-        description: "The name of the stack."
+        description: "包捆的名稱。"
       base:
-        description: "The base subsystem to use."
+        description: "要使用的基礎子系統。"
       packages:
-        description: "The packages to install."
+        description: "要安裝的軟體包。"
       pkgManager:
-        description: "The package manager to use."
+        description: "要使用的軟體包管理器。"
   update:
-    description: "Update the specified stack."
+    description: "更新指定的包捆。"
     error:
-      noName: "No name specified."
-      noBase: "No base specified."
-      noPkgManager: "No package manager specified."
-      pkgManagerDoesNotExist: "The specified package manager does not exist. Create
-        it with 'apx pkgmanagers new' or contact the system administrator."
+      noName: "沒有指定名稱。"
+      noBase: "沒有指定基礎映像。"
+      noPkgManager: "沒有指定軟體包管理器。"
+      pkgManagerDoesNotExist: "指定的軟體包管理器不存在。請使用 'apx pkgmanagers new' 建立或是聯絡系統管理員。"
     info:
-      askBase: "Type a new base or confirm the current one (%s):"
-      askPkgManager: "Choose a new package manager or confirm the current one (%s):"
-      askPackages: "Type the packages you want to install in the stack, separated
-        by a space, or confirm the current ones (%s):"
-      success: "Updated stack '%s'."
+      askBase: "輸入新的基礎映像或是確認使用目前的（%s）："
+      askPkgManager: "選擇新的軟體包管理器或是確認使用目前的（%s）："
+      askPackages: "輸入想要安裝在包捆中的軟體包，用空白字元隔開，或是確認使用目前的（%s）："
+      success: "已更新包捆 '%s'。"
 
     options:
       assumeYes:
-        description: "Assume yes to all prompts."
+        description: "為所有操作指定「是」。"
       name:
-        description: "The name of the stack."
+        description: "包捆的名稱。"
       base:
-        description: "The base subsystem to use."
+        description: "要使用的基礎子系統。"
       packages:
-        description: "The packages to install."
+        description: "要安裝的軟體包。"
       pkgManager:
-        description: "The package manager to use."
+        description: "要使用的軟體包管理器。"
   rm:
-    description: "Remove the specified stack."
+    description: "移除指定的包捆。"
     error:
-      noName: "No name specified."
+      noName: "沒有指定名稱。"
     info:
-      askConfirmation: "Are you sure you want to remove '%s'?"
-      success: "Removed stack '%s'."
+      askConfirmation: "是否確實要刪除 '%s'？"
+      success: "已移除包捆 '%s'。"
     options:
       force:
-        description: "Force removal of the stack."
+        description: "強制移除包捆。"
       name:
-        description: "The name of the stack to remove."
+        description: "要移除的包捆的名稱。"
   export:
-    description: "Export the specified stack."
+    description: "匯出指定的包捆。"
     error:
-      noName: "No name specified."
-      noOutput: "No output specified."
+      noName: "沒有指定名稱。"
+      noOutput: "沒有指定輸出。"
     info:
-      success: "Exported stack '%s' to '%s'."
+      success: "已匯出包捆 '%s' 到 '%s'。"
     options:
       name:
-        description: "The name of the stack to export."
+        description: "要匯出的包捆的名稱。"
       output:
-        description: "The path to export the stack to."
+        description: "要匯出的包捆的匯出路徑。"
   import:
-    description: "Import the specified stack."
+    description: "匯入指定的包捆。"
     error:
-      noInput: "No input specified."
-      cannotLoad: "Cannot load stack from '%s'."
+      noInput: "沒有指定輸入。"
+      cannotLoad: "無法從 '%s' 載入包捆。"
     info:
-      success: "Imported stack from '%s'."
+      success: "已從 '%s' 匯入包捆。"
     options:
       input:
-        description: "The path to import the stack from."
+        description: "要匯入的包捆的路徑。"
 
 subsystems:
-  description: "Work with the subsystems that are available in apx."
+  description: "操作 apx 中可使用的子系統。"
   labels:
-    name: "Name"
-    status: "Status"
+    name: "名稱"
+    status: "狀態"
 
   list:
-    description: "List all available subsystems."
+    description: "列出所有可使用的子系統。"
     error:
     info:
-      noSubsystems: "No subsystems available. Create a new one with 'apx subsystems
-        new' or contact the system administrator."
-      foundSubsystems: "Found %d subsystems:\n"
+      noSubsystems: "沒有可使用的子系統。請使用 'apx subsystems new' 建立新的子系統，或是聯絡系統管理員。"
+      foundSubsystems: "找到 %d 個子系統：\n"
     options:
       json:
-        description: "Output in JSON format."
+        description: "以 JSON 格式輸出。"
   new:
-    description: "Create a new subsystem."
+    description: "建立新的子系統。"
     error:
-      noStacks: "A stack is needed to create a subsystem. Create a new one with 'apx
-        stacks new' or contact the system administrator."
-      emptyName: "The name cannot be empty."
-      noName: "No name specified."
-      emptyStack: "The stack cannot be empty."
-      noStack: "No stack specified."
-      stackDoesNotExist: "The specified stack does not exist. Create it with 'apx
-        stacks new' or contact the system administrator."
-      alreadyExists: "A subsystem with the name '%s' already exists."
+      noStacks: "建立子系統需要包捆。請使用 'apx stacks new' 建立新包捆，或是聯絡系統管理員。"
+      emptyName: "名稱不能為空。"
+      noName: "沒有指定名稱。"
+      emptyStack: "包捆不能為空。"
+      noStack: "沒有指定包捆。"
+      stackDoesNotExist: "指定的包捆不存在。請使用 'apx stacks new' 建立或是聯絡系統管理員。"
+      alreadyExists: "名為 '%s' 的子系統已經存在。"
     info:
-      askName: "Choose a name:"
-      selectStack: "Select a stack [1-%d]:"
-      success: "Created subsystem '%s'."
-      creatingSubsystem: "Created subsystem '%s' with stack '%s'…"
+      askName: "選擇名稱："
+      selectStack: "選取包捆 [1-%d]："
+      success: "已建立子系統 '%s'。"
+      creatingSubsystem: "已建立子系統 '%s'，使用包捆 '%s'…"
     options:
       name:
-        description: "The name of the subsystem."
+        description: "子系統的名稱。"
       stack:
-        description: "The stack to use."
+        description: "要使用的包捆。"
   rm:
-    description: "Remove the specified subsystem."
+    description: "移除指定的子系統。"
     error:
-      noName: "No name specified."
+      noName: "沒有指定名稱。"
     info:
-      askConfirmation: "Are you sure you want to remove '%s'?"
-      success: "Removed subsystem '%s'."
+      askConfirmation: "是否確實要刪除 '%s'？"
+      success: "已移除子系統 '%s'。"
     options:
       force:
-        description: "Force removal of the subsystem."
+        description: "強制移除子系統。"
       name:
-        description: "The name of the subsystem to remove."
+        description: "要移除的子系統的名稱。"
   reset:
-    description: "Reset the specified subsystem."
+    description: "重設指定的子系統。"
     error:
-      noName: "No name specified."
+      noName: "沒有指定名稱。"
     info:
-      askConfirmation: "Are you sure you want to reset '%s'?"
-      success: "The subsystem '%s' has been reset."
+      askConfirmation: "是否確定要重設 '%s'？"
+      success: "已重設子系統 '%s'。"
     options:
       force:
-        description: "Force reset of the subsystem."
+        description: "強制重設子系統。"
       name:
-        description: "The name of the subsystem to reset."
+        description: "要重設的子系統的名稱。"

@@ -2,8 +2,8 @@ apx:
   description: "Apx 是支持多软件源的软件包管理器，允许用户在子系统中安装软件包。"
   errors:
     unknownCommand: "未知的命令：%s"
-    invalidInput: "无效的输入。"
-    invalidChoice: Invalid choice.
+    invalidInput: "输入无效。"
+    invalidChoice: 选择无效。
   info:
     aborting: "应用户要求取消操作。"
   terminal:
@@ -11,7 +11,7 @@ apx:
     no: "否"
 
 runtimeCommand:
-  description: "操作指定的子系统，访问包管理器及环境。"
+  description: "操作指定的子系统，访问软件包管理器及环境。"
   error:
     noPackageSpecified: "没有指定软件包。"
     cantAccessPkgManager: "访问软件包管理器时发生错误：%s"
@@ -97,7 +97,7 @@ pkgmanagers:
       noName: "没有指定名称。"
       emptyCommand: "命令不能为空。"
       noCommand: "没有为 '%s' 指定命令。"
-      alreadyExists: "名字为 '%s' 的软件包管理器已经存在。"
+      alreadyExists: "名为 '%s' 的软件包管理器已经存在。"
     info:
       askName: "选择名称："
       askSudo: "软件包管理器是否需要 sudo 才能运行？"
@@ -156,7 +156,7 @@ stacks:
     description: "列出所有可用的包捆。"
     info:
       noStacks: "没有可用的包捆。请使用 'apx stacks new' 创建新的包捆，或者联系系统管理员。"
-      foundStacks: "发现 %d 个包捆：\n"
+      foundStacks: "找到 %d 个包捆：\n"
     options:
       json:
         description: "以 JSON 格式输出。"
@@ -174,7 +174,7 @@ stacks:
       pkgManagerDoesNotExist: "指定的软件包管理器不存在。请使用 'apx pkgmanagers new' 创建或者联系系统管理员。"
       emptyPackages: "软件包不能为空。"
       noPackages: "没有指定软件包。"
-      alreadyExists: "名为 '%s' 的包捆已存在。"
+      alreadyExists: "名为 '%s' 的包捆已经存在。"
     info:
       askName: "选择名称："
       askBase: "选择基础映像（如 'vanillaos/pico'）："
@@ -265,7 +265,7 @@ subsystems:
     error:
     info:
       noSubsystems: "没有可用的子系统。请使用 'apx subsystems new' 创建新的子系统，或者联系系统管理员。"
-      foundSubsystems: "发现 %d 个子系统：\n"
+      foundSubsystems: "找到 %d 个子系统：\n"
     options:
       json:
         description: "以 JSON 格式输出。"
