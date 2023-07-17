@@ -82,36 +82,36 @@ runtimeCommand:
 pkgmanagers:
   description: "Travailler avec les gestionnaires de paquets disponibles dans apx."
   labels:
-    name: "Name"
-    builtIn: "Built-in"
+    name: "Nom"
+    builtIn: "Intégré"
 
   list:
-    description: "List all available package managers."
+    description: "Lister tous les gestionnaires de paquets disponibles."
     info:
-      noPkgManagers: "No package managers available. Create a new one with 'apx pkgmanagers
-        new' or contact the system administrator."
-      foundPkgManagers: "Found %d package managers:\n"
+      noPkgManagers: "Aucun gestionnaire de paquets disponible. En créer un nouveau
+        avec 'apx pkgmanagers new' ou contacter l'administrateur du système."
+      foundPkgManagers: "%d gestionnaires de paquets trouvés.\n"
     options:
       json:
-        description: "Output in JSON format."
+        description: "Sortie au format JSON."
   show:
-    description: "Show information about the specified package manager."
+    description: "Montrer les informations du gestionnaire de paquet spécifié."
   new:
-    description: "Create a new package manager."
+    description: "Créer un nouveau gestionnaire de paquets."
 
     error:
-      emptyName: "The name cannot be empty."
-      noName: "No name specified."
-      emptyCommand: "The command cannot be empty."
-      noCommand: "No command specified for '%s'."
-      alreadyExists: "A package manager with the name '%s' already exists."
+      emptyName: "Le nom ne peut pas être vide."
+      noName: "Aucun nom spécifié."
+      emptyCommand: "La commande ne peut être vide."
+      noCommand: "Aucune commande n'est spécifiée pour '%s'."
+      alreadyExists: "Un gestionnaire de paquets portant le nom \"%s\" existe déjà."
     info:
-      askName: "Choose a name:"
-      askSudo: "Does the package manager need sudo to run?"
-      askCommand: "Enter the command for '%s':"
-      askOverwrite: "A package manager with the name '%s' already exists. Overwrite
-        it?"
-      success: "Created package manager '%s'."
+      askName: "Choisissez un nom :"
+      askSudo: "Le gestionnaire de paquets nécessite-t-il sudo pour fonctionner ?"
+      askCommand: "Entrez la commande pour '%s' :"
+      askOverwrite: "Un gestionnaire de paquets portant le nom \"%s\" existe déjà.
+        L'écraser ?"
+      success: "Le gestionnaire de paquet '%s' a été créé."
     options:
       assumeYes:
         description: "Assume yes to all prompts."
