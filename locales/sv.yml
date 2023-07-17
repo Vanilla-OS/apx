@@ -1,328 +1,328 @@
 apx:
-  description: "Apx is a package manager with support for multiple sources, allowing
-    you to install packages in subsystems."
+  description: "Apx är en pakethanterare med stöd för flera källor, så att du kan
+    installera paket i undersystem."
   errors:
-    unknownCommand: "Unknown command: %s"
-    invalidInput: "Invalid input."
+    unknownCommand: "Okänt kommando: %s"
+    invalidInput: "Ogiltig inmatning."
   info:
-    aborting: "Aborting as requested."
+    aborting: "Avbryter som begärt."
   terminal:
-    yes: "yes"
-    no: "no"
+    yes: "ja"
+    no: "nej"
 
 runtimeCommand:
-  description: "Work with the specified subsystem, accessing the package manager and
-    environment."
+  description: "Arbeta med det angivna undersystemet, åtkomst till pakethanteraren
+    och miljön."
   error:
-    noPackageSpecified: "No packages specified."
-    cantAccessPkgManager: "An error occurred while accessing the package manager:
-      %s"
-    executingCommand: "An error occurred while executing the command: %s"
-    noAppNameOrBin: "--app-name or --bin must be specified."
-    sameAppOrBin: "--app-name and --bin cannot be both specified."
-    exportingApp: "An error occurred while exporting the application: %s"
-    exportingBin: "An error occurred while exporting the binary: %s"
-    unexportingApp: "An error occurred while unexporting the application: %s"
-    unexportingBin: "An error occurred while unexporting the binary: %s"
+    noPackageSpecified: "Inga paket specificerade."
+    cantAccessPkgManager: "Ett fel uppstod vid åtkomst till pakethanteraren: %s"
+    executingCommand: "Ett fel uppstod när kommandot: %s kördes"
+    noAppNameOrBin: "--app-name eller --bin måste anges."
+    sameAppOrBin: "--app-name och --bin kan inte anges båda."
+    exportingApp: "Ett fel uppstod vid export av programmet: %s"
+    exportingBin: "Ett fel inträffade vid export av binär: %s"
+    unexportingApp: "Ett fel uppstod när programmet skulle avexporteras: %s"
+    unexportingBin: "Ett fel uppstod när binär: %s skulle avexporteras"
   info:
-    unexportedApps: "Unexported %d applications\n"
-    exportedApps: "Exported %d applications\n"
-    exportedApp: "Exported application %s\n"
-    exportedBin: "Exported binary %s\n"
-    unexportedApp: "Unexported application %s\n"
-    unexportedBin: "Unexported binary %s\n"
+    unexportedApps: "Oexporterade %d program\n"
+    exportedApps: "Exporterade %d program\n"
+    exportedApp: "Exporterat program %s\n"
+    exportedBin: "Exporterad binär %s\n"
+    unexportedApp: "Oexporterat program %s\n"
+    unexportedBin: "Oexporterad binär %s\n"
   autoremove:
-    description: "Remove packages that are no longer required."
+    description: "Ta bort paket som inte längre behövs."
   clean:
-    description: "Clean the package manager's cache."
+    description: "Rengör pakethanterarens cache."
   install:
-    description: "Install the specified package."
+    description: "Installera det specificerade paketet."
     options:
       noExport:
-        description: "Do not export a desktop entry."
+        description: "Exportera inte en skrivbordspost."
   list:
-    description: "List all installed packages."
+    description: "Lista alla installerade paket."
   purge:
-    description: "Purge the specified packages."
+    description: "Rensa de angivna paketen."
   remove:
-    description: "Remove the specified packages."
+    description: "Ta bort det specificerade paketen."
   search:
-    description: "Search for packages matching the specified query."
+    description: "Sök efter paket som matchar den angivna frågan."
   show:
-    description: "Show information about the specified package."
+    description: "Visa information om det specificerade paketet."
   update:
-    description: "Update the list of available packages."
+    description: "Uppdatera listan över tillgängliga paket."
   upgrade:
-    description: "Upgrade all installed packages."
+    description: "Uppgradera alla installerade paket."
   enter:
-    description: "Enter the subsystem's environment."
+    description: "Gå in i undersystems miljö"
   export:
-    description: "Export an application or binary from the subsystem."
+    description: "Exportera ett program eller binär från undersystemet."
     options:
       appName:
-        description: "The name of the application to export."
+        description: "Namnet på programmet som ska exporteras."
       bin:
-        description: "The name of the binary to export."
+        description: "Namnet på den binära fil som ska exporteras."
       binOutput:
-        description: "Path of the binary output (default: ~/.local/bin/)."
+        description: "Sökvägen av binär utdata (standard: ~/.local/bin/)."
   unexport:
-    description: "Unexport an application or binary from the subsystem."
+    description: "Avexportera ett program eller binär från undersystemet."
     options:
       appName:
-        description: "The name of the application to unexport."
+        description: "Namnet på programmet att avexportera."
       bin:
-        description: "The name of the binary to unexport."
+        description: "Namnet på den binära filen som ska avexporteras."
       binOutput:
-        description: "Path of the binary output (default: ~/.local/bin/)."
+        description: "Sökväg av binär utdata (standard: ~/.local/bin/)."
 
 pkgmanagers:
-  description: "Work with the package managers that are available in apx."
+  description: "Arbeta med de pakethanterare som finns tillgängliga i apx."
   labels:
-    name: "Name"
-    builtIn: "Built-in"
+    name: "Namn"
+    builtIn: "Inbyggd"
 
   list:
-    description: "List all available package managers."
+    description: "Lista alla tillgängliga pakethanterare."
     info:
-      noPkgManagers: "No package managers available. Create a new one with 'apx pkgmanagers
-        new' or contact the system administrator."
-      foundPkgManagers: "Found %d package managers:\n"
+      noPkgManagers: "Inga pakethanterare tillgängliga. Skapa en ny med 'apx pkgmanagers
+        new' eller kontakta systemadministratören."
+      foundPkgManagers: "Hittade %d pakethanterare:\n"
     options:
       json:
-        description: "Output in JSON format."
+        description: "Utdata i JSON format."
   show:
-    description: "Show information about the specified package manager."
+    description: "Visa information om den angivna pakethanteraren."
   new:
-    description: "Create a new package manager."
+    description: "Skapa en ny pakethanterare."
 
     error:
-      emptyName: "The name cannot be empty."
-      noName: "No name specified."
-      emptyCommand: "The command cannot be empty."
-      noCommand: "No command specified for '%s'."
-      alreadyExists: "A package manager with the name '%s' already exists."
+      emptyName: "Namnet får inte vara tomt."
+      noName: "Inget namn angivet."
+      emptyCommand: "Kommandot kan inte vara tomt."
+      noCommand: "Inget kommando specificerat för '%s'."
+      alreadyExists: "En pakethanterare med namnet '%s' existerar redan."
     info:
-      askName: "Choose a name:"
-      askSudo: "Does the package manager need sudo to run?"
-      askCommand: "Enter the command for '%s':"
-      askOverwrite: "A package manager with the name '%s' already exists. Overwrite
-        it?"
-      success: "Created package manager '%s'."
+      askName: "Välj ett namn:"
+      askSudo: "Behöver pakethanteraren sudo för att köras?"
+      askCommand: "Ange kommandot för '%s':"
+      askOverwrite: "En pakethanterare med namnet '%s' finns redan. Vill du skriva
+        över det?"
+      success: "Skapade pakethanterare '%s'."
     options:
       assumeYes:
-        description: "Assume yes to all prompts."
+        description: "Anta ja till alla uppmaningar."
       name:
-        description: "The name of the package manager."
+        description: "Namnet på pakethanteraren."
       needSudo:
-        description: "Whether the package manager needs sudo to run."
+        description: "Om pakethanteraren behöver sudo för att köra."
       autoremove:
-        description: "The command to run to autoremove packages."
+        description: "Kommandot att köra för att ta bort paket automatiskt."
       clean:
-        description: "The command to run to clean the package manager's cache."
+        description: "Kommandot att köra för att rensa pakethanterarens cache."
       install:
-        description: "The command to run to install packages."
+        description: "Kommandot att köra för att installera paket."
       list:
-        description: "The command to run to list installed packages."
+        description: "Kommandot att köra för att lista installerade paket."
       purge:
-        description: "The command to run to purge packages."
+        description: "Kommandot att köra för att rensa paket."
       remove:
-        description: "The command to run to remove packages."
+        description: "Kommandot att köra för att ta bort paket."
       search:
-        description: "The command to run to search for packages."
+        description: "Kommandot att köra för att söka efter paket."
       show:
-        description: "The command to run to show information about packages."
+        description: "Kommandot att köra för att visa information om paket."
       update:
-        description: "The command to run to update the list of available packages."
+        description: "Kommandot att köra för att uppdatera listan över tillgängliga
+          paket."
       upgrade:
-        description: "The command to run to upgrade packages."
+        description: "Kommandot att köra för att uppgradera paket."
   rm:
-    description: "Remove the specified package manager."
+    description: "Ta bort den specificerade pakethanteraren."
 
     error:
-      noName: "No name specified."
-      inUse: "The package manager is used in %d stacks:\n"
+      noName: "Inget namn specificerat."
+      inUse: "Pakethanteraren används i %d stackar:\n"
     info:
-      askConfirmation: "Are you sure you want to remove '%s'?"
-      success: "Removed package manager '%s'."
+      askConfirmation: "Är du säker på att du vill ta bort '%s'?"
+      success: "Tog bort pakethanterare '%s'."
     options:
       force:
-        description: "Force removal of the package manager."
+        description: "Forcera borttagning av pakethanteraren."
       name:
-        description: "The name of the package manager to remove."
+        description: "Namnet på pakethanteraren som ska tas bort."
 
 stacks:
-  description: "Work with the stacks that are available in apx."
+  description: "Arbeta med de stackar som finns tillgängliga i apx."
   labels:
-    name: "Name"
-    builtIn: "Built-in"
+    name: "Namn"
+    builtIn: "Inbyggd"
 
   list:
-    description: "List all available stacks."
+    description: "Lista alla tillgängliga stackar."
     info:
-      noStacks: "No stacks available. Create a new one with 'apx stacks new' or contact
-        the system administrator."
-      foundStacks: "Found %d stacks:\n"
+      noStacks: "Inga stackar tillgängliga. Skapa en ny med 'apx stack new' eller
+        kontakta systemadministratören."
+      foundStacks: "Hittade %d stackar:\n"
     options:
       json:
-        description: "Output in JSON format."
+        description: "Utdata i JSON format."
   show:
-    description: "Show information about the specified stack."
+    description: "Visa information om den specificerade stacken."
   new:
-    description: "Create a new stack."
+    description: "Skapa en ny stack."
     error:
-      emptyName: "The name cannot be empty."
-      noName: "No name specified."
-      emptyBase: "The base cannot be empty."
-      noBase: "No base specified."
-      emptyPkgManager: "The package manager cannot be empty."
-      noPkgManager: "No package manager specified."
-      pkgManagerDoesNotExist: "The specified package manager does not exist. Create
-        it with 'apx pkgmanagers new' or contact the system administrator."
-      emptyPackages: "The packages cannot be empty."
-      noPackages: "No packages specified."
-      alreadyExists: "A stack with the name '%s' already exists."
+      emptyName: "Namnet kan inte vara tomt."
+      noName: "Inget namn specificerat."
+      emptyBase: "Bas kan inte vara tom."
+      noBase: "Ingen bas specificerad."
+      emptyPkgManager: "Pakethanteraren kan inte vara tom."
+      noPkgManager: "Ingen pakethanterare specificerad."
+      pkgManagerDoesNotExist: "Den angivna pakethanteraren finns inte. Skapa den med
+        'apx pkgmanagers new' eller kontakta systemadministratören."
+      emptyPackages: "Paketen kan inte vara tomma."
+      noPackages: "Inga paket specificerade."
+      alreadyExists: "En stack med namnet '%s' existerar redan."
     info:
-      askName: "Choose a name:"
-      askBase: "Choose a base (e.g. 'vanillaos/pico'):"
-      askPkgManager: "Choose a package manager:"
-      selectPkgManager: "Select a package manager [1-%d]:"
-      noPackages: "You have not provided any package to install in the stack. Do you
-        want to add some now?"
-      confirmPackages: "Do you want to confirm the current packages list?"
-      askPackages: "Please type the packages you want to install in the stack, separated
-        by a space:"
-      success: "Created stack '%s'."
+      askName: "Välj ett namn:"
+      askBase: "Välj en bas (t.e.x. 'vanillaos/pico'):"
+      askPkgManager: "Välj en pakethanterare:"
+      selectPkgManager: "Välj en pakethanterare [1-%d]:"
+      noPackages: "Du har inte tillhandahållit några paket att installera i stacken.
+        Vill du lägga till några nu?"
+      confirmPackages: "Vill du bekräfta den aktuella paketlistan?"
+      askPackages: "Vänligen skriv paketen du vill installera i stacken, åtskilda
+        av ett mellanslag:"
+      success: "Skapade stack '%s'."
     options:
       assumeYes:
-        description: "Assume yes to all prompts."
+        description: "Anta ja till alla uppmaningar."
       name:
-        description: "The name of the stack."
+        description: "Namnet på stacken."
       base:
-        description: "The base subsystem to use."
+        description: "Bas undersystem att använda."
       packages:
-        description: "The packages to install."
+        description: "Paketen att installera."
       pkgManager:
-        description: "The package manager to use."
+        description: "Pakethanteraren att använda."
   update:
-    description: "Update the specified stack."
+    description: "Uppdatera den specificerade stacken."
     error:
-      noName: "No name specified."
-      noBase: "No base specified."
-      noPkgManager: "No package manager specified."
-      pkgManagerDoesNotExist: "The specified package manager does not exist. Create
-        it with 'apx pkgmanagers new' or contact the system administrator."
+      noName: "Inget namn specificerat."
+      noBase: "Ingen bas pecificerad."
+      noPkgManager: "Ingen pakethanterare specificerad."
+      pkgManagerDoesNotExist: "Den specificerade pakethanteraren finns inte. Skapa
+        den med 'apx pkgmanagers new' eller kontakta systemadministratören."
     info:
-      askBase: "Type a new base or confirm the current one (%s):"
-      askPkgManager: "Choose a new package manager or confirm the current one (%s):"
-      askPackages: "Type the packages you want to install in the stack, separated
-        by a space, or confirm the current ones (%s):"
-      success: "Updated stack '%s'."
+      askBase: "Skriv en ny bas eller bekräfta den nuvarande (%s):"
+      askPkgManager: "Välj en ny pakethanterare eller bekräfta den nuvarande (%s):"
+      askPackages: "Skriv in de paket du vill installera i stacken, åtskilda av ett
+        mellanslag, eller bekräfta de aktuella (%s):"
+      success: "Uppdaterad stack '%s'."
 
     options:
       assumeYes:
-        description: "Assume yes to all prompts."
+        description: "Anta ja till alla uppmaningar."
       name:
-        description: "The name of the stack."
+        description: "Namnet på stacken."
       base:
-        description: "The base subsystem to use."
+        description: "Basundersystemet att använda."
       packages:
-        description: "The packages to install."
+        description: "Paketen att installera."
       pkgManager:
-        description: "The package manager to use."
+        description: "Pakethanteraren att använda."
   rm:
-    description: "Remove the specified stack."
+    description: "Ta bort den specificerade stacken."
     error:
-      noName: "No name specified."
+      noName: "Inget namn specificerat."
     info:
-      askConfirmation: "Are you sure you want to remove '%s'?"
-      success: "Removed stack '%s'."
+      askConfirmation: "Är du säker på att du vill ta bort '%s'?"
+      success: "Tog bort stack '%s'."
     options:
       force:
-        description: "Force removal of the stack."
+        description: "Forcera borttagning av stack."
       name:
-        description: "The name of the stack to remove."
+        description: "Namnet på stack som ska tas bort."
   export:
-    description: "Export the specified stack."
+    description: "Exportera den specificerade stacken."
     error:
-      noName: "No name specified."
-      noOutput: "No output specified."
+      noName: "Inget namn specificerat."
+      noOutput: "Ingen utdata speciferad."
     info:
-      success: "Exported stack '%s' to '%s'."
+      success: "Exporterade stack '%s' till '%s'."
     options:
       name:
-        description: "The name of the stack to export."
+        description: "Namn på stack att exportera."
       output:
-        description: "The path to export the stack to."
+        description: "Sökväg att exportera stack till."
   import:
-    description: "Import the specified stack."
+    description: "Importera den specificerade stacken."
     error:
-      noInput: "No input specified."
-      cannotLoad: "Cannot load stack from '%s'."
+      noInput: "Ingen indata specificerad."
+      cannotLoad: "Kan inte ladda stack från '%s'."
     info:
-      success: "Imported stack from '%s'."
+      success: "Importerade stack från '%s'."
     options:
       input:
-        description: "The path to import the stack from."
+        description: "Sökvägen att importera stacken från."
 
 subsystems:
-  description: "Work with the subsystems that are available in apx."
+  description: "Arbeta med de undersystem som finns i apx."
   labels:
-    name: "Name"
+    name: "Namn"
     status: "Status"
 
   list:
-    description: "List all available subsystems."
+    description: "Lista alla tillgängliga undersystem."
     error:
     info:
-      noSubsystems: "No subsystems available. Create a new one with 'apx subsystems
-        new' or contact the system administrator."
-      foundSubsystems: "Found %d subsystems:\n"
+      noSubsystems: "Inga undersystem tillgänliga. Skapa ett nytt med 'apx subsystems
+        new' eller kontakta systemadministratören."
+      foundSubsystems: "Hittade %d undersystem:\n"
     options:
       json:
-        description: "Output in JSON format."
+        description: "Utdata i JSON-format."
   new:
-    description: "Create a new subsystem."
+    description: "Skapa ett nytt undersystem."
     error:
-      noStacks: "A stack is needed to create a subsystem. Create a new one with 'apx
-        stacks new' or contact the system administrator."
-      emptyName: "The name cannot be empty."
-      noName: "No name specified."
-      emptyStack: "The stack cannot be empty."
-      noStack: "No stack specified."
-      stackDoesNotExist: "The specified stack does not exist. Create it with 'apx
-        stacks new' or contact the system administrator."
-      alreadyExists: "A subsystem with the name '%s' already exists."
+      noStacks: "En stack behövs för att skapa ett undersystem. Skapa ett nytt med
+        'apx stack new' eller kontakta systemadministratören."
+      emptyName: "Namnet kan inte vara tomt."
+      noName: "Inget namn specificerat."
+      emptyStack: "Stacken kan inte vara tom."
+      noStack: "Ingen stack specificerad."
+      stackDoesNotExist: "Den specificerade stacken finns inte. Skapa den med 'apx
+        stack new' eller kontakta systemadministratören."
+      alreadyExists: "Ett undersystem med namnet \"%s\" existerar redan."
     info:
-      askName: "Choose a name:"
-      selectStack: "Select a stack [1-%d]:"
-      success: "Created subsystem '%s'."
-      creatingSubsystem: "Created subsystem '%s' with stack '%s'…"
+      askName: "Välj ett namn:"
+      selectStack: "Välj en stack [1-%d]:"
+      success: "Skapade undersystem '%s'."
+      creatingSubsystem: "Skapade undersystem '%s' med stack '%s'…"
     options:
       name:
-        description: "The name of the subsystem."
+        description: "Namnet på undersystem."
       stack:
-        description: "The stack to use."
+        description: "Stacken att använda."
   rm:
-    description: "Remove the specified subsystem."
+    description: "Ta bort det specificerade undersystemet."
     error:
-      noName: "No name specified."
+      noName: "Inget namn specificerat."
     info:
-      askConfirmation: "Are you sure you want to remove '%s'?"
-      success: "Removed subsystem '%s'."
+      askConfirmation: "Är du säker på att du vill ta bort '%s'?"
+      success: "Tog bort undersystem '%s'."
     options:
       force:
-        description: "Force removal of the subsystem."
+        description: "Forcera borttagning av undersystem."
       name:
-        description: "The name of the subsystem to remove."
+        description: "Namnet på undersystem att ta bort."
   reset:
-    description: "Reset the specified subsystem."
+    description: "Återställ det specificerade undersystemet."
     error:
-      noName: "No name specified."
+      noName: "Inget namn specificerat."
     info:
-      askConfirmation: "Are you sure you want to reset '%s'?"
-      success: "The subsystem '%s' has been reset."
+      askConfirmation: "Är du säker på att du vill återställa '%s'?"
+      success: "Undersystemet '%s' har återställts."
     options:
       force:
-        description: "Force reset of the subsystem."
+        description: "Framtvinga återställning av undersystem."
       name:
-        description: "The name of the subsystem to reset."
+        description: "Namnet på det undersystem som ska återställas."
