@@ -4,7 +4,7 @@ apx:
   errors:
     unknownCommand: "Comando sconosciuto: %s"
     invalidInput: "Input non valido."
-    invalidChoice: Invalid choice.
+    invalidChoice: Scelta non valida.
   info:
     aborting: "Annullato, come richiesto."
   terminal:
@@ -150,7 +150,7 @@ pkgmanagers:
     info:
       askConfirmation: "Si è sicuri di voler rimuovere '%s'?"
       success: "Rimosso il gestore di pacchetti '%s'."
-      aborting: Aborting removal of package manager '%s'.
+      aborting: Interrompendo la rimozione del gestore di pacchetti '%s'.
     options:
       force:
         description: "Forza la rimozione del gestore di pacchetti."
@@ -169,7 +169,7 @@ stacks:
       noStacks: "Non ci sono stack disponibili. Creane uno nuovo con 'apx stacks new'
         o contatta l'amministratore del sistema."
       foundStacks: "Trovati %d stack:\n"
-      aborting: Aborting removal of stack '%s'.
+      aborting: Interrotta la rimozione dello stack '%s'.
     options:
       json:
         description: "Output in formato JSON."
