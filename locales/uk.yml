@@ -4,6 +4,7 @@ apx:
   errors:
     unknownCommand: "Невідома команда: %s"
     invalidInput: "Неправильне введення."
+    invalidChoice: Invalid choice.
   info:
     aborting: "Переривання за запитом."
   terminal:
