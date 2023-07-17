@@ -145,7 +145,7 @@ pkgmanagers:
     info:
       askConfirmation: "Är du säker på att du vill ta bort '%s'?"
       success: "Tog bort pakethanterare '%s'."
-      aborting: Aborting removal of package manager '%s'.
+      aborting: Avbryter borttagning av pakethanteraren '%s'.
     options:
       force:
         description: "Forcera borttagning av pakethanteraren."
@@ -164,7 +164,7 @@ stacks:
       noStacks: "Inga stackar tillgängliga. Skapa en ny med 'apx stack new' eller
         kontakta systemadministratören."
       foundStacks: "Hittade %d stackar:\n"
-      aborting: Aborting removal of stack '%s'.
+      aborting: Avbryter borttagning av stack '%s'.
     options:
       json:
         description: "Utdata i JSON format."
