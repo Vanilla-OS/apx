@@ -3,7 +3,7 @@ apx:
     устанавливать пакеты в подсистемах."
   errors:
     unknownCommand: "Неизвестная команда: %s"
-    invalidInput: "Неправильный ввод."
+    invalidInput: "Недопустимый ввод."
     invalidChoice: Недопустимый выбор.
   info:
     aborting: "Прерывать по запросу."
@@ -143,7 +143,7 @@ pkgmanagers:
     info:
       askConfirmation: "Вы уверены, что хотите удалить '%s'?"
       success: "Удалён менеджер пакетов '%s'."
-      aborting: Aborting removal of package manager '%s'.
+      aborting: Прерывание удаления менеджера пакетов "%s".
     options:
       force:
         description: "Принудительно удалить менеджер пакетов."
@@ -162,7 +162,7 @@ stacks:
       noStacks: "Нет доступных стеков. Создайте новый с помощью 'apx stacks new' или
         обратитесь к системному администратору."
       foundStacks: "Найдено %d стеков:\n"
-      aborting: Aborting removal of stack '%s'.
+      aborting: Прерывание удаления стека '%s'.
     options:
       json:
         description: "Вывод в формате JSON."
