@@ -70,12 +70,12 @@ runtimeCommand:
       binOutput:
         description: "Chemin de sortie du binaire (par défaut : ~/.local/bin/)."
   unexport:
-    description: "Unexport an application or binary from the subsystem."
+    description: "Exclure une application ou un binaire du sous-système."
     options:
       appName:
-        description: "The name of the application to unexport."
+        description: "Le nom de l'application à exclure."
       bin:
-        description: "The name of the binary to unexport."
+        description: "Le nom du fichier binaire à exclure."
       binOutput:
         description: "Chemin de sortie du binaire (par défaut : ~/.local/bin/)."
 
@@ -114,74 +114,77 @@ pkgmanagers:
       success: "Le gestionnaire de paquet '%s' a été créé."
     options:
       assumeYes:
-        description: "Assume yes to all prompts."
+        description: "Supposez que vous répondez par l'affirmative à toutes les questions."
       name:
-        description: "The name of the package manager."
+        description: "Le nom du gestionnaire de paquets."
       needSudo:
-        description: "Whether the package manager needs sudo to run."
+        description: "Si le gestionnaire de paquets a besoin de sudo pour fonctionner."
       autoremove:
-        description: "The command to run to autoremove packages."
+        description: "La commande à exécuter pour supprimer automatiquement les paquets."
       clean:
-        description: "The command to run to clean the package manager's cache."
+        description: "La commande à exécuter pour nettoyer le cache du gestionnaire
+          de paquets."
       install:
-        description: "The command to run to install packages."
+        description: "La commande à exécuter pour installer les paquets."
       list:
-        description: "The command to run to list installed packages."
+        description: "La commande à exécuter pour dresser la liste des paquets installés."
       purge:
-        description: "The command to run to purge packages."
+        description: "La commande à exécuter pour purger les paquets."
       remove:
-        description: "The command to run to remove packages."
+        description: "La commande à exécuter pour supprimer les paquets."
       search:
-        description: "The command to run to search for packages."
+        description: "La commande à exécuter pour rechercher des paquets."
       show:
-        description: "The command to run to show information about packages."
+        description: "La commande à exécuter pour afficher des informations sur les
+          paquets."
       update:
-        description: "The command to run to update the list of available packages."
+        description: "La commande à exécuter pour mettre à jour la liste des paquets
+          disponibles."
       upgrade:
-        description: "The command to run to upgrade packages."
+        description: "La commande à exécuter pour mettre à niveau les paquets."
   rm:
-    description: "Remove the specified package manager."
+    description: "Supprime le gestionnaire de paquets spécifié."
 
     error:
-      noName: "No name specified."
-      inUse: "The package manager is used in %d stacks:\n"
+      noName: "Aucun nom n'a été spécifié."
+      inUse: "Le gestionnaire de paquets est utilisé dans %d stacks :\n"
     info:
-      askConfirmation: "Are you sure you want to remove '%s'?"
-      success: "Removed package manager '%s'."
+      askConfirmation: "Êtes-vous sûr de vouloir supprimer \"%s\" ?"
+      success: "Suppression du gestionnaire de paquets '%s'."
     options:
       force:
-        description: "Force removal of the package manager."
+        description: "Forcer la suppression du gestionnaire de paquets."
       name:
-        description: "The name of the package manager to remove."
+        description: "Le nom du gestionnaire de paquets à supprimer."
 
 stacks:
-  description: "Work with the stacks that are available in apx."
+  description: "Travaillez avec les piles disponibles dans apx."
   labels:
-    name: "Name"
-    builtIn: "Built-in"
+    name: "Nom"
+    builtIn: "Intégré"
 
   list:
-    description: "List all available stacks."
+    description: "Liste de toutes les piles disponibles."
     info:
-      noStacks: "No stacks available. Create a new one with 'apx stacks new' or contact
-        the system administrator."
-      foundStacks: "Found %d stacks:\n"
+      noStacks: "Aucune pile n'est disponible. Créez-en une nouvelle avec 'apx stacks
+        new' ou contactez l'administrateur système."
+      foundStacks: "Trouvé %d stacks :\n"
     options:
       json:
-        description: "Output in JSON format."
+        description: "Sortie au format JSON."
   show:
-    description: "Show information about the specified stack."
+    description: "Affiche des informations sur la pile spécifiée."
   new:
-    description: "Create a new stack."
+    description: "Créer une nouvelle pile."
     error:
-      emptyName: "The name cannot be empty."
-      noName: "No name specified."
-      emptyBase: "The base cannot be empty."
-      noBase: "No base specified."
-      emptyPkgManager: "The package manager cannot be empty."
-      noPkgManager: "No package manager specified."
-      pkgManagerDoesNotExist: "The specified package manager does not exist. Create
-        it with 'apx pkgmanagers new' or contact the system administrator."
+      emptyName: "Le nom ne peut pas être vide."
+      noName: "Aucun nom n'a été précisé."
+      emptyBase: "La base ne peut pas être vide."
+      noBase: "Aucune base n'est précisée."
+      emptyPkgManager: "Le gestionnaire de paquets ne peut pas être vide."
+      noPkgManager: "Aucun gestionnaire de paquets n'a été précisé."
+      pkgManagerDoesNotExist: "Le gestionnaire de paquets indiqué n'existe pas. Créez-le
+        avec 'apx pkgmanagers new' ou contactez l'administrateur système."
       emptyPackages: "The packages cannot be empty."
       noPackages: "No packages specified."
       alreadyExists: "A stack with the name '%s' already exists."
