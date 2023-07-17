@@ -1,0 +1,331 @@
+apx:
+  description: "Apx är en pakethanterare med stöd för flera källor, så att du kan
+    installera paket i undersystem."
+  errors:
+    unknownCommand: "Okänt kommando: %s"
+    invalidInput: "Ogiltig inmatning."
+    invalidChoice: Ogiltigt val.
+  info:
+    aborting: "Avbryter som begärt."
+  terminal:
+    yes: "ja"
+    no: "nej"
+
+runtimeCommand:
+  description: "Arbeta med det angivna undersystemet, åtkomst till pakethanteraren
+    och miljön."
+  error:
+    noPackageSpecified: "Inga paket specificerade."
+    cantAccessPkgManager: "Ett fel uppstod vid åtkomst till pakethanteraren: %s"
+    executingCommand: "Ett fel uppstod när kommandot: %s kördes"
+    noAppNameOrBin: "--app-name eller --bin måste anges."
+    sameAppOrBin: "--app-name och --bin kan inte anges båda."
+    exportingApp: "Ett fel uppstod vid export av programmet: %s"
+    exportingBin: "Ett fel inträffade vid export av binär: %s"
+    unexportingApp: "Ett fel uppstod när programmet skulle avexporteras: %s"
+    unexportingBin: "Ett fel uppstod när binär: %s skulle avexporteras"
+  info:
+    unexportedApps: "Oexporterade %d program\n"
+    exportedApps: "Exporterade %d program\n"
+    exportedApp: "Exporterat program %s\n"
+    exportedBin: "Exporterad binär %s\n"
+    unexportedApp: "Oexporterat program %s\n"
+    unexportedBin: "Oexporterad binär %s\n"
+  autoremove:
+    description: "Ta bort paket som inte längre behövs."
+  clean:
+    description: "Rengör pakethanterarens cache."
+  install:
+    description: "Installera det specificerade paketet."
+    options:
+      noExport:
+        description: "Exportera inte en skrivbordspost."
+  list:
+    description: "Lista alla installerade paket."
+  purge:
+    description: "Rensa de angivna paketen."
+  remove:
+    description: "Ta bort det specificerade paketen."
+  search:
+    description: "Sök efter paket som matchar den angivna frågan."
+  show:
+    description: "Visa information om det specificerade paketet."
+  update:
+    description: "Uppdatera listan över tillgängliga paket."
+  upgrade:
+    description: "Uppgradera alla installerade paket."
+  enter:
+    description: "Gå in i undersystems miljö"
+  export:
+    description: "Exportera ett program eller binär från undersystemet."
+    options:
+      appName:
+        description: "Namnet på programmet som ska exporteras."
+      bin:
+        description: "Namnet på den binära fil som ska exporteras."
+      binOutput:
+        description: "Sökvägen av binär utdata (standard: ~/.local/bin/)."
+  unexport:
+    description: "Avexportera ett program eller binär från undersystemet."
+    options:
+      appName:
+        description: "Namnet på programmet att avexportera."
+      bin:
+        description: "Namnet på den binära filen som ska avexporteras."
+      binOutput:
+        description: "Sökväg av binär utdata (standard: ~/.local/bin/)."
+
+pkgmanagers:
+  description: "Arbeta med de pakethanterare som finns tillgängliga i apx."
+  labels:
+    name: "Namn"
+    builtIn: "Inbyggd"
+
+  list:
+    description: "Lista alla tillgängliga pakethanterare."
+    info:
+      noPkgManagers: "Inga pakethanterare tillgängliga. Skapa en ny med 'apx pkgmanagers
+        new' eller kontakta systemadministratören."
+      foundPkgManagers: "Hittade %d pakethanterare:\n"
+    options:
+      json:
+        description: "Utdata i JSON format."
+  show:
+    description: "Visa information om den angivna pakethanteraren."
+  new:
+    description: "Skapa en ny pakethanterare."
+
+    error:
+      emptyName: "Namnet får inte vara tomt."
+      noName: "Inget namn angivet."
+      emptyCommand: "Kommandot kan inte vara tomt."
+      noCommand: "Inget kommando specificerat för '%s'."
+      alreadyExists: "En pakethanterare med namnet '%s' existerar redan."
+    info:
+      askName: "Välj ett namn:"
+      askSudo: "Behöver pakethanteraren sudo för att köras?"
+      askCommand: "Ange kommandot för '%s':"
+      askOverwrite: "En pakethanterare med namnet '%s' finns redan. Vill du skriva
+        över det?"
+      success: "Skapade pakethanterare '%s'."
+    options:
+      assumeYes:
+        description: "Anta ja till alla uppmaningar."
+      name:
+        description: "Namnet på pakethanteraren."
+      needSudo:
+        description: "Om pakethanteraren behöver sudo för att köra."
+      autoremove:
+        description: "Kommandot att köra för att ta bort paket automatiskt."
+      clean:
+        description: "Kommandot att köra för att rensa pakethanterarens cache."
+      install:
+        description: "Kommandot att köra för att installera paket."
+      list:
+        description: "Kommandot att köra för att lista installerade paket."
+      purge:
+        description: "Kommandot att köra för att rensa paket."
+      remove:
+        description: "Kommandot att köra för att ta bort paket."
+      search:
+        description: "Kommandot att köra för att söka efter paket."
+      show:
+        description: "Kommandot att köra för att visa information om paket."
+      update:
+        description: "Kommandot att köra för att uppdatera listan över tillgängliga
+          paket."
+      upgrade:
+        description: "Kommandot att köra för att uppgradera paket."
+  rm:
+    description: "Ta bort den specificerade pakethanteraren."
+
+    error:
+      noName: "Inget namn specificerat."
+      inUse: "Pakethanteraren används i %d stackar:\n"
+    info:
+      askConfirmation: "Är du säker på att du vill ta bort '%s'?"
+      success: "Tog bort pakethanterare '%s'."
+      aborting: Avbryter borttagning av pakethanteraren '%s'.
+    options:
+      force:
+        description: "Forcera borttagning av pakethanteraren."
+      name:
+        description: "Namnet på pakethanteraren som ska tas bort."
+
+stacks:
+  description: "Arbeta med de stackar som finns tillgängliga i apx."
+  labels:
+    name: "Namn"
+    builtIn: "Inbyggd"
+
+  list:
+    description: "Lista alla tillgängliga stackar."
+    info:
+      noStacks: "Inga stackar tillgängliga. Skapa en ny med 'apx stack new' eller
+        kontakta systemadministratören."
+      foundStacks: "Hittade %d stackar:\n"
+      aborting: Avbryter borttagning av stack '%s'.
+    options:
+      json:
+        description: "Utdata i JSON format."
+  show:
+    description: "Visa information om den specificerade stacken."
+  new:
+    description: "Skapa en ny stack."
+    error:
+      emptyName: "Namnet kan inte vara tomt."
+      noName: "Inget namn specificerat."
+      emptyBase: "Bas kan inte vara tom."
+      noBase: "Ingen bas specificerad."
+      emptyPkgManager: "Pakethanteraren kan inte vara tom."
+      noPkgManager: "Ingen pakethanterare specificerad."
+      pkgManagerDoesNotExist: "Den angivna pakethanteraren finns inte. Skapa den med
+        'apx pkgmanagers new' eller kontakta systemadministratören."
+      emptyPackages: "Paketen kan inte vara tomma."
+      noPackages: "Inga paket specificerade."
+      alreadyExists: "En stack med namnet '%s' existerar redan."
+    info:
+      askName: "Välj ett namn:"
+      askBase: "Välj en bas (t.e.x. 'vanillaos/pico'):"
+      askPkgManager: "Välj en pakethanterare:"
+      selectPkgManager: "Välj en pakethanterare [1-%d]:"
+      noPackages: "Du har inte tillhandahållit några paket att installera i stacken.
+        Vill du lägga till några nu?"
+      confirmPackages: "Vill du bekräfta den aktuella paketlistan?"
+      askPackages: "Vänligen skriv paketen du vill installera i stacken, åtskilda
+        av ett mellanslag:"
+      success: "Skapade stack '%s'."
+    options:
+      assumeYes:
+        description: "Anta ja till alla uppmaningar."
+      name:
+        description: "Namnet på stacken."
+      base:
+        description: "Bas undersystem att använda."
+      packages:
+        description: "Paketen att installera."
+      pkgManager:
+        description: "Pakethanteraren att använda."
+  update:
+    description: "Uppdatera den specificerade stacken."
+    error:
+      noName: "Inget namn specificerat."
+      noBase: "Ingen bas pecificerad."
+      noPkgManager: "Ingen pakethanterare specificerad."
+      pkgManagerDoesNotExist: "Den specificerade pakethanteraren finns inte. Skapa
+        den med 'apx pkgmanagers new' eller kontakta systemadministratören."
+    info:
+      askBase: "Skriv en ny bas eller bekräfta den nuvarande (%s):"
+      askPkgManager: "Välj en ny pakethanterare eller bekräfta den nuvarande (%s):"
+      askPackages: "Skriv in de paket du vill installera i stacken, åtskilda av ett
+        mellanslag, eller bekräfta de aktuella (%s):"
+      success: "Uppdaterad stack '%s'."
+
+    options:
+      assumeYes:
+        description: "Anta ja till alla uppmaningar."
+      name:
+        description: "Namnet på stacken."
+      base:
+        description: "Basundersystemet att använda."
+      packages:
+        description: "Paketen att installera."
+      pkgManager:
+        description: "Pakethanteraren att använda."
+  rm:
+    description: "Ta bort den specificerade stacken."
+    error:
+      noName: "Inget namn specificerat."
+    info:
+      askConfirmation: "Är du säker på att du vill ta bort '%s'?"
+      success: "Tog bort stack '%s'."
+    options:
+      force:
+        description: "Forcera borttagning av stack."
+      name:
+        description: "Namnet på stack som ska tas bort."
+  export:
+    description: "Exportera den specificerade stacken."
+    error:
+      noName: "Inget namn specificerat."
+      noOutput: "Ingen utdata speciferad."
+    info:
+      success: "Exporterade stack '%s' till '%s'."
+    options:
+      name:
+        description: "Namn på stack att exportera."
+      output:
+        description: "Sökväg att exportera stack till."
+  import:
+    description: "Importera den specificerade stacken."
+    error:
+      noInput: "Ingen indata specificerad."
+      cannotLoad: "Kan inte ladda stack från '%s'."
+    info:
+      success: "Importerade stack från '%s'."
+    options:
+      input:
+        description: "Sökvägen att importera stacken från."
+
+subsystems:
+  description: "Arbeta med de undersystem som finns i apx."
+  labels:
+    name: "Namn"
+    status: "Status"
+
+  list:
+    description: "Lista alla tillgängliga undersystem."
+    error:
+    info:
+      noSubsystems: "Inga undersystem tillgänliga. Skapa ett nytt med 'apx subsystems
+        new' eller kontakta systemadministratören."
+      foundSubsystems: "Hittade %d undersystem:\n"
+    options:
+      json:
+        description: "Utdata i JSON-format."
+  new:
+    description: "Skapa ett nytt undersystem."
+    error:
+      noStacks: "En stack behövs för att skapa ett undersystem. Skapa ett nytt med
+        'apx stack new' eller kontakta systemadministratören."
+      emptyName: "Namnet kan inte vara tomt."
+      noName: "Inget namn specificerat."
+      emptyStack: "Stacken kan inte vara tom."
+      noStack: "Ingen stack specificerad."
+      stackDoesNotExist: "Den specificerade stacken finns inte. Skapa den med 'apx
+        stack new' eller kontakta systemadministratören."
+      alreadyExists: "Ett undersystem med namnet \"%s\" existerar redan."
+    info:
+      askName: "Välj ett namn:"
+      selectStack: "Välj en stack [1-%d]:"
+      success: "Skapade undersystem '%s'."
+      creatingSubsystem: "Skapade undersystem '%s' med stack '%s'…"
+    options:
+      name:
+        description: "Namnet på undersystem."
+      stack:
+        description: "Stacken att använda."
+  rm:
+    description: "Ta bort det specificerade undersystemet."
+    error:
+      noName: "Inget namn specificerat."
+    info:
+      askConfirmation: "Är du säker på att du vill ta bort '%s'?"
+      success: "Tog bort undersystem '%s'."
+    options:
+      force:
+        description: "Forcera borttagning av undersystem."
+      name:
+        description: "Namnet på undersystem att ta bort."
+  reset:
+    description: "Återställ det specificerade undersystemet."
+    error:
+      noName: "Inget namn specificerat."
+    info:
+      askConfirmation: "Är du säker på att du vill återställa '%s'?"
+      success: "Undersystemet '%s' har återställts."
+    options:
+      force:
+        description: "Framtvinga återställning av undersystem."
+      name:
+        description: "Namnet på det undersystem som ska återställas."

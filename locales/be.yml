@@ -1,0 +1,327 @@
+apx:
+  description: "Apx - гэта менеджэр пакетаў з падтрымкай некалькіх крыніц, які дазваляе
+    ўсталёўваць пакеты ў падсістэмах."
+  errors:
+    unknownCommand: "Невядомая каманда: %s"
+    invalidInput: "Няправільны ўвод."
+    invalidChoice: Няправільны выбар.
+  info:
+    aborting: "Перапыненне па запыце."
+  terminal:
+    yes: "так"
+    no: "няма"
+
+runtimeCommand:
+  description: "Праца з названай падсістэмай, доступ да мэнэджара пакетаў і асяроддзя."
+  error:
+    noPackageSpecified: "Пакеты не пазначаны."
+    cantAccessPkgManager: "Адбылася памылка пры доступе да дыспетчара пакетаў: %s"
+    executingCommand: "Адбылася памылка падчас выканання каманды: %s"
+    noAppNameOrBin: "Трэба ўказаць --app-name або --bin."
+    sameAppOrBin: "--app-name і --bin не могуць быць зададзены адначасова."
+    exportingApp: "Адбылася памылка падчас экспарту прыкладання: %s"
+    exportingBin: "Падчас экспарту двайковага файла адбылася памылка: %s"
+    unexportingApp: "Адбылася памылка пры скасаванні экспарту прыкладання: %s"
+    unexportingBin: "Адбылася памылка падчас адмены экспарту двайковага файла: %s"
+  info:
+    unexportedApps: "Неэкспартаваныя праграмы: %d\n"
+    exportedApps: "Экспартавана %d прыкладанняў\n"
+    exportedApp: "Экспартаванае прыкладанне %s\n"
+    exportedBin: "Экспартаваны двайковы %s\n"
+    unexportedApp: "Неэкспартаванае прыкладанне %s\n"
+    unexportedBin: "Неэкспартаваны двайковы файл %s\n"
+  autoremove:
+    description: "Выдаліце пакеты, якія больш не патрэбныя."
+  clean:
+    description: "Ачысціце кэш дыспетчара пакетаў."
+  install:
+    description: "Усталюйце ўказаны пакет."
+    options:
+      noExport:
+        description: "Не экспартуйце запіс працоўнага стала."
+  list:
+    description: "Спіс усіх усталяваных пакетаў."
+  purge:
+    description: "Ачысціце названыя пакеты."
+  remove:
+    description: "Выдаліць названыя пакеты."
+  search:
+    description: "Пошук пакетаў, якія адпавядаюць зададзенаму запыту."
+  show:
+    description: "Паказаць інфармацыю пра ўказаны пакет."
+  update:
+    description: "Абнавіць спіс даступных пакетаў."
+  upgrade:
+    description: "Абнавіце ўсе ўсталяваныя пакеты."
+  enter:
+    description: "Увядзіце асяроддзе падсістэмы."
+  export:
+    description: "Экспарт прыкладання або бінарнага файла з падсістэмы."
+    options:
+      appName:
+        description: "Назва праграмы для экспарту."
+      bin:
+        description: "Імя двайковага файла для экспарту."
+      binOutput:
+        description: "Шлях двайковага вываду (па змаўчанні: ~/.local/bin/)."
+  unexport:
+    description: "Адмяніць экспарт прыкладання або бінарнага файла з падсістэмы."
+    options:
+      appName:
+        description: "Назва праграмы, якую трэба адмяніць."
+      bin:
+        description: "Імя двайковага файла, які трэба скасаваць."
+      binOutput:
+        description: "Шлях двайковага вываду (па змаўчанні: ~/.local/bin/)."
+
+pkgmanagers:
+  description: "Працуйце з менеджэрамі пакетаў, даступнымі ў apx."
+  labels:
+    name: "Імя"
+    builtIn: "Убудаваны"
+
+  list:
+    description: "Пералічыце ўсе даступныя менеджэры пакетаў."
+    info:
+      noPkgManagers: "Няма даступных менеджэраў пакетаў. Стварыце новы з «apx pkgmanagers
+        new» або звярніцеся да сістэмнага адміністратара."
+      foundPkgManagers: "Знойдзена %d менеджэраў пакетаў:\n"
+    options:
+      json:
+        description: "Вывад у фармаце JSON."
+  show:
+    description: "Паказаць інфармацыю пра ўказаны менеджэр пакетаў."
+  new:
+    description: "Стварыце новы менеджэр пакетаў."
+
+    error:
+      emptyName: "Імя не можа быць пустым."
+      noName: "Імя не ўказана."
+      emptyCommand: "Каманда не можа быць пустой."
+      noCommand: "Для '%s' не вызначана каманда."
+      alreadyExists: "Менеджэр пакетаў з назвай «%s» ужо існуе."
+    info:
+      askName: "Выберыце назву:"
+      askSudo: "Ці патрэбны sudo для запуску мэнэджару пакетаў?"
+      askCommand: "Увядзіце каманду для «%s»:"
+      askOverwrite: "Менеджэр пакетаў з назвай «%s» ужо існуе. Перазапісаць?"
+      success: "Створаны менеджэр пакетаў «%s»."
+    options:
+      assumeYes:
+        description: "Выкажам здагадку, што так на ўсе падказкі."
+      name:
+        description: "Імя мэнэджэра пакетаў."
+      needSudo:
+        description: "Ці патрабуецца дыспетчару пакетаў sudo для запуску."
+      autoremove:
+        description: "Каманда для аўтаматычнага выдалення пакетаў."
+      clean:
+        description: "Каманда для ачысткі кэша дыспетчара пакетаў."
+      install:
+        description: "Каманда для запуску для ўстаноўкі пакетаў."
+      list:
+        description: "Каманда для запуску спісу ўсталяваных пакетаў."
+      purge:
+        description: "Каманда выканання ачысткі пакетаў."
+      remove:
+        description: "Каманда для выдалення пакетаў."
+      search:
+        description: "Каманда для запуску для пошуку пакетаў."
+      show:
+        description: "Каманда для запуску, каб паказаць інфармацыю аб пакетах."
+      update:
+        description: "Каманда для абнаўлення спісу даступных пакетаў."
+      upgrade:
+        description: "Каманда для абнаўлення пакетаў."
+  rm:
+    description: "Выдаліце ўказаны менеджэр пакетаў."
+
+    error:
+      noName: "Імя не ўказана."
+      inUse: "Менеджар пакетаў выкарыстоўваецца ў %d стэках:\n"
+    info:
+      askConfirmation: "Вы ўпэўнены, што хочаце выдаліць «%s»?"
+      success: "Выдалены менеджэр пакетаў «%s»."
+      aborting: Перапыненне выдалення дыспетчара пакетаў «%s».
+    options:
+      force:
+        description: "Прымусовае выдаленне дыспетчара пакетаў."
+      name:
+        description: "Імя дыспетчара пакетаў, які трэба выдаліць."
+
+stacks:
+  description: "Працуйце са стэкамі, даступнымі ў apx."
+  labels:
+    name: "Імя"
+    builtIn: "Убудаваны"
+
+  list:
+    description: "Пералічыце ўсе даступныя стэкі."
+    info:
+      noStacks: "Няма даступных стосаў. Стварыце новы з «apx stacks new» або звярніцеся
+        да сістэмнага адміністратара."
+      foundStacks: "Знойдзена %d стосаў:\n"
+      aborting: Перапыненне выдалення стэка '%s'.
+    options:
+      json:
+        description: "Вывад у фармаце JSON."
+  show:
+    description: "Паказаць інфармацыю пра ўказаны стэк."
+  new:
+    description: "Стварыце новы стэк."
+    error:
+      emptyName: "Імя не можа быць пустым."
+      noName: "Імя не ўказана."
+      emptyBase: "База не можа быць пустой."
+      noBase: "База не ўказана."
+      emptyPkgManager: "Дыспетчар пакетаў не можа быць пустым."
+      noPkgManager: "Менеджэр пакетаў не ўказаны."
+      pkgManagerDoesNotExist: "Указаны менеджэр пакетаў не існуе. Стварыце яго з дапамогай
+        «apx pkgmanagers new» або звярніцеся да сістэмнага адміністратара."
+      emptyPackages: "Пакеты не могуць быць пустымі."
+      noPackages: "Пакеты не пазначаны."
+      alreadyExists: "Стэк з назвай «%s» ужо існуе."
+    info:
+      askName: "Выберыце назву:"
+      askBase: "Выберыце аснову (напрыклад, «ванілаос/піка»):"
+      askPkgManager: "Выберыце менеджэр пакетаў:"
+      selectPkgManager: "Выберыце менеджэр пакетаў [1-%d]:"
+      noPackages: "Вы не далі ніякага пакета для ўсталёўкі ў стэк. Хочаце дадаць?"
+      confirmPackages: "Вы хочаце пацвердзіць бягучы спіс пакетаў?"
+      askPackages: "Калі ласка, увядзіце пакеты, якія вы жадаеце ўсталяваць, у стэк,
+        падзеленыя прабелам:"
+      success: "Створаны стэк \"%s\"."
+    options:
+      assumeYes:
+        description: "Выкажам здагадку, што так на ўсе падказкі."
+      name:
+        description: "Назва стэка."
+      base:
+        description: "Базавая падсістэма для выкарыстання."
+      packages:
+        description: "Пакеты для ўстаноўкі."
+      pkgManager:
+        description: "Менеджэр пакетаў для выкарыстання."
+  update:
+    description: "Абнавіць указаны стэк."
+    error:
+      noName: "Імя не ўказана."
+      noBase: "База не ўказана."
+      noPkgManager: "Менеджэр пакетаў не ўказаны."
+      pkgManagerDoesNotExist: "Указаны менеджэр пакетаў не існуе. Стварыце яго з дапамогай
+        «apx pkgmanagers new» або звярніцеся да сістэмнага адміністратара."
+    info:
+      askBase: "Увядзіце новую базу або пацвердзіце бягучую (%s):"
+      askPkgManager: "Выберыце новы менеджэр пакетаў або пацвердзіце бягучы (%s):"
+      askPackages: "Увядзіце пакеты, якія вы жадаеце ўсталяваць у стэк, праз прабел,
+        або пацвердзіце бягучыя (%s):"
+      success: "Абноўлены стэк \"%s\"."
+
+    options:
+      assumeYes:
+        description: "Выкажам здагадку, што так на ўсе падказкі."
+      name:
+        description: "Назва стэка."
+      base:
+        description: "Базавая падсістэма для выкарыстання."
+      packages:
+        description: "Пакеты для ўстаноўкі."
+      pkgManager:
+        description: "Менеджэр пакетаў для выкарыстання."
+  rm:
+    description: "Выдаліце ўказаны стэк."
+    error:
+      noName: "Імя не ўказана."
+    info:
+      askConfirmation: "Вы ўпэўнены, што хочаце выдаліць «%s»?"
+      success: "Выдалены стэк '%s'."
+    options:
+      force:
+        description: "Прымусовае выдаленне стэка."
+      name:
+        description: "Назва стэка для выдалення."
+  export:
+    description: "Экспартаваць указаны стэк."
+    error:
+      noName: "Імя не ўказана."
+      noOutput: "Выхад не пазначаны."
+    info:
+      success: "Экспартаваны стэк «%s» у «%s»."
+    options:
+      name:
+        description: "Імя стэка для экспарту."
+      output:
+        description: "Шлях для экспарту стэка."
+  import:
+    description: "Імпартаваць указаны стэк."
+    error:
+      noInput: "Увод не пазначаны."
+      cannotLoad: "Немагчыма загрузіць стэк з «%s»."
+    info:
+      success: "Імпартаваны стэк з «%s»."
+    options:
+      input:
+        description: "Шлях для імпарту стэка."
+
+subsystems:
+  description: "Працуйце з падсістэмамі, даступнымі ў apx."
+  labels:
+    name: "Імя"
+    status: "Статус"
+
+  list:
+    description: "Пералічыце ўсе даступныя падсістэмы."
+    error:
+    info:
+      noSubsystems: "Няма даступных падсістэм. Стварыце новы з «apx subsystems new»
+        або звярніцеся да сістэмнага адміністратара."
+      foundSubsystems: "Знойдзена %d падсістэма:\n"
+    options:
+      json:
+        description: "Вывад у фармаце JSON."
+  new:
+    description: "Стварыце новую падсістэму."
+    error:
+      noStacks: "Для стварэння падсістэмы неабходны стэк. Стварыце новы з «apx stacks
+        new» або звярніцеся да сістэмнага адміністратара."
+      emptyName: "Імя не можа быць пустым."
+      noName: "Імя не ўказана."
+      emptyStack: "Стэк не можа быць пустым."
+      noStack: "Стэк не пазначаны."
+      stackDoesNotExist: "Указаны стэк не існуе. Стварыце яго з дапамогай «apx stacks
+        new» або звярніцеся да сістэмнага адміністратара."
+      alreadyExists: "Падсістэма з назвай «%s» ужо існуе."
+    info:
+      askName: "Выберыце назву:"
+      selectStack: "Выберыце стос [1-%d]:"
+      success: "Створана падсістэма \"%s\"."
+      creatingSubsystem: "Створана падсістэма «%s» са стэкам «%s»…"
+    options:
+      name:
+        description: "Назва падсістэмы."
+      stack:
+        description: "Стэк для выкарыстання."
+  rm:
+    description: "Выдаліце ўказаную падсістэму."
+    error:
+      noName: "Імя не ўказана."
+    info:
+      askConfirmation: "Вы ўпэўнены, што хочаце выдаліць «%s»?"
+      success: "Выдалена падсістэма '%s'."
+    options:
+      force:
+        description: "Прымусовае выдаленне падсістэмы."
+      name:
+        description: "Назва падсістэмы, якую трэба выдаліць."
+  reset:
+    description: "Скінуць паказаную падсістэму."
+    error:
+      noName: "Імя не ўказана."
+    info:
+      askConfirmation: "Вы ўпэўнены, што хочаце скінуць «%s»?"
+      success: "Падсістэма '%s' была скінута."
+    options:
+      force:
+        description: "Прымусовы скід падсістэмы."
+      name:
+        description: "Назва падсістэмы для скіду."

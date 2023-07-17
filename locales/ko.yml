@@ -1,15 +1,14 @@
 apx:
-  description: "Apx is a package manager with support for multiple sources, allowing
-    you to install packages in subsystems."
+  description: "APX는 다양한 소스를 지원하며, 하위 시스템에 패키지를 설치할 수 있게 하는 패키지 관리자입니다."
   errors:
-    unknownCommand: "Unknown command: %s"
-    invalidInput: "Invalid input."
+    unknownCommand: "알 수 없는 명령어: %s"
+    invalidInput: "잘못된 입력입니다."
     invalidChoice: Invalid choice.
   info:
-    aborting: "Aborting as requested."
+    aborting: "요청에 의해 중단되었습니다."
   terminal:
-    yes: "yes"
-    no: "no"
+    yes: "예"
+    no: "아니오"
 
 runtimeCommand:
   description: "Work with the specified subsystem, accessing the package manager and
@@ -271,61 +270,61 @@ subsystems:
   description: "Work with the subsystems that are available in apx."
   labels:
     name: "Name"
-    status: "Status"
+    status: "상태"
 
   list:
-    description: "List all available subsystems."
+    description: "사용 가능한 모든 하위 시스템을 보여줍니다."
     error:
     info:
-      noSubsystems: "No subsystems available. Create a new one with 'apx subsystems
-        new' or contact the system administrator."
-      foundSubsystems: "Found %d subsystems:\n"
+      noSubsystems: "하위 시스템이 없습니다. 'apx subsystems new' 명령어로 새 하위 시스템을 생성하시거나 시스템
+        관리자에게 문의하십시오."
+      foundSubsystems: "%d 하위 시스템을 찾음:\n"
     options:
       json:
-        description: "Output in JSON format."
+        description: "JSON 형식으로 출력합니다."
   new:
-    description: "Create a new subsystem."
+    description: "새 하위 시스템을 만듭니다."
     error:
-      noStacks: "A stack is needed to create a subsystem. Create a new one with 'apx
-        stacks new' or contact the system administrator."
-      emptyName: "The name cannot be empty."
-      noName: "No name specified."
-      emptyStack: "The stack cannot be empty."
-      noStack: "No stack specified."
-      stackDoesNotExist: "The specified stack does not exist. Create it with 'apx
-        stacks new' or contact the system administrator."
-      alreadyExists: "A subsystem with the name '%s' already exists."
+      noStacks: "하위 시스템을 만드는 데 스택이 필요합니다. 'apx stacks new' 명령어로 새로운 스택을 생성하시거나 시스템
+        관리자에게 문의하십시오."
+      emptyName: "이름은 비울 수 없습니다."
+      noName: "이름이 특정되지 않았습니다."
+      emptyStack: "스택은 비울 수 없습니다."
+      noStack: "스택이 특정되지 않았습니다."
+      stackDoesNotExist: "특정된 스택이 존재하지 않습니다. 'apx stacks new' 명령어로 해당 스택을 생성하시거나 시스템
+        관리자에게 문의하십시오."
+      alreadyExists: "'%s' 이름을 가진 하위 시스템이 이미 존재합니다."
     info:
-      askName: "Choose a name:"
-      selectStack: "Select a stack [1-%d]:"
-      success: "Created subsystem '%s'."
-      creatingSubsystem: "Created subsystem '%s' with stack '%s'…"
+      askName: "이름 입력:"
+      selectStack: "스택 선택 [1-%d]:"
+      success: "하위 시스템 '%s'(을)를 만들었습니다."
+      creatingSubsystem: "스택 '%s'와 하위 시스템 '%s'(을)를 만들었습니다.…"
     options:
       name:
-        description: "The name of the subsystem."
+        description: "하위 시스템의 이름입니다."
       stack:
-        description: "The stack to use."
+        description: "사용할 스택입니다."
   rm:
-    description: "Remove the specified subsystem."
+    description: "특정 하위 시스템을 삭제합니다."
     error:
-      noName: "No name specified."
+      noName: "이름이 특정되지 않았습니다."
     info:
-      askConfirmation: "Are you sure you want to remove '%s'?"
-      success: "Removed subsystem '%s'."
+      askConfirmation: "'%s'(을)를 삭제하시겠습니까?"
+      success: "하위 시스템 '%s'(을)를 삭제하였습니다."
     options:
       force:
-        description: "Force removal of the subsystem."
+        description: "하위 시스템을 강제로 삭제합니다."
       name:
-        description: "The name of the subsystem to remove."
+        description: "삭제할 하위 시스템의 이름을 지정합니다."
   reset:
-    description: "Reset the specified subsystem."
+    description: "특정 하위 시스템을 초기화합니다."
     error:
-      noName: "No name specified."
+      noName: "이름이 특정되지 않았습니다."
     info:
-      askConfirmation: "Are you sure you want to reset '%s'?"
-      success: "The subsystem '%s' has been reset."
+      askConfirmation: "'%s'(을)를 초기화하시겠습니까?"
+      success: "하위 시스템 '%s'(이)가 초기화되었습니다."
     options:
       force:
-        description: "Force reset of the subsystem."
+        description: "하위 시스템을 강제로 초기화합니다."
       name:
-        description: "The name of the subsystem to reset."
+        description: "초기화할 하위 시스템의 이름을 지정합니다."

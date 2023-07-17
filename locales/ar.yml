@@ -1,0 +1,326 @@
+apx:
+  description: "Apx هو مدير حزم متعدد المصادر، مما يسمح بتثبيت الحزم في أنظمة فرعية."
+  errors:
+    unknownCommand: "أمر غير معروف: %s"
+    invalidInput: "المدخل غير صالح."
+    invalidChoice: Invalid choice.
+  info:
+    aborting: "يتم الالغاء."
+  terminal:
+    yes: "نعم"
+    no: "لا"
+
+runtimeCommand:
+  description: "يتعامل مع النظام الفرعي المحدد، مما يسمح باستخدام مدير الحزم و البيئة."
+  error:
+    noPackageSpecified: "لم يتم تحديد حزمة."
+    cantAccessPkgManager: "حدث خطأ أثناء الوصول إلى مدير الحزم: %s"
+    executingCommand: "حدث خطأ أثناء تنفيذ الأمر: %s"
+    noAppNameOrBin: "يجب تحديد --app-name او --bin"
+    sameAppOrBin: "لا يمكن تحديد --app-name و --bin في نفس الوقت."
+    exportingApp: "حدث خطأ أثناء تصدير التطبيق: %s"
+    exportingBin: "حدث خطأ أثناء تصدير البرنامج: %s"
+    unexportingApp: "حدث خطأ أثناء إلغاء تصدير التطبيق: %s"
+    unexportingBin: "حدث خطأ أثناء إلغاء تصدير البرنامج: %s"
+  info:
+    unexportedApps: "%d تطبيقات غير مصدرة\n"
+    exportedApps: "%d تطبيقات مصدرة\n"
+    exportedApp: "التطبيقات المصدرة %s\n"
+    exportedBin: "البرامج المصدرة %s\n"
+    unexportedApp: "التطبيقات غير المصدرة %s\n"
+    unexportedBin: "البرامج غير المصدرة %s\n"
+  autoremove:
+    description: "حذف الحزم التي لم تعد مطلوبة."
+  clean:
+    description: "تنظيف ذاكرة التخزين المؤقت لمدير الحزم."
+  install:
+    description: "تثبيت الحزمة المحددة."
+    options:
+      noExport:
+        description: "لا تقم تصدير ملف لسطح المكتب."
+  list:
+    description: "عرض جميع الحزم المثبتة."
+  purge:
+    description: "تطهير (purge) الحزم المحددة."
+  remove:
+    description: "حذف الحزم المحددة."
+  search:
+    description: "البحث عن حزم تطابق العبارة (الاستعلام) المحددة."
+  show:
+    description: "عرض معلومات عن الحزمة المحددة."
+  update:
+    description: "تحديث قائمة الحزم المتاحة."
+  upgrade:
+    description: "تطوير جميع الحزم المثبتة."
+  enter:
+    description: "دخول بيئة النظام الفرعي."
+  export:
+    description: "تصدير تطبيق او برنامج من النظام الفرعي."
+    options:
+      appName:
+        description: "اسم التطبيق المراد تصدير."
+      bin:
+        description: "اسم البرنامج المراد تصديره."
+      binOutput:
+        description: "مسار البرامج\n(الافتراضي: ~/.local/bin)"
+  unexport:
+    description: "الغاء تصدير تطبيق او برنامج من النظام الفرعي."
+    options:
+      appName:
+        description: "اسم التطبيق المراد إلغاء تصديره."
+      bin:
+        description: "اسم البرنامج المراد إلغاء تصديره."
+      binOutput:
+        description: "مسار البرامج\n(الافتراضي /.local/bin/)"
+
+pkgmanagers:
+  description: "يتعامل مع مديري الحزم المتاحة في apx."
+  labels:
+    name: "الاسم"
+    builtIn: "مدمج في النظام"
+
+  list:
+    description: "عرض جميع مديري الحزم المتاحين."
+    info:
+      noPkgManagers: "لا يوجد مدير حزم متاح. قم بإنشاء واحد جديد باستخدام 'apx pkgmanagers
+        new' او تحدث مع مسئول النظام."
+      foundPkgManagers: "تم ايجاد %d مديري حزم:\n"
+    options:
+      json:
+        description: "المخرجات في صورة JSON."
+  show:
+    description: "عرض معلومات عن مدير الحزم المحدد."
+  new:
+    description: "إنشاء مدير حزم جديد."
+
+    error:
+      emptyName: "الاسم لا يمكن أن يكون فارغا."
+      noName: "لم يتم تحديد اسم."
+      emptyCommand: "لا يمكن أن يكون الامر فارغا."
+      noCommand: "لم يتم تحديد أمر من أجل '%s'."
+      alreadyExists: "يوجد مدير حزم بنفس الاسم '%s' بالفعل."
+    info:
+      askName: "اختر اسما:"
+      askSudo: "هل يحتاج مدير الحزم إلى sudo ليعمل؟"
+      askCommand: "أدخل الامر لأجل '%s':"
+      askOverwrite: "يوجد مدير حزم بنفس الاسم '%s' بالفعل. هل تريد استبداله؟"
+      success: "تم إنشاء مدير الحزم '%s'."
+    options:
+      assumeYes:
+        description: "افرض الإجابة \"نعم\" لكل الاختيارات."
+      name:
+        description: "اسم مدير الحزم."
+      needSudo:
+        description: "ما اذا كان مدير الحزم يحتاج sudo ليعمل أم لا"
+      autoremove:
+        description: "الامر الخاص بالحذف التلقائي للحزم."
+      clean:
+        description: "الامر الخاص بتنظيف ذاكرة التخزين المؤقت لمدير الحزم."
+      install:
+        description: "الامر الخاص بتنزيل الحزم."
+      list:
+        description: "الامر الخاص بعرض الحزم المثبتة."
+      purge:
+        description: "الامر الخاص بتطهير (purge) الحزم."
+      remove:
+        description: "الامر الخاص بحذف الحزم."
+      search:
+        description: "الامر الخاص بالبحث عن الحزم."
+      show:
+        description: "الامر الخاص بعرض معلومات عن الحزم."
+      update:
+        description: "الامر الخاص بتحديث قائمة الحزم المتاحة."
+      upgrade:
+        description: "الامر الخاص بتطوير الحزم."
+  rm:
+    description: "حذف مدير الحزم المحدد."
+
+    error:
+      noName: "لم يتم تحديد اسم."
+      inUse: "مدير الحزم مستخدم في %d تشكيلات:\n"
+    info:
+      askConfirmation: "هل انت متأكد من حذف '%s'؟"
+      success: "تم حذف مدير الحزم '%s'."
+      aborting: Aborting removal of package manager '%s'.
+    options:
+      force:
+        description: "إجبار إزالة مدير الحزم."
+      name:
+        description: "اسم مدير الحزم المراد حذفه."
+
+stacks:
+  description: "تستخدم التشكيلات المتاحة في apx."
+  labels:
+    name: "الاسم"
+    builtIn: "مدمج في النظام"
+
+  list:
+    description: "عرض التشكيلات المتاحة."
+    info:
+      noStacks: "لا توجد تشكيلات متاحة. قم بإنشاء واحدة جديدة باستخدام 'apx stacks
+        new' او قم بالتحدث الي مسئول النظام."
+      foundStacks: "تم العثور على %d تشكيلات:\n"
+      aborting: Aborting removal of stack '%s'.
+    options:
+      json:
+        description: "المخرجات في صورة JSON."
+  show:
+    description: "عرض معلومات عن التشكيلة المحددة."
+  new:
+    description: "إنشاء تشكيلة جديدة."
+    error:
+      emptyName: "لا يمكن أن يكون الاسم فارغا."
+      noName: "لم يتم تحديد اسم."
+      emptyBase: "لا يمكن أن يكون النظام الأساس فارغا."
+      noBase: "لم يتم تحديد النظام الأساس."
+      emptyPkgManager: "لا يمكن أن يكون مدير الحزم فارغا."
+      noPkgManager: "لم يتم تحديد مدير حزم."
+      pkgManagerDoesNotExist: "مدير الحزم المحدد غير موجود. قم بإنشاء واحد جديد باستخدام
+        'apx pkgmanagers new' او قم بالتحدث لمسؤول النظام."
+      emptyPackages: "الحزم لا يمكن أن تكون فارغة."
+      noPackages: "لم يتم تحديد حزم."
+      alreadyExists: "يوجد تشكيلة بالاسم '%s' بالفعل."
+    info:
+      askName: "اختر اسما:"
+      askBase: "اختر النظام الأساس (على سبيل المثال 'vanillaos/pico'):"
+      askPkgManager: "اختر مديرا للحزم:"
+      selectPkgManager: "اختر مديرا للحزم [1-%d] :"
+      noPackages: "انت لم تقم بإضافة اي حزم لتثبيتها في التشكيلة. هل تريد إضافة البعض
+        الآن؟"
+      confirmPackages: "هل تريد الموافقة على قائمة الحزم التالية؟"
+      askPackages: "من فضلك قم بكتابة الحزم المراد تنزيلها في التشكيلة مع فصلها بمسافة:"
+      success: "تم إنشاء التشكيلة '%s'."
+    options:
+      assumeYes:
+        description: "افرض الإجابة \"نعم\" لكل الاختيارات."
+      name:
+        description: "اسم التشكيلة."
+      base:
+        description: "النظام الفرعي المراد استخدامه كأساس."
+      packages:
+        description: "الحزم المراد تثبيتها."
+      pkgManager:
+        description: "مدير الحزم المراد استخدامه."
+  update:
+    description: "تحديث التشكيلة المحددة."
+    error:
+      noName: "لم يتم تحديد اسم."
+      noBase: "لم يتم تحديد النظام الأساس."
+      noPkgManager: "لم يتم تحديد مدير حزم."
+      pkgManagerDoesNotExist: "مدير الحزم المحدد غير موجود. قم بإنشاء واحد جديد باستخدام
+        'apx pkgmanagers new' او قم بالتحدث لمسؤول النظام."
+    info:
+      askBase: "قم بكتابة نظام أساس جديد أو وافق على الحالي(%s):"
+      askPkgManager: "قم باختيار مدير حزم جديد أو وافق على الحالي(%s):"
+      askPackages: "قم بكتابة الحزم المراد تثبيتها في التشكيلة مع فصلها بمسافة أو
+        وافق على الحاليين (%s):"
+      success: "تم تحديث التشكيلة '%s':"
+
+    options:
+      assumeYes:
+        description: "افرض الإجابة \"نعم\" لكل الاختيارات."
+      name:
+        description: "اسم التشكيلة."
+      base:
+        description: "النظام الفرعي المراد استخدامه كأساس."
+      packages:
+        description: "الحزم المراد تثبيتها."
+      pkgManager:
+        description: "مدير الحزم المراد استخدامه."
+  rm:
+    description: "حذف التشكيلة المحددة."
+    error:
+      noName: "لم يتم تحديد اسم."
+    info:
+      askConfirmation: "هل انت متأكد من حذف '%s'؟"
+      success: "تم حذف التشكيلة '%s'."
+    options:
+      force:
+        description: "الحذف الإجباري للتشكيلة."
+      name:
+        description: "اسم التشكيلة المراد حذفها."
+  export:
+    description: "تصدير التشكيلة المحددة."
+    error:
+      noName: "لم يتم تحديد اسم."
+      noOutput: "لم يتم تحديد مخرجات."
+    info:
+      success: "تم تصدير التشكيلة '%s' إلى '%s'."
+    options:
+      name:
+        description: "اسم التشكيلة المراد تصديرها."
+      output:
+        description: "المسار المراد تصدير التشكيلة إليه."
+  import:
+    description: "استيراد التشكيلة المحددة."
+    error:
+      noInput: "لم يتم تحديد مدخل."
+      cannotLoad: "لم يمكن تحميل التشكيلة من '%s'."
+    info:
+      success: "تم استيراد التشكيلة من '%s'."
+    options:
+      input:
+        description: "المسار المراد استيراد التشكيلة منه."
+
+subsystems:
+  description: "يتعامل مع الانظمة الفوعية المتاحة في apx."
+  labels:
+    name: "الاسم"
+    status: "الحالة"
+
+  list:
+    description: "عرض جميع الانظمة الفرعية المتاحة."
+    error:
+    info:
+      noSubsystems: "لا يوجد أنظمة فرعية متاحة. قم بإنشاء واحد جديد باستخدام 'apx
+        subsystems new' او قم بالتحدث لمسؤول النظام."
+      foundSubsystems: "تم العثور على %d أنظمة فرعية:\n"
+    options:
+      json:
+        description: "المخرجات في صورة JSON."
+  new:
+    description: "انشاء نظام فرعي جديد."
+    error:
+      noStacks: "لإنشاء نظام فرعي يجب وجود تشكيلة. قم بإنشاء واحدة جديدة باستخدام
+        'apx stacks new' او قم بالتحدث لمسؤول النظام."
+      emptyName: "الاسم لا يمكن أن يكون فارغا."
+      noName: "لم يتم تحديد اسم."
+      emptyStack: "التشكيلة لا يمكن أن تكون فارغة."
+      noStack: "لم يتم تحديد تشكيلة."
+      stackDoesNotExist: "التشكيلة المحددة غير موجودة. قم بإنشاء واحدة جديدة باستخدام
+        'apx stacks new' او قم بالتحدث لمسؤول النظام."
+      alreadyExists: "يوجد نظام فرعي بنفس الاسم '%s' بالفعل."
+    info:
+      askName: "اختر اسما:"
+      selectStack: "اختر تشكيلة [1-%d]:"
+      success: "تم إنشاء النظام الفرعي '%s'."
+      creatingSubsystem: "تم إنشاء نظام فرعي '%s' بالتشكيلة '%s'…"
+    options:
+      name:
+        description: "اسم النظام الفرعي."
+      stack:
+        description: "التشكيلة المراد استخدامها."
+  rm:
+    description: "حذف النظام الفرعي المحدد."
+    error:
+      noName: "لم يتم تحديد اسم."
+    info:
+      askConfirmation: "هل انت متأكد من حذف '%s'؟"
+      success: "تم حذف النظام الفرعي '%s'."
+    options:
+      force:
+        description: "الحذف الإجباري للنظام الفرعي."
+      name:
+        description: "اسم النظام الفرعي المراد حذفه."
+  reset:
+    description: "إعادة إنشاء النظام الفرعي المحدد."
+    error:
+      noName: "لم يتم تحديد اسم."
+    info:
+      askConfirmation: "هل انت متأكد من إعادة إنشاء '%s'؟"
+      success: "تم اعادة انشاء النظام الفرعي '%s'."
+    options:
+      force:
+        description: "إعادة انشاء إجبارية للنظام الفرعي."
+      name:
+        description: "اسم النظام الفرعي المراد إعادة انشائه."

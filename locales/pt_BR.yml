@@ -4,6 +4,7 @@ apx:
   errors:
     unknownCommand: "Comando desconhecido: %s"
     invalidInput: "Entrada inválida."
+    invalidChoice: Escolha inválida.
   info:
     aborting: "Abortando conforme solicitado."
   terminal:
@@ -28,42 +29,42 @@ runtimeCommand:
     exportedApps: "Exportados %d aplicativos\n"
     exportedApp: "Aplicativo %s exportado\n"
     exportedBin: "Binário %s exportado\n"
-    unexportedApp: "Unexported application %s\n"
-    unexportedBin: "Unexported binary %s\n"
+    unexportedApp: "Aplicativo não exportado %s\n"
+    unexportedBin: "Binário não exportado %s\n"
   autoremove:
-    description: "Remove packages that are no longer required."
+    description: "Remover pacotes que não são mais necessários."
   clean:
-    description: "Clean the package manager's cache."
+    description: "Limpar o cache do gerenciador de pacotes."
   install:
-    description: "Install the specified package."
+    description: "Instalar o pacote especificado."
     options:
       noExport:
-        description: "Do not export a desktop entry."
+        description: "Não exporte um registro da área de trabalho."
   list:
-    description: "List all installed packages."
+    description: "Listar todos os pacotes instalados."
   purge:
-    description: "Purge the specified packages."
+    description: "Purga os pacotes especificados."
   remove:
-    description: "Remove the specified packages."
+    description: "Remover os pacotes especificados."
   search:
-    description: "Search for packages matching the specified query."
+    description: "Pesquisar por pacotes que correspondam à consulta especificada."
   show:
-    description: "Show information about the specified package."
+    description: "Mostrar informações sobre o pacote especificado."
   update:
-    description: "Update the list of available packages."
+    description: "Atualizar a lista de pacotes disponíveis."
   upgrade:
-    description: "Upgrade all installed packages."
+    description: "Atualizar todos os pacotes instalados."
   enter:
-    description: "Enter the subsystem's environment."
+    description: "Entrar no ambiente de subsistema."
   export:
-    description: "Export an application or binary from the subsystem."
+    description: "Exportar uma aplicação ou binário do subsistema."
     options:
       appName:
-        description: "The name of the application to export."
+        description: "O nome da aplicação para exportar."
       bin:
-        description: "The name of the binary to export."
+        description: "O nome do binário a ser exportado."
       binOutput:
-        description: "Path of the binary output (default: ~/.local/bin/)."
+        description: "Caminho para a saída do binário (padrão: ~/.local/bin/)."
   unexport:
     description: "Unexport an application or binary from the subsystem."
     options:
@@ -143,6 +144,7 @@ pkgmanagers:
     info:
       askConfirmation: "Are you sure you want to remove '%s'?"
       success: "Removed package manager '%s'."
+      aborting: Aborting removal of package manager '%s'.
     options:
       force:
         description: "Force removal of the package manager."
@@ -161,6 +163,7 @@ stacks:
       noStacks: "No stacks available. Create a new one with 'apx stacks new' or contact
         the system administrator."
       foundStacks: "Found %d stacks:\n"
+      aborting: Aborting removal of stack '%s'.
     options:
       json:
         description: "Output in JSON format."

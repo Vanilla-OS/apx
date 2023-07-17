@@ -4,6 +4,7 @@ apx:
   errors:
     unknownCommand: "Neznámý příkaz: %s"
     invalidInput: "Neplatný vstup."
+    invalidChoice: Invalid choice.
   info:
     aborting: "Přerušuji."
   terminal:
@@ -142,6 +143,7 @@ pkgmanagers:
     info:
       askConfirmation: "Jste si jisti, že chcete odstranit '%s'?"
       success: "Odstraněn správce balíčků '%s'."
+      aborting: Aborting removal of package manager '%s'.
     options:
       force:
         description: "Vynucení odstranění správce balíčků."
@@ -160,6 +162,7 @@ stacks:
       noStacks: "Stacky nejsou k dizpozici. Vytvořte nový pomocí 'apx stacks new'
         nebo kontaktujte vašeho systémového správce."
       foundStacks: "%d stacků nalezeno:\n"
+      aborting: Aborting removal of stack '%s'.
     options:
       json:
         description: "Vypsat ve formátu JSON."

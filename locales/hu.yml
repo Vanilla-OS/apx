@@ -4,6 +4,7 @@ apx:
   errors:
     unknownCommand: "Ismeretlen parancs: %s"
     invalidInput: "Érvénytelen bemenet."
+    invalidChoice: Invalid choice.
   info:
     aborting: "Megszakítás kérés szerint."
   terminal:
@@ -143,6 +144,7 @@ pkgmanagers:
     info:
       askConfirmation: "Are you sure you want to remove '%s'?"
       success: "Removed package manager '%s'."
+      aborting: Aborting removal of package manager '%s'.
     options:
       force:
         description: "Force removal of the package manager."
@@ -161,6 +163,7 @@ stacks:
       noStacks: "No stacks available. Create a new one with 'apx stacks new' or contact
         the system administrator."
       foundStacks: "Found %d stacks:\n"
+      aborting: Aborting removal of stack '%s'.
     options:
       json:
         description: "Output in JSON format."
