@@ -3,6 +3,7 @@ apx:
   errors:
     unknownCommand: "أمر غير معروف: %s"
     invalidInput: "المدخل غير صالح."
+    invalidChoice: Invalid choice.
   info:
     aborting: "يتم الالغاء."
   terminal:

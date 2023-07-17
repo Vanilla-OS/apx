@@ -3,6 +3,7 @@ apx:
   errors:
     unknownCommand: "未知的命令：%s"
     invalidInput: "无效的输入。"
+    invalidChoice: Invalid choice.
   info:
     aborting: "应用户要求取消操作。"
   terminal:

@@ -4,6 +4,7 @@ apx:
   errors:
     unknownCommand: "Neznámý příkaz: %s"
     invalidInput: "Neplatný vstup."
+    invalidChoice: Invalid choice.
   info:
     aborting: "Přerušuji."
   terminal:

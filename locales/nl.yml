@@ -4,6 +4,7 @@ apx:
   errors:
     unknownCommand: "Onbekende opdracht: %s"
     invalidInput: "Ongeldige invoer."
+    invalidChoice: Invalid choice.
   info:
     aborting: "Afbreken zoals verzocht."
   terminal:

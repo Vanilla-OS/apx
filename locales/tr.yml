@@ -4,6 +4,7 @@ apx:
   errors:
     unknownCommand: "Bilinmeyen komut: %s"
     invalidInput: "Geçersiz girdi."
+    invalidChoice: Invalid choice.
   info:
     aborting: "İstek üzerine iptal ediliyor."
   terminal:

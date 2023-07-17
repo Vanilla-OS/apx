@@ -4,6 +4,7 @@ apx:
   errors:
     unknownCommand: "Unbekannter Befehl: %s"
     invalidInput: "Ungültige Eingabe."
+    invalidChoice: Invalid choice.
   info:
     aborting: "Aborting as requested."
   terminal:

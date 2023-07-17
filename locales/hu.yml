@@ -4,6 +4,7 @@ apx:
   errors:
     unknownCommand: "Ismeretlen parancs: %s"
     invalidInput: "Érvénytelen bemenet."
+    invalidChoice: Invalid choice.
   info:
     aborting: "Megszakítás kérés szerint."
   terminal:

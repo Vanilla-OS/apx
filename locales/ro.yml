@@ -4,6 +4,7 @@ apx:
   errors:
     unknownCommand: "Comanda necunoscută: %s"
     invalidInput: "Intrare nevalidă."
+    invalidChoice: Invalid choice.
   info:
     aborting: "Se anulează conform solicitării."
   terminal:

@@ -4,6 +4,7 @@ apx:
   errors:
     unknownCommand: "Okänt kommando: %s"
     invalidInput: "Ogiltig inmatning."
+    invalidChoice: Invalid choice.
   info:
     aborting: "Avbryter som begärt."
   terminal:
