@@ -1,329 +1,325 @@
 apx:
-  description: "Apx is a package manager with support for multiple sources, allowing
-    you to install packages in subsystems."
+  description: "Apx - гэта менеджэр пакетаў з падтрымкай некалькіх крыніц, які дазваляе
+    ўсталёўваць пакеты ў падсістэмах."
   errors:
-    unknownCommand: "Unknown command: %s"
-    invalidInput: "Invalid input."
-    invalidChoice: Invalid choice.
+    unknownCommand: "Невядомая каманда: %s"
+    invalidInput: "Няправільны ўвод."
+    invalidChoice: Няправільны выбар.
   info:
-    aborting: "Aborting as requested."
+    aborting: "Перапыненне па запыце."
   terminal:
-    yes: "yes"
-    no: "no"
+    yes: "так"
+    no: "няма"
 
 runtimeCommand:
-  description: "Work with the specified subsystem, accessing the package manager and
-    environment."
+  description: "Праца з названай падсістэмай, доступ да мэнэджара пакетаў і асяроддзя."
   error:
-    noPackageSpecified: "No packages specified."
-    cantAccessPkgManager: "An error occurred while accessing the package manager:
-      %s"
-    executingCommand: "An error occurred while executing the command: %s"
-    noAppNameOrBin: "--app-name or --bin must be specified."
-    sameAppOrBin: "--app-name and --bin cannot be both specified."
-    exportingApp: "An error occurred while exporting the application: %s"
-    exportingBin: "An error occurred while exporting the binary: %s"
-    unexportingApp: "An error occurred while unexporting the application: %s"
-    unexportingBin: "An error occurred while unexporting the binary: %s"
+    noPackageSpecified: "Пакеты не пазначаны."
+    cantAccessPkgManager: "Адбылася памылка пры доступе да дыспетчара пакетаў: %s"
+    executingCommand: "Адбылася памылка падчас выканання каманды: %s"
+    noAppNameOrBin: "Трэба ўказаць --app-name або --bin."
+    sameAppOrBin: "--app-name і --bin не могуць быць зададзены адначасова."
+    exportingApp: "Адбылася памылка падчас экспарту прыкладання: %s"
+    exportingBin: "Падчас экспарту двайковага файла адбылася памылка: %s"
+    unexportingApp: "Адбылася памылка пры скасаванні экспарту прыкладання: %s"
+    unexportingBin: "Адбылася памылка падчас адмены экспарту двайковага файла: %s"
   info:
-    unexportedApps: "Unexported %d applications\n"
-    exportedApps: "Exported %d applications\n"
-    exportedApp: "Exported application %s\n"
-    exportedBin: "Exported binary %s\n"
-    unexportedApp: "Unexported application %s\n"
-    unexportedBin: "Unexported binary %s\n"
+    unexportedApps: "Неэкспартаваныя праграмы: %d\n"
+    exportedApps: "Экспартавана %d прыкладанняў\n"
+    exportedApp: "Экспартаванае прыкладанне %s\n"
+    exportedBin: "Экспартаваны двайковы %s\n"
+    unexportedApp: "Неэкспартаванае прыкладанне %s\n"
+    unexportedBin: "Неэкспартаваны двайковы файл %s\n"
   autoremove:
-    description: "Remove packages that are no longer required."
+    description: "Выдаліце пакеты, якія больш не патрэбныя."
   clean:
-    description: "Clean the package manager's cache."
+    description: "Ачысціце кэш дыспетчара пакетаў."
   install:
-    description: "Install the specified package."
+    description: "Усталюйце ўказаны пакет."
     options:
       noExport:
-        description: "Do not export a desktop entry."
+        description: "Не экспартуйце запіс працоўнага стала."
   list:
-    description: "List all installed packages."
+    description: "Спіс усіх усталяваных пакетаў."
   purge:
-    description: "Purge the specified packages."
+    description: "Ачысціце названыя пакеты."
   remove:
-    description: "Remove the specified packages."
+    description: "Выдаліць названыя пакеты."
   search:
-    description: "Search for packages matching the specified query."
+    description: "Пошук пакетаў, якія адпавядаюць зададзенаму запыту."
   show:
-    description: "Show information about the specified package."
+    description: "Паказаць інфармацыю пра ўказаны пакет."
   update:
-    description: "Update the list of available packages."
+    description: "Абнавіць спіс даступных пакетаў."
   upgrade:
-    description: "Upgrade all installed packages."
+    description: "Абнавіце ўсе ўсталяваныя пакеты."
   enter:
-    description: "Enter the subsystem's environment."
+    description: "Увядзіце асяроддзе падсістэмы."
   export:
-    description: "Export an application or binary from the subsystem."
+    description: "Экспарт прыкладання або бінарнага файла з падсістэмы."
     options:
       appName:
-        description: "The name of the application to export."
+        description: "Назва праграмы для экспарту."
       bin:
-        description: "The name of the binary to export."
+        description: "Імя двайковага файла для экспарту."
       binOutput:
-        description: "Path of the binary output (default: ~/.local/bin/)."
+        description: "Шлях двайковага вываду (па змаўчанні: ~/.local/bin/)."
   unexport:
-    description: "Unexport an application or binary from the subsystem."
+    description: "Адмяніць экспарт прыкладання або бінарнага файла з падсістэмы."
     options:
       appName:
-        description: "The name of the application to unexport."
+        description: "Назва праграмы, якую трэба адмяніць."
       bin:
-        description: "The name of the binary to unexport."
+        description: "Імя двайковага файла, які трэба скасаваць."
       binOutput:
-        description: "Path of the binary output (default: ~/.local/bin/)."
+        description: "Шлях двайковага вываду (па змаўчанні: ~/.local/bin/)."
 
 pkgmanagers:
-  description: "Work with the package managers that are available in apx."
+  description: "Працуйце з менеджэрамі пакетаў, даступнымі ў apx."
   labels:
-    name: "Name"
-    builtIn: "Built-in"
+    name: "Імя"
+    builtIn: "Убудаваны"
 
   list:
-    description: "List all available package managers."
+    description: "Пералічыце ўсе даступныя менеджэры пакетаў."
     info:
-      noPkgManagers: "No package managers available. Create a new one with 'apx pkgmanagers
-        new' or contact the system administrator."
-      foundPkgManagers: "Found %d package managers:\n"
+      noPkgManagers: "Няма даступных менеджэраў пакетаў. Стварыце новы з «apx pkgmanagers
+        new» або звярніцеся да сістэмнага адміністратара."
+      foundPkgManagers: "Знойдзена %d менеджэраў пакетаў:\n"
     options:
       json:
-        description: "Output in JSON format."
+        description: "Вывад у фармаце JSON."
   show:
-    description: "Show information about the specified package manager."
+    description: "Паказаць інфармацыю пра ўказаны менеджэр пакетаў."
   new:
-    description: "Create a new package manager."
+    description: "Стварыце новы менеджэр пакетаў."
 
     error:
-      emptyName: "The name cannot be empty."
-      noName: "No name specified."
-      emptyCommand: "The command cannot be empty."
-      noCommand: "No command specified for '%s'."
-      alreadyExists: "A package manager with the name '%s' already exists."
+      emptyName: "Імя не можа быць пустым."
+      noName: "Імя не ўказана."
+      emptyCommand: "Каманда не можа быць пустой."
+      noCommand: "Для '%s' не вызначана каманда."
+      alreadyExists: "Менеджэр пакетаў з назвай «%s» ужо існуе."
     info:
-      askName: "Choose a name:"
-      askSudo: "Does the package manager need sudo to run?"
-      askCommand: "Enter the command for '%s':"
-      askOverwrite: "A package manager with the name '%s' already exists. Overwrite
-        it?"
-      success: "Created package manager '%s'."
+      askName: "Выберыце назву:"
+      askSudo: "Ці патрэбны sudo для запуску мэнэджару пакетаў?"
+      askCommand: "Увядзіце каманду для «%s»:"
+      askOverwrite: "Менеджэр пакетаў з назвай «%s» ужо існуе. Перазапісаць?"
+      success: "Створаны менеджэр пакетаў «%s»."
     options:
       assumeYes:
-        description: "Assume yes to all prompts."
+        description: "Выкажам здагадку, што так на ўсе падказкі."
       name:
-        description: "The name of the package manager."
+        description: "Імя мэнэджэра пакетаў."
       needSudo:
-        description: "Whether the package manager needs sudo to run."
+        description: "Ці патрабуецца дыспетчару пакетаў sudo для запуску."
       autoremove:
-        description: "The command to run to autoremove packages."
+        description: "Каманда для аўтаматычнага выдалення пакетаў."
       clean:
-        description: "The command to run to clean the package manager's cache."
+        description: "Каманда для ачысткі кэша дыспетчара пакетаў."
       install:
-        description: "The command to run to install packages."
+        description: "Каманда для запуску для ўстаноўкі пакетаў."
       list:
-        description: "The command to run to list installed packages."
+        description: "Каманда для запуску спісу ўсталяваных пакетаў."
       purge:
-        description: "The command to run to purge packages."
+        description: "Каманда выканання ачысткі пакетаў."
       remove:
-        description: "The command to run to remove packages."
+        description: "Каманда для выдалення пакетаў."
       search:
-        description: "The command to run to search for packages."
+        description: "Каманда для запуску для пошуку пакетаў."
       show:
-        description: "The command to run to show information about packages."
+        description: "Каманда для запуску, каб паказаць інфармацыю аб пакетах."
       update:
-        description: "The command to run to update the list of available packages."
+        description: "Каманда для абнаўлення спісу даступных пакетаў."
       upgrade:
-        description: "The command to run to upgrade packages."
+        description: "Каманда для абнаўлення пакетаў."
   rm:
-    description: "Remove the specified package manager."
+    description: "Выдаліце ўказаны менеджэр пакетаў."
 
     error:
-      noName: "No name specified."
-      inUse: "The package manager is used in %d stacks:\n"
+      noName: "Імя не ўказана."
+      inUse: "Менеджар пакетаў выкарыстоўваецца ў %d стэках:\n"
     info:
-      askConfirmation: "Are you sure you want to remove '%s'?"
-      success: "Removed package manager '%s'."
+      askConfirmation: "Вы ўпэўнены, што хочаце выдаліць «%s»?"
+      success: "Выдалены менеджэр пакетаў «%s»."
     options:
       force:
-        description: "Force removal of the package manager."
+        description: "Прымусовае выдаленне дыспетчара пакетаў."
       name:
-        description: "The name of the package manager to remove."
+        description: "Імя дыспетчара пакетаў, які трэба выдаліць."
 
 stacks:
-  description: "Work with the stacks that are available in apx."
+  description: "Працуйце са стэкамі, даступнымі ў apx."
   labels:
-    name: "Name"
-    builtIn: "Built-in"
+    name: "Імя"
+    builtIn: "Убудаваны"
 
   list:
-    description: "List all available stacks."
+    description: "Пералічыце ўсе даступныя стэкі."
     info:
-      noStacks: "No stacks available. Create a new one with 'apx stacks new' or contact
-        the system administrator."
-      foundStacks: "Found %d stacks:\n"
+      noStacks: "Няма даступных стосаў. Стварыце новы з «apx stacks new» або звярніцеся
+        да сістэмнага адміністратара."
+      foundStacks: "Знойдзена %d стосаў:\n"
     options:
       json:
-        description: "Output in JSON format."
+        description: "Вывад у фармаце JSON."
   show:
-    description: "Show information about the specified stack."
+    description: "Паказаць інфармацыю пра ўказаны стэк."
   new:
-    description: "Create a new stack."
+    description: "Стварыце новы стэк."
     error:
-      emptyName: "The name cannot be empty."
-      noName: "No name specified."
-      emptyBase: "The base cannot be empty."
-      noBase: "No base specified."
-      emptyPkgManager: "The package manager cannot be empty."
-      noPkgManager: "No package manager specified."
-      pkgManagerDoesNotExist: "The specified package manager does not exist. Create
-        it with 'apx pkgmanagers new' or contact the system administrator."
-      emptyPackages: "The packages cannot be empty."
-      noPackages: "No packages specified."
-      alreadyExists: "A stack with the name '%s' already exists."
+      emptyName: "Імя не можа быць пустым."
+      noName: "Імя не ўказана."
+      emptyBase: "База не можа быць пустой."
+      noBase: "База не ўказана."
+      emptyPkgManager: "Дыспетчар пакетаў не можа быць пустым."
+      noPkgManager: "Менеджэр пакетаў не ўказаны."
+      pkgManagerDoesNotExist: "Указаны менеджэр пакетаў не існуе. Стварыце яго з дапамогай
+        «apx pkgmanagers new» або звярніцеся да сістэмнага адміністратара."
+      emptyPackages: "Пакеты не могуць быць пустымі."
+      noPackages: "Пакеты не пазначаны."
+      alreadyExists: "Стэк з назвай «%s» ужо існуе."
     info:
-      askName: "Choose a name:"
-      askBase: "Choose a base (e.g. 'vanillaos/pico'):"
-      askPkgManager: "Choose a package manager:"
-      selectPkgManager: "Select a package manager [1-%d]:"
-      noPackages: "You have not provided any package to install in the stack. Do you
-        want to add some now?"
-      confirmPackages: "Do you want to confirm the current packages list?"
-      askPackages: "Please type the packages you want to install in the stack, separated
-        by a space:"
-      success: "Created stack '%s'."
+      askName: "Выберыце назву:"
+      askBase: "Выберыце аснову (напрыклад, «ванілаос/піка»):"
+      askPkgManager: "Выберыце менеджэр пакетаў:"
+      selectPkgManager: "Выберыце менеджэр пакетаў [1-%d]:"
+      noPackages: "Вы не далі ніякага пакета для ўсталёўкі ў стэк. Хочаце дадаць?"
+      confirmPackages: "Вы хочаце пацвердзіць бягучы спіс пакетаў?"
+      askPackages: "Калі ласка, увядзіце пакеты, якія вы жадаеце ўсталяваць, у стэк,
+        падзеленыя прабелам:"
+      success: "Створаны стэк \"%s\"."
     options:
       assumeYes:
-        description: "Assume yes to all prompts."
+        description: "Выкажам здагадку, што так на ўсе падказкі."
       name:
-        description: "The name of the stack."
+        description: "Назва стэка."
       base:
-        description: "The base subsystem to use."
+        description: "Базавая падсістэма для выкарыстання."
       packages:
-        description: "The packages to install."
+        description: "Пакеты для ўстаноўкі."
       pkgManager:
-        description: "The package manager to use."
+        description: "Менеджэр пакетаў для выкарыстання."
   update:
-    description: "Update the specified stack."
+    description: "Абнавіць указаны стэк."
     error:
-      noName: "No name specified."
-      noBase: "No base specified."
-      noPkgManager: "No package manager specified."
-      pkgManagerDoesNotExist: "The specified package manager does not exist. Create
-        it with 'apx pkgmanagers new' or contact the system administrator."
+      noName: "Імя не ўказана."
+      noBase: "База не ўказана."
+      noPkgManager: "Менеджэр пакетаў не ўказаны."
+      pkgManagerDoesNotExist: "Указаны менеджэр пакетаў не існуе. Стварыце яго з дапамогай
+        «apx pkgmanagers new» або звярніцеся да сістэмнага адміністратара."
     info:
-      askBase: "Type a new base or confirm the current one (%s):"
-      askPkgManager: "Choose a new package manager or confirm the current one (%s):"
-      askPackages: "Type the packages you want to install in the stack, separated
-        by a space, or confirm the current ones (%s):"
-      success: "Updated stack '%s'."
+      askBase: "Увядзіце новую базу або пацвердзіце бягучую (%s):"
+      askPkgManager: "Выберыце новы менеджэр пакетаў або пацвердзіце бягучы (%s):"
+      askPackages: "Увядзіце пакеты, якія вы жадаеце ўсталяваць у стэк, праз прабел,
+        або пацвердзіце бягучыя (%s):"
+      success: "Абноўлены стэк \"%s\"."
 
     options:
       assumeYes:
-        description: "Assume yes to all prompts."
+        description: "Выкажам здагадку, што так на ўсе падказкі."
       name:
-        description: "The name of the stack."
+        description: "Назва стэка."
       base:
-        description: "The base subsystem to use."
+        description: "Базавая падсістэма для выкарыстання."
       packages:
-        description: "The packages to install."
+        description: "Пакеты для ўстаноўкі."
       pkgManager:
-        description: "The package manager to use."
+        description: "Менеджэр пакетаў для выкарыстання."
   rm:
-    description: "Remove the specified stack."
+    description: "Выдаліце ўказаны стэк."
     error:
-      noName: "No name specified."
+      noName: "Імя не ўказана."
     info:
-      askConfirmation: "Are you sure you want to remove '%s'?"
-      success: "Removed stack '%s'."
+      askConfirmation: "Вы ўпэўнены, што хочаце выдаліць «%s»?"
+      success: "Выдалены стэк '%s'."
     options:
       force:
-        description: "Force removal of the stack."
+        description: "Прымусовае выдаленне стэка."
       name:
-        description: "The name of the stack to remove."
+        description: "Назва стэка для выдалення."
   export:
-    description: "Export the specified stack."
+    description: "Экспартаваць указаны стэк."
     error:
-      noName: "No name specified."
-      noOutput: "No output specified."
+      noName: "Імя не ўказана."
+      noOutput: "Выхад не пазначаны."
     info:
-      success: "Exported stack '%s' to '%s'."
+      success: "Экспартаваны стэк «%s» у «%s»."
     options:
       name:
-        description: "The name of the stack to export."
+        description: "Імя стэка для экспарту."
       output:
-        description: "The path to export the stack to."
+        description: "Шлях для экспарту стэка."
   import:
-    description: "Import the specified stack."
+    description: "Імпартаваць указаны стэк."
     error:
-      noInput: "No input specified."
-      cannotLoad: "Cannot load stack from '%s'."
+      noInput: "Увод не пазначаны."
+      cannotLoad: "Немагчыма загрузіць стэк з «%s»."
     info:
-      success: "Imported stack from '%s'."
+      success: "Імпартаваны стэк з «%s»."
     options:
       input:
-        description: "The path to import the stack from."
+        description: "Шлях для імпарту стэка."
 
 subsystems:
-  description: "Work with the subsystems that are available in apx."
+  description: "Працуйце з падсістэмамі, даступнымі ў apx."
   labels:
-    name: "Name"
-    status: "Status"
+    name: "Імя"
+    status: "Статус"
 
   list:
-    description: "List all available subsystems."
+    description: "Пералічыце ўсе даступныя падсістэмы."
     error:
     info:
-      noSubsystems: "No subsystems available. Create a new one with 'apx subsystems
-        new' or contact the system administrator."
-      foundSubsystems: "Found %d subsystems:\n"
+      noSubsystems: "Няма даступных падсістэм. Стварыце новы з «apx subsystems new»
+        або звярніцеся да сістэмнага адміністратара."
+      foundSubsystems: "Знойдзена %d падсістэма:\n"
     options:
       json:
-        description: "Output in JSON format."
+        description: "Вывад у фармаце JSON."
   new:
-    description: "Create a new subsystem."
+    description: "Стварыце новую падсістэму."
     error:
-      noStacks: "A stack is needed to create a subsystem. Create a new one with 'apx
-        stacks new' or contact the system administrator."
-      emptyName: "The name cannot be empty."
-      noName: "No name specified."
-      emptyStack: "The stack cannot be empty."
-      noStack: "No stack specified."
-      stackDoesNotExist: "The specified stack does not exist. Create it with 'apx
-        stacks new' or contact the system administrator."
-      alreadyExists: "A subsystem with the name '%s' already exists."
+      noStacks: "Для стварэння падсістэмы неабходны стэк. Стварыце новы з «apx stacks
+        new» або звярніцеся да сістэмнага адміністратара."
+      emptyName: "Імя не можа быць пустым."
+      noName: "Імя не ўказана."
+      emptyStack: "Стэк не можа быць пустым."
+      noStack: "Стэк не пазначаны."
+      stackDoesNotExist: "Указаны стэк не існуе. Стварыце яго з дапамогай «apx stacks
+        new» або звярніцеся да сістэмнага адміністратара."
+      alreadyExists: "Падсістэма з назвай «%s» ужо існуе."
     info:
-      askName: "Choose a name:"
-      selectStack: "Select a stack [1-%d]:"
-      success: "Created subsystem '%s'."
-      creatingSubsystem: "Created subsystem '%s' with stack '%s'…"
+      askName: "Выберыце назву:"
+      selectStack: "Выберыце стос [1-%d]:"
+      success: "Створана падсістэма \"%s\"."
+      creatingSubsystem: "Створана падсістэма «%s» са стэкам «%s»…"
     options:
       name:
-        description: "The name of the subsystem."
+        description: "Назва падсістэмы."
       stack:
-        description: "The stack to use."
+        description: "Стэк для выкарыстання."
   rm:
-    description: "Remove the specified subsystem."
+    description: "Выдаліце ўказаную падсістэму."
     error:
-      noName: "No name specified."
+      noName: "Імя не ўказана."
     info:
-      askConfirmation: "Are you sure you want to remove '%s'?"
-      success: "Removed subsystem '%s'."
+      askConfirmation: "Вы ўпэўнены, што хочаце выдаліць «%s»?"
+      success: "Выдалена падсістэма '%s'."
     options:
       force:
-        description: "Force removal of the subsystem."
+        description: "Прымусовае выдаленне падсістэмы."
       name:
-        description: "The name of the subsystem to remove."
+        description: "Назва падсістэмы, якую трэба выдаліць."
   reset:
-    description: "Reset the specified subsystem."
+    description: "Скінуць паказаную падсістэму."
     error:
-      noName: "No name specified."
+      noName: "Імя не ўказана."
     info:
-      askConfirmation: "Are you sure you want to reset '%s'?"
-      success: "The subsystem '%s' has been reset."
+      askConfirmation: "Вы ўпэўнены, што хочаце скінуць «%s»?"
+      success: "Падсістэма '%s' была скінута."
     options:
       force:
-        description: "Force reset of the subsystem."
+        description: "Прымусовы скід падсістэмы."
       name:
-        description: "The name of the subsystem to reset."
+        description: "Назва падсістэмы для скіду."
