@@ -1,328 +1,332 @@
 apx:
-  description: "Apx is a package manager with support for multiple sources, allowing
-    you to install packages in subsystems."
+  description: "Apx este un manager de pachete care suportă mai multe surse, permițându-vă
+    să instalați pachete în subsisteme diferite."
   errors:
-    unknownCommand: "Unknown command: %s"
-    invalidInput: "Invalid input."
+    unknownCommand: "Comanda necunoscută: %s"
+    invalidInput: "Intrare nevalidă."
   info:
-    aborting: "Aborting as requested."
+    aborting: "Se anulează conform solicitării."
   terminal:
-    yes: "yes"
-    no: "no"
+    yes: "da"
+    no: "nu"
 
 runtimeCommand:
-  description: "Work with the specified subsystem, accessing the package manager and
-    environment."
+  description: "Lucrați cu subsistemul specificat, accesând managerul de pachete și
+    mediul."
   error:
-    noPackageSpecified: "No packages specified."
-    cantAccessPkgManager: "An error occurred while accessing the package manager:
+    noPackageSpecified: "Nu sunt specificate pachete."
+    cantAccessPkgManager: "A apărut o eroare la accesarea managerului de pachete:
       %s"
-    executingCommand: "An error occurred while executing the command: %s"
-    noAppNameOrBin: "--app-name or --bin must be specified."
-    sameAppOrBin: "--app-name and --bin cannot be both specified."
-    exportingApp: "An error occurred while exporting the application: %s"
-    exportingBin: "An error occurred while exporting the binary: %s"
-    unexportingApp: "An error occurred while unexporting the application: %s"
-    unexportingBin: "An error occurred while unexporting the binary: %s"
+    executingCommand: "A apărut o eroare la executarea comenzii: %s"
+    noAppNameOrBin: "Trebuie de specificat --app-name sau --bin."
+    sameAppOrBin: "--app-name și --bin ambele nu pot fi specificate."
+    exportingApp: "A apărut o eroare la exportul aplicației: %s"
+    exportingBin: "S-a produs o eroare în timpul exportului binarului: %s"
+    unexportingApp: "S-a produs o eroare în timpul exportării aplicației: %s"
+    unexportingBin: "A apărut o eroare în timpul neexportării binarului: %s"
   info:
-    unexportedApps: "Unexported %d applications\n"
-    exportedApps: "Exported %d applications\n"
-    exportedApp: "Exported application %s\n"
-    exportedBin: "Exported binary %s\n"
-    unexportedApp: "Unexported application %s\n"
-    unexportedBin: "Unexported binary %s\n"
+    unexportedApps: "Aplicații neexportate %d\n"
+    exportedApps: "Aplicații exportate %d\n"
+    exportedApp: "Aplicație exportată %s\n"
+    exportedBin: "Binar exportat %s\n"
+    unexportedApp: "Aplicație neexportată %s\n"
+    unexportedBin: "Binar neexportat %s\n"
   autoremove:
-    description: "Remove packages that are no longer required."
+    description: "Eliminați pachetele care nu mai sunt necesare."
   clean:
-    description: "Clean the package manager's cache."
+    description: "Curățați memoria cache a managerului de pachete."
   install:
-    description: "Install the specified package."
+    description: "Instalează pachetul specificat."
     options:
       noExport:
-        description: "Do not export a desktop entry."
+        description: "Nu exportați o intrare de birou."
   list:
-    description: "List all installed packages."
+    description: "Listează toate pachetele instalate."
   purge:
-    description: "Purge the specified packages."
+    description: "Elimină pachetele specificate."
   remove:
-    description: "Remove the specified packages."
+    description: "Elimină pachetele specificate."
   search:
-    description: "Search for packages matching the specified query."
+    description: "Caută pachetele care corespund interogării specificate."
   show:
-    description: "Show information about the specified package."
+    description: "Afișează informații despre pachetul specificat."
   update:
-    description: "Update the list of available packages."
+    description: "Actualizați lista pachetelor disponibile"
   upgrade:
-    description: "Upgrade all installed packages."
+    description: "Actualizați toate pachetele instalate."
   enter:
-    description: "Enter the subsystem's environment."
+    description: "Introduceți mediul subsistemului."
   export:
-    description: "Export an application or binary from the subsystem."
+    description: "Exportați o aplicație sau un fișier binar din subsistem."
     options:
       appName:
-        description: "The name of the application to export."
+        description: "Numele aplicației care urmează să fie exportată."
       bin:
-        description: "The name of the binary to export."
+        description: "Numele fișierului binar care urmează să fie exportat."
       binOutput:
-        description: "Path of the binary output (default: ~/.local/bin/)."
+        description: "Calea de acces a ieșirii binare (implicit: ~/.local/bin/)."
   unexport:
-    description: "Unexport an application or binary from the subsystem."
+    description: "Dezaxportarea unei aplicații sau a unui fișier binar din subsistem."
     options:
       appName:
-        description: "The name of the application to unexport."
+        description: "Numele aplicației care urmează să fie exportată."
       bin:
-        description: "The name of the binary to unexport."
+        description: "Numele fișierului binar care urmează să fie exportat."
       binOutput:
-        description: "Path of the binary output (default: ~/.local/bin/)."
+        description: "Calea de acces a ieșirii binare (implicit: ~/.local/bin/)."
 
 pkgmanagers:
-  description: "Work with the package managers that are available in apx."
+  description: "Lucrați cu managerii de pachete care sunt disponibili în apx."
   labels:
-    name: "Name"
-    builtIn: "Built-in"
+    name: "Nume"
+    builtIn: "Încorporat"
 
   list:
-    description: "List all available package managers."
+    description: "Listează toți administratorii de pachete disponibili."
     info:
-      noPkgManagers: "No package managers available. Create a new one with 'apx pkgmanagers
-        new' or contact the system administrator."
-      foundPkgManagers: "Found %d package managers:\n"
+      noPkgManagers: "Nu sunt disponibili manageri de pachete. Creați unul nou cu
+        'apx pkgmanagers new' sau contactați administratorul de sistem."
+      foundPkgManagers: "S-au găsit %d manageri de pachete:\n"
     options:
       json:
-        description: "Output in JSON format."
+        description: "Ieșire în format JSON."
   show:
-    description: "Show information about the specified package manager."
+    description: "Afișează informații despre managerul de pachete specificat."
   new:
-    description: "Create a new package manager."
+    description: "Creați un nou manager de pachete."
 
     error:
-      emptyName: "The name cannot be empty."
-      noName: "No name specified."
-      emptyCommand: "The command cannot be empty."
-      noCommand: "No command specified for '%s'."
-      alreadyExists: "A package manager with the name '%s' already exists."
+      emptyName: "Numele nu poate fi gol."
+      noName: "Nu este specificat niciun nume."
+      emptyCommand: "Comanda nu poate fi goală."
+      noCommand: "Nu este specificată nicio comandă pentru \"%s\"."
+      alreadyExists: "Un manager de pachete cu numele \"%s\" există deja."
     info:
-      askName: "Choose a name:"
-      askSudo: "Does the package manager need sudo to run?"
-      askCommand: "Enter the command for '%s':"
-      askOverwrite: "A package manager with the name '%s' already exists. Overwrite
-        it?"
-      success: "Created package manager '%s'."
+      askName: "Alegeți un nume:"
+      askSudo: "Managerul de pachete are nevoie de sudo pentru a rula?"
+      askCommand: "Introduceți comanda pentru \"%s\":"
+      askOverwrite: "Un manager de pachete cu numele \"%s\" există deja. Îl suprascrieți?"
+      success: "A fost creat managerul de pachete \"%s\"."
     options:
       assumeYes:
-        description: "Assume yes to all prompts."
+        description: "Presupuneți că ați răspuns afirmativ la toate solicitările."
       name:
-        description: "The name of the package manager."
+        description: "Numele administratorului de pachete."
       needSudo:
-        description: "Whether the package manager needs sudo to run."
+        description: "Dacă managerul de pachete are nevoie de sudo pentru a rula."
       autoremove:
-        description: "The command to run to autoremove packages."
+        description: "Comanda care trebuie executată pentru eliminarea automată a
+          pachetelor."
       clean:
-        description: "The command to run to clean the package manager's cache."
+        description: "Comanda care trebuie executată pentru a curăța memoria cache
+          a managerului de pachete."
       install:
-        description: "The command to run to install packages."
+        description: "Comanda care trebuie executată pentru a instala pachetele."
       list:
-        description: "The command to run to list installed packages."
+        description: "Comanda care trebuie executată pentru a lista pachetele instalate."
       purge:
-        description: "The command to run to purge packages."
+        description: "Comanda care trebuie executată pentru a curăța pachetele."
       remove:
-        description: "The command to run to remove packages."
+        description: "Comanda care trebuie executată pentru a elimina pachetele."
       search:
-        description: "The command to run to search for packages."
+        description: "Comanda care trebuie executată pentru a căuta pachete."
       show:
-        description: "The command to run to show information about packages."
+        description: "Comanda care trebuie executată pentru a afișa informații despre
+          pachete."
       update:
-        description: "The command to run to update the list of available packages."
+        description: "Comanda care trebuie executată pentru a actualiza lista de pachete
+          disponibile."
       upgrade:
-        description: "The command to run to upgrade packages."
+        description: "Comanda care trebuie executată pentru a actualiza pachetele."
   rm:
-    description: "Remove the specified package manager."
+    description: "Elimină managerul de pachete specificat."
 
     error:
-      noName: "No name specified."
-      inUse: "The package manager is used in %d stacks:\n"
+      noName: "Nu este specificat niciun nume."
+      inUse: "Managerul de pachete este utilizat în %d stive:\n"
     info:
-      askConfirmation: "Are you sure you want to remove '%s'?"
-      success: "Removed package manager '%s'."
+      askConfirmation: "Sunteți sigur că doriți să eliminați \"%s\"?"
+      success: "A fost eliminat managerul de pachete \"%s\"."
     options:
       force:
-        description: "Force removal of the package manager."
+        description: "Forțează eliminarea managerului de pachete."
       name:
-        description: "The name of the package manager to remove."
+        description: "Numele administratorului de pachete care urmează să fie eliminat."
 
 stacks:
-  description: "Work with the stacks that are available in apx."
+  description: "Lucrați cu stive care sunt disponibile în apx."
   labels:
-    name: "Name"
+    name: "Nume"
     builtIn: "Built-in"
 
   list:
-    description: "List all available stacks."
+    description: "Enumeră toate stivele disponibile."
     info:
-      noStacks: "No stacks available. Create a new one with 'apx stacks new' or contact
-        the system administrator."
-      foundStacks: "Found %d stacks:\n"
+      noStacks: "Nu sunt disponibile stive. Creați una nouă cu 'apx stacks new' sau
+        contactați administratorul de sistem."
+      foundStacks: "S-au găsit %d stive:\n"
     options:
       json:
-        description: "Output in JSON format."
+        description: "Ieșire în format JSON."
   show:
-    description: "Show information about the specified stack."
+    description: "Afișează informații despre stiva specificată."
   new:
-    description: "Create a new stack."
+    description: "Creați o nouă stivă."
     error:
-      emptyName: "The name cannot be empty."
-      noName: "No name specified."
-      emptyBase: "The base cannot be empty."
-      noBase: "No base specified."
-      emptyPkgManager: "The package manager cannot be empty."
-      noPkgManager: "No package manager specified."
-      pkgManagerDoesNotExist: "The specified package manager does not exist. Create
-        it with 'apx pkgmanagers new' or contact the system administrator."
-      emptyPackages: "The packages cannot be empty."
-      noPackages: "No packages specified."
-      alreadyExists: "A stack with the name '%s' already exists."
+      emptyName: "Numele nu poate fi gol."
+      noName: "Nu este specificat niciun nume."
+      emptyBase: "Baza nu poate fi goală."
+      noBase: "Nu se specifică baza."
+      emptyPkgManager: "Managerul de pachete nu poate fi gol."
+      noPkgManager: "Nu este specificat niciun manager de pachete."
+      pkgManagerDoesNotExist: "Managerul de pachete specificat nu există. Creați-l
+        cu 'apx pkgmanagers new' sau contactați administratorul de sistem."
+      emptyPackages: "Pachetele nu pot fi goale."
+      noPackages: "Nu sunt specificate pachete."
+      alreadyExists: "O stivă cu numele \"%s\" există deja."
     info:
-      askName: "Choose a name:"
-      askBase: "Choose a base (e.g. 'vanillaos/pico'):"
-      askPkgManager: "Choose a package manager:"
-      selectPkgManager: "Select a package manager [1-%d]:"
-      noPackages: "You have not provided any package to install in the stack. Do you
-        want to add some now?"
-      confirmPackages: "Do you want to confirm the current packages list?"
-      askPackages: "Please type the packages you want to install in the stack, separated
-        by a space:"
-      success: "Created stack '%s'."
+      askName: "Alegeți un nume:"
+      askBase: "Alegeți o bază (de exemplu, \"vanillaos/pico\"):"
+      askPkgManager: "Alegeți un manager de pachete:"
+      selectPkgManager: "Selectați un manager de pachete [1-%d]:"
+      noPackages: "Nu ați furnizat niciun pachet de instalat în stivă. Doriți să adăugați
+        unul acum?"
+      confirmPackages: "Doriți să confirmați lista curentă de pachete?"
+      askPackages: "Vă rugăm să introduceți pachetele pe care doriți să le instalați
+        în stivă, separate prin câte un spațiu:"
+      success: "A fost creată stiva \"%s\"."
     options:
       assumeYes:
-        description: "Assume yes to all prompts."
+        description: "Presupuneți că ați răspuns afirmativ la toate solicitările."
       name:
-        description: "The name of the stack."
+        description: "Numele stivei."
       base:
-        description: "The base subsystem to use."
+        description: "Subsistemul de bază care trebuie utilizat."
       packages:
-        description: "The packages to install."
+        description: "Pachetele care trebuie instalate."
       pkgManager:
-        description: "The package manager to use."
+        description: "Managerul de pachete care trebuie utilizat."
   update:
-    description: "Update the specified stack."
+    description: "Actualizează stiva specificată."
     error:
-      noName: "No name specified."
-      noBase: "No base specified."
-      noPkgManager: "No package manager specified."
-      pkgManagerDoesNotExist: "The specified package manager does not exist. Create
-        it with 'apx pkgmanagers new' or contact the system administrator."
+      noName: "Nu este specificat niciun nume."
+      noBase: "Nu se specifică baza."
+      noPkgManager: "Nu este specificat niciun manager de pachete."
+      pkgManagerDoesNotExist: "Managerul de pachete specificat nu există. Creați-l
+        cu 'apx pkgmanagers new' sau contactați administratorul de sistem."
     info:
-      askBase: "Type a new base or confirm the current one (%s):"
-      askPkgManager: "Choose a new package manager or confirm the current one (%s):"
-      askPackages: "Type the packages you want to install in the stack, separated
-        by a space, or confirm the current ones (%s):"
-      success: "Updated stack '%s'."
+      askBase: "Introduceți o nouă bază sau confirmați-o pe cea actuală (%s):"
+      askPkgManager: "Alegeți un nou manager de pachete sau confirmați-l pe cel actual
+        (%s):"
+      askPackages: "Introduceți pachetele pe care doriți să le instalați în stivă,
+        separate printr-un spațiu, sau confirmați-le pe cele curente (%s):"
+      success: "Stiva \"%s\" actualizată."
 
     options:
       assumeYes:
-        description: "Assume yes to all prompts."
+        description: "Presupuneți că ați răspuns afirmativ la toate solicitările."
       name:
-        description: "The name of the stack."
+        description: "Numele stivei."
       base:
-        description: "The base subsystem to use."
+        description: "Subsistemul de bază care trebuie utilizat."
       packages:
-        description: "The packages to install."
+        description: "Pachetele care trebuie instalate."
       pkgManager:
-        description: "The package manager to use."
+        description: "Managerul de pachete care trebuie utilizat."
   rm:
-    description: "Remove the specified stack."
+    description: "Elimină stiva specificată."
     error:
-      noName: "No name specified."
+      noName: "Nu este specificat niciun nume."
     info:
-      askConfirmation: "Are you sure you want to remove '%s'?"
-      success: "Removed stack '%s'."
+      askConfirmation: "Sunteți sigur că doriți să eliminați \"%s\"?"
+      success: "Stiva \"%s\" a fost eliminată."
     options:
       force:
-        description: "Force removal of the stack."
+        description: "Forțați îndepărtarea stivei."
       name:
-        description: "The name of the stack to remove."
+        description: "Numele stivei care urmează să fie eliminată."
   export:
-    description: "Export the specified stack."
+    description: "Exportă stiva specificată."
     error:
-      noName: "No name specified."
-      noOutput: "No output specified."
+      noName: "Nu este specificat niciun nume."
+      noOutput: "Nu este specificată nicio ieșire."
     info:
-      success: "Exported stack '%s' to '%s'."
+      success: "Stiva exportată \"%s\" în \"%s\"."
     options:
       name:
-        description: "The name of the stack to export."
+        description: "Numele stivei care urmează să fie exportată."
       output:
-        description: "The path to export the stack to."
+        description: "Calea în care se exportă stiva."
   import:
-    description: "Import the specified stack."
+    description: "Importă stiva specificată."
     error:
-      noInput: "No input specified."
-      cannotLoad: "Cannot load stack from '%s'."
+      noInput: "Nu este specificată nicio intrare."
+      cannotLoad: "Nu se poate încărca stiva din '%s'."
     info:
-      success: "Imported stack from '%s'."
+      success: "Stiva importată din \"%s\"."
     options:
       input:
-        description: "The path to import the stack from."
+        description: "Calea din care se importă stiva."
 
 subsystems:
-  description: "Work with the subsystems that are available in apx."
+  description: "Lucrați cu subsistemele care sunt disponibile în apx."
   labels:
-    name: "Name"
-    status: "Status"
+    name: "Nume"
+    status: "Stare"
 
   list:
-    description: "List all available subsystems."
+    description: "List cu toate subsistemele disponibile"
     error:
     info:
-      noSubsystems: "No subsystems available. Create a new one with 'apx subsystems
-        new' or contact the system administrator."
-      foundSubsystems: "Found %d subsystems:\n"
+      noSubsystems: "Nu există subsisteme disponibile. Creați unul nou cu 'apx subsystems
+        new' sau contactați administratorul de sistem."
+      foundSubsystems: "S-au găsit %d subsisteme:\n"
     options:
       json:
-        description: "Output in JSON format."
+        description: "Ieșire în format JSON."
   new:
-    description: "Create a new subsystem."
+    description: "Creați un nou subsistem."
     error:
-      noStacks: "A stack is needed to create a subsystem. Create a new one with 'apx
-        stacks new' or contact the system administrator."
-      emptyName: "The name cannot be empty."
-      noName: "No name specified."
-      emptyStack: "The stack cannot be empty."
-      noStack: "No stack specified."
-      stackDoesNotExist: "The specified stack does not exist. Create it with 'apx
-        stacks new' or contact the system administrator."
-      alreadyExists: "A subsystem with the name '%s' already exists."
+      noStacks: "Pentru a crea un subsistem este necesară o stivă. Creați una nouă
+        cu \"apx stacks new\" sau contactați administratorul de sistem."
+      emptyName: "Numele nu poate fi gol."
+      noName: "Nu este specificat niciun nume."
+      emptyStack: "Stiva nu poate fi goală."
+      noStack: "Nu este specificată nicio stivă."
+      stackDoesNotExist: "Stiva specificată nu există. Creați-o cu \"apx stacks new\"\
+        \ sau contactați administratorul de sistem."
+      alreadyExists: "Un subsistem cu numele \"%s\" există deja."
     info:
-      askName: "Choose a name:"
-      selectStack: "Select a stack [1-%d]:"
-      success: "Created subsystem '%s'."
-      creatingSubsystem: "Created subsystem '%s' with stack '%s'…"
+      askName: "Alegeți un nume:"
+      selectStack: "Selectați o stivă [1-%d]:"
+      success: "A fost creat subsistemul \"%s\"."
+      creatingSubsystem: "A fost creat subsistemul \"%s\" cu stiva \"%s\"…"
     options:
       name:
-        description: "The name of the subsystem."
+        description: "Numele subsistemului."
       stack:
-        description: "The stack to use."
+        description: "Stiva de utilizat."
   rm:
-    description: "Remove the specified subsystem."
+    description: "Elimină subsistemul specificat."
     error:
-      noName: "No name specified."
+      noName: "Nu este specificat niciun nume."
     info:
-      askConfirmation: "Are you sure you want to remove '%s'?"
-      success: "Removed subsystem '%s'."
+      askConfirmation: "Sunteți sigur că doriți să eliminați \"%s\"?"
+      success: "A fost eliminat subsistemul \"%s\"."
     options:
       force:
-        description: "Force removal of the subsystem."
+        description: "Îndepărtarea forțată a subsistemului."
       name:
-        description: "The name of the subsystem to remove."
+        description: "Numele subsistemului care trebuie eliminat."
   reset:
-    description: "Reset the specified subsystem."
+    description: "Resetează subsistemul specificat."
     error:
-      noName: "No name specified."
+      noName: "Nu este specificat niciun nume."
     info:
-      askConfirmation: "Are you sure you want to reset '%s'?"
-      success: "The subsystem '%s' has been reset."
+      askConfirmation: "Sunteți sigur că doriți să resetați \"%s\"?"
+      success: "Subsistemul \"%s\" a fost resetat."
     options:
       force:
-        description: "Force reset of the subsystem."
+        description: "Forțează resetarea subsistemului."
       name:
-        description: "The name of the subsystem to reset."
+        description: "Numele subsistemului care trebuie resetat."
