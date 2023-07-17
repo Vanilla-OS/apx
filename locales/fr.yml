@@ -152,6 +152,7 @@ pkgmanagers:
     info:
       askConfirmation: "Êtes-vous sûr de vouloir supprimer \"%s\" ?"
       success: "Suppression du gestionnaire de paquets '%s'."
+      aborting: Aborting removal of package manager '%s'.
     options:
       force:
         description: "Forcer la suppression du gestionnaire de paquets."
@@ -170,6 +171,7 @@ stacks:
       noStacks: "Aucune pile n'est disponible. Créez-en une nouvelle avec 'apx stacks
         new' ou contactez l'administrateur système."
       foundStacks: "Trouvé %d stacks :\n"
+      aborting: Aborting removal of stack '%s'.
     options:
       json:
         description: "Sortie au format JSON."

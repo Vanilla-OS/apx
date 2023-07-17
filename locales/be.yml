@@ -142,6 +142,7 @@ pkgmanagers:
     info:
       askConfirmation: "Вы ўпэўнены, што хочаце выдаліць «%s»?"
       success: "Выдалены менеджэр пакетаў «%s»."
+      aborting: Aborting removal of package manager '%s'.
     options:
       force:
         description: "Прымусовае выдаленне дыспетчара пакетаў."
@@ -160,6 +161,7 @@ stacks:
       noStacks: "Няма даступных стосаў. Стварыце новы з «apx stacks new» або звярніцеся
         да сістэмнага адміністратара."
       foundStacks: "Знойдзена %d стосаў:\n"
+      aborting: Aborting removal of stack '%s'.
     options:
       json:
         description: "Вывад у фармаце JSON."

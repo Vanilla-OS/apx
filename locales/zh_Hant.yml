@@ -140,6 +140,7 @@ pkgmanagers:
     info:
       askConfirmation: "是否確實要刪除 '%s'？"
       success: "已移除軟體包管理器 '%s'。"
+      aborting: Aborting removal of package manager '%s'.
     options:
       force:
         description: "強制移除軟體包管理器。"
@@ -157,6 +158,7 @@ stacks:
     info:
       noStacks: "沒有可使用的包捆。請使用 'apx stacks new' 建立新的包捆，或是聯絡系統管理員。"
       foundStacks: "找到 %d 個包捆：\n"
+      aborting: Aborting removal of stack '%s'.
     options:
       json:
         description: "以 JSON 格式輸出。"

@@ -148,6 +148,7 @@ pkgmanagers:
     info:
       askConfirmation: "Sunteți sigur că doriți să eliminați \"%s\"?"
       success: "A fost eliminat managerul de pachete \"%s\"."
+      aborting: Aborting removal of package manager '%s'.
     options:
       force:
         description: "Forțează eliminarea managerului de pachete."
@@ -166,6 +167,7 @@ stacks:
       noStacks: "Nu sunt disponibile stive. Creați una nouă cu 'apx stacks new' sau
         contactați administratorul de sistem."
       foundStacks: "S-au găsit %d stive:\n"
+      aborting: Aborting removal of stack '%s'.
     options:
       json:
         description: "Ieșire în format JSON."

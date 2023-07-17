@@ -143,6 +143,7 @@ pkgmanagers:
     info:
       askConfirmation: "Вы уверены, что хотите удалить '%s'?"
       success: "Удалён менеджер пакетов '%s'."
+      aborting: Aborting removal of package manager '%s'.
     options:
       force:
         description: "Принудительно удалить менеджер пакетов."
@@ -161,6 +162,7 @@ stacks:
       noStacks: "Нет доступных стеков. Создайте новый с помощью 'apx stacks new' или
         обратитесь к системному администратору."
       foundStacks: "Найдено %d стеков:\n"
+      aborting: Aborting removal of stack '%s'.
     options:
       json:
         description: "Вывод в формате JSON."
