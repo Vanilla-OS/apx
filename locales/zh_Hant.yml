@@ -3,12 +3,12 @@ apx:
     you to install packages in subsystems."
   errors:
     unknownCommand: "Unknown command: %s"
-    invalidInput: "Invalid input."
+    invalidInput: "輸入無效。"
   info:
     aborting: "Aborting as requested."
   terminal:
-    yes: "yes"
-    no: "no"
+    yes: "是"
+    no: "否"
 
 runtimeCommand:
   description: "Work with the specified subsystem, accessing the package manager and
@@ -26,8 +26,8 @@ runtimeCommand:
     unexportingBin: "An error occurred while unexporting the binary: %s"
   info:
     unexportedApps: "Unexported %d applications\n"
-    exportedApps: "Exported %d applications\n"
-    exportedApp: "Exported application %s\n"
+    exportedApps: "已匯出 %d 個應用程式\n"
+    exportedApp: "已匯出應用程式 %s\n"
     exportedBin: "Exported binary %s\n"
     unexportedApp: "Unexported application %s\n"
     unexportedBin: "Unexported binary %s\n"
@@ -79,7 +79,7 @@ pkgmanagers:
   description: "Work with the package managers that are available in apx."
   labels:
     name: "Name"
-    builtIn: "Built-in"
+    builtIn: "內建"
 
   list:
     description: "List all available package managers."
