@@ -1,328 +1,323 @@
 apx:
-  description: "Apx is a package manager with support for multiple sources, allowing
-    you to install packages in subsystems."
+  description: "Apx هو مدير حزم متعدد المصادر، مما يسمح بتثبيت الحزم في أنظمة فرعية."
   errors:
-    unknownCommand: "Unknown command: %s"
-    invalidInput: "Invalid input."
+    unknownCommand: "أمر غير معروف: %s"
+    invalidInput: "المدخل غير صالح."
   info:
-    aborting: "Aborting as requested."
+    aborting: "يتم الالغاء."
   terminal:
-    yes: "yes"
-    no: "no"
+    yes: "نعم"
+    no: "لا"
 
 runtimeCommand:
-  description: "Work with the specified subsystem, accessing the package manager and
-    environment."
+  description: "يتعامل مع النظام الفرعي المحدد، مما يسمح باستخدام مدير الحزم و البيئة."
   error:
-    noPackageSpecified: "No packages specified."
-    cantAccessPkgManager: "An error occurred while accessing the package manager:
-      %s"
-    executingCommand: "An error occurred while executing the command: %s"
-    noAppNameOrBin: "--app-name or --bin must be specified."
-    sameAppOrBin: "--app-name and --bin cannot be both specified."
-    exportingApp: "An error occurred while exporting the application: %s"
-    exportingBin: "An error occurred while exporting the binary: %s"
-    unexportingApp: "An error occurred while unexporting the application: %s"
-    unexportingBin: "An error occurred while unexporting the binary: %s"
+    noPackageSpecified: "لم يتم تحديد حزمة."
+    cantAccessPkgManager: "حدث خطأ أثناء الوصول إلى مدير الحزم: %s"
+    executingCommand: "حدث خطأ أثناء تنفيذ الأمر: %s"
+    noAppNameOrBin: "يجب تحديد --app-name او --bin"
+    sameAppOrBin: "لا يمكن تحديد --app-name و --bin في نفس الوقت."
+    exportingApp: "حدث خطأ أثناء تصدير التطبيق: %s"
+    exportingBin: "حدث خطأ أثناء تصدير البرنامج: %s"
+    unexportingApp: "حدث خطأ أثناء إلغاء تصدير التطبيق: %s"
+    unexportingBin: "حدث خطأ أثناء إلغاء تصدير البرنامج: %s"
   info:
-    unexportedApps: "Unexported %d applications\n"
-    exportedApps: "Exported %d applications\n"
-    exportedApp: "Exported application %s\n"
-    exportedBin: "Exported binary %s\n"
-    unexportedApp: "Unexported application %s\n"
-    unexportedBin: "Unexported binary %s\n"
+    unexportedApps: "%d تطبيقات غير مصدرة\n"
+    exportedApps: "%d تطبيقات مصدرة\n"
+    exportedApp: "التطبيقات المصدرة %s\n"
+    exportedBin: "البرامج المصدرة %s\n"
+    unexportedApp: "التطبيقات غير المصدرة %s\n"
+    unexportedBin: "البرامج غير المصدرة %s\n"
   autoremove:
-    description: "Remove packages that are no longer required."
+    description: "حذف الحزم التي لم تعد مطلوبة."
   clean:
-    description: "Clean the package manager's cache."
+    description: "تنظيف ذاكرة التخزين المؤقت لمدير الحزم."
   install:
-    description: "Install the specified package."
+    description: "تثبيت الحزمة المحددة."
     options:
       noExport:
-        description: "Do not export a desktop entry."
+        description: "لا تقم تصدير ملف لسطح المكتب."
   list:
-    description: "List all installed packages."
+    description: "عرض جميع الحزم المثبتة."
   purge:
-    description: "Purge the specified packages."
+    description: "تطهير (purge) الحزم المحددة."
   remove:
-    description: "Remove the specified packages."
+    description: "حذف الحزم المحددة."
   search:
-    description: "Search for packages matching the specified query."
+    description: "البحث عن حزم تطابق العبارة (الاستعلام) المحددة."
   show:
-    description: "Show information about the specified package."
+    description: "عرض معلومات عن الحزمة المحددة."
   update:
-    description: "Update the list of available packages."
+    description: "تحديث قائمة الحزم المتاحة."
   upgrade:
-    description: "Upgrade all installed packages."
+    description: "تطوير جميع الحزم المثبتة."
   enter:
-    description: "Enter the subsystem's environment."
+    description: "دخول بيئة النظام الفرعي."
   export:
-    description: "Export an application or binary from the subsystem."
+    description: "تصدير تطبيق او برنامج من النظام الفرعي."
     options:
       appName:
-        description: "The name of the application to export."
+        description: "اسم التطبيق المراد تصدير."
       bin:
-        description: "The name of the binary to export."
+        description: "اسم البرنامج المراد تصديره."
       binOutput:
-        description: "Path of the binary output (default: ~/.local/bin/)."
+        description: "مسار البرامج\n(الافتراضي: ~/.local/bin)"
   unexport:
-    description: "Unexport an application or binary from the subsystem."
+    description: "الغاء تصدير تطبيق او برنامج من النظام الفرعي."
     options:
       appName:
-        description: "The name of the application to unexport."
+        description: "اسم التطبيق المراد إلغاء تصديره."
       bin:
-        description: "The name of the binary to unexport."
+        description: "اسم البرنامج المراد إلغاء تصديره."
       binOutput:
-        description: "Path of the binary output (default: ~/.local/bin/)."
+        description: "مسار البرامج\n(الافتراضي /.local/bin/)"
 
 pkgmanagers:
-  description: "Work with the package managers that are available in apx."
+  description: "يتعامل مع مديري الحزم المتاحة في apx."
   labels:
-    name: "Name"
-    builtIn: "Built-in"
+    name: "الاسم"
+    builtIn: "مدمج في النظام"
 
   list:
-    description: "List all available package managers."
+    description: "عرض جميع مديري الحزم المتاحين."
     info:
-      noPkgManagers: "No package managers available. Create a new one with 'apx pkgmanagers
-        new' or contact the system administrator."
-      foundPkgManagers: "Found %d package managers:\n"
+      noPkgManagers: "لا يوجد مدير حزم متاح. قم بإنشاء واحد جديد باستخدام 'apx pkgmanagers
+        new' او تحدث مع مسئول النظام."
+      foundPkgManagers: "تم ايجاد %d مديري حزم:\n"
     options:
       json:
-        description: "Output in JSON format."
+        description: "المخرجات في صورة JSON."
   show:
-    description: "Show information about the specified package manager."
+    description: "عرض معلومات عن مدير الحزم المحدد."
   new:
-    description: "Create a new package manager."
+    description: "إنشاء مدير حزم جديد."
 
     error:
-      emptyName: "The name cannot be empty."
-      noName: "No name specified."
-      emptyCommand: "The command cannot be empty."
-      noCommand: "No command specified for '%s'."
-      alreadyExists: "A package manager with the name '%s' already exists."
+      emptyName: "الاسم لا يمكن أن يكون فارغا."
+      noName: "لم يتم تحديد اسم."
+      emptyCommand: "لا يمكن أن يكون الامر فارغا."
+      noCommand: "لم يتم تحديد أمر من أجل '%s'."
+      alreadyExists: "يوجد مدير حزم بنفس الاسم '%s' بالفعل."
     info:
-      askName: "Choose a name:"
-      askSudo: "Does the package manager need sudo to run?"
-      askCommand: "Enter the command for '%s':"
-      askOverwrite: "A package manager with the name '%s' already exists. Overwrite
-        it?"
-      success: "Created package manager '%s'."
+      askName: "اختر اسما:"
+      askSudo: "هل يحتاج مدير الحزم إلى sudo ليعمل؟"
+      askCommand: "أدخل الامر لأجل '%s':"
+      askOverwrite: "يوجد مدير حزم بنفس الاسم '%s' بالفعل. هل تريد استبداله؟"
+      success: "تم إنشاء مدير الحزم '%s'."
     options:
       assumeYes:
-        description: "Assume yes to all prompts."
+        description: "افرض الإجابة \"نعم\" لكل الاختيارات."
       name:
-        description: "The name of the package manager."
+        description: "اسم مدير الحزم."
       needSudo:
-        description: "Whether the package manager needs sudo to run."
+        description: "ما اذا كان مدير الحزم يحتاج sudo ليعمل أم لا"
       autoremove:
-        description: "The command to run to autoremove packages."
+        description: "الامر الخاص بالحذف التلقائي للحزم."
       clean:
-        description: "The command to run to clean the package manager's cache."
+        description: "الامر الخاص بتنظيف ذاكرة التخزين المؤقت لمدير الحزم."
       install:
-        description: "The command to run to install packages."
+        description: "الامر الخاص بتنزيل الحزم."
       list:
-        description: "The command to run to list installed packages."
+        description: "الامر الخاص بعرض الحزم المثبتة."
       purge:
-        description: "The command to run to purge packages."
+        description: "الامر الخاص بتطهير (purge) الحزم."
       remove:
-        description: "The command to run to remove packages."
+        description: "الامر الخاص بحذف الحزم."
       search:
-        description: "The command to run to search for packages."
+        description: "الامر الخاص بالبحث عن الحزم."
       show:
-        description: "The command to run to show information about packages."
+        description: "الامر الخاص بعرض معلومات عن الحزم."
       update:
-        description: "The command to run to update the list of available packages."
+        description: "الامر الخاص بتحديث قائمة الحزم المتاحة."
       upgrade:
-        description: "The command to run to upgrade packages."
+        description: "الامر الخاص بتطوير الحزم."
   rm:
-    description: "Remove the specified package manager."
+    description: "حذف مدير الحزم المحدد."
 
     error:
-      noName: "No name specified."
-      inUse: "The package manager is used in %d stacks:\n"
+      noName: "لم يتم تحديد اسم."
+      inUse: "مدير الحزم مستخدم في %d تشكيلات:\n"
     info:
-      askConfirmation: "Are you sure you want to remove '%s'?"
-      success: "Removed package manager '%s'."
+      askConfirmation: "هل انت متأكد من حذف '%s'؟"
+      success: "تم حذف مدير الحزم '%s'."
     options:
       force:
-        description: "Force removal of the package manager."
+        description: "إجبار إزالة مدير الحزم."
       name:
-        description: "The name of the package manager to remove."
+        description: "اسم مدير الحزم المراد حذفه."
 
 stacks:
-  description: "Work with the stacks that are available in apx."
+  description: "تستخدم التشكيلات المتاحة في apx."
   labels:
-    name: "Name"
-    builtIn: "Built-in"
+    name: "الاسم"
+    builtIn: "مدمج في النظام"
 
   list:
-    description: "List all available stacks."
+    description: "عرض التشكيلات المتاحة."
     info:
-      noStacks: "No stacks available. Create a new one with 'apx stacks new' or contact
-        the system administrator."
-      foundStacks: "Found %d stacks:\n"
+      noStacks: "لا توجد تشكيلات متاحة. قم بإنشاء واحدة جديدة باستخدام 'apx stacks
+        new' او قم بالتحدث الي مسئول النظام."
+      foundStacks: "تم العثور على %d تشكيلات:\n"
     options:
       json:
-        description: "Output in JSON format."
+        description: "المخرجات في صورة JSON."
   show:
-    description: "Show information about the specified stack."
+    description: "عرض معلومات عن التشكيلة المحددة."
   new:
-    description: "Create a new stack."
+    description: "إنشاء تشكيلة جديدة."
     error:
-      emptyName: "The name cannot be empty."
-      noName: "No name specified."
-      emptyBase: "The base cannot be empty."
-      noBase: "No base specified."
-      emptyPkgManager: "The package manager cannot be empty."
-      noPkgManager: "No package manager specified."
-      pkgManagerDoesNotExist: "The specified package manager does not exist. Create
-        it with 'apx pkgmanagers new' or contact the system administrator."
-      emptyPackages: "The packages cannot be empty."
-      noPackages: "No packages specified."
-      alreadyExists: "A stack with the name '%s' already exists."
+      emptyName: "لا يمكن أن يكون الاسم فارغا."
+      noName: "لم يتم تحديد اسم."
+      emptyBase: "لا يمكن أن يكون النظام الأساس فارغا."
+      noBase: "لم يتم تحديد النظام الأساس."
+      emptyPkgManager: "لا يمكن أن يكون مدير الحزم فارغا."
+      noPkgManager: "لم يتم تحديد مدير حزم."
+      pkgManagerDoesNotExist: "مدير الحزم المحدد غير موجود. قم بإنشاء واحد جديد باستخدام
+        'apx pkgmanagers new' او قم بالتحدث لمسؤول النظام."
+      emptyPackages: "الحزم لا يمكن أن تكون فارغة."
+      noPackages: "لم يتم تحديد حزم."
+      alreadyExists: "يوجد تشكيلة بالاسم '%s' بالفعل."
     info:
-      askName: "Choose a name:"
-      askBase: "Choose a base (e.g. 'vanillaos/pico'):"
-      askPkgManager: "Choose a package manager:"
-      selectPkgManager: "Select a package manager [1-%d]:"
-      noPackages: "You have not provided any package to install in the stack. Do you
-        want to add some now?"
-      confirmPackages: "Do you want to confirm the current packages list?"
-      askPackages: "Please type the packages you want to install in the stack, separated
-        by a space:"
-      success: "Created stack '%s'."
+      askName: "اختر اسما:"
+      askBase: "اختر النظام الأساس (على سبيل المثال 'vanillaos/pico'):"
+      askPkgManager: "اختر مديرا للحزم:"
+      selectPkgManager: "اختر مديرا للحزم [1-%d] :"
+      noPackages: "انت لم تقم بإضافة اي حزم لتثبيتها في التشكيلة. هل تريد إضافة البعض
+        الآن؟"
+      confirmPackages: "هل تريد الموافقة على قائمة الحزم التالية؟"
+      askPackages: "من فضلك قم بكتابة الحزم المراد تنزيلها في التشكيلة مع فصلها بمسافة:"
+      success: "تم إنشاء التشكيلة '%s'."
     options:
       assumeYes:
-        description: "Assume yes to all prompts."
+        description: "افرض الإجابة \"نعم\" لكل الاختيارات."
       name:
-        description: "The name of the stack."
+        description: "اسم التشكيلة."
       base:
-        description: "The base subsystem to use."
+        description: "النظام الفرعي المراد استخدامه كأساس."
       packages:
-        description: "The packages to install."
+        description: "الحزم المراد تثبيتها."
       pkgManager:
-        description: "The package manager to use."
+        description: "مدير الحزم المراد استخدامه."
   update:
-    description: "Update the specified stack."
+    description: "تحديث التشكيلة المحددة."
     error:
-      noName: "No name specified."
-      noBase: "No base specified."
-      noPkgManager: "No package manager specified."
-      pkgManagerDoesNotExist: "The specified package manager does not exist. Create
-        it with 'apx pkgmanagers new' or contact the system administrator."
+      noName: "لم يتم تحديد اسم."
+      noBase: "لم يتم تحديد النظام الأساس."
+      noPkgManager: "لم يتم تحديد مدير حزم."
+      pkgManagerDoesNotExist: "مدير الحزم المحدد غير موجود. قم بإنشاء واحد جديد باستخدام
+        'apx pkgmanagers new' او قم بالتحدث لمسؤول النظام."
     info:
-      askBase: "Type a new base or confirm the current one (%s):"
-      askPkgManager: "Choose a new package manager or confirm the current one (%s):"
-      askPackages: "Type the packages you want to install in the stack, separated
-        by a space, or confirm the current ones (%s):"
-      success: "Updated stack '%s'."
+      askBase: "قم بكتابة نظام أساس جديد أو وافق على الحالي(%s):"
+      askPkgManager: "قم باختيار مدير حزم جديد أو وافق على الحالي(%s):"
+      askPackages: "قم بكتابة الحزم المراد تثبيتها في التشكيلة مع فصلها بمسافة أو
+        وافق على الحاليين (%s):"
+      success: "تم تحديث التشكيلة '%s':"
 
     options:
       assumeYes:
-        description: "Assume yes to all prompts."
+        description: "افرض الإجابة \"نعم\" لكل الاختيارات."
       name:
-        description: "The name of the stack."
+        description: "اسم التشكيلة."
       base:
-        description: "The base subsystem to use."
+        description: "النظام الفرعي المراد استخدامه كأساس."
       packages:
-        description: "The packages to install."
+        description: "الحزم المراد تثبيتها."
       pkgManager:
-        description: "The package manager to use."
+        description: "مدير الحزم المراد استخدامه."
   rm:
-    description: "Remove the specified stack."
+    description: "حذف التشكيلة المحددة."
     error:
-      noName: "No name specified."
+      noName: "لم يتم تحديد اسم."
     info:
-      askConfirmation: "Are you sure you want to remove '%s'?"
-      success: "Removed stack '%s'."
+      askConfirmation: "هل انت متأكد من حذف '%s'؟"
+      success: "تم حذف التشكيلة '%s'."
     options:
       force:
-        description: "Force removal of the stack."
+        description: "الحذف الإجباري للتشكيلة."
       name:
-        description: "The name of the stack to remove."
+        description: "اسم التشكيلة المراد حذفها."
   export:
-    description: "Export the specified stack."
+    description: "تصدير التشكيلة المحددة."
     error:
-      noName: "No name specified."
-      noOutput: "No output specified."
+      noName: "لم يتم تحديد اسم."
+      noOutput: "لم يتم تحديد مخرجات."
     info:
-      success: "Exported stack '%s' to '%s'."
+      success: "تم تصدير التشكيلة '%s' إلى '%s'."
     options:
       name:
-        description: "The name of the stack to export."
+        description: "اسم التشكيلة المراد تصديرها."
       output:
-        description: "The path to export the stack to."
+        description: "المسار المراد تصدير التشكيلة إليه."
   import:
-    description: "Import the specified stack."
+    description: "استيراد التشكيلة المحددة."
     error:
-      noInput: "No input specified."
-      cannotLoad: "Cannot load stack from '%s'."
+      noInput: "لم يتم تحديد مدخل."
+      cannotLoad: "لم يمكن تحميل التشكيلة من '%s'."
     info:
-      success: "Imported stack from '%s'."
+      success: "تم استيراد التشكيلة من '%s'."
     options:
       input:
-        description: "The path to import the stack from."
+        description: "المسار المراد استيراد التشكيلة منه."
 
 subsystems:
-  description: "Work with the subsystems that are available in apx."
+  description: "يتعامل مع الانظمة الفوعية المتاحة في apx."
   labels:
-    name: "Name"
-    status: "Status"
+    name: "الاسم"
+    status: "الحالة"
 
   list:
-    description: "List all available subsystems."
+    description: "عرض جميع الانظمة الفرعية المتاحة."
     error:
     info:
-      noSubsystems: "No subsystems available. Create a new one with 'apx subsystems
-        new' or contact the system administrator."
-      foundSubsystems: "Found %d subsystems:\n"
+      noSubsystems: "لا يوجد أنظمة فرعية متاحة. قم بإنشاء واحد جديد باستخدام 'apx
+        subsystems new' او قم بالتحدث لمسؤول النظام."
+      foundSubsystems: "تم العثور على %d أنظمة فرعية:\n"
     options:
       json:
-        description: "Output in JSON format."
+        description: "المخرجات في صورة JSON."
   new:
-    description: "Create a new subsystem."
+    description: "انشاء نظام فرعي جديد."
     error:
-      noStacks: "A stack is needed to create a subsystem. Create a new one with 'apx
-        stacks new' or contact the system administrator."
-      emptyName: "The name cannot be empty."
-      noName: "No name specified."
-      emptyStack: "The stack cannot be empty."
-      noStack: "No stack specified."
-      stackDoesNotExist: "The specified stack does not exist. Create it with 'apx
-        stacks new' or contact the system administrator."
-      alreadyExists: "A subsystem with the name '%s' already exists."
+      noStacks: "لإنشاء نظام فرعي يجب وجود تشكيلة. قم بإنشاء واحدة جديدة باستخدام
+        'apx stacks new' او قم بالتحدث لمسؤول النظام."
+      emptyName: "الاسم لا يمكن أن يكون فارغا."
+      noName: "لم يتم تحديد اسم."
+      emptyStack: "التشكيلة لا يمكن أن تكون فارغة."
+      noStack: "لم يتم تحديد تشكيلة."
+      stackDoesNotExist: "التشكيلة المحددة غير موجودة. قم بإنشاء واحدة جديدة باستخدام
+        'apx stacks new' او قم بالتحدث لمسؤول النظام."
+      alreadyExists: "يوجد نظام فرعي بنفس الاسم '%s' بالفعل."
     info:
-      askName: "Choose a name:"
-      selectStack: "Select a stack [1-%d]:"
-      success: "Created subsystem '%s'."
-      creatingSubsystem: "Created subsystem '%s' with stack '%s'…"
+      askName: "اختر اسما:"
+      selectStack: "اختر تشكيلة [1-%d]:"
+      success: "تم إنشاء النظام الفرعي '%s'."
+      creatingSubsystem: "تم إنشاء نظام فرعي '%s' بالتشكيلة '%s'…"
     options:
       name:
-        description: "The name of the subsystem."
+        description: "اسم النظام الفرعي."
       stack:
-        description: "The stack to use."
+        description: "التشكيلة المراد استخدامها."
   rm:
-    description: "Remove the specified subsystem."
+    description: "حذف النظام الفرعي المحدد."
     error:
-      noName: "No name specified."
+      noName: "لم يتم تحديد اسم."
     info:
-      askConfirmation: "Are you sure you want to remove '%s'?"
-      success: "Removed subsystem '%s'."
+      askConfirmation: "هل انت متأكد من حذف '%s'؟"
+      success: "تم حذف النظام الفرعي '%s'."
     options:
       force:
-        description: "Force removal of the subsystem."
+        description: "الحذف الإجباري للنظام الفرعي."
       name:
-        description: "The name of the subsystem to remove."
+        description: "اسم النظام الفرعي المراد حذفه."
   reset:
-    description: "Reset the specified subsystem."
+    description: "إعادة إنشاء النظام الفرعي المحدد."
     error:
-      noName: "No name specified."
+      noName: "لم يتم تحديد اسم."
     info:
-      askConfirmation: "Are you sure you want to reset '%s'?"
-      success: "The subsystem '%s' has been reset."
+      askConfirmation: "هل انت متأكد من إعادة إنشاء '%s'؟"
+      success: "تم اعادة انشاء النظام الفرعي '%s'."
     options:
       force:
-        description: "Force reset of the subsystem."
+        description: "إعادة انشاء إجبارية للنظام الفرعي."
       name:
-        description: "The name of the subsystem to reset."
+        description: "اسم النظام الفرعي المراد إعادة انشائه."
