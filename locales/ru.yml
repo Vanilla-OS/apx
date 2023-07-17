@@ -5,41 +5,40 @@ apx:
     unknownCommand: "Неизвестная команда: %s"
     invalidInput: "Неправильный ввод."
   info:
-    aborting: "Прервать по запросу."
+    aborting: "Прерывать по запросу."
   terminal:
     yes: "да"
     no: "нет"
 
 runtimeCommand:
-  description: "Работайте с указанной подсистемой, обращаясь к менеджеру пакетов и
-    среде."
+  description: "Работа с указанной подсистемой, обращаясь к менеджеру пакетов и среде."
   error:
     noPackageSpecified: "Нет выбранных пакетов."
-    cantAccessPkgManager: "Произошла ошибка при получении доступа к Пакетному Менеджеру:
+    cantAccessPkgManager: "Произошла ошибка при получении доступа к менеджеру пакетов:
       %s"
     executingCommand: "Произошла ошибка при выполнении команды: %s"
     noAppNameOrBin: "Должно быть указано --app-name или --bin."
     sameAppOrBin: "--app-name и --bin не могут быть указаны одновременно."
     exportingApp: "Произошла ошибка при экспорте приложения: %s"
     exportingBin: "Произошла ошибка при экспорте двоичного файла: %s"
-    unexportingApp: "Произошла ошибка при анэкспорте приложения: %s"
-    unexportingBin: "Произошла ошибка при анэкспорте двоичного файла: %s"
+    unexportingApp: "Произошла ошибка при деэкспортировании приложения: %s"
+    unexportingBin: "Произошла ошибка при деэкспортировании двоичного файла: %s"
   info:
-    unexportedApps: "Анэкспортировано %d приложений\n"
+    unexportedApps: "Деэкспортировано %d приложений\n"
     exportedApps: "Экспортировано %d приложений\n"
     exportedApp: "Экспортированное приложение %s\n"
     exportedBin: "Экспортированный двоичный файл %s\n"
-    unexportedApp: "Анэкспортированное приложение %s\n"
-    unexportedBin: "Анэкспортированный двоичный файл %s\n"
+    unexportedApp: "Деэкспортированное приложение %s\n"
+    unexportedBin: "Деэкспортированный двоичный файл %s\n"
   autoremove:
-    description: "Удалять пакеты, которые больше не требуются."
+    description: "Убирать пакеты, которые больше не требуются."
   clean:
     description: "Очистить кэш пакетного менеджера."
   install:
     description: "Установить указанный пакет."
     options:
       noExport:
-        description: "Не экспортировать запись на рабочем столе."
+        description: "Не экспортировать файл Desktop Entry."
   list:
     description: "Список всех установленных пакетов."
   purge:
@@ -51,7 +50,7 @@ runtimeCommand:
   show:
     description: "Показать информацию об указанном пакете."
   update:
-    description: "Обновите список доступных пакетов."
+    description: "Обновить список доступных пакетов."
   upgrade:
     description: "Обновить все установленные пакеты."
   enter:
@@ -66,19 +65,19 @@ runtimeCommand:
       binOutput:
         description: "Путь двоичного вывода (по умолчанию: ~/.local/bin/)."
   unexport:
-    description: "Анэкспортировать приложение или двоичный файл из подсистемы."
+    description: "Деэкспортировать приложение или двоичный файл из подсистемы."
     options:
       appName:
-        description: "Имя анэкспортируемого приложения."
+        description: "Имя деэкспортируемого приложения."
       bin:
-        description: "Имя анэкспортируемого двоичного файла."
+        description: "Имя деэкспортируемого двоичного файла."
       binOutput:
         description: "Путь двоичного вывода (по умолчанию: ~/.local/bin/)."
 
 pkgmanagers:
   description: "Работа с менеджерами пакетов, которые доступны в apx."
   labels:
-    name: "Name"
+    name: "Имя"
     builtIn: "Встроен"
 
   list:
@@ -99,230 +98,229 @@ pkgmanagers:
       emptyName: "Имя не может быть пустым."
       noName: "Нет указанного имени."
       emptyCommand: "Команда не может быть пустой."
-      noCommand: "No command specified for '%s'."
-      alreadyExists: "A package manager with the name '%s' already exists."
+      noCommand: "Нет выбранной команды для '%s'."
+      alreadyExists: "Менеджер пакетов с именем '%s' уже существует."
     info:
-      askName: "Choose a name:"
-      askSudo: "Does the package manager need sudo to run?"
-      askCommand: "Enter the command for '%s':"
-      askOverwrite: "A package manager with the name '%s' already exists. Overwrite
-        it?"
-      success: "Created package manager '%s'."
+      askName: "Выберите имя:"
+      askSudo: "Нужен ли менеджеру пакетов sudo для запуска?"
+      askCommand: "Введите команду для '%s':"
+      askOverwrite: "Менеджер пакетов с именем '%s' уже существует. Перезаписать его?"
+      success: "Создан менеджер пакетов '%s'."
     options:
       assumeYes:
-        description: "Assume yes to all prompts."
+        description: "Предполагать \"да\" на все вопросы."
       name:
-        description: "The name of the package manager."
+        description: "Имя менеджера пакетов."
       needSudo:
-        description: "Whether the package manager needs sudo to run."
+        description: "Нужен ли менеджеру пакетов sudo для запуска."
       autoremove:
-        description: "The command to run to autoremove packages."
+        description: "Команда делает так, чтобы пакеты убирались автоматически."
       clean:
-        description: "The command to run to clean the package manager's cache."
+        description: "Команда очищает кэш менеджера пакетов."
       install:
-        description: "The command to run to install packages."
+        description: "Команда устанавливает пакеты."
       list:
-        description: "The command to run to list installed packages."
+        description: "Команда показывает список установленных пакетов."
       purge:
-        description: "The command to run to purge packages."
+        description: "Команда удаляет пакеты и их файлы конфигурации."
       remove:
-        description: "The command to run to remove packages."
+        description: "Команда убирает пакеты."
       search:
-        description: "The command to run to search for packages."
+        description: "Команда выполняет поиск пакетов."
       show:
-        description: "The command to run to show information about packages."
+        description: "Команда показывает информацию о пакетах."
       update:
-        description: "The command to run to update the list of available packages."
+        description: "Команда обновляет список доступных пакетов."
       upgrade:
-        description: "The command to run to upgrade packages."
+        description: "Команда обновляет пакеты."
   rm:
-    description: "Remove the specified package manager."
+    description: "Удалить указанный менеджер пакетов."
 
     error:
-      noName: "No name specified."
-      inUse: "The package manager is used in %d stacks:\n"
+      noName: "Имя не указано."
+      inUse: "Менеджер пакетов используется в %d стеках:\n"
     info:
-      askConfirmation: "Are you sure you want to remove '%s'?"
-      success: "Removed package manager '%s'."
+      askConfirmation: "Вы уверены, что хотите удалить '%s'?"
+      success: "Удалён менеджер пакетов '%s'."
     options:
       force:
-        description: "Force removal of the package manager."
+        description: "Принудительно удалить менеджер пакетов."
       name:
-        description: "The name of the package manager to remove."
+        description: "Имя удаляемого менеджера пакетов."
 
 stacks:
-  description: "Work with the stacks that are available in apx."
+  description: "Работа со стеками, доступными в apx."
   labels:
-    name: "Name"
-    builtIn: "Built-in"
+    name: "Имя"
+    builtIn: "Встроен"
 
   list:
-    description: "List all available stacks."
+    description: "Список всех доступных стеков."
     info:
-      noStacks: "No stacks available. Create a new one with 'apx stacks new' or contact
-        the system administrator."
-      foundStacks: "Found %d stacks:\n"
+      noStacks: "Нет доступных стеков. Создайте новый с помощью 'apx stacks new' или
+        обратитесь к системному администратору."
+      foundStacks: "Найдено %d стеков:\n"
     options:
       json:
-        description: "Output in JSON format."
+        description: "Вывод в формате JSON."
   show:
-    description: "Show information about the specified stack."
+    description: "Показать информацию об указанном стеке."
   new:
-    description: "Create a new stack."
+    description: "Создать новый стек."
     error:
-      emptyName: "The name cannot be empty."
-      noName: "No name specified."
-      emptyBase: "The base cannot be empty."
-      noBase: "No base specified."
-      emptyPkgManager: "The package manager cannot be empty."
-      noPkgManager: "No package manager specified."
-      pkgManagerDoesNotExist: "The specified package manager does not exist. Create
-        it with 'apx pkgmanagers new' or contact the system administrator."
-      emptyPackages: "The packages cannot be empty."
-      noPackages: "No packages specified."
-      alreadyExists: "A stack with the name '%s' already exists."
+      emptyName: "Имя не должно быть пустым."
+      noName: "Имя не указано."
+      emptyBase: "Основа не должна быть пустой."
+      noBase: "Основа не указана."
+      emptyPkgManager: "Менеджер пакетов не должен быть пустым."
+      noPkgManager: "Менеджер пакетов не указан."
+      pkgManagerDoesNotExist: "Указанного менеджера пакетов не существует. Создайте
+        его с помощью 'apx pkgmanagers new' или обратитесь к системному администратору."
+      emptyPackages: "Пакеты не должны быть пустыми."
+      noPackages: "Пакеты не указаны."
+      alreadyExists: "Стек с именем '%s' уже существует."
     info:
-      askName: "Choose a name:"
-      askBase: "Choose a base (e.g. 'vanillaos/pico'):"
-      askPkgManager: "Choose a package manager:"
-      selectPkgManager: "Select a package manager [1-%d]:"
-      noPackages: "You have not provided any package to install in the stack. Do you
-        want to add some now?"
-      confirmPackages: "Do you want to confirm the current packages list?"
-      askPackages: "Please type the packages you want to install in the stack, separated
-        by a space:"
-      success: "Created stack '%s'."
+      askName: "Выберите имя:"
+      askBase: "Выберите основу (например: 'vanillaos/pico'):"
+      askPkgManager: "Выберите менеджер пакетов:"
+      selectPkgManager: "Выберите менеджер пакетов [1-%d]:"
+      noPackages: "Вы не указали ни одного пакета для добавления в стек. Хотите ли
+        вы добавить его сейчас?"
+      confirmPackages: "Хотите ли вы подтвердить текущий список пакетов?"
+      askPackages: "Пожалуйста, введите пакеты, которые вы хотите установить в стеке,
+        разделяя их пробелом:"
+      success: "Создан стек '%s'."
     options:
       assumeYes:
-        description: "Assume yes to all prompts."
+        description: "Предполагать \"да\" на все вопросы."
       name:
-        description: "The name of the stack."
+        description: "Имя стека."
       base:
-        description: "The base subsystem to use."
+        description: "Основа для использования подсистемы."
       packages:
-        description: "The packages to install."
+        description: "Пакеты для установки."
       pkgManager:
-        description: "The package manager to use."
+        description: "Используемый менеджер пакетов."
   update:
-    description: "Update the specified stack."
+    description: "Обновить указанный стек."
     error:
-      noName: "No name specified."
-      noBase: "No base specified."
-      noPkgManager: "No package manager specified."
-      pkgManagerDoesNotExist: "The specified package manager does not exist. Create
-        it with 'apx pkgmanagers new' or contact the system administrator."
+      noName: "Имя не указано."
+      noBase: "Основа не указана."
+      noPkgManager: "Менеджер пакетов не указан."
+      pkgManagerDoesNotExist: "Указанного менеджера пакетов не существует. Создайте
+        его с помощью 'apx pkgmanagers new' или обратитесь к системному администратору."
     info:
-      askBase: "Type a new base or confirm the current one (%s):"
-      askPkgManager: "Choose a new package manager or confirm the current one (%s):"
-      askPackages: "Type the packages you want to install in the stack, separated
-        by a space, or confirm the current ones (%s):"
-      success: "Updated stack '%s'."
+      askBase: "Введите новую основу или подтвердите текущую (%s):"
+      askPkgManager: "Выберите новый менеджер пакетов или подтвердите текущий (%s):"
+      askPackages: "Введите пакеты, которые вы хотите установить в стеке, разделяя
+        их пробелом, или подтвердите текущие (%s):"
+      success: "Обновлён стек '%s'."
 
     options:
       assumeYes:
-        description: "Assume yes to all prompts."
+        description: "Предполагать \"да\" на все вопросы."
       name:
-        description: "The name of the stack."
+        description: "Имя стека."
       base:
-        description: "The base subsystem to use."
+        description: "Основа для использования подсистемы."
       packages:
-        description: "The packages to install."
+        description: "Пакеты для установки."
       pkgManager:
-        description: "The package manager to use."
+        description: "Менеджер пакетов для использования."
   rm:
-    description: "Remove the specified stack."
+    description: "Удалить указанный стек."
     error:
-      noName: "No name specified."
+      noName: "Имя не указано."
     info:
-      askConfirmation: "Are you sure you want to remove '%s'?"
-      success: "Removed stack '%s'."
+      askConfirmation: "Вы уверены, что хотите удалить '%s'?"
+      success: "Удалён стек '%s'."
     options:
       force:
-        description: "Force removal of the stack."
+        description: "Принудительное удаление стека."
       name:
-        description: "The name of the stack to remove."
+        description: "Имя стека для удаления."
   export:
-    description: "Export the specified stack."
+    description: "Экспорт указанного стека."
     error:
-      noName: "No name specified."
-      noOutput: "No output specified."
+      noName: "Имя не указано."
+      noOutput: "Выход не указан."
     info:
-      success: "Exported stack '%s' to '%s'."
+      success: "Экспортирован стек '%s' в '%s'."
     options:
       name:
-        description: "The name of the stack to export."
+        description: "Имя стека для экспорта."
       output:
-        description: "The path to export the stack to."
+        description: "Путь для экспорта стека."
   import:
-    description: "Import the specified stack."
+    description: "Импорт указанного стека."
     error:
-      noInput: "No input specified."
-      cannotLoad: "Cannot load stack from '%s'."
+      noInput: "Вход не указан."
+      cannotLoad: "Невозможно загрузить стек из '%s'."
     info:
-      success: "Imported stack from '%s'."
+      success: "Импортирован стек из '%s'."
     options:
       input:
-        description: "The path to import the stack from."
+        description: "Путь для импорта стека."
 
 subsystems:
-  description: "Work with the subsystems that are available in apx."
+  description: "Работа с подсистемами, которые доступны в apx."
   labels:
-    name: "Name"
-    status: "Status"
+    name: "Имя"
+    status: "Статус"
 
   list:
-    description: "List all available subsystems."
+    description: "Список всех доступных подсистем."
     error:
     info:
-      noSubsystems: "No subsystems available. Create a new one with 'apx subsystems
-        new' or contact the system administrator."
-      foundSubsystems: "Found %d subsystems:\n"
+      noSubsystems: "Нет доступных подсистем. Создайте новую с помощью 'apx subsystems
+        new' или обратитесь к системному администратору."
+      foundSubsystems: "Найдено %d подсистем:\n"
     options:
       json:
-        description: "Output in JSON format."
+        description: "Вывод в формате JSON."
   new:
-    description: "Create a new subsystem."
+    description: "Создать новую подсистему."
     error:
-      noStacks: "A stack is needed to create a subsystem. Create a new one with 'apx
-        stacks new' or contact the system administrator."
-      emptyName: "The name cannot be empty."
-      noName: "No name specified."
-      emptyStack: "The stack cannot be empty."
-      noStack: "No stack specified."
-      stackDoesNotExist: "The specified stack does not exist. Create it with 'apx
-        stacks new' or contact the system administrator."
-      alreadyExists: "A subsystem with the name '%s' already exists."
+      noStacks: "Для создания подсистемы необходим стек. Создайте новый с помощью
+        'apx stacks new' или обратитесь к системному администратору."
+      emptyName: "Имя не должно быть пустым."
+      noName: "Имя не указано."
+      emptyStack: "Стек не должен быть пустым."
+      noStack: "Не указан стек."
+      stackDoesNotExist: "Указанного стека не существует. Создайте его с помощью 'apx
+        stacks new' или обратитесь к системному администратору."
+      alreadyExists: "Подсистема с именем '%s' уже существует."
     info:
-      askName: "Choose a name:"
-      selectStack: "Select a stack [1-%d]:"
-      success: "Created subsystem '%s'."
-      creatingSubsystem: "Created subsystem '%s' with stack '%s'…"
+      askName: "Выберите имя:"
+      selectStack: "Выберите стек [1-%d]:"
+      success: "Создана подсистема '%s'."
+      creatingSubsystem: "Создана подсистема '%s' со стеком '%s'…"
     options:
       name:
-        description: "The name of the subsystem."
+        description: "Имя подсистемы."
       stack:
-        description: "The stack to use."
+        description: "Используемый стек."
   rm:
-    description: "Remove the specified subsystem."
+    description: "Удалить указанную подсистему."
     error:
-      noName: "No name specified."
+      noName: "Имя не указано."
     info:
-      askConfirmation: "Are you sure you want to remove '%s'?"
-      success: "Removed subsystem '%s'."
+      askConfirmation: "Вы уверены, что хотите удалить '%s'?"
+      success: "Удалена подсистема '%s'."
     options:
       force:
-        description: "Force removal of the subsystem."
+        description: "Принудительное удаление подсистемы."
       name:
-        description: "The name of the subsystem to remove."
+        description: "Имя удаляемой подсистемы."
   reset:
-    description: "Reset the specified subsystem."
+    description: "Сброс указанной подсистемы."
     error:
-      noName: "No name specified."
+      noName: "Имя не указано."
     info:
-      askConfirmation: "Are you sure you want to reset '%s'?"
-      success: "The subsystem '%s' has been reset."
+      askConfirmation: "Вы уверены, что хотите сбросить '%s'?"
+      success: "Подсистема '%s' была сброшена."
     options:
       force:
-        description: "Force reset of the subsystem."
+        description: "Принудительный сброс подсистемы."
       name:
-        description: "The name of the subsystem to reset."
+        description: "Имя сбрасываемой подсистемы."
