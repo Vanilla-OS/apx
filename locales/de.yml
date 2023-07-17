@@ -4,16 +4,16 @@ apx:
   errors:
     unknownCommand: "Unbekannter Befehl: %s"
     invalidInput: "Ungültige Eingabe."
-    invalidChoice: Invalid choice.
+    invalidChoice: Ungültige Auswahl.
   info:
-    aborting: "Aborting as requested."
+    aborting: "Wie gewünscht abgebrochen."
   terminal:
     yes: "ja"
     no: "nein"
 
 runtimeCommand:
-  description: "Work with the specified subsystem, accessing the package manager and
-    environment."
+  description: "Arbeiten Sie mit dem angegebenen Subsystem und greifen Sie auf den
+    Paketmanager und die Umgebung zu."
   error:
     noPackageSpecified: "Keine Pakete angegeben."
     cantAccessPkgManager: "Beim Zugriff auf den Package Manager ist ein Fehler aufgetreten:
@@ -116,17 +116,18 @@ pkgmanagers:
       assumeYes:
         description: "Assume yes to all prompts."
       name:
-        description: "The name of the package manager."
+        description: "Der Name des Paketmanagers."
       needSudo:
-        description: "Whether the package manager needs sudo to run."
+        description: "Womöglich benötigen der Paketmanager 'sudo' zur Ausführung."
       autoremove:
-        description: "The command to run to autoremove packages."
+        description: "Der Befehl, der zum automatischen Entfernen von Paketen ausgeführt
+          werden soll."
       clean:
-        description: "The command to run to clean the package manager's cache."
+        description: "Der Befehl, um den Cache des Paketmanagers zu leeren."
       install:
-        description: "The command to run to install packages."
+        description: "Dee Befehl zum ausführen der Paketinstallation."
       list:
-        description: "The command to run to list installed packages."
+        description: "Der Befehl zum auflisten aller installierten Pakete."
       purge:
         description: "The command to run to purge packages."
       remove:
