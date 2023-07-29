@@ -3,7 +3,7 @@ apx:
   errors:
     unknownCommand: "أمر غير معروف: %s"
     invalidInput: "المدخل غير صالح."
-    invalidChoice: Invalid choice.
+    invalidChoice: خيار غير صالح.
   info:
     aborting: "يتم الالغاء."
   terminal:
@@ -141,7 +141,7 @@ pkgmanagers:
     info:
       askConfirmation: "هل انت متأكد من حذف '%s'؟"
       success: "تم حذف مدير الحزم '%s'."
-      aborting: Aborting removal of package manager '%s'.
+      aborting: إلغاء حذف مدير الحزم '%s'.
     options:
       force:
         description: "إجبار إزالة مدير الحزم."
@@ -160,7 +160,7 @@ stacks:
       noStacks: "لا توجد تشكيلات متاحة. قم بإنشاء واحدة جديدة باستخدام 'apx stacks
         new' او قم بالتحدث الي مسئول النظام."
       foundStacks: "تم العثور على %d تشكيلات:\n"
-      aborting: Aborting removal of stack '%s'.
+      aborting: إلغاء حذف التشكيلة '%s'.
     options:
       json:
         description: "المخرجات في صورة JSON."
