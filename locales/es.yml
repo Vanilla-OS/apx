@@ -2,7 +2,7 @@ apx:
   description: "Apx is a package manager with support for multiple sources, allowing
     you to install packages in subsystems."
   errors:
-    unknownCommand: "Unknown command: %s"
+    unknownCommand: "Comando desconocido: %s"
     invalidInput: "Invalid input."
     invalidChoice: Invalid choice.
   info:
