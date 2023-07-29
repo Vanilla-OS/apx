@@ -1,39 +1,39 @@
 apx:
-  description: "Apx is a package manager with support for multiple sources, allowing
-    you to install packages in subsystems."
+  description: "Apx es un gestor de paquetes con soporte para múltiples fuentes, que
+    permite instalar paquetes en subsistemas."
   errors:
     unknownCommand: "Comando desconocido: %s"
-    invalidInput: "Invalid input."
-    invalidChoice: Invalid choice.
+    invalidInput: "Entrada Inválida."
+    invalidChoice: Elección inválida
   info:
-    aborting: "Aborting as requested."
+    aborting: "Abortando según lo solicitado."
   terminal:
-    yes: "yes"
+    yes: "sí"
     no: "no"
 
 runtimeCommand:
-  description: "Work with the specified subsystem, accessing the package manager and
-    environment."
+  description: "Trabaja con el subsistema especificado, accediendo al gestor de paquetes
+    y al entorno."
   error:
-    noPackageSpecified: "No packages specified."
-    cantAccessPkgManager: "An error occurred while accessing the package manager:
-      %s"
-    executingCommand: "An error occurred while executing the command: %s"
-    noAppNameOrBin: "--app-name or --bin must be specified."
-    sameAppOrBin: "--app-name and --bin cannot be both specified."
-    exportingApp: "An error occurred while exporting the application: %s"
-    exportingBin: "An error occurred while exporting the binary: %s"
-    unexportingApp: "An error occurred while unexporting the application: %s"
-    unexportingBin: "An error occurred while unexporting the binary: %s"
+    noPackageSpecified: "No se especifican paquetes."
+    cantAccessPkgManager: "Un error ocurrio mientras el gestor de paquetes se estaba
+      accediendo: %s"
+    executingCommand: "Un error ocurrio mientras se ejucutaba un commando: %s"
+    noAppNameOrBin: "--app-nombre o --bin debe ser especifcado."
+    sameAppOrBin: "--app-nombre y --bin no pueden ambos estar especificados."
+    exportingApp: "Un error ocurrio mientras se exportaba la applicaćion: %s"
+    exportingBin: "Un error ocurrio mientas se exportaba el binaro: %s"
+    unexportingApp: "Un error ocurrio al desexportar una applicación: %s"
+    unexportingBin: "Un error ocurrio al desexportar el binario: %s"
   info:
-    unexportedApps: "Unexported %d applications\n"
-    exportedApps: "Exported %d applications\n"
-    exportedApp: "Exported application %s\n"
-    exportedBin: "Exported binary %s\n"
-    unexportedApp: "Unexported application %s\n"
-    unexportedBin: "Unexported binary %s\n"
+    unexportedApps: "Aplicaciones %d no exportadas\n"
+    exportedApps: "Aplicaciones %d exportadas\n"
+    exportedApp: "Aplicación exportada %s\n"
+    exportedBin: "Binario exportado %s\n"
+    unexportedApp: "Aplicación %s no exportada\n"
+    unexportedBin: "Binario no exportado %s\n"
   autoremove:
-    description: "Remove packages that are no longer required."
+    description: "Eliminar paquetes ya no requeridos."
   clean:
     description: "Clean the package manager's cache."
   install:
