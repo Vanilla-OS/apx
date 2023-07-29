@@ -4,7 +4,7 @@ apx:
   errors:
     unknownCommand: "Comanda necunoscută: %s"
     invalidInput: "Intrare nevalidă."
-    invalidChoice: Invalid choice.
+    invalidChoice: Alegere invalidă.
   info:
     aborting: "Se anulează conform solicitării."
   terminal:
@@ -52,7 +52,7 @@ runtimeCommand:
   show:
     description: "Afișează informații despre pachetul specificat."
   update:
-    description: "Actualizați lista pachetelor disponibile"
+    description: "Actualizați lista pachetelor disponibile."
   upgrade:
     description: "Actualizați toate pachetele instalate."
   enter:
@@ -148,7 +148,7 @@ pkgmanagers:
     info:
       askConfirmation: "Sunteți sigur că doriți să eliminați \"%s\"?"
       success: "A fost eliminat managerul de pachete \"%s\"."
-      aborting: Aborting removal of package manager '%s'.
+      aborting: Se anulează eliminarea managerului de pachete „%s”.
     options:
       force:
         description: "Forțează eliminarea managerului de pachete."
@@ -159,7 +159,7 @@ stacks:
   description: "Lucrați cu stive care sunt disponibile în apx."
   labels:
     name: "Nume"
-    builtIn: "Built-in"
+    builtIn: "Încorporat"
 
   list:
     description: "Enumeră toate stivele disponibile."
@@ -167,7 +167,7 @@ stacks:
       noStacks: "Nu sunt disponibile stive. Creați una nouă cu 'apx stacks new' sau
         contactați administratorul de sistem."
       foundStacks: "S-au găsit %d stive:\n"
-      aborting: Aborting removal of stack '%s'.
+      aborting: Se anulează eliminarea stivei „%s”.
     options:
       json:
         description: "Ieșire în format JSON."
@@ -278,7 +278,7 @@ subsystems:
     status: "Stare"
 
   list:
-    description: "List cu toate subsistemele disponibile"
+    description: "Enumeră toate subsistemele disponibile."
     error:
     info:
       noSubsystems: "Nu există subsisteme disponibile. Creați unul nou cu 'apx subsystems
