@@ -32,7 +32,7 @@ runtimeCommand:
     unexportedApp: "Деэкспортированное приложение %s\n"
     unexportedBin: "Деэкспортированный двоичный файл %s\n"
   autoremove:
-    description: "Убирать пакеты, которые больше не требуются."
+    description: "Убрать пакеты, которые больше не требуются."
   clean:
     description: "Очистить кэш пакетного менеджера."
   install:
@@ -43,9 +43,9 @@ runtimeCommand:
   list:
     description: "Список всех установленных пакетов."
   purge:
-    description: "Очистить указанные пакеты."
+    description: "Полностью удалить указанные пакеты."
   remove:
-    description: "Удалить указанные пакеты."
+    description: "Убрать указанные пакеты."
   search:
     description: "Выполнить поиск пакетов по запросу."
   show:
@@ -64,7 +64,7 @@ runtimeCommand:
       bin:
         description: "Имя экспортируемого двоичного файла."
       binOutput:
-        description: "Путь двоичного вывода (по умолчанию: ~/.local/bin/)."
+        description: "Путь вывода двоичного файла (по умолчанию: ~/.local/bin/)."
   unexport:
     description: "Деэкспортировать приложение или двоичный файл из подсистемы."
     options:
@@ -73,7 +73,7 @@ runtimeCommand:
       bin:
         description: "Имя деэкспортируемого двоичного файла."
       binOutput:
-        description: "Путь двоичного вывода (по умолчанию: ~/.local/bin/)."
+        description: "Путь вывода двоичного файла (по умолчанию: ~/.local/bin/)."
 
 pkgmanagers:
   description: "Работа с менеджерами пакетов, которые доступны в apx."
@@ -86,7 +86,7 @@ pkgmanagers:
     info:
       noPkgManagers: "Нет доступных менеджеров пакетов. Создайте новый с помощью 'apx
         pkgmanagers new' или обратитесь к системному администратору."
-      foundPkgManagers: "Найдено %d менеджер(ов) пакетов:\n"
+      foundPkgManagers: "Менеджер(ов) пакетов найдено %d:\n"
     options:
       json:
         description: "Вывод в формате JSON."
@@ -115,7 +115,7 @@ pkgmanagers:
       needSudo:
         description: "Нужен ли менеджеру пакетов sudo для запуска."
       autoremove:
-        description: "Команда делает так, чтобы пакеты убирались автоматически."
+        description: "Команда автоматически убирает пакеты."
       clean:
         description: "Команда очищает кэш менеджера пакетов."
       install:
@@ -161,7 +161,7 @@ stacks:
     info:
       noStacks: "Нет доступных стеков. Создайте новый с помощью 'apx stacks new' или
         обратитесь к системному администратору."
-      foundStacks: "Найдено %d стеков:\n"
+      foundStacks: "Стеков найдено %d:\n"
       aborting: Прерывание удаления стека '%s'.
     options:
       json:
@@ -277,7 +277,7 @@ subsystems:
     info:
       noSubsystems: "Нет доступных подсистем. Создайте новую с помощью 'apx subsystems
         new' или обратитесь к системному администратору."
-      foundSubsystems: "Найдено %d подсистем:\n"
+      foundSubsystems: "Подсистем найдено %d:\n"
     options:
       json:
         description: "Вывод в формате JSON."

@@ -140,7 +140,7 @@ pkgmanagers:
     info:
       askConfirmation: "确定要移除 '%s' 吗？"
       success: "已移除软件包管理器 '%s'。"
-      aborting: Aborting removal of package manager '%s'.
+      aborting: 中止移除软件包管理器 '%s'。
     options:
       force:
         description: "强制移除软件包管理器。"
@@ -158,7 +158,7 @@ stacks:
     info:
       noStacks: "没有可用的包捆。请使用 'apx stacks new' 创建新的包捆，或者联系系统管理员。"
       foundStacks: "找到 %d 个包捆：\n"
-      aborting: Aborting removal of stack '%s'.
+      aborting: 中止移除包捆 '%s'。
     options:
       json:
         description: "以 JSON 格式输出。"
