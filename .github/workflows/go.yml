@@ -31,7 +31,7 @@ jobs:
       run: tar -czvf apx.tar.gz apx
 
     - name: Compress-manpage
-      run: tar -czvf apx-man.tar.gz apx/man/man1/apx.1
+      run: tar -czvf apx-man.tar.gz man/man1/apx.1
 
     - uses: softprops/action-gh-release@v1
       with:
