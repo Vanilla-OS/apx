@@ -26,9 +26,12 @@ jobs:
 
     - name: Build
       run: go build -o apx
-    
+
     - name: Compress
       run: tar -czvf apx.tar.gz apx
+
+    - name: Compress-manpage
+      run: tar -czvf apx-man.tar.gz apx/man/man1/apx.1
 
     - uses: softprops/action-gh-release@v1
       with:
@@ -38,6 +41,7 @@ jobs:
         name: "Continuous Build"
         files: |
           apx.tar.gz
+          apx-man.tar.gz
   sonar:
     name: Sonar
     runs-on: ubuntu-latest
