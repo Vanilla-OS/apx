@@ -4,7 +4,7 @@ apx:
   errors:
     unknownCommand: "Commande inconnue : %s"
     invalidInput: "Entrée invalide."
-    invalidChoice: Choix invalide.
+    invalidChoice: Choix non valide.
   info:
     aborting: "Annulation."
   terminal:
@@ -12,19 +12,19 @@ apx:
     no: "non"
 
 runtimeCommand:
-  description: "Travaillez avec le sous-système spécifié, en accédant au gestionnaire
-    de packages et à l'environnement."
+  description: "Travailler avec le sous-système spécifié, en accédant au gestionnaire
+    de paquets et à l'environnement."
   error:
     noPackageSpecified: "Aucun paquet spécifié."
     cantAccessPkgManager: "Une erreur s'est produite lors de l'accès au gestionnaire
-      de packages: %s"
-    executingCommand: "Une erreur s'est produite lors de l'exécution de la commande:
-      %s"
-    noAppNameOrBin: "--app-name ou --bin doit être spécifié."
+      de paquets : %s"
+    executingCommand: "Une erreur s'est produite lors de l'exécution de la commande
+      : %s"
+    noAppNameOrBin: "Les options --app-name ou --bin doivent être spécifiées."
     sameAppOrBin: "--app-name et --bin ne peuvent pas être spécifiés tous les deux."
-    exportingApp: "Une erreur s'est produite lors de l'exportation de l'application:
-      %s"
-    exportingBin: "Une erreur s'est produite lors de l'exportation du binaire: %s"
+    exportingApp: "Une erreur s'est produite lors de l'exportation de l'application
+      : %s"
+    exportingBin: "Une erreur s'est produite lors de l'exportation du binaire : %s"
     unexportingApp: "Une erreur s'est produite lors de la désexportation de l'application:
       %s"
     unexportingBin: "Une erreur s'est produite lors de la désexportation du binaire:
@@ -89,8 +89,8 @@ pkgmanagers:
   list:
     description: "Lister tous les gestionnaires de paquets disponibles."
     info:
-      noPkgManagers: "Aucun gestionnaire de paquets disponible. En créer un nouveau
-        avec 'apx pkgmanagers new' ou contacter l'administrateur du système."
+      noPkgManagers: "Aucun gestionnaire de paquets n'est disponible. Créez-en un
+        nouveau avec 'apx pkgmanagers new' ou contactez l'administrateur système."
       foundPkgManagers: "%d gestionnaires de paquets trouvés.\n"
     options:
       json:
@@ -103,7 +103,7 @@ pkgmanagers:
     error:
       emptyName: "Le nom ne peut pas être vide."
       noName: "Aucun nom spécifié."
-      emptyCommand: "La commande ne peut être vide."
+      emptyCommand: "La commande ne peut pas être vide."
       noCommand: "Aucune commande n'est spécifiée pour '%s'."
       alreadyExists: "Un gestionnaire de paquets portant le nom \"%s\" existe déjà."
     info:
@@ -152,7 +152,7 @@ pkgmanagers:
     info:
       askConfirmation: "Êtes-vous sûr de vouloir supprimer \"%s\" ?"
       success: "Suppression du gestionnaire de paquets '%s'."
-      aborting: Abandon du gestionnaire de paquets '%s'.
+      aborting: Abandon de la suppression du gestionnaire de paquets '%s'.
     options:
       force:
         description: "Forcer la suppression du gestionnaire de paquets."
@@ -181,27 +181,27 @@ stacks:
     description: "Créer une nouvelle pile."
     error:
       emptyName: "Le nom ne peut pas être vide."
-      noName: "Aucun nom n'a été précisé."
+      noName: "Aucun nom n'a été spécifié."
       emptyBase: "La base ne peut pas être vide."
-      noBase: "Aucune base n'est précisée."
+      noBase: "Aucune base n'est spécifiée."
       emptyPkgManager: "Le gestionnaire de paquets ne peut pas être vide."
-      noPkgManager: "Aucun gestionnaire de paquets n'a été précisé."
-      pkgManagerDoesNotExist: "Le gestionnaire de paquets indiqué n'existe pas. Créez-le
+      noPkgManager: "Aucun gestionnaire de paquets n'a été spécifié."
+      pkgManagerDoesNotExist: "Le gestionnaire de paquets spécifié n'existe pas. Créez-le
         avec 'apx pkgmanagers new' ou contactez l'administrateur système."
-      emptyPackages: "The packages cannot be empty."
-      noPackages: "No packages specified."
-      alreadyExists: "A stack with the name '%s' already exists."
+      emptyPackages: "Les paquets ne peuvent pas être vides."
+      noPackages: "Aucun paquet n'a été spécifié."
+      alreadyExists: "Une pile portant le nom \"%s\" existe déjà."
     info:
-      askName: "Choose a name:"
-      askBase: "Choose a base (e.g. 'vanillaos/pico'):"
-      askPkgManager: "Choose a package manager:"
-      selectPkgManager: "Select a package manager [1-%d]:"
-      noPackages: "You have not provided any package to install in the stack. Do you
-        want to add some now?"
-      confirmPackages: "Do you want to confirm the current packages list?"
-      askPackages: "Please type the packages you want to install in the stack, separated
-        by a space:"
-      success: "Created stack '%s'."
+      askName: "Choisissez un nom :"
+      askBase: "Choisissez une base (par exemple \"vanillaos/pico\") :"
+      askPkgManager: "Choisissez un gestionnaire de paquets :"
+      selectPkgManager: "Sélectionnez un gestionnaire de paquets [1-%d] :"
+      noPackages: "Vous n'avez fourni aucun paquet à installer dans la pile. Voulez-vous
+        en ajouter maintenant ?"
+      confirmPackages: "Voulez-vous confirmer la liste actuelle de paquets ?"
+      askPackages: "Veuillez saisir les paquets que vous souhaitez installer dans
+        la pile, en les séparant par un espace :"
+      success: "Pile '%s' a été créée."
     options:
       assumeYes:
         description: "Assume yes to all prompts."
