@@ -1,6 +1,6 @@
 apx:
   description: "Apx est un gestionnaire de packets qui support des sources multiples
-    vous permettant d'installer des packets dans les sous-systèmes."
+    vous permettant d'installer des paquets dans les sous-systèmes."
   errors:
     unknownCommand: "Commande inconnue : %s"
     invalidInput: "Entrée invalide."
