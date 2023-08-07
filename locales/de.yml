@@ -114,7 +114,7 @@ pkgmanagers:
       success: "Paketmanager '%s' erstellt."
     options:
       assumeYes:
-        description: "Assume yes to all prompts."
+        description: "Beantworten Sie alle Fragen mit Ja."
       name:
         description: "Der Name des Paketmanagers."
       needSudo:
