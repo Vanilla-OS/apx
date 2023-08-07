@@ -46,6 +46,15 @@ jobs:
           apx.tar.gz
           apx-man.tar.gz
           apx-config.tar.gz
+
+    - uses: actions/upload-artifact@v3
+      with:
+        name: my-artifact
+        path: |
+          apx.tar.gz
+          apx-man.tar.gz
+          apx-config.tar.gz
+
   sonar:
     name: Sonar
     runs-on: ubuntu-latest
