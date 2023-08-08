@@ -53,13 +53,9 @@ jobs:
       - name: Compress-manpage
         run: tar -czvf apx-man.tar.gz man/man1/apx.1
 
-      - name: Compress-config
-        run: tar -czvf apx-config.tar.gz config/apx.json
-
       - uses: softprops/action-gh-release@v1
         with:
           token: "${{ secrets.GITHUB_TOKEN }}"
           files: |
             apx.tar.gz
             apx-man.tar.gz
-            apx-config.tar.gz
