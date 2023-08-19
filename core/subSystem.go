@@ -127,7 +127,7 @@ func (s *SubSystem) Create() error {
 	err = dbox.CreateContainer(
 		s.InternalName,
 		s.Stack.Base,
-		[]string{},
+		s.Stack.Packages,
 		labels,
 		s.HasInit,
 	)
