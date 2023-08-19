@@ -26,12 +26,12 @@ runtimeCommand:
     unexportingApp: "An error occurred while unexporting the application: %s"
     unexportingBin: "An error occurred while unexporting the binary: %s"
   info:
-    unexportedApps: "Unexported %d applications\n"
-    exportedApps: "Exported %d applications\n"
-    exportedApp: "Exported application %s\n"
-    exportedBin: "Exported binary %s\n"
-    unexportedApp: "Unexported application %s\n"
-    unexportedBin: "Unexported binary %s\n"
+    unexportedApps: "Unexported %d applications"
+    exportedApps: "Exported %d applications"
+    exportedApp: "Exported application %s"
+    exportedBin: "Exported binary %s"
+    unexportedApp: "Unexported application %s"
+    unexportedBin: "Unexported binary %s"
   autoremove:
     description: "Remove packages that are no longer required."
   clean:
@@ -87,7 +87,7 @@ pkgmanagers:
     info:
       noPkgManagers: "No package managers available. Create a new one with 'apx pkgmanagers
         new' or contact the system administrator."
-      foundPkgManagers: "Found %d package managers:\n"
+      foundPkgManagers: "Found %d package managers"
     options:
       json:
         description: "Output in JSON format."
@@ -141,9 +141,9 @@ pkgmanagers:
 
     error:
       noName: "No name specified."
-      inUse: "The package manager is used in %d stacks:\n"
+      inUse: "The package manager is used in %d stacks:"
     info:
-      askConfirmation: "Are you sure you want to remove '%s'?"
+      askConfirmation: "Are you sure you want to remove '%s'? [y/N]"
       success: "Removed package manager '%s'."
       aborting: "Aborting removal of package manager '%s'."
     options:
@@ -163,7 +163,7 @@ stacks:
     info:
       noStacks: "No stacks available. Create a new one with 'apx stacks new' or contact
         the system administrator."
-      foundStacks: "Found %d stacks:\n"
+      foundStacks: "Found %d stacks:"
       aborting: "Aborting removal of stack '%s'."
     options:
       json:
@@ -237,7 +237,7 @@ stacks:
     error:
       noName: "No name specified."
     info:
-      askConfirmation: "Are you sure you want to remove '%s'?"
+      askConfirmation: "Are you sure you want to remove '%s'? [y/N]"
       success: "Removed stack '%s'."
     options:
       force:
@@ -279,7 +279,7 @@ subsystems:
     info:
       noSubsystems: "No subsystems available. Create a new one with 'apx subsystems
         new' or contact the system administrator."
-      foundSubsystems: "Found %d subsystems:\n"
+      foundSubsystems: "Found %d subsystems:"
     options:
       json:
         description: "Output in JSON format."
@@ -310,7 +310,7 @@ subsystems:
     error:
       noName: "No name specified."
     info:
-      askConfirmation: "Are you sure you want to remove '%s'?"
+      askConfirmation: "Are you sure you want to remove '%s'? [y/N]"
       success: "Removed subsystem '%s'."
     options:
       force:
@@ -322,7 +322,7 @@ subsystems:
     error:
       noName: "No name specified."
     info:
-      askConfirmation: "Are you sure you want to reset '%s'?"
+      askConfirmation: "Are you sure you want to reset '%s'? [y/N]"
       success: "The subsystem '%s' has been reset."
     options:
       force:

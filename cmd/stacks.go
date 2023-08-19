@@ -335,7 +335,7 @@ func newStack(cmd *cobra.Command, args []string) error {
 		for i, manager := range pkgManagers {
 			fmt.Printf("%d. %s\n", i+1, manager.Name)
 		}
-		fmt.Printf(apx.Trans("stacks.new.info.selectPkgManager"), len(pkgManagers))
+		cmdr.Info.Printfln(apx.Trans("stacks.new.info.selectPkgManager"), len(pkgManagers))
 		var pkgManagerIndex int
 		_, err := fmt.Scanln(&pkgManagerIndex)
 		if err != nil {
@@ -380,7 +380,7 @@ func newStack(cmd *cobra.Command, args []string) error {
 		return err
 	}
 
-	cmdr.Info.Printfln(apx.Trans("stacks.new.info.success"), name)
+	cmdr.Success.Printfln(apx.Trans("stacks.new.info.success"), name)
 
 	return nil
 }
@@ -409,7 +409,7 @@ func updateStack(cmd *cobra.Command, args []string) error {
 
 	if base == "" {
 		if !assumeYes {
-			cmdr.Info.Printf(apx.Trans("stacks.update.info.askBase"), stack.Base)
+			cmdr.Info.Printfln(apx.Trans("stacks.update.info.askBase"), stack.Base)
 			fmt.Scanln(&base)
 			if base == "" {
 				base = stack.Base
@@ -422,7 +422,7 @@ func updateStack(cmd *cobra.Command, args []string) error {
 
 	if pkgManager == "" {
 		if !assumeYes {
-			cmdr.Info.Printf(apx.Trans("stacks.update.info.askPkgManager"), stack.PkgManager)
+			cmdr.Info.Printfln(apx.Trans("stacks.update.info.askPkgManager"), stack.PkgManager)
 			fmt.Scanln(&pkgManager)
 			if pkgManager == "" {
 				pkgManager = stack.PkgManager
@@ -492,7 +492,7 @@ func removeStack(cmd *cobra.Command, args []string) error {
 		reader := bufio.NewReader(os.Stdin)
 		validChoice := false
 		for !validChoice {
-			cmdr.Info.Printf(apx.Trans("stacks.rm.info.askConfirmation") + ` [y/N]`, stackName)
+			cmdr.Info.Printfln(apx.Trans("stacks.rm.info.askConfirmation")+` [y/N]`, stackName)
 			answer, _ := reader.ReadString('\n')
 			if answer == "\n" {
 				answer = "n\n"
@@ -552,7 +552,7 @@ func exportStack(cmd *cobra.Command, args []string) error {
 		return error
 	}
 
-	cmdr.Info.Printf(apx.Trans("stacks.export.info.success"), stack.Name, output)
+	cmdr.Info.Printfln(apx.Trans("stacks.export.info.success"), stack.Name, output)
 	return nil
 }
 

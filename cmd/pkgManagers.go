@@ -215,7 +215,7 @@ func listPkgManagers(cmd *cobra.Command, args []string) error {
 			return nil
 		}
 
-		fmt.Printf(apx.Trans("pkgmanagers.list.info.foundPkgManagers"), pkgManagersCount)
+		cmdr.Info.Printfln(apx.Trans("pkgmanagers.list.info.foundPkgManagers"), pkgManagersCount)
 
 		table := core.CreateApxTable(os.Stdout)
 		table.SetHeader([]string{apx.Trans("pkgmanagers.labels.name"), apx.Trans("pkgmanagers.labels.builtIn")})
@@ -338,7 +338,7 @@ func newPkgManager(cmd *cobra.Command, args []string) error {
 				return nil
 			}
 
-			cmdr.Info.Printf(apx.Trans("pkgmanagers.new.info.askCommand"), cmdName)
+			cmdr.Info.Printfln(apx.Trans("pkgmanagers.new.info.askCommand"), cmdName)
 			*cmd, _ = reader.ReadString('\n')
 			*cmd = strings.ReplaceAll(*cmd, "\n", "")
 			if *cmd == "" {
@@ -354,7 +354,7 @@ func newPkgManager(cmd *cobra.Command, args []string) error {
 			return nil
 		}
 
-		cmdr.Info.Printf(apx.Trans("pkgmanagers.new.info.askOverwrite"), name)
+		cmdr.Info.Printfln(apx.Trans("pkgmanagers.new.info.askOverwrite"), name)
 		answer, _ := reader.ReadString('\n')
 		answer = strings.ReplaceAll(answer, "\n", "")
 
@@ -371,7 +371,7 @@ func newPkgManager(cmd *cobra.Command, args []string) error {
 		return nil
 	}
 
-	cmdr.Success.Printf(apx.Trans("pkgmanagers.new.success"), name)
+	cmdr.Success.Printfln(apx.Trans("pkgmanagers.new.success"), name)
 
 	return nil
 }
@@ -410,7 +410,7 @@ func rmPkgManager(cmd *cobra.Command, args []string) error {
 		reader := bufio.NewReader(os.Stdin)
 		validChoice := false
 		for !validChoice {
-			cmdr.Info.Printf(apx.Trans("pkgmanagers.rm.info.askConfirmation") + ` [y/N]`, pkgManagerName)
+			cmdr.Info.Printfln(apx.Trans("pkgmanagers.rm.info.askConfirmation")+` [y/N]`, pkgManagerName)
 			answer, _ := reader.ReadString('\n')
 			if answer == "\n" {
 				answer = "n\n"

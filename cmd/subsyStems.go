@@ -145,7 +145,7 @@ func listSubSystems(cmd *cobra.Command, args []string) error {
 			return nil
 		}
 
-		fmt.Printf(apx.Trans("subsystems.list.info.foundSubsystems"), subSystemsCount)
+		cmdr.Info.Printfln(apx.Trans("subsystems.list.info.foundSubsystems"), subSystemsCount)
 
 		table := core.CreateApxTable(os.Stdout)
 		table.SetHeader([]string{apx.Trans("subsystems.labels.name"), "Stack", apx.Trans("subsystems.labels.status"), "Pkgs"})
@@ -196,7 +196,7 @@ func newSubSystem(cmd *cobra.Command, args []string) error {
 		for i, stack := range stacks {
 			fmt.Printf("%d. %s\n", i+1, stack.Name)
 		}
-		fmt.Printf(apx.Trans("subsystems.new.info.selectStack"), len(stacks))
+		cmdr.Info.Printfln(apx.Trans("subsystems.new.info.selectStack"), len(stacks))
 
 		var stackIndex int
 		_, err := fmt.Scanln(&stackIndex)
@@ -229,13 +229,13 @@ func newSubSystem(cmd *cobra.Command, args []string) error {
 		return err
 	}
 
-	cmdr.Info.Printf(apx.Trans("subsystems.new.info.creatingSubsystem"), subSystemName, stackName)
+	cmdr.Info.Printfln(apx.Trans("subsystems.new.info.creatingSubsystem"), subSystemName, stackName)
 	err = subSystem.Create()
 	if err != nil {
 		return err
 	}
 
-	cmdr.Success.Printf(apx.Trans("subsystems.new.info.success"), subSystemName)
+	cmdr.Success.Printfln(apx.Trans("subsystems.new.info.success"), subSystemName)
 
 	return nil
 }
@@ -250,7 +250,7 @@ func rmSubSystem(cmd *cobra.Command, args []string) error {
 	}
 
 	if !forceFlag {
-		cmdr.Info.Printf(apx.Trans("subsystems.rm.info.askConfirmation"), subSystemName)
+		cmdr.Info.Printfln(apx.Trans("subsystems.rm.info.askConfirmation"), subSystemName)
 		var confirmation string
 		fmt.Scanln(&confirmation)
 		if strings.ToLower(confirmation) != "y" {
@@ -269,7 +269,7 @@ func rmSubSystem(cmd *cobra.Command, args []string) error {
 		return err
 	}
 
-	cmdr.Success.Printf(apx.Trans("subsystems.rm.info.success"), subSystemName)
+	cmdr.Success.Printfln(apx.Trans("subsystems.rm.info.success"), subSystemName)
 
 	return nil
 }
@@ -284,7 +284,7 @@ func resetSubSystem(cmd *cobra.Command, args []string) error {
 	forceFlag, _ := cmd.Flags().GetBool("force")
 
 	if !forceFlag {
-		cmdr.Info.Printf(apx.Trans("subsystems.reset.info.askConfirmation"), subSystemName)
+		cmdr.Info.Printfln(apx.Trans("subsystems.reset.info.askConfirmation"), subSystemName)
 		var confirmation string
 		fmt.Scanln(&confirmation)
 		if strings.ToLower(confirmation) != "y" {
@@ -303,7 +303,7 @@ func resetSubSystem(cmd *cobra.Command, args []string) error {
 		return err
 	}
 
-	cmdr.Success.Printf(apx.Trans("subsystems.reset.info.success"), subSystemName)
+	cmdr.Success.Printfln(apx.Trans("subsystems.reset.info.success"), subSystemName)
 
 	return nil
 }

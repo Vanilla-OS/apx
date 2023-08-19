@@ -245,7 +245,7 @@ func runPkgCmd(subSystem *core.SubSystem, command string, cmd *cobra.Command, ar
 		if command == "remove" {
 			exportedN, err := subSystem.UnexportDesktopEntries(args...)
 			if err == nil {
-				cmdr.Info.Printf(apx.Trans("runtimeCommand.info.unexportedApps"), exportedN)
+				cmdr.Info.Printfln(apx.Trans("runtimeCommand.info.unexportedApps"), exportedN)
 			}
 		}
 
@@ -258,7 +258,7 @@ func runPkgCmd(subSystem *core.SubSystem, command string, cmd *cobra.Command, ar
 		if command == "install" && !cmd.Flag("no-export").Changed {
 			exportedN, err := subSystem.ExportDesktopEntries(args...)
 			if err == nil {
-				cmdr.Info.Printf(apx.Trans("runtimeCommand.info.exportedApps"), exportedN)
+				cmdr.Info.Printfln(apx.Trans("runtimeCommand.info.exportedApps"), exportedN)
 			}
 		}
 
@@ -303,14 +303,14 @@ func runPkgCmd(subSystem *core.SubSystem, command string, cmd *cobra.Command, ar
 					return fmt.Errorf(apx.Trans("runtimeCommand.error.exportingApp"), err)
 				}
 
-				cmdr.Info.Printf(apx.Trans("runtimeCommand.info.exportedApp"), appName)
+				cmdr.Info.Printfln(apx.Trans("runtimeCommand.info.exportedApp"), appName)
 			} else {
 				err := subSystem.ExportBin(bin, binOutput)
 				if err != nil {
 					return fmt.Errorf(apx.Trans("runtimeCommand.error.exportingBin"), err)
 				}
 
-				cmdr.Info.Printf(apx.Trans("runtimeCommand.info.exportedBin"), bin)
+				cmdr.Info.Printfln(apx.Trans("runtimeCommand.info.exportedBin"), bin)
 			}
 		} else {
 			if appName != "" {
@@ -319,14 +319,14 @@ func runPkgCmd(subSystem *core.SubSystem, command string, cmd *cobra.Command, ar
 					return fmt.Errorf(apx.Trans("runtimeCommand.error.unexportingApp"), err)
 				}
 
-				cmdr.Info.Printf(apx.Trans("runtimeCommand.info.unexportedApp"), appName)
+				cmdr.Info.Printfln(apx.Trans("runtimeCommand.info.unexportedApp"), appName)
 			} else {
 				err := subSystem.UnexportBin(bin, binOutput)
 				if err != nil {
 					return fmt.Errorf(apx.Trans("runtimeCommand.error.unexportingBin"), err)
 				}
 
-				cmdr.Info.Printf(apx.Trans("runtimeCommand.info.unexportedBin"), bin)
+				cmdr.Info.Printfln(apx.Trans("runtimeCommand.info.unexportedBin"), bin)
 			}
 		}
 	}
