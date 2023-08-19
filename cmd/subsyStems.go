@@ -229,13 +229,14 @@ func newSubSystem(cmd *cobra.Command, args []string) error {
 		return err
 	}
 
-	cmdr.Info.Printfln(apx.Trans("subsystems.new.info.creatingSubsystem"), subSystemName, stackName)
+	spinner, _ := cmdr.Spinner.Start(fmt.Sprintf(apx.Trans("subsystems.new.info.creatingSubsystem"), subSystemName, stackName))
 	err = subSystem.Create()
 	if err != nil {
 		return err
 	}
 
-	cmdr.Success.Printfln(apx.Trans("subsystems.new.info.success"), subSystemName)
+	spinner.UpdateText(fmt.Sprintf(apx.Trans("subsystems.new.info.success"), subSystemName))
+	spinner.Success()
 
 	return nil
 }

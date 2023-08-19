@@ -299,7 +299,7 @@ subsystems:
       askName: "Choose a name:"
       selectStack: "Select a stack [1-%d]:"
       success: "Created subsystem '%s'."
-      creatingSubsystem: "Created subsystem '%s' with stack '%s'…"
+      creatingSubsystem: "Creating subsystem '%s' with stack '%s'…"
     options:
       name:
         description: "The name of the subsystem."
