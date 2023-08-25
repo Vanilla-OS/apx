@@ -1,6 +1,6 @@
 apx:
-  description: "Apx ist ein Paketanager der verschiedene Quellen unterstützt und es
-    Dir erlaubt, Pakete in Subsystemen zu installieren."
+  description: "Apx ist ein Paketmanager der verschiedene Quellen unterstützt und
+    es Dir erlaubt, Pakete in Subsystemen zu installieren."
   errors:
     unknownCommand: "Unbekannter Befehl: %s"
     invalidInput: "Ungültige Eingabe."
@@ -40,7 +40,7 @@ runtimeCommand:
   clean:
     description: "Bereinigen Sie den Cache des Paketmanagers."
   install:
-    description: "Installieren Sie das angegebene Paket."
+    description: "Das angegebene Paket Installieren."
     options:
       noExport:
         description: "Exportieren Sie keinen Desktop-Eintrag."
@@ -127,7 +127,7 @@ pkgmanagers:
       install:
         description: "Dee Befehl zum ausführen der Paketinstallation."
       list:
-        description: "Der Befehl zum auflisten aller installierten Pakete."
+        description: "Der Befehl zum Auflisten aller installierten Pakete."
       purge:
         description: "Der auszuführende Befehl zum Bereinigen von Paketen."
       remove:
@@ -150,7 +150,7 @@ pkgmanagers:
     info:
       askConfirmation: "Sind Sie sicher, dass Sie '%s' entfernen möchten? [j/N]"
       success: "Paketmanager '%s' entfernt."
-      aborting: Entfernung des Paketmanagers '%s' wird abgebrochen.
+      aborting: Das Entfernen des Paketmanagers '%s' wird abgebrochen.
     options:
       force:
         description: "Entfernung des Paketmanagers erzwingen."
@@ -161,7 +161,7 @@ stacks:
   description: "Arbeiten Sie mit den Stapeln, die in apx verfügbar sind."
   labels:
     name: "Name"
-    builtIn: "Eingebaut"
+    builtIn: "Integriert"
 
   list:
     description: "Alle verfügbaren Stapel auflisten."
@@ -252,7 +252,7 @@ stacks:
       name:
         description: "Der Name des zu entfernenden Stapels."
   export:
-    description: "Den angegebenen Stapel exportieren."
+    description: "Exportiert den angegebenen Stapel."
     error:
       noName: "Kein Name angegeben."
       noOutput: "Keine Ausgabe angegeben."
@@ -264,7 +264,7 @@ stacks:
       output:
         description: "Der Pfad, in den der Stapel exportiert werden soll."
   import:
-    description: "Den angegebenen Stapel importieren."
+    description: "Importiert den angegebenen Stapel."
     error:
       noInput: "Keine Eingabe angegeben."
       cannotLoad: "Stapel kann nicht von '%s' geladen werden."
