@@ -1,0 +1,317 @@
+apx:
+  description: ""
+  errors:
+    unknownCommand: ""
+    invalidInput: ""
+    invalidChoice: ""
+  info:
+    aborting: ""
+  terminal:
+    yes: ""
+    no: ""
+
+runtimeCommand:
+  description: ""
+  error:
+    noPackageSpecified: ""
+    cantAccessPkgManager: ""
+    executingCommand: ""
+    noAppNameOrBin: ""
+    sameAppOrBin: ""
+    exportingApp: ""
+    exportingBin: ""
+    unexportingApp: ""
+    unexportingBin: ""
+  info:
+    unexportedApps: ""
+    exportedApps: ""
+    exportedApp: ""
+    exportedBin: ""
+    unexportedApp: ""
+    unexportedBin: ""
+  autoremove:
+    description: ""
+  clean:
+    description: ""
+  install:
+    description: ""
+    options:
+      noExport:
+        description: ""
+  list:
+    description: ""
+  purge:
+    description: ""
+  remove:
+    description: ""
+  search:
+    description: ""
+  show:
+    description: ""
+  update:
+    description: ""
+  upgrade:
+    description: ""
+  enter:
+    description: ""
+  export:
+    description: ""
+    options:
+      appName:
+        description: ""
+      bin:
+        description: ""
+      binOutput:
+        description: ""
+  unexport:
+    description: ""
+    options:
+      appName:
+        description: ""
+      bin:
+        description: ""
+      binOutput:
+        description: ""
+
+pkgmanagers:
+  description: ""
+  labels:
+    name: ""
+    builtIn: ""
+
+  list:
+    description: ""
+    info:
+      noPkgManagers: ""
+      foundPkgManagers: ""
+    options:
+      json:
+        description: ""
+  show:
+    description: ""
+  new:
+    description: ""
+
+    error:
+      emptyName: ""
+      noName: ""
+      emptyCommand: ""
+      noCommand: ""
+      alreadyExists: ""
+    info:
+      askName: ""
+      askSudo: ""
+      askCommand: ""
+      askOverwrite: ""
+      success: ""
+    options:
+      assumeYes:
+        description: ""
+      name:
+        description: ""
+      needSudo:
+        description: ""
+      autoremove:
+        description: ""
+      clean:
+        description: ""
+      install:
+        description: ""
+      list:
+        description: ""
+      purge:
+        description: ""
+      remove:
+        description: ""
+      search:
+        description: ""
+      show:
+        description: ""
+      update:
+        description: ""
+      upgrade:
+        description: ""
+  rm:
+    description: ""
+
+    error:
+      noName: ""
+      inUse: ""
+    info:
+      askConfirmation: ""
+      success: ""
+      aborting: ""
+    options:
+      force:
+        description: ""
+      name:
+        description: ""
+
+stacks:
+  description: ""
+  labels:
+    name: ""
+    builtIn: ""
+
+  list:
+    description: ""
+    info:
+      noStacks: ""
+      foundStacks: ""
+      aborting: ""
+    options:
+      json:
+        description: ""
+  show:
+    description: ""
+  new:
+    description: ""
+    error:
+      emptyName: ""
+      noName: ""
+      emptyBase: ""
+      noBase: ""
+      emptyPkgManager: ""
+      noPkgManager: ""
+      pkgManagerDoesNotExist: ""
+      emptyPackages: ""
+      noPackages: ""
+      alreadyExists: ""
+    info:
+      askName: ""
+      askBase: ""
+      askPkgManager: ""
+      selectPkgManager: ""
+      noPackages: ""
+      confirmPackages: ""
+      askPackages: ""
+      success: ""
+    options:
+      assumeYes:
+        description: ""
+      name:
+        description: ""
+      base:
+        description: ""
+      packages:
+        description: ""
+      pkgManager:
+        description: ""
+  update:
+    description: ""
+    error:
+      noName: ""
+      noBase: ""
+      noPkgManager: ""
+      pkgManagerDoesNotExist: ""
+    info:
+      askBase: ""
+      askPkgManager: ""
+      askPackages: ""
+      success: ""
+
+    options:
+      assumeYes:
+        description: ""
+      name:
+        description: ""
+      base:
+        description: ""
+      packages:
+        description: ""
+      pkgManager:
+        description: ""
+  rm:
+    description: ""
+    error:
+      noName: ""
+    info:
+      askConfirmation: ""
+      success: ""
+    options:
+      force:
+        description: ""
+      name:
+        description: ""
+  export:
+    description: ""
+    error:
+      noName: ""
+      noOutput: ""
+    info:
+      success: ""
+    options:
+      name:
+        description: ""
+      output:
+        description: ""
+  import:
+    description: ""
+    error:
+      noInput: ""
+      cannotLoad: ""
+    info:
+      success: ""
+    options:
+      input:
+        description: ""
+
+subsystems:
+  description: ""
+  labels:
+    name: ""
+    status: ""
+
+  list:
+    description: ""
+    error:
+    info:
+      noSubsystems: ""
+      foundSubsystems: ""
+    options:
+      json:
+        description: ""
+  new:
+    description: ""
+    error:
+      noStacks: ""
+      emptyName: ""
+      noName: ""
+      emptyStack: ""
+      noStack: ""
+      stackDoesNotExist: ""
+      alreadyExists: ""
+    info:
+      askName: ""
+      selectStack: ""
+      success: ""
+      creatingSubsystem: ""
+    options:
+      name:
+        description: ""
+      stack:
+        description: ""
+  rm:
+    description: ""
+    error:
+      noName: ""
+    info:
+      askConfirmation: ""
+      success: ""
+    options:
+      force:
+        description: ""
+      name:
+        description: ""
+  reset:
+    description: ""
+    error:
+      noName: ""
+    info:
+      askConfirmation: ""
+      success: ""
+    options:
+      force:
+        description: ""
+      name:
+        description: ""
