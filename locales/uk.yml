@@ -25,12 +25,12 @@ runtimeCommand:
     unexportingApp: "Виникла помилка під час експорту застосунку: %s"
     unexportingBin: "Виникла помилка під час експорту бінарного файлу: %s"
   info:
-    unexportedApps: "Неекспортовано %d застосунків\n"
-    exportedApps: "Експортовано %d застосунків\n"
-    exportedApp: "Експортований додаток %s\n"
-    exportedBin: "Експортовані бінарні %s\n"
-    unexportedApp: "Неекспортований застосунок %s\n"
-    unexportedBin: "Неекспортовані бінарні %s\n"
+    unexportedApps: "Неекспортовано %d застосунків"
+    exportedApps: "Експортовано %d застосунків"
+    exportedApp: "Експортовано застосунок %s"
+    exportedBin: "Експортовані бінарні %s"
+    unexportedApp: "Неекспортований застосунок %s"
+    unexportedBin: "Неекспортовані бінарні %s"
   autoremove:
     description: "Видаліть пакунки, які більше не потрібні."
   clean:
@@ -86,7 +86,7 @@ pkgmanagers:
     info:
       noPkgManagers: "Немає доступних менеджерів пакунків. Створіть новий за допомогою
         \"apx pkgmanagers new\" або зверніться до системного адміністратора."
-      foundPkgManagers: "Знайдено %d менеджерів пакунків:\n"
+      foundPkgManagers: "Знайдено %d менеджерів пакунків"
     options:
       json:
         description: "Вивести у форматі JSON."
@@ -140,9 +140,9 @@ pkgmanagers:
 
     error:
       noName: "Ім'я не вказано."
-      inUse: "Менеджер пакетів використовується у стеках %d:\n"
+      inUse: "Менеджер пакетів використовується у стеках %d:"
     info:
-      askConfirmation: "Ви впевнені, що хочете видалити '%s'?"
+      askConfirmation: "Ви впевнені, що хочете видалити '%s'? [y/N]"
       success: "Видалено менеджер пакунків '%s'."
       aborting: Переривання видалення менеджера пакетів «%s».
     options:
@@ -162,7 +162,7 @@ stacks:
     info:
       noStacks: "Немає доступних стеків. Створіть новий за допомогою \"apx stacks
         new\" або зверніться до системного адміністратора."
-      foundStacks: "Знайдено %d стеків:\n"
+      foundStacks: "Знайдено %d стеків:"
       aborting: Переривання видалення стеку "%s".
     options:
       json:
@@ -236,7 +236,7 @@ stacks:
     error:
       noName: "Ім'я не вказано."
     info:
-      askConfirmation: "Ви впевнені, що хочете видалити '%s'?"
+      askConfirmation: "Ви впевнені, що хочете видалити '%s'? [y/N]"
       success: "Видалено стек '%s'."
     options:
       force:
@@ -278,7 +278,7 @@ subsystems:
     info:
       noSubsystems: "Немає доступних підсистем. Створіть нову за допомогою \"apx subsystems
         new\" або зверніться до системного адміністратора."
-      foundSubsystems: "Знайдено %d підсистем:\n"
+      foundSubsystems: "Знайдено %d підсистем:"
     options:
       json:
         description: "Вивести у форматі JSON."
@@ -298,7 +298,7 @@ subsystems:
       askName: "Вибрати ім'я:"
       selectStack: "Виберіть стек [1-%d]:"
       success: "Створено підсистему '%s'."
-      creatingSubsystem: "Створено підсистему '%s' зі стеком '%s'…"
+      creatingSubsystem: "Створення підсистеми '%s' зі стеком '%s'…"
     options:
       name:
         description: "Назва підсистеми."
@@ -309,7 +309,7 @@ subsystems:
     error:
       noName: "Ім'я не вказано."
     info:
-      askConfirmation: "Ви впевнені, що хочете видалити '%s'?"
+      askConfirmation: "Ви впевнені, що хочете видалити '%s'? [y/N]"
       success: "Видалено підсистему '%s'."
     options:
       force:
@@ -321,7 +321,7 @@ subsystems:
     error:
       noName: "Ім'я не вказано."
     info:
-      askConfirmation: "Ви впевнені, що хочете скинути '%s'?"
+      askConfirmation: "Ви впевнені, що хочете скинути '%s'? [y/N]"
       success: "Підсистему '%s' було скинуто."
     options:
       force:
