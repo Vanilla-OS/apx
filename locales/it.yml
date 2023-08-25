@@ -31,12 +31,12 @@ runtimeCommand:
     unexportingBin: "Si è verificato un errore durante l'annullamento dell'esportazione
       del file binario: %s"
   info:
-    unexportedApps: "Annullata esportazione di %d applicazioni\n"
-    exportedApps: "Esportate %d applicazioni\n"
-    exportedApp: "Applicazione esportata %s\n"
-    exportedBin: "File binario esportato %s\n"
-    unexportedApp: "Applicazione rimossa %s\n"
-    unexportedBin: "File binario rimosso %s\n"
+    unexportedApps: "Rimosse %d applicazioni"
+    exportedApps: "Esportate %d applicazioni"
+    exportedApp: "Esportata applicazione %s"
+    exportedBin: "Esportato file binario %s"
+    unexportedApp: "Rimossa applicazione %s"
+    unexportedBin: "Rimosso file binario %s"
   autoremove:
     description: "Rimuovere pacchetti non più necessari."
   clean:
@@ -92,7 +92,7 @@ pkgmanagers:
     info:
       noPkgManagers: "Non ci sono gestori di pacchetti disponibili. Creane uno nuovo
         con 'apx pkgmanagers new' o contatta l'amministratore di sistema."
-      foundPkgManagers: "Trovati %d gestori di pacchetti:\n"
+      foundPkgManagers: "Trovati %d gestori di pacchetti"
     options:
       json:
         description: "Output in formato JSON."
@@ -146,9 +146,9 @@ pkgmanagers:
 
     error:
       noName: "Non è stato specificato alcun nome."
-      inUse: "Il gestore di pacchetti è usato in %d stack:\n"
+      inUse: "Il gestore di pacchetti è usato in %d stack:"
     info:
-      askConfirmation: "Si è sicuri di voler rimuovere '%s'?"
+      askConfirmation: "Si è sicuri di voler rimuovere '%s'? [y/N]"
       success: "Rimosso il gestore di pacchetti '%s'."
       aborting: Interrompendo la rimozione del gestore di pacchetti '%s'.
     options:
@@ -168,7 +168,7 @@ stacks:
     info:
       noStacks: "Non ci sono stack disponibili. Creane uno nuovo con 'apx stacks new'
         o contatta l'amministratore del sistema."
-      foundStacks: "Trovati %d stack:\n"
+      foundStacks: "Trovati %d stack:"
       aborting: Interrotta la rimozione dello stack '%s'.
     options:
       json:
@@ -243,7 +243,7 @@ stacks:
     error:
       noName: "Non è stato specificato alcun nome."
     info:
-      askConfirmation: "Si è sicuri di voler rimuovere '%s'?"
+      askConfirmation: "Si è sicuri di voler rimuovere '%s'? [y/N]"
       success: "Rimosso lo stack '%s'."
     options:
       force:
@@ -285,7 +285,7 @@ subsystems:
     info:
       noSubsystems: "Non ci sono sottosistemi disponibili. Creane uno nuovo con 'apx
         subsystems new' o contatta l'amministratore del sistema."
-      foundSubsystems: "Trovati %d sottosistemi:\n"
+      foundSubsystems: "Trovati %d sottosistemi:"
     options:
       json:
         description: "Output in formato JSON."
@@ -305,7 +305,7 @@ subsystems:
       askName: "Scegli un nome:"
       selectStack: "Selezionare uno stack [1-%d]:"
       success: "Creato il sottosistema '%s'."
-      creatingSubsystem: "Creato sottosistema '%s' con stack '%s'…"
+      creatingSubsystem: "Creando sottosistema '%s' con stack '%s'…"
     options:
       name:
         description: "Il nome del sottosistema."
@@ -316,7 +316,7 @@ subsystems:
     error:
       noName: "Non è stato specificato alcun nome."
     info:
-      askConfirmation: "Si è sicuri di voler rimuovere '%s'?"
+      askConfirmation: "Si è sicuri di voler rimuovere '%s'? [y/N]"
       success: "Rimosso il sottosistema '%s'."
     options:
       force:
@@ -328,7 +328,7 @@ subsystems:
     error:
       noName: "Non è stato specificato alcun nome."
     info:
-      askConfirmation: "Si è sicuri di voler resettare '%s'?"
+      askConfirmation: "Si è sicuri di voler resettare '%s'? [y/N]"
       success: "Il sottosistema '%s' è stato resettato."
     options:
       force:
