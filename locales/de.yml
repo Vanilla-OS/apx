@@ -1,10 +1,10 @@
 apx:
-  description: "Apx ist ein Package Manager mit Unterstützung für verschiedene Quellen,
-    welcher es Dir erlaubt, Pakete in Subsystems zu installieren."
+  description: "Apx ist ein Paketanager der verschiedene Quellen unterstützt und es
+    Dir erlaubt, Pakete in Subsystemen zu installieren."
   errors:
     unknownCommand: "Unbekannter Befehl: %s"
     invalidInput: "Ungültige Eingabe."
-    invalidChoice: Ungültige Auswahl.
+    invalidChoice: Ungültige Wahl.
   info:
     aborting: "Wie gewünscht abgebrochen."
   terminal:
@@ -16,15 +16,15 @@ runtimeCommand:
     Paketmanager und die Umgebung zu."
   error:
     noPackageSpecified: "Keine Pakete angegeben."
-    cantAccessPkgManager: "Beim Zugriff auf den Package Manager ist ein Fehler aufgetreten:
+    cantAccessPkgManager: "Beim Zugriff auf den Paketmanager ist ein Fehler aufgetreten:
       %s"
-    executingCommand: "Beim ausführen des folgenden Befehls ist ein Fehler aufgetreten:
+    executingCommand: "Bei der Ausführung des Befehls ist ein Fehler aufgetreten:
       %s"
-    noAppNameOrBin: "--app-name oder --bin muss angegeben werden."
-    sameAppOrBin: "--app-name and --bin kann nicht festgelegt werden."
+    noAppNameOrBin: "--app-name oder --bin müssen angegeben werden."
+    sameAppOrBin: "--app-name und --bin können nicht gleichzeitig angegeben werden."
     exportingApp: "Beim Exportieren der Anwendung ist ein Fehler aufgetreten: %s"
     exportingBin: "Beim Exportieren der Binärdatei ist ein Fehler aufgetreten: %s"
-    unexportingApp: "Beim Deexportieren der Anwendung ist ein Fehler aufgetreten:
+    unexportingApp: "Beim De-exportieren der Anwendung ist ein Fehler aufgetreten:
       %s"
     unexportingBin: "Beim De-Exportieren der Binärdatei ist ein Fehler aufgetreten:
       %s"
