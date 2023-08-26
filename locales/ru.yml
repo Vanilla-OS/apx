@@ -25,12 +25,12 @@ runtimeCommand:
     unexportingApp: "Произошла ошибка при деэкспортировании приложения: %s"
     unexportingBin: "Произошла ошибка при деэкспортировании двоичного файла: %s"
   info:
-    unexportedApps: "Деэкспортировано %d приложений\n"
-    exportedApps: "Экспортировано %d приложений\n"
-    exportedApp: "Экспортированное приложение %s\n"
-    exportedBin: "Экспортированный двоичный файл %s\n"
-    unexportedApp: "Деэкспортированное приложение %s\n"
-    unexportedBin: "Деэкспортированный двоичный файл %s\n"
+    unexportedApps: "Деэкспортировано %d приложений"
+    exportedApps: "Экспортировано %d приложений"
+    exportedApp: "Экспортированное приложение %s"
+    exportedBin: "Экспортированный двоичный файл %s"
+    unexportedApp: "Деэкспортированное приложение %s"
+    unexportedBin: "Деэкспортированный двоичный файл %s"
   autoremove:
     description: "Убрать пакеты, которые больше не требуются."
   clean:
@@ -86,7 +86,7 @@ pkgmanagers:
     info:
       noPkgManagers: "Нет доступных менеджеров пакетов. Создайте новый с помощью 'apx
         pkgmanagers new' или обратитесь к системному администратору."
-      foundPkgManagers: "Менеджер(ов) пакетов найдено %d:\n"
+      foundPkgManagers: "Менеджер(ов) пакетов найдено %d"
     options:
       json:
         description: "Вывод в формате JSON."
@@ -139,9 +139,9 @@ pkgmanagers:
 
     error:
       noName: "Имя не указано."
-      inUse: "Менеджер пакетов используется в %d стеках:\n"
+      inUse: "Менеджер пакетов используется в %d стеках:"
     info:
-      askConfirmation: "Вы уверены, что хотите удалить '%s'?"
+      askConfirmation: "Вы уверены, что хотите удалить '%s'? [д/Н]"
       success: "Удалён менеджер пакетов '%s'."
       aborting: Прерывание удаления менеджера пакетов "%s".
     options:
@@ -161,7 +161,7 @@ stacks:
     info:
       noStacks: "Нет доступных стеков. Создайте новый с помощью 'apx stacks new' или
         обратитесь к системному администратору."
-      foundStacks: "Стеков найдено %d:\n"
+      foundStacks: "Стеков найдено %d:"
       aborting: Прерывание удаления стека '%s'.
     options:
       json:
@@ -235,7 +235,7 @@ stacks:
     error:
       noName: "Имя не указано."
     info:
-      askConfirmation: "Вы уверены, что хотите удалить '%s'?"
+      askConfirmation: "Вы уверены, что хотите удалить '%s'? [д/Н]"
       success: "Удалён стек '%s'."
     options:
       force:
@@ -277,7 +277,7 @@ subsystems:
     info:
       noSubsystems: "Нет доступных подсистем. Создайте новую с помощью 'apx subsystems
         new' или обратитесь к системному администратору."
-      foundSubsystems: "Подсистем найдено %d:\n"
+      foundSubsystems: "Подсистем найдено %d:"
     options:
       json:
         description: "Вывод в формате JSON."
@@ -297,7 +297,7 @@ subsystems:
       askName: "Выберите имя:"
       selectStack: "Выберите стек [1-%d]:"
       success: "Создана подсистема '%s'."
-      creatingSubsystem: "Создана подсистема '%s' со стеком '%s'…"
+      creatingSubsystem: "Создание подсистемы '%s' со стеком '%s'…"
     options:
       name:
         description: "Имя подсистемы."
@@ -308,7 +308,7 @@ subsystems:
     error:
       noName: "Имя не указано."
     info:
-      askConfirmation: "Вы уверены, что хотите удалить '%s'?"
+      askConfirmation: "Вы уверены, что хотите удалить '%s'? [д/Н]"
       success: "Удалена подсистема '%s'."
     options:
       force:
@@ -320,7 +320,7 @@ subsystems:
     error:
       noName: "Имя не указано."
     info:
-      askConfirmation: "Вы уверены, что хотите сбросить '%s'?"
+      askConfirmation: "Вы уверены, что хотите сбросить '%s'? [д/Н]"
       success: "Подсистема '%s' была сброшена."
     options:
       force:

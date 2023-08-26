@@ -23,12 +23,12 @@ runtimeCommand:
     unexportingApp: "移除导出的应用程序时发生错误：%s"
     unexportingBin: "移除导出的二进制文件时发生错误：%s"
   info:
-    unexportedApps: "已移除导出的 %d 个应用程序\n"
-    exportedApps: "已导出 %d 个应用程序\n"
-    exportedApp: "已导出应用程序 %s\n"
-    exportedBin: "已导出二进制文件 %s\n"
-    unexportedApp: "已移除导出的应用程序 %s\n"
-    unexportedBin: "已移除导出的二进制文件 %s\n"
+    unexportedApps: "已移除导出的 %d 个应用程序"
+    exportedApps: "已导出 %d 个应用程序"
+    exportedApp: "已导出应用程序 %s"
+    exportedBin: "已导出二进制文件 %s"
+    unexportedApp: "已移除导出的应用程序 %s"
+    unexportedBin: "已移除导出的二进制文件 %s"
   autoremove:
     description: "移除不再需要的软件包。"
   clean:
@@ -83,7 +83,7 @@ pkgmanagers:
     description: "列出所有可用的软件包管理器。"
     info:
       noPkgManagers: "没有可用的软件包管理器。请使用 'apx pkgmanagers new' 创建新的软件包管理器，或者联系系统管理员。"
-      foundPkgManagers: "找到 %d 个软件包管理器：\n"
+      foundPkgManagers: "找到 %d 个软件包管理器"
     options:
       json:
         description: "以 JSON 格式输出。"
@@ -136,9 +136,9 @@ pkgmanagers:
 
     error:
       noName: "没有指定名称。"
-      inUse: "软件包管理器被用于 %d 个包捆中：\n"
+      inUse: "软件包管理器被用于 %d 个包捆中："
     info:
-      askConfirmation: "确定要移除 '%s' 吗？"
+      askConfirmation: "确定要移除 '%s' 吗？[y/N]"
       success: "已移除软件包管理器 '%s'。"
       aborting: 中止移除软件包管理器 '%s'。
     options:
@@ -157,7 +157,7 @@ stacks:
     description: "列出所有可用的包捆。"
     info:
       noStacks: "没有可用的包捆。请使用 'apx stacks new' 创建新的包捆，或者联系系统管理员。"
-      foundStacks: "找到 %d 个包捆：\n"
+      foundStacks: "找到 %d 个包捆："
       aborting: 中止移除包捆 '%s'。
     options:
       json:
@@ -226,7 +226,7 @@ stacks:
     error:
       noName: "没有指定名称。"
     info:
-      askConfirmation: "确定要移除 '%s' 吗？"
+      askConfirmation: "确定要移除 '%s' 吗？[y/N]"
       success: "已移除包捆 '%s'。"
     options:
       force:
@@ -267,7 +267,7 @@ subsystems:
     error:
     info:
       noSubsystems: "没有可用的子系统。请使用 'apx subsystems new' 创建新的子系统，或者联系系统管理员。"
-      foundSubsystems: "找到 %d 个子系统：\n"
+      foundSubsystems: "找到 %d 个子系统："
     options:
       json:
         description: "以 JSON 格式输出。"
@@ -285,7 +285,7 @@ subsystems:
       askName: "选择名称："
       selectStack: "选择包捆 [1-%d]："
       success: "已创建子系统 '%s'。"
-      creatingSubsystem: "已创建子系统 '%s'，使用包捆 '%s'…"
+      creatingSubsystem: "正在创建子系统 '%s'，使用包捆 '%s'…"
     options:
       name:
         description: "子系统的名称。"
@@ -296,7 +296,7 @@ subsystems:
     error:
       noName: "没有指定名称。"
     info:
-      askConfirmation: "确定要移除 '%s' 吗？"
+      askConfirmation: "确定要移除 '%s' 吗？[y/N]"
       success: "已移除子系统 '%s'。"
     options:
       force:
@@ -308,7 +308,7 @@ subsystems:
     error:
       noName: "没有指定名称。"
     info:
-      askConfirmation: "确定要重置 '%s' 吗？"
+      askConfirmation: "确定要重置 '%s' 吗？[y/N]"
       success: "已重置子系统 '%s'。"
     options:
       force:

@@ -24,12 +24,12 @@ runtimeCommand:
     unexportingApp: "Адбылася памылка пры скасаванні экспарту прыкладання: %s"
     unexportingBin: "Адбылася памылка падчас адмены экспарту двайковага файла: %s"
   info:
-    unexportedApps: "Неэкспартаваныя праграмы: %d\n"
-    exportedApps: "Экспартавана %d прыкладанняў\n"
-    exportedApp: "Экспартаванае прыкладанне %s\n"
-    exportedBin: "Экспартаваны двайковы %s\n"
-    unexportedApp: "Неэкспартаванае прыкладанне %s\n"
-    unexportedBin: "Неэкспартаваны двайковы файл %s\n"
+    unexportedApps: "Неэкспартаваныя праграмы: %d"
+    exportedApps: "Экспартавана %d прыкладанняў"
+    exportedApp: "Экспартаванае прыкладанне %s"
+    exportedBin: "Экспартаваны двайковы %s"
+    unexportedApp: "Неэкспартаванае прыкладанне %s"
+    unexportedBin: "Неэкспартаваны двайковы файл %s"
   autoremove:
     description: "Выдаліце пакеты, якія больш не патрэбныя."
   clean:
@@ -85,7 +85,7 @@ pkgmanagers:
     info:
       noPkgManagers: "Няма даступных менеджэраў пакетаў. Стварыце новы з «apx pkgmanagers
         new» або звярніцеся да сістэмнага адміністратара."
-      foundPkgManagers: "Знойдзена %d менеджэраў пакетаў:\n"
+      foundPkgManagers: "Знойдзена %d менеджэраў пакетаў"
     options:
       json:
         description: "Вывад у фармаце JSON."
@@ -138,9 +138,9 @@ pkgmanagers:
 
     error:
       noName: "Імя не ўказана."
-      inUse: "Менеджар пакетаў выкарыстоўваецца ў %d стэках:\n"
+      inUse: "Менеджар пакетаў выкарыстоўваецца ў %d стэках:"
     info:
-      askConfirmation: "Вы ўпэўнены, што хочаце выдаліць «%s»?"
+      askConfirmation: "Вы ўпэўнены, што хочаце выдаліць '%s'?\n[т/Н]"
       success: "Выдалены менеджэр пакетаў «%s»."
       aborting: Перапыненне выдалення дыспетчара пакетаў «%s».
     options:
@@ -160,7 +160,7 @@ stacks:
     info:
       noStacks: "Няма даступных стосаў. Стварыце новы з «apx stacks new» або звярніцеся
         да сістэмнага адміністратара."
-      foundStacks: "Знойдзена %d стосаў:\n"
+      foundStacks: "Знойдзена %d стосаў:"
       aborting: Перапыненне выдалення стэка '%s'.
     options:
       json:
@@ -233,7 +233,7 @@ stacks:
     error:
       noName: "Імя не ўказана."
     info:
-      askConfirmation: "Вы ўпэўнены, што хочаце выдаліць «%s»?"
+      askConfirmation: "Вы ўпэўнены, што хочаце выдаліць '%s'?\n[т/Н]"
       success: "Выдалены стэк '%s'."
     options:
       force:
@@ -275,7 +275,7 @@ subsystems:
     info:
       noSubsystems: "Няма даступных падсістэм. Стварыце новы з «apx subsystems new»
         або звярніцеся да сістэмнага адміністратара."
-      foundSubsystems: "Знойдзена %d падсістэма:\n"
+      foundSubsystems: "Знойдзена %d падсістэма:"
     options:
       json:
         description: "Вывад у фармаце JSON."
@@ -306,7 +306,7 @@ subsystems:
     error:
       noName: "Імя не ўказана."
     info:
-      askConfirmation: "Вы ўпэўнены, што хочаце выдаліць «%s»?"
+      askConfirmation: "Вы ўпэўнены, што хочаце выдаліць '%s'?\n[т/Н]"
       success: "Выдалена падсістэма '%s'."
     options:
       force:
@@ -318,7 +318,7 @@ subsystems:
     error:
       noName: "Імя не ўказана."
     info:
-      askConfirmation: "Вы ўпэўнены, што хочаце скінуць «%s»?"
+      askConfirmation: "Вы ўпэўнены, што хочаце скінуць '%s'?\n[т/Н]"
       success: "Падсістэма '%s' была скінута."
     options:
       force:
