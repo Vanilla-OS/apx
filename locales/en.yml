@@ -15,6 +15,7 @@ runtimeCommand:
   description: "Work with the specified subsystem, accessing the package manager and
     environment."
   error:
+    enteringContainer: "An error occurred while entering the container: %s"
     noPackageSpecified: "No packages specified."
     cantAccessPkgManager: "An error occurred while accessing the package manager:
       %s"
