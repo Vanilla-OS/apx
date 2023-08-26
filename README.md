@@ -2,17 +2,12 @@
   <img src="apx-logo.png" height="120">
   <h1 align="center">Apx</h1>
 
-
 [![Translation Status][weblate-image]][weblate-url]
-[![build result][build-image]][build-url]
 
 [weblate-url]: https://hosted.weblate.org/engage/vanilla-os/
 [weblate-image]: https://hosted.weblate.org/widgets/vanilla-os/-/apx/svg-badge.svg
-[weblate-status-image]: https://hosted.weblate.org/widgets/vanilla-os/-/apx/multi-auto.svg
 [repology-url]: https://repology.org/project/apx-package-manager/versions
 [repology-image]: https://repology.org/badge/vertical-allrepos/apx-package-manager.svg
-[build-image]: https://build.opensuse.org/projects/home:fabricators:orchid/packages/apx/badge.svg?type=default
-[build-url]: https://build.opensuse.org/package/show/home:fabricators:orchid/apx
 
   <p align="center">Apx (/à·peks/) is the default package manager in Vanilla OS. It is a wrapper around multiple package managers to install packages and run commands inside a managed container.</p>
   <small>Special thanks to <a href="https://github.com/89luca89/distrobox">distrobox</a> for making this possible.</small>
@@ -23,45 +18,22 @@
 ## Help
 
 ```
-Apx is a package manager with support for multiple sources,
-allowing you to install packages in a managed container.
+Apx is a package manager with support for multiple sources, allowing you to install packages in subsystems.
 
 Usage:
   apx [command]
 
-Managed Container Commands
-  autoremove  Remove all unused packages automatically
-  clean       Clean the apx package manager cache
-  enter       Enter a shell in the managed container
-  export      Export/Recreate a program's desktop entry from a managed container
-  init        Initialize a managed container
-  install     Install packages inside a managed container.
-  list        List installed packages.
-  purge       Purge packages inside a managed container
-  remove      Remove packages inside a managed container.
-  run         Run a program inside a managed container.
-  search      Search for packages in a managed container.
-  show        Show details about a package
-  unexport    Unexport/Remove a program's desktop entry from a managed container
-  update      Update the list of available packages
-  upgrade     Upgrade the system by installing/upgrading available packages.
-
-Additional Commands:
+Available Commands:
+  [subsystem] Work with the specified subsystem, accessing the package manager and environment.
   completion  Generate the autocompletion script for the specified shell
   help        Help about any command
+  pkgmanagers Work with the package managers that are available in apx.
+  stacks      Work with the stacks that are available in apx.
+  subsystems  Work with the subsystems that are available in apx.
 
 Flags:
-  -v, --verbose       show more detailed output
-      --apt           Install packages from the Ubuntu repository.
-      --aur           Install packages from the AUR (Arch User Repository).
-      --dnf           Install packages from the Fedora's DNF (Dandified YUM) repository.
-      --apk           Install packages from the Alpine repository.
-      --zypper        Install packages from the OpenSUSE repository.
-      --xbps          Install packages from the Void (Linux) repository.
-      --nix           Install packages from the Nixpkgs (Nix packages) repository.
-  -n, --name string   Apply to custom container with this name.
-  -h, --help          help for apx
-      --version       version for apx
+  -h, --help      help for apx
+  -v, --version   version for apx
 
 Use "apx [command] --help" for more information about a command.
 ```
@@ -84,21 +56,19 @@ To add new dependencies, use `go get` as usual, then run `go mod tidy` and `go m
 
 Contribute translations for the manpage and help page in [Weblate](https://hosted.weblate.org/projects/vanilla-os/apx).
 
-[![Translation Status][weblate-status-image]][weblate-url]
-
 ### Generating man pages for translations
 
 Once the translation is complete in Weblate and the changes committed, clone the repository using `git` and perform `go build`, create a directory using the `mkdir man/<language_code> && mkdir man/<language_code>/man1` command, and execute this command `LANG=<language_code> ./apx man > man/<language_code>/man1/apx.1`. Open a PR for the generated manpage here.
 
 ## Instructions for using Apx in other distributions
 
-Apx has been designed as a distro-agnostic tool, allowing it to work with any distribution. (Note: The Nix integration in Apx requires SystemD)
+Apx has been designed as a distro-agnostic tool, allowing it to work with any distribution.
 
 ### Prerequisites
 
 - You must have `go` installed from your distribution's native repositories to compile `apx`.
 - You must have `git` installed to clone the repository.
-- You must have either `podman` or `docker` installed.
+- You must have either `podman` (suggested) or `docker` installed.
 - You must have `make` installed for the installation.
 
 ### Procedure

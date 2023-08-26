@@ -1,150 +1,331 @@
-flags:
-  apt: "Pakketten vanuit de Ubuntu-repository installeren"
-  aur: "Pakketten vanuit de AUR (Arch User Repository) installeren"
-  dnf: "Pakketten vanuit Fedora's DNF (Dandified YUM) installeren"
-  apk: "Pakketten vanuit de Alpine-repository installeren"
-  zypper: "Pakketten vanuit de OpenSUSE-repository installeren"
-  xbps: "Pakketten vanuit de Void-repository installeren"
-  nix: "Pakketten vanuit de Nixpkgs-repository installeren"
-  swupd: "Pakketten vanuit de Clear Linux-winkel installeren"
-  name: " Toepassen op aangepaste container met deze naam"
 apx:
-  use: "apx"
-  long: "Apx is een pakketbeheerder met ondersteuning voor meerdere bronnen, waarmee\
-    \ u pakketten kunt installeren in een beheerde container."
-  short: "Apx is een pakketbeheerder met ondersteuning voor meerdere bronnen, waarmee\
-    \ u pakketten kunt installeren in een beheerde container."
-  verboseFlag: "Gedetailleerdere uitvoer tonen"
-  allFlag: "Toepassen op alle containers"
-  cxl: "Handeling geannuleerd op verzoek van gebruiker"
-  assumeYes: "Doorgaan zonder handmatige bevestiging"
-  notForNix: "Deze opdracht is niet van toepassing op de nix-omgeving"
-autoremove:
-  use: "autoremove"
-  long: "Alle ongebruikte pakketten automatisch verwijderen"
-  short: "Alle ongebruikte pakketten automatisch verwijderen"
-clean:
-  use: "clean"
-  long: "De apx-pakketbeheerders-cache opschonen"
-  short: "De apx-cache opschonen"
-enter:
-  use: "enter"
-  long: "Een shell in de beheerde container binnengaan"
-  short: "Een shell in de container binnengaan"
-  failedEnter: "Beheerde container binnengaan mislukt"
-  outside: "U bent nu buiten de beheerde container"
-export:
-  use: "export <programma>"
-  long: "App-pictogram (opnieuw) aanmaken vanuit een beheerde container"
-  short: "App-pictogram aanmaken vanuit container"
-  binFlag: "Programmaopdracht exporteren"
-init:
-  use: "init"
-  long: "Beheerde container initialiseren"
-  short: "Beheerde container initialiseren"
-  confirm: "De container bestaat al. Wilt u deze opnieuw initialiseren? Deze handeling\
-    \ zal alles verwijderen, inclusief uw bestanden in de container."
-  remove: "Container verwijderen mislukt: %v"
-  create: "Container aanmaken mislukt: %v"
-install:
-  use: "apx install <pakket>"
-  long: "Pakketten installeren in een beheerde container"
-  short: "Pakketten installeren in een container"
-  assumeYes: "Doorgaan zonder handmatige bevestiging"
-  fixBroken: "Incorrecte afhankelijkheden repareren voor de installatie"
-  noExport: "Geen app-pictogram aanmaken na de installatie"
-  sideload: "Pakket installeren vanuit een lokaal bestand"
-  sideArgs: "Sideload vereist het pad naar een lokaal bestand"
-  sideUserTemp: "Kan bestand niet verplaatsen naar tijdelijke bestanden: %s"
-  exportBinPrompt: "Programma %s exporteren naar host?\nHiermee kunt u deze direct\
-    \ vanuit de shell aanroepen zonder ‘apx run’ te hoeven gebruiken.\nU kunt het\
-    \ programma ook later exporteren met ‘apx export --bin %s’."
-list:
-  use: "list"
-  long: "Geïnstalleerde pakketten tonen"
-  short: "Geïnstalleerde pakketten tonen"
-  upgradable: "Pakketten met updates tonen"
-  installed: "Geïnstalleerde pakketten tonen"
-nix:
-  use: "nix"
-  long: "Beheer een aangepaste installatie van Nix in uw persoonlijke map.\n\nDe `apx\
-    \ nix`-integratie dient als een wrapper voor het standaard-Nix-profiel. Eenmaal\
-    \ geïnstalleerd, bent u vrij om alle mogelijkheden van Nix te gebruiken zonder\
-    \ de opdracht `apx nix` te gebruiken."
-  short: "Nix-installatie beheren"
-nixinit:
-  use: "init"
-  long: "Initialiseert een aangepaste installatie van Nix door ‘$HOME/.nix’ aan te\
-    \ maken en enkele systemd-eenheden in te stellen om deze als ‘/nix’ te koppelen."
-  short: "Nix-repository initialiseren"
-  confirm: "Dit zal de map ‘.nix’ aanmaken in uw gebruikersmap en enkele systemd-eenheden\
-    \ instellen om deze map te koppelen aan ‘/nix’ voordat de installatie wordt uitgevoerd.\
-    \ Bevestig met ‘y’ om door te gaan."
-  unfree: "Wilt u niet-vrije pakketten zonder open-source-licenties toestaan? (Visual\
-    \ Studio Code, Spotify, enz.)"
-  insecure: "Wilt u onveilige pakketten (software met bekende kwetsbaarheden) toestaan?"
-  swcenter: "Wilt u Nix Software Center (grafisch softwarebeheer voor Nix) installeren?"
-  success: "Installatie voltooid. Herstart om nix te gebruiken."
-nixremove:
-  use: "remove"
-  long: "Verwijder het eerste overeenkomende pakket dat in het standaard-Nix-profiel\
-    \ is geïnstalleerd.\n\nOpmerking: Het is mogelijk om meerdere installaties van\
-    \ hetzelfde pakket te hebben.\n\nGebruik ‘nix profile list’ en ‘nix profile remove’\
-    \ als u meer precisie nodig heeft."
-  short: "Nix-pakket verwijderen"
-  success: "Pakket verwijderd"
-nixinstall:
-  use: "install <pkg>"
-  long: "Pakket uit de `nixpkgs`-repository als een flake in het standaard-Nix-profiel\
-    \ installeren"
-  short: "Nix-pakket installeren"
-  allowUnfree: "Pakketten met niet-vrije licenties toestaan"
-  allowInsecure: "Pakketten met bekende kwetsbaarheden toestaan"
-  error: "Pakketten installeren mislukt"
-  runInit: "Heeft u de opdracht `init` al uitgevoerd?"
-  success: "Pakket succesvol geïnstalleerd"
-nixupgrade:
-  success: "Pakket succesvol bijgewerkt"
-  atleastone: "Minstens één pakketnaam vereist"
-purge:
-  use: "purge <pakketten>"
-  long: "Pakketten inclusief configuratiebestanden in een beheerde container verwijderen"
-  short: "Pakketten in een container purgen"
-remove:
-  use: "remove <pakket>"
-  long: "Pakketten in een beheerde container verwijderen en configuratiebestanden\
-    \ behouden"
-  short: "Pakketten in een beheerde container verwijderen"
-run:
-  use: "run <opdracht>"
-  long: "Een programma uitvoeren in een beheerde container"
-  short: "Een programma uitvoeren in een container"
-  nixMsg: "Gebruik `apx run` niet voor Nix-pakketten. Voer deze direct uit zoals u\
-    \ dat zou doen met een native pakket."
-search:
-  use: "search <pakketten>"
-  long: "Zoeken naar pakketten in een beheerde container"
-  short: "Zoeken naar pakketten in een container"
-show:
-  use: "show <pakket>"
-  long: "Details over een pakket tonen"
-  short: "Details over een pakket tonen"
-  isInstalled: "Alleen tonen of het pakket is geïnstalleerd"
-  found: "%s is geïnstalleerd"
-  notFound: "%s is niet geïnstalleerd"
-unexport:
-  use: "unexport <pakket>"
-  long: "Verwijdert het app-pictogram van een programma uit een beheerde container.\n\
-    Als de flag --bin is meegegeven, wordt de link naar de containerprogramma verwijderd."
-  short: "Verwijdert het app-pictogram van een programma uit een container"
-  binFlag: "Een eerder geëxporteerd programma niet meer exporteren"
-  success: "Programma `%s` niet meer geëxporteerd"
-update:
-  use: "update"
-  long: "De lijst met beschikbare pakketten bijwerken"
-  short: "Lijst met beschikbare pakketten bijwerken"
-  allFlag: "Toepassen op alle containers"
-upgrade:
-  use: "upgrade"
-  long: "Systeem bijwerken door beschikbare pakketten bij te werken of te installeren"
-  short: "Beschikbare pakketten bijwerken"
+  description: "Apx is een pakketbeheer met ondersteuning voor meerdere bronnen, waardoor
+    u pakketten in subsystemen kunt installeren."
+  errors:
+    unknownCommand: "Onbekende opdracht: %s"
+    invalidInput: "Ongeldige invoer."
+    invalidChoice: Invalid choice.
+  info:
+    aborting: "Afbreken zoals verzocht."
+  terminal:
+    yes: "ja"
+    no: "nee"
+
+runtimeCommand:
+  description: "Work with the specified subsystem, accessing the package manager and
+    environment."
+  error:
+    noPackageSpecified: "Geen pakketten opgegeven."
+    cantAccessPkgManager: "An error occurred while accessing the package manager:
+      %s"
+    executingCommand: "An error occurred while executing the command: %s"
+    noAppNameOrBin: "--app-name or --bin must be specified."
+    sameAppOrBin: "--app-name and --bin cannot be both specified."
+    exportingApp: "An error occurred while exporting the application: %s"
+    exportingBin: "An error occurred while exporting the binary: %s"
+    unexportingApp: "An error occurred while unexporting the application: %s"
+    unexportingBin: "An error occurred while unexporting the binary: %s"
+  info:
+    unexportedApps: "%d apps niet langer geëxporteerd\n"
+    exportedApps: "%d apps geëxporteerd\n"
+    exportedApp: "App %s geëxporteerd\n"
+    exportedBin: "Programmabestand %s geëxporteerd\n"
+    unexportedApp: "App %s niet langer geëxporteerd\n"
+    unexportedBin: "Programmabestand %s niet langer geëxporteerd\n"
+  autoremove:
+    description: "Remove packages that are no longer required."
+  clean:
+    description: "Schoont cache van het pakketbeheer op."
+  install:
+    description: "Installeert het opgegeven pakket."
+    options:
+      noExport:
+        description: "Do not export a desktop entry."
+  list:
+    description: "Somt alle geïnstalleerde pakketten op."
+  purge:
+    description: "Verwijdert de opgegeven pakketten, inclusief configuratiebestanden."
+  remove:
+    description: "Verwijdert de opgegeven pakketten."
+  search:
+    description: "Search for packages matching the specified query."
+  show:
+    description: "Show information about the specified package."
+  update:
+    description: "Update the list of available packages."
+  upgrade:
+    description: "Werkt alle geïnstalleerde pakketten bij."
+  enter:
+    description: "Treed de omgeving van het subsysteem binnen."
+  export:
+    description: "Export an application or binary from the subsystem."
+    options:
+      appName:
+        description: "The name of the application to export."
+      bin:
+        description: "The name of the binary to export."
+      binOutput:
+        description: "Path of the binary output (default: ~/.local/bin/)."
+  unexport:
+    description: "Unexport an application or binary from the subsystem."
+    options:
+      appName:
+        description: "The name of the application to unexport."
+      bin:
+        description: "The name of the binary to unexport."
+      binOutput:
+        description: "Path of the binary output (default: ~/.local/bin/)."
+
+pkgmanagers:
+  description: "Work with the package managers that are available in apx."
+  labels:
+    name: "Naam"
+    builtIn: "Ingebouwd"
+
+  list:
+    description: "Toont een lijst van alle beschikbare pakketbeheerders."
+    info:
+      noPkgManagers: "No package managers available. Create a new one with 'apx pkgmanagers
+        new' or contact the system administrator."
+      foundPkgManagers: "%d pakketbeheerders gevonden:\n"
+    options:
+      json:
+        description: "Toont uitvoer in JSON-formaat."
+  show:
+    description: "Show information about the specified package manager."
+  new:
+    description: "Maakt een nieuw pakketbeheer aan."
+
+    error:
+      emptyName: "The name cannot be empty."
+      noName: "Geen naam opgegeven."
+      emptyCommand: "The command cannot be empty."
+      noCommand: "No command specified for '%s'."
+      alreadyExists: "A package manager with the name '%s' already exists."
+    info:
+      askName: "Kies een naam:"
+      askSudo: "Does the package manager need sudo to run?"
+      askCommand: "Enter the command for '%s':"
+      askOverwrite: "A package manager with the name '%s' already exists. Overwrite
+        it?"
+      success: "Pakketbeheer ‘%s’ aangemaakt."
+    options:
+      assumeYes:
+        description: "Assume yes to all prompts."
+      name:
+        description: "The name of the package manager."
+      needSudo:
+        description: "Whether the package manager needs sudo to run."
+      autoremove:
+        description: "The command to run to autoremove packages."
+      clean:
+        description: "The command to run to clean the package manager's cache."
+      install:
+        description: "The command to run to install packages."
+      list:
+        description: "The command to run to list installed packages."
+      purge:
+        description: "The command to run to purge packages."
+      remove:
+        description: "The command to run to remove packages."
+      search:
+        description: "The command to run to search for packages."
+      show:
+        description: "The command to run to show information about packages."
+      update:
+        description: "The command to run to update the list of available packages."
+      upgrade:
+        description: "The command to run to upgrade packages."
+  rm:
+    description: "Remove the specified package manager."
+
+    error:
+      noName: "Geen naam opgegeven."
+      inUse: "The package manager is used in %d stacks:\n"
+    info:
+      askConfirmation: "Are you sure you want to remove '%s'?"
+      success: "Pakketbeheer ‘%s’ verwijderd."
+      aborting: Aborting removal of package manager '%s'.
+    options:
+      force:
+        description: "Force removal of the package manager."
+      name:
+        description: "The name of the package manager to remove."
+
+stacks:
+  description: "Work with the stacks that are available in apx."
+  labels:
+    name: "Naam"
+    builtIn: "Ingebouwd"
+
+  list:
+    description: "Toont een lijst van alle beschikbare stacks."
+    info:
+      noStacks: "No stacks available. Create a new one with 'apx stacks new' or contact
+        the system administrator."
+      foundStacks: "%d stacks gevonden:\n"
+      aborting: Aborting removal of stack '%s'.
+    options:
+      json:
+        description: "Toont uitvoer in JSON-formaat."
+  show:
+    description: "Show information about the specified stack."
+  new:
+    description: "Maakt een nieuwe stack aan."
+    error:
+      emptyName: "The name cannot be empty."
+      noName: "Geen naam opgegeven."
+      emptyBase: "The base cannot be empty."
+      noBase: "Geen basis opgegeven."
+      emptyPkgManager: "The package manager cannot be empty."
+      noPkgManager: "Geen pakketbeheer opgegeven."
+      pkgManagerDoesNotExist: "The specified package manager does not exist. Create
+        it with 'apx pkgmanagers new' or contact the system administrator."
+      emptyPackages: "The packages cannot be empty."
+      noPackages: "Geen pakketten opgegeven."
+      alreadyExists: "A stack with the name '%s' already exists."
+    info:
+      askName: "Kies een naam:"
+      askBase: "Choose a base (e.g. 'vanillaos/pico'):"
+      askPkgManager: "Kies een pakketbeheer:"
+      selectPkgManager: "Select a package manager [1-%d]:"
+      noPackages: "You have not provided any package to install in the stack. Do you
+        want to add some now?"
+      confirmPackages: "Do you want to confirm the current packages list?"
+      askPackages: "Please type the packages you want to install in the stack, separated
+        by a space:"
+      success: "Stack ‘%s’ aangemaakt."
+    options:
+      assumeYes:
+        description: "Assume yes to all prompts."
+      name:
+        description: "The name of the stack."
+      base:
+        description: "The base subsystem to use."
+      packages:
+        description: "De pakketten om te installeren."
+      pkgManager:
+        description: "The package manager to use."
+  update:
+    description: "Werkt de opgegeven stack bij."
+    error:
+      noName: "Geen naam opgegeven."
+      noBase: "Geen basis opgegeven."
+      noPkgManager: "Geen pakketbeheer opgegeven."
+      pkgManagerDoesNotExist: "The specified package manager does not exist. Create
+        it with 'apx pkgmanagers new' or contact the system administrator."
+    info:
+      askBase: "Type a new base or confirm the current one (%s):"
+      askPkgManager: "Choose a new package manager or confirm the current one (%s):"
+      askPackages: "Type the packages you want to install in the stack, separated
+        by a space, or confirm the current ones (%s):"
+      success: "Stack ‘%s’ bijgewerkt."
+
+    options:
+      assumeYes:
+        description: "Assume yes to all prompts."
+      name:
+        description: "The name of the stack."
+      base:
+        description: "The base subsystem to use."
+      packages:
+        description: "De pakketten om te installeren."
+      pkgManager:
+        description: "The package manager to use."
+  rm:
+    description: "Verwijdert de opgegeven stack."
+    error:
+      noName: "Geen naam opgegeven."
+    info:
+      askConfirmation: "Are you sure you want to remove '%s'?"
+      success: "Stack ‘%s’ verwijderd."
+    options:
+      force:
+        description: "Force removal of the stack."
+      name:
+        description: "The name of the stack to remove."
+  export:
+    description: "Exporteert de opgegeven stack."
+    error:
+      noName: "Geen naam opgegeven."
+      noOutput: "Geen uitvoer opgegeven."
+    info:
+      success: "Exported stack '%s' to '%s'."
+    options:
+      name:
+        description: "The name of the stack to export."
+      output:
+        description: "The path to export the stack to."
+  import:
+    description: "Importeert de opgegeven stack."
+    error:
+      noInput: "Geen invoer opgegeven."
+      cannotLoad: "Cannot load stack from '%s'."
+    info:
+      success: "Stack geïmporteerd vanuit ‘%s’."
+    options:
+      input:
+        description: "The path to import the stack from."
+
+subsystems:
+  description: "Work with the subsystems that are available in apx."
+  labels:
+    name: "Naam"
+    status: "Status"
+
+  list:
+    description: "Toont een lijst van alle beschikbare subsystemen."
+    error:
+    info:
+      noSubsystems: "No subsystems available. Create a new one with 'apx subsystems
+        new' or contact the system administrator."
+      foundSubsystems: "%d subsystemen gevonden:\n"
+    options:
+      json:
+        description: "Toont uitvoer in JSON-formaat."
+  new:
+    description: "Maakt een nieuw subsysteem aan."
+    error:
+      noStacks: "A stack is needed to create a subsystem. Create a new one with 'apx
+        stacks new' or contact the system administrator."
+      emptyName: "The name cannot be empty."
+      noName: "Geen naam opgegeven."
+      emptyStack: "The stack cannot be empty."
+      noStack: "Geen stack opgegeven."
+      stackDoesNotExist: "The specified stack does not exist. Create it with 'apx
+        stacks new' or contact the system administrator."
+      alreadyExists: "A subsystem with the name '%s' already exists."
+    info:
+      askName: "Kies een naam:"
+      selectStack: "Selecteer een stack [1-%d]:"
+      success: "Subsysteem ‘%s’ aangemaakt."
+      creatingSubsystem: "Created subsystem '%s' with stack '%s'…"
+    options:
+      name:
+        description: "The name of the subsystem."
+      stack:
+        description: "De stack om te gebruiken."
+  rm:
+    description: "Verwijdert het opgegeven subsysteem."
+    error:
+      noName: "Geen naam opgegeven."
+    info:
+      askConfirmation: "Are you sure you want to remove '%s'?"
+      success: "Subsysteem ‘%s’ verwijderd."
+    options:
+      force:
+        description: "Force removal of the subsystem."
+      name:
+        description: "The name of the subsystem to remove."
+  reset:
+    description: "Reset het opgegeven subsysteem."
+    error:
+      noName: "Geen naam opgegeven."
+    info:
+      askConfirmation: "Are you sure you want to reset '%s'?"
+      success: "The subsystem '%s' has been reset."
+    options:
+      force:
+        description: "Force reset of the subsystem."
+      name:
+        description: "The name of the subsystem to reset."

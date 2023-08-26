@@ -19,6 +19,9 @@ github.com/fitv/go-i18n/internal/translator
 # github.com/fsnotify/fsnotify v1.6.0
 ## explicit; go 1.16
 github.com/fsnotify/fsnotify
+# github.com/google/uuid v1.1.2
+## explicit
+github.com/google/uuid
 # github.com/gookit/color v1.5.2
 ## explicit; go 1.16
 github.com/gookit/color
@@ -49,6 +52,9 @@ github.com/mattn/go-runewidth
 # github.com/mitchellh/mapstructure v1.5.0
 ## explicit; go 1.14
 github.com/mitchellh/mapstructure
+# github.com/olekukonko/tablewriter v0.0.5
+## explicit; go 1.12
+github.com/olekukonko/tablewriter
 # github.com/pelletier/go-toml v1.9.5
 ## explicit; go 1.12
 github.com/pelletier/go-toml

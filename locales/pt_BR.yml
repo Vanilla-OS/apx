@@ -1,154 +1,332 @@
-flags:
-  apt: "Instalar pacotes do repositório Ubuntu."
-  aur: "Instalar pacotes do AUR (Arch User Repository)."
-  dnf: "Instalar pacotes do repositório DNF (Dandified YUM) do Fedora."
-  apk: "Instalar pacotes do repositório Alpine (Linux)."
-  zypper: "Instalar pacotes do repositório OpenSUSE."
-  xbps: "Instalar pacotes do repositório Void (Linux)."
-  nix: "Instalar pacotes do repositório Nixpkgs (pacotes Nix)."
-  swupd: "Install packages from the Clear Linux* store"
-  name: " Aplicar ao contêiner personalizado com esse nome."
 apx:
-  use: "apx"
-  long: "Apx é um gerenciador de pacotes com suporte para múltiplas fontes,\npermitindo\
-    \ a instalação de pacotes em um contêiner gerenciado."
-  short: "Apx é um gerenciador de pacotes com suporte para múltiplas fontes,\npermitindo\
-    \ a instalação de pacotes em um contêiner gerenciado."
-  verboseFlag: "mostrar saída mais detalhada"
-  allFlag: "Aplicar para todos os Contêineres."
-  cxl: "Operação cancelada a pedido do usuário."
-  assumeYes: "Proceder sem confirmação manual."
-  notForNix: "Este comando não se aplica ao ambiente nix."
-autoremove:
-  use: "autoremove"
-  long: "Remover todos os pacotes não utilizados automaticamente"
-  short: "Remover todos os pacotes não utilizados automaticamente"
-clean:
-  use: "clean"
-  long: "Limpar o cache do gerenciador de pacotes apx"
-  short: "Limpar o cache do gerenciador de pacotes apx"
-enter:
-  use: "enter"
-  long: "Adicione um shell no contêiner administrado"
-  short: "Adicione um shell no contêiner administrado"
-  failedEnter: "falha ao entrar no contêiner gerenciado"
-  outside: "Agora você está fora do contêiner gerenciado."
-export:
-  use: "export <programa/binário>"
-  long: "Exportar/Recriar a entrada desktop de um programa a partir de um contêiner\
-    \ gerenciado"
-  short: "Exportar/Recriar a entrada desktop de um programa a partir de um contêiner\
-    \ administrado"
-  binFlag: "Exportar comando binário"
-init:
-  use: "init"
-  long: "Inicializar um contêiner gerenciado"
-  short: "Inicializar um contêiner administrado"
-  confirm: "O contêiner já existe. Você quer reinicializá-lo? Esta operação removerá\
-    \ tudo, inclusive seus arquivos no contêiner."
-  remove: "erro ao remover o contêiner: %v"
-  create: "erro ao criar o contêiner: %v"
-install:
-  use: "apx install <pacote>"
-  long: "Instalar pacotes dentro de um contêiner gerenciado."
-  short: "Instalar pacotes dentro de um contêiner gerenciado."
-  assumeYes: "Proceder sem confirmação manual"
-  fixBroken: "Consertar dependências quebradas antes de continuar a instalação"
-  noExport: "Não exportar uma entrada para a área de trabalho após a instalação."
-  sideload: "Instalar um pacote a partir de um arquivo local."
-  sideArgs: "carregamento lateral (sideload) requer o caminho para um arquivo local"
-  sideUserTemp: "não é possível mover o arquivo para a pasta temporária (temp) do\
-    \ usuário: %s"
-  exportBinPrompt: "Exportar o binário %s para o hospedeiro?\nIsto permitirá que você\
-    \ o chame diretamente do shell sem usar \"apx run\".\nVocê também pode exportá-lo\
-    \ posteriormente usando \"apx export --bin %s\""
-list:
-  use: "list"
-  long: "Listar os pacotes instalados."
-  short: "Listar os pacotes instalados."
-  upgradable: "Mostrar pacotes atualizáveis"
-  installed: "Mostrar pacotes instalados"
-nix:
-  use: "nix"
-  long: "Gerencie uma instalação personalizada de nix em seu diretório $HOME.\n\n\
-    A integração `apx nix` serve como um invólucro para o\nperfil nix padrão. Uma\
-    \ vez instalado, você está livre para usar quaisquer características de\nnix sem\
-    \ utilizar o comando `apx nix`."
-  short: "Gerenciar a instalação de nix"
-nixinit:
-  use: "init"
-  long: "Inicializar uma instalação customizada do nix criando $HOME/.nix e configurando\
-    \ algumas unidades do SystemD para montá-lo como /nix."
-  short: "Inicializar o repositório nix"
-  confirm: "Isto criará uma pasta '.nix' em seu diretório pessoal e configurará algumas\
-    \ unidades SystemD para montar essa pasta em /nix antes de executar a instalação.\
-    \ Confirme 'y' para continuar."
-  unfree: "Você gostaria de permitir pacotes 'não gratuitos' sem licenças Open Source\
-    \ (Visual Studio Code, Spotify, etc.)?"
-  insecure: "Você gostaria de permitir pacotes 'inseguros' (software com vulnerabilidades\
-    \ conhecidas)?"
-  swcenter: "Você gostaria de instalar o Nix Software Center - um gerenciador de software\
-    \ gráfico para o Nix?"
-  success: "Instalação completa. Reinicie para começar a usar nix."
-nixremove:
-  use: "remove"
-  long: "Remover o primeiro pacote correspondente instalado no perfil nix padrão.\n\
-    \nNota: É possível ter múltiplas instalações de um mesmo pacote.\n\nSe você precisar\
-    \ de mais precisão, use 'lista de perfil nix' e 'remoção de perfil nix'."
-  short: "Remover um pacote de nix"
-  success: "Remoção do pacote completa"
-nixinstall:
-  use: "instalar <pkg>"
-  long: "Instale um pacote do repositório `nixpkgs` como um floco no perfil nix padrão."
-  short: "Instalar pacote nix"
-  allowUnfree: "Permitir pacotes com licenças não-livres"
-  allowInsecure: "Permitir pacotes com vulnerabilidades conhecidas."
-  error: "erro na instalação dos pacotes"
-  runInit: "Você já executou o comando `init`?"
-  success: "Pacote instalado com sucesso."
-nixupgrade:
-  success: "Pacote atualizado com sucesso."
-  atleastone: "É necessário pelo menos um nome de pacote."
-purge:
-  use: "purge <pacotes>"
-  long: "Remover pacotes dentro de um contêiner gerenciado"
-  short: "Remover pacotes dentro de um contêiner gerenciado"
-remove:
-  use: "remove <pacotes>"
-  long: "Remover os pacotes dentro de um contêiner gerenciado."
-  short: "Remover os pacotes dentro de um contêiner gerenciado."
-run:
-  use: "run <comando>"
-  long: "Executar um programa dentro de um contêiner administrado."
-  short: "Executar um programa dentro de um contêiner administrado."
-  nixMsg: "Não utilize `apx run` para pacotes nix. Execute-os diretamente como faria\
-    \ com um pacote nativo."
-search:
-  use: "search <pacotes>"
-  long: "Pesquise por pacotes em um contêiner administrado."
-  short: "Pesquise por pacotes em um contêiner gerenciado."
-show:
-  use: "show <pacote>"
-  long: "Mostrar detalhes sobre um pacote"
-  short: "Mostrar detalhes sobre um pacote"
-  isInstalled: "Retornar somente se o pacote estiver instalado"
-  found: "%s está instalado"
-  notFound: "%s não está instalado"
-unexport:
-  use: "unexport <pacote>"
-  long: "Cancelar a exportação/Remover a entrada de um programa da área de trabalho\
-    \ de um contêiner gerenciado.\nSe --bin flag for fornecido, remova o link para\
-    \ o binário do contêiner."
-  short: "Cancelar a exportação/Remover a entrada de um programa da área de trabalho\
-    \ de um container gerenciado"
-  binFlag: "Desfazer a exportação de um binário previamente exportado."
-  success: "Binário exportado `%s` foi removido com sucesso."
-update:
-  use: "update"
-  long: "Atualizar a lista de pacotes disponíveis"
-  short: "Atualizar a lista de pacotes disponíveis"
-  allFlag: "Aplicar a todos os contêineres"
-upgrade:
-  use: "upgrade"
-  long: "Atualize o sistema instalando/atualizando os pacotes disponíveis."
-  short: "Atualize o sistema instalando/atualizando os pacotes disponíveis."
+  description: "O Apx é um gerenciador de pacotes com suporte para várias origens,
+    permitindo que você instale pacotes em subsistemas."
+  errors:
+    unknownCommand: "Comando desconhecido: %s"
+    invalidInput: "Entrada inválida."
+    invalidChoice: Escolha inválida.
+  info:
+    aborting: "Abortando conforme solicitado."
+  terminal:
+    yes: "sim"
+    no: "não"
+
+runtimeCommand:
+  description: "Trabalhe com o subsistema especificado, acessando o gerenciador de
+    pacotes e o ambiente."
+  error:
+    noPackageSpecified: "Não há pacotes especificados."
+    cantAccessPkgManager: "Ocorreu um erro ao acessar o gerenciador de pacotes: %s"
+    executingCommand: "Ocorreu um erro durante a execução do comando: %s"
+    noAppNameOrBin: "--app-name ou --bin devem ser especificados."
+    sameAppOrBin: "--app-name e --bin não podem ser especificados simultaneamente."
+    exportingApp: "Ocorreu um erro ao exportar o aplicativo: %s"
+    exportingBin: "Ocorreu um erro ao exportar o binário: %s"
+    unexportingApp: "Ocorreu um erro ao desfazer a exportação do aplicativo: %s"
+    unexportingBin: "Ocorreu um erro ao desfazer a exportação do binário: %s"
+  info:
+    unexportedApps: "Desfeita a exportação de %d aplicativos\n"
+    exportedApps: "Exportados %d aplicativos\n"
+    exportedApp: "Aplicativo %s exportado\n"
+    exportedBin: "Binário %s exportado\n"
+    unexportedApp: "Desfeita a exportação do aplicativo %s\n"
+    unexportedBin: "Desfeita a exportação do binário %s\n"
+  autoremove:
+    description: "Remover pacotes que não são mais necessários."
+  clean:
+    description: "Limpar o cache do gerenciador de pacotes."
+  install:
+    description: "Instalar o pacote especificado."
+    options:
+      noExport:
+        description: "Não exportar um registro da área de trabalho."
+  list:
+    description: "Listar todos os pacotes instalados."
+  purge:
+    description: "Purgar os pacotes especificados."
+  remove:
+    description: "Remover os pacotes especificados."
+  search:
+    description: "Pesquisar por pacotes que correspondam à consulta especificada."
+  show:
+    description: "Mostrar informações sobre o pacote especificado."
+  update:
+    description: "Atualizar a lista de pacotes disponíveis."
+  upgrade:
+    description: "Atualizar todos os pacotes instalados."
+  enter:
+    description: "Entrar no ambiente de subsistema."
+  export:
+    description: "Exportar um aplicativo ou binário do subsistema."
+    options:
+      appName:
+        description: "O nome do aplicativo a exportar."
+      bin:
+        description: "O nome do binário a exportar."
+      binOutput:
+        description: "Caminho para a saída do binário (padrão: ~/.local/bin/)."
+  unexport:
+    description: "Desfazer a exportação de um aplicativo ou binário do subsistema."
+    options:
+      appName:
+        description: "O nome do aplicativo a ter sua exportação desfeita."
+      bin:
+        description: "O nome do binário a ter sua exportação desfeita."
+      binOutput:
+        description: "Caminho de saída do binário (padrão: ~/.local/bin/)."
+
+pkgmanagers:
+  description: "Trabalhar com os gerenciadores de pacotes que estão disponíveis no
+    apx."
+  labels:
+    name: "Nome"
+    builtIn: "Embutido"
+
+  list:
+    description: "Listar todos os gerenciadores de pacotes disponíveis."
+    info:
+      noPkgManagers: "Nenhum gerenciador de pacote disponível. Crie um utilizando
+        'apx pkgmanagers new' ou entre em contato com o administrador do sistema."
+      foundPkgManagers: "Encontrados %d gerenciadores de pacotes:\n"
+    options:
+      json:
+        description: "Saída em formato JSON."
+  show:
+    description: "Mostrar informações sobre o gerenciador de pacotes especificado."
+  new:
+    description: "Criar um novo gerenciador de pacotes."
+
+    error:
+      emptyName: "O nome não pode ser vazio."
+      noName: "Nenhum nome especificado."
+      emptyCommand: "O comando não pode ser vazio."
+      noCommand: "Nenhum comando especificado para '%s'."
+      alreadyExists: "Um gerenciador de pacotes com o nome '%s' já existe."
+    info:
+      askName: "Escolha um nome:"
+      askSudo: "O gerenciador de pacotes precisa do sudo para ser executado?"
+      askCommand: "Insira o comando para '%s':"
+      askOverwrite: "Um gerenciador de pacotes com o nome '%s' já existe. Sobrescrevê-lo?"
+      success: "Gerenciador de pacotes '%s' criado."
+    options:
+      assumeYes:
+        description: "Assuma sim para todas as solicitações."
+      name:
+        description: "O nome do gerenciador de pacotes."
+      needSudo:
+        description: "Se o gerenciador de pacotes precisa do sudo para ser executado."
+      autoremove:
+        description: "O comando a ser executado para a remoção automática de pacotes."
+      clean:
+        description: "O comando a ser executado para limpar o cache do gerenciador
+          de pacotes."
+      install:
+        description: "O comando a ser executado para instalar pacotes."
+      list:
+        description: "O comando a ser executado para listar os pacotes instalados."
+      purge:
+        description: "O comando a ser executado para purgar pacotes."
+      remove:
+        description: "O comando a ser executado para remover pacotes."
+      search:
+        description: "O comando a ser executado para procurar pacotes."
+      show:
+        description: "O comando a ser executado para mostrar informações sobre pacotes."
+      update:
+        description: "O comando a ser executado para atualizar a lista de pacotes
+          disponíveis."
+      upgrade:
+        description: "O comando a ser executado para atualizar pacotes."
+  rm:
+    description: "Remover o gerenciador de pacotes especificado."
+
+    error:
+      noName: "Nenhum nome especificado."
+      inUse: "O gerenciador de pacotes é utilizado em %d pilhas:\n"
+    info:
+      askConfirmation: "Você tem certeza que deseja remover '%s'?"
+      success: "Gerenciador de pacotes '%s' removido."
+      aborting: Abortando a remoção do gerenciador de pacotes '%s'.
+    options:
+      force:
+        description: "Forçar a remoção do gerenciador de pacotes."
+      name:
+        description: "O nome do gerenciador de pacotes a ser removido."
+
+stacks:
+  description: "Trabalhar com as pilhas que estão disponíveis no apx."
+  labels:
+    name: "Nome"
+    builtIn: "Embutido"
+
+  list:
+    description: "Listar todas as pilhas disponíveis."
+    info:
+      noStacks: "Não há pilhas disponíveis. Crie uma nova com 'apx stacks new' ou
+        entre em contato com o administrador do sistema."
+      foundStacks: "Encontrou %d pilhas:\n"
+      aborting: Abortando a remoção da pilha '%s'.
+    options:
+      json:
+        description: "Saída em formato JSON."
+  show:
+    description: "Mostrar informações sobre a pilha especificada."
+  new:
+    description: "Criar uma nova pilha."
+    error:
+      emptyName: "O nome não pode ser vazio."
+      noName: "Nenhum nome especificado."
+      emptyBase: "A base não pode ser vazia."
+      noBase: "Nenhuma base especificada."
+      emptyPkgManager: "O gerenciador de pacotes não pode ser vazio."
+      noPkgManager: "Nenhum gerenciador de pacotes especificado."
+      pkgManagerDoesNotExist: "O gerenciador de pacotes especificado não existe. Crie-o
+        com 'apx pkgmanagers new' ou entre em contato com o administrador do sistema."
+      emptyPackages: "Os pacotes não podem estar vazios."
+      noPackages: "Não há pacotes especificados."
+      alreadyExists: "Já existe uma pilha com o nome '%s'."
+    info:
+      askName: "Escolha um nome:"
+      askBase: "Escolha uma base (por exemplo, 'vanillaos/pico'):"
+      askPkgManager: "Escolha um gerenciador de pacotes:"
+      selectPkgManager: "Selecione um gerenciador de pacotes [1-%d]:"
+      noPackages: "Você não forneceu nenhum pacote para instalar na pilha. Deseja
+        adicionar algum agora?"
+      confirmPackages: "Deseja confirmar a lista de pacotes atual?"
+      askPackages: "Digite os pacotes que deseja instalar na pilha, separados por
+        um espaço:"
+      success: "Pilha criada '%s'."
+    options:
+      assumeYes:
+        description: "Assuma que sim para todas as solicitações."
+      name:
+        description: "O nome da pilha."
+      base:
+        description: "O subsistema base a ser usado."
+      packages:
+        description: "Os pacotes a serem instalados."
+      pkgManager:
+        description: "O gerenciador de pacotes a ser usado."
+  update:
+    description: "Atualizar a pilha especificada."
+    error:
+      noName: "Nenhum nome especificado."
+      noBase: "Nenhuma base especificada."
+      noPkgManager: "Nenhum gerenciador de pacotes especificado."
+      pkgManagerDoesNotExist: "O gerenciador de pacotes especificado não existe. Crie-o
+        com 'apx pkgmanagers new' ou entre em contato com o administrador do sistema."
+    info:
+      askBase: "Digite uma nova base ou confirme a atual (%s):"
+      askPkgManager: "Escolha um novo gerenciador de pacotes ou confirme o atual (%s):"
+      askPackages: "Digite os pacotes que deseja instalar na pilha, separados por
+        um espaço, ou confirme os atuais (%s):"
+      success: "Pilha '%s' atualizada."
+
+    options:
+      assumeYes:
+        description: "Assuma que sim para todas as solicitações."
+      name:
+        description: "O nome da pilha."
+      base:
+        description: "O subsistema base a ser usado."
+      packages:
+        description: "Os pacotes a serem instalados."
+      pkgManager:
+        description: "O gerenciador de pacotes a ser usado."
+  rm:
+    description: "Remover a pilha especificada."
+    error:
+      noName: "Nenhum nome especificado."
+    info:
+      askConfirmation: "Tem certeza de que deseja remover '%s'?"
+      success: "Pilha '%s' removida."
+    options:
+      force:
+        description: "Forçar a remoção da pilha."
+      name:
+        description: "O nome da pilha a ser removida."
+  export:
+    description: "Exportar a pilha especificada."
+    error:
+      noName: "Nenhum nome especificado."
+      noOutput: "Nenhuma saída especificada."
+    info:
+      success: "Pilha '%s' exportada para '%s'."
+    options:
+      name:
+        description: "O nome da pilha a ser exportada."
+      output:
+        description: "O caminho para o qual exportar a pilha."
+  import:
+    description: "Importar a pilha especificada."
+    error:
+      noInput: "Nenhuma entrada especificada."
+      cannotLoad: "Não é possível carregar a pilha de '%s'."
+    info:
+      success: "Pilha importada de '%s'."
+    options:
+      input:
+        description: "O caminho do qual importar a pilha."
+
+subsystems:
+  description: "Trabalhe com os subsistemas que estão disponíveis no apx."
+  labels:
+    name: "Nome"
+    status: "Status"
+
+  list:
+    description: "Listar todos os subsistemas disponíveis."
+    error:
+    info:
+      noSubsystems: "Não há subsistemas disponíveis. Crie um novo com 'apx subsystems
+        new' ou entre em contato com o administrador do sistema."
+      foundSubsystems: "Encontrados %d subsistemas:\n"
+    options:
+      json:
+        description: "Saída em formato JSON."
+  new:
+    description: "Criar um novo subsistema."
+    error:
+      noStacks: "É necessária uma pilha para criar um subsistema. Crie uma nova com
+        'apx stacks new' ou entre em contato com o administrador do sistema."
+      emptyName: "O nome não pode ser vazio."
+      noName: "Nenhum nome especificado."
+      emptyStack: "A pilha não pode ser vazia."
+      noStack: "Nenhuma pilha especificada."
+      stackDoesNotExist: "A pilha especificada não existe. Crie-a com 'apx stacks
+        new' ou entre em contato com o administrador do sistema."
+      alreadyExists: "Já existe um subsistema com o nome '%s'."
+    info:
+      askName: "Escolha um nome:"
+      selectStack: "Selecione uma pilha [1-%d]:"
+      success: "Subsistema '%s' criado."
+      creatingSubsystem: "Criado o subsistema '%s' com a pilha '%s'…"
+    options:
+      name:
+        description: "O nome do subsistema."
+      stack:
+        description: "A pilha a ser usada."
+  rm:
+    description: "Remover o subsistema especificado."
+    error:
+      noName: "Nenhum nome especificado."
+    info:
+      askConfirmation: "Tem certeza de que deseja remover '%s'?"
+      success: "Subsistema '%s' removido."
+    options:
+      force:
+        description: "Forçar a remoção do subsistema."
+      name:
+        description: "O nome do subsistema a ser removido."
+  reset:
+    description: "Redefinir o subsistema especificado."
+    error:
+      noName: "Nenhum nome especificado."
+    info:
+      askConfirmation: "Tem certeza de que deseja redefinir '%s'?"
+      success: "O subsistema '%s' foi redefinido."
+    options:
+      force:
+        description: "Forçar a redefinição do subsistema."
+      name:
+        description: "O nome do subsistema a ser redefinido."

@@ -1,159 +1,336 @@
-flags:
-  apt: "Installiere Pakete aus der Ubuntu Paketquelle."
-  aur: "Installiere Pakete aus dem AUR (Arch User Repository)."
-  dnf: "Installiere Pakete aus Fedoras DNF (Dandified YUM) Paketquelle."
-  apk: "Installiere Pakete aus der Alpine Paketquelle."
-  zypper: "Installiere Pakete aus den OpenSUSE Paketquellen."
-  xbps: "Installiere Pakete aus den Void (Linux) Paketquellen."
-  nix: "Installiere Pakete aus den Nixpkgs (Nix packages) Paketquellen."
-  swupd: "Pakete aus dem Clear Linux* Store installieren"
-  name: " Auf den benutzerdefinierten Container mit diesem Namen anwenden."
 apx:
-  use: "apx"
-  long: "Apx ist ein Paketmanager mit Unterstützung für mehrere Quellen,\nder es Ihnen\
-    \ ermöglicht, Pakete in einem verwalteten Container zu installieren."
-  short: "Apx ist ein Paketmanager mit Unterstützung für mehrere Quellen,\nder es\
-    \ Ihnen ermöglicht, Pakete in einem verwalteten Container zu installieren."
-  verboseFlag: "detailliertere Ausgabe anzeigen"
-  allFlag: "Für alle Container anwenden."
-  cxl: "Operation abgebrochen auf Benutzeranfrage."
-  assumeYes: "Ohne manuelle Bestätigung fortfahren."
-  notForNix: "Dieser Befehl gilt nicht für die Nix-Umgebung."
-autoremove:
-  use: "autoremove"
-  long: "Alle unbenutzten Pakete automatisch entfernen"
-  short: "Alle unbenutzten Pakete automatisch entfernen"
-clean:
-  use: "clean"
-  long: "Den Zwischenspeicher des Apx Paketmanagers löschen"
-  short: "Den Zwischenspeicher des Apx Paketmanagers löschen"
-enter:
-  use: "enter"
-  long: "Shell in dem verwalteten Container öffnen"
-  short: "Shell in dem verwalteten Container öffnen"
-  failedEnter: "Betreten des verwalteten Containers gescheitert"
-  outside: "Sie befinden sich nun außerhalb des verwalteten Containers."
-export:
-  use: "export <Program/Binärdatei>"
-  long: "Exportieren/Neuerstellen des Desktop-Eintrags eines Programms aus einem verwalteten\
-    \ Container"
-  short: "Exportieren/Neuerstellen des Desktop-Eintrags eines Programms aus einem\
-    \ verwalteten Container"
-  binFlag: "Binärbefehl exportieren"
-init:
-  use: "init"
-  long: "Initialisieren eines verwalteten Containers"
-  short: "Initialisieren eines verwalteten Containers"
-  confirm: "Der Container existiert bereits. Möchten Sie ihn neu initialisieren? Bei\
-    \ diesem Vorgang wird alles entfernt, auch Ihre Dateien im Container."
-  remove: "Fehler beim Entfernen des Containers: %v"
-  create: "Fehler beim Erstellen des Containers: %v"
-install:
-  use: "apx install <Paket>"
-  long: "Pakete in einem verwalteten Container installieren."
-  short: "Pakete in einem verwalteten Container installieren."
-  assumeYes: "Fortfahren ohne manuelle Bestätigung"
-  fixBroken: "Fehlerhafte Abhängigkeiten vor der Installation beheben"
-  noExport: "Keinen Desktop-Eintrag nach der Installation exportieren."
-  sideload: "Paket aus lokaler Datei installieren."
-  sideArgs: "sideload erfordert den Pfad zu einer lokalen Datei"
-  sideUserTemp: "Datei kann nicht in den Benutzer-Temp-Bereich verschoben werden:\
-    \ %s"
-  exportBinPrompt: "Binärdatei %s zum Host exportieren?\nDamit können Sie es direkt\
-    \ von der Shell aufrufen, ohne \"apx run\" zu verwenden.\nSie können es auch später\
-    \ mit \"apx export --bin %s\" exportieren."
-list:
-  use: "list"
-  long: "Installierte Pakete auflisten."
-  short: "Installierte Pakete auflisten."
-  upgradable: "Aktualisierbare Pakete anzeigen"
-  installed: "Installierte Pakete anzeigen"
-nix:
-  use: "nix"
-  long: "Verwalten Sie eine benutzerdefinierte Installation von nix in Ihrem $HOME-Verzeichnis.\n\
-    \nDie `apx nix`-Integration dient als Wrapper für das\nStandard-Nix-Profil. Einmal\
-    \ installiert, können Sie alle Funktionen von\nnix nutzen, ohne den Befehl `apx\
-    \ nix` zu verwenden."
-  short: "Verwalten der Nix-Installation"
-nixinit:
-  use: "init"
-  long: "Initialisiert eine benutzerdefinierte Installation von Nix, indem es $HOME/.nix\
-    \ erstellt und einige SystemD-Einheiten einrichtet, um es als /nix einzuhängen."
-  short: "Nix-Repository initialisieren"
-  confirm: "Dadurch wird ein '.nix'-Ordner in Ihrem Home-Verzeichnis erstellt und\
-    \ einige SystemD-Einheiten werden so eingerichtet, dass dieser Ordner unter /nix\
-    \ eingehängt wird, bevor die Installation ausgeführt wird. Bestätigen Sie 'y',\
-    \ um fortzufahren."
-  unfree: "Möchten Sie \"unfreie\" Pakete ohne Open-Source-Lizenzen zulassen (Visual\
-    \ Studio Code, Spotify, etc.)?"
-  insecure: "Möchten Sie \"unsichere\" Pakete (Software mit bekannten Sicherheitslücken)\
-    \ zulassen?"
-  swcenter: "Möchten Sie das Nix Software Center - einen grafischen Softwaremanager\
-    \ für Nix - installieren?"
-  success: "Installation abgeschlossen. Neustart erforderlich, um nix zu verwenden."
-nixremove:
-  use: "remove"
-  long: "Entfernen Sie das erste passende Paket, das im Standard-Nix-Profil installiert\
-    \ ist.\n\nHinweis: Es ist möglich, mehrere Installationen desselben Pakets zu\
-    \ haben.\n\nWenn Sie mehr Präzision benötigen, verwenden Sie 'nix profile list'\
-    \ und 'nix profile remove'."
-  short: "Ein Nix-Paket entfernen"
-  success: "Entfernung des Pakets abgeschlossen"
-nixinstall:
-  use: "install <pkg>"
-  long: "Installieren Sie ein Paket aus dem `nixpkgs`-Repository als Flake in das\
-    \ Standard-Nix-Profil."
-  short: "Nix-Paket installieren"
-  allowUnfree: "Pakete mit unfreien Lizenzen zulassen"
-  allowInsecure: "Pakete mit bekannten Sicherheitslücken zulassen."
-  error: "Fehler bei der Installation von Paketen"
-  runInit: "Haben Sie den Befehl `init` schon ausgeführt?"
-  success: "Das Paket wurde erfolgreich installiert."
-nixupgrade:
-  success: "Das Paket wurde erfolgreich aktualisiert."
-  atleastone: "Mindestens ein Paketname erforderlich."
-purge:
-  use: "purge <Pakete>"
-  long: "Pakete innerhalb eines verwalteten Containers bereinigen"
-  short: "Pakete innerhalb eines verwalteten Containers bereinigen"
-remove:
-  use: "remove <Paket>"
-  long: "Entfernen von Paketen innerhalb eines verwalteten Containers."
-  short: "Entfernen von Paketen innerhalb eines verwalteten Containers."
-run:
-  use: "run <Befehl>"
-  long: "Ein Programm innerhalb eines verwalteten Containers ausführen."
-  short: "Ein Programm innerhalb eines verwalteten Containers ausführen."
-  nixMsg: "Verwenden Sie nicht `apx run` für Nix-Pakete. Führen Sie sie direkt aus,\
-    \ wie Sie es mit einem nativen Paket tun würden."
-search:
-  use: "search <Paket>"
-  long: "Suche nach Paketen in einem verwalteten Container."
-  short: "Suche nach Paketen in einem verwalteten Container."
-show:
-  use: "show <Paket>"
-  long: "Details zu einem Paket anzeigen"
-  short: "Details zu einem Paket anzeigen"
-  isInstalled: "Gibt nur zurück, ob das Paket installiert ist"
-  found: "%s ist installiert"
-  notFound: "%s ist nicht installiert"
-unexport:
-  use: "unexport <Paket>"
-  long: "Exportieren rückgängig machen/Entfernen des Desktop-Eintrags eines Programms\
-    \ aus einem verwalteten Container.\nWenn das Flag --bin angegeben ist, wird der\
-    \ Link zur Container-Binärdatei entfernt."
-  short: "Exportieren rückgängig machen/Entfernen des Desktop-Eintrags eines Programms\
-    \ aus einem verwalteten Container"
-  binFlag: "Exportieren einer zuvor exportierten Binärdatei rückgängig machen."
-  success: "Exportierte Binärdatei `%s` erfolgreich entfernt."
-update:
-  use: "update"
-  long: "Liste der verfügbaren Pakete aktualisieren"
-  short: "Liste der verfügbaren Pakete aktualisieren"
-  allFlag: "Auf alle Containers anwenden"
-upgrade:
-  use: "upgrade"
-  long: "Aktualisierung des Systems, durch Installieren/Aktualisieren verfügbarer\
-    \ Pakete."
-  short: "Aktualisierung des Systems, durch Installieren/Aktualisieren verfügbarer\
-    \ Pakete."
+  description: "Apx ist ein Package Manager mit Unterstützung für verschiedene Quellen,
+    welcher es Dir erlaubt, Pakete in Subsystems zu installieren."
+  errors:
+    unknownCommand: "Unbekannter Befehl: %s"
+    invalidInput: "Ungültige Eingabe."
+    invalidChoice: Ungültige Auswahl.
+  info:
+    aborting: "Wie gewünscht abgebrochen."
+  terminal:
+    yes: "ja"
+    no: "nein"
+
+runtimeCommand:
+  description: "Arbeiten Sie mit dem angegebenen Subsystem und greifen Sie auf den
+    Paketmanager und die Umgebung zu."
+  error:
+    noPackageSpecified: "Keine Pakete angegeben."
+    cantAccessPkgManager: "Beim Zugriff auf den Package Manager ist ein Fehler aufgetreten:
+      %s"
+    executingCommand: "Beim ausführen des folgenden Befehls ist ein Fehler aufgetreten:
+      %s"
+    noAppNameOrBin: "--app-name oder --bin muss angegeben werden."
+    sameAppOrBin: "--app-name and --bin kann nicht festgelegt werden."
+    exportingApp: "Beim Exportieren der Anwendung ist ein Fehler aufgetreten: %s"
+    exportingBin: "Beim Exportieren der Binärdatei ist ein Fehler aufgetreten: %s"
+    unexportingApp: "Beim Deexportieren der Anwendung ist ein Fehler aufgetreten:
+      %s"
+    unexportingBin: "Beim De-Exportieren der Binärdatei ist ein Fehler aufgetreten:
+      %s"
+  info:
+    unexportedApps: "Anwendungen %d De-Exportiert.\n"
+    exportedApps: "Anwendungen %d exportiert.\n"
+    exportedApp: "Anwendung %s exportiert.\n"
+    exportedBin: "Binärdatei %s exportiert.\n"
+    unexportedApp: "Nicht exportierte Anwendung %s\n"
+    unexportedBin: "Nicht exportierte Binärdatei %s\n"
+  autoremove:
+    description: "Pakete entfernen, die nicht mehr länger benötigt werden."
+  clean:
+    description: "Bereinigen Sie den Cache des Paketmanagers."
+  install:
+    description: "Installieren Sie das angegebene Paket."
+    options:
+      noExport:
+        description: "Exportieren Sie keinen Desktop-Eintrag."
+  list:
+    description: "Alle installierten Pakete auflisten."
+  purge:
+    description: "Bereinigen Sie die angegebenen Pakete."
+  remove:
+    description: "Entfernen Sie die angegebenen Pakete."
+  search:
+    description: "Suche nach Paketen, die der angegebenen Abfrage entsprechen."
+  show:
+    description: "Zeigt Informationen über das angegebene Paket an."
+  update:
+    description: "Liste der verfügbaren Pakete aktualisieren."
+  upgrade:
+    description: "Aktualisieren Sie alle installierten Pakete."
+  enter:
+    description: "Geben Sie die Umgebung des Subsystems ein."
+  export:
+    description: "Exportieren Sie eine Anwendung oder eine Binärdatei aus dem Subsystem."
+    options:
+      appName:
+        description: "Der Name der zu exportierenden Anwendung."
+      bin:
+        description: "Der Name der zu exportierenden Binärdatei."
+      binOutput:
+        description: "Pfad der Binärausgabe (Standard: ~/.local/bin/)."
+  unexport:
+    description: "Eine Anwendung oder eine Binärdatei aus dem Subsystem exportieren."
+    options:
+      appName:
+        description: "Der Name der Anwendung, die nicht exportiert werden soll."
+      bin:
+        description: "Der Name der zu exportierenden Binärdatei."
+      binOutput:
+        description: "Pfad der Binärausgabe (Standard: ~/.local/bin/)."
+
+pkgmanagers:
+  description: "Arbeiten Sie mit den Paketmanagern, die in apx verfügbar sind."
+  labels:
+    name: "Name"
+    builtIn: "Eingebaut"
+
+  list:
+    description: "Alle verfügbaren Paketmanager auflisten."
+    info:
+      noPkgManagers: "Keine Paketmanager verfügbar. Erstellen Sie einen neuen mit
+        'apx pkgmanagers new' oder wenden Sie sich an den Systemadministrator."
+      foundPkgManagers: "%d Paketmanager gefunden:\n"
+    options:
+      json:
+        description: "Ausgabe im JSON-Format."
+  show:
+    description: "Zeigt Informationen über den angegebenen Paketmanager an."
+  new:
+    description: "Erstellen Sie einen neuen Paketmanager."
+
+    error:
+      emptyName: "Der Name darf nicht leer sein."
+      noName: "Kein Name angegeben."
+      emptyCommand: "Der Befehl darf nicht leer sein."
+      noCommand: "Für '%s' wurde kein Befehl angegeben."
+      alreadyExists: "Ein Paketmanager mit dem Namen '%s' existiert bereits."
+    info:
+      askName: "Wählen Sie einen Namen:"
+      askSudo: "Benötigt der Paketmanager sudo zur Ausführung?"
+      askCommand: "Geben Sie den Befehl für '%s' ein:"
+      askOverwrite: "Ein Paketmanager mit dem Namen '%s' existiert bereits. Überschreiben
+        Sie ihn?"
+      success: "Paketmanager '%s' erstellt."
+    options:
+      assumeYes:
+        description: "Beantworten Sie alle Fragen mit Ja."
+      name:
+        description: "Der Name des Paketmanagers."
+      needSudo:
+        description: "Womöglich benötigen der Paketmanager 'sudo' zur Ausführung."
+      autoremove:
+        description: "Der Befehl, der zum automatischen Entfernen von Paketen ausgeführt
+          werden soll."
+      clean:
+        description: "Der Befehl, um den Cache des Paketmanagers zu leeren."
+      install:
+        description: "Dee Befehl zum ausführen der Paketinstallation."
+      list:
+        description: "Der Befehl zum auflisten aller installierten Pakete."
+      purge:
+        description: "Der auszuführende Befehl zum Bereinigen von Paketen."
+      remove:
+        description: "Der auszuführende Befehl zum Entfernen von Paketen."
+      search:
+        description: "Der auszuführende Befehl für die Suche nach Paketen."
+      show:
+        description: "Der auszuführende Befehl, um Informationen über Pakete anzuzeigen."
+      update:
+        description: "Der auszuführende Befehl, um die Liste der verfügbaren Pakete
+          zu aktualisieren."
+      upgrade:
+        description: "Der auszuführende Befehl zum Upgrade von Paketen."
+  rm:
+    description: "Entfernt den angegebenen Paketmanager."
+
+    error:
+      noName: "Kein Name angegeben."
+      inUse: "The package manager is used in %d stacks:\n"
+    info:
+      askConfirmation: "Are you sure you want to remove '%s'?"
+      success: "Removed package manager '%s'."
+      aborting: Aborting removal of package manager '%s'.
+    options:
+      force:
+        description: "Force removal of the package manager."
+      name:
+        description: "The name of the package manager to remove."
+
+stacks:
+  description: "Work with the stacks that are available in apx."
+  labels:
+    name: "Name"
+    builtIn: "Built-in"
+
+  list:
+    description: "List all available stacks."
+    info:
+      noStacks: "No stacks available. Create a new one with 'apx stacks new' or contact
+        the system administrator."
+      foundStacks: "Found %d stacks:\n"
+      aborting: Aborting removal of stack '%s'.
+    options:
+      json:
+        description: "Output in JSON format."
+  show:
+    description: "Show information about the specified stack."
+  new:
+    description: "Create a new stack."
+    error:
+      emptyName: "The name cannot be empty."
+      noName: "No name specified."
+      emptyBase: "The base cannot be empty."
+      noBase: "No base specified."
+      emptyPkgManager: "The package manager cannot be empty."
+      noPkgManager: "No package manager specified."
+      pkgManagerDoesNotExist: "The specified package manager does not exist. Create
+        it with 'apx pkgmanagers new' or contact the system administrator."
+      emptyPackages: "The packages cannot be empty."
+      noPackages: "No packages specified."
+      alreadyExists: "A stack with the name '%s' already exists."
+    info:
+      askName: "Choose a name:"
+      askBase: "Choose a base (e.g. 'vanillaos/pico'):"
+      askPkgManager: "Choose a package manager:"
+      selectPkgManager: "Select a package manager [1-%d]:"
+      noPackages: "You have not provided any package to install in the stack. Do you
+        want to add some now?"
+      confirmPackages: "Do you want to confirm the current packages list?"
+      askPackages: "Please type the packages you want to install in the stack, separated
+        by a space:"
+      success: "Created stack '%s'."
+    options:
+      assumeYes:
+        description: "Assume yes to all prompts."
+      name:
+        description: "The name of the stack."
+      base:
+        description: "The base subsystem to use."
+      packages:
+        description: "The packages to install."
+      pkgManager:
+        description: "The package manager to use."
+  update:
+    description: "Update the specified stack."
+    error:
+      noName: "No name specified."
+      noBase: "No base specified."
+      noPkgManager: "No package manager specified."
+      pkgManagerDoesNotExist: "The specified package manager does not exist. Create
+        it with 'apx pkgmanagers new' or contact the system administrator."
+    info:
+      askBase: "Type a new base or confirm the current one (%s):"
+      askPkgManager: "Choose a new package manager or confirm the current one (%s):"
+      askPackages: "Type the packages you want to install in the stack, separated
+        by a space, or confirm the current ones (%s):"
+      success: "Updated stack '%s'."
+
+    options:
+      assumeYes:
+        description: "Assume yes to all prompts."
+      name:
+        description: "The name of the stack."
+      base:
+        description: "The base subsystem to use."
+      packages:
+        description: "The packages to install."
+      pkgManager:
+        description: "The package manager to use."
+  rm:
+    description: "Remove the specified stack."
+    error:
+      noName: "No name specified."
+    info:
+      askConfirmation: "Are you sure you want to remove '%s'?"
+      success: "Removed stack '%s'."
+    options:
+      force:
+        description: "Force removal of the stack."
+      name:
+        description: "The name of the stack to remove."
+  export:
+    description: "Export the specified stack."
+    error:
+      noName: "No name specified."
+      noOutput: "No output specified."
+    info:
+      success: "Exported stack '%s' to '%s'."
+    options:
+      name:
+        description: "The name of the stack to export."
+      output:
+        description: "The path to export the stack to."
+  import:
+    description: "Import the specified stack."
+    error:
+      noInput: "No input specified."
+      cannotLoad: "Cannot load stack from '%s'."
+    info:
+      success: "Imported stack from '%s'."
+    options:
+      input:
+        description: "The path to import the stack from."
+
+subsystems:
+  description: "Work with the subsystems that are available in apx."
+  labels:
+    name: "Name"
+    status: "Status"
+
+  list:
+    description: "List all available subsystems."
+    error:
+    info:
+      noSubsystems: "No subsystems available. Create a new one with 'apx subsystems
+        new' or contact the system administrator."
+      foundSubsystems: "Found %d subsystems:\n"
+    options:
+      json:
+        description: "Output in JSON format."
+  new:
+    description: "Create a new subsystem."
+    error:
+      noStacks: "A stack is needed to create a subsystem. Create a new one with 'apx
+        stacks new' or contact the system administrator."
+      emptyName: "The name cannot be empty."
+      noName: "No name specified."
+      emptyStack: "The stack cannot be empty."
+      noStack: "No stack specified."
+      stackDoesNotExist: "The specified stack does not exist. Create it with 'apx
+        stacks new' or contact the system administrator."
+      alreadyExists: "A subsystem with the name '%s' already exists."
+    info:
+      askName: "Choose a name:"
+      selectStack: "Select a stack [1-%d]:"
+      success: "Created subsystem '%s'."
+      creatingSubsystem: "Created subsystem '%s' with stack '%s'…"
+    options:
+      name:
+        description: "The name of the subsystem."
+      stack:
+        description: "The stack to use."
+  rm:
+    description: "Remove the specified subsystem."
+    error:
+      noName: "No name specified."
+    info:
+      askConfirmation: "Are you sure you want to remove '%s'?"
+      success: "Removed subsystem '%s'."
+    options:
+      force:
+        description: "Force removal of the subsystem."
+      name:
+        description: "The name of the subsystem to remove."
+  reset:
+    description: "Reset the specified subsystem."
+    error:
+      noName: "No name specified."
+    info:
+      askConfirmation: "Are you sure you want to reset '%s'?"
+      success: "The subsystem '%s' has been reset."
+    options:
+      force:
+        description: "Force reset of the subsystem."
+      name:
+        description: "The name of the subsystem to reset."

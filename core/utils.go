@@ -2,12 +2,15 @@ package core
 
 import (
 	"fmt"
+	"io"
 	"os"
 	"os/user"
 	"path/filepath"
+	"time"
+
+	"github.com/olekukonko/tablewriter"
 )
 
-var apxDir = "/etc/apx"
 var ProcessPath string
 
 func init() {
@@ -71,4 +74,55 @@ func CopyToUserTemp(path string) (string, error) {
 	}
 
 	return newPath, nil
+}
+
+// getPrettifiedDate returns a human readable date from a timestamp
+func getPrettifiedDate(date string) string {
+	t, err := time.Parse("2006-01-02 15:04:05.999999999 -0700 MST", date)
+	if err != nil {
+		return date
+	}
+
+	// If the date is less than 24h ago, return the time since
+	if t.After(time.Now().Add(-24 * time.Hour)) {
+		duration := time.Since(t).Round(time.Hour)
+		hours := int(duration.Hours())
+		return fmt.Sprintf("%dh ago", hours)
+	}
+
+	return t.Format("02 Jan 2006 15:04:05")
+}
+
+func CreateApxTable(writer io.Writer) *tablewriter.Table {
+	table := tablewriter.NewWriter(writer)
+	table.SetColumnSeparator("┊")
+	table.SetCenterSeparator("┼")
+	table.SetRowSeparator("┄")
+	table.SetHeaderLine(true)
+	table.SetAlignment(tablewriter.ALIGN_LEFT)
+	table.SetHeaderAlignment(tablewriter.ALIGN_LEFT)
+	table.SetRowLine(true)
+
+	return table
+}
+
+func CopyFile(src, dst string) error {
+	source, err := os.Open(src)
+	if err != nil {
+		return err
+	}
+	defer source.Close()
+
+	destination, err := os.Create(dst)
+	if err != nil {
+		return err
+	}
+	defer destination.Close()
+
+	_, err = io.Copy(destination, source)
+	if err != nil {
+		return err
+	}
+
+	return nil
 }

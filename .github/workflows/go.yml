@@ -3,21 +3,19 @@ name: Go
 on:
   push:
     branches: [ "main" ]
-  pull_request_target:
-    types: [opened, synchronize, reopened]
 
 jobs:
 
   build:
     runs-on: ubuntu-latest
     container:
-      image: registry.vanillaos.org/vanillaos/pico:main
+      image: ghcr.io/vanilla-os/pico:main
 
     steps:
     - uses: actions/checkout@v3
 
     - name: Set up Go
-      uses: actions/setup-go@v3
+      uses: actions/setup-go@v4
       with:
         go-version: 1.19
 
@@ -28,18 +26,30 @@ jobs:
 
     - name: Build
       run: go build -o apx
-    
+
     - name: Compress
       run: tar -czvf apx.tar.gz apx
 
-    - uses: "marvinpinto/action-automatic-releases@latest"
+    - name: Compress-manpage
+      run: tar -czvf apx-man.tar.gz man/man1/apx.1
+
+    - uses: softprops/action-gh-release@v1
       with:
-        repo_token: "${{ secrets.GITHUB_TOKEN }}"
-        automatic_release_tag: "continuous"
+        token: "${{ secrets.GITHUB_TOKEN }}"
+        tag_name: "continuous"
         prerelease: true
-        title: "Continuous Build"
+        name: "Continuous Build"
         files: |
           apx.tar.gz
+          apx-man.tar.gz
+
+    - uses: actions/upload-artifact@v3
+      with:
+        name: apx
+        path: |
+          apx.tar.gz
+          apx-man.tar.gz
+
   sonar:
     name: Sonar
     runs-on: ubuntu-latest

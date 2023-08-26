@@ -10,8 +10,8 @@ build:
 install:
 	install -Dm755 ${BINARY_NAME} ${DESTDIR}${PREFIX}/bin/${BINARY_NAME}
 	sudo mkdir -p ${DESTDIR}/etc/apx
-	sed -i 's|/usr/share/apx/distrobox|${PREFIX}/share/apx/distrobox|g' config/config.json
-	sudo install -Dm644 config/config.json ${DESTDIR}/etc/apx/config.json
+	sed -i 's|/usr/share/apx/distrobox|${PREFIX}/share/apx/distrobox|g' config/apx.json
+	sudo install -Dm644 config/apx.json ${DESTDIR}/etc/apx/apx.json
 	mkdir -p ${DESTDIR}${PREFIX}/share/apx
 	sh distrobox/install --prefix ${DESTDIR}${PREFIX}/share/apx
 	mv ${DESTDIR}${PREFIX}/share/apx/bin/distrobox* ${DESTDIR}${PREFIX}/share/apx/.
@@ -20,7 +20,6 @@ install-manpages:
 	mkdir -p ${DESTDIR}${PREFIX}/share/man/man1
 	cp -r man/* ${DESTDIR}${PREFIX}/share/man/.
 	chmod 644 ${DESTDIR}${PREFIX}/share/man/man1/apx*
-	chmod 644 ${DESTDIR}${PREFIX}/share/man/*/man1/apx*
 
 uninstall:
 	sudo rm ${DESTDIR}${PREFIX}/bin/apx
@@ -29,7 +28,6 @@ uninstall:
 
 uninstall-manpages:
 	sudo rm -rf ${DESTDIR}${PREFIX}/share/man/man1/apx*
-	sudo rm -rf ${DESTDIR}${PREFIX}/share/man/*/man1/apx*
 
 clean:
 	rm -f ${BINARY_NAME}
