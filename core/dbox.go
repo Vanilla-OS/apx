@@ -86,6 +86,13 @@ func (d *dbox) RunCommand(command string, args []string, engineFlags []string, u
 	// ignored in commands like "enter"
 	finalArgs := []string{command}
 
+	// NOTE: for engine-specific commands, we need to use pkexec for rootfull
+	//		 containers, since podman does not offer a dedicated flag for this.
+	if rootFull && useEngine {
+		entrypoint = "pkexec"
+		finalArgs = []string{d.EngineBinary, command}
+	}
+
 	cmd := exec.Command(entrypoint, finalArgs...)
 
 	if !captureOutput && !muteOutput {
@@ -115,7 +122,7 @@ func (d *dbox) RunCommand(command string, args []string, engineFlags []string, u
 
 	// NOTE: the root flag is not being used by the Apx CLI, but it's useful
 	//		 for those using Apx as a library, e.g. VSO.
-	if rootFull {
+	if rootFull && !useEngine {
 		cmd.Args = append(cmd.Args, "--root")
 	}
 
