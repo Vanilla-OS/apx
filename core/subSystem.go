@@ -128,6 +128,10 @@ func (s *SubSystem) Create() error {
 		labels["hasInit"] = "true"
 	}
 
+	if s.IsUnshared {
+		labels["unshared"] = "true"
+	}
+
 	err = dbox.CreateContainer(
 		s.InternalName,
 		s.Stack.Base,
@@ -167,6 +171,8 @@ func LoadSubSystem(name string, isRootFull bool) (*SubSystem, error) {
 		Status:       container.Status,
 		HasInit:      container.Labels["hasInit"] == "true",
 		IsManaged:    container.Labels["managed"] == "true",
+		IsRootfull:   isRootFull,
+		IsUnshared:   container.Labels["unshared"] == "true",
 	}, nil
 }
 
