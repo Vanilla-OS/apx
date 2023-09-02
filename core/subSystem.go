@@ -28,9 +28,10 @@ type SubSystem struct {
 	ExportedPrograms map[string]map[string]string
 	HasInit          bool
 	IsManaged        bool
+	IsRootfull       bool
 }
 
-func NewSubSystem(name string, stack *Stack, hasInit bool, isManaged bool) (*SubSystem, error) {
+func NewSubSystem(name string, stack *Stack, hasInit bool, isManaged bool, IsRootfull bool) (*SubSystem, error) {
 	internalName := genInternalName(name)
 	return &SubSystem{
 		InternalName: internalName,
@@ -38,6 +39,7 @@ func NewSubSystem(name string, stack *Stack, hasInit bool, isManaged bool) (*Sub
 		Stack:        stack,
 		HasInit:      hasInit,
 		IsManaged:    isManaged,
+		IsRootfull:   IsRootfull,
 	}, nil
 }
 
@@ -130,6 +132,7 @@ func (s *SubSystem) Create() error {
 		s.Stack.Packages,
 		labels,
 		s.HasInit,
+		s.IsRootfull,
 	)
 	if err != nil {
 		return err
@@ -138,14 +141,14 @@ func (s *SubSystem) Create() error {
 	return nil
 }
 
-func LoadSubSystem(name string) (*SubSystem, error) {
+func LoadSubSystem(name string, isRootFull bool) (*SubSystem, error) {
 	dbox, err := NewDbox()
 	if err != nil {
 		return nil, err
 	}
 
 	internalName := genInternalName(name)
-	container, err := dbox.GetContainer(internalName)
+	container, err := dbox.GetContainer(internalName, isRootFull)
 	if err != nil {
 		return nil, err
 	}
@@ -164,13 +167,13 @@ func LoadSubSystem(name string) (*SubSystem, error) {
 	}, nil
 }
 
-func ListSubSystems(includeManaged bool) ([]*SubSystem, error) {
+func ListSubSystems(includeManaged bool, includeRootFull bool) ([]*SubSystem, error) {
 	dbox, err := NewDbox()
 	if err != nil {
 		return nil, err
 	}
 
-	containers, err := dbox.ListContainers()
+	containers, err := dbox.ListContainers(includeRootFull)
 	if err != nil {
 		return nil, err
 	}
@@ -215,7 +218,7 @@ func (s *SubSystem) Exec(captureOutput bool, args ...string) (string, error) {
 		return "", err
 	}
 
-	out, err := dbox.ContainerExec(s.InternalName, captureOutput, false, args...)
+	out, err := dbox.ContainerExec(s.InternalName, captureOutput, false, s.IsRootfull, args...)
 	if err != nil {
 		return "", err
 	}
@@ -232,7 +235,7 @@ func (s *SubSystem) Enter() error {
 	if err != nil {
 		return err
 	}
-	return dbox.ContainerEnter(s.InternalName)
+	return dbox.ContainerEnter(s.InternalName, s.IsRootfull)
 }
 
 func (s *SubSystem) Remove() error {
@@ -241,7 +244,7 @@ func (s *SubSystem) Remove() error {
 		return err
 	}
 
-	return dbox.ContainerDelete(s.InternalName)
+	return dbox.ContainerDelete(s.InternalName, s.IsRootfull)
 }
 
 func (s *SubSystem) Reset() error {
@@ -259,7 +262,7 @@ func (s *SubSystem) ExportDesktopEntry(appName string) error {
 		return err
 	}
 
-	return dbox.ContainerExportDesktopEntry(s.InternalName, appName, fmt.Sprintf("on %s", s.Name))
+	return dbox.ContainerExportDesktopEntry(s.InternalName, appName, fmt.Sprintf("on %s", s.Name), s.IsRootfull)
 }
 
 func (s *SubSystem) ExportDesktopEntries(args ...string) (int, error) {
@@ -327,7 +330,7 @@ func (s *SubSystem) ExportBin(binary string, exportPath string) error {
 			return err
 		}
 
-		err = dbox.ContainerExportBin(s.InternalName, binary, tmpExportPath)
+		err = dbox.ContainerExportBin(s.InternalName, binary, tmpExportPath, s.IsRootfull)
 		if err != nil {
 			return err
 		}
@@ -355,7 +358,7 @@ func (s *SubSystem) ExportBin(binary string, exportPath string) error {
 		return err
 	}
 
-	err = dbox.ContainerExportBin(s.InternalName, binary, exportPath)
+	err = dbox.ContainerExportBin(s.InternalName, binary, exportPath, s.IsRootfull)
 	if err != nil {
 		return err
 	}
@@ -369,7 +372,7 @@ func (s *SubSystem) UnexportDesktopEntry(appName string) error {
 		return err
 	}
 
-	return dbox.ContainerUnexportDesktopEntry(s.InternalName, appName)
+	return dbox.ContainerUnexportDesktopEntry(s.InternalName, appName, s.IsRootfull)
 }
 
 func (s *SubSystem) UnexportBin(binary string, exportPath string) error {
@@ -378,5 +381,5 @@ func (s *SubSystem) UnexportBin(binary string, exportPath string) error {
 		return err
 	}
 
-	return dbox.ContainerUnexportBin(s.InternalName, binary, exportPath)
+	return dbox.ContainerUnexportBin(s.InternalName, binary, exportPath, s.IsRootfull)
 }

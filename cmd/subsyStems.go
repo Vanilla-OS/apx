@@ -133,7 +133,7 @@ func NewSubSystemsCommand() *cmdr.Command {
 func listSubSystems(cmd *cobra.Command, args []string) error {
 	jsonFlag, _ := cmd.Flags().GetBool("json")
 
-	subSystems, err := core.ListSubSystems(false)
+	subSystems, err := core.ListSubSystems(false, false)
 	if err != nil {
 		return err
 	}
@@ -213,7 +213,7 @@ func newSubSystem(cmd *cobra.Command, args []string) error {
 		stackName = stacks[stackIndex-1].Name
 	}
 
-	checkSubSystem, err := core.LoadSubSystem(subSystemName)
+	checkSubSystem, err := core.LoadSubSystem(subSystemName, false)
 	if err == nil {
 		cmdr.Error.Printf(apx.Trans("subsystems.new.error.alreadyExists"), checkSubSystem.Name)
 		return nil
@@ -224,7 +224,7 @@ func newSubSystem(cmd *cobra.Command, args []string) error {
 		return err
 	}
 
-	subSystem, err := core.NewSubSystem(subSystemName, stack, false, false)
+	subSystem, err := core.NewSubSystem(subSystemName, stack, false, false, false)
 	if err != nil {
 		return err
 	}
@@ -260,7 +260,7 @@ func rmSubSystem(cmd *cobra.Command, args []string) error {
 		}
 	}
 
-	subSystem, err := core.LoadSubSystem(subSystemName)
+	subSystem, err := core.LoadSubSystem(subSystemName, false)
 	if err != nil {
 		return err
 	}
@@ -294,7 +294,7 @@ func resetSubSystem(cmd *cobra.Command, args []string) error {
 		}
 	}
 
-	subSystem, err := core.LoadSubSystem(subSystemName)
+	subSystem, err := core.LoadSubSystem(subSystemName, false)
 	if err != nil {
 		return err
 	}
