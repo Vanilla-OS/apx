@@ -10,6 +10,7 @@ package main
 
 import (
 	"embed"
+	"os"
 
 	"github.com/vanilla-os/apx/cmd"
 	"github.com/vanilla-os/apx/core"
@@ -28,6 +29,12 @@ func main() {
 	core.NewStandardApx()
 
 	apx = cmd.New(Version, fs)
+
+	// check if root, exit if so
+	if core.RootCheck(false) {
+		cmdr.Error.Println(apx.Trans("apx.errors.noRoot"))
+		os.Exit(1)
+	}
 
 	// root command
 	root := cmd.NewRootCommand(Version)
