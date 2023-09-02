@@ -29,9 +29,10 @@ type SubSystem struct {
 	HasInit          bool
 	IsManaged        bool
 	IsRootfull       bool
+	IsUnshared       bool
 }
 
-func NewSubSystem(name string, stack *Stack, hasInit bool, isManaged bool, IsRootfull bool) (*SubSystem, error) {
+func NewSubSystem(name string, stack *Stack, hasInit bool, isManaged bool, isRootfull bool, isUnshared bool) (*SubSystem, error) {
 	internalName := genInternalName(name)
 	return &SubSystem{
 		InternalName: internalName,
@@ -39,7 +40,8 @@ func NewSubSystem(name string, stack *Stack, hasInit bool, isManaged bool, IsRoo
 		Stack:        stack,
 		HasInit:      hasInit,
 		IsManaged:    isManaged,
-		IsRootfull:   IsRootfull,
+		IsRootfull:   isRootfull,
+		IsUnshared:   isUnshared,
 	}, nil
 }
 
@@ -133,6 +135,7 @@ func (s *SubSystem) Create() error {
 		labels,
 		s.HasInit,
 		s.IsRootfull,
+		s.IsUnshared,
 	)
 	if err != nil {
 		return err
