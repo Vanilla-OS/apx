@@ -13,13 +13,6 @@ import (
 
 var ProcessPath string
 
-func init() {
-	if RootCheck(false) {
-		fmt.Println("Do not run Apx as root!")
-		os.Exit(1)
-	}
-}
-
 func RootCheck(display bool) bool {
 	if os.Geteuid() != 0 {
 		if display {

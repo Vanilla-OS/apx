@@ -5,6 +5,7 @@ apx:
     unknownCommand: "Unknown command: %s"
     invalidInput: "Invalid input."
     invalidChoice: "Invalid choice."
+    noRoot: "Do not run Apx as root."
   info:
     aborting: "Aborting as requested."
   terminal:
