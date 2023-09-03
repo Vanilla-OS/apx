@@ -5,6 +5,7 @@ apx:
     unknownCommand: "Bilinmeyen komut: %s"
     invalidInput: "Geçersiz girdi."
     invalidChoice: Geçersiz seçim.
+    noRoot: Do not run Apx as root.
   info:
     aborting: "İstek üzerine iptal ediliyor."
   terminal:
@@ -24,6 +25,7 @@ runtimeCommand:
     exportingBin: "İkili dosyayı çıkartırken bir hata meydana geldi: %s"
     unexportingApp: "Uygulama dışa aktarılırken bir hata oluştu: %s"
     unexportingBin: "İkili dosyayı kaldırırken bir hata meydana geldi: %s"
+    enteringContainer: 'An error occurred while entering the container: %s'
   info:
     unexportedApps: "%d uygulama kaldırıldı\n"
     exportedApps: "%d uygulama çıkartıldı\n"

@@ -23,6 +23,7 @@ runtimeCommand:
     exportingBin: "Падчас экспарту двайковага файла адбылася памылка: %s"
     unexportingApp: "Адбылася памылка пры скасаванні экспарту прыкладання: %s"
     unexportingBin: "Адбылася памылка падчас адмены экспарту двайковага файла: %s"
+    enteringContainer: 'An error occurred while entering the container: %s'
   info:
     unexportedApps: "Неэкспартаваныя праграмы: %d"
     exportedApps: "Экспартавана %d прыкладанняў"

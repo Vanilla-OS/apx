@@ -25,6 +25,7 @@ runtimeCommand:
     exportingBin: "An error occurred while exporting the binary: %s"
     unexportingApp: "An error occurred while unexporting the application: %s"
     unexportingBin: "An error occurred while unexporting the binary: %s"
+    enteringContainer: 'An error occurred while entering the container: %s'
   info:
     unexportedApps: "%d apps niet langer geëxporteerd\n"
     exportedApps: "%d apps geëxporteerd\n"

@@ -24,6 +24,7 @@ runtimeCommand:
     exportingBin: "Ett fel inträffade vid export av binär: %s"
     unexportingApp: "Ett fel uppstod när programmet skulle avexporteras: %s"
     unexportingBin: "Ett fel uppstod när binär: %s skulle avexporteras"
+    enteringContainer: 'An error occurred while entering the container: %s'
   info:
     unexportedApps: "Oexporterade %d program\n"
     exportedApps: "Exporterade %d program\n"

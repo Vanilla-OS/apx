@@ -5,6 +5,7 @@ apx:
     unknownCommand: "Commande inconnue : %s"
     invalidInput: "Entrée invalide."
     invalidChoice: Choix non valide.
+    noRoot: Do not run Apx as root.
   info:
     aborting: "Annulation."
   terminal:
@@ -29,6 +30,7 @@ runtimeCommand:
       %s"
     unexportingBin: "Une erreur s'est produite lors de la désexportation du binaire:
       %s"
+    enteringContainer: 'An error occurred while entering the container: %s'
   info:
     unexportedApps: "%d applications non exportées\n"
     exportedApps: "%d applications exportées\n"

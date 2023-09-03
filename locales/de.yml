@@ -28,6 +28,7 @@ runtimeCommand:
       %s"
     unexportingBin: "Beim De-Exportieren der Binärdatei ist ein Fehler aufgetreten:
       %s"
+    enteringContainer: 'An error occurred while entering the container: %s'
   info:
     unexportedApps: "%d Anwendungen deexportiert"
     exportedApps: "%d Anwendungen exportiert"
