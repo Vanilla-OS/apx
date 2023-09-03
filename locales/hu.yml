@@ -5,6 +5,7 @@ apx:
     unknownCommand: "Ismeretlen parancs: %s"
     invalidInput: "Érvénytelen bemenet."
     invalidChoice: Invalid choice.
+    noRoot: Do not run Apx as root.
   info:
     aborting: "Megszakítás kérés szerint."
   terminal:
@@ -24,6 +25,7 @@ runtimeCommand:
     exportingBin: "Hiba történt a bináris fájl exportálása során: %s"
     unexportingApp: "An error occurred while unexporting the application: %s"
     unexportingBin: "An error occurred while unexporting the binary: %s"
+    enteringContainer: 'An error occurred while entering the container: %s'
   info:
     unexportedApps: "Unexported %d applications\n"
     exportedApps: "Exported %d applications\n"

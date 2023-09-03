@@ -4,6 +4,7 @@ apx:
     unknownCommand: "أمر غير معروف: %s"
     invalidInput: "المدخل غير صالح."
     invalidChoice: خيار غير صالح.
+    noRoot: Do not run Apx as root.
   info:
     aborting: "يتم الالغاء."
   terminal:
@@ -22,6 +23,7 @@ runtimeCommand:
     exportingBin: "حدث خطأ أثناء تصدير البرنامج: %s"
     unexportingApp: "حدث خطأ أثناء إلغاء تصدير التطبيق: %s"
     unexportingBin: "حدث خطأ أثناء إلغاء تصدير البرنامج: %s"
+    enteringContainer: 'An error occurred while entering the container: %s'
   info:
     unexportedApps: "%d تطبيقات غير مصدرة\n"
     exportedApps: "%d تطبيقات مصدرة\n"

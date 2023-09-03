@@ -5,6 +5,7 @@ apx:
     unknownCommand: "Άγνωστη εντολή: %s"
     invalidInput: "Μη έγκυρη είσοδος."
     invalidChoice: "Μη έγκυρη επιλογή."
+    noRoot: Do not run Apx as root.
   info:
     aborting: "Πραγματοποιείται ματαίωση, όπως ζητήθηκε."
   terminal:
@@ -27,6 +28,7 @@ runtimeCommand:
     unexportingApp: "Προέκυψε ένα σφάλμα κατά την άρση εξαγωγής της εφαρμογής: %s"
     unexportingBin: "Προέκυψε ένα σφάλμα κατά την άρση εξαγωγής του εκτελέσιμου αρχείου:
       %s"
+    enteringContainer: 'An error occurred while entering the container: %s'
   info:
     unexportedApps: "Ήρθη η εξαγωγή %d εφαρμογών"
     exportedApps: "Εξήχθησαν %d εφαρμογές"

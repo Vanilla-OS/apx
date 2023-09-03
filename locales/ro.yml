@@ -5,6 +5,7 @@ apx:
     unknownCommand: "Comanda necunoscută: %s"
     invalidInput: "Intrare nevalidă."
     invalidChoice: Alegere invalidă.
+    noRoot: Do not run Apx as root.
   info:
     aborting: "Se anulează conform solicitării."
   terminal:
@@ -25,6 +26,7 @@ runtimeCommand:
     exportingBin: "S-a produs o eroare în timpul exportului binarului: %s"
     unexportingApp: "S-a produs o eroare în timpul exportării aplicației: %s"
     unexportingBin: "A apărut o eroare în timpul neexportării binarului: %s"
+    enteringContainer: 'An error occurred while entering the container: %s'
   info:
     unexportedApps: "Aplicații neexportate %d\n"
     exportedApps: "Aplicații exportate %d\n"
