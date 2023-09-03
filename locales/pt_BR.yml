@@ -25,14 +25,14 @@ runtimeCommand:
     exportingBin: "Ocorreu um erro ao exportar o binário: %s"
     unexportingApp: "Ocorreu um erro ao desfazer a exportação do aplicativo: %s"
     unexportingBin: "Ocorreu um erro ao desfazer a exportação do binário: %s"
-    enteringContainer: 'An error occurred while entering the container: %s'
+    enteringContainer: 'Ocorreu um erro ao entrar no contêiner: %s'
   info:
-    unexportedApps: "Desfeita a exportação de %d aplicativos\n"
-    exportedApps: "Exportados %d aplicativos\n"
-    exportedApp: "Aplicativo %s exportado\n"
-    exportedBin: "Binário %s exportado\n"
-    unexportedApp: "Desfeita a exportação do aplicativo %s\n"
-    unexportedBin: "Desfeita a exportação do binário %s\n"
+    unexportedApps: "Desfeita a exportação de %d aplicativos"
+    exportedApps: "Exportados %d aplicativos"
+    exportedApp: "Aplicativo %s exportado"
+    exportedBin: "Binário %s exportado"
+    unexportedApp: "Desfeita a exportação do aplicativo %s"
+    unexportedBin: "Desfeita a exportação do binário %s"
   autoremove:
     description: "Remover pacotes que não são mais necessários."
   clean:
@@ -89,7 +89,7 @@ pkgmanagers:
     info:
       noPkgManagers: "Nenhum gerenciador de pacote disponível. Crie um utilizando
         'apx pkgmanagers new' ou entre em contato com o administrador do sistema."
-      foundPkgManagers: "Encontrados %d gerenciadores de pacotes:\n"
+      foundPkgManagers: "Encontrados %d gerenciadores de pacotes"
     options:
       json:
         description: "Saída em formato JSON."
@@ -144,9 +144,9 @@ pkgmanagers:
 
     error:
       noName: "Nenhum nome especificado."
-      inUse: "O gerenciador de pacotes é utilizado em %d pilhas:\n"
+      inUse: "O gerenciador de pacotes é utilizado em %d pilhas:"
     info:
-      askConfirmation: "Você tem certeza que deseja remover '%s'?"
+      askConfirmation: "Você tem certeza que deseja remover '%s'? [y/N]"
       success: "Gerenciador de pacotes '%s' removido."
       aborting: Abortando a remoção do gerenciador de pacotes '%s'.
     options:
@@ -166,7 +166,7 @@ stacks:
     info:
       noStacks: "Não há pilhas disponíveis. Crie uma nova com 'apx stacks new' ou
         entre em contato com o administrador do sistema."
-      foundStacks: "Encontrou %d pilhas:\n"
+      foundStacks: "Encontrou %d pilhas:"
       aborting: Abortando a remoção da pilha '%s'.
     options:
       json:
@@ -240,7 +240,7 @@ stacks:
     error:
       noName: "Nenhum nome especificado."
     info:
-      askConfirmation: "Tem certeza de que deseja remover '%s'?"
+      askConfirmation: "Tem certeza de que deseja remover '%s'? [y/N]"
       success: "Pilha '%s' removida."
     options:
       force:
@@ -282,7 +282,7 @@ subsystems:
     info:
       noSubsystems: "Não há subsistemas disponíveis. Crie um novo com 'apx subsystems
         new' ou entre em contato com o administrador do sistema."
-      foundSubsystems: "Encontrados %d subsistemas:\n"
+      foundSubsystems: "Encontrados %d subsistemas:"
     options:
       json:
         description: "Saída em formato JSON."
@@ -302,7 +302,7 @@ subsystems:
       askName: "Escolha um nome:"
       selectStack: "Selecione uma pilha [1-%d]:"
       success: "Subsistema '%s' criado."
-      creatingSubsystem: "Criado o subsistema '%s' com a pilha '%s'…"
+      creatingSubsystem: "Criando o subsistema '%s' com a pilha '%s'…"
     options:
       name:
         description: "O nome do subsistema."
@@ -313,7 +313,7 @@ subsystems:
     error:
       noName: "Nenhum nome especificado."
     info:
-      askConfirmation: "Tem certeza de que deseja remover '%s'?"
+      askConfirmation: "Tem certeza de que deseja remover '%s'? [y/N]"
       success: "Subsistema '%s' removido."
     options:
       force:
@@ -325,7 +325,7 @@ subsystems:
     error:
       noName: "Nenhum nome especificado."
     info:
-      askConfirmation: "Tem certeza de que deseja redefinir '%s'?"
+      askConfirmation: "Tem certeza de que deseja redefinir '%s'? [y/N]"
       success: "O subsistema '%s' foi redefinido."
     options:
       force:
