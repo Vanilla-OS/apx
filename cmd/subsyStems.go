@@ -66,7 +66,7 @@ func NewSubSystemsCommand() *cmdr.Command {
 		cmdr.NewStringFlag(
 			"name",
 			"n",
-			apx.Trans("subsystems.new.options.name"),
+			apx.Trans("subsystems.new.options.name.description"),
 			"",
 		),
 	)
@@ -83,7 +83,7 @@ func NewSubSystemsCommand() *cmdr.Command {
 		cmdr.NewStringFlag(
 			"name",
 			"n",
-			apx.Trans("subsystems.rm.options.name"),
+			apx.Trans("subsystems.rm.options.name.description"),
 			"",
 		),
 	)
