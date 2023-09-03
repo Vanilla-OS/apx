@@ -31,7 +31,8 @@ runtimeCommand:
       dell'applicazione: %s"
     unexportingBin: "Si è verificato un errore durante l'annullamento dell'esportazione
       del file binario: %s"
-    enteringContainer: 'An error occurred while entering the container: %s'
+    enteringContainer: 'Si è verificato un errore durante l''entrata nel container:
+      %s'
   info:
     unexportedApps: "Rimosse %d applicazioni"
     exportedApps: "Esportate %d applicazioni"
