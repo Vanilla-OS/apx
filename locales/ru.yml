@@ -24,7 +24,7 @@ runtimeCommand:
     exportingBin: "Произошла ошибка при экспорте двоичного файла: %s"
     unexportingApp: "Произошла ошибка при деэкспортировании приложения: %s"
     unexportingBin: "Произошла ошибка при деэкспортировании двоичного файла: %s"
-    enteringContainer: 'An error occurred while entering the container: %s'
+    enteringContainer: 'Произошла ошибка при входе в контейнер: %s'
   info:
     unexportedApps: "Деэкспортировано %d приложений"
     exportedApps: "Экспортировано %d приложений"
