@@ -22,7 +22,7 @@ runtimeCommand:
     exportingBin: "匯出二進位檔案時發生錯誤：%s"
     unexportingApp: "移除匯出的應用程式時發生錯誤：%s"
     unexportingBin: "移除匯出的二進位檔案時發生錯誤：%s"
-    enteringContainer: 'An error occurred while entering the container: %s'
+    enteringContainer: '進入容器時發生錯誤：%s'
   info:
     unexportedApps: "已移除匯出的 %d 個應用程式"
     exportedApps: "已匯出 %d 個應用程式"
