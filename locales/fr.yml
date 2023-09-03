@@ -30,14 +30,15 @@ runtimeCommand:
       %s"
     unexportingBin: "Une erreur s'est produite lors de la désexportation du binaire:
       %s"
-    enteringContainer: 'An error occurred while entering the container: %s'
+    enteringContainer: 'Une erreur s''est produite lors de l''entrée dans le conteneur
+      : %s'
   info:
-    unexportedApps: "%d applications non exportées\n"
-    exportedApps: "%d applications exportées\n"
-    exportedApp: "Application exportée %s\n"
-    exportedBin: "Binaire exporté %s\n"
-    unexportedApp: "Application non exportée %s\n"
-    unexportedBin: "Binaire non exporté %s\n"
+    unexportedApps: "Applications supprimées de l'exportation %d"
+    exportedApps: "%d applications exportées"
+    exportedApp: "Application exportée %s"
+    exportedBin: "Binaire exporté %s"
+    unexportedApp: "Applications supprimées de l'exportation %s"
+    unexportedBin: "Binaire supprimées de l'exportation %s"
   autoremove:
     description: "Supprimer les paquets qui ne sont plus nécessaires."
   clean:
@@ -93,7 +94,7 @@ pkgmanagers:
     info:
       noPkgManagers: "Aucun gestionnaire de paquets n'est disponible. Créez-en un
         nouveau avec 'apx pkgmanagers new' ou contactez l'administrateur système."
-      foundPkgManagers: "%d gestionnaires de paquets trouvés.\n"
+      foundPkgManagers: "Gestionnaires de paquets %d trouvés"
     options:
       json:
         description: "Sortie au format JSON."
@@ -150,9 +151,9 @@ pkgmanagers:
 
     error:
       noName: "Aucun nom n'a été spécifié."
-      inUse: "Le gestionnaire de paquets est utilisé dans %d stacks :\n"
+      inUse: "Le gestionnaire de paquets est utilisé dans %d piles :"
     info:
-      askConfirmation: "Êtes-vous sûr de vouloir supprimer \"%s\" ?"
+      askConfirmation: "Êtes-vous sûr de vouloir supprimer \"%s\" ? [y/N]"
       success: "Suppression du gestionnaire de paquets '%s'."
       aborting: Abandon de la suppression du gestionnaire de paquets '%s'.
     options:
@@ -172,7 +173,7 @@ stacks:
     info:
       noStacks: "Aucune pile n'est disponible. Créez-en une nouvelle avec 'apx stacks
         new' ou contactez l'administrateur système."
-      foundStacks: "Trouvé %d stacks :\n"
+      foundStacks: "Trouvé %d piles :"
       aborting: Abandon de la suppression de la pile '%s'.
     options:
       json:
@@ -247,7 +248,7 @@ stacks:
     error:
       noName: "Aucun nom n'a été spécifié."
     info:
-      askConfirmation: "Êtes-vous sûr de vouloir supprimer \"%s\" ?"
+      askConfirmation: "Êtes-vous sûr de vouloir supprimer \"%s\" ? [y/N]"
       success: "Suppression de la pile '%s'."
     options:
       force:
@@ -289,7 +290,7 @@ subsystems:
     info:
       noSubsystems: "Aucun sous-système disponible. Créez-en un nouveau avec 'apx
         subsystems new' ou contactez l'administrateur système."
-      foundSubsystems: "A trouvé %d sous-systèmes :\n"
+      foundSubsystems: "A trouvé %d sous-systèmes :"
     options:
       json:
         description: "Sortie au format JSON."
@@ -320,7 +321,7 @@ subsystems:
     error:
       noName: "Aucun nom n'a été précisé."
     info:
-      askConfirmation: "Êtes-vous sûr de vouloir supprimer \"%s\" ?"
+      askConfirmation: "Êtes-vous sûr de vouloir supprimer \"%s\" ? [y/N]"
       success: "Suppression du sous-système \"%s\"."
     options:
       force:
@@ -332,7 +333,7 @@ subsystems:
     error:
       noName: "Aucun nom n'a été précisé."
     info:
-      askConfirmation: "Êtes-vous sûr de vouloir réinitialiser \"%s\" ?"
+      askConfirmation: "Êtes-vous sûr de vouloir réinitialiser \"%s\" ? [y/N]"
       success: "Le sous-système \"%s\" a été réinitialisé."
     options:
       force:
