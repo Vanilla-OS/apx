@@ -5,6 +5,7 @@ apx:
     unknownCommand: "Okänt kommando: %s"
     invalidInput: "Ogiltig inmatning."
     invalidChoice: Ogiltigt val.
+    noRoot: Do not run Apx as root.
   info:
     aborting: "Avbryter som begärt."
   terminal:

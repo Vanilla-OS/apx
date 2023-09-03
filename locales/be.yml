@@ -5,6 +5,7 @@ apx:
     unknownCommand: "Невядомая каманда: %s"
     invalidInput: "Няправільны ўвод."
     invalidChoice: Няправільны выбар.
+    noRoot: Do not run Apx as root.
   info:
     aborting: "Перапыненне па запыце."
   terminal:

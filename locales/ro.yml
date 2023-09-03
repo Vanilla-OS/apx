@@ -5,6 +5,7 @@ apx:
     unknownCommand: "Comanda necunoscută: %s"
     invalidInput: "Intrare nevalidă."
     invalidChoice: Alegere invalidă.
+    noRoot: Do not run Apx as root.
   info:
     aborting: "Se anulează conform solicitării."
   terminal:

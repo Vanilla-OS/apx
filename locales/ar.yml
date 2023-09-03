@@ -4,6 +4,7 @@ apx:
     unknownCommand: "أمر غير معروف: %s"
     invalidInput: "المدخل غير صالح."
     invalidChoice: خيار غير صالح.
+    noRoot: Do not run Apx as root.
   info:
     aborting: "يتم الالغاء."
   terminal:

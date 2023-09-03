@@ -4,6 +4,7 @@ apx:
     unknownCommand: "알 수 없는 명령어: %s"
     invalidInput: "잘못된 입력입니다."
     invalidChoice: Invalid choice.
+    noRoot: Do not run Apx as root.
   info:
     aborting: "요청에 의해 중단되었습니다."
   terminal:

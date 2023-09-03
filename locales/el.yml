@@ -5,6 +5,7 @@ apx:
     unknownCommand: "Άγνωστη εντολή: %s"
     invalidInput: "Μη έγκυρη είσοδος."
     invalidChoice: "Μη έγκυρη επιλογή."
+    noRoot: Do not run Apx as root.
   info:
     aborting: "Πραγματοποιείται ματαίωση, όπως ζητήθηκε."
   terminal:

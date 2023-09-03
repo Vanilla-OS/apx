@@ -4,6 +4,7 @@ apx:
     unknownCommand: "未知的命令：%s"
     invalidInput: "輸入無效。"
     invalidChoice: 選項無效。
+    noRoot: Do not run Apx as root.
   info:
     aborting: "應使用者要求中止操作。"
   terminal:
