@@ -4,7 +4,7 @@ apx:
     unknownCommand: "未知的命令：%s"
     invalidInput: "输入无效。"
     invalidChoice: 选择无效。
-    noRoot: Do not run Apx as root.
+    noRoot: 请不要以 root 用户运行 Apx。
   info:
     aborting: "应用户要求取消操作。"
   terminal:
