@@ -5,7 +5,7 @@ apx:
     unknownCommand: "Okänt kommando: %s"
     invalidInput: "Ogiltig inmatning."
     invalidChoice: Ogiltigt val.
-    noRoot: Do not run Apx as root.
+    noRoot: Kör inte Apx som root
   info:
     aborting: "Avbryter som begärt."
   terminal:
@@ -20,19 +20,19 @@ runtimeCommand:
     cantAccessPkgManager: "Ett fel uppstod vid åtkomst till pakethanteraren: %s"
     executingCommand: "Ett fel uppstod när kommandot: %s kördes"
     noAppNameOrBin: "--app-name eller --bin måste anges."
-    sameAppOrBin: "--app-name och --bin kan inte anges båda."
-    exportingApp: "Ett fel uppstod vid export av programmet: %s"
+    sameAppOrBin: "--app-name och --bin kan inte båda specificeras."
+    exportingApp: "Ett fel uppstod vid export av program: %s"
     exportingBin: "Ett fel inträffade vid export av binär: %s"
     unexportingApp: "Ett fel uppstod när programmet skulle avexporteras: %s"
     unexportingBin: "Ett fel uppstod när binär: %s skulle avexporteras"
-    enteringContainer: 'An error occurred while entering the container: %s'
+    enteringContainer: 'Ett fel uppstod när du gick in i behållaren: %s'
   info:
-    unexportedApps: "Oexporterade %d program\n"
-    exportedApps: "Exporterade %d program\n"
-    exportedApp: "Exporterat program %s\n"
-    exportedBin: "Exporterad binär %s\n"
-    unexportedApp: "Oexporterat program %s\n"
-    unexportedBin: "Oexporterad binär %s\n"
+    unexportedApps: "Oexporterade %d program"
+    exportedApps: "Exporterade %d program"
+    exportedApp: "Exporterat program %s"
+    exportedBin: "Exporterad binär %s"
+    unexportedApp: "Oexporterat program %s"
+    unexportedBin: "Oexporterad binär %s"
   autoremove:
     description: "Ta bort paket som inte längre behövs."
   clean:
@@ -88,7 +88,7 @@ pkgmanagers:
     info:
       noPkgManagers: "Inga pakethanterare tillgängliga. Skapa en ny med 'apx pkgmanagers
         new' eller kontakta systemadministratören."
-      foundPkgManagers: "Hittade %d pakethanterare:\n"
+      foundPkgManagers: "Hittade %d pakethanterare:"
     options:
       json:
         description: "Utdata i JSON format."
@@ -143,9 +143,9 @@ pkgmanagers:
 
     error:
       noName: "Inget namn specificerat."
-      inUse: "Pakethanteraren används i %d stackar:\n"
+      inUse: "Pakethanteraren används i %d stackar:"
     info:
-      askConfirmation: "Är du säker på att du vill ta bort '%s'?"
+      askConfirmation: "Är du säker på att du vill ta bort '%s'? [j/N]"
       success: "Tog bort pakethanterare '%s'."
       aborting: Avbryter borttagning av pakethanteraren '%s'.
     options:
@@ -165,7 +165,7 @@ stacks:
     info:
       noStacks: "Inga stackar tillgängliga. Skapa en ny med 'apx stack new' eller
         kontakta systemadministratören."
-      foundStacks: "Hittade %d stackar:\n"
+      foundStacks: "Hittade %d stackar:"
       aborting: Avbryter borttagning av stack '%s'.
     options:
       json:
@@ -239,7 +239,7 @@ stacks:
     error:
       noName: "Inget namn specificerat."
     info:
-      askConfirmation: "Är du säker på att du vill ta bort '%s'?"
+      askConfirmation: "Är du säker på att du vill ta bort '%s'? [j/N]"
       success: "Tog bort stack '%s'."
     options:
       force:
@@ -281,7 +281,7 @@ subsystems:
     info:
       noSubsystems: "Inga undersystem tillgänliga. Skapa ett nytt med 'apx subsystems
         new' eller kontakta systemadministratören."
-      foundSubsystems: "Hittade %d undersystem:\n"
+      foundSubsystems: "Hittade %d undersystem:"
     options:
       json:
         description: "Utdata i JSON-format."
@@ -301,7 +301,7 @@ subsystems:
       askName: "Välj ett namn:"
       selectStack: "Välj en stack [1-%d]:"
       success: "Skapade undersystem '%s'."
-      creatingSubsystem: "Skapade undersystem '%s' med stack '%s'…"
+      creatingSubsystem: "Skapar undersystem '%s' med stack '%s'…"
     options:
       name:
         description: "Namnet på undersystem."
@@ -312,7 +312,7 @@ subsystems:
     error:
       noName: "Inget namn specificerat."
     info:
-      askConfirmation: "Är du säker på att du vill ta bort '%s'?"
+      askConfirmation: "Är du säker på att du vill ta bort '%s'? [j/N]"
       success: "Tog bort undersystem '%s'."
     options:
       force:
@@ -324,7 +324,7 @@ subsystems:
     error:
       noName: "Inget namn specificerat."
     info:
-      askConfirmation: "Är du säker på att du vill återställa '%s'?"
+      askConfirmation: "Är du säker på att du vill återställa '%s'? [j/N]"
       success: "Undersystemet '%s' har återställts."
     options:
       force:
