@@ -5,6 +5,7 @@ apx:
     unknownCommand: "Neznámý příkaz: %s"
     invalidInput: "Neplatný vstup."
     invalidChoice: Invalid choice.
+    noRoot: Do not run Apx as root.
   info:
     aborting: "Přerušuji."
   terminal:
@@ -24,6 +25,7 @@ runtimeCommand:
     exportingBin: "Nastala chyba během exportování binárního souboru: %s"
     unexportingApp: "Nastala chyba během odexportování aplikace: %s"
     unexportingBin: "Nastala chyba během odexportování binárního souboru: %s"
+    enteringContainer: 'An error occurred while entering the container: %s'
   info:
     unexportedApps: "Odexportováno %d aplikací\n"
     exportedApps: "Exportováno %d aplikací\n"

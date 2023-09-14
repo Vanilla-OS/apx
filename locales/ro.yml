@@ -5,6 +5,7 @@ apx:
     unknownCommand: "Comanda necunoscută: %s"
     invalidInput: "Intrare nevalidă."
     invalidChoice: Alegere invalidă.
+    noRoot: Nu rulați Apx ca root.
   info:
     aborting: "Se anulează conform solicitării."
   terminal:
@@ -25,13 +26,14 @@ runtimeCommand:
     exportingBin: "S-a produs o eroare în timpul exportului binarului: %s"
     unexportingApp: "S-a produs o eroare în timpul exportării aplicației: %s"
     unexportingBin: "A apărut o eroare în timpul neexportării binarului: %s"
+    enteringContainer: 'A apărut o eroare la accesarea containerului: %s'
   info:
-    unexportedApps: "Aplicații neexportate %d\n"
-    exportedApps: "Aplicații exportate %d\n"
-    exportedApp: "Aplicație exportată %s\n"
-    exportedBin: "Binar exportat %s\n"
-    unexportedApp: "Aplicație neexportată %s\n"
-    unexportedBin: "Binar neexportat %s\n"
+    unexportedApps: "%d aplicații neexportate"
+    exportedApps: "%d aplicații exportate"
+    exportedApp: "Aplicația %s exportată"
+    exportedBin: "Binarul %s exportat"
+    unexportedApp: "Aplicația %s neexportată"
+    unexportedBin: "Binarul %s neexportat"
   autoremove:
     description: "Eliminați pachetele care nu mai sunt necesare."
   clean:
@@ -87,7 +89,7 @@ pkgmanagers:
     info:
       noPkgManagers: "Nu sunt disponibili manageri de pachete. Creați unul nou cu
         'apx pkgmanagers new' sau contactați administratorul de sistem."
-      foundPkgManagers: "S-au găsit %d manageri de pachete:\n"
+      foundPkgManagers: "S-au găsit %d manageri de pachete"
     options:
       json:
         description: "Ieșire în format JSON."
@@ -144,9 +146,9 @@ pkgmanagers:
 
     error:
       noName: "Nu este specificat niciun nume."
-      inUse: "Managerul de pachete este utilizat în %d stive:\n"
+      inUse: "Managerul de pachete este utilizat în %d stive:"
     info:
-      askConfirmation: "Sunteți sigur că doriți să eliminați \"%s\"?"
+      askConfirmation: "Sunteți sigur că doriți să eliminați \"%s\"? [y/N]"
       success: "A fost eliminat managerul de pachete \"%s\"."
       aborting: Se anulează eliminarea managerului de pachete „%s”.
     options:
@@ -166,7 +168,7 @@ stacks:
     info:
       noStacks: "Nu sunt disponibile stive. Creați una nouă cu 'apx stacks new' sau
         contactați administratorul de sistem."
-      foundStacks: "S-au găsit %d stive:\n"
+      foundStacks: "S-au găsit %d stive:"
       aborting: Se anulează eliminarea stivei „%s”.
     options:
       json:
@@ -241,7 +243,7 @@ stacks:
     error:
       noName: "Nu este specificat niciun nume."
     info:
-      askConfirmation: "Sunteți sigur că doriți să eliminați \"%s\"?"
+      askConfirmation: "Sunteți sigur că doriți să eliminați \"%s\"? [y/N]"
       success: "Stiva \"%s\" a fost eliminată."
     options:
       force:
@@ -283,7 +285,7 @@ subsystems:
     info:
       noSubsystems: "Nu există subsisteme disponibile. Creați unul nou cu 'apx subsystems
         new' sau contactați administratorul de sistem."
-      foundSubsystems: "S-au găsit %d subsisteme:\n"
+      foundSubsystems: "S-au găsit %d subsisteme:"
     options:
       json:
         description: "Ieșire în format JSON."
@@ -303,7 +305,7 @@ subsystems:
       askName: "Alegeți un nume:"
       selectStack: "Selectați o stivă [1-%d]:"
       success: "A fost creat subsistemul \"%s\"."
-      creatingSubsystem: "A fost creat subsistemul \"%s\" cu stiva \"%s\"…"
+      creatingSubsystem: "Se creează subsistemul \"%s\" cu stiva \"%s\"…"
     options:
       name:
         description: "Numele subsistemului."
@@ -314,7 +316,7 @@ subsystems:
     error:
       noName: "Nu este specificat niciun nume."
     info:
-      askConfirmation: "Sunteți sigur că doriți să eliminați \"%s\"?"
+      askConfirmation: "Sunteți sigur că doriți să eliminați \"%s\"? [y/N]"
       success: "A fost eliminat subsistemul \"%s\"."
     options:
       force:
@@ -326,7 +328,7 @@ subsystems:
     error:
       noName: "Nu este specificat niciun nume."
     info:
-      askConfirmation: "Sunteți sigur că doriți să resetați \"%s\"?"
+      askConfirmation: "Sunteți sigur că doriți să resetați \"%s\"? [y/N]"
       success: "Subsistemul \"%s\" a fost resetat."
     options:
       force:
