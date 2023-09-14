@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="apx-logo.png" height="120">
+  <img src="apx-logo.svg" height="120">
   <h1 align="center">Apx</h1>
 
 [![Translation Status][weblate-image]][weblate-url]
