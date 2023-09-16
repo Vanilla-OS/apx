@@ -246,7 +246,7 @@ func (d *dbox) CreateContainer(name string, image string, additionalPackages []s
 	}
 	engineFlags = append(engineFlags, "--label=manager=apx")
 
-	_, err := d.RunCommand("create", args, engineFlags, false, true, true, rootFull)
+	_, err := d.RunCommand("create", args, engineFlags, false, false, false, rootFull)
 	// fmt.Println(string(out))
 	return err
 }
