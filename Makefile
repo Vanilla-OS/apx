@@ -7,7 +7,7 @@ all: build
 build:
 	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -tags netgo -ldflags '-w -extldflags "-static"' -o ${BINARY_NAME}
 
-install:
+install: build
 	install -Dm755 ${BINARY_NAME} ${DESTDIR}${PREFIX}/bin/${BINARY_NAME}
 	sudo mkdir -p ${DESTDIR}/etc/apx
 	sed -i 's|/usr/share/apx/distrobox|${PREFIX}/share/apx/distrobox|g' config/apx.json
@@ -21,7 +21,7 @@ install-manpages:
 	cp -r man/* ${DESTDIR}${PREFIX}/share/man/.
 	chmod 644 ${DESTDIR}${PREFIX}/share/man/man1/apx*
 
-uninstall:
+uninstall: uninstall-manpages
 	sudo rm ${DESTDIR}${PREFIX}/bin/apx
 	sudo rm -rf ${DESTDIR}/etc/apx
 	sudo rm -rf ${DESTDIR}${PREFIX}/share/apx
