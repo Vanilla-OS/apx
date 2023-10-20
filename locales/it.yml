@@ -5,7 +5,7 @@ apx:
     unknownCommand: "Comando sconosciuto: %s"
     invalidInput: "Input non valido."
     invalidChoice: Scelta non valida.
-    noRoot: Do not run Apx as root.
+    noRoot: Non eseguire Apx come root.
   info:
     aborting: "Annullato, come richiesto."
   terminal:

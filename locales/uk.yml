@@ -5,7 +5,7 @@ apx:
     unknownCommand: "Невідома команда: %s"
     invalidInput: "Неправильне введення."
     invalidChoice: Неправильний вибір.
-    noRoot: Do not run Apx as root.
+    noRoot: Не запускати Apx з root доступом.
   info:
     aborting: "Переривання за запитом."
   terminal:
@@ -25,7 +25,7 @@ runtimeCommand:
     exportingBin: "Під час експорту бінарного файлу сталася помилка: %s"
     unexportingApp: "Виникла помилка під час експорту застосунку: %s"
     unexportingBin: "Виникла помилка під час експорту бінарного файлу: %s"
-    enteringContainer: 'An error occurred while entering the container: %s'
+    enteringContainer: 'Під час входу в контейнер сталася помилка: %s'
   info:
     unexportedApps: "Неекспортовано %d застосунків"
     exportedApps: "Експортовано %d застосунків"
