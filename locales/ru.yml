@@ -111,7 +111,7 @@ pkgmanagers:
       success: "Создан менеджер пакетов '%s'."
     options:
       assumeYes:
-        description: "Предполагать \"да\" на все вопросы."
+        description: "Предполагать «да» на все запросы подтверждения."
       name:
         description: "Имя менеджера пакетов."
       needSudo:
@@ -197,7 +197,7 @@ stacks:
       success: "Создан стек '%s'."
     options:
       assumeYes:
-        description: "Предполагать \"да\" на все вопросы."
+        description: "Предполагать «да» на все запросы подтверждения."
       name:
         description: "Имя стека."
       base:
@@ -223,7 +223,7 @@ stacks:
 
     options:
       assumeYes:
-        description: "Предполагать \"да\" на все вопросы."
+        description: "Предполагать «да» на все запросы подтверждения."
       name:
         description: "Имя стека."
       base:
