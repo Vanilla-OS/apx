@@ -1,28 +1,28 @@
 apx:
-  description: "Apx is a package manager with support for multiple sources, allowing
-    you to install packages in subsystems."
+  description: "Apx jest menedżerem paczek z wsparciem dla wielu źródeł, pozwalając
+    ci na instalacje paczek w podsystemach"
   errors:
-    unknownCommand: "Unknown command: %s"
-    invalidInput: "Invalid input."
-    invalidChoice: "Invalid choice."
-    noRoot: "Do not run Apx as root."
+    unknownCommand: "Nieznana komenda: %s"
+    invalidInput: "Nieprawidłowe wejście"
+    invalidChoice: "Nieprawidłowy wybór."
+    noRoot: "Nie uruchamiaj Apx jako root."
   info:
     aborting: "Aborting as requested."
   terminal:
-    yes: "yes"
-    no: "no"
+    yes: "tak"
+    no: "nie"
 
 runtimeCommand:
-  description: "Work with the specified subsystem, accessing the package manager and
-    environment."
+  description: "Pracuj z określonym podsystemem, mając dostęp do menedżera paczek
+    oraz środowiska"
   error:
-    enteringContainer: "An error occurred while entering the container: %s"
-    noPackageSpecified: "No packages specified."
-    cantAccessPkgManager: "An error occurred while accessing the package manager:
-      %s"
-    executingCommand: "An error occurred while executing the command: %s"
-    noAppNameOrBin: "--app-name or --bin must be specified."
-    sameAppOrBin: "--app-name and --bin cannot be both specified."
+    enteringContainer: "Wystąpił błąd podczas otwierania kontenera: %s"
+    noPackageSpecified: "Nie określono paczek."
+    cantAccessPkgManager: "Wystąpił błąd podczas uzyskiwania dostępu do menedżera
+      paczek: %s"
+    executingCommand: "Wystąpił błąd podczas wykonywania komendy: %s"
+    noAppNameOrBin: "--app-name lub --bin musi zostać określony"
+    sameAppOrBin: "--app-name i --bin nie mogą być określone razem."
     exportingApp: "An error occurred while exporting the application: %s"
     exportingBin: "An error occurred while exporting the binary: %s"
     unexportingApp: "An error occurred while unexporting the application: %s"
