@@ -23,36 +23,36 @@ runtimeCommand:
     executingCommand: "Wystąpił błąd podczas wykonywania komendy: %s"
     noAppNameOrBin: "--app-name lub --bin musi zostać określony"
     sameAppOrBin: "--app-name i --bin nie mogą być określone razem."
-    exportingApp: "An error occurred while exporting the application: %s"
-    exportingBin: "An error occurred while exporting the binary: %s"
+    exportingApp: "Wystąpił błąd podczas eksportowania aplikacji: %s"
+    exportingBin: "Wystąpił błąd podczas eksportowania pliku binarnego: %s"
     unexportingApp: "An error occurred while unexporting the application: %s"
     unexportingBin: "An error occurred while unexporting the binary: %s"
   info:
     unexportedApps: "Unexported %d applications"
-    exportedApps: "Exported %d applications"
-    exportedApp: "Exported application %s"
-    exportedBin: "Exported binary %s"
+    exportedApps: "Eksportowane %d aplikacje"
+    exportedApp: "Eksportowana aplikacja %s"
+    exportedBin: "Eksportowane pliki binarne %s"
     unexportedApp: "Unexported application %s"
     unexportedBin: "Unexported binary %s"
   autoremove:
-    description: "Remove packages that are no longer required."
+    description: "Usuń paczki które nie są już wymagane."
   clean:
-    description: "Clean the package manager's cache."
+    description: "Wyczyść pamięć cache menedżera paczek"
   install:
-    description: "Install the specified package."
+    description: "Zainstaluj określoną paczkę"
     options:
       noExport:
-        description: "Do not export a desktop entry."
+        description: "Nie eksportuj skrótu"
   list:
-    description: "List all installed packages."
+    description: "Wyświetl wszystkie zainstalowane paczki"
   purge:
     description: "Purge the specified packages."
   remove:
-    description: "Remove the specified packages."
+    description: "Usuń określone paczki"
   search:
-    description: "Search for packages matching the specified query."
+    description: "Szukaj paczek związanych z zapytaniem."
   show:
-    description: "Show information about the specified package."
+    description: "Wyświetl informacje na temat określonej paczki."
   update:
     description: "Update the list of available packages."
   upgrade:
