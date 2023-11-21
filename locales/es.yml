@@ -5,7 +5,7 @@ apx:
     unknownCommand: "Comando desconocido: %s"
     invalidInput: "Entrada Inválida."
     invalidChoice: Elección inválida
-    noRoot: Do not run Apx as root.
+    noRoot: No ejecutes Apx como root.
   info:
     aborting: "Abortando según lo solicitado."
   terminal:
@@ -28,16 +28,16 @@ runtimeCommand:
     unexportingBin: "Un error ocurrio al desexportar el binario: %s"
     enteringContainer: 'Ocurrió un error al ingresar al contenedor: %s'
   info:
-    unexportedApps: "Aplicaciones %d no exportadas\n"
-    exportedApps: "Aplicaciones %d exportadas\n"
-    exportedApp: "Aplicación exportada %s\n"
+    unexportedApps: "Aplicaciones %d no exportadas"
+    exportedApps: "Aplicaciones %d exportadas"
+    exportedApp: "Aplicación exportada %s"
     exportedBin: "Binario exportado %s\n"
     unexportedApp: "Aplicación %s no exportada\n"
     unexportedBin: "Binario no exportado %s\n"
   autoremove:
     description: "Eliminar paquetes ya no requeridos."
   clean:
-    description: "Clean the package manager's cache."
+    description: "Limpia la caché del gestor de paquetes."
   install:
     description: "Install the specified package."
     options:
