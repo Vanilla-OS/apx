@@ -1,60 +1,62 @@
 apx:
-  description: "Apx jest menedżerem paczek z wsparciem dla wielu źródeł, pozwalając
-    ci na instalacje paczek w podsystemach"
+  description: "Apx és un gestor de paquets amb suport per múltiples fonts, permeten
+    l'instal·lació de paquets en subsistemes."
   errors:
-    unknownCommand: "Nieznana komenda: %s"
-    invalidInput: "Nieprawidłowe wejście"
-    invalidChoice: "Nieprawidłowy wybór."
-    noRoot: "Nie uruchamiaj Apx jako root."
+    unknownCommand: "Ordre desconeguda: %s"
+    invalidInput: "Entrada invàlida."
+    invalidChoice: "Opció invàlida."
+    noRoot: "No executis Apx com administrador."
   info:
-    aborting: "Aborting as requested."
+    aborting: "Avortant com s'ha demanat."
   terminal:
-    yes: "tak"
-    no: "nie"
+    yes: "sí"
+    no: "no"
 
 runtimeCommand:
-  description: "Pracuj z określonym podsystemem, mając dostęp do menedżera paczek
-    oraz środowiska"
+  description: "Treballa amb el subsistema especificat, accedint al gestor de paquets
+    i a l'entorn."
   error:
-    enteringContainer: "Wystąpił błąd podczas otwierania kontenera: %s"
-    noPackageSpecified: "Nie określono paczek."
-    cantAccessPkgManager: "Wystąpił błąd podczas uzyskiwania dostępu do menedżera
-      paczek: %s"
-    executingCommand: "Wystąpił błąd podczas wykonywania komendy: %s"
-    noAppNameOrBin: "--app-name lub --bin musi zostać określony"
-    sameAppOrBin: "--app-name i --bin nie mogą być określone razem."
-    exportingApp: "Wystąpił błąd podczas eksportowania aplikacji: %s"
-    exportingBin: "Wystąpił błąd podczas eksportowania pliku binarnego: %s"
-    unexportingApp: "An error occurred while unexporting the application: %s"
-    unexportingBin: "An error occurred while unexporting the binary: %s"
+    enteringContainer: "S'ha produït un error entrant al contenidor: %s"
+    noPackageSpecified: "No s'ha especificat cap paquet."
+    cantAccessPkgManager: "S'ha trobat un error mentre s'entrava al gestor de paquets:
+      %s"
+    executingCommand: "S'ha trobat un error mentre s'executava l'ordre: %s"
+    noAppNameOrBin: "S'ha de declarar --nom-aplicació o --binari."
+    sameAppOrBin: "No es poden declarar --nom-aplicació o --binari a la vegada."
+    exportingApp: "S'ha trobat un error mentre s'exportava l'aplicació: %s"
+    exportingBin: "S'ha trobat un error mentre s'exportava el binari: %s"
+    unexportingApp: "S'ha trobat un error mentre es desfeia l'exportació de l'aplicació:
+      %s"
+    unexportingBin: "S'ha produït un error mentre es desfeia l'exportació del binari:
+      %s"
   info:
-    unexportedApps: "Unexported %d applications"
-    exportedApps: "Eksportowane %d aplikacje"
-    exportedApp: "Eksportowana aplikacja %s"
-    exportedBin: "Eksportowane pliki binarne %s"
-    unexportedApp: "Unexported application %s"
-    unexportedBin: "Unexported binary %s"
+    unexportedApps: "Aplicacions amb exportacions desfetes %d"
+    exportedApps: "Aplicacions exportades %d"
+    exportedApp: "Aplicació exportada %s"
+    exportedBin: "Binari exportat %s"
+    unexportedApp: "Aplicacions amb exportacions desfetes %s"
+    unexportedBin: "Binari amb exportació desfeta %s"
   autoremove:
-    description: "Usuń paczki które nie są już wymagane."
+    description: "Esborra paquets que ja no es necessiten."
   clean:
-    description: "Wyczyść pamięć cache menedżera paczek"
+    description: "Neteja la memòria cau del gestor de paquets."
   install:
-    description: "Zainstaluj określoną paczkę"
+    description: "Instala el paquet especificat."
     options:
       noExport:
-        description: "Nie eksportuj skrótu"
+        description: "No exportis una entrada al escriptori."
   list:
-    description: "Wyświetl wszystkie zainstalowane paczki"
+    description: "Llista tots els paquets instalats."
   purge:
     description: "Purge the specified packages."
   remove:
-    description: "Usuń określone paczki"
+    description: "Remove the specified packages."
   search:
-    description: "Szukaj paczek związanych z zapytaniem."
+    description: "Search for packages matching the specified query."
   show:
-    description: "Wyświetl informacje na temat określonej paczki."
+    description: "Show information about the specified package."
   update:
-    description: "Zaktualizuj listę dostępnych pakietów"
+    description: "Update the list of available packages."
   upgrade:
     description: "Upgrade all installed packages."
   enter:
