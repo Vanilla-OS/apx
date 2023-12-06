@@ -82,7 +82,7 @@ pkgmanagers:
   description: "Trabajar con los gestores de paquetes disponibles en apx."
   labels:
     name: "Nombre"
-    builtIn: "Built-in"
+    builtIn: "Incorporado"
 
   list:
     description: "Listar todos los gestores de paquetes disponibles."
@@ -139,14 +139,14 @@ pkgmanagers:
       upgrade:
         description: "El comando a ejecutar para actualizar los paquetes."
   rm:
-    description: "Remove the specified package manager."
+    description: "Elimina el gestor de paquetes especificado."
 
     error:
       noName: "No se especificó un nombre."
       inUse: "El gestor de paquetes se utiliza en %d pilas:"
     info:
       askConfirmation: "¿Estás seguro de que quieres eliminar '%s'?"
-      success: "Removed package manager '%s'."
+      success: "Eliminado el gestor de paquetes '%s'."
       aborting: Cancelando la eliminación del gestor de paquetes '%s'.
     options:
       force:
@@ -158,14 +158,14 @@ stacks:
   description: "Trabaja con las pilas disponibles en apx."
   labels:
     name: "Nombre"
-    builtIn: "Built-in"
+    builtIn: "Incorporado"
 
   list:
     description: "Lista todas las pilas disponibles."
     info:
       noStacks: "No hay pilas disponibles. Cree una nueva con 'apx stacks new' o contacte
         al administrador del sistema."
-      foundStacks: "Found %d stacks:\n"
+      foundStacks: "Encontrados %d stacks:"
       aborting: Cancelando la eliminación de la pila '%s'.
     options:
       json:
