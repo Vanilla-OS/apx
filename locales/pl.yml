@@ -54,7 +54,7 @@ runtimeCommand:
   show:
     description: "Wyświetl informacje na temat określonej paczki."
   update:
-    description: "Update the list of available packages."
+    description: "Zaktualizuj listę dostępnych pakietów"
   upgrade:
     description: "Upgrade all installed packages."
   enter:
