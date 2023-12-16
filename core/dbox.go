@@ -135,6 +135,11 @@ func (d *dbox) RunCommand(command string, args []string, engineFlags []string, u
 
 	if captureOutput {
 		output, err := cmd.Output()
+		if err != nil {
+			if exitErr, ok := err.(*exec.ExitError); ok {
+				return output, errors.New(string(exitErr.Stderr))
+			}
+		}
 		return output, err
 	}
 
@@ -297,7 +302,7 @@ func (d *dbox) ContainerExport(name string, delete bool, rootFull bool, args ...
 
 	finalArgs = append(finalArgs, args...)
 
-	_, err := d.ContainerExec(name, false, true, rootFull, finalArgs...)
+	_, err := d.ContainerExec(name, true, true, rootFull, finalArgs...)
 	return err
 }
 
@@ -316,7 +321,7 @@ func (d *dbox) ContainerExportBin(containerName string, binary string, exportPat
 	return d.ContainerExport(containerName, false, rootFull, args...)
 }
 
-func (d *dbox) ContainerUnexportBin(containerName string, binary string, exportPath string, rootFull bool) error {
-	args := []string{"--bin", binary, "--export-path", exportPath}
+func (d *dbox) ContainerUnexportBin(containerName string, binary string, rootFull bool) error {
+	args := []string{"--bin", binary}
 	return d.ContainerExport(containerName, true, rootFull, args...)
 }
