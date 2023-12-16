@@ -2,7 +2,7 @@ package core
 
 import (
 	"fmt"
-	"io/ioutil"
+	"io"
 	"log"
 	"os"
 	"path/filepath"
@@ -68,7 +68,7 @@ func findExportedPrograms(internalName string, name string) map[string]map[strin
 		}
 		defer f.Close()
 
-		data, err := ioutil.ReadAll(f)
+		data, err := io.ReadAll(f)
 		if err != nil {
 			continue
 		}
@@ -311,8 +311,7 @@ func (s *SubSystem) ExportBin(binary string, exportPath string) error {
 			return err
 		}
 
-		binary = binaryPath
-		binary = strings.TrimSuffix(binary, "\r\n")
+		binary = strings.TrimSpace(binaryPath)
 	}
 
 	binaryName := filepath.Base(binary)
@@ -328,7 +327,7 @@ func (s *SubSystem) ExportBin(binary string, exportPath string) error {
 	}
 
 	if exportPath == "" {
-		exportPath = fmt.Sprintf("%s/%s", homeDir, ".local/bin")
+		exportPath = filepath.Join(homeDir, ".local", "bin")
 	}
 
 	joinedPath := filepath.Join(exportPath, binaryName)
@@ -385,10 +384,19 @@ func (s *SubSystem) UnexportDesktopEntry(appName string) error {
 }
 
 func (s *SubSystem) UnexportBin(binary string, exportPath string) error {
+	if !strings.HasPrefix(binary, "/") {
+		binaryPath, err := s.Exec(true, "which", binary)
+		if err != nil {
+			return err
+		}
+
+		binary = strings.TrimSpace(binaryPath)
+	}
+
 	dbox, err := NewDbox()
 	if err != nil {
 		return err
 	}
 
-	return dbox.ContainerUnexportBin(s.InternalName, binary, exportPath, s.IsRootfull)
+	return dbox.ContainerUnexportBin(s.InternalName, binary, s.IsRootfull)
 }
