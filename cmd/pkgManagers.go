@@ -17,7 +17,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/vanilla-os/apx/core"
+	"github.com/vanilla-os/apx/v2/core"
 	"github.com/vanilla-os/orchid/cmdr"
 )
 

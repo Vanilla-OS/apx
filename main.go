@@ -12,8 +12,8 @@ import (
 	"embed"
 	"os"
 
-	"github.com/vanilla-os/apx/cmd"
-	"github.com/vanilla-os/apx/core"
+	"github.com/vanilla-os/apx/v2/cmd"
+	"github.com/vanilla-os/apx/v2/core"
 	"github.com/vanilla-os/orchid/cmdr"
 )
 

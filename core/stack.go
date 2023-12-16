@@ -11,7 +11,7 @@ package core
 
 import (
 	"errors"
-	"io/ioutil"
+	"io"
 	"os"
 	"path/filepath"
 
@@ -56,7 +56,7 @@ func LoadStackFromPath(path string) (*Stack, error) {
 		return nil, errors.New("stack not found")
 	}
 
-	data, err := ioutil.ReadAll(f)
+	data, err := io.ReadAll(f)
 	if err != nil {
 		return nil, err
 	}
@@ -77,7 +77,7 @@ func (stack *Stack) Save() error {
 	}
 
 	filePath := filepath.Join(apx.Cnf.UserStacksPath, stack.Name+".yaml")
-	err = ioutil.WriteFile(filePath, data, 0644)
+	err = os.WriteFile(filePath, data, 0644)
 	return err
 }
 
@@ -117,7 +117,7 @@ func (stack *Stack) Export(path string) error {
 		return err
 	}
 
-	err = ioutil.WriteFile(filePath, data, 0644)
+	err = os.WriteFile(filePath, data, 0644)
 	if err != nil {
 		return err
 	}
@@ -170,7 +170,7 @@ func ListStackForPkgManager(pkgManager string) []*Stack {
 func listStacksFromPath(path string) []*Stack {
 	stacks := make([]*Stack, 0)
 
-	files, err := ioutil.ReadDir(path)
+	files, err := os.ReadDir(path)
 	if err != nil {
 		return stacks
 	}

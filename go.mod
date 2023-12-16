@@ -1,4 +1,4 @@
-module github.com/vanilla-os/apx
+module github.com/vanilla-os/apx/v2
 
 go 1.18
 

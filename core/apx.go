@@ -1,7 +1,7 @@
 package core
 
 import (
-	"github.com/vanilla-os/apx/settings"
+	"github.com/vanilla-os/apx/v2/settings"
 )
 
 var apx *Apx

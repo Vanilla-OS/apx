@@ -11,7 +11,7 @@ package core
 
 import (
 	"errors"
-	"io/ioutil"
+	"io"
 	"os"
 	"path/filepath"
 
@@ -72,7 +72,7 @@ func loadPkgManagerFromPath(path string) (*PkgManager, error) {
 		return nil, errors.New("package manager not found")
 	}
 
-	data, err := ioutil.ReadAll(f)
+	data, err := io.ReadAll(f)
 	if err != nil {
 		return nil, err
 	}
@@ -93,7 +93,7 @@ func (pkgManager *PkgManager) Save() error {
 	}
 
 	filePath := filepath.Join(apx.Cnf.UserPkgManagersPath, pkgManager.Name+".yaml")
-	err = ioutil.WriteFile(filePath, data, 0644)
+	err = os.WriteFile(filePath, data, 0644)
 	return err
 }
 
@@ -145,7 +145,7 @@ func ListPkgManagers() []*PkgManager {
 func listPkgManagersFromPath(path string) []*PkgManager {
 	pkgManagers := make([]*PkgManager, 0)
 
-	files, err := ioutil.ReadDir(path)
+	files, err := os.ReadDir(path)
 	if err != nil {
 		return pkgManagers
 	}
