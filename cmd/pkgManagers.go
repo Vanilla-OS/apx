@@ -194,11 +194,53 @@ func NewPkgManagersCommand() *cmdr.Command {
 		),
 	)
 
+	// Export subcommand
+	exportCmd := cmdr.NewCommand(
+		"export",
+		apx.Trans("pkgmanagers.export.description"),
+		apx.Trans("pkgmanagers.export.description"),
+		exportPkgmanager,
+	)
+	exportCmd.WithStringFlag(
+		cmdr.NewStringFlag(
+			"name",
+			"n",
+			apx.Trans("pkgmanagers.export.options.name.description"),
+			"",
+		),
+	)
+	exportCmd.WithStringFlag(
+		cmdr.NewStringFlag(
+			"output",
+			"o",
+			apx.Trans("stacks.export.options.output.description"),
+			"",
+		),
+	)
+
+	// Import subcommand
+	importCmd := cmdr.NewCommand(
+		"import",
+		apx.Trans("pkgmanagers.import.description"),
+		apx.Trans("pkgmanagers.import.description"),
+		importPkgmanager,
+	)
+	importCmd.WithStringFlag(
+		cmdr.NewStringFlag(
+			"input",
+			"i",
+			apx.Trans("pkgmanagers.import.options.input.description"),
+			"",
+		),
+	)
+
 	// Add subcommands to pkgmanagers
 	cmd.AddCommand(listCmd)
 	cmd.AddCommand(showCmd)
 	cmd.AddCommand(newCmd)
 	cmd.AddCommand(rmCmd)
+	cmd.AddCommand(exportCmd)
+	cmd.AddCommand(importCmd)
 
 	return cmd
 }
@@ -439,5 +481,53 @@ func rmPkgManager(cmd *cobra.Command, args []string) error {
 	}
 
 	cmdr.Info.Printfln(apx.Trans("pkgmanagers.rm.info.success"), pkgManagerName)
+	return nil
+}
+
+func exportPkgmanager(cmd *cobra.Command, args []string) error {
+	pkgManagerName, _ := cmd.Flags().GetString("name")
+	if pkgManagerName == "" {
+		cmdr.Error.Println(apx.Trans("pkgmanagers.export.error.noName"))
+		return nil
+	}
+
+	pkgManager, error := core.LoadPkgManager(pkgManagerName)
+	if error != nil {
+		return error
+	}
+
+	output, _ := cmd.Flags().GetString("output")
+	if output == "" {
+		cmdr.Error.Println(apx.Trans("pkgmanagers.export.error.noOutput"))
+		return nil
+	}
+
+	error = pkgManager.Export(output)
+	if error != nil {
+		return error
+	}
+
+	cmdr.Info.Printfln(apx.Trans("pkgmanagers.export.info.success"), pkgManager.Name, output)
+	return nil
+}
+
+func importPkgmanager(cmd *cobra.Command, args []string) error {
+	input, _ := cmd.Flags().GetString("input")
+	if input == "" {
+		cmdr.Error.Println(apx.Trans("pkgmanagers.import.error.noInput"))
+		return nil
+	}
+
+	pkgmanager, error := core.LoadPkgManagerFromPath(input)
+	if error != nil {
+		cmdr.Error.Printf(apx.Trans("pkgmanagers.import.error.cannotLoad"), input)
+	}
+
+	error = pkgmanager.Save()
+	if error != nil {
+		return error
+	}
+
+	cmdr.Info.Printfln(apx.Trans("pkgmanagers.import.info.success"), pkgmanager.Name)
 	return nil
 }
