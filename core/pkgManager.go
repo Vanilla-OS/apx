@@ -168,3 +168,48 @@ func PkgManagerExists(name string) bool {
 	_, err := LoadPkgManager(name)
 	return err == nil
 }
+
+// LoadPkgManagerFromPath loads a package manager from the specified path.
+func LoadPkgManagerFromPath(path string) (*PkgManager, error) {
+	pkgManager := &PkgManager{}
+
+	f, err := os.Open(path)
+	if err != nil {
+		return nil, errors.New("package manager not found")
+	}
+
+	data, err := io.ReadAll(f)
+	if err != nil {
+		return nil, err
+	}
+
+	err = yaml.Unmarshal(data, pkgManager)
+	if err != nil {
+		return nil, err
+	}
+
+	return pkgManager, nil
+}
+
+// Export exports the package manager to the specified path.
+func (pkgManager *PkgManager) Export(path string) error {
+	if _, err := os.Stat(path); os.IsNotExist(err) {
+		err = os.MkdirAll(path, 0755)
+		if err != nil {
+			return err
+		}
+	}
+
+	filePath := filepath.Join(path, pkgManager.Name+".yaml")
+	data, err := yaml.Marshal(pkgManager)
+	if err != nil {
+		return err
+	}
+
+	err = os.WriteFile(filePath, data, 0644)
+	if err != nil {
+		return err
+	}
+
+	return nil
+}

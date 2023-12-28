@@ -153,6 +153,28 @@ pkgmanagers:
         description: "Force removal of the package manager."
       name:
         description: "The name of the package manager to remove."
+  export:
+    description: "Export the specified package manager."
+    error:
+      noName: "No name specified."
+      noOutput: "No output specified."
+    info:
+      success: "Exported package manager '%s' to '%s'."
+    options:
+      name:
+        description: "The name of the package manager to export."
+      output:
+        description: "The path to export the package manager to."
+  import:
+    description: "Import the specified package manager."
+    error:
+      noInput: "No input specified."
+      cannotLoad: "Cannot load package manager from '%s'."
+    info:
+      success: "Imported package manager from '%s'."
+    options:
+      input:
+        description: "The path to import the package manager from."
 
 stacks:
   description: "Work with the stacks that are available in apx."

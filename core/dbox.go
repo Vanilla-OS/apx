@@ -226,6 +226,7 @@ func (d *dbox) CreateContainer(name string, image string, additionalPackages []s
 		"--name", name,
 		"--no-entry",
 		"--yes",
+		"--pull",
 	}
 
 	if hasNvidiaGPU() {
