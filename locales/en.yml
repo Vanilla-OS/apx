@@ -225,7 +225,7 @@ stacks:
       name:
         description: "The name of the stack."
       base:
-        description: "The base subsystem to use."
+        description: "The base distribution image to use. (For a list of compatible images view: https://distrobox.it/compatibility/#containers-distros)"
       packages:
         description: "The packages to install."
       pkgManager:
