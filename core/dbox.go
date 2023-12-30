@@ -294,6 +294,25 @@ func (d *dbox) ContainerEnter(name string, rootFull bool) error {
 	return err
 }
 
+func (d *dbox) ContainerStart(name string, rootFull bool) error {
+	_, err := d.RunCommand("start", []string{
+		name,
+	}, []string{}, true, false, false, rootFull)
+	return err
+}
+
+func (d *dbox) ContainerStop(name string, rootFull bool) error {
+	finalArgs := []string{
+		name,
+		"--yes",
+	}
+
+	engineFlags := []string{}
+
+	_, err := d.RunCommand("stop", finalArgs, engineFlags, false, false, false, rootFull)
+	return err
+}
+
 func (d *dbox) ContainerExport(name string, delete bool, rootFull bool, args ...string) error {
 	finalArgs := []string{"distrobox-export"}
 

@@ -247,6 +247,22 @@ func (s *SubSystem) Enter() error {
 	return dbox.ContainerEnter(s.InternalName, s.IsRootfull)
 }
 
+func (s *SubSystem) Start() error {
+	dbox, err := NewDbox()
+	if err != nil {
+		return err
+	}
+	return dbox.ContainerStart(s.InternalName, s.IsRootfull)
+}
+
+func (s *SubSystem) Stop() error {
+	dbox, err := NewDbox()
+	if err != nil {
+		return err
+	}
+	return dbox.ContainerStop(s.InternalName, s.IsRootfull)
+}
+
 func (s *SubSystem) Remove() error {
 	dbox, err := NewDbox()
 	if err != nil {

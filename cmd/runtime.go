@@ -182,6 +182,20 @@ func NewRuntimeCommands() []*cmdr.Command {
 			),
 		)
 
+		startCmd := cmdr.NewCommand(
+			"start",
+			apx.Trans("subsystems.start.description"),
+			apx.Trans("subsystems.start.description"),
+			handleFunc(subSystem, runPkgCmd),
+		)
+
+		stopCmd := cmdr.NewCommand(
+			"stop",
+			apx.Trans("subsystems.stop.description"),
+			apx.Trans("subsystems.stop.description"),
+			handleFunc(subSystem, runPkgCmd),
+		)
+
 		subSystemCmd.AddCommand(autoRemoveCmd)
 		subSystemCmd.AddCommand(cleanCmd)
 		subSystemCmd.AddCommand(installCmd)
@@ -196,6 +210,8 @@ func NewRuntimeCommands() []*cmdr.Command {
 		subSystemCmd.AddCommand(enterCmd)
 		subSystemCmd.AddCommand(exportCmd)
 		subSystemCmd.AddCommand(unexportCmd)
+		subSystemCmd.AddCommand(startCmd)
+		subSystemCmd.AddCommand(stopCmd)
 
 		commands = append(commands, subSystemCmd)
 	}
@@ -204,13 +220,13 @@ func NewRuntimeCommands() []*cmdr.Command {
 }
 
 func runPkgCmd(subSystem *core.SubSystem, command string, cmd *cobra.Command, args []string) error {
-	if command != "enter" && command != "export" && command != "unexport" {
+	if command != "enter" && command != "export" && command != "unexport" && command != "start" && command != "stop" {
 		if len(args) == 0 {
 			return fmt.Errorf(apx.Trans("runtimeCommand.error.noPackageSpecified"))
 		}
 	}
 
-	if command != "run" && command != "enter" && command != "export" && command != "unexport" {
+	if command != "run" && command != "enter" && command != "export" && command != "unexport" && command != "start" && command != "stop" {
 		pkgManager, err := subSystem.Stack.GetPkgManager()
 		if err != nil {
 			return fmt.Errorf(apx.Trans("runtimeCommand.error.cantAccessPkgManager"), err)
@@ -329,6 +345,26 @@ func runPkgCmd(subSystem *core.SubSystem, command string, cmd *cobra.Command, ar
 				cmdr.Info.Printfln(apx.Trans("runtimeCommand.info.unexportedBin"), bin)
 			}
 		}
+	}
+
+	if command == "start" {
+		cmdr.Info.Printfln(apx.Trans("runtimeCommand.info.startingContainer"), subSystem.Name)
+		err := subSystem.Start()
+		if err != nil {
+			return fmt.Errorf(apx.Trans("runtimeCommand.error.startingContainer"), err)
+		}
+
+		cmdr.Info.Printfln(apx.Trans("runtimeCommand.info.startedContainer"), subSystem.Name)
+	}
+
+	if command == "stop" {
+		cmdr.Info.Printfln(apx.Trans("runtimeCommand.info.stoppingContainer"), subSystem.Name)
+		err := subSystem.Stop()
+		if err != nil {
+			return fmt.Errorf(apx.Trans("runtimeCommand.error.stoppingContainer"), err)
+		}
+
+		cmdr.Info.Printfln(apx.Trans("runtimeCommand.info.stoppedContainer"), subSystem.Name)
 	}
 
 	return nil

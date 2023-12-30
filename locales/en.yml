@@ -27,6 +27,8 @@ runtimeCommand:
     exportingBin: "An error occurred while exporting the binary: %s"
     unexportingApp: "An error occurred while unexporting the application: %s"
     unexportingBin: "An error occurred while unexporting the binary: %s"
+    startingContainer: "An error occurred while starting the container: %s"
+    stoppingContainer: "An error occurred while stopping the container: %s"
   info:
     unexportedApps: "Unexported %d applications"
     exportedApps: "Exported %d applications"
@@ -34,6 +36,10 @@ runtimeCommand:
     exportedBin: "Exported binary %s"
     unexportedApp: "Unexported application %s"
     unexportedBin: "Unexported binary %s"
+    startingContainer: "Starting container…"
+    startedContainer: "Started container."
+    stoppingContainer: "Stopping container…"
+    stoppedContainer: "Stopped container."
   autoremove:
     description: "Remove packages that are no longer required."
   clean:
@@ -77,6 +83,10 @@ runtimeCommand:
         description: "The name of the binary to unexport."
       binOutput:
         description: "Path of the binary output (default: ~/.local/bin/)."
+  start:
+    description: "Start the subsystem."
+  stop:
+    description: "Stop the subsystem."
 
 pkgmanagers:
   description: "Work with the package managers that are available in apx."
