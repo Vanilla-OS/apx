@@ -220,12 +220,6 @@ func NewRuntimeCommands() []*cmdr.Command {
 }
 
 func runPkgCmd(subSystem *core.SubSystem, command string, cmd *cobra.Command, args []string) error {
-	if command != "enter" && command != "export" && command != "unexport" && command != "start" && command != "stop" {
-		if len(args) == 0 {
-			return fmt.Errorf(apx.Trans("runtimeCommand.error.noPackageSpecified"))
-		}
-	}
-
 	if command != "run" && command != "enter" && command != "export" && command != "unexport" && command != "start" && command != "stop" {
 		pkgManager, err := subSystem.Stack.GetPkgManager()
 		if err != nil {
