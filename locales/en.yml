@@ -148,6 +148,10 @@ pkgmanagers:
         description: "The command to run to update the list of available packages."
       upgrade:
         description: "The command to run to upgrade packages."
+  update:
+    description: "Update the specified package manager."
+    info:
+      success: "Updated package manager '%s'."
   rm:
     description: "Remove the specified package manager."
 
