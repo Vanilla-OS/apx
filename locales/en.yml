@@ -344,7 +344,7 @@ subsystems:
       stack:
         description: "The stack to use."
       info:
-        description: "Use Systemd inside the subsystem."
+        description: "Use systemd inside the subsystem."
   rm:
     description: "Remove the specified subsystem."
     error:
