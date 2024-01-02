@@ -70,6 +70,14 @@ func NewSubSystemsCommand() *cmdr.Command {
 			"",
 		),
 	)
+	newCmd.WithBoolFlag(
+		cmdr.NewBoolFlag(
+			"init",
+			"i",
+			apx.Trans("subsystems.new.options.init.description"),
+			false,
+		),
+	)
 
 	// Rm subcommand
 	rmCmd := cmdr.NewCommand(
@@ -175,6 +183,7 @@ func listSubSystems(cmd *cobra.Command, args []string) error {
 func newSubSystem(cmd *cobra.Command, args []string) error {
 	stackName, _ := cmd.Flags().GetString("stack")
 	subSystemName, _ := cmd.Flags().GetString("name")
+	isInit, _ := cmd.Flags().GetBool("init")
 
 	stacks := core.ListStacks()
 	if len(stacks) == 0 {
@@ -224,7 +233,7 @@ func newSubSystem(cmd *cobra.Command, args []string) error {
 		return err
 	}
 
-	subSystem, err := core.NewSubSystem(subSystemName, stack, false, false, false, false)
+	subSystem, err := core.NewSubSystem(subSystemName, stack, isInit, false, false, false)
 	if err != nil {
 		return err
 	}
