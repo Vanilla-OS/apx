@@ -21,27 +21,29 @@ import (
 */
 
 type SubSystem struct {
-	InternalName     string
-	Name             string
-	Stack            *Stack
-	Status           string
-	ExportedPrograms map[string]map[string]string
-	HasInit          bool
-	IsManaged        bool
-	IsRootfull       bool
-	IsUnshared       bool
+	InternalName         string
+	Name                 string
+	Stack                *Stack
+	Status               string
+	ExportedPrograms     map[string]map[string]string
+	HasInit              bool
+	IsManaged            bool
+	IsRootfull           bool
+	IsUnshared           bool
+	HasNvidiaIntegration bool
 }
 
-func NewSubSystem(name string, stack *Stack, hasInit bool, isManaged bool, isRootfull bool, isUnshared bool) (*SubSystem, error) {
+func NewSubSystem(name string, stack *Stack, hasInit bool, isManaged bool, isRootfull bool, isUnshared bool, hasNvidiaIntegration bool) (*SubSystem, error) {
 	internalName := genInternalName(name)
 	return &SubSystem{
-		InternalName: internalName,
-		Name:         name,
-		Stack:        stack,
-		HasInit:      hasInit,
-		IsManaged:    isManaged,
-		IsRootfull:   isRootfull,
-		IsUnshared:   isUnshared,
+		InternalName:         internalName,
+		Name:                 name,
+		Stack:                stack,
+		HasInit:              hasInit,
+		IsManaged:            isManaged,
+		IsRootfull:           isRootfull,
+		IsUnshared:           isUnshared,
+		HasNvidiaIntegration: hasNvidiaIntegration,
 	}, nil
 }
 
@@ -132,6 +134,10 @@ func (s *SubSystem) Create() error {
 		labels["unshared"] = "true"
 	}
 
+	if s.HasNvidiaIntegration {
+		labels["nvidia"] = "true"
+	}
+
 	err = dbox.CreateContainer(
 		s.InternalName,
 		s.Stack.Base,
@@ -140,6 +146,7 @@ func (s *SubSystem) Create() error {
 		s.HasInit,
 		s.IsRootfull,
 		s.IsUnshared,
+		s.HasNvidiaIntegration,
 	)
 	if err != nil {
 		return err
