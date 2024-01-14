@@ -1,5 +1,5 @@
 {
     "apxPath": "/usr/share/apx",
     "distroboxpath": "/usr/share/apx/distrobox/distrobox",
-    "storageDriver": "btrfs"
+    "storageDriver": "overlay"
 }
