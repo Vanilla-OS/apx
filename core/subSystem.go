@@ -24,6 +24,7 @@ type SubSystem struct {
 	InternalName         string
 	Name                 string
 	Stack                *Stack
+	Home                 string
 	Status               string
 	ExportedPrograms     map[string]map[string]string
 	HasInit              bool
@@ -33,12 +34,13 @@ type SubSystem struct {
 	HasNvidiaIntegration bool
 }
 
-func NewSubSystem(name string, stack *Stack, hasInit bool, isManaged bool, isRootfull bool, isUnshared bool, hasNvidiaIntegration bool) (*SubSystem, error) {
+func NewSubSystem(name string, stack *Stack, home string, hasInit bool, isManaged bool, isRootfull bool, isUnshared bool, hasNvidiaIntegration bool) (*SubSystem, error) {
 	internalName := genInternalName(name)
 	return &SubSystem{
 		InternalName:         internalName,
 		Name:                 name,
 		Stack:                stack,
+		Home:                 home,
 		HasInit:              hasInit,
 		IsManaged:            isManaged,
 		IsRootfull:           isRootfull,
@@ -142,6 +144,7 @@ func (s *SubSystem) Create() error {
 		s.InternalName,
 		s.Stack.Base,
 		s.Stack.Packages,
+		s.Home,
 		labels,
 		s.HasInit,
 		s.IsRootfull,
