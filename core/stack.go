@@ -66,6 +66,10 @@ func LoadStackFromPath(path string) (*Stack, error) {
 		return nil, err
 	}
 
+	if stack.Name == "" || stack.Base == "" || stack.PkgManager == "" {
+		return nil, errors.New("invalid stack file")
+	}
+
 	return stack, nil
 }
 
