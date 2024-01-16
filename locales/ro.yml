@@ -349,6 +349,8 @@ subsystems:
         description: "Stiva de utilizat."
       home:
         description: The custom home directory of the subsystem.
+      init:
+        description: Use systemd inside the subsystem.
   rm:
     description: "Elimină subsistemul specificat."
     error:

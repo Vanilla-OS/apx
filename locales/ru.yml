@@ -344,6 +344,8 @@ subsystems:
         description: "Используемый стек."
       home:
         description: Пользовательский домашний каталог подсистемы.
+      init:
+        description: Use systemd inside the subsystem.
   rm:
     description: "Удалить указанную подсистему."
     error:

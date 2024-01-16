@@ -357,6 +357,8 @@ subsystems:
         description: "Pile à utiliser."
       home:
         description: The custom home directory of the subsystem.
+      init:
+        description: Use systemd inside the subsystem.
   rm:
     description: "Supprimer le sous-système indiqué."
     error:

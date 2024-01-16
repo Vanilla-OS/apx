@@ -331,6 +331,8 @@ subsystems:
         description: "要使用的包捆。"
       home:
         description: The custom home directory of the subsystem.
+      init:
+        description: Use systemd inside the subsystem.
   rm:
     description: "移除指定的子系統。"
     error:

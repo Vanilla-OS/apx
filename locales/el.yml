@@ -350,6 +350,8 @@ subsystems:
         description: "Η στοίβα που θα χρησιμοποιηθεί."
       home:
         description: The custom home directory of the subsystem.
+      init:
+        description: Use systemd inside the subsystem.
   rm:
     description: "Αφαίρεση του επιλεγμένου υποσυστήματος."
     error:

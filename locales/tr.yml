@@ -346,6 +346,8 @@ subsystems:
         description: "Kullanılacak yığın."
       home:
         description: The custom home directory of the subsystem.
+      init:
+        description: Use systemd inside the subsystem.
   rm:
     description: "Belirtilen alt sistemi kaldırın."
     error:

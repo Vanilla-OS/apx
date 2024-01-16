@@ -344,6 +344,8 @@ subsystems:
         description: "The stack to use."
       home:
         description: The custom home directory of the subsystem.
+      init:
+        description: Use systemd inside the subsystem.
   rm:
     description: "Remove the specified subsystem."
     error:

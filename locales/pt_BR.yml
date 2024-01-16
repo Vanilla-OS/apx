@@ -346,6 +346,8 @@ subsystems:
         description: "A pilha a ser usada."
       home:
         description: The custom home directory of the subsystem.
+      init:
+        description: Use systemd inside the subsystem.
   rm:
     description: "Remover o subsistema especificado."
     error:
