@@ -167,25 +167,25 @@ pkgmanagers:
   export:
     options:
       output:
-        description: The path to export the package manager to.
+        description: Sökvägen att exportera pakethanterare till.
       name:
-        description: The name of the package manager to export.
+        description: Namnet på pakethanterare som ska exporteras.
     error:
-      noOutput: No output specified.
-      noName: No name specified.
-    description: Export the specified package manager.
+      noOutput: Ingen utgång specificerad.
+      noName: Inget namn specificerat.
+    description: Exportera den angivna pakethanteraren.
     info:
-      success: Exported package manager '%s' to '%s'.
+      success: Exporterade pakethanterare '%s' till '%s'.
   import:
     error:
-      noInput: No input specified.
-      cannotLoad: Cannot load package manager from '%s'.
+      noInput: Ingen inmatning specificerad.
+      cannotLoad: Kan inte ladda pakethanterare från '%s'.
     info:
-      success: Imported package manager from '%s'.
-    description: Import the specified package manager.
+      success: Importerade pakethanterare från '%s'.
+    description: Importera den specificerade pakethanteraren.
     options:
       input:
-        description: The path to import the package manager from.
+        description: Sökvägen som pakethanteraren ska importeras från.
 stacks:
   description: "Arbeta med de stackar som finns tillgängliga i apx."
   labels:
@@ -235,7 +235,8 @@ stacks:
       name:
         description: "Namnet på stacken."
       base:
-        description: "Bas undersystem att använda."
+        description: "Basdistributionsavbilden som ska användas. (För en lista över
+          kompatibla avbilder se: https://distrobox.it/compatibility/#containers-distros)"
       packages:
         description: "Paketen att installera."
       pkgManager:
