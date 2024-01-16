@@ -26,6 +26,8 @@ runtimeCommand:
     unexportingApp: "Nastala chyba během odexportování aplikace: %s"
     unexportingBin: "Nastala chyba během odexportování binárního souboru: %s"
     enteringContainer: 'An error occurred while entering the container: %s'
+    startingContainer: 'An error occurred while starting the container: %s'
+    stoppingContainer: 'An error occurred while stopping the container: %s'
   info:
     unexportedApps: "Odexportováno %d aplikací\n"
     exportedApps: "Exportováno %d aplikací\n"
@@ -33,6 +35,10 @@ runtimeCommand:
     exportedBin: "Binární soubor %s exportován\n"
     unexportedApp: "Aplikace %s odexportována\n"
     unexportedBin: "Binární soubor %s odexportován\n"
+    stoppedContainer: Stopped container.
+    startedContainer: Started container.
+    stoppingContainer: Stopping container…
+    startingContainer: Starting container…
   autoremove:
     description: "Smazat balíčky, které už nejsou potřebné."
   clean:
@@ -77,6 +83,10 @@ runtimeCommand:
       binOutput:
         description: "Cesta k binárnímu souboru (default: ~/.local/bin/)."
 
+  start:
+    description: Start the subsystem.
+  stop:
+    description: Stop the subsystem.
 pkgmanagers:
   description: "Pracovat se správci balíčků, které jsou dostupné v apx."
   labels:
@@ -152,6 +162,32 @@ pkgmanagers:
       name:
         description: "Název správce balíčků, který má být odebrán."
 
+  export:
+    options:
+      output:
+        description: The path to export the package manager to.
+      name:
+        description: The name of the package manager to export.
+    error:
+      noOutput: No output specified.
+      noName: No name specified.
+    description: Export the specified package manager.
+    info:
+      success: Exported package manager '%s' to '%s'.
+  import:
+    error:
+      noInput: No input specified.
+      cannotLoad: Cannot load package manager from '%s'.
+    info:
+      success: Imported package manager from '%s'.
+    description: Import the specified package manager.
+    options:
+      input:
+        description: The path to import the package manager from.
+  update:
+    description: Update the specified package manager.
+    info:
+      success: Updated package manager '%s'.
 stacks:
   description: "Práce se stacky, které jsou k dispozici v apx."
   labels:
@@ -305,6 +341,10 @@ subsystems:
         description: "Název subsystému."
       stack:
         description: "Stack, který se má použít."
+      info:
+        description: Use systemd inside the subsystem.
+      home:
+        description: The custom home directory of the subsystem.
   rm:
     description: "Smazat zadaný subsystém."
     error:

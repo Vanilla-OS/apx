@@ -24,6 +24,8 @@ runtimeCommand:
     unexportingApp: "移除匯出的應用程式時發生錯誤：%s"
     unexportingBin: "移除匯出的二進位檔案時發生錯誤：%s"
     enteringContainer: '進入容器時發生錯誤：%s'
+    startingContainer: '啟動容器時發生錯誤：%s'
+    stoppingContainer: '停止容器時發生錯誤：%s'
   info:
     unexportedApps: "已移除匯出的 %d 個應用程式"
     exportedApps: "已匯出 %d 個應用程式"
@@ -31,6 +33,10 @@ runtimeCommand:
     exportedBin: "已匯出二進位檔案 %s"
     unexportedApp: "已移除匯出的應用程式 %s"
     unexportedBin: "已移除匯出的二進位檔案 %s"
+    stoppedContainer: 已停止容器。
+    startedContainer: 已啟動容器。
+    stoppingContainer: 正在停止容器…
+    startingContainer: 正在啟動容器…
   autoremove:
     description: "移除不再需要的軟體包。"
   clean:
@@ -75,6 +81,10 @@ runtimeCommand:
       binOutput:
         description: "二進位輸出的路徑（預設為 ~/.local/bin/）。"
 
+  start:
+    description: 啟動子系統。
+  stop:
+    description: 停止子系統。
 pkgmanagers:
   description: "操作 apx 中可使用的軟體包管理器。"
   labels:
@@ -149,6 +159,32 @@ pkgmanagers:
       name:
         description: "要移除的軟體包管理器的名稱。"
 
+  export:
+    options:
+      output:
+        description: 軟體包管理器匯出的路徑。
+      name:
+        description: 要匯出的軟體包管理器的名稱。
+    error:
+      noOutput: 沒有指定輸出。
+      noName: 沒有指定名稱。
+    description: 匯出指定的軟體包管理器。
+    info:
+      success: 已匯出軟體包管理器 '%s' 到 '%s'。
+  import:
+    error:
+      noInput: 沒有指定輸入。
+      cannotLoad: 無法從 '%s' 載入軟體包管理器。
+    info:
+      success: 已從 '%s' 匯入軟體包管理器。
+    description: 匯入指定的軟體包管理器。
+    options:
+      input:
+        description: 要匯入的軟體包管理器的路徑。
+  update:
+    description: 更新選定的軟體包管理器。
+    info:
+      success: 已更新軟體包管理器 '%s'。
 stacks:
   description: "操作 apx 中可使用的包捆。"
   labels:
@@ -194,7 +230,7 @@ stacks:
       name:
         description: "包捆的名稱。"
       base:
-        description: "要使用的基礎子系統。"
+        description: "要使用的基礎散布版映像。（相容映像之清單參見：https://distrobox.it/compatibility/#containers-distros）"
       packages:
         description: "要安裝的軟體包。"
       pkgManager:
@@ -293,6 +329,10 @@ subsystems:
         description: "子系統的名稱。"
       stack:
         description: "要使用的包捆。"
+      info:
+        description: 在子系統內部使用 systemd。
+      home:
+        description: The custom home directory of the subsystem.
   rm:
     description: "移除指定的子系統。"
     error:

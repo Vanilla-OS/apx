@@ -1,10 +1,10 @@
 apx:
-  description: "Apx est un gestionnaire de packets qui support des sources multiples
+  description: "Apx est un gestionnaire de paquets qui support des sources multiples
     vous permettant d'installer des paquets dans les sous-systèmes."
   errors:
     unknownCommand: "Commande inconnue : %s"
     invalidInput: "Entrée invalide."
-    invalidChoice: Choix non valide.
+    invalidChoice: Choix invalide.
     noRoot: N'exécutez pas Apx en tant que root.
   info:
     aborting: "Annulation."
@@ -32,6 +32,10 @@ runtimeCommand:
       %s"
     enteringContainer: 'Une erreur s''est produite lors de l''entrée dans le conteneur
       : %s'
+    startingContainer: 'Une erreur s''est produite lors du démarrage du conteneur :
+      %s'
+    stoppingContainer: 'Une erreur s''est produite lors de l''arrêt du conteneur :
+      %s'
   info:
     unexportedApps: "Applications supprimées de l'exportation %d"
     exportedApps: "%d applications exportées"
@@ -39,6 +43,10 @@ runtimeCommand:
     exportedBin: "Binaire exporté %s"
     unexportedApp: "Applications supprimées de l'exportation %s"
     unexportedBin: "Binaire supprimées de l'exportation %s"
+    stoppedContainer: Conteneur arrêté.
+    startedContainer: Conteneur démarré.
+    stoppingContainer: Arrêt du conteneur…
+    startingContainer: Démarrage du conteneur…
   autoremove:
     description: "Supprimer les paquets qui ne sont plus nécessaires."
   clean:
@@ -83,6 +91,10 @@ runtimeCommand:
       binOutput:
         description: "Chemin de sortie du binaire (par défaut : ~/.local/bin/)."
 
+  start:
+    description: Démarre le sous-système.
+  stop:
+    description: Arrête le sous-système.
 pkgmanagers:
   description: "Travailler avec les gestionnaires de paquets disponibles dans apx."
   labels:
@@ -162,6 +174,32 @@ pkgmanagers:
       name:
         description: "Le nom du gestionnaire de paquets à supprimer."
 
+  export:
+    options:
+      output:
+        description: Le chemin vers lequel exporter le gestionnaire de paquets.
+      name:
+        description: Le nom du gestionnaire de packages à exporter.
+    error:
+      noOutput: Aucune sortie spécifié.
+      noName: Aucun nom spécifié.
+    description: Exporter le gestionnaire de paquets spécifié.
+    info:
+      success: Gestionnaire de paquets exporté '%s' vers '%s'.
+  import:
+    error:
+      noInput: Aucune entrée spécifiée.
+      cannotLoad: Impossible de charger le gestionnaire de paquets à partir de '%s'.
+    info:
+      success: Gestionnaire de paquets importé depuis '%s'.
+    description: Importez le gestionnaire de paquets spécifié.
+    options:
+      input:
+        description: Le chemin à partir duquel importer le gestionnaire de packages.
+  update:
+    description: Mettez à jour le gestionnaire de paquets spécifié.
+    info:
+      success: Le gestionnaire de paquets '%s' à été mis à jour.
 stacks:
   description: "Travaillez avec les piles disponibles dans apx."
   labels:
@@ -211,7 +249,8 @@ stacks:
       name:
         description: "Nom de la pile."
       base:
-        description: "Le sous-système de base à utiliser."
+        description: "L'image de base de la distribution à utiliser. (Pour une liste
+          des images compatibles : https ://distrobox.it//compatibility/#containers-distros)"
       packages:
         description: "Les paquets à installer."
       pkgManager:
@@ -316,6 +355,10 @@ subsystems:
         description: "Nom du sous-système."
       stack:
         description: "Pile à utiliser."
+      info:
+        description: Utiliser systemd au sein du sous-système.
+      home:
+        description: The custom home directory of the subsystem.
   rm:
     description: "Supprimer le sous-système indiqué."
     error:

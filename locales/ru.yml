@@ -1,5 +1,5 @@
 apx:
-  description: "Apx - это менеджер пакетов с поддержкой нескольких источников, позволяющий
+  description: "Apx — это менеджер пакетов с поддержкой нескольких источников, позволяющий
     устанавливать пакеты в подсистемах."
   errors:
     unknownCommand: "Неизвестная команда: %s"
@@ -26,6 +26,8 @@ runtimeCommand:
     unexportingApp: "Произошла ошибка при деэкспортировании приложения: %s"
     unexportingBin: "Произошла ошибка при деэкспортировании двоичного файла: %s"
     enteringContainer: 'Произошла ошибка при входе в контейнер: %s'
+    startingContainer: 'Произошла ошибка при запуске контейнера: %s'
+    stoppingContainer: 'Произошла ошибка при остановке контейнера: %s'
   info:
     unexportedApps: "Деэкспортировано %d приложений"
     exportedApps: "Экспортировано %d приложений"
@@ -33,6 +35,10 @@ runtimeCommand:
     exportedBin: "Экспортированный двоичный файл %s"
     unexportedApp: "Деэкспортированное приложение %s"
     unexportedBin: "Деэкспортированный двоичный файл %s"
+    stoppedContainer: Остановленный контейнер.
+    startedContainer: Запущенный контейнер.
+    stoppingContainer: Остановка контейнера…
+    startingContainer: Запуск контейнера…
   autoremove:
     description: "Убрать пакеты, которые больше не требуются."
   clean:
@@ -77,6 +83,10 @@ runtimeCommand:
       binOutput:
         description: "Путь вывода двоичного файла (по умолчанию: ~/.local/bin/)."
 
+  start:
+    description: Запустить подсистему.
+  stop:
+    description: Остановить подсистему.
 pkgmanagers:
   description: "Работа с менеджерами пакетов, которые доступны в apx."
   labels:
@@ -88,7 +98,7 @@ pkgmanagers:
     info:
       noPkgManagers: "Нет доступных менеджеров пакетов. Создайте новый с помощью 'apx
         pkgmanagers new' или обратитесь к системному администратору."
-      foundPkgManagers: "Менеджер(ов) пакетов найдено %d"
+      foundPkgManagers: "Менеджеров пакетов найдено %d"
     options:
       json:
         description: "Вывод в формате JSON."
@@ -152,6 +162,32 @@ pkgmanagers:
       name:
         description: "Имя удаляемого менеджера пакетов."
 
+  export:
+    options:
+      output:
+        description: Путь для экспорта менеджера пакетов.
+      name:
+        description: Имя пакетного менеджера для экспорта.
+    error:
+      noOutput: Вывод не указан.
+      noName: Имя не указано.
+    description: Экспортировать выбранный менеджер пакетов.
+    info:
+      success: Экспортирован менеджер пакетов '%s' в '%s'.
+  import:
+    error:
+      noInput: Ввод не выбран.
+      cannotLoad: Невозможно загрузить менеджер пакетов из '%s'.
+    info:
+      success: Импортирован менеджер пакетов из '%s'.
+    description: Импорт выбранного менеджера пакетов.
+    options:
+      input:
+        description: Путь для импорта менеджера пакетов.
+  update:
+    description: Обновить указанный менеджер пакетов.
+    info:
+      success: Обновлен менеджер пакетов '%s'.
 stacks:
   description: "Работа со стеками, доступными в apx."
   labels:
@@ -201,7 +237,8 @@ stacks:
       name:
         description: "Имя стека."
       base:
-        description: "Основа для использования подсистемы."
+        description: "Образ базового дистрибутива, который будет использоваться. (Список
+          совместимых образов см. по адресу: https://distrobox.it/compatibility/#containers-distros)"
       packages:
         description: "Пакеты для установки."
       pkgManager:
@@ -305,6 +342,10 @@ subsystems:
         description: "Имя подсистемы."
       stack:
         description: "Используемый стек."
+      info:
+        description: Использовать systemd внутри подсистемы.
+      home:
+        description: Пользовательский домашний каталог подсистемы.
   rm:
     description: "Удалить указанную подсистему."
     error:

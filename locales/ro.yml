@@ -27,6 +27,8 @@ runtimeCommand:
     unexportingApp: "S-a produs o eroare în timpul exportării aplicației: %s"
     unexportingBin: "A apărut o eroare în timpul neexportării binarului: %s"
     enteringContainer: 'A apărut o eroare la accesarea containerului: %s'
+    startingContainer: 'An error occurred while starting the container: %s'
+    stoppingContainer: 'An error occurred while stopping the container: %s'
   info:
     unexportedApps: "%d aplicații neexportate"
     exportedApps: "%d aplicații exportate"
@@ -34,6 +36,10 @@ runtimeCommand:
     exportedBin: "Binarul %s exportat"
     unexportedApp: "Aplicația %s neexportată"
     unexportedBin: "Binarul %s neexportat"
+    stoppedContainer: Stopped container.
+    startedContainer: Started container.
+    stoppingContainer: Stopping container…
+    startingContainer: Starting container…
   autoremove:
     description: "Eliminați pachetele care nu mai sunt necesare."
   clean:
@@ -78,6 +84,10 @@ runtimeCommand:
       binOutput:
         description: "Calea de acces a ieșirii binare (implicit: ~/.local/bin/)."
 
+  start:
+    description: Start the subsystem.
+  stop:
+    description: Stop the subsystem.
 pkgmanagers:
   description: "Lucrați cu managerii de pachete care sunt disponibili în apx."
   labels:
@@ -157,6 +167,32 @@ pkgmanagers:
       name:
         description: "Numele administratorului de pachete care urmează să fie eliminat."
 
+  export:
+    options:
+      output:
+        description: The path to export the package manager to.
+      name:
+        description: The name of the package manager to export.
+    error:
+      noOutput: No output specified.
+      noName: No name specified.
+    description: Export the specified package manager.
+    info:
+      success: Exported package manager '%s' to '%s'.
+  import:
+    error:
+      noInput: No input specified.
+      cannotLoad: Cannot load package manager from '%s'.
+    info:
+      success: Imported package manager from '%s'.
+    description: Import the specified package manager.
+    options:
+      input:
+        description: The path to import the package manager from.
+  update:
+    description: Update the specified package manager.
+    info:
+      success: Updated package manager '%s'.
 stacks:
   description: "Lucrați cu stive care sunt disponibile în apx."
   labels:
@@ -311,6 +347,10 @@ subsystems:
         description: "Numele subsistemului."
       stack:
         description: "Stiva de utilizat."
+      info:
+        description: Use systemd inside the subsystem.
+      home:
+        description: The custom home directory of the subsystem.
   rm:
     description: "Elimină subsistemul specificat."
     error:

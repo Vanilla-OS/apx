@@ -30,6 +30,8 @@ runtimeCommand:
     unexportingBin: "Beim De-Exportieren der Binärdatei ist ein Fehler aufgetreten:
       %s"
     enteringContainer: 'Beim Betreten des Containers ist ein Fehler aufgetreten: %s'
+    startingContainer: 'An error occurred while starting the container: %s'
+    stoppingContainer: 'An error occurred while stopping the container: %s'
   info:
     unexportedApps: "%d Anwendungen deexportiert"
     exportedApps: "%d Anwendungen exportiert"
@@ -37,6 +39,10 @@ runtimeCommand:
     exportedBin: "Binärdatei %s exportiert"
     unexportedApp: "Anwendung %s deexportiert"
     unexportedBin: "Binärdatei %s deexportiert"
+    stoppedContainer: Stopped container.
+    startedContainer: Started container.
+    stoppingContainer: Stopping container…
+    startingContainer: Starting container…
   autoremove:
     description: "Pakete entfernen, die nicht mehr länger benötigt werden."
   clean:
@@ -81,6 +87,10 @@ runtimeCommand:
       binOutput:
         description: "Pfad der Binärausgabe (Standard: ~/.local/bin/)."
 
+  start:
+    description: Start the subsystem.
+  stop:
+    description: Stop the subsystem.
 pkgmanagers:
   description: "Arbeiten Sie mit den Paketmanagern, die in apx verfügbar sind."
   labels:
@@ -159,6 +169,32 @@ pkgmanagers:
       name:
         description: "Der Name des zu entfernenden Paketmanagers."
 
+  export:
+    options:
+      output:
+        description: The path to export the package manager to.
+      name:
+        description: The name of the package manager to export.
+    error:
+      noOutput: No output specified.
+      noName: No name specified.
+    description: Export the specified package manager.
+    info:
+      success: Exported package manager '%s' to '%s'.
+  import:
+    error:
+      noInput: No input specified.
+      cannotLoad: Cannot load package manager from '%s'.
+    info:
+      success: Imported package manager from '%s'.
+    description: Import the specified package manager.
+    options:
+      input:
+        description: The path to import the package manager from.
+  update:
+    description: Update the specified package manager.
+    info:
+      success: Updated package manager '%s'.
 stacks:
   description: "Arbeiten Sie mit den Stapeln, die in apx verfügbar sind."
   labels:
@@ -314,6 +350,10 @@ subsystems:
         description: "Der Name des Subsystems."
       stack:
         description: "Der zu verwendende Stapel."
+      info:
+        description: Use systemd inside the subsystem.
+      home:
+        description: The custom home directory of the subsystem.
   rm:
     description: "Das angegebene Subsystem entfernen."
     error:

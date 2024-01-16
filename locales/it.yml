@@ -33,6 +33,9 @@ runtimeCommand:
       del file binario: %s"
     enteringContainer: 'Si è verificato un errore durante l''entrata nel container:
       %s'
+    startingContainer: 'Si è verificato un errore durante l''avvio del container:
+      %s'
+    stoppingContainer: 'Si è verificato un errore nell''arresto del containter: %s'
   info:
     unexportedApps: "Rimosse %d applicazioni"
     exportedApps: "Esportate %d applicazioni"
@@ -40,6 +43,10 @@ runtimeCommand:
     exportedBin: "Esportato file binario %s"
     unexportedApp: "Rimossa applicazione %s"
     unexportedBin: "Rimosso file binario %s"
+    stoppedContainer: Container arrestato.
+    startedContainer: Container avviato.
+    stoppingContainer: Arrestando container…
+    startingContainer: Avvio container…
   autoremove:
     description: "Rimuovere pacchetti non più necessari."
   clean:
@@ -84,6 +91,10 @@ runtimeCommand:
       binOutput:
         description: "Percorso dell'output binario (default: ~/.local/bin/)."
 
+  start:
+    description: Avvia il sottosistema.
+  stop:
+    description: Ferma il sottosistema.
 pkgmanagers:
   description: "Lavora con i gestori di pacchetti disponibili in apx."
   labels:
@@ -160,6 +171,32 @@ pkgmanagers:
       name:
         description: "Il nome del gestore di pacchetti da rimuovere."
 
+  export:
+    options:
+      output:
+        description: Il percorso in cui esportare il gestore pacchetti.
+      name:
+        description: Nome del gestore di pacchetti da esportare.
+    error:
+      noOutput: Output non specificato.
+      noName: Nome non specificato.
+    description: Esporta il gestore di pacchetti specificato.
+    info:
+      success: Esportato gestore di pacchetti '%s' a '%s'.
+  import:
+    error:
+      noInput: Input non specificato.
+      cannotLoad: Impossibile caricare il gestore pacchetti da '%s'.
+    info:
+      success: Gestore di pacchetti importato da '%s'.
+    description: Importa il gestore di pacchetti specificato.
+    options:
+      input:
+        description: Il percorso da cui importare il gestore pacchetti.
+  update:
+    description: Aggiorna il gestore di pacchetti specifico.
+    info:
+      success: Aggiorna il gestore di pacchetti '%s'.
 stacks:
   description: "Lavora con gli stack disponibili in apx."
   labels:
@@ -209,7 +246,8 @@ stacks:
       name:
         description: "Il nome dello stack."
       base:
-        description: "Il sottosistema di base da utilizzare."
+        description: "L'immagine della distribuzione base da utilizzare. (Per una
+          lista di immagini compatibili: https://distrobox.it/compatibility/#containers-distros)"
       packages:
         description: "I pacchetti da installare."
       pkgManager:
@@ -314,6 +352,10 @@ subsystems:
         description: "Il nome del sottosistema."
       stack:
         description: "Lo stack da utilizzare."
+      info:
+        description: Usa systemd nel sottosistema.
+      home:
+        description: The custom home directory of the subsystem.
   rm:
     description: "Rimuove il sottosistema specificato."
     error:

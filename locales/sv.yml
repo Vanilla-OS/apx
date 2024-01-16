@@ -26,6 +26,8 @@ runtimeCommand:
     unexportingApp: "Ett fel uppstod när programmet skulle avexporteras: %s"
     unexportingBin: "Ett fel uppstod när binär: %s skulle avexporteras"
     enteringContainer: 'Ett fel uppstod när du gick in i behållaren: %s'
+    startingContainer: 'Ett fel uppstod då behållaren skulle köras: %s'
+    stoppingContainer: 'Ett fel uppstod då behållaren skulle stoppas: %s'
   info:
     unexportedApps: "Oexporterade %d program"
     exportedApps: "Exporterade %d program"
@@ -33,6 +35,10 @@ runtimeCommand:
     exportedBin: "Exporterad binär %s"
     unexportedApp: "Oexporterat program %s"
     unexportedBin: "Oexporterad binär %s"
+    stoppedContainer: Stoppad behållare.
+    startedContainer: Startad behållare.
+    stoppingContainer: Stoppar behållare…
+    startingContainer: Startar behållare…
   autoremove:
     description: "Ta bort paket som inte längre behövs."
   clean:
@@ -77,6 +83,10 @@ runtimeCommand:
       binOutput:
         description: "Sökväg av binär utdata (standard: ~/.local/bin/)."
 
+  start:
+    description: Starta undersystem.
+  stop:
+    description: Stoppa undersystem.
 pkgmanagers:
   description: "Arbeta med de pakethanterare som finns tillgängliga i apx."
   labels:
@@ -154,6 +164,32 @@ pkgmanagers:
       name:
         description: "Namnet på pakethanteraren som ska tas bort."
 
+  export:
+    options:
+      output:
+        description: Sökvägen att exportera pakethanterare till.
+      name:
+        description: Namnet på pakethanterare som ska exporteras.
+    error:
+      noOutput: Ingen utgång specificerad.
+      noName: Inget namn specificerat.
+    description: Exportera den angivna pakethanteraren.
+    info:
+      success: Exporterade pakethanterare '%s' till '%s'.
+  import:
+    error:
+      noInput: Ingen inmatning specificerad.
+      cannotLoad: Kan inte ladda pakethanterare från '%s'.
+    info:
+      success: Importerade pakethanterare från '%s'.
+    description: Importera den specificerade pakethanteraren.
+    options:
+      input:
+        description: Sökvägen som pakethanteraren ska importeras från.
+  update:
+    description: Uppdatera den specificerade pakethanteraren.
+    info:
+      success: Uppdaterade pakethanterare "%s".
 stacks:
   description: "Arbeta med de stackar som finns tillgängliga i apx."
   labels:
@@ -203,7 +239,8 @@ stacks:
       name:
         description: "Namnet på stacken."
       base:
-        description: "Bas undersystem att använda."
+        description: "Basdistributionsavbilden som ska användas. (För en lista över
+          kompatibla avbilder se: https://distrobox.it/compatibility/#containers-distros)"
       packages:
         description: "Paketen att installera."
       pkgManager:
@@ -307,6 +344,10 @@ subsystems:
         description: "Namnet på undersystem."
       stack:
         description: "Stacken att använda."
+      info:
+        description: Använd systemd inuti undersystemet.
+      home:
+        description: Den anpassade hemkatalogen för undersystemet.
   rm:
     description: "Ta bort det specificerade undersystemet."
     error:

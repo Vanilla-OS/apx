@@ -24,6 +24,8 @@ runtimeCommand:
     unexportingApp: "移除导出的应用程序时发生错误：%s"
     unexportingBin: "移除导出的二进制文件时发生错误：%s"
     enteringContainer: '进入容器时发生错误：%s'
+    startingContainer: '启动容器时发生错误：%s'
+    stoppingContainer: '停止容器时发生错误：%s'
   info:
     unexportedApps: "已移除导出的 %d 个应用程序"
     exportedApps: "已导出 %d 个应用程序"
@@ -31,6 +33,10 @@ runtimeCommand:
     exportedBin: "已导出二进制文件 %s"
     unexportedApp: "已移除导出的应用程序 %s"
     unexportedBin: "已移除导出的二进制文件 %s"
+    stoppedContainer: 已停止容器。
+    startedContainer: 已启动容器。
+    stoppingContainer: 正在停止容器…
+    startingContainer: 正在启动容器…
   autoremove:
     description: "移除不再需要的软件包。"
   clean:
@@ -75,6 +81,10 @@ runtimeCommand:
       binOutput:
         description: "二进制输出的路径（默认为 ~/.local/bin/）。"
 
+  start:
+    description: 启动子系统。
+  stop:
+    description: 停止子系统。
 pkgmanagers:
   description: "操作 apx 中可用的软件包管理器。"
   labels:
@@ -149,6 +159,32 @@ pkgmanagers:
       name:
         description: "要移除的软件包管理器的名称。"
 
+  export:
+    options:
+      output:
+        description: 软件包管理器导出到的路径。
+      name:
+        description: 要导出的软件包管理器的名称。
+    error:
+      noOutput: 没有指定输出。
+      noName: 没有指定名称。
+    description: 导出指定的软件包管理器。
+    info:
+      success: 已导出软件包管理器 '%s' 到 '%s'。
+  import:
+    error:
+      noInput: 没有指定输入。
+      cannotLoad: 无法从 '%s' 加载软件包管理器。
+    info:
+      success: 已从 '%s' 导入软件包管理器。
+    description: 导入指定的软件包管理器。
+    options:
+      input:
+        description: 要导入的软件包管理器的路径。
+  update:
+    description: 更新选定的软件包管理器。
+    info:
+      success: 已更新软件包管理器 '%s'。
 stacks:
   description: "操作 apx 中可用的包捆。"
   labels:
@@ -194,7 +230,7 @@ stacks:
       name:
         description: "包捆的名称。"
       base:
-        description: "要使用的基础子系统。"
+        description: "要使用的基础发行版映像。（有关兼容映像的列表参见：https://distrobox.it/compatibility/#containers-distros）"
       packages:
         description: "要安装的软件包。"
       pkgManager:
@@ -293,6 +329,10 @@ subsystems:
         description: "子系统的名称。"
       stack:
         description: "要使用的包捆。"
+      info:
+        description: 在子系统内部使用 systemd。
+      home:
+        description: The custom home directory of the subsystem.
   rm:
     description: "移除指定的子系统。"
     error:

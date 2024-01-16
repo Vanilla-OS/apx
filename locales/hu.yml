@@ -26,6 +26,8 @@ runtimeCommand:
     unexportingApp: "An error occurred while unexporting the application: %s"
     unexportingBin: "An error occurred while unexporting the binary: %s"
     enteringContainer: 'An error occurred while entering the container: %s'
+    startingContainer: 'An error occurred while starting the container: %s'
+    stoppingContainer: 'An error occurred while stopping the container: %s'
   info:
     unexportedApps: "Unexported %d applications\n"
     exportedApps: "Exported %d applications\n"
@@ -33,6 +35,10 @@ runtimeCommand:
     exportedBin: "Exported binary %s\n"
     unexportedApp: "Unexported application %s\n"
     unexportedBin: "Unexported binary %s\n"
+    stoppedContainer: Stopped container.
+    startedContainer: Started container.
+    stoppingContainer: Stopping container…
+    startingContainer: Starting container…
   autoremove:
     description: "Remove packages that are no longer required."
   clean:
@@ -77,6 +83,10 @@ runtimeCommand:
       binOutput:
         description: "Path of the binary output (default: ~/.local/bin/)."
 
+  start:
+    description: Start the subsystem.
+  stop:
+    description: Stop the subsystem.
 pkgmanagers:
   description: "Work with the package managers that are available in apx."
   labels:
@@ -153,6 +163,32 @@ pkgmanagers:
       name:
         description: "The name of the package manager to remove."
 
+  export:
+    options:
+      output:
+        description: The path to export the package manager to.
+      name:
+        description: The name of the package manager to export.
+    error:
+      noOutput: No output specified.
+      noName: No name specified.
+    description: Export the specified package manager.
+    info:
+      success: Exported package manager '%s' to '%s'.
+  import:
+    error:
+      noInput: No input specified.
+      cannotLoad: Cannot load package manager from '%s'.
+    info:
+      success: Imported package manager from '%s'.
+    description: Import the specified package manager.
+    options:
+      input:
+        description: The path to import the package manager from.
+  update:
+    description: Update the specified package manager.
+    info:
+      success: Updated package manager '%s'.
 stacks:
   description: "Work with the stacks that are available in apx."
   labels:
@@ -306,6 +342,10 @@ subsystems:
         description: "The name of the subsystem."
       stack:
         description: "The stack to use."
+      info:
+        description: Use systemd inside the subsystem.
+      home:
+        description: The custom home directory of the subsystem.
   rm:
     description: "Remove the specified subsystem."
     error:
