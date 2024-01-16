@@ -189,147 +189,147 @@ stacks:
       noPackages: "Cap paquet especificat."
       alreadyExists: "Ja existeix una pila amb el nom '%s'."
     info:
-      askName: "Choose a name:"
-      askBase: "Choose a base (e.g. 'vanillaos/pico'):"
-      askPkgManager: "Choose a package manager:"
-      selectPkgManager: "Select a package manager [1-%d]:"
-      noPackages: "You have not provided any package to install in the stack. Do you
-        want to add some now?"
-      confirmPackages: "Do you want to confirm the current packages list?"
-      askPackages: "Please type the packages you want to install in the stack, separated
-        by a space:"
-      success: "Created stack '%s'."
+      askName: "Tria un nom:"
+      askBase: "Tria una base (per exemple 'vanillaos/pico')"
+      askPkgManager: "Tria un gestor de paquets:"
+      selectPkgManager: "Selecciona un gestor de paquets [1-%d]:"
+      noPackages: "No has triat cap paquet per instal·lar a la pila. Vols triar-ne
+        ara?"
+      confirmPackages: "Vols confirmar la llista de paquets actual?"
+      askPackages: "Sisplau escriu els paquets que vols instal·lar a la pila, separats
+        per un espai:"
+      success: "Pila Creada '%s'."
     options:
       assumeYes:
-        description: "Assume yes to all prompts."
+        description: "Assumir sí a totes les preguntes."
       name:
-        description: "The name of the stack."
+        description: "El nom de la pila."
       base:
-        description: "The base subsystem to use."
+        description: "El subsistema base a fer servir."
       packages:
-        description: "The packages to install."
+        description: "Els paquets a instal·lar."
       pkgManager:
-        description: "The package manager to use."
+        description: "El gestor de paquets a fer servir."
   update:
-    description: "Update the specified stack."
+    description: "Actualitzar la pila especificada."
     error:
-      noName: "No name specified."
-      noBase: "No base specified."
-      noPkgManager: "No package manager specified."
-      pkgManagerDoesNotExist: "The specified package manager does not exist. Create
-        it with 'apx pkgmanagers new' or contact the system administrator."
+      noName: "Cap nom especificat."
+      noBase: "Cap base especificada."
+      noPkgManager: "No s'ha especificat cap gestor de paquets."
+      pkgManagerDoesNotExist: "El gestor de paquets especificat no existeix. El pots
+        crear amb 'apx pkgmanagers new' o contactar amb l'administrador del sistema."
     info:
-      askBase: "Type a new base or confirm the current one (%s):"
-      askPkgManager: "Choose a new package manager or confirm the current one (%s):"
-      askPackages: "Type the packages you want to install in the stack, separated
-        by a space, or confirm the current ones (%s):"
-      success: "Updated stack '%s'."
+      askBase: "Escriu una base nova o confirma l'actual (%s):"
+      askPkgManager: "Escull un nou gestor de paquets o confirma l'actual (%s):"
+      askPackages: "Escriu els paquets que vols instal·lar en la pila, separats per
+        un espai, o confirma els actuals (%s):"
+      success: "Pila actualitzada '%s'."
 
     options:
       assumeYes:
-        description: "Assume yes to all prompts."
+        description: "Assumir sí a totes les preguntes."
       name:
-        description: "The name of the stack."
+        description: "El nom de la pila."
       base:
-        description: "The base subsystem to use."
+        description: "El subssitema base a fer servir."
       packages:
-        description: "The packages to install."
+        description: "Els paquets a instal·lar."
       pkgManager:
-        description: "The package manager to use."
+        description: "El gestor de paquets a fer servir."
   rm:
-    description: "Remove the specified stack."
+    description: "Esborrar la pila especificada."
     error:
-      noName: "No name specified."
+      noName: "No s'ha especificat cap nom."
     info:
-      askConfirmation: "Are you sure you want to remove '%s'? [y/N]"
-      success: "Removed stack '%s'."
+      askConfirmation: "Segur que vols eliminar '%s'? [s/N]"
+      success: "Pila '%s' eliminada."
     options:
       force:
-        description: "Force removal of the stack."
+        description: "Força l'eliminació de la pila"
       name:
-        description: "The name of the stack to remove."
+        description: "Nom de la pila que s'ha d'eliminar."
   export:
-    description: "Export the specified stack."
+    description: "Exportar la pila especificada."
     error:
-      noName: "No name specified."
-      noOutput: "No output specified."
+      noName: "No s'ha especificat cap nom."
+      noOutput: "No s'ha especificat cap sortida."
     info:
-      success: "Exported stack '%s' to '%s'."
+      success: "Pila exportada de '%s' a '%s'."
     options:
       name:
-        description: "The name of the stack to export."
+        description: "Nom de la pila que s'ha d'exportar."
       output:
-        description: "The path to export the stack to."
+        description: "La ruta on exportar la pila."
   import:
-    description: "Import the specified stack."
+    description: "Importar la pila especificada."
     error:
-      noInput: "No input specified."
-      cannotLoad: "Cannot load stack from '%s'."
+      noInput: "No s'ha especificat res."
+      cannotLoad: "No es pot carregar la pila des de '%s'."
     info:
-      success: "Imported stack from '%s'."
+      success: "Pila importada des de '%s'."
     options:
       input:
-        description: "The path to import the stack from."
+        description: "La ruta des de on importar la pila."
 
 subsystems:
-  description: "Work with the subsystems that are available in apx."
+  description: "Treballa amb els subsistemes disponibles a apx."
   labels:
-    name: "Name"
-    status: "Status"
+    name: "Nom"
+    status: "Estat"
 
   list:
-    description: "List all available subsystems."
+    description: "Llista de subsistemes disponibles."
     error:
     info:
-      noSubsystems: "No subsystems available. Create a new one with 'apx subsystems
-        new' or contact the system administrator."
-      foundSubsystems: "Found %d subsystems:"
+      noSubsystems: "No hi han subsistemes disponibles. Crea un de nou amb 'apx subsystem
+        new' o contacta amb l'administrador del sistema."
+      foundSubsystems: "Trobats %d subsistemes:"
     options:
       json:
-        description: "Output in JSON format."
+        description: "Sortida en format JSON."
   new:
-    description: "Create a new subsystem."
+    description: "Crear un subsistema nou."
     error:
-      noStacks: "A stack is needed to create a subsystem. Create a new one with 'apx
-        stacks new' or contact the system administrator."
-      emptyName: "The name cannot be empty."
-      noName: "No name specified."
-      emptyStack: "The stack cannot be empty."
-      noStack: "No stack specified."
-      stackDoesNotExist: "The specified stack does not exist. Create it with 'apx
-        stacks new' or contact the system administrator."
-      alreadyExists: "A subsystem with the name '%s' already exists."
+      noStacks: "Es necessita una pila per crear un subsistema. Crea una de nova amb
+        'apx stacks new' o contacta amb l'administrador del sistema."
+      emptyName: "El nom no pot estar buit."
+      noName: "No s'ha especificat cap nom."
+      emptyStack: "La pila no pot estar buida."
+      noStack: "No s'ha especificat cap pila."
+      stackDoesNotExist: "La pila especificada no existeix. Crea una de nova amb 'apx
+        stacks new' o contacta amb l'administrador del sistema."
+      alreadyExists: "Ja existeix un subsistema amb el nom '%s'."
     info:
-      askName: "Choose a name:"
-      selectStack: "Select a stack [1-%d]:"
-      success: "Created subsystem '%s'."
-      creatingSubsystem: "Creating subsystem '%s' with stack '%s'…"
+      askName: "Escull un nom:"
+      selectStack: "Selecciona una pila [1-%d]:"
+      success: "Subsistema '%s' creat."
+      creatingSubsystem: "Creant subsitema '%s' a la pila '%s'…"
     options:
       name:
-        description: "The name of the subsystem."
+        description: "El nom del subsitema."
       stack:
-        description: "The stack to use."
+        description: "La pila a fer servir."
   rm:
-    description: "Remove the specified subsystem."
+    description: "Eliminar la pila especificada."
     error:
-      noName: "No name specified."
+      noName: "No s'ha especificat el nom."
     info:
-      askConfirmation: "Are you sure you want to remove '%s'? [y/N]"
-      success: "Removed subsystem '%s'."
+      askConfirmation: "Segur que vols eliminar '%s'? [y/N]"
+      success: "Subsitema '%s' eliminat."
     options:
       force:
-        description: "Force removal of the subsystem."
+        description: "Forçar l'eliminació del subsitema."
       name:
-        description: "The name of the subsystem to remove."
+        description: "Nom del subsitema que vols eliminar."
   reset:
-    description: "Reset the specified subsystem."
+    description: "Restableix el subsitema especificat."
     error:
-      noName: "No name specified."
+      noName: "Cap nom especificat."
     info:
-      askConfirmation: "Are you sure you want to reset '%s'? [y/N]"
-      success: "The subsystem '%s' has been reset."
+      askConfirmation: "Segur que vols restablir '%s'? [y/N]"
+      success: "El subsitema '%s' s'ha restablert."
     options:
       force:
-        description: "Force reset of the subsystem."
+        description: "Forçar el restabliment del subsitema."
       name:
-        description: "The name of the subsystem to reset."
+        description: "Nom del subsitema a restablir."
