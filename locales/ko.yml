@@ -3,8 +3,8 @@ apx:
   errors:
     unknownCommand: "알 수 없는 명령어: %s"
     invalidInput: "잘못된 입력입니다."
-    invalidChoice: Invalid choice.
-    noRoot: Do not run Apx as root.
+    invalidChoice: 유효하지 않은 선택입니다.
+    noRoot: 루트로 Apx를 실행하지 마십시오.
   info:
     aborting: "요청에 의해 중단되었습니다."
   terminal:
@@ -12,266 +12,259 @@ apx:
     no: "아니오"
 
 runtimeCommand:
-  description: "Work with the specified subsystem, accessing the package manager and
-    environment."
+  description: "지정된 하위 시스템과 함께 작업하며, 패키지 관리자와 환경에 액세스합니다."
   error:
-    noPackageSpecified: "No packages specified."
-    cantAccessPkgManager: "An error occurred while accessing the package manager:
-      %s"
-    executingCommand: "An error occurred while executing the command: %s"
-    noAppNameOrBin: "--app-name or --bin must be specified."
-    sameAppOrBin: "--app-name and --bin cannot be both specified."
-    exportingApp: "An error occurred while exporting the application: %s"
-    exportingBin: "An error occurred while exporting the binary: %s"
-    unexportingApp: "An error occurred while unexporting the application: %s"
-    unexportingBin: "An error occurred while unexporting the binary: %s"
-    enteringContainer: 'An error occurred while entering the container: %s'
+    noPackageSpecified: "지정된 패키지가 없습니다."
+    cantAccessPkgManager: "패키지 관리자에 액세스하는 중 오류가 발생했습니다: %s"
+    executingCommand: "명령을 실행하는 중 오류가 발생했습니다: %s"
+    noAppNameOrBin: "--app-name 또는 --bin을 지정해야 합니다."
+    sameAppOrBin: "--app-name 과 --bin 둘 다 지정할 수 없습니다."
+    exportingApp: "응용 프로그램을 export하는 중 오류가 발생했습니다: %s"
+    exportingBin: "바이너리를 export하는 중 오류가 발생했습니다: %s"
+    unexportingApp: "응용 프로그램을 unexport하는 중 오류가 발생했습니다: %s"
+    unexportingBin: "바이너리를 unexport하는 중 오류가 발생했습니다: %s"
+    enteringContainer: '컨테이너에 들어가는 중 오류가 발생했습니다: %s'
   info:
-    unexportedApps: "Unexported %d applications\n"
-    exportedApps: "Exported %d applications\n"
-    exportedApp: "Exported application %s\n"
-    exportedBin: "Exported binary %s\n"
-    unexportedApp: "Unexported application %s\n"
-    unexportedBin: "Unexported binary %s\n"
+    unexportedApps: "응용 프로그램(들) %d(을)를 Unexport하였습니다"
+    exportedApps: "응용 프로그램(들) %d(을)를 Export하였습니다"
+    exportedApp: "응용 프로그램 %d(을)를 Export하였습니다 %s"
+    exportedBin: "바이너리 %d(을)를 Export하였습니다 %s"
+    unexportedApp: "응용 프로그램 %d를 Unexport하였습니다 %s"
+    unexportedBin: "바이너리 %d를 Unexport하였습니다 %s"
   autoremove:
-    description: "Remove packages that are no longer required."
+    description: "더이상 필요하지 않은 패키지를 제거합니다."
   clean:
-    description: "Clean the package manager's cache."
+    description: "패키지 관리자의 캐시를 정리합니다."
   install:
-    description: "Install the specified package."
+    description: "지정된 패키지를 설치합니다."
     options:
       noExport:
-        description: "Do not export a desktop entry."
+        description: "데스크톱 항목 내보내지 마십시오."
   list:
-    description: "List all installed packages."
+    description: "모든 설치된 패키지를 나열합니다."
   purge:
-    description: "Purge the specified packages."
+    description: "지정된 패키지를 purge합니다."
   remove:
-    description: "Remove the specified packages."
+    description: "지정된 패키지를 제거합니다."
   search:
-    description: "Search for packages matching the specified query."
+    description: "지정된 쿼리와 일치하는 패키지를 검색합니다."
   show:
-    description: "Show information about the specified package."
+    description: "지정된 패키지에 대한 정보를 표시합니다."
   update:
-    description: "Update the list of available packages."
+    description: "사용 가능한 패키지 목록을 업데이트합니다."
   upgrade:
-    description: "Upgrade all installed packages."
+    description: "설치된 모든 패키지를 업그레이드합니다."
   enter:
-    description: "Enter the subsystem's environment."
+    description: "하위 시스템 환경에 진입합니다."
   export:
-    description: "Export an application or binary from the subsystem."
+    description: "하위 시스템에서 응용 프로그램이나 바이너리를 Export합니다."
     options:
       appName:
-        description: "The name of the application to export."
+        description: "Export할 응용 프로그램 이름입니다."
       bin:
-        description: "The name of the binary to export."
+        description: "Export할 바이너리 이름입니."
       binOutput:
-        description: "Path of the binary output (default: ~/.local/bin/)."
+        description: "바이너리 출력 경로 (기본: ~/.local/bin/)."
   unexport:
-    description: "Unexport an application or binary from the subsystem."
+    description: "하위시스템에서 응용 프로그램이나 바이너리를 Unexport합니다."
     options:
       appName:
-        description: "The name of the application to unexport."
+        description: "Unexport할 응용 프로그램 이름입니다."
       bin:
-        description: "The name of the binary to unexport."
+        description: "Unexport할 바이너리 이름입니다."
       binOutput:
-        description: "Path of the binary output (default: ~/.local/bin/)."
+        description: "바이너리 출력 경로 (기본값: ~/.local/bin/)."
 
 pkgmanagers:
-  description: "Work with the package managers that are available in apx."
+  description: "apx에서 사용 가능한 패키지 관리자와 작업합니다."
   labels:
-    name: "Name"
+    name: "이름"
     builtIn: "Built-in"
 
   list:
-    description: "List all available package managers."
+    description: "사용 가능한 모든 패키지 관리자를 나열합니다."
     info:
-      noPkgManagers: "No package managers available. Create a new one with 'apx pkgmanagers
-        new' or contact the system administrator."
-      foundPkgManagers: "Found %d package managers:\n"
+      noPkgManagers: "사용 가능한 패키지 관리자가 없습니다. 'apx pkgmanagers new'로 새로 만들거나 시스템 관리자에게
+        문의하십시오."
+      foundPkgManagers: "%d개의 패키지 관리자를 찾았습니다:"
     options:
       json:
-        description: "Output in JSON format."
+        description: "JSON 형식으로 출력합니다."
   show:
-    description: "Show information about the specified package manager."
+    description: "지정된 패키지 관리자에 대한 정보를 표시합니다."
   new:
-    description: "Create a new package manager."
+    description: "새로운 패키지 관리자를 생성합니다."
 
     error:
-      emptyName: "The name cannot be empty."
-      noName: "No name specified."
-      emptyCommand: "The command cannot be empty."
-      noCommand: "No command specified for '%s'."
-      alreadyExists: "A package manager with the name '%s' already exists."
+      emptyName: "이름은 비워둘 수 없습니다."
+      noName: "지정된 이름이 없습니다."
+      emptyCommand: "명령은 비워둘 수 없습니다."
+      noCommand: "'%s'에 대한 명령이 지정되지 않았습니다."
+      alreadyExists: "이미 '%s'라는 이름의 패키지 관리자가 있습니다."
     info:
-      askName: "Choose a name:"
-      askSudo: "Does the package manager need sudo to run?"
-      askCommand: "Enter the command for '%s':"
-      askOverwrite: "A package manager with the name '%s' already exists. Overwrite
-        it?"
-      success: "Created package manager '%s'."
+      askName: "이름을 입력하십시오:"
+      askSudo: "패키지 관리자 실행에 sudo가 필요한가요?"
+      askCommand: "'%s'에 대한 명령을 입력하십시오:"
+      askOverwrite: "'%s'라는 이름의 패키지 관리자가 이미 있습니다. 덮어쓸까요?"
+      success: "'%s' 패키지 관리자가 생성되었습니다."
     options:
       assumeYes:
-        description: "Assume yes to all prompts."
+        description: "모든 프롬프트에 '예'로 가정합니다."
       name:
-        description: "The name of the package manager."
+        description: "패키지 관리자의 이름입니다."
       needSudo:
-        description: "Whether the package manager needs sudo to run."
+        description: "패키지 관리자가 실행에 sudo가 필요한지 여부."
       autoremove:
-        description: "The command to run to autoremove packages."
+        description: "패키지를 자동으로 제거하는 데 사용할 명령어입니다."
       clean:
-        description: "The command to run to clean the package manager's cache."
+        description: "패키지 관리자의 캐시를 정리하는 데 사용할 명령어입니다."
       install:
-        description: "The command to run to install packages."
+        description: "패키지를 설치하는 데 사용할 명령어입니다."
       list:
-        description: "The command to run to list installed packages."
+        description: "설치된 패키지를 나열하는 데 사용할 명령어입니다."
       purge:
-        description: "The command to run to purge packages."
+        description: "패키지를 purge하는 데 사용할 명령어입니다."
       remove:
-        description: "The command to run to remove packages."
+        description: "패키지를 제거하는 데 사용할 명령어입니다."
       search:
-        description: "The command to run to search for packages."
+        description: "패키지를 검색하는 데 사용할 명령어입니다."
       show:
-        description: "The command to run to show information about packages."
+        description: "패키지에 대한 정보를 표시하는 데 사용할 명령어입니다."
       update:
-        description: "The command to run to update the list of available packages."
+        description: "사용 가능한 패키지 목록을 업데이트하는 데 사용할 명령입니다."
       upgrade:
-        description: "The command to run to upgrade packages."
+        description: "패키지를 업그레이드하는 데 사용할 명령입니다."
   rm:
-    description: "Remove the specified package manager."
+    description: "지정된 패키지 관리자를 제거합니다."
 
     error:
-      noName: "No name specified."
-      inUse: "The package manager is used in %d stacks:\n"
+      noName: "지정된 이름이 없습니다."
+      inUse: "패키지 관리자는 %d 스택에서 사용 중입니다:"
     info:
-      askConfirmation: "Are you sure you want to remove '%s'?"
-      success: "Removed package manager '%s'."
-      aborting: Aborting removal of package manager '%s'.
+      askConfirmation: "'%s'(을)를 제거하시겠습니까?[y/N]"
+      success: "'%s' 패키지 관리자가 제거되었습니다."
+      aborting: "'%s' 패키지 관리자의 제거를 중단합니다."
     options:
       force:
-        description: "Force removal of the package manager."
+        description: "패키지 관리자를 강제로 제거합니다."
       name:
-        description: "The name of the package manager to remove."
+        description: "제거할 패키지 관리자의 이름입니다."
 
 stacks:
-  description: "Work with the stacks that are available in apx."
+  description: "apx에서 사용 가능한 스택과 작업합니다."
   labels:
-    name: "Name"
+    name: "이름"
     builtIn: "Built-in"
 
   list:
-    description: "List all available stacks."
+    description: "사용 가능한 모든 스택을 나열합니다."
     info:
-      noStacks: "No stacks available. Create a new one with 'apx stacks new' or contact
-        the system administrator."
-      foundStacks: "Found %d stacks:\n"
-      aborting: Aborting removal of stack '%s'.
+      noStacks: "사용 가능한 스택이 없습니다. 'apx stacks new'로 새로 만들거나 시스템 관리자에게 문의하십시오."
+      foundStacks: "%d개의 스택을 찾았습니다:"
+      aborting: "'%s' 스택의 제거를 중단합니다."
     options:
       json:
-        description: "Output in JSON format."
+        description: "JSON 형식으로 출력합니다."
   show:
-    description: "Show information about the specified stack."
+    description: "지정된 스택에 대한 정보를 표시합니다."
   new:
-    description: "Create a new stack."
+    description: "새로운 스택을 생성합니다."
     error:
-      emptyName: "The name cannot be empty."
-      noName: "No name specified."
-      emptyBase: "The base cannot be empty."
-      noBase: "No base specified."
-      emptyPkgManager: "The package manager cannot be empty."
-      noPkgManager: "No package manager specified."
-      pkgManagerDoesNotExist: "The specified package manager does not exist. Create
-        it with 'apx pkgmanagers new' or contact the system administrator."
-      emptyPackages: "The packages cannot be empty."
-      noPackages: "No packages specified."
-      alreadyExists: "A stack with the name '%s' already exists."
+      emptyName: "이름은 비워둘 수 없습니다."
+      noName: "지정된 이름이 없습니다."
+      emptyBase: "Base를 비워둘 수 없습니다."
+      noBase: "지정된 Base가 없습니다."
+      emptyPkgManager: "패키지 관리자는 비워둘 수 없습니다."
+      noPkgManager: "지정된 패키지 관리자가 없습니다."
+      pkgManagerDoesNotExist: "지정된 패키지 관리자가 존재하지 않습니다. 'apx pkgmanagers new'로 만들거나
+        시스템 관리자에게 문의하십시오."
+      emptyPackages: "패키지는 비워둘 수 없습니다."
+      noPackages: "지정된 패키지가 없습니다."
+      alreadyExists: "'%s'라는 이름의 스택이 이미 있습니다."
     info:
-      askName: "Choose a name:"
-      askBase: "Choose a base (e.g. 'vanillaos/pico'):"
-      askPkgManager: "Choose a package manager:"
-      selectPkgManager: "Select a package manager [1-%d]:"
-      noPackages: "You have not provided any package to install in the stack. Do you
-        want to add some now?"
-      confirmPackages: "Do you want to confirm the current packages list?"
-      askPackages: "Please type the packages you want to install in the stack, separated
-        by a space:"
-      success: "Created stack '%s'."
+      askName: "이름을 입력하십시오:"
+      askBase: "Base을 입력하십시오 (예: 'vanillaos/pico'):"
+      askPkgManager: "패키지 관리자 입력하십시오:"
+      selectPkgManager: "패키지 관리자를 선택하십시오 [1-%d]:"
+      noPackages: "스택에 설치할 패키지를 제공하지 않았습니다. 지금 추가하시겠습니까?"
+      confirmPackages: "현재 패키지 목록을 확인하시겠습니까?"
+      askPackages: "스택에 설치할 패키지를 띄어쓰기로 구분하여 입력하십시오:"
+      success: "'%s' 스택이 생성되었습니다."
     options:
       assumeYes:
-        description: "Assume yes to all prompts."
+        description: "모든 프롬프트에 '예'로 가정합니다."
       name:
-        description: "The name of the stack."
+        description: "스택의 이름입니다."
       base:
-        description: "The base subsystem to use."
+        description: "사용할 Base 하위 시스템입니다."
       packages:
-        description: "The packages to install."
+        description: "설치할 패키지입니다."
       pkgManager:
-        description: "The package manager to use."
+        description: "사용할 패키지 관리자입니다."
   update:
-    description: "Update the specified stack."
+    description: "지정된 스택을 업데이트합니다."
     error:
-      noName: "No name specified."
-      noBase: "No base specified."
-      noPkgManager: "No package manager specified."
-      pkgManagerDoesNotExist: "The specified package manager does not exist. Create
-        it with 'apx pkgmanagers new' or contact the system administrator."
+      noName: "지정된 이름이 없습니다."
+      noBase: "지정된 Base가 없습니다."
+      noPkgManager: "지정된 패키지 관리자가 없습니다."
+      pkgManagerDoesNotExist: "지정된 패키지 관리자가 존재하지 않습니다. 'apx pkgmanagers new'로 만들거나
+        시스템 관리자에게 문의하십시오."
     info:
-      askBase: "Type a new base or confirm the current one (%s):"
-      askPkgManager: "Choose a new package manager or confirm the current one (%s):"
-      askPackages: "Type the packages you want to install in the stack, separated
-        by a space, or confirm the current ones (%s):"
-      success: "Updated stack '%s'."
+      askBase: "새로운 Base를 입력하거나 현재 Base를 확인하십시오 (%s):"
+      askPkgManager: "새로운 패키지 관리자를 선택하거나 현재 패키지 관리자를 확인하십시오 (%s):"
+      askPackages: "스택에 설치할 패키지를 띄어쓰기로 구분하여 입력하거나 현재 패키지를 확인하십시오 (%s):"
+      success: "'%s' 스택을 업데이트했습니다."
 
     options:
       assumeYes:
-        description: "Assume yes to all prompts."
+        description: "모든 프롬프트에 '예'로 가정합니다."
       name:
-        description: "The name of the stack."
+        description: "스택의 이름입니다."
       base:
-        description: "The base subsystem to use."
+        description: "사용할 Base 하위 시스템입니다."
       packages:
-        description: "The packages to install."
+        description: "설치할 패키지입니다."
       pkgManager:
-        description: "The package manager to use."
+        description: "사용할 패키지 관리자입니다."
   rm:
-    description: "Remove the specified stack."
+    description: "지정된 스택을 제거합니다."
     error:
-      noName: "No name specified."
+      noName: "지정된 이름이 없습니다."
     info:
-      askConfirmation: "Are you sure you want to remove '%s'?"
-      success: "Removed stack '%s'."
+      askConfirmation: "'%s'를 제거하시겠습니까?[y/N]"
+      success: "'%s' 스택이 제거되었습니다."
     options:
       force:
-        description: "Force removal of the stack."
+        description: "스택을 강제로 제거합니다."
       name:
-        description: "The name of the stack to remove."
+        description: "제거할 스택의 이름입니다."
   export:
-    description: "Export the specified stack."
+    description: "지정된 스택을 Export합니다."
     error:
-      noName: "No name specified."
-      noOutput: "No output specified."
+      noName: "지정된 이름이 없습니다."
+      noOutput: "지정된 출력이 없습니다."
     info:
-      success: "Exported stack '%s' to '%s'."
+      success: "'%s' 스택을 '%s'로 Export하였습니다."
     options:
       name:
-        description: "The name of the stack to export."
+        description: "Export할 스택의 이름입니다."
       output:
-        description: "The path to export the stack to."
+        description: "스택을 Export할 경로입니다."
   import:
-    description: "Import the specified stack."
+    description: "지정된 스택을 가져옵니다."
     error:
-      noInput: "No input specified."
-      cannotLoad: "Cannot load stack from '%s'."
+      noInput: "입력이 지정되지 않았습니다."
+      cannotLoad: "'%s'에서 스택을 로드할 수 없습니다."
     info:
-      success: "Imported stack from '%s'."
+      success: "'%s'에서 스택을 가져왔습니다."
     options:
       input:
-        description: "The path to import the stack from."
+        description: "스택을 가져올 경로입니다."
 
 subsystems:
-  description: "Work with the subsystems that are available in apx."
+  description: "apx에서 사용 가능한 하위 시스템과 작업합니다."
   labels:
-    name: "Name"
+    name: "이름"
     status: "상태"
 
   list:
@@ -280,7 +273,7 @@ subsystems:
     info:
       noSubsystems: "하위 시스템이 없습니다. 'apx subsystems new' 명령어로 새 하위 시스템을 생성하시거나 시스템
         관리자에게 문의하십시오."
-      foundSubsystems: "%d 하위 시스템을 찾음:\n"
+      foundSubsystems: "하위 시스템을 찾았습니다: %d"
     options:
       json:
         description: "JSON 형식으로 출력합니다."
