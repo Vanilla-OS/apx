@@ -355,6 +355,8 @@ subsystems:
         description: "Nom du sous-système."
       stack:
         description: "Pile à utiliser."
+      info:
+        description: Use systemd inside the subsystem.
   rm:
     description: "Supprimer le sous-système indiqué."
     error:

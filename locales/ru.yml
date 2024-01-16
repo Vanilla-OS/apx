@@ -342,6 +342,8 @@ subsystems:
         description: "Имя подсистемы."
       stack:
         description: "Используемый стек."
+      info:
+        description: Use systemd inside the subsystem.
   rm:
     description: "Удалить указанную подсистему."
     error:

@@ -329,6 +329,8 @@ subsystems:
         description: "子系統的名稱。"
       stack:
         description: "要使用的包捆。"
+      info:
+        description: Use systemd inside the subsystem.
   rm:
     description: "移除指定的子系統。"
     error:

@@ -344,6 +344,8 @@ subsystems:
         description: "O nome do subsistema."
       stack:
         description: "A pilha a ser usada."
+      info:
+        description: Use systemd inside the subsystem.
   rm:
     description: "Remover o subsistema especificado."
     error:

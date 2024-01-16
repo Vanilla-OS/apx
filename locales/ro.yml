@@ -347,6 +347,8 @@ subsystems:
         description: "Numele subsistemului."
       stack:
         description: "Stiva de utilizat."
+      info:
+        description: Use systemd inside the subsystem.
   rm:
     description: "Elimină subsistemul specificat."
     error:

@@ -344,6 +344,8 @@ subsystems:
         description: "Namnet på undersystem."
       stack:
         description: "Stacken att använda."
+      info:
+        description: Use systemd inside the subsystem.
   rm:
     description: "Ta bort det specificerade undersystemet."
     error:

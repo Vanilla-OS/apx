@@ -343,6 +343,8 @@ subsystems:
         description: "The name of the subsystem."
       stack:
         description: "La uzota stako."
+      info:
+        description: Use systemd inside the subsystem.
   rm:
     description: "Forigi la specifitan subsistemon."
     error:
