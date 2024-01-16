@@ -5,7 +5,7 @@ apx:
     unknownCommand: "Comando desconhecido: %s"
     invalidInput: "Entrada inválida."
     invalidChoice: Escolha inválida.
-    noRoot: Não execute o Apx como root.
+    noRoot: Não execute Apx como root.
   info:
     aborting: "Abortando conforme solicitado."
   terminal:
@@ -26,13 +26,13 @@ runtimeCommand:
     unexportingApp: "Ocorreu um erro ao desfazer a exportação do aplicativo: %s"
     unexportingBin: "Ocorreu um erro ao desfazer a exportação do binário: %s"
     enteringContainer: 'Ocorreu um erro ao entrar no contêiner: %s'
-    startingContainer: 'An error occurred while starting the container: %s'
+    startingContainer: 'Ocorreu um erro ao iniciar o contêiner: %s'
     stoppingContainer: 'An error occurred while stopping the container: %s'
   info:
     unexportedApps: "Desfeita a exportação de %d aplicativos"
-    exportedApps: "Exportados %d aplicativos"
-    exportedApp: "Aplicativo %s exportado"
-    exportedBin: "Binário %s exportado"
+    exportedApps: "Aplicações %d exportadas"
+    exportedApp: "Aplicativo exportado %s"
+    exportedBin: "Binário exportado %s"
     unexportedApp: "Desfeita a exportação do aplicativo %s"
     unexportedBin: "Desfeita a exportação do binário %s"
     stoppedContainer: Stopped container.
