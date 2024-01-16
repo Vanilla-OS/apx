@@ -162,25 +162,25 @@ pkgmanagers:
   export:
     options:
       output:
-        description: The path to export the package manager to.
+        description: 软件包管理器导出到的路径。
       name:
-        description: The name of the package manager to export.
+        description: 要导出的软件包管理器的名称。
     error:
-      noOutput: No output specified.
-      noName: No name specified.
-    description: Export the specified package manager.
+      noOutput: 没有指定输出。
+      noName: 没有指定名称。
+    description: 导出指定的软件包管理器。
     info:
-      success: Exported package manager '%s' to '%s'.
+      success: 已导出软件包管理器 '%s' 到 '%s'。
   import:
     error:
-      noInput: No input specified.
-      cannotLoad: Cannot load package manager from '%s'.
+      noInput: 没有指定输入。
+      cannotLoad: 无法从 '%s' 加载软件包管理器。
     info:
-      success: Imported package manager from '%s'.
-    description: Import the specified package manager.
+      success: 已从 '%s' 导入软件包管理器。
+    description: 导入指定的软件包管理器。
     options:
       input:
-        description: The path to import the package manager from.
+        description: 要导入的软件包管理器的路径。
 stacks:
   description: "操作 apx 中可用的包捆。"
   labels:
@@ -226,7 +226,7 @@ stacks:
       name:
         description: "包捆的名称。"
       base:
-        description: "要使用的基础子系统。"
+        description: "要使用的基础发行版映像。（有关兼容映像的列表参见：https://distrobox.it/compatibility/#containers-distros）"
       packages:
         description: "要安装的软件包。"
       pkgManager:
