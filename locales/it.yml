@@ -33,8 +33,9 @@ runtimeCommand:
       del file binario: %s"
     enteringContainer: 'Si è verificato un errore durante l''entrata nel container:
       %s'
-    startingContainer: 'An error occurred while starting the container: %s'
-    stoppingContainer: 'An error occurred while stopping the container: %s'
+    startingContainer: 'Si è verificato un errore durante l''avvio del container:
+      %s'
+    stoppingContainer: 'Si è verificato un errore nell''arresto del containter: %s'
   info:
     unexportedApps: "Rimosse %d applicazioni"
     exportedApps: "Esportate %d applicazioni"
@@ -42,10 +43,10 @@ runtimeCommand:
     exportedBin: "Esportato file binario %s"
     unexportedApp: "Rimossa applicazione %s"
     unexportedBin: "Rimosso file binario %s"
-    stoppedContainer: Stopped container.
-    startedContainer: Started container.
-    stoppingContainer: Stopping container…
-    startingContainer: Starting container…
+    stoppedContainer: Container arrestato.
+    startedContainer: Container avviato.
+    stoppingContainer: Arrestando container…
+    startingContainer: Avvio container…
   autoremove:
     description: "Rimuovere pacchetti non più necessari."
   clean:
@@ -175,27 +176,27 @@ pkgmanagers:
       output:
         description: The path to export the package manager to.
       name:
-        description: The name of the package manager to export.
+        description: Nome del gestore di pacchetti da esportare.
     error:
-      noOutput: No output specified.
-      noName: No name specified.
-    description: Export the specified package manager.
+      noOutput: Output non specificato.
+      noName: Nome non specificato.
+    description: Esporta il gestore di pacchetti specificato.
     info:
-      success: Exported package manager '%s' to '%s'.
+      success: Esportato gestore di pacchetti '%s' a '%s'.
   import:
     error:
-      noInput: No input specified.
-      cannotLoad: Cannot load package manager from '%s'.
+      noInput: Input non specificato.
+      cannotLoad: Impossibile caricare il gestore pacchetti da '%s'.
     info:
-      success: Imported package manager from '%s'.
-    description: Import the specified package manager.
+      success: Gestore di pacchetti importato da '%s'.
+    description: Importa il gestore di pacchetti specificato.
     options:
       input:
         description: The path to import the package manager from.
   update:
-    description: Update the specified package manager.
+    description: Aggiorna il gestore di pacchetti specifico.
     info:
-      success: Updated package manager '%s'.
+      success: Aggiorna il gestore di pacchetti '%s'.
 stacks:
   description: "Lavora con gli stack disponibili in apx."
   labels:
