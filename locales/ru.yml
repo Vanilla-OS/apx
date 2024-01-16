@@ -26,8 +26,8 @@ runtimeCommand:
     unexportingApp: "Произошла ошибка при деэкспортировании приложения: %s"
     unexportingBin: "Произошла ошибка при деэкспортировании двоичного файла: %s"
     enteringContainer: 'Произошла ошибка при входе в контейнер: %s'
-    startingContainer: 'An error occurred while starting the container: %s'
-    stoppingContainer: 'An error occurred while stopping the container: %s'
+    startingContainer: 'Произошла ошибка при запуске контейнера: %s'
+    stoppingContainer: 'Произошла ошибка при остановке контейнера: %s'
   info:
     unexportedApps: "Деэкспортировано %d приложений"
     exportedApps: "Экспортировано %d приложений"
@@ -35,10 +35,10 @@ runtimeCommand:
     exportedBin: "Экспортированный двоичный файл %s"
     unexportedApp: "Деэкспортированное приложение %s"
     unexportedBin: "Деэкспортированный двоичный файл %s"
-    stoppedContainer: Stopped container.
-    startedContainer: Started container.
-    stoppingContainer: Stopping container…
-    startingContainer: Starting container…
+    stoppedContainer: Остановленный контейнер.
+    startedContainer: Запущенный контейнер.
+    stoppingContainer: Остановка контейнера…
+    startingContainer: Запуск контейнера…
   autoremove:
     description: "Убрать пакеты, которые больше не требуются."
   clean:
@@ -84,9 +84,9 @@ runtimeCommand:
         description: "Путь вывода двоичного файла (по умолчанию: ~/.local/bin/)."
 
   start:
-    description: Start the subsystem.
+    description: Запустить подсистему.
   stop:
-    description: Stop the subsystem.
+    description: Остановить подсистему.
 pkgmanagers:
   description: "Работа с менеджерами пакетов, которые доступны в apx."
   labels:
@@ -185,9 +185,9 @@ pkgmanagers:
       input:
         description: Путь для импорта менеджера пакетов.
   update:
-    description: Update the specified package manager.
+    description: Обновить указанный менеджер пакетов.
     info:
-      success: Updated package manager '%s'.
+      success: Обновлен менеджер пакетов '%s'.
 stacks:
   description: "Работа со стеками, доступными в apx."
   labels:
