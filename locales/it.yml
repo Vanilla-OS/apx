@@ -92,9 +92,9 @@ runtimeCommand:
         description: "Percorso dell'output binario (default: ~/.local/bin/)."
 
   start:
-    description: Start the subsystem.
+    description: Avvia il sottosistema.
   stop:
-    description: Stop the subsystem.
+    description: Ferma il sottosistema.
 pkgmanagers:
   description: "Lavora con i gestori di pacchetti disponibili in apx."
   labels:
@@ -174,7 +174,7 @@ pkgmanagers:
   export:
     options:
       output:
-        description: The path to export the package manager to.
+        description: Il percorso in cui esportare il gestore pacchetti.
       name:
         description: Nome del gestore di pacchetti da esportare.
     error:
@@ -192,7 +192,7 @@ pkgmanagers:
     description: Importa il gestore di pacchetti specificato.
     options:
       input:
-        description: The path to import the package manager from.
+        description: Il percorso da cui importare il gestore pacchetti.
   update:
     description: Aggiorna il gestore di pacchetti specifico.
     info:
@@ -246,7 +246,8 @@ stacks:
       name:
         description: "Il nome dello stack."
       base:
-        description: "Il sottosistema di base da utilizzare."
+        description: "L'immagine della distribuzione base da utilizzare. (Per una
+          lista di immagini compatibili: https://distrobox.it/compatibility/#containers-distros)"
       packages:
         description: "I pacchetti da installare."
       pkgManager:
@@ -352,7 +353,7 @@ subsystems:
       stack:
         description: "Lo stack da utilizzare."
       info:
-        description: Use systemd inside the subsystem.
+        description: Usa systemd nel sottosistema.
   rm:
     description: "Rimuove il sottosistema specificato."
     error:
