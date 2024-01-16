@@ -335,8 +335,6 @@ subsystems:
         description: "하위 시스템의 이름입니다."
       stack:
         description: "사용할 스택입니다."
-      info:
-        description: Use systemd inside the subsystem.
       home:
         description: The custom home directory of the subsystem.
   rm:

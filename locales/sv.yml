@@ -344,8 +344,6 @@ subsystems:
         description: "Namnet på undersystem."
       stack:
         description: "Stacken att använda."
-      info:
-        description: Använd systemd inuti undersystemet.
       home:
         description: Den anpassade hemkatalogen för undersystemet.
   rm:

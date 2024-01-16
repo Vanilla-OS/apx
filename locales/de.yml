@@ -350,8 +350,6 @@ subsystems:
         description: "Der Name des Subsystems."
       stack:
         description: "Der zu verwendende Stapel."
-      info:
-        description: Use systemd inside the subsystem.
       home:
         description: The custom home directory of the subsystem.
   rm:

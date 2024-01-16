@@ -344,8 +344,6 @@ subsystems:
         description: "El nombre del subsistema."
       stack:
         description: "La pila a utilizar."
-      info:
-        description: Utilice systemd dentro del subsistema.
       home:
         description: The custom home directory of the subsystem.
   rm:

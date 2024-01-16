@@ -352,8 +352,6 @@ subsystems:
         description: "Il nome del sottosistema."
       stack:
         description: "Lo stack da utilizzare."
-      info:
-        description: Usa systemd nel sottosistema.
       home:
         description: The custom home directory of the subsystem.
   rm:
