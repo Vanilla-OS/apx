@@ -345,7 +345,7 @@ subsystems:
       info:
         description: Использовать systemd внутри подсистемы.
       home:
-        description: The custom home directory of the subsystem.
+        description: Пользовательский домашний каталог подсистемы.
   rm:
     description: "Удалить указанную подсистему."
     error:
