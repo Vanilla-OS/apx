@@ -98,7 +98,7 @@ pkgmanagers:
     info:
       noPkgManagers: "Нет доступных менеджеров пакетов. Создайте новый с помощью 'apx
         pkgmanagers new' или обратитесь к системному администратору."
-      foundPkgManagers: "Менеджер(ов) пакетов найдено %d"
+      foundPkgManagers: "Менеджеров пакетов найдено %d"
     options:
       json:
         description: "Вывод в формате JSON."
@@ -165,25 +165,25 @@ pkgmanagers:
   export:
     options:
       output:
-        description: The path to export the package manager to.
+        description: Путь для экспорта менеджера пакетов.
       name:
-        description: The name of the package manager to export.
+        description: Имя пакетного менеджера для экспорта.
     error:
-      noOutput: No output specified.
-      noName: No name specified.
-    description: Export the specified package manager.
+      noOutput: Вывод не указан.
+      noName: Имя не указано.
+    description: Экспортировать выбранный менеджер пакетов.
     info:
-      success: Exported package manager '%s' to '%s'.
+      success: Экспортирован менеджер пакетов '%s' в '%s'.
   import:
     error:
-      noInput: No input specified.
-      cannotLoad: Cannot load package manager from '%s'.
+      noInput: Ввод не выбран.
+      cannotLoad: Невозможно загрузить менеджер пакетов из '%s'.
     info:
-      success: Imported package manager from '%s'.
-    description: Import the specified package manager.
+      success: Импортирован менеджер пакетов из '%s'.
+    description: Импорт выбранного менеджера пакетов.
     options:
       input:
-        description: The path to import the package manager from.
+        description: Путь для импорта менеджера пакетов.
 stacks:
   description: "Работа со стеками, доступными в apx."
   labels:
@@ -233,7 +233,8 @@ stacks:
       name:
         description: "Имя стека."
       base:
-        description: "Основа для использования подсистемы."
+        description: "Образ базового дистрибутива, который будет использоваться. (Список
+          совместимых образов см. по адресу: https://distrobox.it/compatibility/#containers-distros)"
       packages:
         description: "Пакеты для установки."
       pkgManager:
