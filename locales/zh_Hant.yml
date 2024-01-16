@@ -24,8 +24,8 @@ runtimeCommand:
     unexportingApp: "移除匯出的應用程式時發生錯誤：%s"
     unexportingBin: "移除匯出的二進位檔案時發生錯誤：%s"
     enteringContainer: '進入容器時發生錯誤：%s'
-    startingContainer: 'An error occurred while starting the container: %s'
-    stoppingContainer: 'An error occurred while stopping the container: %s'
+    startingContainer: '啟動容器時發生錯誤：%s'
+    stoppingContainer: '停止容器時發生錯誤：%s'
   info:
     unexportedApps: "已移除匯出的 %d 個應用程式"
     exportedApps: "已匯出 %d 個應用程式"
@@ -33,10 +33,10 @@ runtimeCommand:
     exportedBin: "已匯出二進位檔案 %s"
     unexportedApp: "已移除匯出的應用程式 %s"
     unexportedBin: "已移除匯出的二進位檔案 %s"
-    stoppedContainer: Stopped container.
-    startedContainer: Started container.
-    stoppingContainer: Stopping container…
-    startingContainer: Starting container…
+    stoppedContainer: 已停止容器。
+    startedContainer: 已啟動容器。
+    stoppingContainer: 正在停止容器…
+    startingContainer: 正在啟動容器…
   autoremove:
     description: "移除不再需要的軟體包。"
   clean:
@@ -82,9 +82,9 @@ runtimeCommand:
         description: "二進位輸出的路徑（預設為 ~/.local/bin/）。"
 
   start:
-    description: Start the subsystem.
+    description: 啟動子系統。
   stop:
-    description: Stop the subsystem.
+    description: 停止子系統。
 pkgmanagers:
   description: "操作 apx 中可使用的軟體包管理器。"
   labels:
@@ -182,9 +182,9 @@ pkgmanagers:
       input:
         description: 要匯入的軟體包管理器的路徑。
   update:
-    description: Update the specified package manager.
+    description: 更新選定的軟體包管理器。
     info:
-      success: Updated package manager '%s'.
+      success: 已更新軟體包管理器 '%s'。
 stacks:
   description: "操作 apx 中可使用的包捆。"
   labels:

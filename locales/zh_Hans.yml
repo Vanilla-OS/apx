@@ -24,8 +24,8 @@ runtimeCommand:
     unexportingApp: "移除导出的应用程序时发生错误：%s"
     unexportingBin: "移除导出的二进制文件时发生错误：%s"
     enteringContainer: '进入容器时发生错误：%s'
-    startingContainer: 'An error occurred while starting the container: %s'
-    stoppingContainer: 'An error occurred while stopping the container: %s'
+    startingContainer: '启动容器时发生错误：%s'
+    stoppingContainer: '停止容器时发生错误：%s'
   info:
     unexportedApps: "已移除导出的 %d 个应用程序"
     exportedApps: "已导出 %d 个应用程序"
@@ -33,10 +33,10 @@ runtimeCommand:
     exportedBin: "已导出二进制文件 %s"
     unexportedApp: "已移除导出的应用程序 %s"
     unexportedBin: "已移除导出的二进制文件 %s"
-    stoppedContainer: Stopped container.
-    startedContainer: Started container.
-    stoppingContainer: Stopping container…
-    startingContainer: Starting container…
+    stoppedContainer: 已停止容器。
+    startedContainer: 已启动容器。
+    stoppingContainer: 正在停止容器…
+    startingContainer: 正在启动容器…
   autoremove:
     description: "移除不再需要的软件包。"
   clean:
@@ -82,9 +82,9 @@ runtimeCommand:
         description: "二进制输出的路径（默认为 ~/.local/bin/）。"
 
   start:
-    description: Start the subsystem.
+    description: 启动子系统。
   stop:
-    description: Stop the subsystem.
+    description: 停止子系统。
 pkgmanagers:
   description: "操作 apx 中可用的软件包管理器。"
   labels:
@@ -182,9 +182,9 @@ pkgmanagers:
       input:
         description: 要导入的软件包管理器的路径。
   update:
-    description: Update the specified package manager.
+    description: 更新选定的软件包管理器。
     info:
-      success: Updated package manager '%s'.
+      success: 已更新软件包管理器 '%s'。
 stacks:
   description: "操作 apx 中可用的包捆。"
   labels:
@@ -330,7 +330,7 @@ subsystems:
       stack:
         description: "要使用的包捆。"
       info:
-        description: Use systemd inside the subsystem.
+        description: 在子系统内部使用 systemd。
   rm:
     description: "移除指定的子系统。"
     error:
