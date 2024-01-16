@@ -330,7 +330,7 @@ subsystems:
       stack:
         description: "要使用的包捆。"
       info:
-        description: Use systemd inside the subsystem.
+        description: 在子系統內部使用 systemd。
   rm:
     description: "移除指定的子系統。"
     error:
