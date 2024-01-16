@@ -344,6 +344,8 @@ subsystems:
         description: "Стек для використання."
       info:
         description: Use systemd inside the subsystem.
+      home:
+        description: The custom home directory of the subsystem.
   rm:
     description: "Видалити вказану підсистему."
     error:

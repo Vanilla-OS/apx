@@ -340,6 +340,8 @@ subsystems:
         description: "التشكيلة المراد استخدامها."
       info:
         description: Use systemd inside the subsystem.
+      home:
+        description: The custom home directory of the subsystem.
   rm:
     description: "حذف النظام الفرعي المحدد."
     error:

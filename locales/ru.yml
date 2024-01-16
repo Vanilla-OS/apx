@@ -344,6 +344,8 @@ subsystems:
         description: "Используемый стек."
       info:
         description: Использовать systemd внутри подсистемы.
+      home:
+        description: The custom home directory of the subsystem.
   rm:
     description: "Удалить указанную подсистему."
     error:

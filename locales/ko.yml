@@ -337,6 +337,8 @@ subsystems:
         description: "사용할 스택입니다."
       info:
         description: Use systemd inside the subsystem.
+      home:
+        description: The custom home directory of the subsystem.
   rm:
     description: "특정 하위 시스템을 삭제합니다."
     error:

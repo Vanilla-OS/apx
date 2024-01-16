@@ -346,6 +346,8 @@ subsystems:
         description: "Stacken att använda."
       info:
         description: Använd systemd inuti undersystemet.
+      home:
+        description: The custom home directory of the subsystem.
   rm:
     description: "Ta bort det specificerade undersystemet."
     error:
