@@ -187,6 +187,10 @@ pkgmanagers:
     options:
       input:
         description: The path to import the package manager from.
+  update:
+    description: Update the specified package manager.
+    info:
+      success: Updated package manager '%s'.
 stacks:
   description: "Apx'te bulunan yığınlarla çalışın."
   labels:
@@ -340,6 +344,8 @@ subsystems:
         description: "Alt sistemin adı."
       stack:
         description: "Kullanılacak yığın."
+      info:
+        description: Use systemd inside the subsystem.
   rm:
     description: "Belirtilen alt sistemi kaldırın."
     error:

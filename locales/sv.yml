@@ -186,6 +186,10 @@ pkgmanagers:
     options:
       input:
         description: Sökvägen som pakethanteraren ska importeras från.
+  update:
+    description: Update the specified package manager.
+    info:
+      success: Updated package manager '%s'.
 stacks:
   description: "Arbeta med de stackar som finns tillgängliga i apx."
   labels:

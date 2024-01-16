@@ -184,6 +184,10 @@ pkgmanagers:
     options:
       input:
         description: The path to import the package manager from.
+  update:
+    description: Update the specified package manager.
+    info:
+      success: Updated package manager '%s'.
 stacks:
   description: "Práce se stacky, které jsou k dispozici v apx."
   labels:

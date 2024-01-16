@@ -181,6 +181,10 @@ pkgmanagers:
     options:
       input:
         description: 要导入的软件包管理器的路径。
+  update:
+    description: Update the specified package manager.
+    info:
+      success: Updated package manager '%s'.
 stacks:
   description: "操作 apx 中可用的包捆。"
   labels:
@@ -325,6 +329,8 @@ subsystems:
         description: "子系统的名称。"
       stack:
         description: "要使用的包捆。"
+      info:
+        description: Use systemd inside the subsystem.
   rm:
     description: "移除指定的子系统。"
     error:

@@ -181,6 +181,10 @@ pkgmanagers:
     options:
       input:
         description: 要匯入的軟體包管理器的路徑。
+  update:
+    description: Update the specified package manager.
+    info:
+      success: Updated package manager '%s'.
 stacks:
   description: "操作 apx 中可使用的包捆。"
   labels:

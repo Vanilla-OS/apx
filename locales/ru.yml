@@ -184,6 +184,10 @@ pkgmanagers:
     options:
       input:
         description: Путь для импорта менеджера пакетов.
+  update:
+    description: Update the specified package manager.
+    info:
+      success: Updated package manager '%s'.
 stacks:
   description: "Работа со стеками, доступными в apx."
   labels:

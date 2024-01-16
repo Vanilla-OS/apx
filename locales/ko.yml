@@ -182,6 +182,10 @@ pkgmanagers:
     options:
       input:
         description: The path to import the package manager from.
+  update:
+    description: Update the specified package manager.
+    info:
+      success: Updated package manager '%s'.
 stacks:
   description: "apx에서 사용 가능한 스택과 작업합니다."
   labels:
