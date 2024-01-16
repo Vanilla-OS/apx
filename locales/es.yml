@@ -27,6 +27,8 @@ runtimeCommand:
     unexportingApp: "Un error ocurrio al desexportar una applicación: %s"
     unexportingBin: "Un error ocurrio al desexportar el binario: %s"
     enteringContainer: 'Ocurrió un error al ingresar al contenedor: %s'
+    startingContainer: 'An error occurred while starting the container: %s'
+    stoppingContainer: 'An error occurred while stopping the container: %s'
   info:
     unexportedApps: "Aplicaciones %d no exportadas"
     exportedApps: "Aplicaciones %d exportadas"
@@ -34,6 +36,10 @@ runtimeCommand:
     exportedBin: "Binario exportado %s\n"
     unexportedApp: "Aplicación %s no exportada\n"
     unexportedBin: "Binario no exportado %s\n"
+    stoppedContainer: Stopped container.
+    startedContainer: Started container.
+    stoppingContainer: Stopping container…
+    startingContainer: Starting container…
   autoremove:
     description: "Eliminar paquetes ya no requeridos."
   clean:
@@ -78,6 +84,10 @@ runtimeCommand:
       binOutput:
         description: "Ruta de salida del binario (por defecto: ~/.local/bin/)."
 
+  start:
+    description: Start the subsystem.
+  stop:
+    description: Stop the subsystem.
 pkgmanagers:
   description: "Trabajar con los gestores de paquetes disponibles en apx."
   labels:
@@ -154,6 +164,28 @@ pkgmanagers:
       name:
         description: "El nombre del gestor de paquetes a eliminar."
 
+  export:
+    options:
+      output:
+        description: The path to export the package manager to.
+      name:
+        description: The name of the package manager to export.
+    error:
+      noOutput: No output specified.
+      noName: No name specified.
+    description: Export the specified package manager.
+    info:
+      success: Exported package manager '%s' to '%s'.
+  import:
+    error:
+      noInput: No input specified.
+      cannotLoad: Cannot load package manager from '%s'.
+    info:
+      success: Imported package manager from '%s'.
+    description: Import the specified package manager.
+    options:
+      input:
+        description: The path to import the package manager from.
 stacks:
   description: "Trabaja con las pilas disponibles en apx."
   labels:

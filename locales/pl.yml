@@ -27,6 +27,8 @@ runtimeCommand:
     exportingBin: "Wystąpił błąd podczas eksportowania pliku binarnego: %s"
     unexportingApp: "An error occurred while unexporting the application: %s"
     unexportingBin: "An error occurred while unexporting the binary: %s"
+    startingContainer: 'An error occurred while starting the container: %s'
+    stoppingContainer: 'An error occurred while stopping the container: %s'
   info:
     unexportedApps: "Unexported %d applications"
     exportedApps: "Eksportowane %d aplikacje"
@@ -34,6 +36,10 @@ runtimeCommand:
     exportedBin: "Eksportowane pliki binarne %s"
     unexportedApp: "Unexported application %s"
     unexportedBin: "Unexported binary %s"
+    stoppedContainer: Stopped container.
+    startedContainer: Started container.
+    stoppingContainer: Stopping container…
+    startingContainer: Starting container…
   autoremove:
     description: "Usuń paczki które nie są już wymagane."
   clean:
@@ -78,6 +84,10 @@ runtimeCommand:
       binOutput:
         description: "Path of the binary output (default: ~/.local/bin/)."
 
+  start:
+    description: Start the subsystem.
+  stop:
+    description: Stop the subsystem.
 pkgmanagers:
   description: "Work with the package managers that are available in apx."
   labels:
@@ -154,6 +164,28 @@ pkgmanagers:
       name:
         description: "The name of the package manager to remove."
 
+  export:
+    options:
+      output:
+        description: The path to export the package manager to.
+      name:
+        description: The name of the package manager to export.
+    error:
+      noOutput: No output specified.
+      noName: No name specified.
+    description: Export the specified package manager.
+    info:
+      success: Exported package manager '%s' to '%s'.
+  import:
+    error:
+      noInput: No input specified.
+      cannotLoad: Cannot load package manager from '%s'.
+    info:
+      success: Imported package manager from '%s'.
+    description: Import the specified package manager.
+    options:
+      input:
+        description: The path to import the package manager from.
 stacks:
   description: "Work with the stacks that are available in apx."
   labels:

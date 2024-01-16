@@ -26,6 +26,8 @@ runtimeCommand:
     unexportingApp: "Uygulama dışa aktarılırken bir hata oluştu: %s"
     unexportingBin: "İkili dosyayı kaldırırken bir hata meydana geldi: %s"
     enteringContainer: 'Şu konteynere girerken bir hata oluştu: %s'
+    startingContainer: 'An error occurred while starting the container: %s'
+    stoppingContainer: 'An error occurred while stopping the container: %s'
   info:
     unexportedApps: "%d uygulama kaldırıldı\n"
     exportedApps: "%d uygulama çıkartıldı\n"
@@ -33,6 +35,10 @@ runtimeCommand:
     exportedBin: "İkili dosya çıkartıldı %s\n"
     unexportedApp: "Uygulama kaldırıldı %s\n"
     unexportedBin: "İkili dosya kaldırıldı %s\n"
+    stoppedContainer: Stopped container.
+    startedContainer: Started container.
+    stoppingContainer: Stopping container…
+    startingContainer: Starting container…
   autoremove:
     description: "Artık ihtiyaç duyulmayan paketleri kaldır."
   clean:
@@ -77,6 +83,10 @@ runtimeCommand:
       binOutput:
         description: "İkili çıktının yolu (varsayılan: ~/.local/bin/)."
 
+  start:
+    description: Start the subsystem.
+  stop:
+    description: Stop the subsystem.
 pkgmanagers:
   description: "apx içinde kullanılabilir paket yöneticileri ile çalışın"
   labels:
@@ -155,6 +165,28 @@ pkgmanagers:
       name:
         description: "Kaldırılacak paket yöneticisinin adı."
 
+  export:
+    options:
+      output:
+        description: The path to export the package manager to.
+      name:
+        description: The name of the package manager to export.
+    error:
+      noOutput: No output specified.
+      noName: No name specified.
+    description: Export the specified package manager.
+    info:
+      success: Exported package manager '%s' to '%s'.
+  import:
+    error:
+      noInput: No input specified.
+      cannotLoad: Cannot load package manager from '%s'.
+    info:
+      success: Imported package manager from '%s'.
+    description: Import the specified package manager.
+    options:
+      input:
+        description: The path to import the package manager from.
 stacks:
   description: "Apx'te bulunan yığınlarla çalışın."
   labels:

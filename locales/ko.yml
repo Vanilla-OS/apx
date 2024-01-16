@@ -24,6 +24,8 @@ runtimeCommand:
     unexportingApp: "응용 프로그램을 unexport하는 중 오류가 발생했습니다: %s"
     unexportingBin: "바이너리를 unexport하는 중 오류가 발생했습니다: %s"
     enteringContainer: '컨테이너에 들어가는 중 오류가 발생했습니다: %s'
+    startingContainer: 'An error occurred while starting the container: %s'
+    stoppingContainer: 'An error occurred while stopping the container: %s'
   info:
     unexportedApps: "응용 프로그램(들) %d(을)를 Unexport하였습니다"
     exportedApps: "응용 프로그램(들) %d(을)를 Export하였습니다"
@@ -31,6 +33,10 @@ runtimeCommand:
     exportedBin: "바이너리 %d(을)를 Export하였습니다 %s"
     unexportedApp: "응용 프로그램 %d를 Unexport하였습니다 %s"
     unexportedBin: "바이너리 %d를 Unexport하였습니다 %s"
+    stoppedContainer: Stopped container.
+    startedContainer: Started container.
+    stoppingContainer: Stopping container…
+    startingContainer: Starting container…
   autoremove:
     description: "더이상 필요하지 않은 패키지를 제거합니다."
   clean:
@@ -75,6 +81,10 @@ runtimeCommand:
       binOutput:
         description: "바이너리 출력 경로 (기본값: ~/.local/bin/)."
 
+  start:
+    description: Start the subsystem.
+  stop:
+    description: Stop the subsystem.
 pkgmanagers:
   description: "apx에서 사용 가능한 패키지 관리자와 작업합니다."
   labels:
@@ -150,6 +160,28 @@ pkgmanagers:
       name:
         description: "제거할 패키지 관리자의 이름입니다."
 
+  export:
+    options:
+      output:
+        description: The path to export the package manager to.
+      name:
+        description: The name of the package manager to export.
+    error:
+      noOutput: No output specified.
+      noName: No name specified.
+    description: Export the specified package manager.
+    info:
+      success: Exported package manager '%s' to '%s'.
+  import:
+    error:
+      noInput: No input specified.
+      cannotLoad: Cannot load package manager from '%s'.
+    info:
+      success: Imported package manager from '%s'.
+    description: Import the specified package manager.
+    options:
+      input:
+        description: The path to import the package manager from.
 stacks:
   description: "apx에서 사용 가능한 스택과 작업합니다."
   labels:

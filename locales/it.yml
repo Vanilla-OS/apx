@@ -33,6 +33,8 @@ runtimeCommand:
       del file binario: %s"
     enteringContainer: 'Si è verificato un errore durante l''entrata nel container:
       %s'
+    startingContainer: 'An error occurred while starting the container: %s'
+    stoppingContainer: 'An error occurred while stopping the container: %s'
   info:
     unexportedApps: "Rimosse %d applicazioni"
     exportedApps: "Esportate %d applicazioni"
@@ -40,6 +42,10 @@ runtimeCommand:
     exportedBin: "Esportato file binario %s"
     unexportedApp: "Rimossa applicazione %s"
     unexportedBin: "Rimosso file binario %s"
+    stoppedContainer: Stopped container.
+    startedContainer: Started container.
+    stoppingContainer: Stopping container…
+    startingContainer: Starting container…
   autoremove:
     description: "Rimuovere pacchetti non più necessari."
   clean:
@@ -84,6 +90,10 @@ runtimeCommand:
       binOutput:
         description: "Percorso dell'output binario (default: ~/.local/bin/)."
 
+  start:
+    description: Start the subsystem.
+  stop:
+    description: Stop the subsystem.
 pkgmanagers:
   description: "Lavora con i gestori di pacchetti disponibili in apx."
   labels:
@@ -160,6 +170,28 @@ pkgmanagers:
       name:
         description: "Il nome del gestore di pacchetti da rimuovere."
 
+  export:
+    options:
+      output:
+        description: The path to export the package manager to.
+      name:
+        description: The name of the package manager to export.
+    error:
+      noOutput: No output specified.
+      noName: No name specified.
+    description: Export the specified package manager.
+    info:
+      success: Exported package manager '%s' to '%s'.
+  import:
+    error:
+      noInput: No input specified.
+      cannotLoad: Cannot load package manager from '%s'.
+    info:
+      success: Imported package manager from '%s'.
+    description: Import the specified package manager.
+    options:
+      input:
+        description: The path to import the package manager from.
 stacks:
   description: "Lavora con gli stack disponibili in apx."
   labels:

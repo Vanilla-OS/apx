@@ -24,6 +24,8 @@ runtimeCommand:
     unexportingApp: "حدث خطأ أثناء إلغاء تصدير التطبيق: %s"
     unexportingBin: "حدث خطأ أثناء إلغاء تصدير البرنامج: %s"
     enteringContainer: 'An error occurred while entering the container: %s'
+    startingContainer: 'An error occurred while starting the container: %s'
+    stoppingContainer: 'An error occurred while stopping the container: %s'
   info:
     unexportedApps: "%d تطبيقات غير مصدرة\n"
     exportedApps: "%d تطبيقات مصدرة\n"
@@ -31,6 +33,10 @@ runtimeCommand:
     exportedBin: "البرامج المصدرة %s\n"
     unexportedApp: "التطبيقات غير المصدرة %s\n"
     unexportedBin: "البرامج غير المصدرة %s\n"
+    stoppedContainer: Stopped container.
+    startedContainer: Started container.
+    stoppingContainer: Stopping container…
+    startingContainer: Starting container…
   autoremove:
     description: "حذف الحزم التي لم تعد مطلوبة."
   clean:
@@ -75,6 +81,10 @@ runtimeCommand:
       binOutput:
         description: "مسار البرامج\n(الافتراضي /.local/bin/)"
 
+  start:
+    description: Start the subsystem.
+  stop:
+    description: Stop the subsystem.
 pkgmanagers:
   description: "يتعامل مع مديري الحزم المتاحة في apx."
   labels:
@@ -150,6 +160,28 @@ pkgmanagers:
       name:
         description: "اسم مدير الحزم المراد حذفه."
 
+  export:
+    options:
+      output:
+        description: The path to export the package manager to.
+      name:
+        description: The name of the package manager to export.
+    error:
+      noOutput: No output specified.
+      noName: No name specified.
+    description: Export the specified package manager.
+    info:
+      success: Exported package manager '%s' to '%s'.
+  import:
+    error:
+      noInput: No input specified.
+      cannotLoad: Cannot load package manager from '%s'.
+    info:
+      success: Imported package manager from '%s'.
+    description: Import the specified package manager.
+    options:
+      input:
+        description: The path to import the package manager from.
 stacks:
   description: "تستخدم التشكيلات المتاحة في apx."
   labels:

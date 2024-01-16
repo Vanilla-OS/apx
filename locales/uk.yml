@@ -26,6 +26,8 @@ runtimeCommand:
     unexportingApp: "Виникла помилка під час експорту застосунку: %s"
     unexportingBin: "Виникла помилка під час експорту бінарного файлу: %s"
     enteringContainer: 'Під час входу в контейнер сталася помилка: %s'
+    startingContainer: 'An error occurred while starting the container: %s'
+    stoppingContainer: 'An error occurred while stopping the container: %s'
   info:
     unexportedApps: "Неекспортовано %d застосунків"
     exportedApps: "Експортовано %d застосунків"
@@ -33,6 +35,10 @@ runtimeCommand:
     exportedBin: "Експортовані бінарні %s"
     unexportedApp: "Неекспортований застосунок %s"
     unexportedBin: "Неекспортовані бінарні %s"
+    stoppedContainer: Stopped container.
+    startedContainer: Started container.
+    stoppingContainer: Stopping container…
+    startingContainer: Starting container…
   autoremove:
     description: "Видаліть пакунки, які більше не потрібні."
   clean:
@@ -77,6 +83,10 @@ runtimeCommand:
       binOutput:
         description: "Шлях до бінарного виводу (за замовчуванням: ~/.local/bin/)."
 
+  start:
+    description: Start the subsystem.
+  stop:
+    description: Stop the subsystem.
 pkgmanagers:
   description: "Працюйте з менеджерами пакунків, які доступні в apx."
   labels:
@@ -153,6 +163,28 @@ pkgmanagers:
       name:
         description: "Ім'я менеджера пакунків, яке слід видалити."
 
+  export:
+    options:
+      output:
+        description: The path to export the package manager to.
+      name:
+        description: The name of the package manager to export.
+    error:
+      noOutput: No output specified.
+      noName: No name specified.
+    description: Export the specified package manager.
+    info:
+      success: Exported package manager '%s' to '%s'.
+  import:
+    error:
+      noInput: No input specified.
+      cannotLoad: Cannot load package manager from '%s'.
+    info:
+      success: Imported package manager from '%s'.
+    description: Import the specified package manager.
+    options:
+      input:
+        description: The path to import the package manager from.
 stacks:
   description: "Працюйте зі стеками, які доступні в apx."
   labels:

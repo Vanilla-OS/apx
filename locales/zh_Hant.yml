@@ -24,6 +24,8 @@ runtimeCommand:
     unexportingApp: "移除匯出的應用程式時發生錯誤：%s"
     unexportingBin: "移除匯出的二進位檔案時發生錯誤：%s"
     enteringContainer: '進入容器時發生錯誤：%s'
+    startingContainer: 'An error occurred while starting the container: %s'
+    stoppingContainer: 'An error occurred while stopping the container: %s'
   info:
     unexportedApps: "已移除匯出的 %d 個應用程式"
     exportedApps: "已匯出 %d 個應用程式"
@@ -31,6 +33,10 @@ runtimeCommand:
     exportedBin: "已匯出二進位檔案 %s"
     unexportedApp: "已移除匯出的應用程式 %s"
     unexportedBin: "已移除匯出的二進位檔案 %s"
+    stoppedContainer: Stopped container.
+    startedContainer: Started container.
+    stoppingContainer: Stopping container…
+    startingContainer: Starting container…
   autoremove:
     description: "移除不再需要的軟體包。"
   clean:
@@ -75,6 +81,10 @@ runtimeCommand:
       binOutput:
         description: "二進位輸出的路徑（預設為 ~/.local/bin/）。"
 
+  start:
+    description: Start the subsystem.
+  stop:
+    description: Stop the subsystem.
 pkgmanagers:
   description: "操作 apx 中可使用的軟體包管理器。"
   labels:
@@ -149,6 +159,28 @@ pkgmanagers:
       name:
         description: "要移除的軟體包管理器的名稱。"
 
+  export:
+    options:
+      output:
+        description: The path to export the package manager to.
+      name:
+        description: The name of the package manager to export.
+    error:
+      noOutput: No output specified.
+      noName: No name specified.
+    description: Export the specified package manager.
+    info:
+      success: Exported package manager '%s' to '%s'.
+  import:
+    error:
+      noInput: No input specified.
+      cannotLoad: Cannot load package manager from '%s'.
+    info:
+      success: Imported package manager from '%s'.
+    description: Import the specified package manager.
+    options:
+      input:
+        description: The path to import the package manager from.
 stacks:
   description: "操作 apx 中可使用的包捆。"
   labels:

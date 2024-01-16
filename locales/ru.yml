@@ -26,6 +26,8 @@ runtimeCommand:
     unexportingApp: "Произошла ошибка при деэкспортировании приложения: %s"
     unexportingBin: "Произошла ошибка при деэкспортировании двоичного файла: %s"
     enteringContainer: 'Произошла ошибка при входе в контейнер: %s'
+    startingContainer: 'An error occurred while starting the container: %s'
+    stoppingContainer: 'An error occurred while stopping the container: %s'
   info:
     unexportedApps: "Деэкспортировано %d приложений"
     exportedApps: "Экспортировано %d приложений"
@@ -33,6 +35,10 @@ runtimeCommand:
     exportedBin: "Экспортированный двоичный файл %s"
     unexportedApp: "Деэкспортированное приложение %s"
     unexportedBin: "Деэкспортированный двоичный файл %s"
+    stoppedContainer: Stopped container.
+    startedContainer: Started container.
+    stoppingContainer: Stopping container…
+    startingContainer: Starting container…
   autoremove:
     description: "Убрать пакеты, которые больше не требуются."
   clean:
@@ -77,6 +83,10 @@ runtimeCommand:
       binOutput:
         description: "Путь вывода двоичного файла (по умолчанию: ~/.local/bin/)."
 
+  start:
+    description: Start the subsystem.
+  stop:
+    description: Stop the subsystem.
 pkgmanagers:
   description: "Работа с менеджерами пакетов, которые доступны в apx."
   labels:
@@ -152,6 +162,28 @@ pkgmanagers:
       name:
         description: "Имя удаляемого менеджера пакетов."
 
+  export:
+    options:
+      output:
+        description: The path to export the package manager to.
+      name:
+        description: The name of the package manager to export.
+    error:
+      noOutput: No output specified.
+      noName: No name specified.
+    description: Export the specified package manager.
+    info:
+      success: Exported package manager '%s' to '%s'.
+  import:
+    error:
+      noInput: No input specified.
+      cannotLoad: Cannot load package manager from '%s'.
+    info:
+      success: Imported package manager from '%s'.
+    description: Import the specified package manager.
+    options:
+      input:
+        description: The path to import the package manager from.
 stacks:
   description: "Работа со стеками, доступными в apx."
   labels:

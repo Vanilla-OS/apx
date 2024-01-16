@@ -26,6 +26,8 @@ runtimeCommand:
     unexportingApp: "Ett fel uppstod när programmet skulle avexporteras: %s"
     unexportingBin: "Ett fel uppstod när binär: %s skulle avexporteras"
     enteringContainer: 'Ett fel uppstod när du gick in i behållaren: %s'
+    startingContainer: 'An error occurred while starting the container: %s'
+    stoppingContainer: 'An error occurred while stopping the container: %s'
   info:
     unexportedApps: "Oexporterade %d program"
     exportedApps: "Exporterade %d program"
@@ -33,6 +35,10 @@ runtimeCommand:
     exportedBin: "Exporterad binär %s"
     unexportedApp: "Oexporterat program %s"
     unexportedBin: "Oexporterad binär %s"
+    stoppedContainer: Stopped container.
+    startedContainer: Started container.
+    stoppingContainer: Stopping container…
+    startingContainer: Starting container…
   autoremove:
     description: "Ta bort paket som inte längre behövs."
   clean:
@@ -77,6 +83,10 @@ runtimeCommand:
       binOutput:
         description: "Sökväg av binär utdata (standard: ~/.local/bin/)."
 
+  start:
+    description: Start the subsystem.
+  stop:
+    description: Stop the subsystem.
 pkgmanagers:
   description: "Arbeta med de pakethanterare som finns tillgängliga i apx."
   labels:
@@ -154,6 +164,28 @@ pkgmanagers:
       name:
         description: "Namnet på pakethanteraren som ska tas bort."
 
+  export:
+    options:
+      output:
+        description: The path to export the package manager to.
+      name:
+        description: The name of the package manager to export.
+    error:
+      noOutput: No output specified.
+      noName: No name specified.
+    description: Export the specified package manager.
+    info:
+      success: Exported package manager '%s' to '%s'.
+  import:
+    error:
+      noInput: No input specified.
+      cannotLoad: Cannot load package manager from '%s'.
+    info:
+      success: Imported package manager from '%s'.
+    description: Import the specified package manager.
+    options:
+      input:
+        description: The path to import the package manager from.
 stacks:
   description: "Arbeta med de stackar som finns tillgängliga i apx."
   labels:

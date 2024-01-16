@@ -26,6 +26,8 @@ runtimeCommand:
     unexportingApp: "Ocorreu um erro ao desfazer a exportação do aplicativo: %s"
     unexportingBin: "Ocorreu um erro ao desfazer a exportação do binário: %s"
     enteringContainer: 'Ocorreu um erro ao entrar no contêiner: %s'
+    startingContainer: 'An error occurred while starting the container: %s'
+    stoppingContainer: 'An error occurred while stopping the container: %s'
   info:
     unexportedApps: "Desfeita a exportação de %d aplicativos"
     exportedApps: "Exportados %d aplicativos"
@@ -33,6 +35,10 @@ runtimeCommand:
     exportedBin: "Binário %s exportado"
     unexportedApp: "Desfeita a exportação do aplicativo %s"
     unexportedBin: "Desfeita a exportação do binário %s"
+    stoppedContainer: Stopped container.
+    startedContainer: Started container.
+    stoppingContainer: Stopping container…
+    startingContainer: Starting container…
   autoremove:
     description: "Remover pacotes que não são mais necessários."
   clean:
@@ -77,6 +83,10 @@ runtimeCommand:
       binOutput:
         description: "Caminho de saída do binário (padrão: ~/.local/bin/)."
 
+  start:
+    description: Start the subsystem.
+  stop:
+    description: Stop the subsystem.
 pkgmanagers:
   description: "Trabalhar com os gerenciadores de pacotes que estão disponíveis no
     apx."
@@ -155,6 +165,28 @@ pkgmanagers:
       name:
         description: "O nome do gerenciador de pacotes a ser removido."
 
+  export:
+    options:
+      output:
+        description: The path to export the package manager to.
+      name:
+        description: The name of the package manager to export.
+    error:
+      noOutput: No output specified.
+      noName: No name specified.
+    description: Export the specified package manager.
+    info:
+      success: Exported package manager '%s' to '%s'.
+  import:
+    error:
+      noInput: No input specified.
+      cannotLoad: Cannot load package manager from '%s'.
+    info:
+      success: Imported package manager from '%s'.
+    description: Import the specified package manager.
+    options:
+      input:
+        description: The path to import the package manager from.
 stacks:
   description: "Trabalhar com as pilhas que estão disponíveis no apx."
   labels:

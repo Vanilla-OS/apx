@@ -29,6 +29,8 @@ runtimeCommand:
       %s"
     unexportingBin: "S'ha produït un error mentre es desfeia l'exportació del binari:
       %s"
+    startingContainer: 'An error occurred while starting the container: %s'
+    stoppingContainer: 'An error occurred while stopping the container: %s'
   info:
     unexportedApps: "Aplicacions amb exportacions desfetes %d"
     exportedApps: "Aplicacions exportades %d"
@@ -36,6 +38,10 @@ runtimeCommand:
     exportedBin: "Binari exportat %s"
     unexportedApp: "Aplicacions amb exportacions desfetes %s"
     unexportedBin: "Binari amb exportació desfeta %s"
+    stoppedContainer: Stopped container.
+    startedContainer: Started container.
+    stoppingContainer: Stopping container…
+    startingContainer: Starting container…
   autoremove:
     description: "Esborra paquets que ja no es necessiten."
   clean:
@@ -80,6 +86,10 @@ runtimeCommand:
       binOutput:
         description: "Camí de sortida del binari (per defecte: ~/.local/bin/)."
 
+  start:
+    description: Start the subsystem.
+  stop:
+    description: Stop the subsystem.
 pkgmanagers:
   description: "Treballa amb els gestors de paquets disponibles a apx."
   labels:
@@ -156,6 +166,28 @@ pkgmanagers:
       name:
         description: "Nom del gestor de paquets que s'ha d'esborrar."
 
+  export:
+    options:
+      output:
+        description: The path to export the package manager to.
+      name:
+        description: The name of the package manager to export.
+    error:
+      noOutput: No output specified.
+      noName: No name specified.
+    description: Export the specified package manager.
+    info:
+      success: Exported package manager '%s' to '%s'.
+  import:
+    error:
+      noInput: No input specified.
+      cannotLoad: Cannot load package manager from '%s'.
+    info:
+      success: Imported package manager from '%s'.
+    description: Import the specified package manager.
+    options:
+      input:
+        description: The path to import the package manager from.
 stacks:
   description: "Treballa amb les piles que es troben disponibles a apx."
   labels:

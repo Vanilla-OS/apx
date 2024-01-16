@@ -29,6 +29,8 @@ runtimeCommand:
     unexportingBin: "Προέκυψε ένα σφάλμα κατά την άρση εξαγωγής του εκτελέσιμου αρχείου:
       %s"
     enteringContainer: 'An error occurred while entering the container: %s'
+    startingContainer: 'An error occurred while starting the container: %s'
+    stoppingContainer: 'An error occurred while stopping the container: %s'
   info:
     unexportedApps: "Ήρθη η εξαγωγή %d εφαρμογών"
     exportedApps: "Εξήχθησαν %d εφαρμογές"
@@ -36,6 +38,10 @@ runtimeCommand:
     exportedBin: "Εξήχθη το εκτελέσιμο αρχείο %s"
     unexportedApp: "Ήρθη η εξαγωγή της εφαρμογής %s"
     unexportedBin: "Ήρθη η εξαγωγή του εκτελέσιμου αρχείου %s"
+    stoppedContainer: Stopped container.
+    startedContainer: Started container.
+    stoppingContainer: Stopping container…
+    startingContainer: Starting container…
   autoremove:
     description: "Αφαίρεση πακέτων που δεν χρειάζονται πλέον."
   clean:
@@ -82,6 +88,10 @@ runtimeCommand:
         description: "Η διαδρομή για την εξαγωγή του εκτελέσιμου αρχείου (Προεπιλεγμένη:
           ~/.local/bin/)."
 
+  start:
+    description: Start the subsystem.
+  stop:
+    description: Stop the subsystem.
 pkgmanagers:
   description: "Εργαστείτε με τους διαθέσιμους διαχειριστές πακέτων στο apx."
   labels:
@@ -158,6 +168,28 @@ pkgmanagers:
       name:
         description: "Το όνομα του διαχειριστή πακέτων που να αφαιρεθεί."
 
+  export:
+    options:
+      output:
+        description: The path to export the package manager to.
+      name:
+        description: The name of the package manager to export.
+    error:
+      noOutput: No output specified.
+      noName: No name specified.
+    description: Export the specified package manager.
+    info:
+      success: Exported package manager '%s' to '%s'.
+  import:
+    error:
+      noInput: No input specified.
+      cannotLoad: Cannot load package manager from '%s'.
+    info:
+      success: Imported package manager from '%s'.
+    description: Import the specified package manager.
+    options:
+      input:
+        description: The path to import the package manager from.
 stacks:
   description: "Εργαστείτε με τις διαθέσιμες στοίβες στο apx."
   labels:
