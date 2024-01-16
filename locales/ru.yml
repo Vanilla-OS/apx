@@ -342,10 +342,10 @@ subsystems:
         description: "Имя подсистемы."
       stack:
         description: "Используемый стек."
-      info:
-        description: Использовать systemd внутри подсистемы.
       home:
         description: Пользовательский домашний каталог подсистемы.
+      init:
+        description: Use systemd inside the subsystem.
   rm:
     description: "Удалить указанную подсистему."
     error:

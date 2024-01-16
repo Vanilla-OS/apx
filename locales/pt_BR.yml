@@ -344,10 +344,10 @@ subsystems:
         description: "O nome do subsistema."
       stack:
         description: "A pilha a ser usada."
-      info:
-        description: Use systemd inside the subsystem.
       home:
         description: The custom home directory of the subsystem.
+      init:
+        description: Use systemd inside the subsystem.
   rm:
     description: "Remover o subsistema especificado."
     error:

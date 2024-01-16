@@ -344,10 +344,10 @@ subsystems:
         description: "Alt sistemin adı."
       stack:
         description: "Kullanılacak yığın."
-      info:
-        description: Use systemd inside the subsystem.
       home:
         description: The custom home directory of the subsystem.
+      init:
+        description: Use systemd inside the subsystem.
   rm:
     description: "Belirtilen alt sistemi kaldırın."
     error:

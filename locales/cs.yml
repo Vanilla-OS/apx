@@ -341,10 +341,10 @@ subsystems:
         description: "Název subsystému."
       stack:
         description: "Stack, který se má použít."
-      info:
-        description: Use systemd inside the subsystem.
       home:
         description: The custom home directory of the subsystem.
+      init:
+        description: Use systemd inside the subsystem.
   rm:
     description: "Smazat zadaný subsystém."
     error:

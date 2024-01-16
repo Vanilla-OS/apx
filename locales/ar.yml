@@ -338,10 +338,10 @@ subsystems:
         description: "اسم النظام الفرعي."
       stack:
         description: "التشكيلة المراد استخدامها."
-      info:
-        description: Use systemd inside the subsystem.
       home:
         description: The custom home directory of the subsystem.
+      init:
+        description: Use systemd inside the subsystem.
   rm:
     description: "حذف النظام الفرعي المحدد."
     error:

@@ -347,10 +347,10 @@ subsystems:
         description: "Numele subsistemului."
       stack:
         description: "Stiva de utilizat."
-      info:
-        description: Use systemd inside the subsystem.
       home:
         description: The custom home directory of the subsystem.
+      init:
+        description: Use systemd inside the subsystem.
   rm:
     description: "Elimină subsistemul specificat."
     error:

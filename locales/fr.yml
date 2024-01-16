@@ -355,10 +355,10 @@ subsystems:
         description: "Nom du sous-système."
       stack:
         description: "Pile à utiliser."
-      info:
-        description: Utiliser systemd au sein du sous-système.
       home:
         description: The custom home directory of the subsystem.
+      init:
+        description: Use systemd inside the subsystem.
   rm:
     description: "Supprimer le sous-système indiqué."
     error:

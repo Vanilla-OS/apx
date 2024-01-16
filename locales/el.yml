@@ -348,10 +348,10 @@ subsystems:
         description: "Το όνομα του υποσυστήματος."
       stack:
         description: "Η στοίβα που θα χρησιμοποιηθεί."
-      info:
-        description: Use systemd inside the subsystem.
       home:
         description: The custom home directory of the subsystem.
+      init:
+        description: Use systemd inside the subsystem.
   rm:
     description: "Αφαίρεση του επιλεγμένου υποσυστήματος."
     error:

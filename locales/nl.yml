@@ -346,10 +346,10 @@ subsystems:
         description: "De naam van het subsysteem."
       stack:
         description: "De stack om te gebruiken."
-      info:
-        description: Use systemd inside the subsystem.
       home:
         description: The custom home directory of the subsystem.
+      init:
+        description: Use systemd inside the subsystem.
   rm:
     description: "Verwijdert het opgegeven subsysteem."
     error:

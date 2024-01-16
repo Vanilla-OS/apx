@@ -344,10 +344,10 @@ subsystems:
         description: "Namnet på undersystem."
       stack:
         description: "Stacken att använda."
-      info:
-        description: Använd systemd inuti undersystemet.
       home:
         description: Den anpassade hemkatalogen för undersystemet.
+      init:
+        description: Use systemd inside the subsystem.
   rm:
     description: "Ta bort det specificerade undersystemet."
     error:

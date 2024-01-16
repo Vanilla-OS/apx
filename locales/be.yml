@@ -339,10 +339,10 @@ subsystems:
         description: "Назва падсістэмы."
       stack:
         description: "Стэк для выкарыстання."
-      info:
-        description: Use systemd inside the subsystem.
       home:
         description: The custom home directory of the subsystem.
+      init:
+        description: Use systemd inside the subsystem.
   rm:
     description: "Выдаліце ўказаную падсістэму."
     error:
