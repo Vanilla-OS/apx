@@ -347,7 +347,7 @@ subsystems:
       home:
         description: Den anpassade hemkatalogen för undersystemet.
       init:
-        description: Use systemd inside the subsystem.
+        description: Använd systemd inuti undersystem.
   rm:
     description: "Ta bort det specificerade undersystemet."
     error:
