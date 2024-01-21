@@ -1,0 +1,374 @@
+apx:
+  description: "Apx is a package manager with support for multiple sources, allowing
+    you to install packages in subsystems."
+  errors:
+    unknownCommand: "Unknown command: %s"
+    invalidInput: "Invalid input."
+    invalidChoice: "Invalid choice."
+    noRoot: "Do not run Apx as root."
+  info:
+    aborting: "Aborting as requested."
+  terminal:
+    yes: "yes"
+    no: "no"
+
+runtimeCommand:
+  description: "Work with the specified subsystem, accessing the package manager and
+    environment."
+  error:
+    enteringContainer: "An error occurred while entering the container: %s"
+    noPackageSpecified: "No packages specified."
+    cantAccessPkgManager: "An error occurred while accessing the package manager:
+      %s"
+    executingCommand: "An error occurred while executing the command: %s"
+    noAppNameOrBin: "--app-name or --bin must be specified."
+    sameAppOrBin: "--app-name and --bin cannot be both specified."
+    exportingApp: "An error occurred while exporting the application: %s"
+    exportingBin: "An error occurred while exporting the binary: %s"
+    unexportingApp: "An error occurred while unexporting the application: %s"
+    unexportingBin: "An error occurred while unexporting the binary: %s"
+    startingContainer: "An error occurred while starting the container: %s"
+    stoppingContainer: "An error occurred while stopping the container: %s"
+  info:
+    unexportedApps: "Unexported %d applications"
+    exportedApps: "Exported %d applications"
+    exportedApp: "Exported application %s"
+    exportedBin: "Exported binary %s"
+    unexportedApp: "Unexported application %s"
+    unexportedBin: "Unexported binary %s"
+    startingContainer: "Starting container…"
+    startedContainer: "Started container."
+    stoppingContainer: "Stopping container…"
+    stoppedContainer: "Stopped container."
+  autoremove:
+    description: "Remove packages that are no longer required."
+  clean:
+    description: "Clean the package manager's cache."
+  install:
+    description: "Install the specified package."
+    options:
+      noExport:
+        description: "Do not export a desktop entry."
+  list:
+    description: "List all installed packages."
+  purge:
+    description: "Purge the specified packages."
+  remove:
+    description: "Remove the specified packages."
+  search:
+    description: "Search for packages matching the specified query."
+  show:
+    description: "Show information about the specified package."
+  update:
+    description: "Update the list of available packages."
+  upgrade:
+    description: "Upgrade all installed packages."
+  enter:
+    description: "Enter the subsystem's environment."
+  export:
+    description: "Export an application or binary from the subsystem."
+    options:
+      appName:
+        description: "The name of the application to export."
+      bin:
+        description: "The name of the binary to export."
+      binOutput:
+        description: "Path of the binary output (default: ~/.local/bin/)."
+  unexport:
+    description: "Unexport an application or binary from the subsystem."
+    options:
+      appName:
+        description: "The name of the application to unexport."
+      bin:
+        description: "The name of the binary to unexport."
+      binOutput:
+        description: "Path of the binary output (default: ~/.local/bin/)."
+  start:
+    description: "Start the subsystem."
+  stop:
+    description: "Stop the subsystem."
+
+pkgmanagers:
+  description: "Work with the package managers that are available in apx."
+  labels:
+    name: "Name"
+    builtIn: "Built-in"
+
+  list:
+    description: "List all available package managers."
+    info:
+      noPkgManagers: "No package managers available. Create a new one with 'apx pkgmanagers
+        new' or contact the system administrator."
+      foundPkgManagers: "Found %d package managers"
+    options:
+      json:
+        description: "Output in JSON format."
+  show:
+    description: "Show information about the specified package manager."
+  new:
+    description: "Create a new package manager."
+
+    error:
+      emptyName: "The name cannot be empty."
+      noName: "No name specified."
+      emptyCommand: "The command cannot be empty."
+      noCommand: "No command specified for '%s'."
+      alreadyExists: "A package manager with the name '%s' already exists."
+    info:
+      askName: "Choose a name:"
+      askSudo: "Does the package manager need sudo to run?"
+      askCommand: "Enter the command for '%s':"
+      askOverwrite: "A package manager with the name '%s' already exists. Overwrite
+        it?"
+      success: "Created package manager '%s'."
+    options:
+      assumeYes:
+        description: "Assume yes to all prompts."
+      name:
+        description: "The name of the package manager."
+      needSudo:
+        description: "Whether the package manager needs sudo to run."
+      autoremove:
+        description: "The command to run to autoremove packages."
+      clean:
+        description: "The command to run to clean the package manager's cache."
+      install:
+        description: "The command to run to install packages."
+      list:
+        description: "The command to run to list installed packages."
+      purge:
+        description: "The command to run to purge packages."
+      remove:
+        description: "The command to run to remove packages."
+      search:
+        description: "The command to run to search for packages."
+      show:
+        description: "The command to run to show information about packages."
+      update:
+        description: "The command to run to update the list of available packages."
+      upgrade:
+        description: "The command to run to upgrade packages."
+  update:
+    description: "Update the specified package manager."
+    info:
+      success: "Updated package manager '%s'."
+  rm:
+    description: "Remove the specified package manager."
+
+    error:
+      noName: "No name specified."
+      inUse: "The package manager is used in %d stacks:"
+    info:
+      askConfirmation: "Are you sure you want to remove '%s'? [y/N]"
+      success: "Removed package manager '%s'."
+      aborting: "Aborting removal of package manager '%s'."
+    options:
+      force:
+        description: "Force removal of the package manager."
+      name:
+        description: "The name of the package manager to remove."
+  export:
+    description: "Export the specified package manager."
+    error:
+      noName: "No name specified."
+      noOutput: "No output specified."
+    info:
+      success: "Exported package manager '%s' to '%s'."
+    options:
+      name:
+        description: "The name of the package manager to export."
+      output:
+        description: "The path to export the package manager to."
+  import:
+    description: "Import the specified package manager."
+    error:
+      noInput: "No input specified."
+      cannotLoad: "Cannot load package manager from '%s'."
+    info:
+      success: "Imported package manager from '%s'."
+    options:
+      input:
+        description: "The path to import the package manager from."
+
+stacks:
+  description: "Work with the stacks that are available in apx."
+  labels:
+    name: "Name"
+    builtIn: "Built-in"
+
+  list:
+    description: "List all available stacks."
+    info:
+      noStacks: "No stacks available. Create a new one with 'apx stacks new' or contact
+        the system administrator."
+      foundStacks: "Found %d stacks:"
+      aborting: "Aborting removal of stack '%s'."
+    options:
+      json:
+        description: "Output in JSON format."
+  show:
+    description: "Show information about the specified stack."
+  new:
+    description: "Create a new stack."
+    error:
+      emptyName: "The name cannot be empty."
+      noName: "No name specified."
+      emptyBase: "The base cannot be empty."
+      noBase: "No base specified."
+      emptyPkgManager: "The package manager cannot be empty."
+      noPkgManager: "No package manager specified."
+      pkgManagerDoesNotExist: "The specified package manager does not exist. Create
+        it with 'apx pkgmanagers new' or contact the system administrator."
+      emptyPackages: "The packages cannot be empty."
+      noPackages: "No packages specified."
+      alreadyExists: "A stack with the name '%s' already exists."
+    info:
+      askName: "Choose a name:"
+      askBase: "Choose a base (e.g. 'vanillaos/pico'):"
+      askPkgManager: "Choose a package manager:"
+      selectPkgManager: "Select a package manager [1-%d]:"
+      noPackages: "You have not provided any package to install in the stack. Do you
+        want to add some now?"
+      confirmPackages: "Do you want to confirm the current packages list?"
+      askPackages: "Please type the packages you want to install in the stack, separated
+        by a space:"
+      success: "Created stack '%s'."
+    options:
+      assumeYes:
+        description: "Assume yes to all prompts."
+      name:
+        description: "The name of the stack."
+      base:
+        description: "The base distribution image to use. (For a list of compatible
+          images view: https://distrobox.it/compatibility/#containers-distros)"
+      packages:
+        description: "The packages to install."
+      pkgManager:
+        description: "The package manager to use."
+  update:
+    description: "Update the specified stack."
+    error:
+      noName: "No name specified."
+      noBase: "No base specified."
+      noPkgManager: "No package manager specified."
+      pkgManagerDoesNotExist: "The specified package manager does not exist. Create
+        it with 'apx pkgmanagers new' or contact the system administrator."
+    info:
+      askBase: "Type a new base or confirm the current one (%s):"
+      askPkgManager: "Choose a new package manager or confirm the current one (%s):"
+      askPackages: "Type the packages you want to install in the stack, separated
+        by a space, or confirm the current ones (%s):"
+      success: "Updated stack '%s'."
+
+    options:
+      assumeYes:
+        description: "Assume yes to all prompts."
+      name:
+        description: "The name of the stack."
+      base:
+        description: "The base subsystem to use."
+      packages:
+        description: "The packages to install."
+      pkgManager:
+        description: "The package manager to use."
+  rm:
+    description: "Remove the specified stack."
+    error:
+      noName: "No name specified."
+    info:
+      askConfirmation: "Are you sure you want to remove '%s'? [y/N]"
+      success: "Removed stack '%s'."
+    options:
+      force:
+        description: "Force removal of the stack."
+      name:
+        description: "The name of the stack to remove."
+  export:
+    description: "Export the specified stack."
+    error:
+      noName: "No name specified."
+      noOutput: "No output specified."
+    info:
+      success: "Exported stack '%s' to '%s'."
+    options:
+      name:
+        description: "The name of the stack to export."
+      output:
+        description: "The path to export the stack to."
+  import:
+    description: "Import the specified stack."
+    error:
+      noInput: "No input specified."
+      cannotLoad: "Cannot load stack from '%s'."
+    info:
+      success: "Imported stack from '%s'."
+    options:
+      input:
+        description: "The path to import the stack from."
+
+subsystems:
+  description: "Work with the subsystems that are available in apx."
+  labels:
+    name: "Name"
+    status: "Status"
+
+  list:
+    description: "List all available subsystems."
+    error:
+    info:
+      noSubsystems: "No subsystems available. Create a new one with 'apx subsystems
+        new' or contact the system administrator."
+      foundSubsystems: "Found %d subsystems:"
+    options:
+      json:
+        description: "Output in JSON format."
+  new:
+    description: "Create a new subsystem."
+    error:
+      noStacks: "A stack is needed to create a subsystem. Create a new one with 'apx
+        stacks new' or contact the system administrator."
+      emptyName: "The name cannot be empty."
+      noName: "No name specified."
+      emptyStack: "The stack cannot be empty."
+      noStack: "No stack specified."
+      stackDoesNotExist: "The specified stack does not exist. Create it with 'apx
+        stacks new' or contact the system administrator."
+      alreadyExists: "A subsystem with the name '%s' already exists."
+    info:
+      askName: "Choose a name:"
+      selectStack: "Select a stack [1-%d]:"
+      success: "Created subsystem '%s'."
+      creatingSubsystem: "Creating subsystem '%s' with stack '%s'…"
+    options:
+      name:
+        description: "The name of the subsystem."
+      stack:
+        description: "The stack to use."
+      home:
+        description: "The custom home directory of the subsystem."
+      init:
+        description: "Use systemd inside the subsystem."
+  rm:
+    description: "Remove the specified subsystem."
+    error:
+      noName: "No name specified."
+    info:
+      askConfirmation: "Are you sure you want to remove '%s'? [y/N]"
+      success: "Removed subsystem '%s'."
+    options:
+      force:
+        description: "Force removal of the subsystem."
+      name:
+        description: "The name of the subsystem to remove."
+  reset:
+    description: "Reset the specified subsystem."
+    error:
+      noName: "No name specified."
+    info:
+      askConfirmation: "Are you sure you want to reset '%s'? [y/N]"
+      success: "The subsystem '%s' has been reset."
+    options:
+      force:
+        description: "Force reset of the subsystem."
+      name:
+        description: "The name of the subsystem to reset."

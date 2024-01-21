@@ -345,9 +345,9 @@ subsystems:
       stack:
         description: "La pila a utilizar."
       home:
-        description: The custom home directory of the subsystem.
+        description: El directorio personal del subsistema.
       init:
-        description: Use systemd inside the subsystem.
+        description: Utiliza systemd dentro del subsistema.
   rm:
     description: "Elimina el subsistema especificado."
     error:
