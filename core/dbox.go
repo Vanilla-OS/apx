@@ -285,6 +285,12 @@ func (d *dbox) ContainerExec(name string, captureOutput bool, muteOutput bool, r
 	engineFlags := []string{}
 
 	out, err := d.RunCommand("enter", finalArgs, engineFlags, false, captureOutput, muteOutput, rootFull)
+
+	// if error 130, it means that the user pressed CTRL+C, so ignore
+	if err != nil && err.Error() == "exit status 130" {
+		return string(out), nil
+	}
+
 	return string(out), err
 }
 
@@ -296,6 +302,12 @@ func (d *dbox) ContainerEnter(name string, rootFull bool) error {
 	engineFlags := []string{}
 
 	_, err := d.RunCommand("enter", finalArgs, engineFlags, false, false, false, rootFull)
+
+	// if error 130, it means that the user pressed CTRL+C, so ignore
+	if err != nil && err.Error() == "exit status 130" {
+		return nil
+	}
+
 	return err
 }
 
