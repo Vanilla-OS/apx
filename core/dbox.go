@@ -16,6 +16,7 @@ import (
 	"os"
 	"os/exec"
 	"strings"
+	"syscall"
 )
 
 type dbox struct {
@@ -76,7 +77,7 @@ func dboxGetVersion() (version string, err error) {
 	return splitted[1], nil
 }
 
-func (d *dbox) RunCommand(command string, args []string, engineFlags []string, useEngine bool, captureOutput bool, muteOutput bool, rootFull bool) ([]byte, error) {
+func (d *dbox) RunCommand(command string, args []string, engineFlags []string, useEngine bool, captureOutput bool, muteOutput bool, rootFull bool, detachedMode bool) ([]byte, error) {
 	entrypoint := apx.Cnf.DistroboxPath
 	if useEngine {
 		entrypoint = d.EngineBinary
@@ -94,6 +95,10 @@ func (d *dbox) RunCommand(command string, args []string, engineFlags []string, u
 	}
 
 	cmd := exec.Command(entrypoint, finalArgs...)
+
+	if detachedMode {
+		cmd.SysProcAttr = &syscall.SysProcAttr{Setpgid: true}
+	}
 
 	if !captureOutput && !muteOutput {
 		cmd.Stdout = os.Stdout
@@ -130,8 +135,20 @@ func (d *dbox) RunCommand(command string, args []string, engineFlags []string, u
 	cmd.Args = append(cmd.Args, args...)
 
 	if os.Getenv("APX_VERBOSE") == "1" {
-		fmt.Println("running command:")
-		fmt.Println(cmd.String())
+		fmt.Println("Runing a command:")
+		fmt.Println("\tCommand:", cmd.String())
+		fmt.Println("\tcaptureOutput:", captureOutput)
+		fmt.Println("\tmuteOutput:", muteOutput)
+		fmt.Println("\trootFull:", rootFull)
+		fmt.Println("\tdetachedMode:", detachedMode)
+	}
+
+	if detachedMode {
+		err := cmd.Start()
+		if err != nil {
+			return nil, err
+		}
+		return nil, nil
 	}
 
 	if captureOutput {
@@ -152,7 +169,7 @@ func (d *dbox) ListContainers(rootFull bool) ([]dboxContainer, error) {
 	output, err := d.RunCommand("ps", []string{
 		"-a",
 		"--format", "{{.ID}}|{{.CreatedAt}}|{{.Status}}|{{.Labels}}|{{.Names}}",
-	}, []string{}, true, true, false, rootFull)
+	}, []string{}, true, true, false, rootFull, false)
 	if err != nil {
 		return nil, err
 	}
@@ -217,7 +234,7 @@ func (d *dbox) ContainerDelete(name string, rootFull bool) error {
 	_, err := d.RunCommand("rm", []string{
 		"--force",
 		name,
-	}, []string{}, false, false, true, rootFull)
+	}, []string{}, false, false, true, rootFull, false)
 	return err
 }
 
@@ -257,12 +274,12 @@ func (d *dbox) CreateContainer(name string, image string, additionalPackages []s
 	}
 	engineFlags = append(engineFlags, "--label=manager=apx")
 
-	_, err := d.RunCommand("create", args, engineFlags, false, false, false, rootFull)
+	_, err := d.RunCommand("create", args, engineFlags, false, false, false, rootFull, false)
 	// fmt.Println(string(out))
 	return err
 }
 
-func (d *dbox) RunContainerCommand(name string, command []string, rootFull bool) error {
+func (d *dbox) RunContainerCommand(name string, command []string, rootFull, detachedMode bool) error {
 	args := []string{
 		"--name", name,
 		"--",
@@ -270,11 +287,11 @@ func (d *dbox) RunContainerCommand(name string, command []string, rootFull bool)
 
 	args = append(args, command...)
 
-	_, err := d.RunCommand("run", args, []string{}, false, false, false, rootFull)
+	_, err := d.RunCommand("run", args, []string{}, false, false, false, rootFull, detachedMode)
 	return err
 }
 
-func (d *dbox) ContainerExec(name string, captureOutput bool, muteOutput bool, rootFull bool, args ...string) (string, error) {
+func (d *dbox) ContainerExec(name string, captureOutput bool, muteOutput bool, rootFull, detachedMode bool, args ...string) (string, error) {
 	finalArgs := []string{
 		// "--verbose",
 		name,
@@ -284,8 +301,7 @@ func (d *dbox) ContainerExec(name string, captureOutput bool, muteOutput bool, r
 	finalArgs = append(finalArgs, args...)
 	engineFlags := []string{}
 
-	out, err := d.RunCommand("enter", finalArgs, engineFlags, false, captureOutput, muteOutput, rootFull)
-
+	out, err := d.RunCommand("enter", finalArgs, engineFlags, false, captureOutput, muteOutput, rootFull, detachedMode)
 	// if error 130, it means that the user pressed CTRL+D, so ignore
 	if err != nil && err.Error() == "exit status 130" {
 		return string(out), nil
@@ -301,8 +317,7 @@ func (d *dbox) ContainerEnter(name string, rootFull bool) error {
 
 	engineFlags := []string{}
 
-	_, err := d.RunCommand("enter", finalArgs, engineFlags, false, false, false, rootFull)
-
+	_, err := d.RunCommand("enter", finalArgs, engineFlags, false, false, false, rootFull, false)
 	// if error 130, it means that the user pressed CTRL+D, so ignore
 	if err != nil && err.Error() == "exit status 130" {
 		return nil
@@ -314,7 +329,7 @@ func (d *dbox) ContainerEnter(name string, rootFull bool) error {
 func (d *dbox) ContainerStart(name string, rootFull bool) error {
 	_, err := d.RunCommand("start", []string{
 		name,
-	}, []string{}, true, false, false, rootFull)
+	}, []string{}, true, false, false, rootFull, false)
 	return err
 }
 
@@ -326,7 +341,7 @@ func (d *dbox) ContainerStop(name string, rootFull bool) error {
 
 	engineFlags := []string{}
 
-	_, err := d.RunCommand("stop", finalArgs, engineFlags, false, false, false, rootFull)
+	_, err := d.RunCommand("stop", finalArgs, engineFlags, false, false, false, rootFull, false)
 	return err
 }
 
@@ -339,7 +354,7 @@ func (d *dbox) ContainerExport(name string, delete bool, rootFull bool, args ...
 
 	finalArgs = append(finalArgs, args...)
 
-	_, err := d.ContainerExec(name, true, true, rootFull, finalArgs...)
+	_, err := d.ContainerExec(name, true, true, rootFull, false, finalArgs...)
 	return err
 }
 

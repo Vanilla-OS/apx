@@ -261,7 +261,7 @@ func runPkgCmd(subSystem *core.SubSystem, command string, cmd *cobra.Command, ar
 
 		finalArgs := pkgManager.GenCmd(realCommand, args...)
 		fmt.Println("finalArgs", finalArgs)
-		_, err = subSystem.Exec(false, finalArgs...)
+		_, err = subSystem.Exec(false, false, finalArgs...)
 		if err != nil {
 			return fmt.Errorf(apx.Trans("runtimeCommand.error.executingCommand"), err)
 		}
@@ -277,7 +277,7 @@ func runPkgCmd(subSystem *core.SubSystem, command string, cmd *cobra.Command, ar
 	}
 
 	if command == "run" {
-		_, err := subSystem.Exec(false, args...)
+		_, err := subSystem.Exec(false, false, args...)
 		if err != nil {
 			return fmt.Errorf(apx.Trans("runtimeCommand.error.executingCommand"), err)
 		}

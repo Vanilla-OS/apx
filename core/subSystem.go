@@ -231,13 +231,13 @@ func ListSubSystems(includeManaged bool, includeRootFull bool) ([]*SubSystem, er
 	return subsystems, nil
 }
 
-func (s *SubSystem) Exec(captureOutput bool, args ...string) (string, error) {
+func (s *SubSystem) Exec(captureOutput, detachedMode bool, args ...string) (string, error) {
 	dbox, err := NewDbox()
 	if err != nil {
 		return "", err
 	}
 
-	out, err := dbox.ContainerExec(s.InternalName, captureOutput, false, s.IsRootfull, args...)
+	out, err := dbox.ContainerExec(s.InternalName, captureOutput, false, s.IsRootfull, detachedMode, args...)
 	if err != nil {
 		return "", err
 	}
@@ -332,7 +332,7 @@ func (s *SubSystem) UnexportDesktopEntries(args ...string) (int, error) {
 
 func (s *SubSystem) ExportBin(binary string, exportPath string) error {
 	if !strings.HasPrefix(binary, "/") {
-		binaryPath, err := s.Exec(true, "which", binary)
+		binaryPath, err := s.Exec(true, false, "which", binary)
 		if err != nil {
 			return err
 		}
@@ -411,7 +411,7 @@ func (s *SubSystem) UnexportDesktopEntry(appName string) error {
 
 func (s *SubSystem) UnexportBin(binary string, exportPath string) error {
 	if !strings.HasPrefix(binary, "/") {
-		binaryPath, err := s.Exec(true, "which", binary)
+		binaryPath, err := s.Exec(true, false, "which", binary)
 		if err != nil {
 			return err
 		}
