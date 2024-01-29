@@ -42,11 +42,7 @@ Use "apx [command] --help" for more information about a command.
 
 ### Documentation
 
-The official **documentation and manpage** for `apx` are available at <https://documentation.vanillaos.org/docs/apx/>.
-
-### Guides
-
-A guide for Installing applications in `apx` is available at <https://handbook.vanillaos.org/2023/01/11/install-and-manage-applications.html>.
+The official **documentation and manpage** for `apx` are available at <https://docs.vanillaos.org/docs/en/apx>.
 
 ## Dependencies
 
