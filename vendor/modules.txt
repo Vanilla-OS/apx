@@ -107,7 +107,7 @@ github.com/spf13/viper/internal/encoding/yaml
 # github.com/subosito/gotenv v1.4.2
 ## explicit; go 1.18
 github.com/subosito/gotenv
-# github.com/vanilla-os/orchid v0.4.0
+# github.com/vanilla-os/orchid v0.5.0
 ## explicit; go 1.19
 github.com/vanilla-os/orchid
 github.com/vanilla-os/orchid/cmdr

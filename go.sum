@@ -228,8 +228,8 @@ github.com/stretchr/testify v1.8.1 h1:w7B6lhMri9wdJUVmEZPGGhZzrYTPvgJArz7wNPgYKs
 github.com/stretchr/testify v1.8.1/go.mod h1:w2LPCIKwWwSfY2zedu0+kehJoqGctiVI29o6fzry7u4=
 github.com/subosito/gotenv v1.4.2 h1:X1TuBLAMDFbaTAChgCBLu3DU3UPyELpnF2jjJ2cz/S8=
 github.com/subosito/gotenv v1.4.2/go.mod h1:ayKnFf/c6rvx/2iiLrJUk1e6plDbT3edrFNGqEflhK0=
-github.com/vanilla-os/orchid v0.4.0 h1:Phx+WSdcvXAV48rCLbAVMr5ePaJyqG1263ybHxOUvYQ=
-github.com/vanilla-os/orchid v0.4.0/go.mod h1:dNPvHxofO4hEXodEKXp0nLQDZhoHh8evCUXc6X1xLao=
+github.com/vanilla-os/orchid v0.5.0 h1:QAOjJ2VcyND5TxK0XYUEu+dysxXicRHhV6i/07S47mk=
+github.com/vanilla-os/orchid v0.5.0/go.mod h1:dNPvHxofO4hEXodEKXp0nLQDZhoHh8evCUXc6X1xLao=
 github.com/xo/terminfo v0.0.0-20210125001918-ca9a967f8778/go.mod h1:2MuV+tbUrU1zIOPMxZ5EncGwgmMJsa+9ucAQZXxsObs=
 github.com/xo/terminfo v0.0.0-20220910002029-abceb7e1c41e h1:JVG44RsyaB9T2KIHavMF/ppJZNG9ZpyihvCd0w101no=
 github.com/xo/terminfo v0.0.0-20220910002029-abceb7e1c41e/go.mod h1:RbqR21r5mrJuqunuUZ/Dhy/avygyECGrLceyNeo4LiM=

@@ -42,7 +42,7 @@ func NewApp(name string, version string, locales embed.FS) *App {
 		Error.Println(err)
 		os.Exit(1)
 	}
-	i18n.SetDefaultLocale(orchid.Locale())
+	i18n.SetDefaultLocale(getLocale(locales))
 	a := &App{
 		Name:    name,
 		Logger:  log.Default(),
@@ -57,6 +57,17 @@ func NewApp(name string, version string, locales embed.FS) *App {
 	return a
 
 }
+func getLocale(locales embed.FS) string {
+	found := orchid.Locale()
+	// if the found locale is not supported by the orchid app (it does not
+	// exist in the embedded locales FS), then use the default "en" locale
+	_, err := locales.ReadFile(path.Join("locales", found+".yml"))
+	if err != nil {
+		found = "en"
+	}
+	return found
+}
+
 func (a *App) logSetup() error {
 	err := a.ensureLogDir()
 	if err != nil {
