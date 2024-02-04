@@ -153,7 +153,7 @@ pkgmanagers:
       noName: "Имя не указано."
       inUse: "Менеджер пакетов используется в %d стеках:"
     info:
-      askConfirmation: "Вы уверены, что хотите удалить '%s'? [д/Н]"
+      askConfirmation: "Вы уверены, что хотите удалить '%s'? [y/N]"
       success: "Удалён менеджер пакетов '%s'."
       aborting: Прерывание удаления менеджера пакетов "%s".
     options:
@@ -274,7 +274,7 @@ stacks:
     error:
       noName: "Имя не указано."
     info:
-      askConfirmation: "Вы уверены, что хотите удалить '%s'? [д/Н]"
+      askConfirmation: "Вы уверены, что хотите удалить '%s'? [y/N]"
       success: "Удалён стек '%s'."
     options:
       force:
@@ -351,7 +351,7 @@ subsystems:
     error:
       noName: "Имя не указано."
     info:
-      askConfirmation: "Вы уверены, что хотите удалить '%s'? [д/Н]"
+      askConfirmation: "Вы уверены, что хотите удалить '%s'? [y/N]"
       success: "Удалена подсистема '%s'."
     options:
       force:
@@ -363,7 +363,7 @@ subsystems:
     error:
       noName: "Имя не указано."
     info:
-      askConfirmation: "Вы уверены, что хотите сбросить '%s'? [д/Н]"
+      askConfirmation: "Вы уверены, что хотите сбросить '%s'? [y/N]"
       success: "Подсистема '%s' была сброшена."
     options:
       force:

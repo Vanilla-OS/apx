@@ -26,10 +26,10 @@ runtimeCommand:
     exportingApp: "Une erreur s'est produite lors de l'exportation de l'application
       : %s"
     exportingBin: "Une erreur s'est produite lors de l'exportation du binaire : %s"
-    unexportingApp: "Une erreur s'est produite lors de la désexportation de l'application:
-      %s"
-    unexportingBin: "Une erreur s'est produite lors de la désexportation du binaire:
-      %s"
+    unexportingApp: "Une erreur s'est produite lors de l'annulation de l'exportation
+      de l'application: %s"
+    unexportingBin: "Une erreur s'est produite lors de l'annulation de l'exportation
+      de l'exécutable: %s"
     enteringContainer: 'Une erreur s''est produite lors de l''entrée dans le conteneur
       : %s'
     startingContainer: 'Une erreur s''est produite lors du démarrage du conteneur :
@@ -59,7 +59,7 @@ runtimeCommand:
   list:
     description: "Lister tous les paquets installés."
   purge:
-    description: "Eliminer les paquets spécifiés"
+    description: "Éliminer les paquets spécifiés."
   remove:
     description: "Supprimer les paquets spécifiés."
   search:
@@ -245,7 +245,7 @@ stacks:
       success: "Pile '%s' a été créée."
     options:
       assumeYes:
-        description: "Assume yes to all prompts."
+        description: "Supposez que vous répondez oui à toutes les questions."
       name:
         description: "Nom de la pile."
       base:
@@ -356,9 +356,9 @@ subsystems:
       stack:
         description: "Pile à utiliser."
       home:
-        description: The custom home directory of the subsystem.
+        description: Le répertoire personnel personnalisé du sous-système.
       init:
-        description: Use systemd inside the subsystem.
+        description: Utiliser systemd dans le sous-système.
   rm:
     description: "Supprimer le sous-système indiqué."
     error:

@@ -1,6 +1,6 @@
 apx:
-  description: "Apx is een pakketbeheer met ondersteuning voor meerdere bronnen, waardoor
-    u pakketten in subsystemen kunt installeren."
+  description: "Apx is een pakketbeheerder met ondersteuning voor meerdere bronnen,
+    waardoor u pakketten in subsystemen kunt installeren."
   errors:
     unknownCommand: "Onbekende opdracht: %s"
     invalidInput: "Ongeldige invoer."
@@ -27,11 +27,14 @@ runtimeCommand:
     exportingBin: "Er is een fout opgetreden bij het exporteren van het programmabestand:
       %s"
     unexportingApp: "Fout bij ontexporteren van de app: %s"
-    unexportingBin: "An error occurred while unexporting the binary: %s"
+    unexportingBin: "Er is een fout opgetreden bij het ontexporteren van het programmabestand:
+      %s"
     enteringContainer: 'Er is een fout opgetreden bij het betreden van de container:
       %s'
-    startingContainer: 'An error occurred while starting the container: %s'
-    stoppingContainer: 'An error occurred while stopping the container: %s'
+    startingContainer: 'Er is een fout opgetreden bij het starten van de container:
+      %s'
+    stoppingContainer: 'Er is een fout opgetreden bij het stoppen van de container:
+      %s'
   info:
     unexportedApps: "%d apps niet langer geëxporteerd"
     exportedApps: "%d apps geëxporteerd"
@@ -46,7 +49,7 @@ runtimeCommand:
   autoremove:
     description: "Verwijdert pakketten die niet meer vereist zijn."
   clean:
-    description: "Schoont cache van het pakketbeheer op."
+    description: "Schoont de cache van de pakketbeheerder op."
   install:
     description: "Installeert het opgegeven pakket."
     options:
@@ -69,7 +72,7 @@ runtimeCommand:
   enter:
     description: "Treed de omgeving van het subsysteem binnen."
   export:
-    description: "Export an application or binary from the subsystem."
+    description: "Exporteert een app of programmabestand van het subsysteem."
     options:
       appName:
         description: "De naam van de app om te exporteren."
@@ -78,7 +81,7 @@ runtimeCommand:
       binOutput:
         description: "Pad voor uitvoer van het programmabestand (standaard: ~/.local/bin/)."
   unexport:
-    description: "Unexport an application or binary from the subsystem."
+    description: "Ontexporteert een app of programmabestand van het subsysteem."
     options:
       appName:
         description: "Naam van de app om niet langer te exporteren."
@@ -92,7 +95,7 @@ runtimeCommand:
   stop:
     description: Stopt het subsysteem.
 pkgmanagers:
-  description: "Work with the package managers that are available in apx."
+  description: "Werk met de beschikbare pakketbeheerders in apx."
   labels:
     name: "Naam"
     builtIn: "Ingebouwd"
@@ -100,101 +103,103 @@ pkgmanagers:
   list:
     description: "Toont een lijst van alle beschikbare pakketbeheerders."
     info:
-      noPkgManagers: "No package managers available. Create a new one with 'apx pkgmanagers
-        new' or contact the system administrator."
+      noPkgManagers: "Geen pakketbeheerders beschikbaar. Maak een nieuwe aan met ‘apx
+        pkgmanagers new’ of neem contact op met de systeembeheerder."
       foundPkgManagers: "%d pakketbeheerders gevonden"
     options:
       json:
         description: "Toont uitvoer in JSON-formaat."
   show:
-    description: "Toont informatie over het opgegeven pakketbeheer."
+    description: "Toont informatie over de opgegeven pakketbeheerder."
   new:
-    description: "Maakt een nieuw pakketbeheer aan."
+    description: "Maakt een nieuwe pakketbeheerder aan."
 
     error:
       emptyName: "De naam mag niet leeg zijn."
       noName: "Geen naam opgegeven."
       emptyCommand: "De opdracht mag niet leeg zijn."
       noCommand: "Geen opdracht opgegeven voor ‘%s’."
-      alreadyExists: "A package manager with the name '%s' already exists."
+      alreadyExists: "Een pakketbeheerder met de naam ‘%s’ bestaat al."
     info:
       askName: "Kies een naam:"
-      askSudo: "Does the package manager need sudo to run?"
+      askSudo: "Moet de pakketbeheerder uitgevoerd worden met root-rechten?"
       askCommand: "Voer de opdracht in voor ‘%s’:"
-      askOverwrite: "A package manager with the name '%s' already exists. Overwrite
-        it?"
-      success: "Pakketbeheer ‘%s’ aangemaakt."
+      askOverwrite: "Een pakketbeheerder met de naam ‘%s’ bestaat al. Overschrijven?"
+      success: "Pakketbeheerder ‘%s’ aangemaakt."
     options:
       assumeYes:
         description: "Neem ‘ja’ aan voor alle vragen."
       name:
         description: "De naam van de pakketbeheerder."
       needSudo:
-        description: "Whether the package manager needs sudo to run."
+        description: "Of de pakketbeheerder uitgevoerd moet worden met root-rechten."
       autoremove:
-        description: "The command to run to autoremove packages."
+        description: "De opdracht om uit te voeren om pakketten automatisch te verwijderen."
       clean:
-        description: "The command to run to clean the package manager's cache."
+        description: "De opdracht om uit te voeren om de cache van de pakketbeheerder
+          op te schonen."
       install:
-        description: "The command to run to install packages."
+        description: "De opdracht om uit te voeren om pakketten te installeren."
       list:
-        description: "The command to run to list installed packages."
+        description: "De uit te voeren opdracht om geïnstalleerde pakketten op te
+          sommen."
       purge:
-        description: "The command to run to purge packages."
+        description: "De uit te voeren opdracht om pakketten te purgen."
       remove:
-        description: "The command to run to remove packages."
+        description: "De uit te voeren opdracht om pakketten te verwijderen."
       search:
-        description: "The command to run to search for packages."
+        description: "De uit te voeren opdracht om naar pakketten te zoeken."
       show:
-        description: "The command to run to show information about packages."
+        description: "De uit te voeren opdracht om informatie over pakketten te tonen."
       update:
-        description: "The command to run to update the list of available packages."
+        description: "De uit te voeren opdracht om de lijst van beschikbare pakketten
+          bij te werken."
       upgrade:
-        description: "The command to run to upgrade packages."
+        description: "De uit te voeren opdracht om pakketten bij te werken."
   rm:
-    description: "Verwijdert het opgegeven pakketbeheer."
+    description: "Verwijdert de opgegeven pakketbeheerder."
 
     error:
       noName: "Geen naam opgegeven."
-      inUse: "The package manager is used in %d stacks:\n"
+      inUse: "De pakketbeheerder wordt gebruikt in %d stacks:"
     info:
       askConfirmation: "Weet u zeker dat u ‘%s’ wilt verwijderen? [j/N]"
-      success: "Pakketbeheer ‘%s’ verwijderd."
-      aborting: Verwijdering van pakketbeheer ‘%s’ wordt afgebroken.
+      success: "Pakketbeheerder ‘%s’ verwijderd."
+      aborting: Verwijdering van pakketbeheerder ‘%s’ wordt afgebroken.
     options:
       force:
         description: "Forceert verwijdering van de pakketbeheerder."
       name:
-        description: "The name of the package manager to remove."
+        description: "De naam van de te verwijderen pakketbeheerder."
 
   export:
     options:
       output:
-        description: The path to export the package manager to.
+        description: Het pad om de pakketbeheerder naar te exporteren.
       name:
-        description: The name of the package manager to export.
+        description: De naam van de te exporteren pakketbeheerder.
     error:
       noOutput: Geen uitvoer opgegeven.
       noName: Geen naam opgegeven.
-    description: Exporteert het opgegeven pakketbeheer.
+    description: Exporteert de opgegeven pakketbeheerder.
     info:
-      success: Pakketbeheer ‘%s’ geëxporteerd naar ‘%s’.
+      success: Pakketbeheerder ‘%s’ geëxporteerd naar ‘%s’.
   import:
     error:
       noInput: Geen invoer opgegeven.
-      cannotLoad: Kan pakketbeheer van ‘%s’ niet laden.
+      cannotLoad: Kan pakketbeheerder van ‘%s’ niet laden.
     info:
-      success: Pakketbeheer van ‘%s’ geïmporteerd.
-    description: Importeert het opgegeven pakketbeheer.
+      success: Pakketbeheerder van ‘%s’ geïmporteerd.
+    description: Importeert de opgegeven pakketbeheerder.
     options:
       input:
-        description: The path to import the package manager from.
+        description: Het pad om de pakketbeheerder van te importeren.
   update:
-    description: Het opgegeven pakketbeheer bijwerken.
+    description: De opgegeven pakketbeheerder bijwerken.
     info:
-      success: Pakketbeheer ‘%s’ bijgewerkt.
+      success: Pakketbeheerder ‘%s’ bijgewerkt.
 stacks:
-  description: "Work with the stacks that are available in apx."
+  description: "Werk met de in apx beschikbare stacks."
   labels:
     name: "Naam"
     builtIn: "Ingebouwd"
@@ -202,8 +207,8 @@ stacks:
   list:
     description: "Toont een lijst van alle beschikbare stacks."
     info:
-      noStacks: "No stacks available. Create a new one with 'apx stacks new' or contact
-        the system administrator."
+      noStacks: "Geen stacks beschikbaar. Maak een nieuwe aan met ‘apx stacks new’
+        of neem contact op met de systeembeheerder."
       foundStacks: "%d stacks gevonden:"
       aborting: Verwijdering van stack ‘%s’ wordt afgebroken.
     options:
@@ -219,22 +224,22 @@ stacks:
       emptyBase: "De basis mag niet leeg zijn."
       noBase: "Geen basis opgegeven."
       emptyPkgManager: "De pakketbeheerder mag niet leeg zijn."
-      noPkgManager: "Geen pakketbeheer opgegeven."
-      pkgManagerDoesNotExist: "The specified package manager does not exist. Create
-        it with 'apx pkgmanagers new' or contact the system administrator."
+      noPkgManager: "Geen pakketbeheerder opgegeven."
+      pkgManagerDoesNotExist: "De opgegeven pakketbeheerder bestaat niet. Maak deze
+        aan met ‘apx pkgmanagers new’ of neem contact op met de systeembeheerder."
       emptyPackages: "De pakketten mogen niet leeg zijn."
       noPackages: "Geen pakketten opgegeven."
-      alreadyExists: "A stack with the name '%s' already exists."
+      alreadyExists: "Een stack met de naam ‘%s’ bestaat al."
     info:
       askName: "Kies een naam:"
       askBase: "Kies een basis (bijv. ‘vanillaos/pico’):"
-      askPkgManager: "Kies een pakketbeheer:"
-      selectPkgManager: "Kies een pakketbeheer [1-%d]:"
-      noPackages: "You have not provided any package to install in the stack. Do you
-        want to add some now?"
-      confirmPackages: "Do you want to confirm the current packages list?"
-      askPackages: "Please type the packages you want to install in the stack, separated
-        by a space:"
+      askPkgManager: "Kies een pakketbeheerder:"
+      selectPkgManager: "Kies een pakketbeheerder [1-%d]:"
+      noPackages: "U heeft geen pakketten opgegeven om in de stack te installeren.
+        Wilt u er nu een paar toevoegen?"
+      confirmPackages: "Wilt u de huidige pakketlijst bevestigen?"
+      askPackages: "Typ de pakketten die u wilt installeren in de stack, gescheiden
+        door een spatie:"
       success: "Stack ‘%s’ aangemaakt."
     options:
       assumeYes:
@@ -242,7 +247,8 @@ stacks:
       name:
         description: "De naam van de stack."
       base:
-        description: "Het basissubsysteem om te gebruiken."
+        description: "De te gebruiken basis-distributie-images. (Voor een lijst met
+          compatibele images, zie: https://distrobox.it/compatibility/#containers-distros)"
       packages:
         description: "De pakketten om te installeren."
       pkgManager:
@@ -252,7 +258,7 @@ stacks:
     error:
       noName: "Geen naam opgegeven."
       noBase: "Geen basis opgegeven."
-      noPkgManager: "Geen pakketbeheer opgegeven."
+      noPkgManager: "Geen pakketbeheerder opgegeven."
       pkgManagerDoesNotExist: "The specified package manager does not exist. Create
         it with 'apx pkgmanagers new' or contact the system administrator."
     info:

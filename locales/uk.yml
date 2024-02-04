@@ -26,8 +26,8 @@ runtimeCommand:
     unexportingApp: "Виникла помилка під час експорту застосунку: %s"
     unexportingBin: "Виникла помилка під час експорту бінарного файлу: %s"
     enteringContainer: 'Під час входу в контейнер сталася помилка: %s'
-    startingContainer: 'An error occurred while starting the container: %s'
-    stoppingContainer: 'An error occurred while stopping the container: %s'
+    startingContainer: 'Виникла помилка під час запуску контейнера: %s'
+    stoppingContainer: 'Виникла помилка під час зупинки контейнера: %s'
   info:
     unexportedApps: "Неекспортовано %d застосунків"
     exportedApps: "Експортовано %d застосунків"
@@ -35,10 +35,10 @@ runtimeCommand:
     exportedBin: "Експортовані бінарні %s"
     unexportedApp: "Неекспортований застосунок %s"
     unexportedBin: "Неекспортовані бінарні %s"
-    stoppedContainer: Stopped container.
-    startedContainer: Started container.
-    stoppingContainer: Stopping container…
-    startingContainer: Starting container…
+    stoppedContainer: Контейнер зупинено.
+    startedContainer: Контейнер запущено.
+    stoppingContainer: Зупинка контейнера…
+    startingContainer: Запуск контейнера…
   autoremove:
     description: "Видаліть пакунки, які більше не потрібні."
   clean:
@@ -84,9 +84,9 @@ runtimeCommand:
         description: "Шлях до бінарного виводу (за замовчуванням: ~/.local/bin/)."
 
   start:
-    description: Start the subsystem.
+    description: Запустити підсистему.
   stop:
-    description: Stop the subsystem.
+    description: Зупинити підсистему.
 pkgmanagers:
   description: "Працюйте з менеджерами пакунків, які доступні в apx."
   labels:
@@ -166,29 +166,29 @@ pkgmanagers:
   export:
     options:
       output:
-        description: The path to export the package manager to.
+        description: Шлях для експорту менеджера пакунків.
       name:
-        description: The name of the package manager to export.
+        description: Ім'я менеджера пакунків для експорту.
     error:
-      noOutput: No output specified.
-      noName: No name specified.
-    description: Export the specified package manager.
+      noOutput: Вихід не вказано.
+      noName: Ім'я не вказано.
+    description: Експортувати вказаний менеджер пакунків.
     info:
-      success: Exported package manager '%s' to '%s'.
+      success: Експортовано менеджер пакунків '%s' до '%s'.
   import:
     error:
-      noInput: No input specified.
-      cannotLoad: Cannot load package manager from '%s'.
+      noInput: Вхідні дані не вказано.
+      cannotLoad: Не вдається завантажити менеджер пакунків з '%s'.
     info:
-      success: Imported package manager from '%s'.
-    description: Import the specified package manager.
+      success: Імпортовано менеджер пакунків з '%s'.
+    description: Імпорт вказаного менеджер пакунків.
     options:
       input:
-        description: The path to import the package manager from.
+        description: Шлях, з якого імпортувати менеджера пакунків.
   update:
-    description: Update the specified package manager.
+    description: Оновити вказаний менеджер пакунків.
     info:
-      success: Updated package manager '%s'.
+      success: Оновлено менеджер пакунків '%s'.
 stacks:
   description: "Працюйте зі стеками, які доступні в apx."
   labels:
@@ -238,7 +238,8 @@ stacks:
       name:
         description: "Назва стеку."
       base:
-        description: "Базова підсистема для використання."
+        description: "Базовий образ дистрибутива для використання. (Список сумісних
+          образів див.: https://distrobox.it/compatibility/#containers-distros)"
       packages:
         description: "Пакунки для встановлення."
       pkgManager:
@@ -343,9 +344,9 @@ subsystems:
       stack:
         description: "Стек для використання."
       home:
-        description: The custom home directory of the subsystem.
+        description: Користувацький домашній каталог підсистеми.
       init:
-        description: Use systemd inside the subsystem.
+        description: Використовуйте systemd всередині підсистеми.
   rm:
     description: "Видалити вказану підсистему."
     error:
