@@ -330,9 +330,9 @@ subsystems:
       stack:
         description: "要使用的包捆。"
       home:
-        description: The custom home directory of the subsystem.
+        description: 子系统的自定义家目录。
       init:
-        description: Use systemd inside the subsystem.
+        description: 在子系统内部使用 systemd。
   rm:
     description: "移除指定的子系统。"
     error:
