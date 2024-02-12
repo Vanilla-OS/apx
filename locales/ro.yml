@@ -5,7 +5,7 @@ apx:
     unknownCommand: "Comandă necunoscută: %s"
     invalidInput: "Intrare invalidă."
     invalidChoice: Alegere invalidă.
-    noRoot: Nu rula
+    noRoot: Nu rula Apx ca root.
   info:
     aborting: "Se anulează conform solicitării."
   terminal:
@@ -13,17 +13,17 @@ apx:
     no: "nu"
 
 runtimeCommand:
-  description: "Lucrați cu subsistemul specificat, accesând managerul de pachete și
-    mediul."
+  description: "Lucrează cu subsistemul specificat, accesând managerul de pachete
+    și mediul."
   error:
-    noPackageSpecified: "Nu sunt specificate pachete."
+    noPackageSpecified: "Niciun pachet specificat."
     cantAccessPkgManager: "A apărut o eroare la accesarea managerului de pachete:
       %s"
     executingCommand: "A apărut o eroare la executarea comenzii: %s"
-    noAppNameOrBin: "Trebuie de specificat --app-name sau --bin."
-    sameAppOrBin: "--app-name și --bin ambele nu pot fi specificate."
-    exportingApp: "A apărut o eroare la exportul aplicației: %s"
-    exportingBin: "S-a produs o eroare în timpul exportului binarului: %s"
+    noAppNameOrBin: "Trebuie să se specifice --app-name sau --bin."
+    sameAppOrBin: "--app-name și --bin nu pot fi specificate amândouă."
+    exportingApp: "S-a produs o eroare în timpul exportului aplicației: %s"
+    exportingBin: "S-a produs o eroare la exportul binarului: %s"
     unexportingApp: "S-a produs o eroare în timpul exportării aplicației: %s"
     unexportingBin: "S-a produs o eroare la anularea exportului binarului: %s"
     enteringContainer: 'A apărut o eroare la accesarea containerului: %s'
@@ -32,10 +32,10 @@ runtimeCommand:
   info:
     unexportedApps: "Aplicații neexportate %d"
     exportedApps: "Aplicații exportate %d"
-    exportedApp: "Aplicația %s exportată"
-    exportedBin: "Binarul %s exportat"
-    unexportedApp: "Aplicația %s neexportată"
-    unexportedBin: "Binarul %s neexportat"
+    exportedApp: "Aplicație exportată %s"
+    exportedBin: "Binar exportat %s"
+    unexportedApp: "Aplicație neexportată %s"
+    unexportedBin: "Binar neexportat %s"
     stoppedContainer: Container oprit.
     startedContainer: Container pornit.
     stoppingContainer: Oprirea containerului…
@@ -155,7 +155,7 @@ pkgmanagers:
       noName: "Niciun nume specificat."
       inUse: "Managerul de pachete este utilizat în %d stive:"
     info:
-      askConfirmation: "Sigur doriți să ștergeți \"%s\"?"
+      askConfirmation: "Sigur dorești să ștergi \"%s\"? [y/N]"
       success: "Managerul de pachete \"%s\" a fost șters."
       aborting: Se anulează ștergerea managerului de pachete „%s”.
     options:
@@ -199,8 +199,8 @@ stacks:
   list:
     description: "Afișează toate stivele disponibile."
     info:
-      noStacks: "Nici o  stivă disponibilă. Creați una nouă cu 'apx stacks new' sau
-        contactați administratorul de sistem."
+      noStacks: "Nicio stivă disponibilă. Crează una nouă cu 'apx stacks new' sau
+        contactează administratorul de sistem."
       foundStacks: "S-au găsit %d stive:"
       aborting: Se anulează ștergerea stivei „%s”.
     options:
@@ -216,7 +216,7 @@ stacks:
       emptyBase: "Stiva de bază nu poate fi goală."
       noBase: "Nu este specificată o stivă de bază."
       emptyPkgManager: "Managerul de pachete nu poate fi nespecificat."
-      noPkgManager: "Nici  un manager de pachete specificat."
+      noPkgManager: "Niciun manager de pachete specificat."
       pkgManagerDoesNotExist: "Managerul de pachete specificat nu există. Crează-l
         cu 'apx pkgmanagers new' sau contactează administratorul de sistem."
       emptyPackages: "Pachetele nu pot fi nespecificate."
@@ -277,7 +277,7 @@ stacks:
     error:
       noName: "Niciun nume specificat."
     info:
-      askConfirmation: "Sigur dorești să elimini \"%s\"? [y/N]"
+      askConfirmation: "Sigur dorești să ștergi \"%s\"? [y/N]"
       success: "Stiva \"%s\" a fost ștersă."
     options:
       force:
@@ -354,7 +354,7 @@ subsystems:
     error:
       noName: "Nu este specificat un nume."
     info:
-      askConfirmation: "Sigur dorești să șterigi \"%s\"? [y/N]"
+      askConfirmation: "Sigur dorești să ștergi \"%s\"? [y/N]"
       success: "Subsistemul \"%s\" a fost șters ."
     options:
       force:
