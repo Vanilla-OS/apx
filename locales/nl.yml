@@ -259,13 +259,13 @@ stacks:
       noName: "Geen naam opgegeven."
       noBase: "Geen basis opgegeven."
       noPkgManager: "Geen pakketbeheerder opgegeven."
-      pkgManagerDoesNotExist: "The specified package manager does not exist. Create
-        it with 'apx pkgmanagers new' or contact the system administrator."
+      pkgManagerDoesNotExist: "De opgegeven pakketbeheerder bestaat niet. Maak deze
+        aan met ‘apx pkgmanagers new’ of neem contact op met de systeembeheerder."
     info:
-      askBase: "Type a new base or confirm the current one (%s):"
-      askPkgManager: "Choose a new package manager or confirm the current one (%s):"
-      askPackages: "Type the packages you want to install in the stack, separated
-        by a space, or confirm the current ones (%s):"
+      askBase: "Typ een nieuwe basis in of bevestig de huidige (%s):"
+      askPkgManager: "Kies een nieuwe pakketbeheerder of bevestig de huidige (%s):"
+      askPackages: "Typ de pakketten in die u in de stack wilt installeren, gescheiden
+        door een spatie; of bevestig de huidige pakketten (%s):"
       success: "Stack ‘%s’ bijgewerkt."
 
     options:
@@ -284,13 +284,13 @@ stacks:
     error:
       noName: "Geen naam opgegeven."
     info:
-      askConfirmation: "Are you sure you want to remove '%s'?"
+      askConfirmation: "Weet u zeker dat u ‘%s’ wilt verwijderen? [y/N]"
       success: "Stack ‘%s’ verwijderd."
     options:
       force:
         description: "Forceert het verwijderen van de stack."
       name:
-        description: "The name of the stack to remove."
+        description: "De naam van de te verwijderen stack."
   export:
     description: "Exporteert de opgegeven stack."
     error:
@@ -300,9 +300,9 @@ stacks:
       success: "Stack ‘%s’ naar ‘%s’ geëxporteerd."
     options:
       name:
-        description: "The name of the stack to export."
+        description: "De naam van de te exporteren stack."
       output:
-        description: "The path to export the stack to."
+        description: "Het pad om de stack naar te exporteren."
   import:
     description: "Importeert de opgegeven stack."
     error:
@@ -312,10 +312,10 @@ stacks:
       success: "Stack geïmporteerd vanuit ‘%s’."
     options:
       input:
-        description: "The path to import the stack from."
+        description: "Het pad om de stack van te importeren."
 
 subsystems:
-  description: "Work with the subsystems that are available in apx."
+  description: "Werk met de in apx beschikbare subsystemen."
   labels:
     name: "Naam"
     status: "Status"
@@ -324,8 +324,8 @@ subsystems:
     description: "Toont een lijst van alle beschikbare subsystemen."
     error:
     info:
-      noSubsystems: "No subsystems available. Create a new one with 'apx subsystems
-        new' or contact the system administrator."
+      noSubsystems: "Geen subsystemen beschikbaar. Maak een nieuwe aan met ‘apx subsystems
+        new’ of neem contact op met de systeembeheerder."
       foundSubsystems: "%d subsystemen gevonden:"
     options:
       json:
@@ -333,15 +333,15 @@ subsystems:
   new:
     description: "Maakt een nieuw subsysteem aan."
     error:
-      noStacks: "A stack is needed to create a subsystem. Create a new one with 'apx
-        stacks new' or contact the system administrator."
+      noStacks: "Er is een stack nodig om een subsysteem aan te maken. Maak een nieuwe
+        aan met ‘apx stacks new’ of neem contact op met de systeembeheerder."
       emptyName: "De naam mag niet leeg zijn."
       noName: "Geen naam opgegeven."
       emptyStack: "De stack mag niet leeg zijn."
       noStack: "Geen stack opgegeven."
-      stackDoesNotExist: "The specified stack does not exist. Create it with 'apx
-        stacks new' or contact the system administrator."
-      alreadyExists: "A subsystem with the name '%s' already exists."
+      stackDoesNotExist: "De opgegeven stack bestaat niet. Maak deze aan met ‘apx
+        stacks new’ of neem contact op met de systeembeheerder."
+      alreadyExists: "Er bestaat al een subsysteem met de naam ‘%s’."
     info:
       askName: "Kies een naam:"
       selectStack: "Selecteer een stack [1-%d]:"
@@ -353,7 +353,7 @@ subsystems:
       stack:
         description: "De stack om te gebruiken."
       home:
-        description: The custom home directory of the subsystem.
+        description: De aangepaste thuismap van het subsysteem.
       init:
         description: Gebruik systemd binnen het subsysteem.
   rm:
@@ -361,22 +361,22 @@ subsystems:
     error:
       noName: "Geen naam opgegeven."
     info:
-      askConfirmation: "Are you sure you want to remove '%s'?"
+      askConfirmation: "Weet u zeker dat u ‘%s’ wilt verwijderen? [y/N]"
       success: "Subsysteem ‘%s’ verwijderd."
     options:
       force:
         description: "Forceert verwijdering van het subsysteem."
       name:
-        description: "The name of the subsystem to remove."
+        description: "De naam van het subsysteem om te verwijderen."
   reset:
     description: "Reset het opgegeven subsysteem."
     error:
       noName: "Geen naam opgegeven."
     info:
-      askConfirmation: "Are you sure you want to reset '%s'?"
+      askConfirmation: "Weet u zeker dat u ‘%s’ wilt resetten? [y/N]"
       success: "Het subsysteem ‘%s’ is gereset."
     options:
       force:
         description: "Forceert een reset van het subsysteem."
       name:
-        description: "The name of the subsystem to reset."
+        description: "De naam van het te resetten subsysteem."
