@@ -30,8 +30,8 @@ runtimeCommand:
     unexportingBin: "Beim De-Exportieren der Binärdatei ist ein Fehler aufgetreten:
       %s"
     enteringContainer: 'Beim Betreten des Containers ist ein Fehler aufgetreten: %s'
-    startingContainer: 'An error occurred while starting the container: %s'
-    stoppingContainer: 'An error occurred while stopping the container: %s'
+    startingContainer: 'Beim Starten des Containers ist ein Fehler aufgetreten: %s'
+    stoppingContainer: 'Ein Fehler ist beim Stoppen des Containers aufgetreten: %s'
   info:
     unexportedApps: "%d Anwendungen deexportiert"
     exportedApps: "%d Anwendungen exportiert"
@@ -39,10 +39,10 @@ runtimeCommand:
     exportedBin: "Binärdatei %s exportiert"
     unexportedApp: "Anwendung %s deexportiert"
     unexportedBin: "Binärdatei %s deexportiert"
-    stoppedContainer: Stopped container.
-    startedContainer: Started container.
-    stoppingContainer: Stopping container…
-    startingContainer: Starting container…
+    stoppedContainer: Container gestoppt.
+    startedContainer: Container gestartet.
+    stoppingContainer: Stoppe Container…
+    startingContainer: Starte Container…
   autoremove:
     description: "Pakete entfernen, die nicht mehr länger benötigt werden."
   clean:
@@ -88,9 +88,9 @@ runtimeCommand:
         description: "Pfad der Binärausgabe (Standard: ~/.local/bin/)."
 
   start:
-    description: Start the subsystem.
+    description: Starte das Subsystem.
   stop:
-    description: Stop the subsystem.
+    description: Stopp das Subsystem.
 pkgmanagers:
   description: "Arbeiten Sie mit den Paketmanagern, die in apx verfügbar sind."
   labels:
@@ -130,14 +130,15 @@ pkgmanagers:
       name:
         description: "Der Name des Paketmanagers."
       needSudo:
-        description: "Womöglich benötigen der Paketmanager 'sudo' zur Ausführung."
+        description: "Ob der Paketmanager sudo zur Ausführung benötigt."
       autoremove:
         description: "Der Befehl, der zum automatischen Entfernen von Paketen ausgeführt
           werden soll."
       clean:
-        description: "Der Befehl, um den Cache des Paketmanagers zu leeren."
+        description: "Der Befehl, der ausgeführt werden soll, um den Cache des Paketmanagers
+          zu leeren."
       install:
-        description: "Dee Befehl zum ausführen der Paketinstallation."
+        description: "Der auszuführende Befehl zur Installation von Paketen."
       list:
         description: "Der Befehl zum Auflisten aller installierten Pakete."
       purge:
@@ -172,29 +173,29 @@ pkgmanagers:
   export:
     options:
       output:
-        description: The path to export the package manager to.
+        description: Der Zielpfad für den Export des Paketmanagers.
       name:
-        description: The name of the package manager to export.
+        description: Der Name des zu exportierenden Paketmanagers.
     error:
-      noOutput: No output specified.
-      noName: No name specified.
-    description: Export the specified package manager.
+      noOutput: Keine Ausgabe angegeben.
+      noName: Kein Name angegeben.
+    description: Exportieren Sie den angegebenen Paketmanager.
     info:
-      success: Exported package manager '%s' to '%s'.
+      success: Paketmanager '%s' nach '%s' exportiert.
   import:
     error:
-      noInput: No input specified.
-      cannotLoad: Cannot load package manager from '%s'.
+      noInput: Keine Eingabe angegeben.
+      cannotLoad: Kann Paketmanager nicht aus '%s' laden.
     info:
-      success: Imported package manager from '%s'.
-    description: Import the specified package manager.
+      success: Paketmanager aus '%s' importiert.
+    description: Importieren Sie den angegebenen Paketmanager.
     options:
       input:
-        description: The path to import the package manager from.
+        description: Der Pfad, von dem der Paketmanager importiert werden soll.
   update:
-    description: Update the specified package manager.
+    description: Aktualisieren Sie den angegebenen Paketmanager.
     info:
-      success: Updated package manager '%s'.
+      success: Paketmanager '%s' aktualisiert.
 stacks:
   description: "Arbeiten Sie mit den Stapeln, die in apx verfügbar sind."
   labels:
@@ -244,7 +245,8 @@ stacks:
       name:
         description: "Der Name des Stapels."
       base:
-        description: "Das zu verwendende Basis-Subsystem."
+        description: "Das zu verwendende Basis-Distributionsimage. (Für eine Liste
+          der kompatiblen Images besuchen Sie: https://distrobox.it/compatibility/#containers-distros)"
       packages:
         description: "Die zu installierenden Pakete."
       pkgManager:
@@ -351,9 +353,9 @@ subsystems:
       stack:
         description: "Der zu verwendende Stapel."
       home:
-        description: The custom home directory of the subsystem.
+        description: Das benutzerdefinierte Homeverzeichnis des Subsystems.
       init:
-        description: Use systemd inside the subsystem.
+        description: Benutze systemd innerhalb des Subystems.
   rm:
     description: "Das angegebene Subsystem entfernen."
     error:
