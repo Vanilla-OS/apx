@@ -46,7 +46,7 @@ runtimeCommand:
   autoremove:
     description: "Pakete entfernen, die nicht mehr länger benötigt werden."
   clean:
-    description: "Bereinigen Sie den Cache des Paketmanagers."
+    description: "Cache des Paketmanagers leeren."
   install:
     description: "Das angegebene Paket Installieren."
     options:
@@ -138,7 +138,7 @@ pkgmanagers:
         description: "Der Befehl, der ausgeführt werden soll, um den Cache des Paketmanagers
           zu leeren."
       install:
-        description: "Der auszuführende Befehl zur Installation von Paketen."
+        description: "Der Befehl, der zur Paketinstallation ausgeführt werden soll."
       list:
         description: "Der Befehl zum Auflisten aller installierten Pakete."
       purge:
@@ -159,7 +159,7 @@ pkgmanagers:
 
     error:
       noName: "Kein Name angegeben."
-      inUse: "Der Paketmanager wird in %d Stapeln verwendet:"
+      inUse: "Der Paketmanager wird in %d Stacks verwendet:"
     info:
       askConfirmation: "Sind Sie sicher, dass Sie '%s' entfernen möchten? [j/N]"
       success: "Paketmanager '%s' entfernt."
