@@ -27,7 +27,7 @@ runtimeCommand:
     unexportingBin: "Ocorreu um erro ao desfazer a exportação do binário: %s"
     enteringContainer: 'Ocorreu um erro ao entrar no contêiner: %s'
     startingContainer: 'Ocorreu um erro ao iniciar o contêiner: %s'
-    stoppingContainer: 'An error occurred while stopping the container: %s'
+    stoppingContainer: 'Ocorreu um erro ao parar o contêiner: %s'
   info:
     unexportedApps: "Desfeita a exportação de %d aplicativos"
     exportedApps: "Aplicações %d exportadas"
@@ -35,10 +35,10 @@ runtimeCommand:
     exportedBin: "Binário exportado %s"
     unexportedApp: "Desfeita a exportação do aplicativo %s"
     unexportedBin: "Desfeita a exportação do binário %s"
-    stoppedContainer: Stopped container.
-    startedContainer: Started container.
-    stoppingContainer: Stopping container…
-    startingContainer: Starting container…
+    stoppedContainer: Contêiner parado.
+    startedContainer: Contêiner inicializado.
+    stoppingContainer: Parando o contêiner…
+    startingContainer: Inicializando contêiner…
   autoremove:
     description: "Remover pacotes que não são mais necessários."
   clean:
@@ -84,9 +84,9 @@ runtimeCommand:
         description: "Caminho de saída do binário (padrão: ~/.local/bin/)."
 
   start:
-    description: Start the subsystem.
+    description: Inicie o subsistema.
   stop:
-    description: Stop the subsystem.
+    description: Pare o subsistema.
 pkgmanagers:
   description: "Trabalhar com os gerenciadores de pacotes que estão disponíveis no
     apx."
@@ -168,29 +168,29 @@ pkgmanagers:
   export:
     options:
       output:
-        description: The path to export the package manager to.
+        description: O caminho para exportar o gerenciador de pacotes.
       name:
-        description: The name of the package manager to export.
+        description: O nome do gerenciador de pacotes a ser exportado.
     error:
-      noOutput: No output specified.
-      noName: No name specified.
-    description: Export the specified package manager.
+      noOutput: Nenhuma saída especificada.
+      noName: Nenhum nome especificado.
+    description: Exporte o gerenciador de pacotes especificado.
     info:
-      success: Exported package manager '%s' to '%s'.
+      success: Gerenciador de pacotes exportados '%s' até '%s'.
   import:
     error:
-      noInput: No input specified.
-      cannotLoad: Cannot load package manager from '%s'.
+      noInput: Nenhuma entrada especificada.
+      cannotLoad: Não é possível carregar o gerenciador de pacotes de '%s'.
     info:
-      success: Imported package manager from '%s'.
-    description: Import the specified package manager.
+      success: Gerenciador de pacotes importado de '%s'.
+    description: Importe o gerenciador de pacotes especificado.
     options:
       input:
-        description: The path to import the package manager from.
+        description: O caminho para importar o gerenciador de pacotes.
   update:
-    description: Update the specified package manager.
+    description: Atualize o gerenciador de pacotes especificado.
     info:
-      success: Updated package manager '%s'.
+      success: Gerenciador de pacotes atualizado '%s'.
 stacks:
   description: "Trabalhar com as pilhas que estão disponíveis no apx."
   labels:
@@ -240,7 +240,8 @@ stacks:
       name:
         description: "O nome da pilha."
       base:
-        description: "O subsistema base a ser usado."
+        description: "A imagem de distribuição base a ser usada. (Para obter uma lista
+          de imagens compatíveis, veja: https://distrobox.it/compatibility/#containers-distros)"
       packages:
         description: "Os pacotes a serem instalados."
       pkgManager:
@@ -345,9 +346,9 @@ subsystems:
       stack:
         description: "A pilha a ser usada."
       home:
-        description: The custom home directory of the subsystem.
+        description: O diretório home customizado do subsistema.
       init:
-        description: Use systemd inside the subsystem.
+        description: Use systemd dentro do subsistema.
   rm:
     description: "Remover o subsistema especificado."
     error:
