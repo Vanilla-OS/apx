@@ -356,7 +356,7 @@ subsystems:
     error:
       noName: "이름이 특정되지 않았습니다."
     info:
-      askConfirmation: "'%s'(을)를 초기화하시겠습니까?"
+      askConfirmation: "'%s'(을)를 초기화하시겠습니까? [y/N]"
       success: "하위 시스템 '%s'(이)가 초기화되었습니다."
     options:
       force:

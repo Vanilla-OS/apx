@@ -154,7 +154,7 @@ pkgmanagers:
       noName: "Ad belirtilmemiş."
       inUse: "Paket yöneticisi %d yığında kullanıldı:"
     info:
-      askConfirmation: "'%s' kaldırmak istediğinizden emin misiniz? [e/H]"
+      askConfirmation: "'%s' kaldırmak istediğinizden emin misiniz? [y/N]"
       success: "'%s' paket yöneticisi kaldırıldı."
       aborting: "'%s' paket yöneticisinin kaldırılmasından vazgeçiliyor."
     options:
@@ -364,7 +364,7 @@ subsystems:
     error:
       noName: "Ad belirtilmedi."
     info:
-      askConfirmation: "'%s' sıfırlansın ister misiniz? [e/H]"
+      askConfirmation: "'%s' sıfırlansın ister misiniz? [y/N]"
       success: "'%s' alt sistemi sıfırlandı."
     options:
       force:

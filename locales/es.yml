@@ -155,7 +155,7 @@ pkgmanagers:
       noName: "No se especificó un nombre."
       inUse: "El gestor de paquetes se utiliza en %d pilas:"
     info:
-      askConfirmation: "¿Estás seguro de que quieres eliminar '%s'?"
+      askConfirmation: "¿Estás seguro de que quieres eliminar '%s'? [y/N]"
       success: "Eliminado el gestor de paquetes '%s'."
       aborting: Cancelando la eliminación del gestor de paquetes '%s'.
     options:
@@ -365,7 +365,7 @@ subsystems:
     error:
       noName: "Sin nombre especificado."
     info:
-      askConfirmation: "¿Estás seguro de que quieres restablecer '%s'? [sí/no]"
+      askConfirmation: "¿Estás seguro de que quieres restablecer '%s'? [y/N]"
       success: "El subsistema '%s' ha sido reiniciado."
     options:
       force:

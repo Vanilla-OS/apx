@@ -155,7 +155,7 @@ pkgmanagers:
       noName: "Inget namn specificerat."
       inUse: "Pakethanteraren används i %d stackar:"
     info:
-      askConfirmation: "Är du säker på att du vill ta bort '%s'? [j/N]"
+      askConfirmation: "Är du säker på att du vill ta bort '%s'? [y/N]"
       success: "Tog bort pakethanterare '%s'."
       aborting: Avbryter borttagning av pakethanteraren '%s'.
     options:
@@ -365,7 +365,7 @@ subsystems:
     error:
       noName: "Inget namn specificerat."
     info:
-      askConfirmation: "Är du säker på att du vill återställa '%s'? [j/N]"
+      askConfirmation: "Är du säker på att du vill återställa '%s'? [y/N]"
       success: "Undersystemet '%s' har återställts."
     options:
       force:

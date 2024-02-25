@@ -153,7 +153,7 @@ pkgmanagers:
       noName: "Název není uveden."
       inUse: "Správce balíčků se používá v %d zásobnících:\n"
     info:
-      askConfirmation: "Jste si jisti, že chcete odstranit '%s'?"
+      askConfirmation: "Jste si jisti, že chcete odstranit '%s'? [y/N]"
       success: "Odstraněn správce balíčků '%s'."
       aborting: Aborting removal of package manager '%s'.
     options:
@@ -362,7 +362,7 @@ subsystems:
     error:
       noName: "Název není uveden."
     info:
-      askConfirmation: "Jste si jisti, že chcete resetovat '%s'?"
+      askConfirmation: "Jste si jisti, že chcete resetovat '%s'? [y/N]"
       success: "Subsystém \"%s\" byl resetován."
     options:
       force:

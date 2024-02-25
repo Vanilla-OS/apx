@@ -359,7 +359,7 @@ subsystems:
     error:
       noName: "لم يتم تحديد اسم."
     info:
-      askConfirmation: "هل انت متأكد من إعادة الضبط '%s'؟"
+      askConfirmation: "هل انت متأكد من إعادة الضبط '%s'؟ [y/N]"
       success: "تم اعادة انشاء النظام الفرعي '%s'."
     options:
       force:

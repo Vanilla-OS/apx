@@ -161,7 +161,7 @@ pkgmanagers:
       noName: "Kein Name angegeben."
       inUse: "Der Paketmanager wird in %d Stacks verwendet:"
     info:
-      askConfirmation: "Sind Sie sicher, dass Sie '%s' entfernen möchten? [j/N]"
+      askConfirmation: "Sind Sie sicher, dass Sie '%s' entfernen möchten? [y/N]"
       success: "Paketmanager '%s' entfernt."
       aborting: Das Entfernen des Paketmanagers '%s' wird abgebrochen.
     options:
@@ -373,7 +373,7 @@ subsystems:
     error:
       noName: "Kein Name angegeben."
     info:
-      askConfirmation: "Sind Sie sicher, dass Sie '%s' zurücksetzen möchten? [j/N]"
+      askConfirmation: "Sind Sie sicher, dass Sie '%s' zurücksetzen möchten? [y/N]"
       success: "Das Subsystem '%s' wurde zurückgesetzt."
     options:
       force:

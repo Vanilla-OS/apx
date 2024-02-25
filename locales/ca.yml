@@ -157,7 +157,7 @@ pkgmanagers:
       noName: "No s'ha especificat cap nom."
       inUse: "El gestor de paquets es fa servir en %d piles:"
     info:
-      askConfirmation: "Segur que vols eliminar '%s'? [s/N]"
+      askConfirmation: "Segur que vols eliminar '%s'? [y/N]"
       success: "Eliminat el gestor de paquets '%s'."
       aborting: "Parant l'eliminació del gestor de paquets '%s'."
     options:
