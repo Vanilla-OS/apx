@@ -163,7 +163,7 @@ pkgmanagers:
       noName: "Geen naam opgegeven."
       inUse: "De pakketbeheerder wordt gebruikt in %d stacks:"
     info:
-      askConfirmation: "Weet u zeker dat u ‘%s’ wilt verwijderen? [j/N]"
+      askConfirmation: "Weet u zeker dat u ‘%s’ wilt verwijderen? [y/N]"
       success: "Pakketbeheerder ‘%s’ verwijderd."
       aborting: Verwijdering van pakketbeheerder ‘%s’ wordt afgebroken.
     options:

@@ -5,7 +5,7 @@ apx:
     unknownCommand: "Невядомая каманда: %s"
     invalidInput: "Няправільны ўвод."
     invalidChoice: Няправільны выбар.
-    noRoot: Do not run Apx as root.
+    noRoot: Не запускайце Apx ад імя root.
   info:
     aborting: "Перапыненне па запыце."
   terminal:
@@ -152,7 +152,7 @@ pkgmanagers:
       noName: "Імя не ўказана."
       inUse: "Менеджар пакетаў выкарыстоўваецца ў %d стэках:"
     info:
-      askConfirmation: "Вы ўпэўнены, што хочаце выдаліць '%s'?\n[т/Н]"
+      askConfirmation: "Вы ўпэўнены, што хочаце выдаліць '%s'? [y/N]"
       success: "Выдалены менеджэр пакетаў «%s»."
       aborting: Перапыненне выдалення дыспетчара пакетаў «%s».
     options:
@@ -360,7 +360,7 @@ subsystems:
     error:
       noName: "Імя не ўказана."
     info:
-      askConfirmation: "Вы ўпэўнены, што хочаце скінуць '%s'?\n[т/Н]"
+      askConfirmation: "Вы ўпэўнены, што хочаце скінуць '%s'? [y/N]"
       success: "Падсістэма '%s' была скінута."
     options:
       force:

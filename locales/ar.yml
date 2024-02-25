@@ -4,7 +4,7 @@ apx:
     unknownCommand: "أمر غير معروف: %s"
     invalidInput: "المدخل غير صالح."
     invalidChoice: خيار غير صالح.
-    noRoot: Do not run Apx as root.
+    noRoot: لا تقم بتشغيل Apx كروت.
   info:
     aborting: "يتم الالغاء."
   terminal:
@@ -23,20 +23,20 @@ runtimeCommand:
     exportingBin: "حدث خطأ أثناء تصدير البرنامج: %s"
     unexportingApp: "حدث خطأ أثناء إلغاء تصدير التطبيق: %s"
     unexportingBin: "حدث خطأ أثناء إلغاء تصدير البرنامج: %s"
-    enteringContainer: 'An error occurred while entering the container: %s'
-    startingContainer: 'An error occurred while starting the container: %s'
-    stoppingContainer: 'An error occurred while stopping the container: %s'
+    enteringContainer: 'حدث خطأ ما أثناء إدخال الحاوية: %s'
+    startingContainer: 'حدث خطأ ما أثناء بدء تشغيل الحاوية: %s'
+    stoppingContainer: 'حدث خطأ ما أثناء إيقاف الحاوية: %s'
   info:
-    unexportedApps: "%d تطبيقات غير مصدرة\n"
-    exportedApps: "%d تطبيقات مصدرة\n"
-    exportedApp: "التطبيقات المصدرة %s\n"
-    exportedBin: "البرامج المصدرة %s\n"
-    unexportedApp: "التطبيقات غير المصدرة %s\n"
-    unexportedBin: "البرامج غير المصدرة %s\n"
-    stoppedContainer: Stopped container.
-    startedContainer: Started container.
-    stoppingContainer: Stopping container…
-    startingContainer: Starting container…
+    unexportedApps: "%d تطبيقات غير مصدرة"
+    exportedApps: "%d تطبيقات مصدرة"
+    exportedApp: "التطبيقات المصدرة %s"
+    exportedBin: "البرامج المصدرة %s"
+    unexportedApp: "التطبيقات غير المصدرة %s"
+    unexportedBin: "البرامج غير المصدرة %s"
+    stoppedContainer: حاوية متوقفة.
+    startedContainer: بدأت الحاوية.
+    stoppingContainer: جارٍ إيقاف الحاوية…
+    startingContainer: جارٍ بدء الحاوية…
   autoremove:
     description: "حذف الحزم التي لم تعد مطلوبة."
   clean:
@@ -82,9 +82,9 @@ runtimeCommand:
         description: "مسار البرامج\n(الافتراضي /.local/bin/)"
 
   start:
-    description: Start the subsystem.
+    description: بدء تشغيل النظام الفرعي.
   stop:
-    description: Stop the subsystem.
+    description: إيقاف النظام الفرعي.
 pkgmanagers:
   description: "يتعامل مع مديري الحزم المتاحة في apx."
   labels:
@@ -96,7 +96,7 @@ pkgmanagers:
     info:
       noPkgManagers: "لا يوجد مدير حزم متاح. قم بإنشاء واحد جديد باستخدام 'apx pkgmanagers
         new' او تحدث مع مسئول النظام."
-      foundPkgManagers: "تم ايجاد %d مديري حزم:\n"
+      foundPkgManagers: "تم ايجاد %d مديري حزم:"
     options:
       json:
         description: "المخرجات في صورة JSON."
@@ -149,7 +149,7 @@ pkgmanagers:
 
     error:
       noName: "لم يتم تحديد اسم."
-      inUse: "مدير الحزم مستخدم في %d تشكيلات:\n"
+      inUse: "مدير الحزم مستخدم في %d طبقات:"
     info:
       askConfirmation: "هل انت متأكد من حذف '%s'؟"
       success: "تم حذف مدير الحزم '%s'."
@@ -163,29 +163,29 @@ pkgmanagers:
   export:
     options:
       output:
-        description: The path to export the package manager to.
+        description: المسار المراد لتصدير مدير الحزم إليه
       name:
-        description: The name of the package manager to export.
+        description: اسم مدير الحزم المراد تصديره.
     error:
-      noOutput: No output specified.
-      noName: No name specified.
-    description: Export the specified package manager.
+      noOutput: لم يتم تحديد الإخراج.
+      noName: لم يتم تحديد اسم.
+    description: تصدير مدير الحزم المحدد.
     info:
-      success: Exported package manager '%s' to '%s'.
+      success: تم تصدير مدير الحزم '%s' إلى '%s'.
   import:
     error:
-      noInput: No input specified.
-      cannotLoad: Cannot load package manager from '%s'.
+      noInput: لم يتم تحديد أي إدخال.
+      cannotLoad: لا يمكن تحميل مدير الحزم من '%s'.
     info:
-      success: Imported package manager from '%s'.
-    description: Import the specified package manager.
+      success: مدير الحزم المستورد من '%s'.
+    description: قم باستيراد مدير الحزم المحدد.
     options:
       input:
-        description: The path to import the package manager from.
+        description: المسار لاستيراد مدير الحزم منه.
   update:
-    description: Update the specified package manager.
+    description: قم بتحديث مدير الحزم المحدد.
     info:
-      success: Updated package manager '%s'.
+      success: تم تحديث مدير الحزم '%s'.
 stacks:
   description: "تستخدم التشكيلات المتاحة في apx."
   labels:
@@ -197,7 +197,7 @@ stacks:
     info:
       noStacks: "لا توجد تشكيلات متاحة. قم بإنشاء واحدة جديدة باستخدام 'apx stacks
         new' او قم بالتحدث الي مسئول النظام."
-      foundStacks: "تم العثور على %d تشكيلات:\n"
+      foundStacks: "تم العثور على %d طبقات:"
       aborting: إلغاء حذف التشكيلة '%s'.
     options:
       json:
@@ -234,7 +234,7 @@ stacks:
       name:
         description: "اسم التشكيلة."
       base:
-        description: "النظام الفرعي المراد استخدامه كأساس."
+        description: "صورة التوزيعة الأساسية المراد استخدامها."
       packages:
         description: "الحزم المراد تثبيتها."
       pkgManager:
@@ -312,7 +312,7 @@ subsystems:
     info:
       noSubsystems: "لا يوجد أنظمة فرعية متاحة. قم بإنشاء واحد جديد باستخدام 'apx
         subsystems new' او قم بالتحدث لمسؤول النظام."
-      foundSubsystems: "تم العثور على %d أنظمة فرعية:\n"
+      foundSubsystems: "تم العثور على %d أنظمة فرعية:"
     options:
       json:
         description: "المخرجات في صورة JSON."
@@ -332,16 +332,16 @@ subsystems:
       askName: "اختر اسما:"
       selectStack: "اختر تشكيلة [1-%d]:"
       success: "تم إنشاء النظام الفرعي '%s'."
-      creatingSubsystem: "تم إنشاء نظام فرعي '%s' بالتشكيلة '%s'…"
+      creatingSubsystem: "تم إنشاء نظام فرعي '%s' بالطبقة '%s'…"
     options:
       name:
         description: "اسم النظام الفرعي."
       stack:
         description: "التشكيلة المراد استخدامها."
       home:
-        description: The custom home directory of the subsystem.
+        description: الدليل الرئيسي المخصص للنظام الفرعي.
       init:
-        description: Use systemd inside the subsystem.
+        description: استخدم systemd داخل النظام الفرعي.
   rm:
     description: "حذف النظام الفرعي المحدد."
     error:
@@ -359,7 +359,7 @@ subsystems:
     error:
       noName: "لم يتم تحديد اسم."
     info:
-      askConfirmation: "هل انت متأكد من إعادة إنشاء '%s'؟"
+      askConfirmation: "هل انت متأكد من إعادة الضبط '%s'؟ [y/N]"
       success: "تم اعادة انشاء النظام الفرعي '%s'."
     options:
       force:

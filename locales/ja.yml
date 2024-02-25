@@ -66,40 +66,39 @@ runtimeCommand:
     description: "アプリケーションもしくはバイナリを、サブシステムからエクスポートします。"
     options:
       appName:
-        description: "The name of the application to export."
+        description: "エクスポートするアプリケーションの名前。"
       bin:
-        description: "The name of the binary to export."
+        description: "エクスポートするバイナリの名前。"
       binOutput:
-        description: "Path of the binary output (default: ~/.local/bin/)."
+        description: "バイナリ出力の場所 (デフォルト: ~/.local/bin/)。"
   unexport:
-    description: "Unexport an application or binary from the subsystem."
+    description: "バイナリまたはアプリケーションのエクスポートをサブシステムから削除"
     options:
       appName:
-        description: "The name of the application to unexport."
+        description: "エクスポート削除するアプリケーションの名前。"
       bin:
-        description: "The name of the binary to unexport."
+        description: "エクスポート削除するバイナリの名前。"
       binOutput:
-        description: "Path of the binary output (default: ~/.local/bin/)."
+        description: "バイナリ出力先の場所 (デフォルト: ~/.local/bin/)。"
   start:
-    description: "Start the subsystem."
+    description: "サブシステムを起動。"
   stop:
-    description: "Stop the subsystem."
+    description: "サブシステムを停止。"
 
 pkgmanagers:
-  description: "Work with the package managers that are available in apx."
+  description: "apx で利用可能なパッケージマネージャを使用します。"
   labels:
-    name: "Name"
+    name: "名前"
     builtIn: "Built-in"
 
   list:
-    description: "List all available package managers."
+    description: "利用可能なすべてのパッケージマネージャを表示します。"
     info:
-      noPkgManagers: "No package managers available. Create a new one with 'apx pkgmanagers
-        new' or contact the system administrator."
-      foundPkgManagers: "Found %d package managers"
+      noPkgManagers: "利用可能なパッケージマネージャはありません。'apx pkgmanagers new' を使って、新しいパッケージマネージャを作成する、または、システムの管理者に連絡してください。"
+      foundPkgManagers: "%d のパッケージマネージャが見つかりました"
     options:
       json:
-        description: "Output in JSON format."
+        description: "JSON 形式で出力。"
   show:
     description: "Show information about the specified package manager."
   new:

@@ -1,373 +1,377 @@
 apx:
-  description: "Apx jest menedżerem paczek z wsparciem dla wielu źródeł, pozwalając
-    ci na instalacje paczek w podsystemach"
+  description: "Apx jest menedżerem pakietów z wsparciem dla wielu źródeł, pozwalając
+    Ci na instalacje pakietów w podsystemach."
   errors:
-    unknownCommand: "Nieznana komenda: %s"
-    invalidInput: "Nieprawidłowe wejście"
+    unknownCommand: "Nieznane polecenie: %s"
+    invalidInput: "Nieprawidłowe dane wejściowe."
     invalidChoice: "Nieprawidłowy wybór."
     noRoot: "Nie uruchamiaj Apx jako root."
   info:
-    aborting: "Aborting as requested."
+    aborting: "Przerywanie na żądanie."
   terminal:
     yes: "tak"
     no: "nie"
 
 runtimeCommand:
-  description: "Pracuj z określonym podsystemem, mając dostęp do menedżera paczek
-    oraz środowiska"
+  description: "Pracuj z określonym podsystemem, mając dostęp do menedżera pakietów
+    oraz środowiska."
   error:
-    enteringContainer: "Wystąpił błąd podczas otwierania kontenera: %s"
-    noPackageSpecified: "Nie określono paczek."
+    enteringContainer: "Wystąpił błąd podczas wchodzenia do kontenera: %s"
+    noPackageSpecified: "Nie określono pakietów."
     cantAccessPkgManager: "Wystąpił błąd podczas uzyskiwania dostępu do menedżera
-      paczek: %s"
+      pakietów: %s"
     executingCommand: "Wystąpił błąd podczas wykonywania komendy: %s"
-    noAppNameOrBin: "--app-name lub --bin musi zostać określony"
-    sameAppOrBin: "--app-name i --bin nie mogą być określone razem."
+    noAppNameOrBin: "--app-name lub --bin musi zostać określony."
+    sameAppOrBin: "--app-name i --bin nie mogą być razem określone."
     exportingApp: "Wystąpił błąd podczas eksportowania aplikacji: %s"
     exportingBin: "Wystąpił błąd podczas eksportowania pliku binarnego: %s"
-    unexportingApp: "An error occurred while unexporting the application: %s"
-    unexportingBin: "An error occurred while unexporting the binary: %s"
-    startingContainer: 'An error occurred while starting the container: %s'
-    stoppingContainer: 'An error occurred while stopping the container: %s'
+    unexportingApp: "Wystąpił błąd podczas usuwania eksportu aplikacji: %s"
+    unexportingBin: "Wystąpił błąd podczas usuwania eksportu pliku binarnego: %s"
+    startingContainer: 'Wystąpił błąd podczas uruchamiania kontenera: %s'
+    stoppingContainer: 'Wystąpił błąd podczas zatrzymywania kontenera: %s'
   info:
-    unexportedApps: "Unexported %d applications"
-    exportedApps: "Eksportowane %d aplikacje"
-    exportedApp: "Eksportowana aplikacja %s"
-    exportedBin: "Eksportowane pliki binarne %s"
-    unexportedApp: "Unexported application %s"
-    unexportedBin: "Unexported binary %s"
-    stoppedContainer: Stopped container.
-    startedContainer: Started container.
-    stoppingContainer: Stopping container…
-    startingContainer: Starting container…
+    unexportedApps: "Niewyeksportowane %d aplikacje"
+    exportedApps: "Wyeksportowane %d aplikacje"
+    exportedApp: "Wyeksportowana aplikacja %s"
+    exportedBin: "Wyeksportowany plik binarny %s"
+    unexportedApp: "Niewyeksportowana aplikacja %s"
+    unexportedBin: "Niewyeksportowany plik binarny %s"
+    stoppedContainer: Zatrzymano kontener.
+    startedContainer: Uruchomiono kontener.
+    stoppingContainer: Zatrzymywanie kontenera…
+    startingContainer: Uruchamianie kontenera…
   autoremove:
-    description: "Usuń paczki które nie są już wymagane."
+    description: "Usuń pakiety które nie są już wymagane."
   clean:
-    description: "Wyczyść pamięć cache menedżera paczek"
+    description: "Wyczyść pamięć cache menedżera pakietów."
   install:
-    description: "Zainstaluj określoną paczkę"
+    description: "Zainstaluj określony pakiet."
     options:
       noExport:
-        description: "Nie eksportuj skrótu"
+        description: "Nie eksportuj skrótu."
   list:
-    description: "Wyświetl wszystkie zainstalowane paczki"
+    description: "Wyświetl wszystkie zainstalowane pakiety."
   purge:
-    description: "Purge the specified packages."
+    description: "Zniszcz określone pakiety."
   remove:
-    description: "Usuń określone paczki"
+    description: "Usuń określone pakiety."
   search:
-    description: "Szukaj paczek związanych z zapytaniem."
+    description: "Szukaj pakietów pasujących do określonego zapytania."
   show:
-    description: "Wyświetl informacje na temat określonej paczki."
+    description: "Wyświetl informacje na temat określonego pakietu."
   update:
-    description: "Zaktualizuj listę dostępnych pakietów"
+    description: "Zaktualizuj listę dostępnych pakietów."
   upgrade:
-    description: "Upgrade all installed packages."
+    description: "Zaktualizuj wszystkie zainstalowane pakiety."
   enter:
-    description: "Enter the subsystem's environment."
+    description: "Wejdź do środowiska podsystemu."
   export:
-    description: "Export an application or binary from the subsystem."
+    description: "Wyeksportuj aplikację lub plik binarny z podsystemu."
     options:
       appName:
-        description: "The name of the application to export."
+        description: "Nazwa aplikacji do wyeksportowania."
       bin:
-        description: "The name of the binary to export."
+        description: "Nazwa pliku binarnego do wyeksportowania."
       binOutput:
-        description: "Path of the binary output (default: ~/.local/bin/)."
+        description: "Ścieżka wyjścia pliku binarnego (domyślnie: ~/.local/bin/)."
   unexport:
-    description: "Unexport an application or binary from the subsystem."
+    description: "Usuń eksport aplikacji lub pliku binarnego z podsystemu."
     options:
       appName:
-        description: "The name of the application to unexport."
+        description: "Nazwa aplikacji, której eksport ma zostać usunięty."
       bin:
-        description: "The name of the binary to unexport."
+        description: "Nazwa pliku binarnego, której eksport ma zostać usunięty."
       binOutput:
-        description: "Path of the binary output (default: ~/.local/bin/)."
+        description: "Ścieżka wyjścia pliku binarnego (domyślnie: ~/.local/bin/)."
 
   start:
-    description: Start the subsystem.
+    description: Uruchom podsystem.
   stop:
-    description: Stop the subsystem.
+    description: Zatrzymaj podsystem.
 pkgmanagers:
-  description: "Work with the package managers that are available in apx."
+  description: "Pracuj z menedżerami pakietów dostępnymi w apx."
   labels:
-    name: "Name"
-    builtIn: "Built-in"
+    name: "Nazwa"
+    builtIn: "Wbudowane"
 
   list:
-    description: "List all available package managers."
+    description: "Wyświetl wszystkie dostępne menedżery pakietów."
     info:
-      noPkgManagers: "No package managers available. Create a new one with 'apx pkgmanagers
-        new' or contact the system administrator."
-      foundPkgManagers: "Found %d package managers"
+      noPkgManagers: "Brak dostępnych menedżerów pakietów. Stwórz nowy przy użyciu
+        'apx pkgmanagers new' lub skontaktuj się z administratorem systemu."
+      foundPkgManagers: "Znaleziono %d menedżerów pakietów"
     options:
       json:
-        description: "Output in JSON format."
+        description: "Wyjście w formacie JSON."
   show:
-    description: "Show information about the specified package manager."
+    description: "Pokaż informacje na temat wybranego menedżera pakietów."
   new:
-    description: "Create a new package manager."
+    description: "Stwórz nowy menedżer pakietów."
 
     error:
-      emptyName: "The name cannot be empty."
-      noName: "No name specified."
-      emptyCommand: "The command cannot be empty."
-      noCommand: "No command specified for '%s'."
-      alreadyExists: "A package manager with the name '%s' already exists."
+      emptyName: "Nazwa nie może być pusta."
+      noName: "Nie określono nazwy."
+      emptyCommand: "Polecenie nie może być puste."
+      noCommand: "Nie podano polecenia dla '%s'."
+      alreadyExists: "Menedżer pakietów z nazwą '%s' już istnieje."
     info:
-      askName: "Choose a name:"
-      askSudo: "Does the package manager need sudo to run?"
-      askCommand: "Enter the command for '%s':"
-      askOverwrite: "A package manager with the name '%s' already exists. Overwrite
-        it?"
-      success: "Created package manager '%s'."
+      askName: "Wybierz nazwę:"
+      askSudo: "Czy menedżer pakietów potrzebuje uprawnień root do uruchomienia?"
+      askCommand: "Wpisz polecenie dla '%s':"
+      askOverwrite: "Menedżer pakietów z nazwą '%s' już istnieje. Nadpisać go?"
+      success: "Utworzono menedżer pakietów '%s'."
     options:
       assumeYes:
-        description: "Assume yes to all prompts."
+        description: "Odpowiedz twierdząco na wszystkie komunikaty."
       name:
-        description: "The name of the package manager."
+        description: "Nazwa menedżera pakietów."
       needSudo:
-        description: "Whether the package manager needs sudo to run."
+        description: "Czy menedżer pakietów potrzebuje uprawnień roota do uruchomienia."
       autoremove:
-        description: "The command to run to autoremove packages."
+        description: "Komenda do uruchomienia, która będzie automatycznie usuwać pakiety."
       clean:
-        description: "The command to run to clean the package manager's cache."
+        description: "Komenda do uruchomienia, która będzie czyścić pamięć cashe menedżera
+          pakietów."
       install:
-        description: "The command to run to install packages."
+        description: "Komenda do uruchomienia, która będzie instalować pakiety."
       list:
-        description: "The command to run to list installed packages."
+        description: "Komenda do uruchomienia, która będzie wypisywać zainstalowane
+          pakiety."
       purge:
-        description: "The command to run to purge packages."
+        description: "Komenda do uruchomienia, która będzie niszczyć/czyścić z pakietów."
       remove:
-        description: "The command to run to remove packages."
+        description: "Komenda do uruchomienia, która będzie usuwać pakiety."
       search:
-        description: "The command to run to search for packages."
+        description: "Komenda do uruchomienia, która będzie szukać pakietów."
       show:
-        description: "The command to run to show information about packages."
+        description: "Komenda do uruchomienia, która będzie pokazywać informacje o
+          pakietach."
       update:
-        description: "The command to run to update the list of available packages."
+        description: "Komenda do uruchomienia, która będzie aktualizować listę dostępnych
+          pakietów."
       upgrade:
-        description: "The command to run to upgrade packages."
+        description: "Komenda do uruchomienia, która będzie aktualizować pakiety."
   rm:
-    description: "Remove the specified package manager."
+    description: "Usuń określony menedżer pakietów."
 
     error:
-      noName: "No name specified."
-      inUse: "The package manager is used in %d stacks:"
+      noName: "Nie określono nazwy."
+      inUse: "Menedżer pakietów jest używany w %d stosach:"
     info:
-      askConfirmation: "Are you sure you want to remove '%s'? [y/N]"
-      success: "Removed package manager '%s'."
-      aborting: "Aborting removal of package manager '%s'."
+      askConfirmation: "Czy jesteś pewien, że chcesz usunąć '%s'? [y/N]"
+      success: "Usunięto menedżer pakietów '%s'."
+      aborting: "Przerywanie usuwania menedżera pakietów '%s'."
     options:
       force:
-        description: "Force removal of the package manager."
+        description: "Wymuś usunięcie menedżera pakietów."
       name:
-        description: "The name of the package manager to remove."
+        description: "Nazwa menedżera pakietów do usunięcia."
 
   export:
     options:
       output:
-        description: The path to export the package manager to.
+        description: Ścieżka docelowa dla wyeksportowanego menedżera pakietów.
       name:
-        description: The name of the package manager to export.
+        description: Nazwa menedżera pakietów do wyeksportowania.
     error:
-      noOutput: No output specified.
-      noName: No name specified.
-    description: Export the specified package manager.
+      noOutput: Nie określono wyjścia.
+      noName: Nie określono nazwy.
+    description: Wyeksportuj określony menedżer pakietów.
     info:
-      success: Exported package manager '%s' to '%s'.
+      success: Wyeksportowano menedżer pakietów '%s' do '%s'.
   import:
     error:
-      noInput: No input specified.
-      cannotLoad: Cannot load package manager from '%s'.
+      noInput: Nie określono wejścia.
+      cannotLoad: Nie można załadować menedżera pakietów z '%s'.
     info:
-      success: Imported package manager from '%s'.
-    description: Import the specified package manager.
+      success: Zaimportowano menedżer pakietów z '%s'.
+    description: Importuj określony menedżer pakietów.
     options:
       input:
-        description: The path to import the package manager from.
+        description: Ścieżka docelowa dla zaimportowanego menedżera pakietów.
   update:
-    description: Update the specified package manager.
+    description: Aktualizuj konkretny menedżer pakietów.
     info:
-      success: Updated package manager '%s'.
+      success: Zaktualizowano menedżer pakietów '%s'.
 stacks:
-  description: "Work with the stacks that are available in apx."
+  description: "Pracuj ze stosami, które są dostępne w apx."
   labels:
-    name: "Name"
-    builtIn: "Built-in"
+    name: "Nazwa"
+    builtIn: "Wbudowany"
 
   list:
-    description: "List all available stacks."
+    description: "Wypisz wszystkie dostępne stosy."
     info:
-      noStacks: "No stacks available. Create a new one with 'apx stacks new' or contact
-        the system administrator."
-      foundStacks: "Found %d stacks:"
-      aborting: "Aborting removal of stack '%s'."
+      noStacks: "Brak dostępnych stosów. Stwórz nowy z użyciem 'apx stacks new' lub
+        skontaktuj się z administratorem systemu."
+      foundStacks: "Znaleziono %d stosów:"
+      aborting: "Przerywanie usuwania stosu '%s'."
     options:
       json:
-        description: "Output in JSON format."
+        description: "Wyjście w formacie JSON."
   show:
-    description: "Show information about the specified stack."
+    description: "Wyświetl informacje o określonym stosie."
   new:
-    description: "Create a new stack."
+    description: "Stwórz nowy stos."
     error:
-      emptyName: "The name cannot be empty."
-      noName: "No name specified."
-      emptyBase: "The base cannot be empty."
-      noBase: "No base specified."
-      emptyPkgManager: "The package manager cannot be empty."
-      noPkgManager: "No package manager specified."
-      pkgManagerDoesNotExist: "The specified package manager does not exist. Create
-        it with 'apx pkgmanagers new' or contact the system administrator."
-      emptyPackages: "The packages cannot be empty."
-      noPackages: "No packages specified."
-      alreadyExists: "A stack with the name '%s' already exists."
+      emptyName: "Nazwa nie może być pusta."
+      noName: "Nie określono nazwy."
+      emptyBase: "Baza nie może być pusta."
+      noBase: "Nie określono bazy."
+      emptyPkgManager: "Menedżer pakietów nie może być pusty."
+      noPkgManager: "Nie określono menedżera pakietów."
+      pkgManagerDoesNotExist: "Określony menedżer pakietów nie istnieje. Stwórz go
+        z użyciem 'apx pkgmanagers new' lub skontaktuj się z administratorem systemu."
+      emptyPackages: "Pakiety nie mogą być puste."
+      noPackages: "Nie określono pakietu."
+      alreadyExists: "Stos o nazwie '%s' już istnieje."
     info:
-      askName: "Choose a name:"
-      askBase: "Choose a base (e.g. 'vanillaos/pico'):"
-      askPkgManager: "Choose a package manager:"
-      selectPkgManager: "Select a package manager [1-%d]:"
-      noPackages: "You have not provided any package to install in the stack. Do you
-        want to add some now?"
-      confirmPackages: "Do you want to confirm the current packages list?"
-      askPackages: "Please type the packages you want to install in the stack, separated
-        by a space:"
-      success: "Created stack '%s'."
+      askName: "Wybierz nazwę:"
+      askBase: "Wybierz bazę (np. 'vanillaos/pico'):"
+      askPkgManager: "Wybierz menedżer pakietów:"
+      selectPkgManager: "Wybierz menedżer pakietów [1-%d]:"
+      noPackages: "Nie podałeś żadnego pakietu do instalacji w stosie. Czy chcesz
+        dodać teraz?"
+      confirmPackages: "Czy chcesz zatwierdzić określoną listę pakietów?"
+      askPackages: "Proszę napisz pakiety oddzielone spacją, które chcesz zainstalować
+        w stosie:"
+      success: "Stwórz stos '%s'."
     options:
       assumeYes:
-        description: "Assume yes to all prompts."
+        description: "Odpowiedz twierdząco na wszystkie komunikaty."
       name:
-        description: "The name of the stack."
+        description: "Nazwa stosu."
       base:
-        description: "The base subsystem to use."
+        description: "Bazowy obraz dystrybucji do użycia. (Lista kompatybilnych obrazów
+          znajduje się na stronie:: https://distrobox.it/compatibility/#containers-distros)"
       packages:
-        description: "The packages to install."
+        description: "Pakiety do zainstalowania."
       pkgManager:
-        description: "The package manager to use."
+        description: "Menedżer pakietów do użycia."
   update:
-    description: "Update the specified stack."
+    description: "Zaktualizuj określony stos."
     error:
-      noName: "No name specified."
-      noBase: "No base specified."
-      noPkgManager: "No package manager specified."
-      pkgManagerDoesNotExist: "The specified package manager does not exist. Create
-        it with 'apx pkgmanagers new' or contact the system administrator."
+      noName: "Nie określono nazwy."
+      noBase: "Nie określono bazy."
+      noPkgManager: "Nie określono menedżera pakietów."
+      pkgManagerDoesNotExist: "Określony menedżer pakietów nie istnieje. Utwórz go
+        z użyciem 'apx pkgmanagers new' lub skontaktuj się z administratorem systemu."
     info:
-      askBase: "Type a new base or confirm the current one (%s):"
-      askPkgManager: "Choose a new package manager or confirm the current one (%s):"
-      askPackages: "Type the packages you want to install in the stack, separated
-        by a space, or confirm the current ones (%s):"
-      success: "Updated stack '%s'."
+      askBase: "Wpisz nową bazę lub zatwierdź aktualną (%s):"
+      askPkgManager: "Wybierz nowy menedżer pakietów lub zatwierdź aktualny (%s):"
+      askPackages: "Napisz nazwy pakietów oddzielone spacją, które chcesz zainstalować
+        w stosie, lub zatwierdź aktualne (%s):"
+      success: "Zaktualizowano stos '%s'."
 
     options:
       assumeYes:
-        description: "Assume yes to all prompts."
+        description: "Odpowiedz twierdząco na wszystkie komunikaty."
       name:
-        description: "The name of the stack."
+        description: "Nazwa stosu."
       base:
-        description: "The base subsystem to use."
+        description: "Bazowy podsystem do użycia."
       packages:
-        description: "The packages to install."
+        description: "Pakiety do instalacji."
       pkgManager:
-        description: "The package manager to use."
+        description: "Menedżer pakietów do użycia."
   rm:
-    description: "Remove the specified stack."
+    description: "Usuń określony stos."
     error:
-      noName: "No name specified."
+      noName: "Nie określono nazwy."
     info:
-      askConfirmation: "Are you sure you want to remove '%s'? [y/N]"
-      success: "Removed stack '%s'."
+      askConfirmation: "Czy jesteś pewien, że chcesz usunąć '%s'? [y/N]"
+      success: "Usunięto stos '%s'."
     options:
       force:
-        description: "Force removal of the stack."
+        description: "Wymuś usunięcie stosu."
       name:
-        description: "The name of the stack to remove."
+        description: "Nazwa stosu do usunięcia."
   export:
-    description: "Export the specified stack."
+    description: "Wyeksportuj określony stos."
     error:
-      noName: "No name specified."
-      noOutput: "No output specified."
+      noName: "Nie określono nazwy."
+      noOutput: "Nie określono wyjścia."
     info:
-      success: "Exported stack '%s' to '%s'."
+      success: "Wyeksportowano stos '%s' do '%s'."
     options:
       name:
-        description: "The name of the stack to export."
+        description: "Nazwa stosu do wyeksportowania."
       output:
-        description: "The path to export the stack to."
+        description: "Ścieżka docelowa dla stosu do wyeksportowania."
   import:
-    description: "Import the specified stack."
+    description: "Zaimportuj określony stos."
     error:
-      noInput: "No input specified."
-      cannotLoad: "Cannot load stack from '%s'."
+      noInput: "Nie określono wejścia."
+      cannotLoad: "Nie można załadować stosu z '%s'."
     info:
-      success: "Imported stack from '%s'."
+      success: "Zaimportowano stos z '%s'."
     options:
       input:
-        description: "The path to import the stack from."
+        description: "Ścieżka docelowa dla stosu do zaimportowania."
 
 subsystems:
-  description: "Work with the subsystems that are available in apx."
+  description: "Pracuj z podsystemem, który jest dostępny w apx."
   labels:
-    name: "Name"
+    name: "Nazwa"
     status: "Status"
 
   list:
-    description: "List all available subsystems."
+    description: "Wypisz wszystkie dostępne podsystemy."
     error:
     info:
-      noSubsystems: "No subsystems available. Create a new one with 'apx subsystems
-        new' or contact the system administrator."
-      foundSubsystems: "Found %d subsystems:"
+      noSubsystems: "Brak dostępnych podsystemów. Stwórz nowy z użyciem 'apx subsystems
+        new' lub skontaktuj się z administratorem systemu."
+      foundSubsystems: "Znaleziono %d podsystemów:"
     options:
       json:
-        description: "Output in JSON format."
+        description: "Wyjście w formacie JSON."
   new:
-    description: "Create a new subsystem."
+    description: "Stwórz nowy podsystem."
     error:
-      noStacks: "A stack is needed to create a subsystem. Create a new one with 'apx
-        stacks new' or contact the system administrator."
-      emptyName: "The name cannot be empty."
-      noName: "No name specified."
-      emptyStack: "The stack cannot be empty."
-      noStack: "No stack specified."
-      stackDoesNotExist: "The specified stack does not exist. Create it with 'apx
-        stacks new' or contact the system administrator."
-      alreadyExists: "A subsystem with the name '%s' already exists."
+      noStacks: "Stos jest potrzebny do stworzenia podsystemu. Utwórz nowy z użyciem
+        'apx stacks new' lub skontaktuj się z administratorem systemu."
+      emptyName: "Nazwa nie może być pusta."
+      noName: "Nie określono nazwy."
+      emptyStack: "Stos nie może być pusty."
+      noStack: "Nie określono stosu."
+      stackDoesNotExist: "Określony stos nie istnieje. Utwórz go z użyciem 'apx stacks
+        new' lub skontaktuj się z administratorem systemu."
+      alreadyExists: "Podsystem o nazwie '%s' już istnieje."
     info:
-      askName: "Choose a name:"
-      selectStack: "Select a stack [1-%d]:"
-      success: "Created subsystem '%s'."
-      creatingSubsystem: "Creating subsystem '%s' with stack '%s'…"
+      askName: "Wybierz nazwę:"
+      selectStack: "Wybierz stos [1-%d]:"
+      success: "Stworzono podsystem '%s'."
+      creatingSubsystem: "Tworzenie podsystemu '%s' ze stosem '%s'…"
     options:
       name:
-        description: "The name of the subsystem."
+        description: "Nazwa podsystemu."
       stack:
-        description: "The stack to use."
+        description: "Stos do użycia."
       home:
-        description: The custom home directory of the subsystem.
+        description: Niestandardowy katalog domowy podsystemu.
       init:
-        description: Use systemd inside the subsystem.
+        description: Użyj systemd zamiast podsystemu.
   rm:
-    description: "Remove the specified subsystem."
+    description: "Usuń określony podsystem."
     error:
-      noName: "No name specified."
+      noName: "Nie określono nazwy."
     info:
-      askConfirmation: "Are you sure you want to remove '%s'? [y/N]"
-      success: "Removed subsystem '%s'."
+      askConfirmation: "Czy jesteś pewien, że chcesz usunąć '%s'? [y/N]"
+      success: "Usunięto podsystem '%s'."
     options:
       force:
-        description: "Force removal of the subsystem."
+        description: "Wymuś usunięcie podsystemu."
       name:
-        description: "The name of the subsystem to remove."
+        description: "Nazwa podsystemu do usunięcia."
   reset:
-    description: "Reset the specified subsystem."
+    description: "Zresetuj określony podsystem."
     error:
-      noName: "No name specified."
+      noName: "Nie określono nazwy."
     info:
-      askConfirmation: "Are you sure you want to reset '%s'? [y/N]"
-      success: "The subsystem '%s' has been reset."
+      askConfirmation: "Czy jesteś pewien, że chcesz zresetować '%s'? [y/N]"
+      success: "Podsystem '%s' został zresetowany."
     options:
       force:
-        description: "Force reset of the subsystem."
+        description: "Wymuś zresetowanie podsystemu."
       name:
-        description: "The name of the subsystem to reset."
+        description: "Nazwa podsystemu do zresetowania."

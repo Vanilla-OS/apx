@@ -1,6 +1,6 @@
 apx:
-  description: "Apx altsistemler içinde paket kurmanızı sağlayan, birden fazla kaynağı
-    destekleyen bir paket yöneticisidir."
+  description: "Apx alt sistemler içinde paket kurmanızı sağlayan, birden çok kaynağı
+    destekleyen paket yöneticisidir."
   errors:
     unknownCommand: "Bilinmeyen komut: %s"
     invalidInput: "Geçersiz girdi."
@@ -16,40 +16,39 @@ runtimeCommand:
   description: "Paket yöneticisine ve ortama erişerek belirtilen altsistemde çalış."
   error:
     noPackageSpecified: "Hiçbir paket belirtilmedi."
-    cantAccessPkgManager: "Paket yöneticisine erişilirken bir hata meydana geldi:
-      %s"
-    executingCommand: "Komutu çalıştırırken bir hata meydana geldi: %s"
+    cantAccessPkgManager: "Paket yöneticisine erişilirken hata oluştu: %s"
+    executingCommand: "Komutu çalıştırırken hata oluştu: %s"
     noAppNameOrBin: "--app-name veya --bin belirtilmeli."
     sameAppOrBin: "--app-name ve --bin aynı anda belirtilemez."
-    exportingApp: "Uygulamayı çıkartırken bir hata meydana geldi: %s"
-    exportingBin: "İkili dosyayı çıkartırken bir hata meydana geldi: %s"
-    unexportingApp: "Uygulama dışa aktarılırken bir hata oluştu: %s"
-    unexportingBin: "İkili dosyayı kaldırırken bir hata meydana geldi: %s"
-    enteringContainer: 'Şu konteynere girerken bir hata oluştu: %s'
-    startingContainer: 'An error occurred while starting the container: %s'
-    stoppingContainer: 'An error occurred while stopping the container: %s'
+    exportingApp: "Uygulamayı çıkartırken hata oluştu: %s"
+    exportingBin: "İkili dosyayı çıkartırken hata oluştu: %s"
+    unexportingApp: "Uygulama dışa aktarımı geri alınırken hata oluştu: %s"
+    unexportingBin: "İkilinin dışa aktarımı geri alınırken hata oluştu: %s"
+    enteringContainer: 'Şu konteynere girerken hata oluştu: %s'
+    startingContainer: 'Konteyner başlatılırken hata oluştu: %s'
+    stoppingContainer: 'Konteyner durdurulurken hata oluştu: %s'
   info:
-    unexportedApps: "%d uygulama kaldırıldı\n"
-    exportedApps: "%d uygulama çıkartıldı\n"
-    exportedApp: "Uygulama çıkartıldı %s\n"
-    exportedBin: "İkili dosya çıkartıldı %s\n"
-    unexportedApp: "Uygulama kaldırıldı %s\n"
-    unexportedBin: "İkili dosya kaldırıldı %s\n"
-    stoppedContainer: Stopped container.
-    startedContainer: Started container.
-    stoppingContainer: Stopping container…
-    startingContainer: Starting container…
+    unexportedApps: "%d uygulamanın dışa aktarımı geri alındı"
+    exportedApps: "%d uygulama dışa aktarıldı"
+    exportedApp: "%s uygulaması dışa aktarıldı"
+    exportedBin: "%s ikilisi dışa aktarıldı"
+    unexportedApp: "%s uygulaması dışa aktarımı geri alındı"
+    unexportedBin: "%s ikilisi dışa aktarımı geri alındı"
+    stoppedContainer: Konteyner durduruldu.
+    startedContainer: Konteyner başlatıldı.
+    stoppingContainer: Konteyner durduruluyor…
+    startingContainer: Konteyner başlatılıyor…
   autoremove:
-    description: "Artık ihtiyaç duyulmayan paketleri kaldır."
+    description: "Artık gereksinilmeyen paketleri kaldır."
   clean:
     description: "Paket yöneticisinin önbelleğini temizle."
   install:
-    description: "Belirtilen paketi yükle."
+    description: "Belirtilen paketi kur."
     options:
       noExport:
-        description: "Bir masaüstü girdisi oluşturma."
+        description: "Masaüstü girdisi oluşturma."
   list:
-    description: "Yüklü tüm paketleri listele."
+    description: "Kurulu tüm paketleri listele."
   purge:
     description: "Belirtilen paketleri temizle."
   remove:
@@ -57,68 +56,67 @@ runtimeCommand:
   search:
     description: "Belirtilen sorguyla eşleşen paketleri ara."
   show:
-    description: "Belirtilen paket hakkındaki bilgiyi göster."
+    description: "Belirtilen paketle ilgili bilgiyi göster."
   update:
     description: "Kurulabilir paket listesini güncelle."
   upgrade:
-    description: "Yüklü tüm paketleri güncelleştir."
+    description: "Kurulu tüm paketleri güncelleştir."
   enter:
-    description: "Altsistem ortamına gir."
+    description: "Alt sistemin ortamına gir."
   export:
-    description: "Altsistemden bir uygulama veya ikili dosya çıkart."
-    options:
-      appName:
-        description: "Çıkarılacak uygulamanın adı."
-      bin:
-        description: "Çıkartılacak ikili dosyanın adı."
-      binOutput:
-        description: "İkili dosyanın çıkartılacağı dizin (öntanımlı olan: ~/.local/bin/)."
-  unexport:
-    description: "Bir uygulamayı veya ikili dosyayı alt sistemden dışa aktarın."
+    description: "Alt sistemden uygulama ya da ikili dışa aktar."
     options:
       appName:
         description: "Dışa aktarılacak uygulamanın adı."
       bin:
-        description: "Dışa aktarılacak ikili dosyanın adı."
+        description: "Dışa aktarılacak ikilinin adı."
       binOutput:
-        description: "İkili çıktının yolu (varsayılan: ~/.local/bin/)."
+        description: "İkili çıktısının yolu (öntanımlı: ~/.local/bin/)."
+  unexport:
+    description: "Uygulama ya da ikilinin alt sistemden dışa aktarımını geri al."
+    options:
+      appName:
+        description: "Dışa aktarımın geri alınacağı uygulamanın adı."
+      bin:
+        description: "Dışa aktarımın geri alınacağı ikilinin adı."
+      binOutput:
+        description: "İkilinin çıktı yolu (öntanımlı: ~/.local/bin/)."
 
   start:
-    description: Start the subsystem.
+    description: Alt sistemi başlat.
   stop:
-    description: Stop the subsystem.
+    description: Alt sistemi durdur.
 pkgmanagers:
-  description: "apx içinde kullanılabilir paket yöneticileri ile çalışın"
+  description: "Apx içinde kullanılabilir paket yöneticileri ile çalış."
   labels:
-    name: "İsim"
+    name: "Ad"
     builtIn: "Yerleşik"
 
   list:
-    description: "Mevcut tüm paket yöneticilerini listeler."
+    description: "Var olan tüm paket yöneticilerini listele."
     info:
-      noPkgManagers: "Mevcut paket yöneticisi yok. 'apx pkgmanagers new' ile yeni
-        bir tane oluşturun veya sistem yöneticisine başvurun."
-      foundPkgManagers: "Bulunan paket yöneticileri %d:\n"
+      noPkgManagers: "Paket yöneticisi yok. 'apx pkgmanagers new' ile yenisini oluşturun
+        ya da sistem yöneticisine başvurun."
+      foundPkgManagers: "%d paket yöneticisi bulundu"
     options:
       json:
         description: "JSON biçiminde çıktı."
   show:
-    description: "Belirtilen paket yöneticisi hakkında bilgi gösterir."
+    description: "Belirtilen paket yöneticisiyle ilgili bilgi gösterir."
   new:
-    description: "Yeni bir paket yöneticisi oluşturun."
+    description: "Yeni paket yöneticisi oluştur."
 
     error:
-      emptyName: "İsim boş olamaz."
-      noName: "İsim belirtilmemiş."
+      emptyName: "Ad boş olamaz."
+      noName: "Ad belirtilmemiş."
       emptyCommand: "Komut boş olamaz."
       noCommand: "'%s' için komut belirtilmemiş."
-      alreadyExists: "'%s' adında bir paket yöneticisi zaten mevcut."
+      alreadyExists: "'%s' adlı paket yöneticisi zaten var."
     info:
-      askName: "Bir isim seçin:"
+      askName: "Ad seç:"
       askSudo: "Paket yöneticisinin çalışması için sudo gerekiyor mu?"
-      askCommand: "'%s' için komutu girin:"
-      askOverwrite: "'%s' adında bir paket yöneticisi zaten mevcut. Üzerine yazılsın
-        mı?"
+      askCommand: "'%s' için komutu gir:"
+      askOverwrite: "'%s' adlı paket yöneticisi zaten var. Üzerine yazılsın mı?"
       success: "'%s' paket yöneticisi oluşturuldu."
     options:
       assumeYes:
@@ -128,14 +126,14 @@ pkgmanagers:
       needSudo:
         description: "Paket yöneticisinin çalışması için sudo gerekip gerekmediği."
       autoremove:
-        description: "Paketleri otomatik kaldırmak için çalıştırılacak komut."
+        description: "Paketleri kendiliğinden kaldırmak için çalıştırılacak komut."
       clean:
         description: "Paket yöneticisinin önbelleğini temizlemek için çalıştırılacak
           komut."
       install:
-        description: "Paketleri yüklemek için çalıştırılacak komut."
+        description: "Paketleri kurmak için çalıştırılacak komut."
       list:
-        description: "Yüklü paketleri listelemek için çalıştırılacak komut."
+        description: "Kurulu paketleri listelemek için çalıştırılacak komut."
       purge:
         description: "Paketleri temizlemek için çalıştırılacak komut."
       remove:
@@ -143,22 +141,22 @@ pkgmanagers:
       search:
         description: "Paketleri aramak için çalıştırılacak komut."
       show:
-        description: "Paketler hakkında bilgi göstermek için çalıştırılacak komut."
+        description: "Paketlerle ilgili bilgi göstermek için çalıştırılacak komut."
       update:
         description: "Kullanılabilir paketlerin listesini güncellemek için çalıştırılacak
           komut."
       upgrade:
         description: "Paketleri yükseltmek için çalıştırılacak komut."
   rm:
-    description: "Belirtilen paket yöneticisini kaldırın."
+    description: "Belirtilen paket yöneticisini kaldır."
 
     error:
-      noName: "İsim belirtilmemiş."
-      inUse: "Paket yöneticisi %d yığınlarında kullanılır:\n"
+      noName: "Ad belirtilmemiş."
+      inUse: "Paket yöneticisi %d yığında kullanıldı:"
     info:
-      askConfirmation: "'%s' kaldırmak istediğinizden emin misiniz?[y/N]"
+      askConfirmation: "'%s' kaldırmak istediğinizden emin misiniz? [y/N]"
       success: "'%s' paket yöneticisi kaldırıldı."
-      aborting: "'%s' paket yöneticisinin kaldırılması iptal ediliyor."
+      aborting: "'%s' paket yöneticisinin kaldırılmasından vazgeçiliyor."
     options:
       force:
         description: "Paket yöneticisini kaldırmaya zorla."
@@ -168,175 +166,176 @@ pkgmanagers:
   export:
     options:
       output:
-        description: The path to export the package manager to.
+        description: Dışa aktarılacak paket yöneticisinin yolu.
       name:
-        description: The name of the package manager to export.
+        description: Dışa aktarılacak paket yöneticisinin adı.
     error:
-      noOutput: No output specified.
-      noName: No name specified.
-    description: Export the specified package manager.
+      noOutput: Çıktı belirtilmedi.
+      noName: Ad belirtilmedi.
+    description: Belirtilen paket yöneticisini dışa aktar.
     info:
-      success: Exported package manager '%s' to '%s'.
+      success: "'%s' paket yöneticisi şuna dışa aktarıldı: '%s'."
   import:
     error:
-      noInput: No input specified.
-      cannotLoad: Cannot load package manager from '%s'.
+      noInput: Girdi belirtilmedi.
+      cannotLoad: "Paket yöneticisi şuradan yüklenemiyor: '%s'."
     info:
-      success: Imported package manager from '%s'.
-    description: Import the specified package manager.
+      success: "Paket yöneticisi şuradan içe aktarıldı: '%s'."
+    description: Belirtilen paket yöneticisini içe aktar.
     options:
       input:
-        description: The path to import the package manager from.
+        description: Paket yöneticisinin içe aktarılacağı yol.
   update:
-    description: Update the specified package manager.
+    description: Belirtilen paket yöneticisini güncelle.
     info:
-      success: Updated package manager '%s'.
+      success: "'%s' paket yöneticisi güncellendi."
 stacks:
-  description: "Apx'te bulunan yığınlarla çalışın."
+  description: "Apx'te bulunan yığınlarla çalış."
   labels:
     name: "Ad"
     builtIn: "Yerleşik"
 
   list:
-    description: "Mevcut tüm yığınları listeleyin."
+    description: "Var olan tüm yığınları listele."
     info:
-      noStacks: "Mevcut yığın yok. 'apx stacks new' ile yeni bir tane oluşturun veya
-        sistem yöneticisine başvurun."
-      foundStacks: "Found %d stacks:\n"
-      aborting: "'%s' yığınının kaldırılması iptal ediliyor."
+      noStacks: "Yığın yok. 'apx stacks new' ile yenisini oluşturun ya da sistem yöneticisine
+        başvurun."
+      foundStacks: "%d yığın bulundu:"
+      aborting: "'%s' yığınının kaldırılmasından vazgeçiliyor."
     options:
       json:
-        description: "JSON formatında çıktı."
+        description: "JSON biçiminde çıktı."
   show:
-    description: "Belirtilen yığın hakkındaki bilgileri göster."
+    description: "Belirtilen yığınla ilgili bilgileri göster."
   new:
-    description: "Yeni bir yığın oluşturun."
+    description: "Yeni yığın oluştur."
     error:
-      emptyName: "İsim boş olamaz."
-      noName: "İsim belirtilmemiş."
+      emptyName: "Ad boş olamaz."
+      noName: "Ad belirtilmemiş."
       emptyBase: "Taban boş olamaz."
       noBase: "Taban belirtilmemiş."
       emptyPkgManager: "Paket yöneticisi boş olamaz."
       noPkgManager: "Paket yöneticisi belirtilmemiş."
-      pkgManagerDoesNotExist: "Belirtilen paket yöneticisi mevcut değil. 'apx pkgmanagers
-        new' ile oluşturun veya sistem yöneticisiyle iletişime geçin."
+      pkgManagerDoesNotExist: "Belirtilen paket yöneticisi yok. 'apx pkgmanagers new'
+        ile oluşturun ya da sistem yöneticisiyle iletişime geçin."
       emptyPackages: "Paketler boş olamaz."
       noPackages: "Paket belirtilmemiş."
-      alreadyExists: "'%s' adında bir yığın zaten mevcut."
+      alreadyExists: "'%s' adlı yığın zaten var."
     info:
-      askName: "Bir isim seç:"
-      askBase: "Bir taban seçin (örn. 'vanillaos/pico'):"
-      askPkgManager: "Bir paket yöneticisi seçin:"
-      selectPkgManager: "Select a package manager [1-%d]:"
-      noPackages: "You have not provided any package to install in the stack. Do you
-        want to add some now?"
-      confirmPackages: "Do you want to confirm the current packages list?"
-      askPackages: "Please type the packages you want to install in the stack, separated
-        by a space:"
-      success: "Created stack '%s'."
+      askName: "Ad seç:"
+      askBase: "Taban seç (örn. 'vanillaos/pico'):"
+      askPkgManager: "Paket yöneticisi seç:"
+      selectPkgManager: "Paket yöneticisi seç [1-%d]:"
+      noPackages: "Yığına kurulacak herhangi bir paket sağlamadınız. Birkaçını eklemek
+        ister misiniz?"
+      confirmPackages: "Geçerli paket listesini onaylıyor musunuz?"
+      askPackages: "Lütfen yığına kurmak istediğiniz paketleri aralarında boşluk bırakarak
+        yazın:"
+      success: "'%s' yığını oluşturuldu."
     options:
       assumeYes:
-        description: "Assume yes to all prompts."
+        description: "Tüm sorulara evet dediğinizi varsayın."
       name:
-        description: "The name of the stack."
+        description: "Yığının adı."
       base:
-        description: "The base subsystem to use."
+        description: "Kullanılacak taban dağıtımın kalıbı. (Uyumlu kalıplar için:
+          https://distrobox.it/compatibility/#containers-distros)"
       packages:
-        description: "The packages to install."
+        description: "Kurulacak paketler."
       pkgManager:
-        description: "The package manager to use."
+        description: "Kullanılacak paket yöneticisi."
   update:
-    description: "Update the specified stack."
+    description: "Belirtilen yığını güncelle."
     error:
-      noName: "No name specified."
-      noBase: "No base specified."
-      noPkgManager: "No package manager specified."
-      pkgManagerDoesNotExist: "The specified package manager does not exist. Create
-        it with 'apx pkgmanagers new' or contact the system administrator."
+      noName: "Ad belirtilmedi."
+      noBase: "Taban belirtilmedi."
+      noPkgManager: "Paket yöneticisi belirtilmedi."
+      pkgManagerDoesNotExist: "Belirtilen paket yöneticisi yok. 'apx pkgmanagers new'
+        ile yeni oluşturun ya da sistem yöneticisiyle iletişime geçin."
     info:
-      askBase: "Type a new base or confirm the current one (%s):"
-      askPkgManager: "Choose a new package manager or confirm the current one (%s):"
-      askPackages: "Type the packages you want to install in the stack, separated
-        by a space, or confirm the current ones (%s):"
-      success: "Updated stack '%s'."
+      askBase: "Yeni taban yazın ya da geçerli olanı onaylayın (%s):"
+      askPkgManager: "Yeni paket yöneticisi seçin ya da geçerli olanı onaylayın (%s):"
+      askPackages: "Yığına kurmak istediğiniz paketleri boşlukla ayırarak yazın ya
+        da geçerli olanları onaylayın (%s):"
+      success: "'%s' yığını güncellendi."
 
     options:
       assumeYes:
-        description: "Assume yes to all prompts."
+        description: "Tüm sorulara evet dediğinizi varsayın."
       name:
-        description: "The name of the stack."
+        description: "Yığının adı."
       base:
-        description: "The base subsystem to use."
+        description: "Kullanılacak taban alt sistem."
       packages:
-        description: "The packages to install."
+        description: "Kurulacak paketler."
       pkgManager:
-        description: "The package manager to use."
+        description: "Kullanılacak paket yöneticisi."
   rm:
-    description: "Remove the specified stack."
+    description: "Belirtilen yığını kaldır."
     error:
-      noName: "No name specified."
+      noName: "Ad belirtilmedi."
     info:
-      askConfirmation: "Are you sure you want to remove '%s'?"
-      success: "Removed stack '%s'."
+      askConfirmation: "'%s' kaldırılsın ister misiniz? [e/H]"
+      success: "'%s' kaldırıldı."
     options:
       force:
-        description: "Force removal of the stack."
+        description: "Yığını kaldırmaya zorla."
       name:
-        description: "The name of the stack to remove."
+        description: "Kaldırılacak yığının adı."
   export:
-    description: "Export the specified stack."
+    description: "Belirtilen yığını dışa aktar."
     error:
-      noName: "No name specified."
-      noOutput: "No output specified."
+      noName: "Ad belirtilmedi."
+      noOutput: "Çıktı belirtilmedi."
     info:
-      success: "Exported stack '%s' to '%s'."
+      success: "'%s' yığını şuna dışa aktarıldı: '%s'."
     options:
       name:
-        description: "The name of the stack to export."
+        description: "Dışa aktarılacak yığının adı."
       output:
-        description: "The path to export the stack to."
+        description: "Dışa aktarılacak yığının yolu."
   import:
-    description: "Import the specified stack."
+    description: "Belirtilen yığını içe aktar."
     error:
-      noInput: "No input specified."
-      cannotLoad: "Cannot load stack from '%s'."
+      noInput: "Girdi belirtilmedi."
+      cannotLoad: "Yığın şuradan yüklenemedi: '%s'."
     info:
-      success: "Imported stack from '%s'."
+      success: "Yığın şuradan içe aktarıldı: '%s'."
     options:
       input:
-        description: "The path to import the stack from."
+        description: "Yığının içe aktarılacağı yol."
 
 subsystems:
-  description: "Work with the subsystems that are available in apx."
+  description: "Apx'te var olan alt sistemlerle çalış."
   labels:
-    name: "Name"
-    status: "Status"
+    name: "Ad"
+    status: "Durum"
 
   list:
-    description: "List all available subsystems."
+    description: "Var olan tüm alt sistemleri listele."
     error:
     info:
-      noSubsystems: "No subsystems available. Create a new one with 'apx subsystems
-        new' or contact the system administrator."
-      foundSubsystems: "Found %d subsystems:\n"
+      noSubsystems: "Alt sistem yok. 'apx subsystems new' ile yenisini oluşturun ya
+        da sistem yöneticisine başvurun."
+      foundSubsystems: "%d alt sistem bulundu:"
     options:
       json:
-        description: "Output in JSON format."
+        description: "JSON biçiminde çıktı."
   new:
-    description: "Create a new subsystem."
+    description: "Yeni alt sistem oluştur."
     error:
-      noStacks: "A stack is needed to create a subsystem. Create a new one with 'apx
-        stacks new' or contact the system administrator."
+      noStacks: "Alt sistem oluşturmak için yığın gereklidir. 'apx stacks new' ile
+        yenisini oluşturun ya da sistem yöneticisine başvurun."
       emptyName: "Ad boş olamaz."
       noName: "Ad belirtilmedi."
       emptyStack: "Yığın boş olamaz."
       noStack: "Yığın belirtilmedi."
-      stackDoesNotExist: "Belirtilen yığın mevcut değil. 'apx stacks new' ile oluşturun
-        veya sistem yöneticisiyle iletişime geçin."
-      alreadyExists: "'%s' adında bir alt sistem zaten mevcut."
+      stackDoesNotExist: "Belirtilen yığın yok. 'apx stacks new' ile oluşturun ya
+        da sistem yöneticisiyle iletişime geçin."
+      alreadyExists: "'%s' adlı alt sistem zaten var."
     info:
-      askName: "Bir ad seçin:"
-      selectStack: "Bir yığın seçin [1-%d]:"
+      askName: "Ad seç:"
+      selectStack: "Yığın seç [1-%d]:"
       success: "'%s' alt sistemi oluşturuldu."
       creatingSubsystem: "'%s' alt sistemi '%s' yığınıyla oluşturuluyor…"
     options:
@@ -345,15 +344,15 @@ subsystems:
       stack:
         description: "Kullanılacak yığın."
       home:
-        description: The custom home directory of the subsystem.
+        description: Alt sistemin özel ev klasörü.
       init:
-        description: Use systemd inside the subsystem.
+        description: Alt sistemdeki systemd'yi kullan.
   rm:
-    description: "Belirtilen alt sistemi kaldırın."
+    description: "Belirtilen alt sistemi kaldır."
     error:
-      noName: "İsim belirtilmemiş."
+      noName: "Ad belirtilmedi."
     info:
-      askConfirmation: "'%s'yı kaldırmak istediğinizden emin misiniz? [e/H]"
+      askConfirmation: "'%s' kaldırılsın ister misiniz? [e/H]"
       success: "'%s' alt sistemi kaldırıldı."
     options:
       force:
@@ -361,11 +360,11 @@ subsystems:
       name:
         description: "Kaldırılacak alt sistemin adı."
   reset:
-    description: "Belirtilen alt sistemi sıfırlayın."
+    description: "Belirtilen alt sistemi sıfırla."
     error:
-      noName: "İsim belirtilmemiş."
+      noName: "Ad belirtilmedi."
     info:
-      askConfirmation: "'%s'yi sıfırlamak istediğinizden emin misiniz? [e/H]"
+      askConfirmation: "'%s' sıfırlansın ister misiniz? [y/N]"
       success: "'%s' alt sistemi sıfırlandı."
     options:
       force:

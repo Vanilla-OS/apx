@@ -154,7 +154,7 @@ pkgmanagers:
       noName: "No name specified."
       inUse: "The package manager is used in %d stacks:\n"
     info:
-      askConfirmation: "Are you sure you want to remove '%s'?"
+      askConfirmation: "Are you sure you want to remove '%s'? [y/N]"
       success: "Removed package manager '%s'."
       aborting: Aborting removal of package manager '%s'.
     options:
@@ -363,7 +363,7 @@ subsystems:
     error:
       noName: "No name specified."
     info:
-      askConfirmation: "Are you sure you want to reset '%s'?"
+      askConfirmation: "Are you sure you want to reset '%s'? [y/N]"
       success: "The subsystem '%s' has been reset."
     options:
       force:
