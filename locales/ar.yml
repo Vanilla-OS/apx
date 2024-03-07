@@ -27,8 +27,8 @@ runtimeCommand:
     startingContainer: 'حدث خطأ ما أثناء بدء تشغيل الحاوية: %s'
     stoppingContainer: 'حدث خطأ ما أثناء إيقاف الحاوية: %s'
   info:
-    unexportedApps: "%d تطبيقات غير مصدرة"
-    exportedApps: "%d تطبيقات مصدرة"
+    unexportedApps: "تطبيقات %d غير مصدرة"
+    exportedApps: "تم تصدير٪ d من التطبيقات"
     exportedApp: "التطبيقات المصدرة %s"
     exportedBin: "البرامج المصدرة %s"
     unexportedApp: "التطبيقات غير المصدرة %s"
