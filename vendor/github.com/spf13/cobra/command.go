@@ -419,10 +419,7 @@ func (c *Command) UsageFunc() (f func(*Command) error) {
 	}
 	return func(c *Command) error {
 		c.mergePersistentFlags()
-		err := tmpl(c.OutOrStderr(), c.UsageTemplate(), c)
-		if err != nil {
-			c.PrintErrln(err)
-		}
+		err := tmpl(c.OutOrStderr(), "\n"+c.ShortUsageTemplate(), c)
 		return err
 	}
 }
@@ -565,6 +562,27 @@ Additional help topics:{{range .Commands}}{{if .IsAdditionalHelpTopicCommand}}
   {{rpad .CommandPath .CommandPathPadding}} {{.Short}}{{end}}{{end}}{{end}}{{if .HasAvailableSubCommands}}
 
 Use "{{.CommandPath}} [command] --help" for more information about a command.{{end}}
+`
+}
+
+// ShortUsageTemplate returns a shortened usage template for the command.
+func (c *Command) ShortUsageTemplate() string {
+	if c.usageTemplate != "" {
+		return c.usageTemplate
+	}
+
+	if c.HasParent() {
+		return c.parent.ShortUsageTemplate()
+	}
+	return `Usage:{{if .Runnable}}
+  {{.UseLine}}{{end}}{{if .HasAvailableSubCommands}}
+  {{.CommandPath}} [command]{{end}}{{if gt (len .Aliases) 0}}
+
+Aliases:
+  {{.NameAndAliases}}{{end}}{{if .HasExample}}
+
+Examples:
+{{.Example}}{{end}}
 `
 }
 
@@ -1023,10 +1041,6 @@ func (c *Command) ExecuteC() (cmd *Command, err error) {
 		if cmd != nil {
 			c = cmd
 		}
-		if !c.SilenceErrors {
-			c.PrintErrln("Error:", err.Error())
-			c.PrintErrf("Run '%v --help' for usage.\n", c.CommandPath())
-		}
 		return c, err
 	}
 
@@ -1048,12 +1062,6 @@ func (c *Command) ExecuteC() (cmd *Command, err error) {
 		if errors.Is(err, flag.ErrHelp) {
 			cmd.HelpFunc()(cmd, args)
 			return cmd, nil
-		}
-
-		// If root command has SilenceErrors flagged,
-		// all subcommands should respect it
-		if !cmd.SilenceErrors && !c.SilenceErrors {
-			c.PrintErrln("Error:", err.Error())
 		}
 
 		// If root command has SilenceUsage flagged,
