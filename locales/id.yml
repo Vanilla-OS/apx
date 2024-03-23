@@ -1,13 +1,13 @@
 apx:
-  description: "Apx is a package manager with support for multiple sources, allowing
-    you to install packages in subsystems."
+  description: "Apx adalah manajer paket dengan dukungan untuk beberapa sumber, memungkinkan
+    Anda untuk menginstal paket dalam subsistem."
   errors:
-    unknownCommand: "Unknown command: %s"
-    invalidInput: "Invalid input."
-    invalidChoice: "Invalid choice."
-    noRoot: "Do not run Apx as root."
+    unknownCommand: "Perintah tidak diketahui: %s"
+    invalidInput: "Masukan tidak valid."
+    invalidChoice: "Pilihan tidak valid."
+    noRoot: "Jangan menjalankan Apx sebagai root."
   info:
-    aborting: "Aborting as requested."
+    aborting: "Membatalkan sesuai permintaan."
   terminal:
     yes: "yes"
     no: "no"
