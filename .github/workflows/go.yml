@@ -2,7 +2,6 @@ name: Go
 
 on:
   push:
-    branches: [ "main" ]
 
 jobs:
 
@@ -33,7 +32,15 @@ jobs:
     - name: Compress-manpage
       run: tar -czvf apx-man.tar.gz man/man1/apx.1
 
+    - uses: actions/upload-artifact@v4
+      with:
+        name: apx
+        path: |
+          apx.tar.gz
+          apx-man.tar.gz
+
     - uses: softprops/action-gh-release@v1
+      if: github.repository == 'vanilla-os/ABRoot' && github.ref == 'refs/heads/main'
       with:
         token: "${{ secrets.GITHUB_TOKEN }}"
         tag_name: "continuous"
@@ -43,16 +50,10 @@ jobs:
           apx.tar.gz
           apx-man.tar.gz
 
-    - uses: actions/upload-artifact@v4
-      with:
-        name: apx
-        path: |
-          apx.tar.gz
-          apx-man.tar.gz
-
   sonar:
     name: Sonar
     runs-on: ubuntu-latest
+    if: github.repository == 'vanilla-os/ABRoot'
     steps:
       - uses: actions/checkout@v4
         with:

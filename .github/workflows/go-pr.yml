@@ -24,12 +24,14 @@ jobs:
       run: |
           apt-get update
           apt-get install -y pkg-config build-essential
+
     - name: Build
       run: go build -o apx
 
   sonar:
     name: Sonar
     runs-on: ubuntu-latest
+    if: github.repository == 'vanilla-os/ABRoot'
     steps:
       - uses: actions/checkout@v4
         with:
