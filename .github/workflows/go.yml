@@ -53,7 +53,7 @@ jobs:
   sonar:
     name: Sonar
     runs-on: ubuntu-latest
-    if: github.repository == 'vanilla-os/ABRoot'
+    if: github.repository == 'vanilla-os/apx'
     steps:
       - uses: actions/checkout@v4
         with:
