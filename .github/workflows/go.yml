@@ -39,7 +39,7 @@ jobs:
           apx.tar.gz
           apx-man.tar.gz
 
-    - uses: softprops/action-gh-release@v1
+    - uses: softprops/action-gh-release@v2
       if: github.repository == 'vanilla-os/ABRoot' && github.ref == 'refs/heads/main'
       with:
         token: "${{ secrets.GITHUB_TOKEN }}"
