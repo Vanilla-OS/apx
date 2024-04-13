@@ -1,11 +1,11 @@
 apx:
-  description: "Apx is a package manager with support for multiple sources, allowing
-    you to install packages in subsystems."
+  description: "Az Apx egy csomagkezelő, amely több forrást is támogat, és lehetővé
+    teszi a csomagok alrendszerekbe történő telepítését."
   errors:
     unknownCommand: "Ismeretlen parancs: %s"
     invalidInput: "Érvénytelen bemenet."
-    invalidChoice: Invalid choice.
-    noRoot: Do not run Apx as root.
+    invalidChoice: Érvénytelen választás.
+    noRoot: Ne futtasd az Apx-et rootként.
   info:
     aborting: "Megszakítás kérés szerint."
   terminal:
@@ -13,91 +13,93 @@ apx:
     no: "nem"
 
 runtimeCommand:
-  description: "Work with the specified subsystem, accessing the package manager and
-    environment."
+  description: "Dolgozzon a megadott alrendszerrel, hogy elérje a csomagkezelőt és
+    a környezetet."
   error:
     noPackageSpecified: "Nincsenek meghatározott csomagok."
     cantAccessPkgManager: "Hiba történt a csomagkezelő elérésekor: %s"
     executingCommand: "Hiba történt a parancs végrehajtása közben: %s"
-    noAppNameOrBin: "--app-name or --bin must be specified."
-    sameAppOrBin: "--app-name and --bin cannot be both specified."
+    noAppNameOrBin: "--app-name vagy --bin értéket meg kell adni."
+    sameAppOrBin: "--app-name és --bin nem adható meg egyszerre."
     exportingApp: "Hiba történt az alkalmazás exportálása során: %s"
     exportingBin: "Hiba történt a bináris fájl exportálása során: %s"
-    unexportingApp: "An error occurred while unexporting the application: %s"
-    unexportingBin: "An error occurred while unexporting the binary: %s"
-    enteringContainer: 'An error occurred while entering the container: %s'
-    startingContainer: 'An error occurred while starting the container: %s'
-    stoppingContainer: 'An error occurred while stopping the container: %s'
+    unexportingApp: "Hiba történt az alkalmazás exportálásának visszavonása közben:
+      %s"
+    unexportingBin: "Hiba történt a bináris fájl exportálásának visszavonása közben:
+      %s"
+    enteringContainer: 'Hiba történt a konténerbe való belépéskor: %s'
+    startingContainer: 'Hiba történt a konténer indításakor: %s'
+    stoppingContainer: 'Hiba történt a konténer leállítása közben: %s'
   info:
-    unexportedApps: "Unexported %d applications\n"
-    exportedApps: "Exported %d applications\n"
-    exportedApp: "Exported application %s\n"
-    exportedBin: "Exported binary %s\n"
-    unexportedApp: "Unexported application %s\n"
-    unexportedBin: "Unexported binary %s\n"
-    stoppedContainer: Stopped container.
-    startedContainer: Started container.
-    stoppingContainer: Stopping container…
-    startingContainer: Starting container…
+    unexportedApps: "Nem exportált alkalmazások: %d"
+    exportedApps: "Exportált alkalmazások: %d"
+    exportedApp: "Exportált alkalmazás: %s"
+    exportedBin: "Exportált bináris alkalmazás: %s"
+    unexportedApp: "Nem exportált alkalmazás: %s"
+    unexportedBin: "Nem exportált bináris alkalmazás: %s"
+    stoppedContainer: Konténer leállt.
+    startedContainer: Konténer elindult.
+    stoppingContainer: Konténer leállítása…
+    startingContainer: Konténer indítása…
   autoremove:
-    description: "Remove packages that are no longer required."
+    description: "A már nem szükséges csomagok eltávolítása."
   clean:
-    description: "Clean the package manager's cache."
+    description: "A csomagkezelő gyorsítótárának tisztítása."
   install:
-    description: "Install the specified package."
+    description: "A megadott csomag telepítése."
     options:
       noExport:
-        description: "Do not export a desktop entry."
+        description: "Ne exportáljon asztali bejegyzést."
   list:
-    description: "List all installed packages."
+    description: "Az összes telepített csomag listázása."
   purge:
-    description: "Purge the specified packages."
+    description: "A megadott csomagok törlése."
   remove:
-    description: "Remove the specified packages."
+    description: "A megadott csomagok eltávolítása."
   search:
-    description: "Search for packages matching the specified query."
+    description: "A megadott lekérdezésnek megfelelő csomagok keresése."
   show:
-    description: "Show information about the specified package."
+    description: "Információk megjelenítése a megadott csomagról."
   update:
-    description: "Update the list of available packages."
+    description: "Az elérhető csomagok listájának frissítése."
   upgrade:
-    description: "Upgrade all installed packages."
+    description: "Az összes telepített csomag frissítése."
   enter:
-    description: "Enter the subsystem's environment."
+    description: "Belépés az alrendszer környezetébe."
   export:
-    description: "Export an application or binary from the subsystem."
+    description: "Egy alkalmazás vagy bináris fájl exportálása az alrendszerből."
     options:
       appName:
-        description: "The name of the application to export."
+        description: "Az exportálandó alkalmazás neve."
       bin:
-        description: "The name of the binary to export."
+        description: "Az exportálandó bináris neve."
       binOutput:
-        description: "Path of the binary output (default: ~/.local/bin/)."
+        description: "A bináris kimenet elérési útja (alapértelmezett: ~/.local/bin/)."
   unexport:
-    description: "Unexport an application or binary from the subsystem."
+    description: "Egy alkalmazás vagy bináris fájl exportálás visszavonása az alrendszerből."
     options:
       appName:
-        description: "The name of the application to unexport."
+        description: "Az exportálásból visszavont alkalmazás neve."
       bin:
-        description: "The name of the binary to unexport."
+        description: "Az exportálásból visszavont bináris neve."
       binOutput:
-        description: "Path of the binary output (default: ~/.local/bin/)."
+        description: "A bináris kimenet elérési útja (alapértelmezett: ~/.local/bin/)."
 
   start:
-    description: Start the subsystem.
+    description: Az alrendszer indítása.
   stop:
-    description: Stop the subsystem.
+    description: Az alrendszer leállítása.
 pkgmanagers:
-  description: "Work with the package managers that are available in apx."
+  description: "Dolgozzon az apx-ben elérhető csomagkezelőkkel."
   labels:
-    name: "Name"
-    builtIn: "Built-in"
+    name: "Név"
+    builtIn: "Beépített"
 
   list:
-    description: "List all available package managers."
+    description: "Az összes elérhető csomagkezelő listája."
     info:
-      noPkgManagers: "No package managers available. Create a new one with 'apx pkgmanagers
-        new' or contact the system administrator."
+      noPkgManagers: "Nincsenek elérhető csomagkezelők. Hozzon létre egy újat az „apx
+        pkgmanagers new” használatával, vagy forduljon a rendszergazdához."
       foundPkgManagers: "Found %d package managers:\n"
     options:
       json:
