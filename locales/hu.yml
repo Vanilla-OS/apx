@@ -100,10 +100,10 @@ pkgmanagers:
     info:
       noPkgManagers: "Nincsenek elérhető csomagkezelők. Hozzon létre egy újat az „apx
         pkgmanagers new” használatával, vagy forduljon a rendszergazdához."
-      foundPkgManagers: "Found %d package managers:\n"
+      foundPkgManagers: "%d csomagkezelőt találtunk"
     options:
       json:
-        description: "Output in JSON format."
+        description: "Kimenet JSON formátumban."
   show:
     description: "Show information about the specified package manager."
   new:
@@ -195,7 +195,7 @@ stacks:
   description: "Work with the stacks that are available in apx."
   labels:
     name: "Name"
-    builtIn: "Built-in"
+    builtIn: "Beépített"
 
   list:
     description: "List all available stacks."
