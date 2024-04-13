@@ -100,59 +100,58 @@ pkgmanagers:
       json:
         description: "JSON 形式で出力。"
   show:
-    description: "Show information about the specified package manager."
+    description: "指定されたパッケージマネージャについての情報を表示。"
   new:
-    description: "Create a new package manager."
+    description: "新しいパッケージマネージャを作成。"
 
     error:
-      emptyName: "The name cannot be empty."
-      noName: "No name specified."
-      emptyCommand: "The command cannot be empty."
-      noCommand: "No command specified for '%s'."
-      alreadyExists: "A package manager with the name '%s' already exists."
+      emptyName: "名前は空にすることができません。"
+      noName: "名前が指定されていません。"
+      emptyCommand: "コマンドは空にできません。"
+      noCommand: "'%s' のコマンドが指定されいません。"
+      alreadyExists: "'%s' という名前のパッケージマネージャはすでに存在しています。"
     info:
-      askName: "Choose a name:"
-      askSudo: "Does the package manager need sudo to run?"
-      askCommand: "Enter the command for '%s':"
-      askOverwrite: "A package manager with the name '%s' already exists. Overwrite
-        it?"
-      success: "Created package manager '%s'."
+      askName: "名前を選択:"
+      askSudo: "このパッケージマネージャは sudo での実行を必要としますか？"
+      askCommand: "'%s' へのコマンドを入力:"
+      askOverwrite: "'%s' という名前のパッケージマネージャがすでに存在しています。上書きしますか？"
+      success: "パッケージマネージャ '%s' を作成しました。"
     options:
       assumeYes:
-        description: "Assume yes to all prompts."
+        description: "すべての質問に yes と回答する。"
       name:
-        description: "The name of the package manager."
+        description: "パッケージマネージャの名前。"
       needSudo:
-        description: "Whether the package manager needs sudo to run."
+        description: "パッケージマネージャが実行で sudo を必要とするかどうか。"
       autoremove:
-        description: "The command to run to autoremove packages."
+        description: "パッケージを autoremove するためのコマンド。"
       clean:
-        description: "The command to run to clean the package manager's cache."
+        description: "パッケージマネージャのキャッシュを削除するためのコマンド。"
       install:
-        description: "The command to run to install packages."
+        description: "パッケージをインストールするためのコマンド。"
       list:
-        description: "The command to run to list installed packages."
+        description: "インストールされているパッケージを表示するコマンド。"
       purge:
-        description: "The command to run to purge packages."
+        description: "パッケージを Purge するコマンド。"
       remove:
-        description: "The command to run to remove packages."
+        description: "パッケージを削除するためのコマンド。"
       search:
-        description: "The command to run to search for packages."
+        description: "パッケージを検索するコマンド。"
       show:
-        description: "The command to run to show information about packages."
+        description: "インストール済みのパッケージについての情報を表示するためのコマンド。"
       update:
-        description: "The command to run to update the list of available packages."
+        description: "アップデートが利用可能なパッケージを表示するためのコマンド。"
       upgrade:
-        description: "The command to run to upgrade packages."
+        description: "パッケージをアップグレードするためのコマンド。"
   update:
-    description: "Update the specified package manager."
+    description: "指定したパッケージマネージャをアップデートします。"
     info:
-      success: "Updated package manager '%s'."
+      success: "パッケージマネージャ '%s' をアップデートしました。"
   rm:
-    description: "Remove the specified package manager."
+    description: "指定したパッケージマネージャを削除します。"
 
     error:
-      noName: "No name specified."
+      noName: "名前が指定されていません。"
       inUse: "The package manager is used in %d stacks:"
     info:
       askConfirmation: "Are you sure you want to remove '%s'? [y/N]"
