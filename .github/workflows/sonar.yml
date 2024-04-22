@@ -1,33 +1,10 @@
-name: Go (PR)
+name: Sonar
 
 on:
-  pull_request:
+  pull_request_target:
     types: [opened, synchronize, reopened]
-    branches: [ "main" ]
 
 jobs:
-
-  build:
-    runs-on: ubuntu-latest
-    container:
-      image: ghcr.io/vanilla-os/pico:main
-
-    steps:
-    - uses: actions/checkout@v4
-
-    - name: Set up Go
-      uses: actions/setup-go@v5
-      with:
-        go-version: 1.21
-
-    - name: Install build dependencies
-      run: |
-          apt-get update
-          apt-get install -y pkg-config build-essential
-
-    - name: Build
-      run: go build -o apx
-
   sonar:
     name: Sonar
     runs-on: ubuntu-latest
