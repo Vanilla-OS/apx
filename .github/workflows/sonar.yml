@@ -8,7 +8,6 @@ jobs:
   sonar:
     name: Checker
     runs-on: ubuntu-latest
-    if: github.repository == 'vanilla-os/apx'
     steps:
       - uses: actions/checkout@v4
         with:
