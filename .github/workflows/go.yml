@@ -2,6 +2,8 @@ name: Go
 
 on:
   push:
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
 
@@ -49,16 +51,3 @@ jobs:
         files: |
           apx.tar.gz
           apx-man.tar.gz
-
-  sonar:
-    name: Sonar
-    runs-on: ubuntu-latest
-    if: github.repository == 'vanilla-os/apx'
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
-      - uses: sonarsource/sonarqube-scan-action@master
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
