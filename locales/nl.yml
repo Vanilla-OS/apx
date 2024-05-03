@@ -58,9 +58,9 @@ runtimeCommand:
   list:
     description: "Somt alle geïnstalleerde pakketten op."
   purge:
-    description: "Verwijdert de opgegeven pakketten, inclusief configuratiebestanden."
+    description: "Verwĳdert de opgegeven pakketten, inclusief configuratiebestanden."
   remove:
-    description: "Verwijdert de opgegeven pakketten."
+    description: "Verwĳdert de opgegeven pakketten."
   search:
     description: "Zoekt naar pakketten die voldoen aan de opgegeven zoekopdracht."
   show:
@@ -68,7 +68,7 @@ runtimeCommand:
   update:
     description: "Werkt de lijst met beschikbare pakketten bij."
   upgrade:
-    description: "Werkt alle geïnstalleerde pakketten bij."
+    description: "Werkt alle geïnstalleerde pakketten bĳ."
   enter:
     description: "Treed de omgeving van het subsysteem binnen."
   export:
@@ -101,7 +101,7 @@ pkgmanagers:
     builtIn: "Ingebouwd"
 
   list:
-    description: "Toont een lijst van alle beschikbare pakketbeheerders."
+    description: "Toont een lĳst van alle beschikbare pakketbeheerders."
     info:
       noPkgManagers: "Geen pakketbeheerders beschikbaar. Maak een nieuwe aan met ‘apx
         pkgmanagers new’ of neem contact op met de systeembeheerder."
@@ -115,9 +115,9 @@ pkgmanagers:
     description: "Maakt een nieuwe pakketbeheerder aan."
 
     error:
-      emptyName: "De naam mag niet leeg zijn."
+      emptyName: "De naam mag niet leeg zĳn."
       noName: "Geen naam opgegeven."
-      emptyCommand: "De opdracht mag niet leeg zijn."
+      emptyCommand: "De opdracht mag niet leeg zĳn."
       noCommand: "Geen opdracht opgegeven voor ‘%s’."
       alreadyExists: "Een pakketbeheerder met de naam ‘%s’ bestaat al."
     info:
@@ -157,14 +157,14 @@ pkgmanagers:
       upgrade:
         description: "De uit te voeren opdracht om pakketten bij te werken."
   rm:
-    description: "Verwijdert de opgegeven pakketbeheerder."
+    description: "Verwĳdert de opgegeven pakketbeheerder."
 
     error:
       noName: "Geen naam opgegeven."
       inUse: "De pakketbeheerder wordt gebruikt in %d stacks:"
     info:
       askConfirmation: "Weet u zeker dat u ‘%s’ wilt verwijderen? [y/N]"
-      success: "Pakketbeheerder ‘%s’ verwijderd."
+      success: "Pakketbeheerder ‘%s’ verwĳderd."
       aborting: Verwijdering van pakketbeheerder ‘%s’ wordt afgebroken.
     options:
       force:
@@ -197,7 +197,7 @@ pkgmanagers:
   update:
     description: De opgegeven pakketbeheerder bijwerken.
     info:
-      success: Pakketbeheerder ‘%s’ bijgewerkt.
+      success: Pakketbeheerder ‘%s’ bĳgewerkt.
 stacks:
   description: "Werk met de in apx beschikbare stacks."
   labels:
@@ -205,7 +205,7 @@ stacks:
     builtIn: "Ingebouwd"
 
   list:
-    description: "Toont een lijst van alle beschikbare stacks."
+    description: "Toont een lĳst van alle beschikbare stacks."
     info:
       noStacks: "Geen stacks beschikbaar. Maak een nieuwe aan met ‘apx stacks new’
         of neem contact op met de systeembeheerder."
@@ -219,20 +219,20 @@ stacks:
   new:
     description: "Maakt een nieuwe stack aan."
     error:
-      emptyName: "De naam mag niet leeg zijn."
+      emptyName: "De naam mag niet leeg zĳn."
       noName: "Geen naam opgegeven."
-      emptyBase: "De basis mag niet leeg zijn."
+      emptyBase: "De basis mag niet leeg zĳn."
       noBase: "Geen basis opgegeven."
       emptyPkgManager: "De pakketbeheerder mag niet leeg zijn."
       noPkgManager: "Geen pakketbeheerder opgegeven."
       pkgManagerDoesNotExist: "De opgegeven pakketbeheerder bestaat niet. Maak deze
         aan met ‘apx pkgmanagers new’ of neem contact op met de systeembeheerder."
-      emptyPackages: "De pakketten mogen niet leeg zijn."
+      emptyPackages: "De pakketten mogen niet leeg zĳn."
       noPackages: "Geen pakketten opgegeven."
       alreadyExists: "Een stack met de naam ‘%s’ bestaat al."
     info:
       askName: "Kies een naam:"
-      askBase: "Kies een basis (bijv. ‘vanillaos/pico’):"
+      askBase: "Kies een basis (bĳv. ‘vanillaos/pico’):"
       askPkgManager: "Kies een pakketbeheerder:"
       selectPkgManager: "Kies een pakketbeheerder [1-%d]:"
       noPackages: "U heeft geen pakketten opgegeven om in de stack te installeren.
@@ -254,7 +254,7 @@ stacks:
       pkgManager:
         description: "De pakketbeheerder om te gebruiken."
   update:
-    description: "Werkt de opgegeven stack bij."
+    description: "Werkt de opgegeven stack bĳ."
     error:
       noName: "Geen naam opgegeven."
       noBase: "Geen basis opgegeven."
@@ -266,7 +266,7 @@ stacks:
       askPkgManager: "Kies een nieuwe pakketbeheerder of bevestig de huidige (%s):"
       askPackages: "Typ de pakketten in die u in de stack wilt installeren, gescheiden
         door een spatie; of bevestig de huidige pakketten (%s):"
-      success: "Stack ‘%s’ bijgewerkt."
+      success: "Stack ‘%s’ bĳgewerkt."
 
     options:
       assumeYes:
@@ -280,12 +280,12 @@ stacks:
       pkgManager:
         description: "De pakketbeheerder om te gebruiken."
   rm:
-    description: "Verwijdert de opgegeven stack."
+    description: "Verwĳdert de opgegeven stack."
     error:
       noName: "Geen naam opgegeven."
     info:
       askConfirmation: "Weet u zeker dat u ‘%s’ wilt verwijderen? [y/N]"
-      success: "Stack ‘%s’ verwijderd."
+      success: "Stack ‘%s’ verwĳderd."
     options:
       force:
         description: "Forceert het verwijderen van de stack."
@@ -321,7 +321,7 @@ subsystems:
     status: "Status"
 
   list:
-    description: "Toont een lijst van alle beschikbare subsystemen."
+    description: "Toont een lĳst van alle beschikbare subsystemen."
     error:
     info:
       noSubsystems: "Geen subsystemen beschikbaar. Maak een nieuwe aan met ‘apx subsystems
@@ -357,12 +357,12 @@ subsystems:
       init:
         description: Gebruik systemd binnen het subsysteem.
   rm:
-    description: "Verwijdert het opgegeven subsysteem."
+    description: "Verwĳdert het opgegeven subsysteem."
     error:
       noName: "Geen naam opgegeven."
     info:
       askConfirmation: "Weet u zeker dat u ‘%s’ wilt verwijderen? [y/N]"
-      success: "Subsysteem ‘%s’ verwijderd."
+      success: "Subsysteem ‘%s’ verwĳderd."
     options:
       force:
         description: "Forceert verwijdering van het subsysteem."
