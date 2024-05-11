@@ -1,374 +1,368 @@
 apx:
-  description: "Apx is a package manager with support for multiple sources, allowing
-    you to install packages in subsystems."
+  description: "Apx הוא מנהל חבילה עם תמיכה עבור מקורות מרובים, ומאפשר לך להתקין חבילות
+    במערכות תת-מערכת."
   errors:
-    unknownCommand: "Unknown command: %s"
-    invalidInput: "Invalid input."
-    invalidChoice: "Invalid choice."
-    noRoot: "Do not run Apx as root."
+    unknownCommand: "פקודה לא ידועה: s%"
+    invalidInput: "קלט לא חוקי."
+    invalidChoice: "בחירה לא חוקית."
+    noRoot: "אל תברחו כשורש."
   info:
-    aborting: "Aborting as requested."
+    aborting: "מתמזגים כבקשים."
   terminal:
-    yes: "yes"
-    no: "no"
+    yes: "כן"
+    no: "לא"
 
 runtimeCommand:
-  description: "Work with the specified subsystem, accessing the package manager and
-    environment."
+  description: "לעבוד עם תת-מערכת המפורטת, גישה למנהל החבילה והסביבה."
   error:
-    enteringContainer: "An error occurred while entering the container: %s"
-    noPackageSpecified: "No packages specified."
-    cantAccessPkgManager: "An error occurred while accessing the package manager:
-      %s"
-    executingCommand: "An error occurred while executing the command: %s"
-    noAppNameOrBin: "--app-name or --bin must be specified."
-    sameAppOrBin: "--app-name and --bin cannot be both specified."
-    exportingApp: "An error occurred while exporting the application: %s"
-    exportingBin: "An error occurred while exporting the binary: %s"
-    unexportingApp: "An error occurred while unexporting the application: %s"
-    unexportingBin: "An error occurred while unexporting the binary: %s"
-    startingContainer: "An error occurred while starting the container: %s"
-    stoppingContainer: "An error occurred while stopping the container: %s"
+    enteringContainer: "טעות אירעה בעת הכניסה למיכל: אחוזים: %s"
+    noPackageSpecified: "אין חבילות שצוינו."
+    cantAccessPkgManager: "שגיאה התרחשה בעת גישה למנהל החבילה: %s"
+    executingCommand: "טעות התרחשה בעת ביצוע הפקודה: %s"
+    noAppNameOrBin: "יש לציין --app-name או --bin."
+    sameAppOrBin: "לא ניתן לציין שניהם --app-name ו- --bin."
+    exportingApp: "טעות התרחשה בעת הייצוא היישום: %s"
+    exportingBin: "טעות אירעה בעת יצוא בינארי: %s"
+    unexportingApp: "טעות התרחשה בזמן שלא דווח על היישום: %s"
+    unexportingBin: "טעות התרחשה כאשר לא דווח על בינארי: %s"
+    startingContainer: "טעות אירעה בעת הפעלת מיכל: %s"
+    stoppingContainer: "טעות אירעה תוך עצירת מיכל: אחוזים: %s"
   info:
-    unexportedApps: "Unexported %d applications"
-    exportedApps: "Exported %d applications"
-    exportedApp: "Exported application %s"
-    exportedBin: "Exported binary %s"
-    unexportedApp: "Unexported application %s"
-    unexportedBin: "Unexported binary %s"
-    startingContainer: "Starting container…"
-    startedContainer: "Started container."
-    stoppingContainer: "Stopping container…"
-    stoppedContainer: "Stopped container."
+    unexportedApps: "%d יישומים לא מיוצאים"
+    exportedApps: "ייצאו %d יישומים"
+    exportedApp: "s% יישומים"
+    exportedBin: "ייצוא בינארי %s"
+    unexportedApp: "יישום %s לא מיוצא"
+    unexportedBin: "%s בינארי לא מיוצא"
+    startingContainer: "החל מכולה…"
+    startedContainer: "התחיל מיכל."
+    stoppingContainer: "לעצור מכולה…"
+    stoppedContainer: "מיכל עוצר."
   autoremove:
-    description: "Remove packages that are no longer required."
+    description: "להסיר חבילות שכבר אינן נדרשות."
   clean:
-    description: "Clean the package manager's cache."
+    description: "לנקות את המטמון של מנהל החבילה."
   install:
-    description: "Install the specified package."
+    description: "התקן את החבילה המפורטת."
     options:
       noExport:
-        description: "Do not export a desktop entry."
+        description: "אל תוציאו כניסה שולחנית."
   list:
-    description: "List all installed packages."
+    description: "רשימת כל החבילות המותקנות."
   purge:
-    description: "Purge the specified packages."
+    description: "שחררו את החבילות המפורטות."
   remove:
-    description: "Remove the specified packages."
+    description: "להסיר את החבילות המפורטות."
   search:
-    description: "Search for packages matching the specified query."
+    description: "חיפוש חבילות תואם את השאילתה המפורטת."
   show:
-    description: "Show information about the specified package."
+    description: "הצג מידע על החבילה המפורטת."
   update:
-    description: "Update the list of available packages."
+    description: "עדכון רשימת החבילות הזמינות."
   upgrade:
-    description: "Upgrade all installed packages."
+    description: "לשדרג את כל החבילות המותקנות."
   enter:
-    description: "Enter the subsystem's environment."
+    description: "היכנסו לסביבה של תת-מערכת."
   export:
-    description: "Export an application or binary from the subsystem."
+    description: "ייצוא יישום או בינארי מהמערכת."
     options:
       appName:
-        description: "The name of the application to export."
+        description: "שם הבקשה לייצא."
       bin:
-        description: "The name of the binary to export."
+        description: "שמו של בינארי לייצא."
       binOutput:
-        description: "Path of the binary output (default: ~/.local/bin/)."
+        description: "הנתיב של הפלט בינארי (default: - /local /bin /)."
   unexport:
-    description: "Unexport an application or binary from the subsystem."
+    description: "Unexport יישום או בינארי מהמערכת."
     options:
       appName:
-        description: "The name of the application to unexport."
+        description: "שם היישום ל unexport."
       bin:
-        description: "The name of the binary to unexport."
+        description: "השם של בינארי ל unexport."
       binOutput:
-        description: "Path of the binary output (default: ~/.local/bin/)."
+        description: "נתיב הפלט הבינארי (ברירת מחדל: ~/.local/bin/)."
   start:
-    description: "Start the subsystem."
+    description: "התחל את תת-מערכת."
   stop:
-    description: "Stop the subsystem."
+    description: "לעצור את המערכת."
 
 pkgmanagers:
-  description: "Work with the package managers that are available in apx."
+  description: "לעבוד עם מנהלי החבילה זמינים ב Apx."
   labels:
-    name: "Name"
-    builtIn: "Built-in"
+    name: "שם השם"
+    builtIn: "נבנה-in"
 
   list:
-    description: "List all available package managers."
+    description: "רשימת כל מנהלי החבילה הזמינים."
     info:
-      noPkgManagers: "No package managers available. Create a new one with 'apx pkgmanagers
-        new' or contact the system administrator."
-      foundPkgManagers: "Found %d package managers"
+      noPkgManagers: "אין מנהלי חבילה זמינים. צור חדש עם \"apx pkgmanagers חדש\" או
+        ליצור קשר עם מנהל המערכת."
+      foundPkgManagers: "נמצאו %d מנהלי חבילות"
     options:
       json:
-        description: "Output in JSON format."
+        description: "בחוץ בפורמט JSON."
   show:
-    description: "Show information about the specified package manager."
+    description: "הצג מידע על מנהל החבילה שצוין."
   new:
-    description: "Create a new package manager."
+    description: "צור מנהל חבילה חדש."
 
     error:
-      emptyName: "The name cannot be empty."
-      noName: "No name specified."
-      emptyCommand: "The command cannot be empty."
-      noCommand: "No command specified for '%s'."
-      alreadyExists: "A package manager with the name '%s' already exists."
+      emptyName: "השם לא יכול להיות ריק."
+      noName: "שום שם לא צוין."
+      emptyCommand: "הפקודה לא יכולה להיות ריקה."
+      noCommand: "לא צוינה פקודה עבור '%s'."
+      alreadyExists: "כבר קיים מנהל חבילות בשם '%s'."
     info:
-      askName: "Choose a name:"
-      askSudo: "Does the package manager need sudo to run?"
+      askName: "בחרו שם:"
+      askSudo: "האם מנהל החבילה צריך לרוץ?"
       askCommand: "Enter the command for '%s':"
-      askOverwrite: "A package manager with the name '%s' already exists. Overwrite
-        it?"
-      success: "Created package manager '%s'."
+      askOverwrite: "כבר קיים מנהל חבילות בשם '%s'. להחליף אותו?"
+      success: "יצר את מנהל החבילות '%s'."
     options:
       assumeYes:
-        description: "Assume yes to all prompts."
+        description: "נניח כן לכל הפניות."
       name:
-        description: "The name of the package manager."
+        description: "שם מנהל החבילה."
       needSudo:
-        description: "Whether the package manager needs sudo to run."
+        description: "בין אם מנהל החבילה צריך לפעול."
       autoremove:
-        description: "The command to run to autoremove packages."
+        description: "הפקודה לרוץ חבילות אוטומטיות."
       clean:
-        description: "The command to run to clean the package manager's cache."
+        description: "הפקודה לרוץ לנקות את המטמון של מנהל החבילה."
       install:
-        description: "The command to run to install packages."
+        description: "הפקודה לרוץ להתקין חבילות."
       list:
-        description: "The command to run to list installed packages."
+        description: "הפקודה לרוץ לרשימה מותקן חבילות."
       purge:
-        description: "The command to run to purge packages."
+        description: "הפקודה לרוץ לטיהור חבילות."
       remove:
-        description: "The command to run to remove packages."
+        description: "הפקודה לרוץ כדי להסיר חבילות."
       search:
-        description: "The command to run to search for packages."
+        description: "הפקודה לרוץ לחפש חבילות."
       show:
-        description: "The command to run to show information about packages."
+        description: "הפקודה לרוץ כדי להציג מידע על חבילות."
       update:
-        description: "The command to run to update the list of available packages."
+        description: "הפקודה להפעיל כדי לעדכן את רשימת חבילות הזמינות."
       upgrade:
-        description: "The command to run to upgrade packages."
+        description: "הפקודה לרוץ לשדרג חבילות."
   update:
-    description: "Update the specified package manager."
+    description: "עדכון מנהל החבילה שצוין."
     info:
-      success: "Updated package manager '%s'."
+      success: "מנהל החבילות '%s' מעודכן."
   rm:
-    description: "Remove the specified package manager."
+    description: "להסיר את מנהל החבילה שצוין."
 
     error:
-      noName: "No name specified."
-      inUse: "The package manager is used in %d stacks:"
+      noName: "שום שם לא צוין."
+      inUse: "מנהל החבילה משמש מחסניות %d:"
     info:
-      askConfirmation: "Are you sure you want to remove '%s'? [y/N]"
-      success: "Removed package manager '%s'."
-      aborting: "Aborting removal of package manager '%s'."
+      askConfirmation: "האם אתה בטוח שברצונך להסיר את '%s'? [y/N]"
+      success: "הוסר מנהל החבילות '%s'."
+      aborting: "מבטל את ההסרה של מנהל החבילות '%s'."
     options:
       force:
-        description: "Force removal of the package manager."
+        description: "הסרת כוח של מנהל החבילה."
       name:
-        description: "The name of the package manager to remove."
+        description: "שם מנהל החבילה להסיר."
   export:
-    description: "Export the specified package manager."
+    description: "ייצוא מנהל החבילה שצוין."
     error:
-      noName: "No name specified."
-      noOutput: "No output specified."
+      noName: "שום שם לא צוין."
+      noOutput: "שום פלט לא מוגדר."
     info:
-      success: "Exported package manager '%s' to '%s'."
+      success: "מנהל החבילות '%s' ייצא אל '%s'."
     options:
       name:
-        description: "The name of the package manager to export."
+        description: "שם מנהל החבילה לייצא."
       output:
-        description: "The path to export the package manager to."
+        description: "הדרך לייצא את מנהל החבילה."
   import:
-    description: "Import the specified package manager."
+    description: "ייבוא מנהל החבילה שצוין."
     error:
-      noInput: "No input specified."
-      cannotLoad: "Cannot load package manager from '%s'."
+      noInput: "שום קלט לא מוגדר."
+      cannotLoad: "לא ניתן לטעון את מנהל החבילות מ'%s'."
     info:
-      success: "Imported package manager from '%s'."
+      success: "מנהל החבילות מיובא מ'%s'."
     options:
       input:
-        description: "The path to import the package manager from."
+        description: "הדרך לייבא את מנהל החבילה."
 
 stacks:
-  description: "Work with the stacks that are available in apx."
+  description: "לעבוד עם הערימה הזמינים ב Apx."
   labels:
-    name: "Name"
-    builtIn: "Built-in"
+    name: "שם השם"
+    builtIn: "נבנה-in"
 
   list:
-    description: "List all available stacks."
+    description: "רשימה של כל המחסניות הזמינות."
     info:
-      noStacks: "No stacks available. Create a new one with 'apx stacks new' or contact
-        the system administrator."
-      foundStacks: "Found %d stacks:"
-      aborting: "Aborting removal of stack '%s'."
+      noStacks: "אין ערימה זמינה. צור חדש עם \"Apxערימה חדשה\" או צור קשר עם מנהל
+        המערכת."
+      foundStacks: "נמצאו %d ערימות:"
+      aborting: "מבטל את הסרת הערימה '%s'."
     options:
       json:
-        description: "Output in JSON format."
+        description: "בחוץ בפורמט JSON."
   show:
-    description: "Show information about the specified stack."
+    description: "הצג מידע על הערימה המפורטת."
   new:
-    description: "Create a new stack."
+    description: "ליצור ערימה חדשה."
     error:
-      emptyName: "The name cannot be empty."
-      noName: "No name specified."
-      emptyBase: "The base cannot be empty."
-      noBase: "No base specified."
-      emptyPkgManager: "The package manager cannot be empty."
-      noPkgManager: "No package manager specified."
-      pkgManagerDoesNotExist: "The specified package manager does not exist. Create
-        it with 'apx pkgmanagers new' or contact the system administrator."
-      emptyPackages: "The packages cannot be empty."
-      noPackages: "No packages specified."
-      alreadyExists: "A stack with the name '%s' already exists."
+      emptyName: "השם לא יכול להיות ריק."
+      noName: "שום שם לא צוין."
+      emptyBase: "הבסיס לא יכול להיות ריק."
+      noBase: "שום בסיס לא מוגדר."
+      emptyPkgManager: "מנהל החבילה לא יכול להיות ריק."
+      noPkgManager: "אין מנהל חבילה שצוין."
+      pkgManagerDoesNotExist: "מנהל החבילה שצוין אינו קיים. צור אותו עם \"apx pkgmanagers
+        חדש\" או פנה למנהל המערכת."
+      emptyPackages: "חבילות לא יכולות להיות ריקות."
+      noPackages: "אין חבילות שצוינו."
+      alreadyExists: "כבר קיימת ערימה בשם '%s'."
     info:
-      askName: "Choose a name:"
-      askBase: "Choose a base (e.g. 'vanillaos/pico'):"
-      askPkgManager: "Choose a package manager:"
-      selectPkgManager: "Select a package manager [1-%d]:"
-      noPackages: "You have not provided any package to install in the stack. Do you
-        want to add some now?"
-      confirmPackages: "Do you want to confirm the current packages list?"
-      askPackages: "Please type the packages you want to install in the stack, separated
-        by a space:"
-      success: "Created stack '%s'."
+      askName: "בחרו שם:"
+      askBase: "בחרו בסיס (למשל \"ונדלוס/pico\"):"
+      askPkgManager: "בחר מנהל חבילה:"
+      selectPkgManager: "בחר מנהל חבילות [1-%d]:"
+      noPackages: "לא נתת חבילה להתקין בערימה. רוצים להוסיף קצת עכשיו?"
+      confirmPackages: "רוצים לאשר את רשימת החבילות הנוכחית?"
+      askPackages: "אנא הקלד את החבילות שברצונך להתקין בערימה, מופרדות על ידי חלל:"
+      success: "נוצר מחסנית '%s'."
     options:
       assumeYes:
-        description: "Assume yes to all prompts."
+        description: "נניח כן לכל הפניות."
       name:
-        description: "The name of the stack."
+        description: "שם הערימה."
       base:
-        description: "The base distribution image to use. (For a list of compatible
-          images view: https://distrobox.it/compatibility/#containers-distros)"
+        description: "תמונת חלוקת הבסיס לשימוש. (לרשימה של תמונות תואמות: TP: www.distrobox.it/compatibility/#containers-distros)"
       packages:
-        description: "The packages to install."
+        description: "חבילות להתקין."
       pkgManager:
-        description: "The package manager to use."
+        description: "מנהל החבילה לשימוש."
   update:
-    description: "Update the specified stack."
+    description: "עדכון הערימה המפורטת."
     error:
-      noName: "No name specified."
-      noBase: "No base specified."
-      noPkgManager: "No package manager specified."
-      pkgManagerDoesNotExist: "The specified package manager does not exist. Create
-        it with 'apx pkgmanagers new' or contact the system administrator."
+      noName: "שום שם לא צוין."
+      noBase: "שום בסיס לא מוגדר."
+      noPkgManager: "אין מנהל חבילה שצוין."
+      pkgManagerDoesNotExist: "מנהל החבילה שצוין אינו קיים. צור אותו עם \"apx pkgmanagers
+        חדש\" או פנה למנהל המערכת."
     info:
-      askBase: "Type a new base or confirm the current one (%s):"
-      askPkgManager: "Choose a new package manager or confirm the current one (%s):"
-      askPackages: "Type the packages you want to install in the stack, separated
-        by a space, or confirm the current ones (%s):"
-      success: "Updated stack '%s'."
+      askBase: "הקלד בסיס חדש או לאשר את הנוכחי (%s):"
+      askPkgManager: "בחר מנהל חבילה חדש או לאשר את הנוכחי (%s):"
+      askPackages: "הקלד את החבילות שברצונך להתקין בערימה, מופרדות על ידי חלל, או
+        לאשר את הנוכחי (%s):"
+      success: "ערימה מעודכנת '%s'."
 
     options:
       assumeYes:
-        description: "Assume yes to all prompts."
+        description: "נניח כן לכל הפניות."
       name:
-        description: "The name of the stack."
+        description: "שם הערימה."
       base:
-        description: "The base subsystem to use."
+        description: "מערכת הבסיס לשימוש."
       packages:
-        description: "The packages to install."
+        description: "חבילות להתקין."
       pkgManager:
-        description: "The package manager to use."
+        description: "מנהל החבילה לשימוש."
   rm:
-    description: "Remove the specified stack."
+    description: "להסיר את הערימה המפורטת."
     error:
-      noName: "No name specified."
+      noName: "שום שם לא צוין."
     info:
-      askConfirmation: "Are you sure you want to remove '%s'? [y/N]"
-      success: "Removed stack '%s'."
+      askConfirmation: "אתה בטוח שאתה רוצה להסיר \"%s\"? [y/N]"
+      success: "הסרת ערימה \"%s\"."
     options:
       force:
-        description: "Force removal of the stack."
+        description: "הסרת הכוח של הערימה."
       name:
-        description: "The name of the stack to remove."
+        description: "שם הערימה להסיר."
   export:
-    description: "Export the specified stack."
+    description: "ייצוא את הערימה המפורטת."
     error:
-      noName: "No name specified."
-      noOutput: "No output specified."
+      noName: "שום שם לא צוין."
+      noOutput: "שום פלט לא מוגדר."
     info:
-      success: "Exported stack '%s' to '%s'."
+      success: "ערימה \"%s\" ל \"%s\"."
     options:
       name:
-        description: "The name of the stack to export."
+        description: "שם הערימה לייצא."
       output:
-        description: "The path to export the stack to."
+        description: "הדרך לייצא את הערימה."
   import:
-    description: "Import the specified stack."
+    description: "ייבוא הערימה המפורטת."
     error:
-      noInput: "No input specified."
-      cannotLoad: "Cannot load stack from '%s'."
+      noInput: "שום קלט לא מוגדר."
+      cannotLoad: "לא ניתן לטעון ערימה של \"%s\"."
     info:
-      success: "Imported stack from '%s'."
+      success: "ערימה של \"%s\"."
     options:
       input:
-        description: "The path to import the stack from."
+        description: "הדרך לייבא את הערימה."
 
 subsystems:
-  description: "Work with the subsystems that are available in apx."
+  description: "לעבוד עם תת-מערכות הזמינות ב- Apx."
   labels:
-    name: "Name"
-    status: "Status"
+    name: "שם השם"
+    status: "סטטוס"
 
   list:
-    description: "List all available subsystems."
+    description: "רשימה של כל תת-מערכות הזמינות."
     error:
     info:
-      noSubsystems: "No subsystems available. Create a new one with 'apx subsystems
-        new' or contact the system administrator."
-      foundSubsystems: "Found %d subsystems:"
+      noSubsystems: "אין תת-מערכות זמינות. צור חדש עם \"מערכת תת-מערכת חדשה\" או צור
+        קשר עם מנהל המערכת."
+      foundSubsystems: "נמצאו %d מערכות משנה:"
     options:
       json:
-        description: "Output in JSON format."
+        description: "בחוץ בפורמט JSON."
   new:
-    description: "Create a new subsystem."
+    description: "ליצור תת-מערכת חדשה."
     error:
-      noStacks: "A stack is needed to create a subsystem. Create a new one with 'apx
-        stacks new' or contact the system administrator."
-      emptyName: "The name cannot be empty."
-      noName: "No name specified."
-      emptyStack: "The stack cannot be empty."
-      noStack: "No stack specified."
-      stackDoesNotExist: "The specified stack does not exist. Create it with 'apx
-        stacks new' or contact the system administrator."
-      alreadyExists: "A subsystem with the name '%s' already exists."
+      noStacks: "יש צורך בערימה כדי ליצור תת-מערכת. צור חדש עם \"Apxערימה חדשה\" או
+        צור קשר עם מנהל המערכת."
+      emptyName: "השם לא יכול להיות ריק."
+      noName: "שום שם לא צוין."
+      emptyStack: "הערימה לא יכולה להיות ריקה."
+      noStack: "אין ערימה שצוין."
+      stackDoesNotExist: "הערימה המפורטת אינה קיימת. צור אותו עם \"Apxערימה חדשה\"\
+        \ או צור קשר עם מנהל המערכת."
+      alreadyExists: "תת-מערכת עם השם '%s' כבר קיימת."
     info:
-      askName: "Choose a name:"
-      selectStack: "Select a stack [1-%d]:"
-      success: "Created subsystem '%s'."
-      creatingSubsystem: "Creating subsystem '%s' with stack '%s'…"
+      askName: "בחרו שם:"
+      selectStack: "בחר ערימה [1-%d]:"
+      success: "מערכת המשנה \"%s\"."
+      creatingSubsystem: "יוצר תת-מערכת '%s' עם מחסנית '%s'…"
     options:
       name:
-        description: "The name of the subsystem."
+        description: "שם תת-מערכת."
       stack:
-        description: "The stack to use."
+        description: "הערימה לשימוש."
       home:
-        description: "The custom home directory of the subsystem."
+        description: "מנהל בית מותאם אישית של תת-מערכת."
       init:
-        description: "Use systemd inside the subsystem."
+        description: "השתמש במערכת בתוך תת-מערכת."
   rm:
-    description: "Remove the specified subsystem."
+    description: "להסיר את תת-מערכת המפורטת."
     error:
-      noName: "No name specified."
+      noName: "שום שם לא צוין."
     info:
-      askConfirmation: "Are you sure you want to remove '%s'? [y/N]"
-      success: "Removed subsystem '%s'."
+      askConfirmation: "אתה בטוח שאתה רוצה להסיר \"%s\"? [y/N]"
+      success: "הסרת מערכת משנה \"%s\"."
     options:
       force:
-        description: "Force removal of the subsystem."
+        description: "הסרת כוח של תת-מערכת."
       name:
-        description: "The name of the subsystem to remove."
+        description: "שם תת-מערכת להסיר."
   reset:
-    description: "Reset the specified subsystem."
+    description: "איפוס תת-מערכת שצוין."
     error:
-      noName: "No name specified."
+      noName: "שום שם לא צוין."
     info:
-      askConfirmation: "Are you sure you want to reset '%s'? [y/N]"
-      success: "The subsystem '%s' has been reset."
+      askConfirmation: "אתה בטוח שאתה רוצה לאפס את '%s'? [y/N]"
+      success: "ה'%s' של תת-מערכת כבר לאפס."
     options:
       force:
-        description: "Force reset of the subsystem."
+        description: "איפוס כוח של תת-מערכת."
       name:
-        description: "The name of the subsystem to reset."
+        description: "שם תת-מערכת לאפס."
