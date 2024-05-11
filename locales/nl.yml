@@ -13,27 +13,27 @@ apx:
     no: "nee"
 
 runtimeCommand:
-  description: "Werk met het opgegeven subsysteem en krijg toegang tot de pakketbeheerder
+  description: "Werk met het opgegeven subsysteem en krĳg toegang tot de pakketbeheerder
     en de omgeving."
   error:
     noPackageSpecified: "Geen pakketten opgegeven."
-    cantAccessPkgManager: "Er is een fout opgetreden bij het toegang krijgen tot de
+    cantAccessPkgManager: "Er is een fout opgetreden bĳ het toegang krĳgen tot de
       pakketbeheerder: %s"
-    executingCommand: "Er is een fout opgetreden bij het uitvoeren van de opdracht:
+    executingCommand: "Er is een fout opgetreden bĳ het uitvoeren van de opdracht:
       %s"
     noAppNameOrBin: "--app-name of --bin moeten worden opgegeven."
     sameAppOrBin: "--app-name en --bin kunnen niet beide worden opgegeven."
-    exportingApp: "Er is een fout opgetreden bij het exporteren van de app: %s"
-    exportingBin: "Er is een fout opgetreden bij het exporteren van het programmabestand:
+    exportingApp: "Er is een fout opgetreden bĳ het exporteren van de app: %s"
+    exportingBin: "Er is een fout opgetreden bĳ het exporteren van het programmabestand:
       %s"
-    unexportingApp: "Fout bij ontexporteren van de app: %s"
-    unexportingBin: "Er is een fout opgetreden bij het ontexporteren van het programmabestand:
+    unexportingApp: "Fout bĳ ontexporteren van de app: %s"
+    unexportingBin: "Er is een fout opgetreden bĳ het ontexporteren van het programmabestand:
       %s"
-    enteringContainer: 'Er is een fout opgetreden bij het betreden van de container:
+    enteringContainer: 'Er is een fout opgetreden bĳ het betreden van de container:
       %s'
-    startingContainer: 'Er is een fout opgetreden bij het starten van de container:
+    startingContainer: 'Er is een fout opgetreden bĳ het starten van de container:
       %s'
-    stoppingContainer: 'Er is een fout opgetreden bij het stoppen van de container:
+    stoppingContainer: 'Er is een fout opgetreden bĳ het stoppen van de container:
       %s'
   info:
     unexportedApps: "%d apps niet langer geëxporteerd"
@@ -47,7 +47,7 @@ runtimeCommand:
     stoppingContainer: Container stoppen…
     startingContainer: Container starten…
   autoremove:
-    description: "Verwijdert pakketten die niet meer vereist zijn."
+    description: "Verwĳdert pakketten die niet meer vereist zĳn."
   clean:
     description: "Schoont de cache van de pakketbeheerder op."
   install:
@@ -66,7 +66,7 @@ runtimeCommand:
   show:
     description: "Toont info over het opgegeven pakket."
   update:
-    description: "Werkt de lijst met beschikbare pakketten bij."
+    description: "Werkt de lĳst met beschikbare pakketten bĳ."
   upgrade:
     description: "Werkt alle geïnstalleerde pakketten bĳ."
   enter:
@@ -124,7 +124,7 @@ pkgmanagers:
       askName: "Kies een naam:"
       askSudo: "Moet de pakketbeheerder uitgevoerd worden met root-rechten?"
       askCommand: "Voer de opdracht in voor ‘%s’:"
-      askOverwrite: "Een pakketbeheerder met de naam ‘%s’ bestaat al. Overschrijven?"
+      askOverwrite: "Een pakketbeheerder met de naam ‘%s’ bestaat al. Overschrĳven?"
       success: "Pakketbeheerder ‘%s’ aangemaakt."
     options:
       assumeYes:
@@ -134,7 +134,7 @@ pkgmanagers:
       needSudo:
         description: "Of de pakketbeheerder uitgevoerd moet worden met root-rechten."
       autoremove:
-        description: "De opdracht om uit te voeren om pakketten automatisch te verwijderen."
+        description: "De uit te voeren opdracht om pakketten automatisch te verwĳderen."
       clean:
         description: "De opdracht om uit te voeren om de cache van de pakketbeheerder
           op te schonen."
@@ -146,16 +146,16 @@ pkgmanagers:
       purge:
         description: "De uit te voeren opdracht om pakketten te purgen."
       remove:
-        description: "De uit te voeren opdracht om pakketten te verwijderen."
+        description: "De uit te voeren opdracht om pakketten te verwĳderen."
       search:
         description: "De uit te voeren opdracht om naar pakketten te zoeken."
       show:
         description: "De uit te voeren opdracht om informatie over pakketten te tonen."
       update:
-        description: "De uit te voeren opdracht om de lijst van beschikbare pakketten
-          bij te werken."
+        description: "De uit te voeren opdracht om de lĳst van beschikbare pakketten
+          bĳ te werken."
       upgrade:
-        description: "De uit te voeren opdracht om pakketten bij te werken."
+        description: "De uit te voeren opdracht om pakketten bĳ te werken."
   rm:
     description: "Verwĳdert de opgegeven pakketbeheerder."
 
@@ -163,14 +163,14 @@ pkgmanagers:
       noName: "Geen naam opgegeven."
       inUse: "De pakketbeheerder wordt gebruikt in %d stacks:"
     info:
-      askConfirmation: "Weet u zeker dat u ‘%s’ wilt verwijderen? [y/N]"
+      askConfirmation: "Weet u zeker dat u ‘%s’ wilt verwĳderen? [y/N]"
       success: "Pakketbeheerder ‘%s’ verwĳderd."
-      aborting: Verwijdering van pakketbeheerder ‘%s’ wordt afgebroken.
+      aborting: Verwĳdering van pakketbeheerder ‘%s’ wordt afgebroken.
     options:
       force:
-        description: "Forceert verwijdering van de pakketbeheerder."
+        description: "Forceert verwĳdering van de pakketbeheerder."
       name:
-        description: "De naam van de te verwijderen pakketbeheerder."
+        description: "De naam van de te verwĳderen pakketbeheerder."
 
   export:
     options:
@@ -195,7 +195,7 @@ pkgmanagers:
       input:
         description: Het pad om de pakketbeheerder van te importeren.
   update:
-    description: De opgegeven pakketbeheerder bijwerken.
+    description: De opgegeven pakketbeheerder bĳwerken.
     info:
       success: Pakketbeheerder ‘%s’ bĳgewerkt.
 stacks:
@@ -210,7 +210,7 @@ stacks:
       noStacks: "Geen stacks beschikbaar. Maak een nieuwe aan met ‘apx stacks new’
         of neem contact op met de systeembeheerder."
       foundStacks: "%d stacks gevonden:"
-      aborting: Verwijdering van stack ‘%s’ wordt afgebroken.
+      aborting: Verwĳdering van stack ‘%s’ wordt afgebroken.
     options:
       json:
         description: "Toont uitvoer in JSON-formaat."
@@ -223,7 +223,7 @@ stacks:
       noName: "Geen naam opgegeven."
       emptyBase: "De basis mag niet leeg zĳn."
       noBase: "Geen basis opgegeven."
-      emptyPkgManager: "De pakketbeheerder mag niet leeg zijn."
+      emptyPkgManager: "De pakketbeheerder mag niet leeg zĳn."
       noPkgManager: "Geen pakketbeheerder opgegeven."
       pkgManagerDoesNotExist: "De opgegeven pakketbeheerder bestaat niet. Maak deze
         aan met ‘apx pkgmanagers new’ of neem contact op met de systeembeheerder."
@@ -237,7 +237,7 @@ stacks:
       selectPkgManager: "Kies een pakketbeheerder [1-%d]:"
       noPackages: "U heeft geen pakketten opgegeven om in de stack te installeren.
         Wilt u er nu een paar toevoegen?"
-      confirmPackages: "Wilt u de huidige pakketlijst bevestigen?"
+      confirmPackages: "Wilt u de huidige pakketlĳst bevestigen?"
       askPackages: "Typ de pakketten die u wilt installeren in de stack, gescheiden
         door een spatie:"
       success: "Stack ‘%s’ aangemaakt."
@@ -247,8 +247,8 @@ stacks:
       name:
         description: "De naam van de stack."
       base:
-        description: "De te gebruiken basis-distributie-images. (Voor een lijst met
-          compatibele images, zie: https://distrobox.it/compatibility/#containers-distros)"
+        description: "De te gebruiken basisdistributie-schĳfkopieën. (Voor een lĳst
+          met compatibele images, zie: https://distrobox.it/compatibility/#containers-distros)"
       packages:
         description: "De pakketten om te installeren."
       pkgManager:
@@ -284,13 +284,13 @@ stacks:
     error:
       noName: "Geen naam opgegeven."
     info:
-      askConfirmation: "Weet u zeker dat u ‘%s’ wilt verwijderen? [y/N]"
+      askConfirmation: "Weet u zeker dat u ‘%s’ wilt verwĳderen? [y/N]"
       success: "Stack ‘%s’ verwĳderd."
     options:
       force:
-        description: "Forceert het verwijderen van de stack."
+        description: "Forceert het verwĳderen van de stack."
       name:
-        description: "De naam van de te verwijderen stack."
+        description: "De naam van de te verwĳderen stack."
   export:
     description: "Exporteert de opgegeven stack."
     error:
@@ -335,9 +335,9 @@ subsystems:
     error:
       noStacks: "Er is een stack nodig om een subsysteem aan te maken. Maak een nieuwe
         aan met ‘apx stacks new’ of neem contact op met de systeembeheerder."
-      emptyName: "De naam mag niet leeg zijn."
+      emptyName: "De naam mag niet leeg zĳn."
       noName: "Geen naam opgegeven."
-      emptyStack: "De stack mag niet leeg zijn."
+      emptyStack: "De stack mag niet leeg zĳn."
       noStack: "Geen stack opgegeven."
       stackDoesNotExist: "De opgegeven stack bestaat niet. Maak deze aan met ‘apx
         stacks new’ of neem contact op met de systeembeheerder."
@@ -361,13 +361,13 @@ subsystems:
     error:
       noName: "Geen naam opgegeven."
     info:
-      askConfirmation: "Weet u zeker dat u ‘%s’ wilt verwijderen? [y/N]"
+      askConfirmation: "Weet u zeker dat u ‘%s’ wilt verwĳderen? [y/N]"
       success: "Subsysteem ‘%s’ verwĳderd."
     options:
       force:
-        description: "Forceert verwijdering van het subsysteem."
+        description: "Forceert verwĳdering van het subsysteem."
       name:
-        description: "De naam van het subsysteem om te verwijderen."
+        description: "De naam van het subsysteem om te verwĳderen."
   reset:
     description: "Reset het opgegeven subsysteem."
     error:
