@@ -4,7 +4,7 @@ apx:
   errors:
     unknownCommand: "Comando desconocido: %s"
     invalidInput: "Entrada Inválida."
-    invalidChoice: Elección inválida
+    invalidChoice: Elección inválida.
     noRoot: No ejecutes Apx como root.
   info:
     aborting: "Abortando según lo solicitado."
@@ -33,9 +33,9 @@ runtimeCommand:
     unexportedApps: "Aplicaciones %d no exportadas"
     exportedApps: "Aplicaciones %d exportadas"
     exportedApp: "Aplicación exportada %s"
-    exportedBin: "Binario exportado %s\n"
-    unexportedApp: "Aplicación %s no exportada\n"
-    unexportedBin: "Binario no exportado %s\n"
+    exportedBin: "Binario exportado %s"
+    unexportedApp: "Aplicación %s no exportada"
+    unexportedBin: "Binario no exportado %s"
     stoppedContainer: Contenedor detenido.
     startedContainer: Contenedor iniciado.
     stoppingContainer: Deteniendo el contenedor…
@@ -45,35 +45,35 @@ runtimeCommand:
   clean:
     description: "Limpia la caché del gestor de paquetes."
   install:
-    description: "Install the specified package."
+    description: "Instala el paquete especificado."
     options:
       noExport:
-        description: "Do not export a desktop entry."
+        description: "No exportar una entrada de escritorio."
   list:
-    description: "List all installed packages."
+    description: "Enumera todos los paquetes instalados."
   purge:
-    description: "Purge the specified packages."
+    description: "Limpiar los paquetes especificados."
   remove:
-    description: "Remove the specified packages."
+    description: "Elimina los paquetes especificados."
   search:
-    description: "Search for packages matching the specified query."
+    description: "Buscar los paquetes que coincidan con la consulta especificada."
   show:
-    description: "Show information about the specified package."
+    description: "Mostrar la información sobre el paquete especificado."
   update:
-    description: "Update the list of available packages."
+    description: "Actualiza la lista de los paquetes disponibles."
   upgrade:
-    description: "Upgrade all installed packages."
+    description: "Actualice todos los paquetes instalados."
   enter:
-    description: "Enter the subsystem's environment."
+    description: "Introduzca el entorno del subsistema."
   export:
-    description: "Export an application or binary from the subsystem."
+    description: "Exporta una aplicación o un binario del subsistema."
     options:
       appName:
-        description: "The name of the application to export."
+        description: "El nombre de la aplicación a exportar."
       bin:
-        description: "The name of the binary to export."
+        description: "Nombre del binario a exportar."
       binOutput:
-        description: "Path of the binary output (default: ~/.local/bin/)."
+        description: "Ruta de salida del binario (por defecto: ~/.local/bin/)."
   unexport:
     description: "Dejar de exportar una aplicación o binario del subsistema."
     options:
@@ -99,7 +99,7 @@ pkgmanagers:
     info:
       noPkgManagers: "No hay gestores de paquetes disponibles. Cree uno nuevo con
         'apx pkgmanagers new' o contacte al administrador del sistema."
-      foundPkgManagers: "Se encontraron %d gestores de paquetes:"
+      foundPkgManagers: "Encontrado %d #gerente de envase"
     options:
       json:
         description: "Salida en formato JSON."
@@ -276,7 +276,7 @@ stacks:
     error:
       noName: "Sin nombre especificado."
     info:
-      askConfirmation: "¿Estás seguro de que quieres eliminar '%s'?"
+      askConfirmation: "¿Estás seguro de que quieres eliminar '%s'? [y/N]"
       success: "Pila eliminada '%s'."
     options:
       force:
