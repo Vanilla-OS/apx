@@ -99,7 +99,7 @@ pkgmanagers:
     info:
       noPkgManagers: "No hay gestores de paquetes disponibles. Cree uno nuevo con
         'apx pkgmanagers new' o contacte al administrador del sistema."
-      foundPkgManagers: "Encontrado %d #gerente de envase"
+      foundPkgManagers: "%d administrador de paquetes encontrado"
     options:
       json:
         description: "Salida en formato JSON."
@@ -276,7 +276,7 @@ stacks:
     error:
       noName: "Sin nombre especificado."
     info:
-      askConfirmation: "¿Estás seguro de que quieres eliminar '%s'? [y/N]"
+      askConfirmation: "¿Estás seguro de que deseas eliminar '%s'? [s/n]"
       success: "Pila eliminada '%s'."
     options:
       force:
