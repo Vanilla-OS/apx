@@ -128,6 +128,15 @@ make install DESTDIR=$HOME/altroot
 make install-manpages DESTDIR=$HOME/altroot
 ```
 
+
+### Installing Apx using a shell script
+
+This script installs and sets up Apx automatically when you execute it, make sure you have  `curl` and `git` installed, then clone this project and run it.
+
+```bash
+bash <(curl -s https://raw.githubusercontent.com/Vanilla-OS/apx/v2/install.sh)
+```
+
 ## Community Packages
 
 Apx is packaged in various sources by our community, if you aren't comfortable with building `apx` manually you can install a package listed below.
