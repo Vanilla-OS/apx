@@ -265,8 +265,6 @@ func (d *dbox) CreateContainer(name string, image string, additionalPackages []s
 
 	if hostname != "" {
 		args = append(args, "--hostname", hostname)
-	} else {
-		args = append(args, "--hostname", name)
 	}
 
 	if len(additionalPackages) > 0 {
