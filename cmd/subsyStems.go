@@ -242,7 +242,7 @@ func newSubSystem(cmd *cobra.Command, args []string) error {
 		return err
 	}
 
-	subSystem, err := core.NewSubSystem(subSystemName, stack, home, isInit, false, false, false, true)
+	subSystem, err := core.NewSubSystem(subSystemName, stack, home, isInit, false, false, false, true, "")
 	if err != nil {
 		return err
 	}

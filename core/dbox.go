@@ -238,7 +238,7 @@ func (d *dbox) ContainerDelete(name string, rootFull bool) error {
 	return err
 }
 
-func (d *dbox) CreateContainer(name string, image string, additionalPackages []string, home string, labels map[string]string, withInit bool, rootFull bool, unshared bool, withNvidiaIntegration bool) error {
+func (d *dbox) CreateContainer(name string, image string, additionalPackages []string, home string, labels map[string]string, withInit bool, rootFull bool, unshared bool, withNvidiaIntegration bool, hostname string) error {
 	args := []string{
 		"--image", image,
 		"--name", name,
@@ -261,6 +261,12 @@ func (d *dbox) CreateContainer(name string, image string, additionalPackages []s
 
 	if unshared {
 		args = append(args, "--unshare-all")
+	}
+
+	if hostname != "" {
+		args = append(args, "--hostname", hostname)
+	} else {
+		args = append(args, "--hostname", name)
 	}
 
 	if len(additionalPackages) > 0 {
