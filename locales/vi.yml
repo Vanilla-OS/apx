@@ -1,34 +1,33 @@
 apx:
-  description: "Apx is a package manager with support for multiple sources, allowing
-    you to install packages in subsystems."
+  description: "Apx là một trình quản lí gói với khả năng hỗ trợ nhiều nguồn tải,
+    cho phép bạn cài đặt gói trong các hệ thống con."
   errors:
-    unknownCommand: "Unknown command: %s"
-    invalidInput: "Invalid input."
-    invalidChoice: "Invalid choice."
-    noRoot: "Do not run Apx as root."
+    unknownCommand: "Câu lệnh không xác định: %s"
+    invalidInput: "Đầu vào không hợp lệ."
+    invalidChoice: "Lựa chọn không hợp lệ."
+    noRoot: "Không nên chạy Apx với quyền quản trị."
   info:
-    aborting: "Aborting as requested."
+    aborting: "Đang hủy bỏ như đã được yêu cầu."
   terminal:
-    yes: "yes"
-    no: "no"
+    yes: "có"
+    no: "không"
 
 runtimeCommand:
-  description: "Work with the specified subsystem, accessing the package manager and
-    environment."
+  description: "Làm việc với hệ thống con đã chọn, truy cập trình quản lí gói và môi
+    trường."
   error:
-    enteringContainer: "An error occurred while entering the container: %s"
-    noPackageSpecified: "No packages specified."
-    cantAccessPkgManager: "An error occurred while accessing the package manager:
-      %s"
-    executingCommand: "An error occurred while executing the command: %s"
-    noAppNameOrBin: "--app-name or --bin must be specified."
-    sameAppOrBin: "--app-name and --bin cannot be both specified."
-    exportingApp: "An error occurred while exporting the application: %s"
-    exportingBin: "An error occurred while exporting the binary: %s"
-    unexportingApp: "An error occurred while unexporting the application: %s"
-    unexportingBin: "An error occurred while unexporting the binary: %s"
-    startingContainer: "An error occurred while starting the container: %s"
-    stoppingContainer: "An error occurred while stopping the container: %s"
+    enteringContainer: "Có một lỗi đã xảy ra khi truy cập vào container: %s"
+    noPackageSpecified: "Không có gói nào được xác định."
+    cantAccessPkgManager: "Có một lỗi đã xảy ra khi truy cập trình quản lí gói: %s"
+    executingCommand: "Có một lỗi đã xảy ra khi thực thi câu lệnh: %s"
+    noAppNameOrBin: "--app-name hoặc --bin phải được xác định."
+    sameAppOrBin: "không được phép xác định --app-name và --bin cùng lúc."
+    exportingApp: "Có một lỗi đã xảy ra khi xuất ứng dụng: %s"
+    exportingBin: "Có một lỗi đã xảy ra khi xuất mã nhị phân: %s"
+    unexportingApp: "Có một lỗi đã xảy ra khi ngừng xuất ứng dụng: %s"
+    unexportingBin: "Có một lỗi đã xảy ra khi ngừng xuất mã nhị phân: %s"
+    startingContainer: "Có một lỗi đã xảy ra khi khởi động container: %s"
+    stoppingContainer: "Có một lỗi đã xảy ra khi dừng container: %s"
   info:
     unexportedApps: "Unexported %d applications"
     exportedApps: "Exported %d applications"
