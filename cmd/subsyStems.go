@@ -204,13 +204,13 @@ func newSubSystem(cmd *cobra.Command, args []string) error {
 		cmdr.Info.Println(apx.Trans("subsystems.new.info.askName"))
 		fmt.Scanln(&subSystemName)
 		if subSystemName == "" {
-			cmdr.Error.Println(apx.Trans("apx.error.noName"))
+			cmdr.Error.Println(apx.Trans("subsystems.new.error.emptyName"))
 			return nil
 		}
 	}
 
 	if stackName == "" {
-		cmdr.Info.Println(apx.Trans("subsystems.new.info.askStack"))
+		cmdr.Info.Println(apx.Trans("subsystems.new.info.availableStacks"))
 		for i, stack := range stacks {
 			fmt.Printf("%d. %s\n", i+1, stack.Name)
 		}
@@ -219,12 +219,12 @@ func newSubSystem(cmd *cobra.Command, args []string) error {
 		var stackIndex int
 		_, err := fmt.Scanln(&stackIndex)
 		if err != nil {
-			cmdr.Error.Println(apx.Trans("apx.error.invalidInput"))
+			cmdr.Error.Println(apx.Trans("apx.errors.invalidInput"))
 			return nil
 		}
 
 		if stackIndex < 1 || stackIndex > len(stacks) {
-			cmdr.Error.Println(apx.Trans("apx.error.invalidInput"))
+			cmdr.Error.Println(apx.Trans("apx.errors.invalidInput"))
 			return nil
 		}
 

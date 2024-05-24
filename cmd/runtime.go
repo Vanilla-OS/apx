@@ -10,6 +10,7 @@ package cmd
 
 import (
 	"fmt"
+	"slices"
 
 	"github.com/spf13/cobra"
 	"github.com/vanilla-os/apx/v2/core"
@@ -26,8 +27,7 @@ func NewRuntimeCommands() []*cmdr.Command {
 
 	handleFunc := func(subSystem *core.SubSystem, reqFunc func(*core.SubSystem, string, *cobra.Command, []string) error) func(cmd *cobra.Command, args []string) error {
 		return func(cmd *cobra.Command, args []string) error {
-			err := reqFunc(subSystem, cmd.Name(), cmd, args)
-			return err
+			return reqFunc(subSystem, cmd.Name(), cmd, args)
 		}
 	}
 
@@ -219,37 +219,52 @@ func NewRuntimeCommands() []*cmdr.Command {
 	return commands
 }
 
+var baseCmds = []string{"run", "enter", "export", "unexport", "start", "stop"}
+
+// isBaseCommand informs whether the command is a subsystem-base command
+// (e.g. run, enter) instead of a subsystem-specific one (e.g. install, update)
+func isBaseCommand(command string) bool {
+	return slices.Contains(baseCmds, command)
+}
+
+// pkgManagerCommands maps command line arguments into package manager commands
+func pkgManagerCommands(pkgManager *core.PkgManager, command string) (string, error) {
+	switch command {
+	case "autoremove":
+		return pkgManager.CmdAutoRemove, nil
+	case "clean":
+		return pkgManager.CmdClean, nil
+	case "install":
+		return pkgManager.CmdInstall, nil
+	case "list":
+		return pkgManager.CmdList, nil
+	case "purge":
+		return pkgManager.CmdPurge, nil
+	case "remove":
+		return pkgManager.CmdRemove, nil
+	case "search":
+		return pkgManager.CmdSearch, nil
+	case "show":
+		return pkgManager.CmdShow, nil
+	case "update":
+		return pkgManager.CmdUpdate, nil
+	case "upgrade":
+		return pkgManager.CmdUpgrade, nil
+	default:
+		return "", fmt.Errorf(apx.Trans("apx.errors.unknownCommand"), command)
+	}
+}
+
 func runPkgCmd(subSystem *core.SubSystem, command string, cmd *cobra.Command, args []string) error {
-	if command != "run" && command != "enter" && command != "export" && command != "unexport" && command != "start" && command != "stop" {
+	if !isBaseCommand(command) {
 		pkgManager, err := subSystem.Stack.GetPkgManager()
 		if err != nil {
 			return fmt.Errorf(apx.Trans("runtimeCommand.error.cantAccessPkgManager"), err)
 		}
 
-		var realCommand string
-		switch command {
-		case "autoremove":
-			realCommand = pkgManager.CmdAutoRemove
-		case "clean":
-			realCommand = pkgManager.CmdClean
-		case "install":
-			realCommand = pkgManager.CmdInstall
-		case "list":
-			realCommand = pkgManager.CmdList
-		case "purge":
-			realCommand = pkgManager.CmdPurge
-		case "remove":
-			realCommand = pkgManager.CmdRemove
-		case "search":
-			realCommand = pkgManager.CmdSearch
-		case "show":
-			realCommand = pkgManager.CmdShow
-		case "update":
-			realCommand = pkgManager.CmdUpdate
-		case "upgrade":
-			realCommand = pkgManager.CmdUpgrade
-		default:
-			return fmt.Errorf(apx.Trans("apx.error.unknownCommand"), command)
+		realCommand, err := pkgManagerCommands(pkgManager, command)
+		if err != nil {
+			return err
 		}
 
 		if command == "remove" {
@@ -299,47 +314,7 @@ func runPkgCmd(subSystem *core.SubSystem, command string, cmd *cobra.Command, ar
 		bin, _ := cmd.Flags().GetString("bin")
 		binOutput, _ := cmd.Flags().GetString("bin-output")
 
-		if appName == "" && bin == "" {
-			return fmt.Errorf(apx.Trans("runtimeCommand.error.noAppNameOrBin"))
-		}
-
-		if appName != "" && bin != "" {
-			return fmt.Errorf(apx.Trans("runtimeCommand.error.sameAppOrBin"))
-		}
-
-		if command == "export" {
-			if appName != "" {
-				err := subSystem.ExportDesktopEntry(appName)
-				if err != nil {
-					return fmt.Errorf(apx.Trans("runtimeCommand.error.exportingApp"), err)
-				}
-
-				cmdr.Info.Printfln(apx.Trans("runtimeCommand.info.exportedApp"), appName)
-			} else {
-				err := subSystem.ExportBin(bin, binOutput)
-				if err != nil {
-					return fmt.Errorf(apx.Trans("runtimeCommand.error.exportingBin"), err)
-				}
-
-				cmdr.Info.Printfln(apx.Trans("runtimeCommand.info.exportedBin"), bin)
-			}
-		} else {
-			if appName != "" {
-				err := subSystem.UnexportDesktopEntry(appName)
-				if err != nil {
-					return fmt.Errorf(apx.Trans("runtimeCommand.error.unexportingApp"), err)
-				}
-
-				cmdr.Info.Printfln(apx.Trans("runtimeCommand.info.unexportedApp"), appName)
-			} else {
-				err := subSystem.UnexportBin(bin, binOutput)
-				if err != nil {
-					return fmt.Errorf(apx.Trans("runtimeCommand.error.unexportingBin"), err)
-				}
-
-				cmdr.Info.Printfln(apx.Trans("runtimeCommand.info.unexportedBin"), bin)
-			}
-		}
+		return handleExport(subSystem, command, appName, bin, binOutput)
 	}
 
 	if command == "start" {
@@ -360,6 +335,52 @@ func runPkgCmd(subSystem *core.SubSystem, command string, cmd *cobra.Command, ar
 		}
 
 		cmdr.Info.Printfln(apx.Trans("runtimeCommand.info.stoppedContainer"), subSystem.Name)
+	}
+
+	return nil
+}
+
+func handleExport(subSystem *core.SubSystem, command, appName, bin, binOutput string) error {
+	if appName == "" && bin == "" {
+		return fmt.Errorf(apx.Trans("runtimeCommand.error.noAppNameOrBin"))
+	}
+
+	if appName != "" && bin != "" {
+		return fmt.Errorf(apx.Trans("runtimeCommand.error.sameAppOrBin"))
+	}
+
+	if command == "export" {
+		if appName != "" {
+			err := subSystem.ExportDesktopEntry(appName)
+			if err != nil {
+				return fmt.Errorf(apx.Trans("runtimeCommand.error.exportingApp"), err)
+			}
+
+			cmdr.Info.Printfln(apx.Trans("runtimeCommand.info.exportedApp"), appName)
+		} else {
+			err := subSystem.ExportBin(bin, binOutput)
+			if err != nil {
+				return fmt.Errorf(apx.Trans("runtimeCommand.error.exportingBin"), err)
+			}
+
+			cmdr.Info.Printfln(apx.Trans("runtimeCommand.info.exportedBin"), bin)
+		}
+	} else {
+		if appName != "" {
+			err := subSystem.UnexportDesktopEntry(appName)
+			if err != nil {
+				return fmt.Errorf(apx.Trans("runtimeCommand.error.unexportingApp"), err)
+			}
+
+			cmdr.Info.Printfln(apx.Trans("runtimeCommand.info.unexportedApp"), appName)
+		} else {
+			err := subSystem.UnexportBin(bin, binOutput)
+			if err != nil {
+				return fmt.Errorf(apx.Trans("runtimeCommand.error.unexportingBin"), err)
+			}
+
+			cmdr.Info.Printfln(apx.Trans("runtimeCommand.info.unexportedBin"), bin)
+		}
 	}
 
 	return nil
