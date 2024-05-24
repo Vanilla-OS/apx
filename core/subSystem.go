@@ -1,8 +1,10 @@
 package core
 
 import (
+	"bufio"
 	"fmt"
 	"io"
+	"io/fs"
 	"log"
 	"os"
 	"path/filepath"
@@ -53,6 +55,61 @@ func NewSubSystem(name string, stack *Stack, home string, hasInit bool, isManage
 
 func genInternalName(name string) string {
 	return fmt.Sprintf("apx-%s", strings.ReplaceAll(strings.ToLower(name), " ", "-"))
+}
+
+func findExportedBinaries(internalName string) map[string]map[string]string {
+	home, err := os.UserHomeDir()
+	if err != nil {
+		fmt.Printf("error reading binaries: %s\n", err)
+		return map[string]map[string]string{}
+	}
+	binPath := filepath.Join(home, ".local", "bin")
+	binDir := os.DirFS(binPath)
+
+	binaries := map[string]map[string]string{}
+	err = fs.WalkDir(binDir, ".", func(path string, d fs.DirEntry, err error) error {
+		if d.IsDir() {
+			return nil
+		}
+		if err != nil {
+			return err
+		}
+
+		file, err := os.Open(filepath.Join(binPath, path))
+		if err != nil {
+			return err
+		}
+		defer file.Close()
+
+		scanner := bufio.NewScanner(file)
+		for scanner.Scan() {
+			if scanner.Text() == "# distrobox_binary" {
+				scanner.Scan()
+				if strings.HasSuffix(scanner.Text(), internalName) {
+					name := filepath.Base(path)
+					binaries[name] = map[string]string{
+						"Exec": path,
+						// "Icon":        pIcon,
+						"Name": name,
+						// "GenericName": pGenericName,
+					}
+				}
+				break
+			}
+		}
+
+		if err := scanner.Err(); err != nil {
+			return err
+		}
+
+		return nil
+	})
+	if err != nil {
+		fmt.Printf("error reading binaries: %s\n", err)
+		return map[string]map[string]string{}
+	}
+
+	return binaries
 }
 
 func findExportedPrograms(internalName string, name string) map[string]map[string]string {
@@ -113,6 +170,18 @@ func findExportedPrograms(internalName string, name string) map[string]map[strin
 	}
 
 	return programs
+}
+
+func findExported(internalName string, name string) map[string]map[string]string {
+	bins := findExportedBinaries(internalName)
+	progs := findExportedPrograms(internalName, name)
+
+	// If duplicate is found, give priority to application
+	for k, v := range progs {
+		bins[k] = v
+	}
+
+	return bins
 }
 
 func (s *SubSystem) Create() error {
@@ -225,7 +294,7 @@ func ListSubSystems(includeManaged bool, includeRootFull bool) ([]*SubSystem, er
 			Name:             container.Labels["name"],
 			Stack:            stack,
 			Status:           container.Status,
-			ExportedPrograms: findExportedPrograms(internalName, container.Labels["name"]),
+			ExportedPrograms: findExported(internalName, container.Labels["name"]),
 		}
 
 		subsystems = append(subsystems, subsystem)
@@ -362,7 +431,7 @@ func (s *SubSystem) ExportBin(binary string, exportPath string) error {
 	joinedPath := filepath.Join(exportPath, binaryName)
 	if _, err := os.Stat(joinedPath); err == nil {
 		tmpExportPath := fmt.Sprintf("/tmp/%s", uuid.New().String())
-		err = os.MkdirAll(tmpExportPath, 0755)
+		err = os.MkdirAll(tmpExportPath, 0o755)
 		if err != nil {
 			return err
 		}
@@ -382,7 +451,7 @@ func (s *SubSystem) ExportBin(binary string, exportPath string) error {
 			return err
 		}
 
-		err = os.Chmod(filepath.Join(exportPath, fmt.Sprintf("%s-%s", binaryName, s.InternalName)), 0755)
+		err = os.Chmod(filepath.Join(exportPath, fmt.Sprintf("%s-%s", binaryName, s.InternalName)), 0o755)
 		if err != nil {
 			return err
 		}
@@ -390,7 +459,7 @@ func (s *SubSystem) ExportBin(binary string, exportPath string) error {
 		return nil
 	}
 
-	err = os.MkdirAll(exportPath, 0755)
+	err = os.MkdirAll(exportPath, 0o755)
 	if err != nil {
 		return err
 	}
