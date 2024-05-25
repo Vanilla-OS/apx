@@ -662,7 +662,7 @@ func updatePkgManager(cmd *cobra.Command, args []string) error {
 
 	if name == "" {
 		if len(args) != 1 || args[0] == "" {
-			cmdr.Error.Println(apx.Trans("pkgmanagers.new.error.noName"))
+			cmdr.Error.Println(apx.Trans("pkgmanagers.update.error.noName"))
 			return nil
 		}
 
@@ -677,130 +677,130 @@ func updatePkgManager(cmd *cobra.Command, args []string) error {
 
 	if autoRemove == "" {
 		if !assumeYes {
-			cmdr.Info.Printfln(apx.Trans("pkgmanagers.new.info.askAutoRemove"), pkgmanager.CmdAutoRemove)
+			cmdr.Info.Printfln(apx.Trans("pkgmanagers.update.info.askNewCommand"), "autoRemove", pkgmanager.CmdAutoRemove)
 			fmt.Scanln(&autoRemove)
 			if autoRemove == "" {
 				autoRemove = pkgmanager.CmdAutoRemove
 			}
 		} else {
-			cmdr.Error.Println(apx.Trans("pkgmanagers.new.error.noAutoRemove"))
+			cmdr.Error.Println(apx.Trans("pkgmanagers.update.error.missingCommand"), "autoRemove")
 			return nil
 		}
 	}
 
 	if clean == "" {
 		if !assumeYes {
-			cmdr.Info.Printfln(apx.Trans("pkgmanagers.new.info.askClean"), pkgmanager.CmdClean)
+			cmdr.Info.Printfln(apx.Trans("pkgmanagers.update.info.askNewCommand"), "clean", pkgmanager.CmdClean)
 			fmt.Scanln(&clean)
 			if clean == "" {
 				clean = pkgmanager.CmdClean
 			}
 		} else {
-			cmdr.Error.Println(apx.Trans("pkgmanagers.new.error.noClean"))
+			cmdr.Error.Println(apx.Trans("pkgmanagers.update.error.missingCommand"), "clean")
 			return nil
 		}
 	}
 
 	if install == "" {
 		if !assumeYes {
-			cmdr.Info.Printfln(apx.Trans("pkgmanagers.new.info.askInstall"), pkgmanager.CmdInstall)
+			cmdr.Info.Printfln(apx.Trans("pkgmanagers.update.info.askNewCommand"), "install", pkgmanager.CmdInstall)
 			fmt.Scanln(&install)
 			if install == "" {
 				install = pkgmanager.CmdInstall
 			}
 		} else {
-			cmdr.Error.Println(apx.Trans("pkgmanagers.new.error.noInstall"))
+			cmdr.Error.Println(apx.Trans("pkgmanagers.update.error.missingCommand"), "install")
 			return nil
 		}
 	}
 
 	if list == "" {
 		if !assumeYes {
-			cmdr.Info.Printfln(apx.Trans("pkgmanagers.new.info.askList"), pkgmanager.CmdList)
+			cmdr.Info.Printfln(apx.Trans("pkgmanagers.update.info.askNewCommand"), "list", pkgmanager.CmdList)
 			fmt.Scanln(&list)
 			if list == "" {
 				list = pkgmanager.CmdList
 			}
 		} else {
-			cmdr.Error.Println(apx.Trans("pkgmanagers.new.error.noList"))
+			cmdr.Error.Println(apx.Trans("pkgmanagers.update.error.missingCommand"), "list")
 			return nil
 		}
 	}
 
 	if purge == "" {
 		if !assumeYes {
-			cmdr.Info.Printfln(apx.Trans("pkgmanagers.new.info.askPurge"), pkgmanager.CmdPurge)
+			cmdr.Info.Printfln(apx.Trans("pkgmanagers.update.info.askNewCommand"), "purge", pkgmanager.CmdPurge)
 			fmt.Scanln(&purge)
 			if purge == "" {
 				purge = pkgmanager.CmdPurge
 			}
 		} else {
-			cmdr.Error.Println(apx.Trans("pkgmanagers.new.error.noPurge"))
+			cmdr.Error.Println(apx.Trans("pkgmanagers.update.error.missingCommand"), "purge")
 			return nil
 		}
 	}
 
 	if remove == "" {
 		if !assumeYes {
-			cmdr.Info.Printfln(apx.Trans("pkgmanagers.new.info.askRemove"), pkgmanager.CmdRemove)
+			cmdr.Info.Printfln(apx.Trans("pkgmanagers.update.info.askNewCommand"), "remove", pkgmanager.CmdRemove)
 			fmt.Scanln(&remove)
 			if remove == "" {
 				remove = pkgmanager.CmdRemove
 			}
 		} else {
-			cmdr.Error.Println(apx.Trans("pkgmanagers.new.error.noRemove"))
+			cmdr.Error.Println(apx.Trans("pkgmanagers.update.error.missingCommand"), "remove")
 			return nil
 		}
 	}
 
 	if search == "" {
 		if !assumeYes {
-			cmdr.Info.Printfln(apx.Trans("pkgmanagers.new.info.askSearch"), pkgmanager.CmdSearch)
+			cmdr.Info.Printfln(apx.Trans("pkgmanagers.update.info.askNewCommand"), "search", pkgmanager.CmdSearch)
 			fmt.Scanln(&search)
 			if search == "" {
 				search = pkgmanager.CmdSearch
 			}
 		} else {
-			cmdr.Error.Println(apx.Trans("pkgmanagers.new.error.noSearch"))
+			cmdr.Error.Println(apx.Trans("pkgmanagers.update.error.missingCommand"), "search")
 			return nil
 		}
 	}
 
 	if show == "" {
 		if !assumeYes {
-			cmdr.Info.Printfln(apx.Trans("pkgmanagers.new.info.askShow"), pkgmanager.CmdShow)
+			cmdr.Info.Printfln(apx.Trans("pkgmanagers.update.info.askNewCommand"), "show", pkgmanager.CmdShow)
 			fmt.Scanln(&show)
 			if show == "" {
 				show = pkgmanager.CmdShow
 			}
 		} else {
-			cmdr.Error.Println(apx.Trans("pkgmanagers.new.error.noShow"))
+			cmdr.Error.Println(apx.Trans("pkgmanagers.update.error.missingCommand"), "show")
 			return nil
 		}
 	}
 
 	if update == "" {
 		if !assumeYes {
-			cmdr.Info.Printfln(apx.Trans("pkgmanagers.new.info.askUpdate"), pkgmanager.CmdUpdate)
+			cmdr.Info.Printfln(apx.Trans("pkgmanagers.update.info.askNewCommand"), "update", pkgmanager.CmdUpdate)
 			fmt.Scanln(&update)
 			if update == "" {
 				update = pkgmanager.CmdUpdate
 			}
 		} else {
-			cmdr.Error.Println(apx.Trans("pkgmanagers.new.error.noUpdate"))
+			cmdr.Error.Println(apx.Trans("pkgmanagers.update.error.missingCommand"), "update")
 			return nil
 		}
 	}
 
 	if upgrade == "" {
 		if !assumeYes {
-			cmdr.Info.Printfln(apx.Trans("pkgmanagers.new.info.askUpgrade"), pkgmanager.CmdUpgrade)
+			cmdr.Info.Printfln(apx.Trans("pkgmanagers.update.info.askNewCommand"), "upgrade", pkgmanager.CmdUpgrade)
 			fmt.Scanln(&upgrade)
 			if upgrade == "" {
 				upgrade = pkgmanager.CmdUpgrade
 			}
 		} else {
-			cmdr.Error.Println(apx.Trans("pkgmanagers.new.error.noUpgrade"))
+			cmdr.Error.Println(apx.Trans("pkgmanagers.update.error.missingCommand"), "upgrade")
 			return nil
 		}
 	}

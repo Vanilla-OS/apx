@@ -269,7 +269,7 @@ func rmSubSystem(cmd *cobra.Command, args []string) error {
 	}
 
 	if !forceFlag {
-		cmdr.Info.Printfln(apx.Trans("subsystems.rm.info.askConfirmation"), subSystemName)
+		cmdr.Info.Printfln(apx.Trans("subsystems.rm.info.askConfirmation")+` [y/N]`, subSystemName)
 		var confirmation string
 		fmt.Scanln(&confirmation)
 		if strings.ToLower(confirmation) != "y" {
@@ -303,7 +303,7 @@ func resetSubSystem(cmd *cobra.Command, args []string) error {
 	forceFlag, _ := cmd.Flags().GetBool("force")
 
 	if !forceFlag {
-		cmdr.Info.Printfln(apx.Trans("subsystems.reset.info.askConfirmation"), subSystemName)
+		cmdr.Info.Printfln(apx.Trans("subsystems.reset.info.askConfirmation")+` [y/N]`, subSystemName)
 		var confirmation string
 		fmt.Scanln(&confirmation)
 		if strings.ToLower(confirmation) != "y" {

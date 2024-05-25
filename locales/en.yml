@@ -63,6 +63,8 @@ runtimeCommand:
     description: "Update the list of available packages."
   upgrade:
     description: "Upgrade all installed packages."
+  run:
+    description: "Run command inside subsystem."
   enter:
     description: "Enter the subsystem's environment."
   export:
@@ -93,7 +95,6 @@ pkgmanagers:
   labels:
     name: "Name"
     builtIn: "Built-in"
-
   list:
     description: "List all available package managers."
     info:
@@ -107,7 +108,7 @@ pkgmanagers:
     description: "Show information about the specified package manager."
   new:
     description: "Create a new package manager."
-
+    success: "Package manager %s created successfully."
     error:
       emptyName: "The name cannot be empty."
       noName: "No name specified."
@@ -120,7 +121,6 @@ pkgmanagers:
       askCommand: "Enter the command for '%s':"
       askOverwrite: "A package manager with the name '%s' already exists. Overwrite
         it?"
-      success: "Created package manager '%s'."
     options:
       assumeYes:
         description: "Assume yes to all prompts."
@@ -152,14 +152,17 @@ pkgmanagers:
     description: "Update the specified package manager."
     info:
       success: "Updated package manager '%s'."
+      askNewCommand: "Enter new command for '%s' (leave empty to keep '%s'):"
+    error:
+      noName: "No name specified."
+      missingCommand: "Missing command for %s."
   rm:
     description: "Remove the specified package manager."
-
     error:
       noName: "No name specified."
       inUse: "The package manager is used in %d stacks:"
     info:
-      askConfirmation: "Are you sure you want to remove '%s'? [y/N]"
+      askConfirmation: "Are you sure you want to remove '%s'?"
       success: "Removed package manager '%s'."
       aborting: "Aborting removal of package manager '%s'."
     options:
@@ -195,7 +198,6 @@ stacks:
   labels:
     name: "Name"
     builtIn: "Built-in"
-
   list:
     description: "List all available stacks."
     info:
@@ -217,6 +219,8 @@ stacks:
       noBase: "No base specified."
       emptyPkgManager: "The package manager cannot be empty."
       noPkgManager: "No package manager specified."
+      noPkgManagers: "Could not find any package managers. Create
+        one with 'apx pkgmanagers new' or contact the system administrator."
       pkgManagerDoesNotExist: "The specified package manager does not exist. Create
         it with 'apx pkgmanagers new' or contact the system administrator."
       emptyPackages: "The packages cannot be empty."
@@ -227,7 +231,7 @@ stacks:
       askBase: "Choose a base (e.g. 'vanillaos/pico'):"
       askPkgManager: "Choose a package manager:"
       selectPkgManager: "Select a package manager [1-%d]:"
-      noPackages: "You have not provided any package to install in the stack. Do you
+      noPackages: "You have not provided any packages to install in the stack. Do you
         want to add some now?"
       confirmPackages: "Do you want to confirm the current packages list?"
       askPackages: "Please type the packages you want to install in the stack, separated
@@ -255,10 +259,12 @@ stacks:
     info:
       askBase: "Type a new base or confirm the current one (%s):"
       askPkgManager: "Choose a new package manager or confirm the current one (%s):"
+      confirmPackages: "Do you want to confirm the current packages list?"
+      noPackages: "You have not provided any packages to install in the stack. Do you
+        want to add some now?"
       askPackages: "Type the packages you want to install in the stack, separated
         by a space, or confirm the current ones (%s):"
       success: "Updated stack '%s'."
-
     options:
       assumeYes:
         description: "Assume yes to all prompts."
@@ -275,7 +281,7 @@ stacks:
     error:
       noName: "No name specified."
     info:
-      askConfirmation: "Are you sure you want to remove '%s'? [y/N]"
+      askConfirmation: "Are you sure you want to remove '%s'?"
       success: "Removed stack '%s'."
     options:
       force:
@@ -353,7 +359,7 @@ subsystems:
     error:
       noName: "No name specified."
     info:
-      askConfirmation: "Are you sure you want to remove '%s'? [y/N]"
+      askConfirmation: "Are you sure you want to remove '%s'?"
       success: "Removed subsystem '%s'."
     options:
       force:
@@ -365,7 +371,7 @@ subsystems:
     error:
       noName: "No name specified."
     info:
-      askConfirmation: "Are you sure you want to reset '%s'? [y/N]"
+      askConfirmation: "Are you sure you want to reset '%s'?"
       success: "The subsystem '%s' has been reset."
     options:
       force:

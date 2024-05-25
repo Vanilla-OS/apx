@@ -184,15 +184,15 @@ func NewRuntimeCommands() []*cmdr.Command {
 
 		startCmd := cmdr.NewCommand(
 			"start",
-			apx.Trans("subsystems.start.description"),
-			apx.Trans("subsystems.start.description"),
+			apx.Trans("runtimeCommand.start.description"),
+			apx.Trans("runtimeCommand.start.description"),
 			handleFunc(subSystem, runPkgCmd),
 		)
 
 		stopCmd := cmdr.NewCommand(
 			"stop",
-			apx.Trans("subsystems.stop.description"),
-			apx.Trans("subsystems.stop.description"),
+			apx.Trans("runtimeCommand.stop.description"),
+			apx.Trans("runtimeCommand.stop.description"),
 			handleFunc(subSystem, runPkgCmd),
 		)
 
