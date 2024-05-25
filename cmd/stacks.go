@@ -339,12 +339,12 @@ func newStack(cmd *cobra.Command, args []string) error {
 		var pkgManagerIndex int
 		_, err := fmt.Scanln(&pkgManagerIndex)
 		if err != nil {
-			cmdr.Error.Println(apx.Trans("apx.error.invalidInput"))
+			cmdr.Error.Println(apx.Trans("apx.errors.invalidInput"))
 			return nil
 		}
 
 		if pkgManagerIndex < 1 || pkgManagerIndex > len(pkgManagers) {
-			cmdr.Error.Println(apx.Trans("apx.error.invalidInput"))
+			cmdr.Error.Println(apx.Trans("apx.errors.invalidInput"))
 			return nil
 		}
 

@@ -335,6 +335,7 @@ subsystems:
       alreadyExists: "A subsystem with the name '%s' already exists."
     info:
       askName: "Choose a name:"
+      availableStacks: "Available stacks:"
       selectStack: "Select a stack [1-%d]:"
       success: "Created subsystem '%s'."
       creatingSubsystem: "Creating subsystem '%s' with stack '%s'…"
