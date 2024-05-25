@@ -237,7 +237,7 @@ func listStacks(cmd *cobra.Command, args []string) error {
 	if !jsonFlag {
 		stacksCount := len(stacks)
 		if stacksCount == 0 {
-			fmt.Println(apx.Trans("stacks.list.noStacks"))
+			fmt.Println(apx.Trans("stacks.list.info.noStacks"))
 			return nil
 		}
 
@@ -442,7 +442,7 @@ func updateStack(cmd *cobra.Command, args []string) error {
 	packagesArray := strings.Fields(packages)
 	if len(packages) == 0 && !assumeYes {
 		if len(stack.Packages) == 0 {
-			cmdr.Info.Println(apx.Trans("stacks.install.info.noPackages") + "[y/N]")
+			cmdr.Info.Println(apx.Trans("stacks.update.info.noPackages") + "[y/N]")
 		} else {
 			cmdr.Info.Println(apx.Trans("stacks.update.info.confirmPackages"), strings.Join(stack.Packages, "\n\t - "))
 		}
