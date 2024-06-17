@@ -17,9 +17,7 @@ import (
 	"github.com/vanilla-os/orchid/cmdr"
 )
 
-var (
-	Version = "2.4.1"
-)
+var Version = "2.4.1"
 
 //go:embed locales/*.yml
 var fs embed.FS
@@ -38,7 +36,20 @@ func main() {
 
 	// root command
 	root := cmd.NewRootCommand(Version)
-	apx.CreateRootCommand(root)
+	apx.CreateRootCommand(root, apx.Trans("apx.msg.help"), apx.Trans("apx.msg.version"))
+
+	msgs := cmdr.UsageStrings{
+		Usage:                apx.Trans("apx.msg.usage"),
+		Aliases:              apx.Trans("apx.msg.aliases"),
+		Examples:             apx.Trans("apx.msg.examples"),
+		AvailableCommands:    apx.Trans("apx.msg.availableCommands"),
+		AdditionalCommands:   apx.Trans("apx.msg.additionalCommands"),
+		Flags:                apx.Trans("apx.msg.flags"),
+		GlobalFlags:          apx.Trans("apx.msg.globalFlags"),
+		AdditionalHelpTopics: apx.Trans("apx.msg.additionalHelpTopics"),
+		MoreInfo:             apx.Trans("apx.msg.moreInfo"),
+	}
+	apx.SetUsageStrings(msgs)
 
 	// commands
 	stacks := cmd.NewStacksCommand()
