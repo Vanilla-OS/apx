@@ -6,6 +6,18 @@ apx:
     invalidInput: "Invalid input."
     invalidChoice: "Invalid choice."
     noRoot: "Do not run Apx as root."
+  msg:
+    help: "Show help for apx."
+    version: "Show version for apx."
+    usage: "Usage"
+    aliases: "Aliases"
+    examples: "Examples"
+    availableCommands: "Available Commands"
+    additionalCommands: "Additional Commands"
+    flags: "Flags"
+    globalFlags: "Global Flags"
+    additionalHelpTopics: "Additional help topics"
+    moreInfo: "Use %s for more information about a command"
   info:
     aborting: "Aborting as requested."
   terminal:

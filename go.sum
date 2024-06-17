@@ -123,6 +123,10 @@ github.com/subosito/gotenv v1.6.0 h1:9NlTDc1FTs4qu0DDq7AEtTPNw6SVm7uBMsUCUjABIf8
 github.com/subosito/gotenv v1.6.0/go.mod h1:Dk4QP5c2W3ibzajGcXpNraDfq2IrhjMIvMSWPKKo0FU=
 github.com/vanilla-os/orchid v0.5.0 h1:QAOjJ2VcyND5TxK0XYUEu+dysxXicRHhV6i/07S47mk=
 github.com/vanilla-os/orchid v0.5.0/go.mod h1:dNPvHxofO4hEXodEKXp0nLQDZhoHh8evCUXc6X1xLao=
+github.com/vanilla-os/orchid v0.5.1-0.20240617142635-ba1500bd478e h1:j2FjlVF0DrzGO/zVXteqCuuz+YuYii2ksNUFM2x6PkA=
+github.com/vanilla-os/orchid v0.5.1-0.20240617142635-ba1500bd478e/go.mod h1:dNPvHxofO4hEXodEKXp0nLQDZhoHh8evCUXc6X1xLao=
+github.com/vanilla-os/orchid v0.6.0 h1:aH7i621QrqtbspGUie4To28zCk1u1UvGHGzL11wdldE=
+github.com/vanilla-os/orchid v0.6.0/go.mod h1:dNPvHxofO4hEXodEKXp0nLQDZhoHh8evCUXc6X1xLao=
 github.com/xo/terminfo v0.0.0-20210125001918-ca9a967f8778/go.mod h1:2MuV+tbUrU1zIOPMxZ5EncGwgmMJsa+9ucAQZXxsObs=
 github.com/xo/terminfo v0.0.0-20220910002029-abceb7e1c41e h1:JVG44RsyaB9T2KIHavMF/ppJZNG9ZpyihvCd0w101no=
 github.com/xo/terminfo v0.0.0-20220910002029-abceb7e1c41e/go.mod h1:RbqR21r5mrJuqunuUZ/Dhy/avygyECGrLceyNeo4LiM=
