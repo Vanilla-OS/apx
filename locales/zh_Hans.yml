@@ -98,7 +98,7 @@ runtimeCommand:
   stop:
     description: 停止子系统。
   run:
-    description: Run command inside subsystem.
+    description: 在子系统内部运行命令。
 pkgmanagers:
   description: "操作 apx 中可用的软件包管理器。"
   labels:
@@ -156,7 +156,7 @@ pkgmanagers:
         description: "执行更新可用软件包列表的命令。"
       upgrade:
         description: "执行升级软件包的命令。"
-    success: Package manager %s created successfully.
+    success: 软件包管理器 %s 创建成功。
   rm:
     description: "移除指定的软件包管理器。"
 
@@ -164,7 +164,7 @@ pkgmanagers:
       noName: "没有指定名称。"
       inUse: "软件包管理器被用于 %d 个包捆中："
     info:
-      askConfirmation: "确定要移除 '%s' 吗？[y/N]"
+      askConfirmation: "确定要移除 '%s' 吗？"
       success: "已移除软件包管理器 '%s'。"
       aborting: 中止移除软件包管理器 '%s'。
     options:
@@ -199,10 +199,10 @@ pkgmanagers:
     description: 更新选定的软件包管理器。
     info:
       success: 已更新软件包管理器 '%s'。
-      askNewCommand: "Enter new command for '%s' (leave empty to keep '%s'):"
+      askNewCommand: "输入 '%s' 的新命令（留空以保留 '%s'）："
     error:
-      noName: No name specified.
-      missingCommand: Missing command for %s.
+      noName: 没有指定名称。
+      missingCommand: 缺失 %s 的命令。
 stacks:
   description: "操作 apx 中可用的包捆。"
   labels:
@@ -233,8 +233,7 @@ stacks:
       emptyPackages: "软件包不能为空。"
       noPackages: "没有指定软件包。"
       alreadyExists: "名为 '%s' 的包捆已经存在。"
-      noPkgManagers: Could not find any package managers. Create one with 'apx pkgmanagers
-        new' or contact the system administrator.
+      noPkgManagers: 无法找到任何软件包管理器。请使用 'apx pkgmanagers new' 创建，或者联系系统管理员。
     info:
       askName: "选择名称："
       askBase: "选择基础映像（如 'vanillaos/pico'）："
@@ -268,9 +267,8 @@ stacks:
       askPackages: "输入想要安装在包捆中的软件包，用空格隔开，或确认使用目前的（%s）："
       success: "已更新包捆 '%s'。"
 
-      confirmPackages: Do you want to confirm the current packages list?
-      noPackages: You have not provided any packages to install in the stack. Do you
-        want to add some now?
+      confirmPackages: 您需要确认目前的软件包列表吗？
+      noPackages: 您没有提供任何要安装在包捆中的软件包。需要添加一些吗？
     options:
       assumeYes:
         description: "为所有操作指定“是”。"
@@ -287,7 +285,7 @@ stacks:
     error:
       noName: "没有指定名称。"
     info:
-      askConfirmation: "确定要移除 '%s' 吗？[y/N]"
+      askConfirmation: "确定要移除 '%s' 吗？"
       success: "已移除包捆 '%s'。"
     options:
       force:
@@ -347,7 +345,7 @@ subsystems:
       selectStack: "选择包捆 [1-%d]："
       success: "已创建子系统 '%s'。"
       creatingSubsystem: "正在创建子系统 '%s'，使用包捆 '%s'…"
-      availableStacks: 'Available stacks:'
+      availableStacks: '可用的包捆：'
     options:
       name:
         description: "子系统的名称。"
@@ -362,7 +360,7 @@ subsystems:
     error:
       noName: "没有指定名称。"
     info:
-      askConfirmation: "确定要移除 '%s' 吗？[y/N]"
+      askConfirmation: "确定要移除 '%s' 吗？"
       success: "已移除子系统 '%s'。"
     options:
       force:
@@ -374,7 +372,7 @@ subsystems:
     error:
       noName: "没有指定名称。"
     info:
-      askConfirmation: "确定要重置 '%s' 吗？[y/N]"
+      askConfirmation: "确定要重置 '%s' 吗？"
       success: "已重置子系统 '%s'。"
     options:
       force:
