@@ -12,6 +12,18 @@ apx:
     yes: "ja"
     no: "nein"
 
+  msg:
+    examples: Examples
+    aliases: Aliases
+    usage: Usage
+    moreInfo: Use %s for more information about a command
+    flags: Flags
+    additionalCommands: Additional Commands
+    version: Show version for apx.
+    availableCommands: Available Commands
+    help: Show help for apx.
+    globalFlags: Global Flags
+    additionalHelpTopics: Additional help topics
 runtimeCommand:
   description: "Arbeiten Sie mit dem angegebenen Subsystem und greifen Sie auf den
     Paketmanager und die Umgebung zu."
@@ -91,6 +103,8 @@ runtimeCommand:
     description: Starte das Subsystem.
   stop:
     description: Stopp das Subsystem.
+  run:
+    description: Run command inside subsystem.
 pkgmanagers:
   description: "Arbeiten Sie mit den Paketmanagern, die in apx verfügbar sind."
   labels:
@@ -153,6 +167,7 @@ pkgmanagers:
           zu aktualisieren."
       upgrade:
         description: "Der auszuführende Befehl zum Upgrade von Paketen."
+    success: Package manager %s created successfully.
   rm:
     description: "Entfernt den angegebenen Paketmanager."
 
@@ -195,6 +210,10 @@ pkgmanagers:
     description: Aktualisieren Sie den angegebenen Paketmanager.
     info:
       success: Paketmanager '%s' aktualisiert.
+      askNewCommand: "Enter new command for '%s' (leave empty to keep '%s'):"
+    error:
+      noName: No name specified.
+      missingCommand: Missing command for %s.
 stacks:
   description: "Arbeiten Sie mit den Stapeln, die in apx verfügbar sind."
   labels:
@@ -227,6 +246,8 @@ stacks:
       emptyPackages: "Die Pakete dürfen nicht leer sein."
       noPackages: "Keine Pakete angegeben."
       alreadyExists: "Ein Stapel mit dem Namen '%s' existiert bereits."
+      noPkgManagers: Could not find any package managers. Create one with 'apx pkgmanagers
+        new' or contact the system administrator.
     info:
       askName: "Wählen Sie einen Namen:"
       askBase: "Wählen Sie eine Basis (z. B. \"vanillaos/pico\"):"
@@ -267,6 +288,9 @@ stacks:
         (%s):"
       success: "Stapel '%s' aktualisiert."
 
+      confirmPackages: Do you want to confirm the current packages list?
+      noPackages: You have not provided any packages to install in the stack. Do you
+        want to add some now?
     options:
       assumeYes:
         description: "Alle Fragen mit Ja beantworten."
@@ -346,6 +370,7 @@ subsystems:
       selectStack: "Wählen Sie einen Stapel [1-%d]:"
       success: "Subsystem '%s' erstellt."
       creatingSubsystem: "Subsystem '%s' mit Stapel '%s' wird erstellt…"
+      availableStacks: 'Available stacks:'
     options:
       name:
         description: "Der Name des Subsystems."

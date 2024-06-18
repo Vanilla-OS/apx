@@ -12,6 +12,18 @@ apx:
     yes: "da"
     no: "nu"
 
+  msg:
+    additionalCommands: Additional Commands
+    examples: Examples
+    aliases: Aliases
+    usage: Usage
+    moreInfo: Use %s for more information about a command
+    flags: Flags
+    availableCommands: Available Commands
+    version: Show version for apx.
+    help: Show help for apx.
+    globalFlags: Global Flags
+    additionalHelpTopics: Additional help topics
 runtimeCommand:
   description: "Lucrează cu subsistemul specificat, accesând managerul de pachete
     și mediul."
@@ -88,6 +100,8 @@ runtimeCommand:
     description: Pornește subsistemul.
   stop:
     description: Oprește subsistemul.
+  run:
+    description: Run command inside subsystem.
 pkgmanagers:
   description: "Lucrează cu managerii de pachete disponibili în apx."
   labels:
@@ -147,6 +161,7 @@ pkgmanagers:
         description: "Comanda de executat pentru actualizarea listei de pachete disponibile."
       upgrade:
         description: "Comanda de executat pentru actualizare pachete instalate."
+    success: Package manager %s created successfully.
   rm:
     description: "Șterge managerul de pachete specificat."
 
@@ -189,6 +204,10 @@ pkgmanagers:
     description: Actualizează managerul de pachete specificat.
     info:
       success: Actualizat managerul de pachete '%s'.
+      askNewCommand: "Enter new command for '%s' (leave empty to keep '%s'):"
+    error:
+      noName: No name specified.
+      missingCommand: Missing command for %s.
 stacks:
   description: "Lucrează cu stive care sunt disponibile în apx."
   labels:
@@ -221,6 +240,8 @@ stacks:
       emptyPackages: "Pachetele nu pot fi nespecificate."
       noPackages: "Niciun pachet specificat."
       alreadyExists: "O stivă cu numele \"%s\" există deja."
+      noPkgManagers: Could not find any package managers. Create one with 'apx pkgmanagers
+        new' or contact the system administrator.
     info:
       askName: "Alege un nume:"
       askBase: "Alegeți o stivă de bază (de exemplu, \"vanillaos/pico\"):"
@@ -260,6 +281,9 @@ stacks:
         printr-un spațiu, sau confirmă-le pe cele curente (%s):"
       success: "Stiva \"%s\" actualizată."
 
+      confirmPackages: Do you want to confirm the current packages list?
+      noPackages: You have not provided any packages to install in the stack. Do you
+        want to add some now?
     options:
       assumeYes:
         description: "Se presupune că ați răspuns afirmativ la toate solicitările."
@@ -339,6 +363,7 @@ subsystems:
       selectStack: "Selectează o stivă [1-%d]:"
       success: "A fost creat subsistemul \"%s\"."
       creatingSubsystem: "Se creează subsistemul \"%s\" cu stiva \"%s\"…"
+      availableStacks: 'Available stacks:'
     options:
       name:
         description: "Numele subsistemului."

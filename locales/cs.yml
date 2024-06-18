@@ -12,6 +12,18 @@ apx:
     yes: "ano"
     no: "ne"
 
+  msg:
+    examples: Examples
+    aliases: Aliases
+    moreInfo: Use %s for more information about a command
+    usage: Usage
+    flags: Flags
+    additionalCommands: Additional Commands
+    availableCommands: Available Commands
+    version: Show version for apx.
+    help: Show help for apx.
+    globalFlags: Global Flags
+    additionalHelpTopics: Additional help topics
 runtimeCommand:
   description: "Pracovat se specifikovaným subsystémem a tím získat přístup k jeho
     správci balíčků a prostředí."
@@ -87,6 +99,8 @@ runtimeCommand:
     description: Start the subsystem.
   stop:
     description: Stop the subsystem.
+  run:
+    description: Run command inside subsystem.
 pkgmanagers:
   description: "Pracovat se správci balíčků, které jsou dostupné v apx."
   labels:
@@ -145,6 +159,7 @@ pkgmanagers:
         description: "Příkaz pro aktualizaci seznamu dostupných balíčků."
       upgrade:
         description: "Příkaz pro aktualizaci balíčků."
+    success: Package manager %s created successfully.
   rm:
     description: "Smazat zadaný správce balíčků."
 
@@ -187,6 +202,10 @@ pkgmanagers:
     description: Update the specified package manager.
     info:
       success: Updated package manager '%s'.
+      askNewCommand: "Enter new command for '%s' (leave empty to keep '%s'):"
+    error:
+      noName: No name specified.
+      missingCommand: Missing command for %s.
 stacks:
   description: "Práce se stacky, které jsou k dispozici v apx."
   labels:
@@ -219,6 +238,8 @@ stacks:
       emptyPackages: "Balíčky nemůžou být prázdné."
       noPackages: "Nebyly zadány balíčky."
       alreadyExists: "Stack s názvem '%s' již existuje."
+      noPkgManagers: Could not find any package managers. Create one with 'apx pkgmanagers
+        new' or contact the system administrator.
     info:
       askName: "Vyberte název:"
       askBase: "Vyberte základ (např. 'vanillaos/pico'):"
@@ -256,6 +277,9 @@ stacks:
         mezerou nebo potvrďte aktuální (%s):"
       success: "Stack '%s' aktualizován."
 
+      confirmPackages: Do you want to confirm the current packages list?
+      noPackages: You have not provided any packages to install in the stack. Do you
+        want to add some now?
     options:
       assumeYes:
         description: "Automaticky zadat ano pro všechny dotazy."
@@ -335,6 +359,7 @@ subsystems:
       selectStack: "Vyberte stack [1-%d]:"
       success: "Subsystém '%s' vytvořen."
       creatingSubsystem: "Subsystém '%s' se stackem '%s' vytvořen…"
+      availableStacks: 'Available stacks:'
     options:
       name:
         description: "Název subsystému."

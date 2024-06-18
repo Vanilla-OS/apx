@@ -11,6 +11,18 @@ apx:
     yes: "是"
     no: "否"
 
+  msg:
+    examples: Examples
+    aliases: Aliases
+    usage: Usage
+    moreInfo: Use %s for more information about a command
+    availableCommands: Available Commands
+    flags: Flags
+    additionalCommands: Additional Commands
+    version: Show version for apx.
+    help: Show help for apx.
+    globalFlags: Global Flags
+    additionalHelpTopics: Additional help topics
 runtimeCommand:
   description: "操作指定的子系统，访问软件包管理器及环境。"
   error:
@@ -85,6 +97,8 @@ runtimeCommand:
     description: 启动子系统。
   stop:
     description: 停止子系统。
+  run:
+    description: Run command inside subsystem.
 pkgmanagers:
   description: "操作 apx 中可用的软件包管理器。"
   labels:
@@ -142,6 +156,7 @@ pkgmanagers:
         description: "执行更新可用软件包列表的命令。"
       upgrade:
         description: "执行升级软件包的命令。"
+    success: Package manager %s created successfully.
   rm:
     description: "移除指定的软件包管理器。"
 
@@ -184,6 +199,10 @@ pkgmanagers:
     description: 更新选定的软件包管理器。
     info:
       success: 已更新软件包管理器 '%s'。
+      askNewCommand: "Enter new command for '%s' (leave empty to keep '%s'):"
+    error:
+      noName: No name specified.
+      missingCommand: Missing command for %s.
 stacks:
   description: "操作 apx 中可用的包捆。"
   labels:
@@ -214,6 +233,8 @@ stacks:
       emptyPackages: "软件包不能为空。"
       noPackages: "没有指定软件包。"
       alreadyExists: "名为 '%s' 的包捆已经存在。"
+      noPkgManagers: Could not find any package managers. Create one with 'apx pkgmanagers
+        new' or contact the system administrator.
     info:
       askName: "选择名称："
       askBase: "选择基础映像（如 'vanillaos/pico'）："
@@ -247,6 +268,9 @@ stacks:
       askPackages: "输入想要安装在包捆中的软件包，用空格隔开，或确认使用目前的（%s）："
       success: "已更新包捆 '%s'。"
 
+      confirmPackages: Do you want to confirm the current packages list?
+      noPackages: You have not provided any packages to install in the stack. Do you
+        want to add some now?
     options:
       assumeYes:
         description: "为所有操作指定“是”。"
@@ -323,6 +347,7 @@ subsystems:
       selectStack: "选择包捆 [1-%d]："
       success: "已创建子系统 '%s'。"
       creatingSubsystem: "正在创建子系统 '%s'，使用包捆 '%s'…"
+      availableStacks: 'Available stacks:'
     options:
       name:
         description: "子系统的名称。"

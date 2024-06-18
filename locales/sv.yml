@@ -12,6 +12,18 @@ apx:
     yes: "ja"
     no: "nej"
 
+  msg:
+    aliases: Aliases
+    usage: Usage
+    version: Show version for apx.
+    help: Show help for apx.
+    examples: Examples
+    moreInfo: Use %s for more information about a command
+    flags: Flags
+    additionalCommands: Additional Commands
+    availableCommands: Available Commands
+    globalFlags: Global Flags
+    additionalHelpTopics: Additional help topics
 runtimeCommand:
   description: "Arbeta med det angivna undersystemet, åtkomst till pakethanteraren
     och miljön."
@@ -87,6 +99,8 @@ runtimeCommand:
     description: Starta undersystem.
   stop:
     description: Stoppa undersystem.
+  run:
+    description: Run command inside subsystem.
 pkgmanagers:
   description: "Arbeta med de pakethanterare som finns tillgängliga i apx."
   labels:
@@ -147,6 +161,7 @@ pkgmanagers:
           paket."
       upgrade:
         description: "Kommandot att köra för att uppgradera paket."
+    success: Package manager %s created successfully.
   rm:
     description: "Ta bort den specificerade pakethanteraren."
 
@@ -189,6 +204,10 @@ pkgmanagers:
     description: Uppdatera den specificerade pakethanteraren.
     info:
       success: Uppdaterade pakethanterare "%s".
+      askNewCommand: "Enter new command for '%s' (leave empty to keep '%s'):"
+    error:
+      noName: No name specified.
+      missingCommand: Missing command for %s.
 stacks:
   description: "Arbeta med de stackar som finns tillgängliga i apx."
   labels:
@@ -221,6 +240,8 @@ stacks:
       emptyPackages: "Paketen kan inte vara tomma."
       noPackages: "Inga paket specificerade."
       alreadyExists: "En stack med namnet '%s' existerar redan."
+      noPkgManagers: Could not find any package managers. Create one with 'apx pkgmanagers
+        new' or contact the system administrator.
     info:
       askName: "Välj ett namn:"
       askBase: "Välj en bas (t.e.x. 'vanillaos/pico'):"
@@ -259,6 +280,9 @@ stacks:
         mellanslag, eller bekräfta de aktuella (%s):"
       success: "Uppdaterad stack '%s'."
 
+      confirmPackages: Do you want to confirm the current packages list?
+      noPackages: You have not provided any packages to install in the stack. Do you
+        want to add some now?
     options:
       assumeYes:
         description: "Anta ja till alla uppmaningar."
@@ -338,6 +362,7 @@ subsystems:
       selectStack: "Välj en stack [1-%d]:"
       success: "Skapade undersystem '%s'."
       creatingSubsystem: "Skapar undersystem '%s' med stack '%s'…"
+      availableStacks: 'Available stacks:'
     options:
       name:
         description: "Namnet på undersystem."

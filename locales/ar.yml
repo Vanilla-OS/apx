@@ -11,6 +11,18 @@ apx:
     yes: "نعم"
     no: "لا"
 
+  msg:
+    examples: Examples
+    aliases: Aliases
+    usage: Usage
+    moreInfo: Use %s for more information about a command
+    flags: Flags
+    additionalCommands: Additional Commands
+    availableCommands: Available Commands
+    version: Show version for apx.
+    help: Show help for apx.
+    globalFlags: Global Flags
+    additionalHelpTopics: Additional help topics
 runtimeCommand:
   description: "يتعامل مع النظام الفرعي المحدد، مما يسمح باستخدام مدير الحزم و البيئة."
   error:
@@ -85,6 +97,8 @@ runtimeCommand:
     description: بدء تشغيل النظام الفرعي.
   stop:
     description: إيقاف النظام الفرعي.
+  run:
+    description: Run command inside subsystem.
 pkgmanagers:
   description: "يتعامل مع مديري الحزم المتاحة في apx."
   labels:
@@ -143,6 +157,7 @@ pkgmanagers:
         description: "الامر الخاص بتحديث قائمة الحزم المتاحة."
       upgrade:
         description: "الامر الخاص بتطوير الحزم."
+    success: Package manager %s created successfully.
   rm:
     description: "حذف مدير الحزم المحدد."
 
@@ -185,6 +200,10 @@ pkgmanagers:
     description: قم بتحديث مدير الحزم المحدد.
     info:
       success: تم تحديث مدير الحزم '%s'.
+      askNewCommand: "Enter new command for '%s' (leave empty to keep '%s'):"
+    error:
+      noName: No name specified.
+      missingCommand: Missing command for %s.
 stacks:
   description: "تستخدم التشكيلات المتاحة في apx."
   labels:
@@ -217,6 +236,8 @@ stacks:
       emptyPackages: "الحزم لا يمكن أن تكون فارغة."
       noPackages: "لم يتم تحديد حزم."
       alreadyExists: "يوجد تشكيلة بالاسم '%s' بالفعل."
+      noPkgManagers: Could not find any package managers. Create one with 'apx pkgmanagers
+        new' or contact the system administrator.
     info:
       askName: "اختر اسما:"
       askBase: "اختر النظام الأساس (على سبيل المثال 'vanillaos/pico'):"
@@ -253,6 +274,9 @@ stacks:
         وافق على الحاليين (%s):"
       success: "تم تحديث التشكيلة '%s':"
 
+      confirmPackages: Do you want to confirm the current packages list?
+      noPackages: You have not provided any packages to install in the stack. Do you
+        want to add some now?
     options:
       assumeYes:
         description: "افرض الإجابة \"نعم\" لكل الاختيارات."
@@ -332,6 +356,7 @@ subsystems:
       selectStack: "اختر تشكيلة [1-%d]:"
       success: "تم إنشاء النظام الفرعي '%s'."
       creatingSubsystem: "تم إنشاء نظام فرعي '%s' بالطبقة '%s'…"
+      availableStacks: 'Available stacks:'
     options:
       name:
         description: "اسم النظام الفرعي."

@@ -12,6 +12,18 @@ apx:
     yes: "sí"
     no: "no"
 
+  msg:
+    examples: Examples
+    aliases: Aliases
+    usage: Usage
+    moreInfo: Use %s for more information about a command
+    flags: Flags
+    additionalCommands: Additional Commands
+    availableCommands: Available Commands
+    version: Show version for apx.
+    help: Show help for apx.
+    globalFlags: Global Flags
+    additionalHelpTopics: Additional help topics
 runtimeCommand:
   description: "Treballa amb el subsistema especificat, accedint al gestor de paquets
     i a l'entorn."
@@ -90,6 +102,8 @@ runtimeCommand:
     description: Start the subsystem.
   stop:
     description: Stop the subsystem.
+  run:
+    description: Run command inside subsystem.
 pkgmanagers:
   description: "Treballa amb els gestors de paquets disponibles a apx."
   labels:
@@ -149,6 +163,7 @@ pkgmanagers:
         description: "L'ordre per actualitzar la llista de paquets disponibles."
       upgrade:
         description: "L'ordre per executar l'actualització de paquets."
+    success: Package manager %s created successfully.
   rm:
     description: "Esborrar el gestor de paquets especificat."
 
@@ -191,6 +206,10 @@ pkgmanagers:
     description: Update the specified package manager.
     info:
       success: Updated package manager '%s'.
+      askNewCommand: "Enter new command for '%s' (leave empty to keep '%s'):"
+    error:
+      noName: No name specified.
+      missingCommand: Missing command for %s.
 stacks:
   description: "Treballa amb les piles que es troben disponibles a apx."
   labels:
@@ -223,6 +242,8 @@ stacks:
       emptyPackages: "Els paquets no poden estar buits."
       noPackages: "Cap paquet especificat."
       alreadyExists: "Ja existeix una pila amb el nom '%s'."
+      noPkgManagers: Could not find any package managers. Create one with 'apx pkgmanagers
+        new' or contact the system administrator.
     info:
       askName: "Tria un nom:"
       askBase: "Tria una base (per exemple 'vanillaos/pico')"
@@ -260,6 +281,9 @@ stacks:
         un espai, o confirma els actuals (%s):"
       success: "Pila actualitzada '%s'."
 
+      confirmPackages: Do you want to confirm the current packages list?
+      noPackages: You have not provided any packages to install in the stack. Do you
+        want to add some now?
     options:
       assumeYes:
         description: "Assumir sí a totes les preguntes."
@@ -339,6 +363,7 @@ subsystems:
       selectStack: "Selecciona una pila [1-%d]:"
       success: "Subsistema '%s' creat."
       creatingSubsystem: "Creant subsitema '%s' a la pila '%s'…"
+      availableStacks: 'Available stacks:'
     options:
       name:
         description: "El nom del subsitema."

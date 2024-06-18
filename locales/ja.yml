@@ -11,6 +11,18 @@ apx:
     yes: "yes"
     no: "no"
 
+  msg:
+    moreInfo: Use %s for more information about a command
+    flags: Flags
+    additionalCommands: Additional Commands
+    availableCommands: Available Commands
+    globalFlags: Global Flags
+    examples: Examples
+    aliases: Aliases
+    usage: Usage
+    version: Show version for apx.
+    help: Show help for apx.
+    additionalHelpTopics: Additional help topics
 runtimeCommand:
   description: "選択されたサブシステムで、パッケージマネージャと環境にアクセスします。"
   error:
@@ -85,6 +97,8 @@ runtimeCommand:
   stop:
     description: "サブシステムを停止。"
 
+  run:
+    description: Run command inside subsystem.
 pkgmanagers:
   description: "apx で利用可能なパッケージマネージャを使用します。"
   labels:
@@ -142,10 +156,15 @@ pkgmanagers:
         description: "アップデートが利用可能なパッケージを表示するためのコマンド。"
       upgrade:
         description: "パッケージをアップグレードするためのコマンド。"
+    success: Package manager %s created successfully.
   update:
     description: "指定したパッケージマネージャをアップデートします。"
     info:
       success: "パッケージマネージャ '%s' をアップデートしました。"
+      askNewCommand: "Enter new command for '%s' (leave empty to keep '%s'):"
+    error:
+      noName: No name specified.
+      missingCommand: Missing command for %s.
   rm:
     description: "指定したパッケージマネージャを削除します。"
 
@@ -216,6 +235,8 @@ stacks:
       emptyPackages: "The packages cannot be empty."
       noPackages: "No packages specified."
       alreadyExists: "A stack with the name '%s' already exists."
+      noPkgManagers: Could not find any package managers. Create one with 'apx pkgmanagers
+        new' or contact the system administrator.
     info:
       askName: "Choose a name:"
       askBase: "Choose a base (e.g. 'vanillaos/pico'):"
@@ -254,6 +275,9 @@ stacks:
         by a space, or confirm the current ones (%s):"
       success: "Updated stack '%s'."
 
+      confirmPackages: Do you want to confirm the current packages list?
+      noPackages: You have not provided any packages to install in the stack. Do you
+        want to add some now?
     options:
       assumeYes:
         description: "Assume yes to all prompts."
@@ -333,6 +357,7 @@ subsystems:
       selectStack: "Select a stack [1-%d]:"
       success: "Created subsystem '%s'."
       creatingSubsystem: "Creating subsystem '%s' with stack '%s'…"
+      availableStacks: 'Available stacks:'
     options:
       name:
         description: "The name of the subsystem."

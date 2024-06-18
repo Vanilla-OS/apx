@@ -12,6 +12,18 @@ apx:
     yes: "так"
     no: "няма"
 
+  msg:
+    examples: Examples
+    aliases: Aliases
+    usage: Usage
+    moreInfo: Use %s for more information about a command
+    flags: Flags
+    additionalCommands: Additional Commands
+    availableCommands: Available Commands
+    version: Show version for apx.
+    help: Show help for apx.
+    globalFlags: Global Flags
+    additionalHelpTopics: Additional help topics
 runtimeCommand:
   description: "Праца з названай падсістэмай, доступ да мэнэджара пакетаў і асяроддзя."
   error:
@@ -86,6 +98,8 @@ runtimeCommand:
     description: Start the subsystem.
   stop:
     description: Stop the subsystem.
+  run:
+    description: Run command inside subsystem.
 pkgmanagers:
   description: "Працуйце з менеджэрамі пакетаў, даступнымі ў apx."
   labels:
@@ -144,6 +158,7 @@ pkgmanagers:
         description: "Каманда для абнаўлення спісу даступных пакетаў."
       upgrade:
         description: "Каманда для абнаўлення пакетаў."
+    success: Package manager %s created successfully.
   rm:
     description: "Выдаліце ўказаны менеджэр пакетаў."
 
@@ -186,6 +201,10 @@ pkgmanagers:
     description: Update the specified package manager.
     info:
       success: Updated package manager '%s'.
+      askNewCommand: "Enter new command for '%s' (leave empty to keep '%s'):"
+    error:
+      noName: No name specified.
+      missingCommand: Missing command for %s.
 stacks:
   description: "Працуйце са стэкамі, даступнымі ў apx."
   labels:
@@ -218,6 +237,8 @@ stacks:
       emptyPackages: "Пакеты не могуць быць пустымі."
       noPackages: "Пакеты не пазначаны."
       alreadyExists: "Стэк з назвай «%s» ужо існуе."
+      noPkgManagers: Could not find any package managers. Create one with 'apx pkgmanagers
+        new' or contact the system administrator.
     info:
       askName: "Выберыце назву:"
       askBase: "Выберыце аснову (напрыклад, «ванілаос/піка»):"
@@ -254,6 +275,9 @@ stacks:
         або пацвердзіце бягучыя (%s):"
       success: "Абноўлены стэк \"%s\"."
 
+      confirmPackages: Do you want to confirm the current packages list?
+      noPackages: You have not provided any packages to install in the stack. Do you
+        want to add some now?
     options:
       assumeYes:
         description: "Выкажам здагадку, што так на ўсе падказкі."
@@ -333,6 +357,7 @@ subsystems:
       selectStack: "Выберыце стос [1-%d]:"
       success: "Створана падсістэма \"%s\"."
       creatingSubsystem: "Створана падсістэма «%s» са стэкам «%s»…"
+      availableStacks: 'Available stacks:'
     options:
       name:
         description: "Назва падсістэмы."
