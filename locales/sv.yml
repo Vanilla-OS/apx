@@ -100,7 +100,7 @@ runtimeCommand:
   stop:
     description: Stoppa undersystem.
   run:
-    description: Run command inside subsystem.
+    description: Kör kommando inuti undersystem.
 pkgmanagers:
   description: "Arbeta med de pakethanterare som finns tillgängliga i apx."
   labels:
@@ -161,7 +161,7 @@ pkgmanagers:
           paket."
       upgrade:
         description: "Kommandot att köra för att uppgradera paket."
-    success: Package manager %s created successfully.
+    success: Pakethanteraren %s skapades framgångsrikt.
   rm:
     description: "Ta bort den specificerade pakethanteraren."
 
@@ -169,7 +169,7 @@ pkgmanagers:
       noName: "Inget namn specificerat."
       inUse: "Pakethanteraren används i %d stackar:"
     info:
-      askConfirmation: "Är du säker på att du vill ta bort '%s'? [y/N]"
+      askConfirmation: "Är du säker på att du vill ta bort '%s'?"
       success: "Tog bort pakethanterare '%s'."
       aborting: Avbryter borttagning av pakethanteraren '%s'.
     options:
@@ -204,10 +204,10 @@ pkgmanagers:
     description: Uppdatera den specificerade pakethanteraren.
     info:
       success: Uppdaterade pakethanterare "%s".
-      askNewCommand: "Enter new command for '%s' (leave empty to keep '%s'):"
+      askNewCommand: "Ange nytt kommando för '%s' (lämna tomt för att behålla '%s':"
     error:
-      noName: No name specified.
-      missingCommand: Missing command for %s.
+      noName: Inget namn specificerat
+      missingCommand: Saknar kommando för %s.
 stacks:
   description: "Arbeta med de stackar som finns tillgängliga i apx."
   labels:
@@ -240,8 +240,8 @@ stacks:
       emptyPackages: "Paketen kan inte vara tomma."
       noPackages: "Inga paket specificerade."
       alreadyExists: "En stack med namnet '%s' existerar redan."
-      noPkgManagers: Could not find any package managers. Create one with 'apx pkgmanagers
-        new' or contact the system administrator.
+      noPkgManagers: Kunde inte hitta någon pakethanterare. Skapa en med 'apx pkgmanagers
+        new' eller kontakta systemadministratören.
     info:
       askName: "Välj ett namn:"
       askBase: "Välj en bas (t.e.x. 'vanillaos/pico'):"
@@ -280,9 +280,9 @@ stacks:
         mellanslag, eller bekräfta de aktuella (%s):"
       success: "Uppdaterad stack '%s'."
 
-      confirmPackages: Do you want to confirm the current packages list?
-      noPackages: You have not provided any packages to install in the stack. Do you
-        want to add some now?
+      confirmPackages: Vill du bekräfta nuvarande paketlista?
+      noPackages: Du har inte tillhandahållit några paket att installera i stacken.
+        Vill du lägga till några nu?
     options:
       assumeYes:
         description: "Anta ja till alla uppmaningar."
@@ -299,7 +299,7 @@ stacks:
     error:
       noName: "Inget namn specificerat."
     info:
-      askConfirmation: "Är du säker på att du vill ta bort '%s'? [j/N]"
+      askConfirmation: "Är du säker på att du vill ta bort '%s'?"
       success: "Tog bort stack '%s'."
     options:
       force:
@@ -362,7 +362,7 @@ subsystems:
       selectStack: "Välj en stack [1-%d]:"
       success: "Skapade undersystem '%s'."
       creatingSubsystem: "Skapar undersystem '%s' med stack '%s'…"
-      availableStacks: 'Available stacks:'
+      availableStacks: 'Tillgängliga stackar:'
     options:
       name:
         description: "Namnet på undersystem."
@@ -377,7 +377,7 @@ subsystems:
     error:
       noName: "Inget namn specificerat."
     info:
-      askConfirmation: "Är du säker på att du vill ta bort '%s'? [j/N]"
+      askConfirmation: "Är du säker på att du vill ta bort '%s'?"
       success: "Tog bort undersystem '%s'."
     options:
       force:
@@ -389,7 +389,7 @@ subsystems:
     error:
       noName: "Inget namn specificerat."
     info:
-      askConfirmation: "Är du säker på att du vill återställa '%s'? [y/N]"
+      askConfirmation: "Är du säker på att du vill återställa '%s'?"
       success: "Undersystemet '%s' har återställts."
     options:
       force:
