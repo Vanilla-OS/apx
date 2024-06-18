@@ -29,20 +29,20 @@ runtimeCommand:
     startingContainer: "Có một lỗi đã xảy ra khi khởi động container: %s"
     stoppingContainer: "Có một lỗi đã xảy ra khi dừng container: %s"
   info:
-    unexportedApps: "Unexported %d applications"
-    exportedApps: "Exported %d applications"
-    exportedApp: "Exported application %s"
-    exportedBin: "Exported binary %s"
-    unexportedApp: "Unexported application %s"
-    unexportedBin: "Unexported binary %s"
+    unexportedApps: "Đã huỷ xuất %d ứng dụng"
+    exportedApps: "Đã xuất %d ứng dụng"
+    exportedApp: "Đã xuất ứng dụng %s"
+    exportedBin: "Đã xuất mã nhị phân %s"
+    unexportedApp: "Đã huỷ xuất ứng dụng %s"
+    unexportedBin: "Đã huỷ xuất mã nhị phân %s"
     startingContainer: "Starting container…"
     startedContainer: "Started container."
     stoppingContainer: "Stopping container…"
     stoppedContainer: "Stopped container."
   autoremove:
-    description: "Remove packages that are no longer required."
+    description: "Loại bỏ các gói không còn được sử dụng."
   clean:
-    description: "Clean the package manager's cache."
+    description: "Dọn sạch cache của trình quản lí gói."
   install:
     description: "Install the specified package."
     options:
