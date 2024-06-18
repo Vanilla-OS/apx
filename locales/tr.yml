@@ -12,6 +12,18 @@ apx:
     yes: "evet"
     no: "hayır"
 
+  msg:
+    examples: Examples
+    aliases: Aliases
+    usage: Usage
+    moreInfo: Use %s for more information about a command
+    flags: Flags
+    additionalCommands: Additional Commands
+    availableCommands: Available Commands
+    version: Show version for apx.
+    help: Show help for apx.
+    globalFlags: Global Flags
+    additionalHelpTopics: Additional help topics
 runtimeCommand:
   description: "Paket yöneticisine ve ortama erişerek belirtilen altsistemde çalış."
   error:
@@ -86,6 +98,8 @@ runtimeCommand:
     description: Alt sistemi başlat.
   stop:
     description: Alt sistemi durdur.
+  run:
+    description: Run command inside subsystem.
 pkgmanagers:
   description: "Apx içinde kullanılabilir paket yöneticileri ile çalış."
   labels:
@@ -146,6 +160,7 @@ pkgmanagers:
           komut."
       upgrade:
         description: "Paketleri yükseltmek için çalıştırılacak komut."
+    success: Package manager %s created successfully.
   rm:
     description: "Belirtilen paket yöneticisini kaldır."
 
@@ -188,6 +203,10 @@ pkgmanagers:
     description: Belirtilen paket yöneticisini güncelle.
     info:
       success: "'%s' paket yöneticisi güncellendi."
+      askNewCommand: "Enter new command for '%s' (leave empty to keep '%s'):"
+    error:
+      noName: No name specified.
+      missingCommand: Missing command for %s.
 stacks:
   description: "Apx'te bulunan yığınlarla çalış."
   labels:
@@ -220,6 +239,8 @@ stacks:
       emptyPackages: "Paketler boş olamaz."
       noPackages: "Paket belirtilmemiş."
       alreadyExists: "'%s' adlı yığın zaten var."
+      noPkgManagers: Could not find any package managers. Create one with 'apx pkgmanagers
+        new' or contact the system administrator.
     info:
       askName: "Ad seç:"
       askBase: "Taban seç (örn. 'vanillaos/pico'):"
@@ -258,6 +279,9 @@ stacks:
         da geçerli olanları onaylayın (%s):"
       success: "'%s' yığını güncellendi."
 
+      confirmPackages: Do you want to confirm the current packages list?
+      noPackages: You have not provided any packages to install in the stack. Do you
+        want to add some now?
     options:
       assumeYes:
         description: "Tüm sorulara evet dediğinizi varsayın."
@@ -337,6 +361,7 @@ subsystems:
       selectStack: "Yığın seç [1-%d]:"
       success: "'%s' alt sistemi oluşturuldu."
       creatingSubsystem: "'%s' alt sistemi '%s' yığınıyla oluşturuluyor…"
+      availableStacks: 'Available stacks:'
     options:
       name:
         description: "Alt sistemin adı."

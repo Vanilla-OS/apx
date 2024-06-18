@@ -12,6 +12,18 @@ apx:
     yes: "так"
     no: "ні"
 
+  msg:
+    examples: Examples
+    moreInfo: Use %s for more information about a command
+    aliases: Aliases
+    usage: Usage
+    flags: Flags
+    additionalCommands: Additional Commands
+    availableCommands: Available Commands
+    version: Show version for apx.
+    globalFlags: Global Flags
+    additionalHelpTopics: Additional help topics
+    help: Show help for apx.
 runtimeCommand:
   description: "Робота з вказаною підсистемою, доступ до менеджера пакунків та оточення."
   error:
@@ -87,6 +99,8 @@ runtimeCommand:
     description: Запустити підсистему.
   stop:
     description: Зупинити підсистему.
+  run:
+    description: Run command inside subsystem.
 pkgmanagers:
   description: "Працюйте з менеджерами пакунків, які доступні в apx."
   labels:
@@ -146,6 +160,7 @@ pkgmanagers:
         description: "Команда, яку слід виконати для оновлення списку доступних пакунків."
       upgrade:
         description: "Команда, яку слід виконати для оновлення пакунків."
+    success: Package manager %s created successfully.
   rm:
     description: "Видаліть вказаний менеджер пакунків."
 
@@ -188,6 +203,10 @@ pkgmanagers:
     description: Оновити вказаний менеджер пакунків.
     info:
       success: Оновлено менеджер пакунків '%s'.
+      askNewCommand: "Enter new command for '%s' (leave empty to keep '%s'):"
+    error:
+      noName: No name specified.
+      missingCommand: Missing command for %s.
 stacks:
   description: "Працюйте зі стеками, які доступні в apx."
   labels:
@@ -220,6 +239,8 @@ stacks:
       emptyPackages: "Пакунки не можуть бути порожніми."
       noPackages: "Пакунки не вказані."
       alreadyExists: "Стек з іменем '%s' вже існує."
+      noPkgManagers: Could not find any package managers. Create one with 'apx pkgmanagers
+        new' or contact the system administrator.
     info:
       askName: "Вибрати ім'я:"
       askBase: "Виберіть базу (наприклад, \"vanillaos/pico\"):"
@@ -258,6 +279,9 @@ stacks:
         або підтвердіть поточні пакунки (%s):"
       success: "Оновлено стек '%s'."
 
+      confirmPackages: Do you want to confirm the current packages list?
+      noPackages: You have not provided any packages to install in the stack. Do you
+        want to add some now?
     options:
       assumeYes:
         description: "Відповідайте \"так\" на всі підказки."
@@ -337,6 +361,7 @@ subsystems:
       selectStack: "Виберіть стек [1-%d]:"
       success: "Створено підсистему '%s'."
       creatingSubsystem: "Створення підсистеми '%s' зі стеком '%s'…"
+      availableStacks: 'Available stacks:'
     options:
       name:
         description: "Назва підсистеми."

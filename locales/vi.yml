@@ -12,6 +12,18 @@ apx:
     yes: "có"
     no: "không"
 
+  msg:
+    examples: Examples
+    aliases: Aliases
+    usage: Usage
+    moreInfo: Use %s for more information about a command
+    flags: Flags
+    additionalCommands: Additional Commands
+    availableCommands: Available Commands
+    version: Show version for apx.
+    help: Show help for apx.
+    globalFlags: Global Flags
+    additionalHelpTopics: Additional help topics
 runtimeCommand:
   description: "Làm việc với hệ thống con đã chọn, truy cập trình quản lí gói và môi
     trường."
@@ -87,6 +99,8 @@ runtimeCommand:
   stop:
     description: "Stop the subsystem."
 
+  run:
+    description: Run command inside subsystem.
 pkgmanagers:
   description: "Work with the package managers that are available in apx."
   labels:
@@ -146,10 +160,15 @@ pkgmanagers:
         description: "The command to run to update the list of available packages."
       upgrade:
         description: "The command to run to upgrade packages."
+    success: Package manager %s created successfully.
   update:
     description: "Update the specified package manager."
     info:
       success: "Updated package manager '%s'."
+      askNewCommand: "Enter new command for '%s' (leave empty to keep '%s'):"
+    error:
+      missingCommand: Missing command for %s.
+      noName: No name specified.
   rm:
     description: "Remove the specified package manager."
 
@@ -220,6 +239,8 @@ stacks:
       emptyPackages: "The packages cannot be empty."
       noPackages: "No packages specified."
       alreadyExists: "A stack with the name '%s' already exists."
+      noPkgManagers: Could not find any package managers. Create one with 'apx pkgmanagers
+        new' or contact the system administrator.
     info:
       askName: "Choose a name:"
       askBase: "Choose a base (e.g. 'vanillaos/pico'):"
@@ -258,6 +279,9 @@ stacks:
         by a space, or confirm the current ones (%s):"
       success: "Updated stack '%s'."
 
+      confirmPackages: Do you want to confirm the current packages list?
+      noPackages: You have not provided any packages to install in the stack. Do you
+        want to add some now?
     options:
       assumeYes:
         description: "Assume yes to all prompts."
@@ -337,6 +361,7 @@ subsystems:
       selectStack: "Select a stack [1-%d]:"
       success: "Created subsystem '%s'."
       creatingSubsystem: "Creating subsystem '%s' with stack '%s'…"
+      availableStacks: 'Available stacks:'
     options:
       name:
         description: "The name of the subsystem."

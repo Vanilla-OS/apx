@@ -12,6 +12,18 @@ apx:
     yes: "ναι"
     no: "όχι"
 
+  msg:
+    help: Show help for apx.
+    examples: Examples
+    aliases: Aliases
+    usage: Usage
+    moreInfo: Use %s for more information about a command
+    flags: Flags
+    additionalCommands: Additional Commands
+    availableCommands: Available Commands
+    version: Show version for apx.
+    globalFlags: Global Flags
+    additionalHelpTopics: Additional help topics
 runtimeCommand:
   description: "Εργαστείτε στο επιλεγμένο υποσύστημα, με πρόσβαση στον διαχειριστή
     πακέτων και στο περιβάλλον."
@@ -92,6 +104,8 @@ runtimeCommand:
     description: Start the subsystem.
   stop:
     description: Stop the subsystem.
+  run:
+    description: Run command inside subsystem.
 pkgmanagers:
   description: "Εργαστείτε με τους διαθέσιμους διαχειριστές πακέτων στο apx."
   labels:
@@ -151,6 +165,7 @@ pkgmanagers:
         description: "Η εντολή για την ενημέρωση της καταγραφής των διαθέσιμων πακέτων."
       upgrade:
         description: "Η εντολή για την αναβάθμιση των πακέτων."
+    success: Package manager %s created successfully.
   rm:
     description: "Αφαίρεση του επιλεγμένου διαχειριστή πακέτων."
 
@@ -193,6 +208,10 @@ pkgmanagers:
     description: Update the specified package manager.
     info:
       success: Updated package manager '%s'.
+      askNewCommand: "Enter new command for '%s' (leave empty to keep '%s'):"
+    error:
+      noName: No name specified.
+      missingCommand: Missing command for %s.
 stacks:
   description: "Εργαστείτε με τις διαθέσιμες στοίβες στο apx."
   labels:
@@ -225,6 +244,8 @@ stacks:
       emptyPackages: "Τα πακέτα δεν μπορεί να είναι κενά."
       noPackages: "Δεν καθορίστηκαν πακέτα."
       alreadyExists: "Υπάρχει ήδη μια στοίβα με το όνομα '%s'."
+      noPkgManagers: Could not find any package managers. Create one with 'apx pkgmanagers
+        new' or contact the system administrator.
     info:
       askName: "Επιλογή ονόματος:"
       askBase: "Επιλογή μιας βάσης (π.χ. 'vanillaos/pico'):"
@@ -263,6 +284,9 @@ stacks:
         χωρισμένα με κενό, ή επιβεβαιώστε τα τρέχοντα (%s):"
       success: "Ενημερώθηκε η στοίβα '%s'."
 
+      noPackages: You have not provided any packages to install in the stack. Do you
+        want to add some now?
+      confirmPackages: Do you want to confirm the current packages list?
     options:
       assumeYes:
         description: "Να θεωρηθεί το \"ναι\" ως απάντηση σε κάθε προτροπή."
@@ -342,6 +366,7 @@ subsystems:
       selectStack: "Επιλέξτε μια στοίβα [1-%d]:"
       success: "Δημιουργήθηκε το υποσύστημα '%s'."
       creatingSubsystem: "Δημιουργήθηκε το υποσύστημα '%s' με τη στοίβα '%s'…"
+      availableStacks: 'Available stacks:'
     options:
       name:
         description: "Το όνομα του υποσυστήματος."

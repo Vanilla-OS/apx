@@ -12,6 +12,18 @@ apx:
     yes: "tak"
     no: "nie"
 
+  msg:
+    flags: Flags
+    examples: Examples
+    aliases: Aliases
+    usage: Usage
+    moreInfo: Use %s for more information about a command
+    additionalCommands: Additional Commands
+    availableCommands: Available Commands
+    version: Show version for apx.
+    help: Show help for apx.
+    globalFlags: Global Flags
+    additionalHelpTopics: Additional help topics
 runtimeCommand:
   description: "Pracuj z określonym podsystemem, mając dostęp do menedżera pakietów
     oraz środowiska."
@@ -88,6 +100,8 @@ runtimeCommand:
     description: Uruchom podsystem.
   stop:
     description: Zatrzymaj podsystem.
+  run:
+    description: Run command inside subsystem.
 pkgmanagers:
   description: "Pracuj z menedżerami pakietów dostępnymi w apx."
   labels:
@@ -150,6 +164,7 @@ pkgmanagers:
           pakietów."
       upgrade:
         description: "Komenda do uruchomienia, która będzie aktualizować pakiety."
+    success: Package manager %s created successfully.
   rm:
     description: "Usuń określony menedżer pakietów."
 
@@ -192,6 +207,10 @@ pkgmanagers:
     description: Aktualizuj konkretny menedżer pakietów.
     info:
       success: Zaktualizowano menedżer pakietów '%s'.
+      askNewCommand: "Enter new command for '%s' (leave empty to keep '%s'):"
+    error:
+      noName: No name specified.
+      missingCommand: Missing command for %s.
 stacks:
   description: "Pracuj ze stosami, które są dostępne w apx."
   labels:
@@ -224,6 +243,8 @@ stacks:
       emptyPackages: "Pakiety nie mogą być puste."
       noPackages: "Nie określono pakietu."
       alreadyExists: "Stos o nazwie '%s' już istnieje."
+      noPkgManagers: Could not find any package managers. Create one with 'apx pkgmanagers
+        new' or contact the system administrator.
     info:
       askName: "Wybierz nazwę:"
       askBase: "Wybierz bazę (np. 'vanillaos/pico'):"
@@ -262,6 +283,9 @@ stacks:
         w stosie, lub zatwierdź aktualne (%s):"
       success: "Zaktualizowano stos '%s'."
 
+      noPackages: You have not provided any packages to install in the stack. Do you
+        want to add some now?
+      confirmPackages: Do you want to confirm the current packages list?
     options:
       assumeYes:
         description: "Odpowiedz twierdząco na wszystkie komunikaty."
@@ -341,6 +365,7 @@ subsystems:
       selectStack: "Wybierz stos [1-%d]:"
       success: "Stworzono podsystem '%s'."
       creatingSubsystem: "Tworzenie podsystemu '%s' ze stosem '%s'…"
+      availableStacks: 'Available stacks:'
     options:
       name:
         description: "Nazwa podsystemu."

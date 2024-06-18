@@ -12,6 +12,18 @@ apx:
     yes: "כן"
     no: "לא"
 
+  msg:
+    examples: Examples
+    moreInfo: Use %s for more information about a command
+    flags: Flags
+    aliases: Aliases
+    usage: Usage
+    additionalCommands: Additional Commands
+    availableCommands: Available Commands
+    version: Show version for apx.
+    help: Show help for apx.
+    globalFlags: Global Flags
+    additionalHelpTopics: Additional help topics
 runtimeCommand:
   description: "לעבוד עם תת-מערכת המפורטת, גישה למנהל החבילה והסביבה."
   error:
@@ -86,6 +98,8 @@ runtimeCommand:
   stop:
     description: "לעצור את המערכת."
 
+  run:
+    description: Run command inside subsystem.
 pkgmanagers:
   description: "לעבוד עם מנהלי החבילה זמינים ב Apx."
   labels:
@@ -144,10 +158,15 @@ pkgmanagers:
         description: "הפקודה להפעיל כדי לעדכן את רשימת חבילות הזמינות."
       upgrade:
         description: "הפקודה לרוץ לשדרג חבילות."
+    success: Package manager %s created successfully.
   update:
     description: "עדכון מנהל החבילה שצוין."
     info:
       success: "מנהל החבילות '%s' מעודכן."
+      askNewCommand: "Enter new command for '%s' (leave empty to keep '%s'):"
+    error:
+      noName: No name specified.
+      missingCommand: Missing command for %s.
   rm:
     description: "להסיר את מנהל החבילה שצוין."
 
@@ -218,6 +237,8 @@ stacks:
       emptyPackages: "חבילות לא יכולות להיות ריקות."
       noPackages: "אין חבילות שצוינו."
       alreadyExists: "כבר קיימת ערימה בשם '%s'."
+      noPkgManagers: Could not find any package managers. Create one with 'apx pkgmanagers
+        new' or contact the system administrator.
     info:
       askName: "בחרו שם:"
       askBase: "בחרו בסיס (למשל \"ונדלוס/pico\"):"
@@ -253,6 +274,9 @@ stacks:
         לאשר את הנוכחי (%s):"
       success: "ערימה מעודכנת '%s'."
 
+      confirmPackages: Do you want to confirm the current packages list?
+      noPackages: You have not provided any packages to install in the stack. Do you
+        want to add some now?
     options:
       assumeYes:
         description: "נניח כן לכל הפניות."
@@ -332,6 +356,7 @@ subsystems:
       selectStack: "בחר ערימה [1-%d]:"
       success: "מערכת המשנה \"%s\"."
       creatingSubsystem: "יוצר תת-מערכת '%s' עם מחסנית '%s'…"
+      availableStacks: 'Available stacks:'
     options:
       name:
         description: "שם תת-מערכת."

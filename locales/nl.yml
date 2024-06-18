@@ -12,6 +12,18 @@ apx:
     yes: "ja"
     no: "nee"
 
+  msg:
+    examples: Examples
+    aliases: Aliases
+    usage: Usage
+    moreInfo: Use %s for more information about a command
+    flags: Flags
+    additionalCommands: Additional Commands
+    availableCommands: Available Commands
+    version: Show version for apx.
+    help: Show help for apx.
+    globalFlags: Global Flags
+    additionalHelpTopics: Additional help topics
 runtimeCommand:
   description: "Werk met het opgegeven subsysteem en krĳg toegang tot de pakketbeheerder
     en de omgeving."
@@ -94,6 +106,8 @@ runtimeCommand:
     description: Start het subsysteem.
   stop:
     description: Stopt het subsysteem.
+  run:
+    description: Run command inside subsystem.
 pkgmanagers:
   description: "Werk met de beschikbare pakketbeheerders in apx."
   labels:
@@ -155,6 +169,7 @@ pkgmanagers:
           bĳ te werken."
       upgrade:
         description: "De uit te voeren opdracht om pakketten bĳ te werken."
+    success: Package manager %s created successfully.
   rm:
     description: "Verwĳdert de opgegeven pakketbeheerder."
 
@@ -197,6 +212,10 @@ pkgmanagers:
     description: De opgegeven pakketbeheerder bĳwerken.
     info:
       success: Pakketbeheerder ‘%s’ bĳgewerkt.
+      askNewCommand: "Enter new command for '%s' (leave empty to keep '%s'):"
+    error:
+      noName: No name specified.
+      missingCommand: Missing command for %s.
 stacks:
   description: "Werk met de in apx beschikbare stacks."
   labels:
@@ -229,6 +248,8 @@ stacks:
       emptyPackages: "De pakketten mogen niet leeg zĳn."
       noPackages: "Geen pakketten opgegeven."
       alreadyExists: "Een stack met de naam ‘%s’ bestaat al."
+      noPkgManagers: Could not find any package managers. Create one with 'apx pkgmanagers
+        new' or contact the system administrator.
     info:
       askName: "Kies een naam:"
       askBase: "Kies een basis (bĳv. ‘vanillaos/pico’):"
@@ -267,6 +288,9 @@ stacks:
         door een spatie; of bevestig de huidige pakketten (%s):"
       success: "Stack ‘%s’ bĳgewerkt."
 
+      confirmPackages: Do you want to confirm the current packages list?
+      noPackages: You have not provided any packages to install in the stack. Do you
+        want to add some now?
     options:
       assumeYes:
         description: "Neem ‘ja’ aan voor alle vragen."
@@ -346,6 +370,7 @@ subsystems:
       selectStack: "Selecteer een stack [1-%d]:"
       success: "Subsysteem ‘%s’ aangemaakt."
       creatingSubsystem: "Subsysteem ‘%s’ aanmaken met stack ‘%s’…"
+      availableStacks: 'Available stacks:'
     options:
       name:
         description: "De naam van het subsysteem."

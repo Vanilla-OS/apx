@@ -12,6 +12,18 @@ apx:
     yes: "si"
     no: "no"
 
+  msg:
+    examples: Examples
+    aliases: Aliases
+    usage: Usage
+    moreInfo: Use %s for more information about a command
+    flags: Flags
+    additionalCommands: Additional Commands
+    availableCommands: Available Commands
+    version: Show version for apx.
+    help: Show help for apx.
+    globalFlags: Global Flags
+    additionalHelpTopics: Additional help topics
 runtimeCommand:
   description: "Usa il sottosistema specificato, accesso al gestore di pacchetti e
     all'ambiente."
@@ -95,6 +107,8 @@ runtimeCommand:
     description: Avvia il sottosistema.
   stop:
     description: Ferma il sottosistema.
+  run:
+    description: Run command inside subsystem.
 pkgmanagers:
   description: "Lavora con i gestori di pacchetti disponibili in apx."
   labels:
@@ -154,6 +168,7 @@ pkgmanagers:
           disponibili."
       upgrade:
         description: "Il comando da eseguire per aggiornare i pacchetti."
+    success: Package manager %s created successfully.
   rm:
     description: "Rimuove il gestore di pacchetti specificato."
 
@@ -196,6 +211,10 @@ pkgmanagers:
     description: Aggiorna il gestore di pacchetti specifico.
     info:
       success: Aggiorna il gestore di pacchetti '%s'.
+      askNewCommand: "Enter new command for '%s' (leave empty to keep '%s'):"
+    error:
+      noName: No name specified.
+      missingCommand: Missing command for %s.
 stacks:
   description: "Lavora con gli stack disponibili in apx."
   labels:
@@ -228,6 +247,8 @@ stacks:
       emptyPackages: "I pacchetti non possono essere vuoti."
       noPackages: "Nessun pacchetto specificato."
       alreadyExists: "Esiste già uno stack con il nome '%s'."
+      noPkgManagers: Could not find any package managers. Create one with 'apx pkgmanagers
+        new' or contact the system administrator.
     info:
       askName: "Scegli un nome:"
       askBase: "Scegli una base (ad esempio, \"vanillaos/pico\"):"
@@ -267,6 +288,9 @@ stacks:
         da uno spazio, oppure confermate quelli attuali (%s):"
       success: "Aggiornato lo stack '%s'."
 
+      confirmPackages: Do you want to confirm the current packages list?
+      noPackages: You have not provided any packages to install in the stack. Do you
+        want to add some now?
     options:
       assumeYes:
         description: "Assumete un sì a tutte le richieste."
@@ -346,6 +370,7 @@ subsystems:
       selectStack: "Selezionare uno stack [1-%d]:"
       success: "Creato il sottosistema '%s'."
       creatingSubsystem: "Creando sottosistema '%s' con stack '%s'…"
+      availableStacks: 'Available stacks:'
     options:
       name:
         description: "Il nome del sottosistema."

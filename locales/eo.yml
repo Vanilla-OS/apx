@@ -12,6 +12,18 @@ apx:
     yes: "jes"
     no: "ne"
 
+  msg:
+    examples: Examples
+    aliases: Aliases
+    flags: Flags
+    globalFlags: Global Flags
+    moreInfo: Use %s for more information about a command
+    usage: Usage
+    additionalCommands: Additional Commands
+    availableCommands: Available Commands
+    version: Show version for apx.
+    help: Show help for apx.
+    additionalHelpTopics: Additional help topics
 runtimeCommand:
   description: "Work with the specified subsystem, accessing the package manager and
     environment."
@@ -88,6 +100,8 @@ runtimeCommand:
     description: Start the subsystem.
   stop:
     description: Stop the subsystem.
+  run:
+    description: Run command inside subsystem.
 pkgmanagers:
   description: "Work with the package managers that are available in apx."
   labels:
@@ -147,6 +161,7 @@ pkgmanagers:
         description: "The command to run to update the list of available packages."
       upgrade:
         description: "The command to run to upgrade packages."
+    success: Package manager %s created successfully.
   rm:
     description: "Remove the specified package manager."
 
@@ -189,6 +204,10 @@ pkgmanagers:
     description: Update the specified package manager.
     info:
       success: Updated package manager '%s'.
+      askNewCommand: "Enter new command for '%s' (leave empty to keep '%s'):"
+    error:
+      noName: No name specified.
+      missingCommand: Missing command for %s.
 stacks:
   description: "Work with the stacks that are available in apx."
   labels:
@@ -221,6 +240,8 @@ stacks:
       emptyPackages: "The packages cannot be empty."
       noPackages: "Neniu pako specifiĝis."
       alreadyExists: "A stack with the name '%s' already exists."
+      noPkgManagers: Could not find any package managers. Create one with 'apx pkgmanagers
+        new' or contact the system administrator.
     info:
       askName: "Elektu nomon:"
       askBase: "Choose a base (e.g. 'vanillaos/pico'):"
@@ -258,6 +279,9 @@ stacks:
         by a space, or confirm the current ones (%s):"
       success: "Ĝisdatiĝis stako «%s»."
 
+      confirmPackages: Do you want to confirm the current packages list?
+      noPackages: You have not provided any packages to install in the stack. Do you
+        want to add some now?
     options:
       assumeYes:
         description: "Assume yes to all prompts."
@@ -337,6 +361,7 @@ subsystems:
       selectStack: "Elektu stakon [1-%d]:"
       success: "Kreiĝis subsistemo «%s»."
       creatingSubsystem: "Creating subsystem '%s' with stack '%s'…"
+      availableStacks: 'Available stacks:'
     options:
       name:
         description: "The name of the subsystem."

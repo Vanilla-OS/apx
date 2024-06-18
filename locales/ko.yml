@@ -11,6 +11,18 @@ apx:
     yes: "예"
     no: "아니오"
 
+  msg:
+    usage: Usage
+    version: Show version for apx.
+    help: Show help for apx.
+    moreInfo: Use %s for more information about a command
+    flags: Flags
+    globalFlags: Global Flags
+    examples: Examples
+    aliases: Aliases
+    additionalCommands: Additional Commands
+    availableCommands: Available Commands
+    additionalHelpTopics: Additional help topics
 runtimeCommand:
   description: "지정된 하위 시스템과 함께 작업하며, 패키지 관리자와 환경에 액세스합니다."
   error:
@@ -85,6 +97,8 @@ runtimeCommand:
     description: Start the subsystem.
   stop:
     description: Stop the subsystem.
+  run:
+    description: Run command inside subsystem.
 pkgmanagers:
   description: "apx에서 사용 가능한 패키지 관리자와 작업합니다."
   labels:
@@ -143,6 +157,7 @@ pkgmanagers:
         description: "사용 가능한 패키지 목록을 업데이트하는 데 사용할 명령입니다."
       upgrade:
         description: "패키지를 업그레이드하는 데 사용할 명령입니다."
+    success: Package manager %s created successfully.
   rm:
     description: "지정된 패키지 관리자를 제거합니다."
 
@@ -185,6 +200,10 @@ pkgmanagers:
     description: Update the specified package manager.
     info:
       success: Updated package manager '%s'.
+      askNewCommand: "Enter new command for '%s' (leave empty to keep '%s'):"
+    error:
+      noName: No name specified.
+      missingCommand: Missing command for %s.
 stacks:
   description: "apx에서 사용 가능한 스택과 작업합니다."
   labels:
@@ -216,6 +235,8 @@ stacks:
       emptyPackages: "패키지는 비워둘 수 없습니다."
       noPackages: "지정된 패키지가 없습니다."
       alreadyExists: "'%s'라는 이름의 스택이 이미 있습니다."
+      noPkgManagers: Could not find any package managers. Create one with 'apx pkgmanagers
+        new' or contact the system administrator.
     info:
       askName: "이름을 입력하십시오:"
       askBase: "Base을 입력하십시오 (예: 'vanillaos/pico'):"
@@ -250,6 +271,9 @@ stacks:
       askPackages: "스택에 설치할 패키지를 띄어쓰기로 구분하여 입력하거나 현재 패키지를 확인하십시오 (%s):"
       success: "'%s' 스택을 업데이트했습니다."
 
+      confirmPackages: Do you want to confirm the current packages list?
+      noPackages: You have not provided any packages to install in the stack. Do you
+        want to add some now?
     options:
       assumeYes:
         description: "모든 프롬프트에 '예'로 가정합니다."
@@ -329,6 +353,7 @@ subsystems:
       selectStack: "스택 선택 [1-%d]:"
       success: "하위 시스템 '%s'(을)를 만들었습니다."
       creatingSubsystem: "스택 '%s'와 하위 시스템 '%s'(을)를 만들었습니다.…"
+      availableStacks: 'Available stacks:'
     options:
       name:
         description: "하위 시스템의 이름입니다."

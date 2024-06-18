@@ -12,6 +12,18 @@ apx:
     yes: "oui"
     no: "non"
 
+  msg:
+    examples: Examples
+    globalFlags: Global Flags
+    aliases: Aliases
+    usage: Usage
+    moreInfo: Use %s for more information about a command
+    flags: Flags
+    additionalCommands: Additional Commands
+    availableCommands: Available Commands
+    version: Show version for apx.
+    help: Show help for apx.
+    additionalHelpTopics: Additional help topics
 runtimeCommand:
   description: "Travailler avec le sous-système spécifié, en accédant au gestionnaire
     de paquets et à l'environnement."
@@ -95,6 +107,8 @@ runtimeCommand:
     description: Démarre le sous-système.
   stop:
     description: Arrête le sous-système.
+  run:
+    description: Run command inside subsystem.
 pkgmanagers:
   description: "Travailler avec les gestionnaires de paquets disponibles dans apx."
   labels:
@@ -157,6 +171,7 @@ pkgmanagers:
           disponibles."
       upgrade:
         description: "La commande à exécuter pour mettre à niveau les paquets."
+    success: Package manager %s created successfully.
   rm:
     description: "Supprime le gestionnaire de paquets spécifié."
 
@@ -199,6 +214,10 @@ pkgmanagers:
     description: Mettez à jour le gestionnaire de paquets spécifié.
     info:
       success: Le gestionnaire de paquets '%s' à été mis à jour.
+      askNewCommand: "Enter new command for '%s' (leave empty to keep '%s'):"
+    error:
+      noName: No name specified.
+      missingCommand: Missing command for %s.
 stacks:
   description: "Travaillez avec les piles disponibles dans apx."
   labels:
@@ -231,6 +250,8 @@ stacks:
       emptyPackages: "Les paquets ne peuvent pas être vides."
       noPackages: "Aucun paquet n'a été spécifié."
       alreadyExists: "Une pile portant le nom \"%s\" existe déjà."
+      noPkgManagers: Could not find any package managers. Create one with 'apx pkgmanagers
+        new' or contact the system administrator.
     info:
       askName: "Choisissez un nom :"
       askBase: "Choisissez une base (par exemple \"vanillaos/pico\") :"
@@ -270,6 +291,9 @@ stacks:
         en les séparant par un espace, ou confirmez les paquets actuels (%s) :"
       success: "Mise à jour de la pile '%s'."
 
+      confirmPackages: Do you want to confirm the current packages list?
+      noPackages: You have not provided any packages to install in the stack. Do you
+        want to add some now?
     options:
       assumeYes:
         description: "Supposons que vous répondez par l'affirmative à toutes les questions."
@@ -349,6 +373,7 @@ subsystems:
       selectStack: "Sélectionner une pile [1-%d] :"
       success: "Création du sous-système \"%s\"."
       creatingSubsystem: "Création du sous-système '%s' avec la pile '%s'…"
+      availableStacks: 'Available stacks:'
     options:
       name:
         description: "Nom du sous-système."
