@@ -119,7 +119,6 @@ pkgmanagers:
       askCommand: "Ange kommandot för '%s':"
       askOverwrite: "En pakethanterare med namnet '%s' finns redan. Vill du skriva
         över det?"
-      success: "Skapade pakethanterare '%s'."
     options:
       assumeYes:
         description: "Anta ja till alla uppmaningar."

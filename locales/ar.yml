@@ -116,7 +116,6 @@ pkgmanagers:
       askSudo: "هل يحتاج مدير الحزم إلى sudo ليعمل؟"
       askCommand: "أدخل الامر لأجل '%s':"
       askOverwrite: "يوجد مدير حزم بنفس الاسم '%s' بالفعل. هل تريد استبداله؟"
-      success: "تم إنشاء مدير الحزم '%s'."
     options:
       assumeYes:
         description: "افرض الإجابة \"نعم\" لكل الاختيارات."

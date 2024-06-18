@@ -116,7 +116,6 @@ pkgmanagers:
       askSudo: "패키지 관리자 실행에 sudo가 필요한가요?"
       askCommand: "'%s'에 대한 명령을 입력하십시오:"
       askOverwrite: "'%s'라는 이름의 패키지 관리자가 이미 있습니다. 덮어쓸까요?"
-      success: "'%s' 패키지 관리자가 생성되었습니다."
     options:
       assumeYes:
         description: "모든 프롬프트에 '예'로 가정합니다."

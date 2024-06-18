@@ -123,7 +123,6 @@ pkgmanagers:
       askCommand: "Geben Sie den Befehl für '%s' ein:"
       askOverwrite: "Ein Paketmanager mit dem Namen '%s' existiert bereits. Überschreiben
         Sie ihn?"
-      success: "Paketmanager '%s' erstellt."
     options:
       assumeYes:
         description: "Alle Fragen mit Ja beantworten."

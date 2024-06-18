@@ -119,7 +119,6 @@ pkgmanagers:
       askCommand: "Enter the command for '%s':"
       askOverwrite: "A package manager with the name '%s' already exists. Overwrite
         it?"
-      success: "Created package manager '%s'."
     options:
       assumeYes:
         description: "Assume yes to all prompts."

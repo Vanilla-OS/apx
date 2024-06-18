@@ -119,7 +119,6 @@ pkgmanagers:
       askSudo: "Are managerul de pachete nevoie de sudo pentru a rula?"
       askCommand: "Introdu comanda pentru \"%s\":"
       askOverwrite: "Un manager de pachete numit \"%s\" există deja. Îl suprascrieți?"
-      success: "A fost creat managerul de pachete \"%s\"."
     options:
       assumeYes:
         description: "Se presupune că ați răspuns afirmativ la toate solicitările."

@@ -117,7 +117,6 @@ pkgmanagers:
       askSudo: "Paket yöneticisinin çalışması için sudo gerekiyor mu?"
       askCommand: "'%s' için komutu gir:"
       askOverwrite: "'%s' adlı paket yöneticisi zaten var. Üzerine yazılsın mı?"
-      success: "'%s' paket yöneticisi oluşturuldu."
     options:
       assumeYes:
         description: "Tüm sorulara evet dediğinizi varsayın."

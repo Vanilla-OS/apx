@@ -126,7 +126,6 @@ pkgmanagers:
       askSudo: "Il gestore di pacchetti ha bisogno di sudo per funzionare?"
       askCommand: "Inserire il comando per '%s':"
       askOverwrite: "Esiste già un gestore di pacchetti con il nome '%s'. Sovrascriverlo?"
-      success: "Creato il gestore di pacchetti '%s'."
     options:
       assumeYes:
         description: "Assumete un sì a tutte le richieste."

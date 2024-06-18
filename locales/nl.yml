@@ -125,7 +125,6 @@ pkgmanagers:
       askSudo: "Moet de pakketbeheerder uitgevoerd worden met root-rechten?"
       askCommand: "Voer de opdracht in voor ‘%s’:"
       askOverwrite: "Een pakketbeheerder met de naam ‘%s’ bestaat al. Overschrĳven?"
-      success: "Pakketbeheerder ‘%s’ aangemaakt."
     options:
       assumeYes:
         description: "Neem ‘ja’ aan voor alle vragen."
