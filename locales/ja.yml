@@ -115,7 +115,6 @@ pkgmanagers:
       askSudo: "このパッケージマネージャは sudo での実行を必要としますか？"
       askCommand: "'%s' へのコマンドを入力:"
       askOverwrite: "'%s' という名前のパッケージマネージャがすでに存在しています。上書きしますか？"
-      success: "パッケージマネージャ '%s' を作成しました。"
     options:
       assumeYes:
         description: "すべての質問に yes と回答する。"

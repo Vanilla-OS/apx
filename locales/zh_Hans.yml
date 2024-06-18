@@ -115,7 +115,6 @@ pkgmanagers:
       askSudo: "软件包管理器是否需要 sudo 才能运行？"
       askCommand: "输入 '%s' 的命令："
       askOverwrite: "名为 '%s' 的软件包管理器已经存在。要覆盖吗？"
-      success: "已创建软件包管理器 '%s'。"
     options:
       assumeYes:
         description: "为所有操作指定“是”。"

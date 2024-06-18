@@ -127,7 +127,6 @@ pkgmanagers:
       askCommand: "Entrez la commande pour '%s' :"
       askOverwrite: "Un gestionnaire de paquets portant le nom \"%s\" existe déjà.
         L'écraser ?"
-      success: "Le gestionnaire de paquet '%s' a été créé."
     options:
       assumeYes:
         description: "Supposez que vous répondez par l'affirmative à toutes les questions."

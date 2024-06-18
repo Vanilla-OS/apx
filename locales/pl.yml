@@ -119,7 +119,6 @@ pkgmanagers:
       askSudo: "Czy menedżer pakietów potrzebuje uprawnień root do uruchomienia?"
       askCommand: "Wpisz polecenie dla '%s':"
       askOverwrite: "Menedżer pakietów z nazwą '%s' już istnieje. Nadpisać go?"
-      success: "Utworzono menedżer pakietów '%s'."
     options:
       assumeYes:
         description: "Odpowiedz twierdząco na wszystkie komunikaty."

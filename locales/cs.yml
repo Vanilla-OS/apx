@@ -118,7 +118,6 @@ pkgmanagers:
       askSudo: "Vyžaduje správce balíčků sudo?"
       askCommand: "Zadejte příkaz pro '%s':"
       askOverwrite: "Správce balíčků s názvem '%s' již existuje. Přepsat ho?"
-      success: "Správce balíčků '%s' vytvořen."
     options:
       assumeYes:
         description: "Automaticky zadat ano pro všechny dotazy."

@@ -121,7 +121,6 @@ pkgmanagers:
       askSudo: "És necessari ser súper usuari per poder executar el gestor de paquets?"
       askCommand: "Introdueix l'ordre per '%s':"
       askOverwrite: "Ja existeix un gestor de paquets anomenat '%s'. Vols sobre escriure'l?"
-      success: "Crear el gestor de paquets '%s'."
     options:
       assumeYes:
         description: "Assumir sí a totes les preguntes."
