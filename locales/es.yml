@@ -101,7 +101,7 @@ runtimeCommand:
   stop:
     description: Detén el subsistema.
   run:
-    description: Run command inside subsystem.
+    description: Ejecutar el comando dentro del subsistema.
 pkgmanagers:
   description: "Trabajar con los gestores de paquetes disponibles en apx."
   labels:
@@ -161,7 +161,7 @@ pkgmanagers:
         description: "El comando a ejecutar para actualizar la lista de paquetes disponibles."
       upgrade:
         description: "El comando a ejecutar para actualizar los paquetes."
-    success: Package manager %s created successfully.
+    success: El administrador de paquetes %s se creó correctamente.
   rm:
     description: "Elimina el gestor de paquetes especificado."
 
@@ -169,7 +169,7 @@ pkgmanagers:
       noName: "No se especificó un nombre."
       inUse: "El gestor de paquetes se utiliza en %d pilas:"
     info:
-      askConfirmation: "¿Estás seguro de que quieres eliminar '%s'? [y/N]"
+      askConfirmation: "¿Estás seguro de que quieres eliminar '%s'?"
       success: "Eliminado el gestor de paquetes '%s'."
       aborting: Cancelando la eliminación del gestor de paquetes '%s'.
     options:
@@ -204,10 +204,11 @@ pkgmanagers:
     description: Actualiza el gestor de paquetes especificado.
     info:
       success: Actualizado el gestor de paquetes '%s'.
-      askNewCommand: "Enter new command for '%s' (leave empty to keep '%s'):"
+      askNewCommand: "Ingrese un nuevo comando para '%s' (déjelo vacío para conservar
+        '%s'):"
     error:
-      noName: No name specified.
-      missingCommand: Missing command for %s.
+      noName: Sin nombre especificado.
+      missingCommand: Falta el comando para %s.
 stacks:
   description: "Trabaja con las pilas disponibles en apx."
   labels:
@@ -240,8 +241,8 @@ stacks:
       emptyPackages: "Los paquetes no pueden estar vacíos."
       noPackages: "No se especificaron paquetes."
       alreadyExists: "Ya existe una pila con el nombre '%s'."
-      noPkgManagers: Could not find any package managers. Create one with 'apx pkgmanagers
-        new' or contact the system administrator.
+      noPkgManagers: No se pudo encontrar ningún administrador de paquetes. Cree uno
+        nuevo con 'apx pkgmanagers' o comuníquese con el administrador del sistema.
     info:
       askName: "Elige un nombre:"
       askBase: "Elija una base (por ejemplo, \"vainillaos/pico\"):"
@@ -280,9 +281,9 @@ stacks:
         por un espacio, o confirme los actuales (%s):"
       success: "Pila '%s' actualizada."
 
-      confirmPackages: Do you want to confirm the current packages list?
-      noPackages: You have not provided any packages to install in the stack. Do you
-        want to add some now?
+      confirmPackages: ¿Quieres confirmar la lista de paquetes actual?
+      noPackages: No ha proporcionado ningún paquete para instalar en la pila. ¿Quieres
+        agregar algunos ahora?
     options:
       assumeYes:
         description: "Asuma que sí a todas las preguntas."
@@ -299,7 +300,7 @@ stacks:
     error:
       noName: "Sin nombre especificado."
     info:
-      askConfirmation: "¿Estás seguro de que deseas eliminar '%s'? [s/n]"
+      askConfirmation: "¿Estás seguro de que deseas eliminar '%s'?"
       success: "Pila eliminada '%s'."
     options:
       force:
@@ -362,7 +363,7 @@ subsystems:
       selectStack: "Seleccione una pila [1-%d]:"
       success: "Subsistema creado '%s'."
       creatingSubsystem: "Creando subsistema '%s' con pila '%s'…"
-      availableStacks: 'Available stacks:'
+      availableStacks: 'Pilas disponibles:'
     options:
       name:
         description: "El nombre del subsistema."
@@ -377,7 +378,7 @@ subsystems:
     error:
       noName: "Sin nombre especificado."
     info:
-      askConfirmation: "¿Está seguro de que desea eliminar '%s'? [sí/no]"
+      askConfirmation: "¿Está seguro de que desea eliminar '%s'?"
       success: "Subsistema eliminado '%s'."
     options:
       force:
@@ -389,7 +390,7 @@ subsystems:
     error:
       noName: "Sin nombre especificado."
     info:
-      askConfirmation: "¿Estás seguro de que quieres restablecer '%s'? [y/N]"
+      askConfirmation: "¿Estás seguro de que quieres restablecer '%s'?"
       success: "El subsistema '%s' ha sido reiniciado."
     options:
       force:
