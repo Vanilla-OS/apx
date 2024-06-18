@@ -100,7 +100,7 @@ runtimeCommand:
   stop:
     description: Остановить подсистему.
   run:
-    description: Run command inside subsystem.
+    description: Выполнить команду внутри подсистемы.
 pkgmanagers:
   description: "Работа с менеджерами пакетов, которые доступны в apx."
   labels:
@@ -159,7 +159,7 @@ pkgmanagers:
         description: "Команда обновляет список доступных пакетов."
       upgrade:
         description: "Команда обновляет пакеты."
-    success: Package manager %s created successfully.
+    success: Менеджер пакетов %s успешно создан.
   rm:
     description: "Удалить указанный менеджер пакетов."
 
@@ -167,7 +167,7 @@ pkgmanagers:
       noName: "Имя не указано."
       inUse: "Менеджер пакетов используется в %d стеках:"
     info:
-      askConfirmation: "Вы уверены, что хотите удалить '%s'? [y/N]"
+      askConfirmation: "Вы уверены, что хотите удалить '%s'?"
       success: "Удалён менеджер пакетов '%s'."
       aborting: Прерывание удаления менеджера пакетов "%s".
     options:
@@ -202,10 +202,11 @@ pkgmanagers:
     description: Обновить указанный менеджер пакетов.
     info:
       success: Обновлен менеджер пакетов '%s'.
-      askNewCommand: "Enter new command for '%s' (leave empty to keep '%s'):"
+      askNewCommand: "Введите новую команду для '%s' (оставьте пустой, чтобы оставить
+        '%s'):"
     error:
-      noName: No name specified.
-      missingCommand: Missing command for %s.
+      noName: Имя не указано.
+      missingCommand: Отсутствует команда для %s.
 stacks:
   description: "Работа со стеками, доступными в apx."
   labels:
@@ -238,15 +239,15 @@ stacks:
       emptyPackages: "Пакеты не должны быть пустыми."
       noPackages: "Пакеты не указаны."
       alreadyExists: "Стек с именем '%s' уже существует."
-      noPkgManagers: Could not find any package managers. Create one with 'apx pkgmanagers
-        new' or contact the system administrator.
+      noPkgManagers: Не удалось найти ни одного менеджера пакетов. Создайте его с
+        помощью команды 'apx pkgmanagers new' или обратитесь к системному администратору.
     info:
       askName: "Выберите имя:"
       askBase: "Выберите основу (например: 'vanillaos/pico'):"
       askPkgManager: "Выберите менеджер пакетов:"
       selectPkgManager: "Выберите менеджер пакетов [1-%d]:"
       noPackages: "Вы не указали ни одного пакета для добавления в стек. Хотите ли
-        Вы добавить его сейчас?"
+        Вы добавить пакеты сейчас?"
       confirmPackages: "Хотите ли вы подтвердить текущий список пакетов?"
       askPackages: "Пожалуйста, введите пакеты, которые вы хотите установить в стеке,
         разделяя их пробелом:"
@@ -278,9 +279,9 @@ stacks:
         их пробелом, или подтвердите текущие (%s):"
       success: "Обновлён стек '%s'."
 
-      confirmPackages: Do you want to confirm the current packages list?
-      noPackages: You have not provided any packages to install in the stack. Do you
-        want to add some now?
+      confirmPackages: Вы хотите подтвердить текущий список пакетов?
+      noPackages: Вы не указали ни одного пакета для установки в стек. Хотите ли Вы
+        добавить их сейчас?
     options:
       assumeYes:
         description: "Предполагать «да» на все вопросы."
@@ -297,7 +298,7 @@ stacks:
     error:
       noName: "Имя не указано."
     info:
-      askConfirmation: "Вы уверены, что хотите удалить '%s'? [y/N]"
+      askConfirmation: "Вы уверены, что хотите удалить '%s'?"
       success: "Удалён стек '%s'."
     options:
       force:
@@ -360,7 +361,7 @@ subsystems:
       selectStack: "Выберите стек [1-%d]:"
       success: "Создана подсистема '%s'."
       creatingSubsystem: "Создание подсистемы '%s' со стеком '%s'…"
-      availableStacks: 'Available stacks:'
+      availableStacks: 'Доступные стеки:'
     options:
       name:
         description: "Имя подсистемы."
@@ -375,7 +376,7 @@ subsystems:
     error:
       noName: "Имя не указано."
     info:
-      askConfirmation: "Вы уверены, что хотите удалить '%s'? [y/N]"
+      askConfirmation: "Вы уверены, что хотите удалить '%s'?"
       success: "Удалена подсистема '%s'."
     options:
       force:
@@ -387,7 +388,7 @@ subsystems:
     error:
       noName: "Имя не указано."
     info:
-      askConfirmation: "Вы уверены, что хотите сбросить '%s'? [y/N]"
+      askConfirmation: "Вы уверены, что хотите сбросить '%s'?"
       success: "Подсистема '%s' была сброшена."
     options:
       force:
