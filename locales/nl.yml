@@ -13,17 +13,17 @@ apx:
     no: "nee"
 
   msg:
-    examples: Examples
-    aliases: Aliases
-    usage: Usage
-    moreInfo: Use %s for more information about a command
-    flags: Flags
-    additionalCommands: Additional Commands
-    availableCommands: Available Commands
-    version: Show version for apx.
-    help: Show help for apx.
-    globalFlags: Global Flags
-    additionalHelpTopics: Additional help topics
+    examples: Voorbeelden
+    aliases: Aliassen
+    usage: Gebruik
+    moreInfo: Gebruik %s voor meer informatie over een opdracht
+    flags: Vlaggen
+    additionalCommands: Aanvullende opdrachten
+    availableCommands: Beschikbare opdrachten
+    version: Toon versie voor apx.
+    help: Toon hulp voor apx.
+    globalFlags: Globale vlaggen
+    additionalHelpTopics: Aanvullende hulp­onderwerpen
 runtimeCommand:
   description: "Werk met het opgegeven subsysteem en krĳg toegang tot de pakketbeheerder
     en de omgeving."
