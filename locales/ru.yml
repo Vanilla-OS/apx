@@ -13,17 +13,17 @@ apx:
     no: "нет"
 
   msg:
-    examples: Examples
-    aliases: Aliases
-    usage: Usage
-    availableCommands: Available Commands
-    moreInfo: Use %s for more information about a command
-    flags: Flags
-    additionalCommands: Additional Commands
-    version: Show version for apx.
-    help: Show help for apx.
-    globalFlags: Global Flags
-    additionalHelpTopics: Additional help topics
+    examples: Примеры
+    aliases: Псевдонимы
+    usage: Использование
+    availableCommands: Доступные команды
+    moreInfo: Используйте %s для получения дополнительной информации о команде
+    flags: Флаги
+    additionalCommands: Дополнительные команды
+    version: Показать версию apx.
+    help: Показать справку apx.
+    globalFlags: Глобальные флаги
+    additionalHelpTopics: Дополнительные темы справки
 runtimeCommand:
   description: "Работа с указанной подсистемой, обращаясь к менеджеру пакетов и среде."
   error:
