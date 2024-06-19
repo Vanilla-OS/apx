@@ -13,17 +13,17 @@ apx:
     no: "nej"
 
   msg:
-    aliases: Aliases
-    usage: Usage
-    version: Show version for apx.
-    help: Show help for apx.
-    examples: Examples
-    moreInfo: Use %s for more information about a command
-    flags: Flags
-    additionalCommands: Additional Commands
-    availableCommands: Available Commands
-    globalFlags: Global Flags
-    additionalHelpTopics: Additional help topics
+    aliases: Aliaser
+    usage: Användning
+    version: Visa version av apx.
+    help: Visa hjälp för apx.
+    examples: Exempel
+    moreInfo: Använd %s för mer information om ett kommando
+    flags: Flaggor
+    additionalCommands: Ytterligare kommandon
+    availableCommands: Tillgängliga kommandon
+    globalFlags: Globala flaggor
+    additionalHelpTopics: Ytterligare hjälpämnen
 runtimeCommand:
   description: "Arbeta med det angivna undersystemet, åtkomst till pakethanteraren
     och miljön."
