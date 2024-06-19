@@ -1,6 +1,6 @@
 apx:
-  description: "Apx - це менеджер пакунків з підтримкою декількох джерел, що дозволяє
-    встановлювати пакунки у підсистемах."
+  description: "Apx – це менеджер пакетів з підтримкою декількох джерел, що дозволяє
+    встановлювати пакети у підсистемах."
   errors:
     unknownCommand: "Невідома команда: %s"
     invalidInput: "Неправильне введення."
@@ -13,23 +13,22 @@ apx:
     no: "ні"
 
   msg:
-    examples: Examples
-    moreInfo: Use %s for more information about a command
-    aliases: Aliases
-    usage: Usage
-    flags: Flags
-    additionalCommands: Additional Commands
-    availableCommands: Available Commands
-    version: Show version for apx.
-    globalFlags: Global Flags
-    additionalHelpTopics: Additional help topics
-    help: Show help for apx.
+    examples: Приклади
+    moreInfo: Використовувати %s для отримання додаткової інформації про команду
+    aliases: Псевдоніми
+    usage: Використання
+    flags: Прапорці
+    additionalCommands: Додаткові команди
+    availableCommands: Доступні команди
+    version: Показати версію apx.
+    globalFlags: Глобальні прапорці
+    additionalHelpTopics: Додаткові теми довідки
+    help: Показати допомогу apx.
 runtimeCommand:
-  description: "Робота з вказаною підсистемою, доступ до менеджера пакунків та оточення."
+  description: "Робота з вказаною підсистемою, доступ до менеджера пакетів та оточення."
   error:
-    noPackageSpecified: "Пакунки не вказані."
-    cantAccessPkgManager: "Виникла помилка під час доступу до менеджера пакунків:
-      %s"
+    noPackageSpecified: "Пакети не вказані."
+    cantAccessPkgManager: "Виникла помилка під час доступу до менеджера пакетів: %s"
     executingCommand: "Під час виконання команди сталася помилка: %s"
     noAppNameOrBin: "Необхідно вказати --app-name або --bin."
     sameAppOrBin: "--app-name і --bin не можуть бути вказані одночасно."
@@ -52,16 +51,16 @@ runtimeCommand:
     stoppingContainer: Зупинка контейнера…
     startingContainer: Запуск контейнера…
   autoremove:
-    description: "Видаліть пакунки, які більше не потрібні."
+    description: "Видаліть пакети, які більше не потрібні."
   clean:
-    description: "Очистіть кеш менеджера пакунків."
+    description: "Очистіть кеш менеджера пакетів."
   install:
-    description: "Встановіть вказаний пакунок."
+    description: "Встановіть вказаний пакет."
     options:
       noExport:
         description: "Не експортуйте запис на робочому столі."
   list:
-    description: "Перелічіть усі встановлені пакунки."
+    description: "Перелік усіх встановлених пакетів."
   purge:
     description: "Очистити вказані пакунки."
   remove:
@@ -100,18 +99,18 @@ runtimeCommand:
   stop:
     description: Зупинити підсистему.
   run:
-    description: Run command inside subsystem.
+    description: Виконати команду всередині підсистеми.
 pkgmanagers:
   description: "Працюйте з менеджерами пакунків, які доступні в apx."
   labels:
-    name: "Ім'я"
+    name: "Назва"
     builtIn: "Вбудований"
 
   list:
     description: "Перерахуйте всі доступні менеджери пакунків."
     info:
       noPkgManagers: "Немає доступних менеджерів пакунків. Створіть новий за допомогою
-        \"apx pkgmanagers new\" або зверніться до системного адміністратора."
+        «apx pkgmanagers new» або зверніться до системного адміністратора."
       foundPkgManagers: "Знайдено %d менеджерів пакунків"
     options:
       json:
@@ -122,21 +121,21 @@ pkgmanagers:
     description: "Створіть новий менеджер пакунків."
 
     error:
-      emptyName: "Ім'я не може бути порожнім."
-      noName: "Ім'я не вказано."
+      emptyName: "Назва не може бути порожньою."
+      noName: "Назву не вказано."
       emptyCommand: "Команда не може бути порожньою."
-      noCommand: "Для '%s' не вказано команду."
-      alreadyExists: "Менеджер пакунків з назвою '%s' вже існує."
+      noCommand: "Для «%s» не вказано команду."
+      alreadyExists: "Менеджер пакунків з назвою «%s» вже існує."
     info:
       askName: "Вибрати ім'я:"
       askSudo: "Чи потрібен менеджер пакунків для запуску sudo?"
-      askCommand: "Введіть команду для '%s':"
-      askOverwrite: "Менеджер пакунків з назвою '%s' вже існує. Перезаписати його?"
+      askCommand: "Введіть команду для «%s»:"
+      askOverwrite: "Менеджер пакунків з назвою «%s» вже існує. Перезаписати його?"
     options:
       assumeYes:
         description: "Відповідайте \"так\" на всі підказки."
       name:
-        description: "Ім'я менеджера пакунків."
+        description: "Назва менеджера пакетів."
       needSudo:
         description: "Чи потрібен менеджер пакунків для запуску sudo."
       autoremove:
@@ -160,41 +159,41 @@ pkgmanagers:
         description: "Команда, яку слід виконати для оновлення списку доступних пакунків."
       upgrade:
         description: "Команда, яку слід виконати для оновлення пакунків."
-    success: Package manager %s created successfully.
+    success: Менеджер пакетів %s успішно створено.
   rm:
     description: "Видаліть вказаний менеджер пакунків."
 
     error:
-      noName: "Ім'я не вказано."
+      noName: "Назву не вказано."
       inUse: "Менеджер пакетів використовується у стеках %d:"
     info:
-      askConfirmation: "Ви впевнені, що хочете видалити '%s'? [y/N]"
-      success: "Видалено менеджер пакунків '%s'."
+      askConfirmation: "Ви впевнені, що хочете видалити «%s»?"
+      success: "Видалено менеджер пакетів «%s»."
       aborting: Переривання видалення менеджера пакетів «%s».
     options:
       force:
         description: "Примусове видалення менеджера пакунків."
       name:
-        description: "Ім'я менеджера пакунків, яке слід видалити."
+        description: "Назва менеджера пакетів, який слід видалити."
 
   export:
     options:
       output:
         description: Шлях для експорту менеджера пакунків.
       name:
-        description: Ім'я менеджера пакунків для експорту.
+        description: Назва менеджера пакетів для експорту.
     error:
       noOutput: Вихід не вказано.
-      noName: Ім'я не вказано.
+      noName: Назву не вказано.
     description: Експортувати вказаний менеджер пакунків.
     info:
-      success: Експортовано менеджер пакунків '%s' до '%s'.
+      success: Експортовано менеджер пакетів «%s» до «%s».
   import:
     error:
       noInput: Вхідні дані не вказано.
-      cannotLoad: Не вдається завантажити менеджер пакунків з '%s'.
+      cannotLoad: Не вдається завантажити менеджер пакетів з «%s».
     info:
-      success: Імпортовано менеджер пакунків з '%s'.
+      success: Імпортовано менеджер пакетів з «%s».
     description: Імпорт вказаного менеджер пакунків.
     options:
       input:
@@ -202,24 +201,25 @@ pkgmanagers:
   update:
     description: Оновити вказаний менеджер пакунків.
     info:
-      success: Оновлено менеджер пакунків '%s'.
-      askNewCommand: "Enter new command for '%s' (leave empty to keep '%s'):"
+      success: Оновлено менеджер пакунків «%s».
+      askNewCommand: "Введіть нову команду для «%s» (залиште пустим, щоб зберегти
+        «%s»):"
     error:
-      noName: No name specified.
-      missingCommand: Missing command for %s.
+      noName: Назву не вказано.
+      missingCommand: Відсутня команда для %s.
 stacks:
   description: "Працюйте зі стеками, які доступні в apx."
   labels:
-    name: "Ім'я"
+    name: "Назва"
     builtIn: "Вбудований"
 
   list:
     description: "Перерахуйте всі доступні стеки."
     info:
-      noStacks: "Немає доступних стеків. Створіть новий за допомогою \"apx stacks
-        new\" або зверніться до системного адміністратора."
+      noStacks: "Немає доступних стеків. Створіть новий за допомогою «apx stacks new»
+        або зверніться до системного адміністратора."
       foundStacks: "Знайдено %d стеків:"
-      aborting: Переривання видалення стеку "%s".
+      aborting: Переривання видалення стеку «%s».
     options:
       json:
         description: "Вивести у форматі JSON."
@@ -228,30 +228,30 @@ stacks:
   new:
     description: "Створіть новий стек."
     error:
-      emptyName: "Ім'я не може бути порожнім."
-      noName: "Ім'я не вказано."
+      emptyName: "Назва не може бути порожньою."
+      noName: "Назву не вказано."
       emptyBase: "База не може бути порожньою."
       noBase: "База не вказана."
       emptyPkgManager: "Менеджер пакунків не може бути порожнім."
       noPkgManager: "Не вказано менеджер пакунків."
       pkgManagerDoesNotExist: "Вказаного менеджера пакунків не існує. Створіть його
-        за допомогою \"apx pkgmanagers new\" або зверніться до системного адміністратора."
+        за допомогою «apx pkgmanagers new» або зверніться до системного адміністратора."
       emptyPackages: "Пакунки не можуть бути порожніми."
       noPackages: "Пакунки не вказані."
-      alreadyExists: "Стек з іменем '%s' вже існує."
-      noPkgManagers: Could not find any package managers. Create one with 'apx pkgmanagers
-        new' or contact the system administrator.
+      alreadyExists: "Стек з назвою «%s» вже існує."
+      noPkgManagers: Не вдалося знайти жодного менеджера пакетів. Створіть його за
+        допомогою «apx pkgmanagers new» або зв'яжіться з системним адміністратором.
     info:
       askName: "Вибрати ім'я:"
-      askBase: "Виберіть базу (наприклад, \"vanillaos/pico\"):"
+      askBase: "Виберіть базу (наприклад, «vanillaos/pico»):"
       askPkgManager: "Виберіть менеджера пакунків:"
       selectPkgManager: "Виберіть менеджер пакунків [1-%d]:"
-      noPackages: "Ви не надали жодного пакунка для встановлення у стек. Бажаєте додати
+      noPackages: "Ви не надали жодних пакетів для встановлення у стек. Бажаєте додати
         їх зараз?"
       confirmPackages: "Ви хочете підтвердити поточний список пакунків?"
       askPackages: "Будь ласка, вкажіть пакунки, які ви хочете встановити до стеку,
         через пробіл:"
-      success: "Створено стек '%s'."
+      success: "Створено стек «%s»."
     options:
       assumeYes:
         description: "Відповідайте \"так\" на всі підказки."
@@ -267,21 +267,21 @@ stacks:
   update:
     description: "Оновити вказаний стек."
     error:
-      noName: "Ім'я не вказано."
+      noName: "Назву не вказано."
       noBase: "База не вказана."
       noPkgManager: "Не вказано менеджер пакунків."
       pkgManagerDoesNotExist: "Вказаного менеджера пакунків не існує. Створіть його
-        за допомогою \"apx pkgmanagers new\" або зверніться до системного адміністратора."
+        за допомогою «apx pkgmanagers new» або зверніться до системного адміністратора."
     info:
       askBase: "Введіть нову базу або підтвердіть поточну (%s):"
       askPkgManager: "Виберіть новий менеджер пакунків або підтвердіть поточний (%s):"
       askPackages: "Введіть пакунки, які потрібно встановити до стека, через пробіл,
         або підтвердіть поточні пакунки (%s):"
-      success: "Оновлено стек '%s'."
+      success: "Оновлено стек «%s»."
 
-      confirmPackages: Do you want to confirm the current packages list?
-      noPackages: You have not provided any packages to install in the stack. Do you
-        want to add some now?
+      confirmPackages: Підтвердити поточний список пакетів?
+      noPackages: Ви не надали жодних пакетів для встановлення в стек. Бажаєте додати
+        їх зараз?
     options:
       assumeYes:
         description: "Відповідайте \"так\" на всі підказки."
@@ -296,34 +296,34 @@ stacks:
   rm:
     description: "Видалити вказаний стек."
     error:
-      noName: "Ім'я не вказано."
+      noName: "Назву не вказано."
     info:
-      askConfirmation: "Ви впевнені, що хочете видалити '%s'? [y/N]"
-      success: "Видалено стек '%s'."
+      askConfirmation: "Ви впевнені, що хочете видалити «%s»?"
+      success: "Видалено стек «%s»."
     options:
       force:
         description: "Примусове видалення стека."
       name:
-        description: "Ім'я стека, яке потрібно видалити."
+        description: "Назва стека, який потрібно видалити."
   export:
     description: "Експортувати вказаний стек."
     error:
-      noName: "Ім'я не вказано."
+      noName: "Назву не вказано."
       noOutput: "Вихід не вказано."
     info:
-      success: "Експортовано стек '%s' у '%s'."
+      success: "Експортовано стек «%s» до «%s»."
     options:
       name:
-        description: "Ім'я стека для експорту."
+        description: "Назва стека для експорту."
       output:
         description: "Шлях для експорту стека."
   import:
     description: "Імпортуйте вказаний стек."
     error:
       noInput: "Вхід не вказано."
-      cannotLoad: "Не вдається завантажити стек з '%s'."
+      cannotLoad: "Не вдається завантажити стек з «%s»."
     info:
-      success: "Імпортований стек з '%s'."
+      success: "Імпортований стек з «%s»."
     options:
       input:
         description: "Шлях для імпорту стека."
@@ -331,15 +331,15 @@ stacks:
 subsystems:
   description: "Працюйте з підсистемами, які доступні в apx."
   labels:
-    name: "Ім'я"
+    name: "Назва"
     status: "Статус"
 
   list:
     description: "Перерахуйте всі доступні підсистеми."
     error:
     info:
-      noSubsystems: "Немає доступних підсистем. Створіть нову за допомогою \"apx subsystems
-        new\" або зверніться до системного адміністратора."
+      noSubsystems: "Немає доступних підсистем. Створіть нову за допомогою «apx subsystems
+        new» або зверніться до системного адміністратора."
       foundSubsystems: "Знайдено %d підсистем:"
     options:
       json:
@@ -348,20 +348,20 @@ subsystems:
     description: "Створіть нову підсистему."
     error:
       noStacks: "Для створення підсистеми потрібен стек. Створіть новий стек за допомогою
-        \"apx stacks new\" або зверніться до системного адміністратора."
-      emptyName: "Ім'я не може бути порожнім."
-      noName: "Ім'я не вказано."
+        «apx stacks new» або зверніться до системного адміністратора."
+      emptyName: "Назва не може бути порожньою."
+      noName: "Назву не вказано."
       emptyStack: "Стек не може бути порожнім."
       noStack: "Стек не вказано."
-      stackDoesNotExist: "Вказаного стека не існує. Створіть його за допомогою \"
-        apx stacks new\" або зверніться до системного адміністратора."
-      alreadyExists: "Підсистема з назвою '%s' вже існує."
+      stackDoesNotExist: "Вказаного стека не існує. Створіть його за допомогою «apx
+        stacks new» або зверніться до системного адміністратора."
+      alreadyExists: "Підсистема з назвою «%s» вже існує."
     info:
       askName: "Вибрати ім'я:"
       selectStack: "Виберіть стек [1-%d]:"
-      success: "Створено підсистему '%s'."
-      creatingSubsystem: "Створення підсистеми '%s' зі стеком '%s'…"
-      availableStacks: 'Available stacks:'
+      success: "Створено підсистему «%s»."
+      creatingSubsystem: "Створення підсистеми «%s» зі стеком «%s»…"
+      availableStacks: 'Доступні стеки:'
     options:
       name:
         description: "Назва підсистеми."
@@ -374,10 +374,10 @@ subsystems:
   rm:
     description: "Видалити вказану підсистему."
     error:
-      noName: "Ім'я не вказано."
+      noName: "Назву не вказано."
     info:
-      askConfirmation: "Ви впевнені, що хочете видалити '%s'? [y/N]"
-      success: "Видалено підсистему '%s'."
+      askConfirmation: "Ви впевнені, що хочете видалити «%s»?"
+      success: "Видалено підсистему «%s»."
     options:
       force:
         description: "Примусове видалення підсистеми."
@@ -386,10 +386,10 @@ subsystems:
   reset:
     description: "Перезавантажити вказану підсистему."
     error:
-      noName: "Ім'я не вказано."
+      noName: "Назву не вказано."
     info:
-      askConfirmation: "Ви впевнені, що хочете скинути '%s'? [y/N]"
-      success: "Підсистему '%s' було скинуто."
+      askConfirmation: "Ви впевнені, що хочете скинути «%s»?"
+      success: "Підсистему «%s» було скинуто."
     options:
       force:
         description: "Примусове перезавантаження підсистеми."
