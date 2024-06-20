@@ -45,7 +45,7 @@ jobs:
           apx-man.tar.gz
 
     - uses: softprops/action-gh-release@v2
-      if: github.repository == 'vanilla-os/ABRoot' && github.ref == 'refs/heads/main'
+      if: github.repository == 'vanilla-os/apx' && github.ref == 'refs/heads/main'
       with:
         token: "${{ secrets.GITHUB_TOKEN }}"
         tag_name: "continuous"
