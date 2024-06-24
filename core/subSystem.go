@@ -64,15 +64,18 @@ func findExportedBinaries(internalName string) map[string]map[string]string {
 		return map[string]map[string]string{}
 	}
 	binPath := filepath.Join(home, ".local", "bin")
+	if _, err := os.Stat(binPath); os.IsNotExist(err) {
+		return map[string]map[string]string{}
+	}
 	binDir := os.DirFS(binPath)
 
 	binaries := map[string]map[string]string{}
 	err = fs.WalkDir(binDir, ".", func(path string, d fs.DirEntry, err error) error {
-		if d.IsDir() {
-			return nil
-		}
 		if err != nil {
 			return err
+		}
+		if d.IsDir() {
+			return nil
 		}
 
 		file, err := os.Open(filepath.Join(binPath, path))
