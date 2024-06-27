@@ -12,17 +12,17 @@ apx:
     no: "否"
 
   msg:
-    examples: Examples
-    moreInfo: Use %s for more information about a command
-    aliases: Aliases
-    usage: Usage
-    flags: Flags
-    additionalCommands: Additional Commands
-    availableCommands: Available Commands
-    version: Show version for apx.
-    globalFlags: Global Flags
-    help: Show help for apx.
-    additionalHelpTopics: Additional help topics
+    examples: 範例
+    moreInfo: 使用 %s 取得關於命令的詳細資訊
+    aliases: 別名
+    usage: 用法
+    flags: 參數
+    additionalCommands: 附加命令
+    availableCommands: 可使用命令
+    version: 顯示 apx 的版本。
+    globalFlags: 全域參數
+    help: 顯示 apx 的說明。
+    additionalHelpTopics: 附加說明主題
 runtimeCommand:
   description: "操作指定的子系統，存取軟體包管理器及環境。"
   error:
