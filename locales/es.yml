@@ -13,17 +13,17 @@ apx:
     no: "no"
 
   msg:
-    examples: Examples
-    aliases: Aliases
-    usage: Usage
-    moreInfo: Use %s for more information about a command
-    flags: Flags
-    additionalCommands: Additional Commands
-    availableCommands: Available Commands
-    version: Show version for apx.
-    help: Show help for apx.
-    globalFlags: Global Flags
-    additionalHelpTopics: Additional help topics
+    examples: Ejemplos
+    aliases: Alias
+    usage: Uso
+    moreInfo: Utilice %s para obtener más información sobre un comando
+    flags: Banderas
+    additionalCommands: Comandos adicionales
+    availableCommands: Comandos disponibles
+    version: Mostrar la versión del apx.
+    help: Mostrar ayuda para el apx.
+    globalFlags: Banderas globales
+    additionalHelpTopics: Temas de ayuda adicionales
 runtimeCommand:
   description: "Trabaja con el subsistema especificado, accediendo al gestor de paquetes
     y al entorno."
