@@ -40,9 +40,11 @@ func NewStack(name, base string, packages []string, pkgManager string, builtIn b
 
 // LoadStack loads a stack from the specified path.
 func LoadStack(name string) (*Stack, error) {
-	stack, err := LoadStackFromPath(filepath.Join(apx.Cnf.UserStacksPath, name+".yaml"))
+	usrStackFile := ChooseYamlFile(apx.Cnf.UserStacksPath, name)
+	stack, err := LoadStackFromPath(usrStackFile)
 	if err != nil {
-		stack, err = LoadStackFromPath(filepath.Join(apx.Cnf.StacksPath, name+".yaml"))
+		stackFile := ChooseYamlFile(apx.Cnf.StacksPath, name)
+		stack, err = LoadStackFromPath(stackFile)
 	}
 	return stack, err
 }
@@ -80,7 +82,7 @@ func (stack *Stack) Save() error {
 		return err
 	}
 
-	filePath := filepath.Join(apx.Cnf.UserStacksPath, stack.Name+".yaml")
+	filePath := ChooseYamlFile(apx.Cnf.UserStacksPath, stack.Name)
 	err = os.WriteFile(filePath, data, 0644)
 	return err
 }
@@ -101,7 +103,7 @@ func (stack *Stack) Remove() error {
 		return errors.New("cannot remove built-in stack")
 	}
 
-	filePath := filepath.Join(apx.Cnf.UserStacksPath, stack.Name+".yaml")
+	filePath := ChooseYamlFile(apx.Cnf.UserStacksPath, stack.Name)
 	err := os.Remove(filePath)
 	return err
 }
@@ -115,7 +117,7 @@ func (stack *Stack) Export(path string) error {
 		}
 	}
 
-	filePath := filepath.Join(path, stack.Name+".yaml")
+	filePath := ChooseYamlFile(path, stack.Name)
 	data, err := yaml.Marshal(stack)
 	if err != nil {
 		return err
@@ -180,8 +182,11 @@ func listStacksFromPath(path string) []*Stack {
 	}
 
 	for _, file := range files {
-		if !file.IsDir() && filepath.Ext(file.Name()) == ".yaml" {
-			stackName := file.Name()[:len(file.Name())-5] // Remove the ".yaml" extension
+		extension := filepath.Ext(file.Name())
+
+		if !file.IsDir() && (extension == ".yaml" || extension == ".yml") {
+			// Remove the ".yaml" or ".yml" extension
+			stackName := file.Name()[:(len(file.Name()) - len(extension))]
 			stack, err := LoadStack(stackName)
 			if err == nil {
 				stacks = append(stacks, stack)

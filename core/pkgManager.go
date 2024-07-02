@@ -70,9 +70,11 @@ func NewPkgManager(name string, needSudo bool, autoRemove, clean, install, list,
 
 // LoadPkgManager loads a package manager from the specified path.
 func LoadPkgManager(name string) (*PkgManager, error) {
-	pkgManager, err := loadPkgManagerFromPath(filepath.Join(apx.Cnf.UserPkgManagersPath, name+".yaml"))
+	userPkgFile := ChooseYamlFile(apx.Cnf.UserPkgManagersPath, name)
+	pkgManager, err := loadPkgManagerFromPath(userPkgFile)
 	if err != nil {
-		pkgManager, err = loadPkgManagerFromPath(filepath.Join(apx.Cnf.PkgManagersPath, name+".yaml"))
+		pkgFile := ChooseYamlFile(apx.Cnf.PkgManagersPath, name)
+		pkgManager, err = loadPkgManagerFromPath(pkgFile)
 	}
 	return pkgManager, err
 }
@@ -106,7 +108,7 @@ func (pkgManager *PkgManager) Save() error {
 		return err
 	}
 
-	filePath := filepath.Join(apx.Cnf.UserPkgManagersPath, pkgManager.Name+".yaml")
+	filePath := ChooseYamlFile(apx.Cnf.UserPkgManagersPath, pkgManager.Name)
 	err = os.WriteFile(filePath, data, 0644)
 	return err
 }
@@ -117,7 +119,7 @@ func (pkgManager *PkgManager) Remove() error {
 		return errors.New("cannot remove built-in package manager")
 	}
 
-	filePath := filepath.Join(apx.Cnf.UserPkgManagersPath, pkgManager.Name+".yaml")
+	filePath := ChooseYamlFile(apx.Cnf.UserPkgManagersPath, pkgManager.Name)
 	err := os.Remove(filePath)
 	return err
 }
@@ -173,8 +175,11 @@ func listPkgManagersFromPath(path string) []*PkgManager {
 	}
 
 	for _, file := range files {
-		if !file.IsDir() && filepath.Ext(file.Name()) == ".yaml" {
-			pkgManagerName := file.Name()[:len(file.Name())-5] // Remove the ".yaml" extension
+		extension := filepath.Ext(file.Name())
+
+		if !file.IsDir() && (extension == ".yaml" || extension == ".yml") {
+			// Remove the ".yaml" or ".yml" extension
+			pkgManagerName := file.Name()[:(len(file.Name()) - len(extension))]
 			pkgManager, err := LoadPkgManager(pkgManagerName)
 			if err == nil {
 				pkgManagers = append(pkgManagers, pkgManager)
@@ -226,7 +231,7 @@ func (pkgManager *PkgManager) Export(path string) error {
 		}
 	}
 
-	filePath := filepath.Join(path, pkgManager.Name+".yaml")
+	filePath := ChooseYamlFile(path, pkgManager.Name)
 	data, err := yaml.Marshal(pkgManager)
 	if err != nil {
 		return err
