@@ -12,17 +12,17 @@ apx:
     no: "否"
 
   msg:
-    examples: Examples
-    aliases: Aliases
-    usage: Usage
-    moreInfo: Use %s for more information about a command
-    availableCommands: Available Commands
-    flags: Flags
-    additionalCommands: Additional Commands
-    version: Show version for apx.
-    help: Show help for apx.
-    globalFlags: Global Flags
-    additionalHelpTopics: Additional help topics
+    examples: 示例
+    aliases: 别名
+    usage: 用法
+    moreInfo: 使用 %s 获取有关命令的更多信息
+    availableCommands: 可用命令
+    flags: 参数
+    additionalCommands: 附加命令
+    version: 显示 apx 的版本。
+    help: 显示 apx 的帮助。
+    globalFlags: 全局参数
+    additionalHelpTopics: 附加帮助主题
 runtimeCommand:
   description: "操作指定的子系统，访问软件包管理器及环境。"
   error:

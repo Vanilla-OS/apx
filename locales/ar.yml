@@ -12,17 +12,17 @@ apx:
     no: "لا"
 
   msg:
-    examples: Examples
-    aliases: Aliases
-    usage: Usage
+    examples: أمثلة
+    aliases: اسماء مستعارة
+    usage: الاستخدام
     moreInfo: Use %s for more information about a command
-    flags: Flags
-    additionalCommands: Additional Commands
-    availableCommands: Available Commands
-    version: Show version for apx.
-    help: Show help for apx.
-    globalFlags: Global Flags
-    additionalHelpTopics: Additional help topics
+    flags: أعلام
+    additionalCommands: الأوامر الإضافية
+    availableCommands: الأوامر المتاحة
+    version: إظهار الإصدار لـapx
+    help: إظهار المساعدة لـapx
+    globalFlags: أعلام عامة
+    additionalHelpTopics: مواضيع مساعدة إضافية
 runtimeCommand:
   description: "يتعامل مع النظام الفرعي المحدد، مما يسمح باستخدام مدير الحزم و البيئة."
   error:
