@@ -70,10 +70,10 @@ func NewPkgManager(name string, needSudo bool, autoRemove, clean, install, list,
 
 // LoadPkgManager loads a package manager from the specified path.
 func LoadPkgManager(name string) (*PkgManager, error) {
-	userPkgFile := ChooseYamlFile(apx.Cnf.UserPkgManagersPath, name)
+	userPkgFile := SelectYamlFile(apx.Cnf.UserPkgManagersPath, name)
 	pkgManager, err := loadPkgManagerFromPath(userPkgFile)
 	if err != nil {
-		pkgFile := ChooseYamlFile(apx.Cnf.PkgManagersPath, name)
+		pkgFile := SelectYamlFile(apx.Cnf.PkgManagersPath, name)
 		pkgManager, err = loadPkgManagerFromPath(pkgFile)
 	}
 	return pkgManager, err
@@ -108,7 +108,7 @@ func (pkgManager *PkgManager) Save() error {
 		return err
 	}
 
-	filePath := ChooseYamlFile(apx.Cnf.UserPkgManagersPath, pkgManager.Name)
+	filePath := SelectYamlFile(apx.Cnf.UserPkgManagersPath, pkgManager.Name)
 	err = os.WriteFile(filePath, data, 0644)
 	return err
 }
@@ -119,7 +119,7 @@ func (pkgManager *PkgManager) Remove() error {
 		return errors.New("cannot remove built-in package manager")
 	}
 
-	filePath := ChooseYamlFile(apx.Cnf.UserPkgManagersPath, pkgManager.Name)
+	filePath := SelectYamlFile(apx.Cnf.UserPkgManagersPath, pkgManager.Name)
 	err := os.Remove(filePath)
 	return err
 }
@@ -231,7 +231,7 @@ func (pkgManager *PkgManager) Export(path string) error {
 		}
 	}
 
-	filePath := ChooseYamlFile(path, pkgManager.Name)
+	filePath := SelectYamlFile(path, pkgManager.Name)
 	data, err := yaml.Marshal(pkgManager)
 	if err != nil {
 		return err

@@ -121,7 +121,7 @@ func CopyFile(src, dst string) error {
 	return nil
 }
 
-func ChooseYamlFile(basePath string, name string) string {
+func SelectYamlFile(basePath string, name string) string {
 	const (
 		YML  string = ".yml"
 		YAML string = ".yaml"
