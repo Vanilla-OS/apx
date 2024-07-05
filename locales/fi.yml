@@ -1,25 +1,25 @@
 apx:
-  description: "Apx is a package manager with support for multiple sources, allowing
-    you to install packages in subsystems."
+  description: "Apx on paketinhallintaohjelma, joka tukee useita lähteitä ja mahdollistaa
+    pakettien asentamisen alijärjestelmiin."
   errors:
-    unknownCommand: "Unknown command: %s"
-    invalidInput: "Invalid input."
-    invalidChoice: "Invalid choice."
-    noRoot: "Do not run Apx as root."
+    unknownCommand: "Tuntematon komento: %s"
+    invalidInput: "Epäkelpo syöte."
+    invalidChoice: "Epäkelpo valinta."
+    noRoot: "Älä käytä Apx:ää root-käyttäjänä."
   msg:
-    help: "Show help for apx."
-    version: "Show version for apx."
-    usage: "Usage"
-    aliases: "Aliases"
-    examples: "Examples"
-    availableCommands: "Available Commands"
-    additionalCommands: "Additional Commands"
-    flags: "Flags"
-    globalFlags: "Global Flags"
-    additionalHelpTopics: "Additional help topics"
-    moreInfo: "Use %s for more information about a command"
+    help: "Näytä apx ohjeet."
+    version: "Näytä apx versio."
+    usage: "Käyttö"
+    aliases: "Aliakset"
+    examples: "Esimerkit"
+    availableCommands: "Mahdolliset komennot"
+    additionalCommands: "Lisäkomennot"
+    flags: "Parametrit"
+    globalFlags: "Globaalit parametrit"
+    additionalHelpTopics: "Lisäohjeita"
+    moreInfo: "Käytä %s saadaksesi lisätietoja komennosta"
   info:
-    aborting: "Aborting as requested."
+    aborting: "Keskeytetään pyynnöstä."
   terminal:
     yes: "yes"
     no: "no"
