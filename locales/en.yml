@@ -80,7 +80,7 @@ runtimeCommand:
   enter:
     description: "Enter the subsystem's environment."
   export:
-    description: "Export an application or binary from the subsystem."
+    description: "Export an application or binary from the subsystem to the host."
     options:
       appName:
         description: "The name of the application to export."
@@ -89,7 +89,7 @@ runtimeCommand:
       binOutput:
         description: "Path of the binary output (default: ~/.local/bin/)."
   unexport:
-    description: "Unexport an application or binary from the subsystem."
+    description: "Unexport an application or binary from the host."
     options:
       appName:
         description: "The name of the application to unexport."
