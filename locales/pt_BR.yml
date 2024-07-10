@@ -77,7 +77,7 @@ runtimeCommand:
   enter:
     description: "Entrar no ambiente de subsistema."
   export:
-    description: "Exportar um aplicativo ou binário do subsistema."
+    description: "Exportar um aplicativo ou binário do subsistema para o host."
     options:
       appName:
         description: "O nome do aplicativo a exportar."
@@ -86,7 +86,7 @@ runtimeCommand:
       binOutput:
         description: "Caminho para a saída do binário (padrão: ~/.local/bin/)."
   unexport:
-    description: "Desfazer a exportação de um aplicativo ou binário do subsistema."
+    description: "Desfazer exportação de um aplicativo ou binário do host."
     options:
       appName:
         description: "O nome do aplicativo a ter sua exportação desfeita."
