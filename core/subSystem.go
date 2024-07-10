@@ -60,7 +60,6 @@ func genInternalName(name string) string {
 func findExportedBinaries(internalName string) map[string]map[string]string {
 	home, err := os.UserHomeDir()
 	if err != nil {
-		fmt.Printf("error reading binaries: %s\n", err)
 		return map[string]map[string]string{}
 	}
 	binPath := filepath.Join(home, ".local", "bin")

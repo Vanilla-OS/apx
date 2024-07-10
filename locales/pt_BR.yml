@@ -15,7 +15,7 @@ apx:
   msg:
     examples: Exemplos
     flags: Indicadores
-    aliases: Aliases
+    aliases: Funções sinônimas
     usage: Uso
     moreInfo: Use %s para mais informações sobre um comando
     additionalCommands: Comandos Adicionais
@@ -100,7 +100,7 @@ runtimeCommand:
   stop:
     description: Pare o subsistema.
   run:
-    description: Run command inside subsystem.
+    description: Execute o comando dentro do subsistema.
 pkgmanagers:
   description: "Trabalhar com os gerenciadores de pacotes que estão disponíveis no
     apx."
@@ -162,7 +162,7 @@ pkgmanagers:
           disponíveis."
       upgrade:
         description: "O comando a ser executado para atualizar pacotes."
-    success: Package manager %s created successfully.
+    success: Gerenciador de pacotes %s criado com sucesso.
   rm:
     description: "Remover o gerenciador de pacotes especificado."
 
@@ -170,7 +170,7 @@ pkgmanagers:
       noName: "Nenhum nome especificado."
       inUse: "O gerenciador de pacotes é utilizado em %d pilhas:"
     info:
-      askConfirmation: "Você tem certeza que deseja remover '%s'? [y/N]"
+      askConfirmation: "Você tem certeza que deseja remover '%s'?"
       success: "Gerenciador de pacotes '%s' removido."
       aborting: Abortando a remoção do gerenciador de pacotes '%s'.
     options:
@@ -205,10 +205,11 @@ pkgmanagers:
     description: Atualize o gerenciador de pacotes especificado.
     info:
       success: Gerenciador de pacotes atualizado '%s'.
-      askNewCommand: "Enter new command for '%s' (leave empty to keep '%s'):"
+      askNewCommand: "Digite um novo comando para '%s' (deixe em branco para manter
+        '%s'):"
     error:
-      noName: No name specified.
-      missingCommand: Missing command for %s.
+      noName: Nenhum nome foi especificado.
+      missingCommand: Comando não encontrado para %s.
 stacks:
   description: "Trabalhar com as pilhas que estão disponíveis no apx."
   labels:
@@ -241,15 +242,16 @@ stacks:
       emptyPackages: "Os pacotes não podem estar vazios."
       noPackages: "Não há pacotes especificados."
       alreadyExists: "Já existe uma pilha com o nome '%s'."
-      noPkgManagers: Could not find any package managers. Create one with 'apx pkgmanagers
-        new' or contact the system administrator.
+      noPkgManagers: Não foi possível encontrar nenhum gerenciador de pacotes. Tente
+        criar um com 'apx pkgmanagers new' ou entre em contato com o administrador
+        do sistema.
     info:
       askName: "Escolha um nome:"
       askBase: "Escolha uma base (por exemplo, 'vanillaos/pico'):"
       askPkgManager: "Escolha um gerenciador de pacotes:"
       selectPkgManager: "Selecione um gerenciador de pacotes [1-%d]:"
       noPackages: "Você não forneceu nenhum pacote para instalar na pilha. Deseja
-        adicionar algum agora?"
+        adicionar algum?"
       confirmPackages: "Deseja confirmar a lista de pacotes atual?"
       askPackages: "Digite os pacotes que deseja instalar na pilha, separados por
         um espaço:"
@@ -281,9 +283,9 @@ stacks:
         um espaço, ou confirme os atuais (%s):"
       success: "Pilha '%s' atualizada."
 
-      confirmPackages: Do you want to confirm the current packages list?
-      noPackages: You have not provided any packages to install in the stack. Do you
-        want to add some now?
+      confirmPackages: Deseja confirmar a lista de pacotes atual?
+      noPackages: Você não forneceu nenhum pacote para instalar na pilha. Deseja adicionar
+        algum?
     options:
       assumeYes:
         description: "Assuma que sim para todas as solicitações."
@@ -300,7 +302,7 @@ stacks:
     error:
       noName: "Nenhum nome especificado."
     info:
-      askConfirmation: "Tem certeza de que deseja remover '%s'? [y/N]"
+      askConfirmation: "Tem certeza de que deseja remover '%s'?"
       success: "Pilha '%s' removida."
     options:
       force:
@@ -363,7 +365,7 @@ subsystems:
       selectStack: "Selecione uma pilha [1-%d]:"
       success: "Subsistema '%s' criado."
       creatingSubsystem: "Criando o subsistema '%s' com a pilha '%s'…"
-      availableStacks: 'Available stacks:'
+      availableStacks: 'Pilhas disponíveis:'
     options:
       name:
         description: "O nome do subsistema."
@@ -378,7 +380,7 @@ subsystems:
     error:
       noName: "Nenhum nome especificado."
     info:
-      askConfirmation: "Tem certeza de que deseja remover '%s'? [y/N]"
+      askConfirmation: "Tem certeza de que deseja remover '%s'?"
       success: "Subsistema '%s' removido."
     options:
       force:
@@ -390,7 +392,7 @@ subsystems:
     error:
       noName: "Nenhum nome especificado."
     info:
-      askConfirmation: "Tem certeza de que deseja redefinir '%s'? [y/N]"
+      askConfirmation: "Tem certeza de que deseja redefinir '%s'?"
       success: "O subsistema '%s' foi redefinido."
     options:
       force:
