@@ -1,6 +1,6 @@
 apx:
-  description: "Apx on paketinhallintaohjelma, joka tukee useita lähteitä ja mahdollistaa
-    pakettien asentamisen alijärjestelmiin."
+  description: "Apx on pakettimanageri, joka tukee useita lähteitä ja mahdollistaa
+    pakettien asentamisen eri alijärjestelmiin."
   errors:
     unknownCommand: "Tuntematon komento: %s"
     invalidInput: "Epäkelpo syöte."
@@ -80,7 +80,7 @@ runtimeCommand:
   enter:
     description: "Enter the subsystem's environment."
   export:
-    description: "Export an application or binary from the subsystem."
+    description: "Vie sovellus tai binääri alijärjestelmästä isäntäjärjestelmään."
     options:
       appName:
         description: "The name of the application to export."
@@ -89,7 +89,7 @@ runtimeCommand:
       binOutput:
         description: "Path of the binary output (default: ~/.local/bin/)."
   unexport:
-    description: "Unexport an application or binary from the subsystem."
+    description: "Poista jo viety sovellus tai binääri isäntäjärjestelmästä."
     options:
       appName:
         description: "The name of the application to unexport."
@@ -231,52 +231,52 @@ stacks:
       noBase: "No base specified."
       emptyPkgManager: "The package manager cannot be empty."
       noPkgManager: "No package manager specified."
-      noPkgManagers: "Could not find any package managers. Create one with 'apx pkgmanagers
-        new' or contact the system administrator."
-      pkgManagerDoesNotExist: "The specified package manager does not exist. Create
-        it with 'apx pkgmanagers new' or contact the system administrator."
-      emptyPackages: "The packages cannot be empty."
-      noPackages: "No packages specified."
-      alreadyExists: "A stack with the name '%s' already exists."
+      noPkgManagers: "Pakettimanagereja ei löydetty. Luo uusi komennolla 'apx pkgmanagers
+        new' tai ota yhteyttä järjestelmänvalvojaan."
+      pkgManagerDoesNotExist: "Määritettyä pakettimanageria ei ole olemassa. Luo uusi
+        komennolla 'apx pkgmanagers new' tai ota yhteyttä järjestelmänvalvojaan."
+      emptyPackages: "Sinun täytyy määrittää asennettavat paketit."
+      noPackages: "Paketteja ei määritettynä."
+      alreadyExists: "Pino nimeltään '%s' on jo olemassa."
     info:
-      askName: "Choose a name:"
-      askBase: "Choose a base (e.g. 'vanillaos/pico'):"
-      askPkgManager: "Choose a package manager:"
-      selectPkgManager: "Select a package manager [1-%d]:"
-      noPackages: "You have not provided any packages to install in the stack. Do
-        you want to add some now?"
-      confirmPackages: "Do you want to confirm the current packages list?"
-      askPackages: "Please type the packages you want to install in the stack, separated
-        by a space:"
-      success: "Created stack '%s'."
+      askName: "Valitse nimi:"
+      askBase: "Valitse pohja (esim. 'vanillaos/pico'):"
+      askPkgManager: "Valitse pakettimanageri:"
+      selectPkgManager: "Valitse pakettimanageri [1-%d]:"
+      noPackages: "Et ole valinnut paketteja asennettavaksi pinoon. Haluatko valita
+        ne nyt?"
+      confirmPackages: "Haluatko vahvistaa nykyisen pakettiluettelon?"
+      askPackages: "Määritä paketit jotka haluat asennettavan pinoon. Erota paketit
+        välilyönneillä."
+      success: "Luotiin pino '%s'."
     options:
       assumeYes:
-        description: "Assume yes to all prompts."
+        description: "Vastaa kyllä kaikkiin kehotteisiin."
       name:
-        description: "The name of the stack."
+        description: "Pinon nimi."
       base:
-        description: "The base distribution image to use. (For a list of compatible
-          images view: https://distrobox.it/compatibility/#containers-distros)"
+        description: "Käytettävä pohjadistribuution levykuva. (Lista yhteensopisivista
+          levykuvista: https://distrobox.it/compatibility/#containers-distros)"
       packages:
-        description: "The packages to install."
+        description: "Asennettavat paketit."
       pkgManager:
-        description: "The package manager to use."
+        description: "Käytettävä pakettimanageri."
   update:
-    description: "Update the specified stack."
+    description: "Päivitä määritetty pino."
     error:
-      noName: "No name specified."
-      noBase: "No base specified."
-      noPkgManager: "No package manager specified."
-      pkgManagerDoesNotExist: "The specified package manager does not exist. Create
-        it with 'apx pkgmanagers new' or contact the system administrator."
+      noName: "Nimeä ei määritetty."
+      noBase: "Pohjaa ei määritetty."
+      noPkgManager: "Pakettimanageria ei määritetty."
+      pkgManagerDoesNotExist: "Määritettyä pakettimanageria ei ole olemassa. Luo uusi
+        komennolla 'apx pkgmanagers new' tai ota yhteyttä järjestelmänvalvojaan."
     info:
-      askBase: "Type a new base or confirm the current one (%s):"
-      askPkgManager: "Choose a new package manager or confirm the current one (%s):"
-      confirmPackages: "Do you want to confirm the current packages list?"
-      noPackages: "You have not provided any packages to install in the stack. Do
-        you want to add some now?"
-      askPackages: "Type the packages you want to install in the stack, separated
-        by a space, or confirm the current ones (%s):"
+      askBase: "Syötä uusi pohja tai vahvista nykyinen (%s):"
+      askPkgManager: "Valitse uusi pakettimanageri tai vahvista nykyinen (%s):"
+      confirmPackages: "Haluatko vahvistaa nykyisen pakettiluettelon?"
+      noPackages: "Et ole valinnut paketteja asennettavaksi pinoon. Haluatko valita
+        ne nyt?"
+      askPackages: "Syötä pinoon asennettavat paketit välilyönnillä erotettuina tai
+        vahvista nykyiset (%s):"
       success: "Updated stack '%s'."
     options:
       assumeYes:
