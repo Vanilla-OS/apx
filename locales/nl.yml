@@ -84,7 +84,8 @@ runtimeCommand:
   enter:
     description: "Treed de omgeving van het subsysteem binnen."
   export:
-    description: "Exporteert een app of programmabestand van het subsysteem."
+    description: "Exporteert een app of programmabestand van het subsysteem naar de
+      host."
     options:
       appName:
         description: "De naam van de app om te exporteren."
@@ -93,7 +94,7 @@ runtimeCommand:
       binOutput:
         description: "Pad voor uitvoer van het programmabestand (standaard: ~/.local/bin/)."
   unexport:
-    description: "Ontexporteert een app of programmabestand van het subsysteem."
+    description: "Ontexporteert een app of programmabestand van de host."
     options:
       appName:
         description: "Naam van de app om niet langer te exporteren."

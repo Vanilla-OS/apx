@@ -77,7 +77,7 @@ runtimeCommand:
   enter:
     description: "Войти в среду подсистемы."
   export:
-    description: "Экспортировать приложения или двоичные файлы из подсистемы."
+    description: "Экспортировать приложения или двоичные файлы из подсистемы на хост."
     options:
       appName:
         description: "Имя экспортируемого приложения."
@@ -86,7 +86,7 @@ runtimeCommand:
       binOutput:
         description: "Путь вывода двоичного файла (по умолчанию: ~/.local/bin/)."
   unexport:
-    description: "Деэкспортировать приложение или двоичный файл из подсистемы."
+    description: "Деэкспортировать приложение или двоичный файл из хоста."
     options:
       appName:
         description: "Имя деэкспортируемого приложения."
