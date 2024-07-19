@@ -77,7 +77,7 @@ runtimeCommand:
   enter:
     description: "Gå in i undersystems miljö"
   export:
-    description: "Exportera ett program eller binär från undersystemet."
+    description: "Exportera ett program eller binär från undersystemet till värden."
     options:
       appName:
         description: "Namnet på programmet som ska exporteras."
@@ -86,7 +86,7 @@ runtimeCommand:
       binOutput:
         description: "Sökvägen av binär utdata (standard: ~/.local/bin/)."
   unexport:
-    description: "Avexportera ett program eller binär från undersystemet."
+    description: "Avexportera ett program eller binär från värden."
     options:
       appName:
         description: "Namnet på programmet att avexportera."
