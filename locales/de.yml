@@ -49,8 +49,8 @@ runtimeCommand:
     exportedApps: "%d Anwendungen exportiert"
     exportedApp: "Anwendung %s exportiert"
     exportedBin: "Binärdatei %s exportiert"
-    unexportedApp: "Anwendung %s de-exportiert"
-    unexportedBin: "Binärdatei %s deexportiert"
+    unexportedApp: "Export der Anwendung %s rückgängig gemacht"
+    unexportedBin: "Export der Binärdatei %s rückgängig gemacht"
     stoppedContainer: Container gestoppt.
     startedContainer: Container gestartet.
     stoppingContainer: Stoppe Container…
