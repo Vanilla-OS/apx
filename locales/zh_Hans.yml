@@ -75,7 +75,7 @@ runtimeCommand:
   enter:
     description: "进入子系统的环境。"
   export:
-    description: "从子系统导出应用程序或二进制文件。"
+    description: "从子系统向主机导出应用程序或二进制文件。"
     options:
       appName:
         description: "要导出的应用程序的名称。"
@@ -84,7 +84,7 @@ runtimeCommand:
       binOutput:
         description: "二进制输出的路径（默认为 ~/.local/bin/）。"
   unexport:
-    description: "移除从子系统中导出的应用程序或二进制文件。"
+    description: "从主机中移除导出的应用程序或二进制文件。"
     options:
       appName:
         description: "要移除的导出的应用程序的名称。"
