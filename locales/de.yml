@@ -45,7 +45,7 @@ runtimeCommand:
     startingContainer: 'Beim Starten des Containers ist ein Fehler aufgetreten: %s'
     stoppingContainer: 'Ein Fehler ist beim Stoppen des Containers aufgetreten: %s'
   info:
-    unexportedApps: "%d Anwendungen deexportiert"
+    unexportedApps: "Export von %d Anwendungen rückgängig gemacht"
     exportedApps: "%d Anwendungen exportiert"
     exportedApp: "Anwendung %s exportiert"
     exportedBin: "Binärdatei %s exportiert"
