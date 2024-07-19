@@ -76,7 +76,7 @@ runtimeCommand:
   enter:
     description: "Увійдіть до середовища підсистеми."
   export:
-    description: "Експортуйте застосунок або бінарний файл з підсистеми."
+    description: "Експортуйте застосунок або бінарний файл з підсистеми на хост."
     options:
       appName:
         description: "Назва застосунку для експорту."
@@ -85,7 +85,7 @@ runtimeCommand:
       binOutput:
         description: "Шлях до бінарного виводу (за замовчуванням: ~/.local/bin/)."
   unexport:
-    description: "Експортувати застосунок або бінарний файл з підсистеми."
+    description: "Експортувати застосунок або бінарний файл з хосту."
     options:
       appName:
         description: "Назва застосунку, який потрібно скасувати."
