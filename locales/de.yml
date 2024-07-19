@@ -49,7 +49,7 @@ runtimeCommand:
     exportedApps: "%d Anwendungen exportiert"
     exportedApp: "Anwendung %s exportiert"
     exportedBin: "Binärdatei %s exportiert"
-    unexportedApp: "Anwendung %s deexportiert"
+    unexportedApp: "Anwendung %s de-exportiert"
     unexportedBin: "Binärdatei %s deexportiert"
     stoppedContainer: Container gestoppt.
     startedContainer: Container gestartet.
