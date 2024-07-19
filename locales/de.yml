@@ -13,17 +13,17 @@ apx:
     no: "nein"
 
   msg:
-    examples: Examples
-    aliases: Aliases
-    usage: Usage
-    moreInfo: Use %s for more information about a command
+    examples: Beispiele
+    aliases: Aliase
+    usage: Verwendung
+    moreInfo: Verwende %s für weitere Informationen zu einem Befehl
     flags: Flags
-    additionalCommands: Additional Commands
-    version: Show version for apx.
-    availableCommands: Available Commands
-    help: Show help for apx.
+    additionalCommands: Weitere Befehle
+    version: Version für apx anzeigen.
+    availableCommands: Verfügbare Befehle
+    help: Hilfe für Apx anzeigen.
     globalFlags: Global Flags
-    additionalHelpTopics: Additional help topics
+    additionalHelpTopics: Weitere Hilfethemen
 runtimeCommand:
   description: "Arbeiten Sie mit dem angegebenen Subsystem und greifen Sie auf den
     Paketmanager und die Umgebung zu."
@@ -90,7 +90,8 @@ runtimeCommand:
       binOutput:
         description: "Pfad der Binärausgabe (Standard: ~/.local/bin/)."
   unexport:
-    description: "Eine Anwendung oder eine Binärdatei aus dem Subsystem exportieren."
+    description: "Export einer Anwendung oder eine Binärdatei aus dem Subsystem rückgängig
+      machen."
     options:
       appName:
         description: "Der Name der Anwendung, die nicht exportiert werden soll."
@@ -102,7 +103,7 @@ runtimeCommand:
   start:
     description: Starte das Subsystem.
   stop:
-    description: Stopp das Subsystem.
+    description: Stoppe das Subsystem.
   run:
     description: Befehl innerhalb des Subsystems ausführen.
 pkgmanagers:
@@ -148,8 +149,7 @@ pkgmanagers:
         description: "Der Befehl, der zum automatischen Entfernen von Paketen ausgeführt
           werden soll."
       clean:
-        description: "Der Befehl, der ausgeführt werden soll, um den Cache des Paketmanagers
-          zu leeren."
+        description: "Der Befehl, um den Cache des Paketmanagers zu leeren."
       install:
         description: "Der Befehl, der zur Paketinstallation ausgeführt werden soll."
       list:
