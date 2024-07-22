@@ -18,7 +18,7 @@ jobs:
     - name: Set up Go
       uses: actions/setup-go@v5
       with:
-        go-version: 1.21
+        go-version: 1.22
 
     - name: Install build dependencies
       run: |
@@ -26,7 +26,7 @@ jobs:
           apt-get install -y pkg-config build-essential
 
     - name: Build
-      run: go build -o apx
+      run: go build -o apx -ldflags="-X 'main.Version=${{ github.sha }}'"
 
     - name: Check for missing strings
       uses: vanilla-os/missing-strings-golang-action@v0.1.0
