@@ -13,17 +13,17 @@ apx:
     no: "hayır"
 
   msg:
-    examples: Examples
-    aliases: Aliases
-    usage: Usage
-    moreInfo: Use %s for more information about a command
-    flags: Flags
-    additionalCommands: Additional Commands
-    availableCommands: Available Commands
-    version: Show version for apx.
-    help: Show help for apx.
-    globalFlags: Global Flags
-    additionalHelpTopics: Additional help topics
+    examples: Örnekler
+    aliases: Diğer Adlar
+    usage: Kullanım
+    moreInfo: Komutla ilgili daha çok bilgi için %s kullanın
+    flags: İmler
+    additionalCommands: Ek Komutlar
+    availableCommands: Uygun Komutlar
+    version: Apx için sürümü göster.
+    help: Apx için yardımı göster.
+    globalFlags: Küresel İmler
+    additionalHelpTopics: Ek yardım konuları
 runtimeCommand:
   description: "Paket yöneticisine ve ortama erişerek belirtilen altsistemde çalış."
   error:
@@ -76,7 +76,7 @@ runtimeCommand:
   enter:
     description: "Alt sistemin ortamına gir."
   export:
-    description: "Alt sistemden uygulama ya da ikili dışa aktar."
+    description: "Alt sistemden bir uygulama ya da ikiliyi ana makineye dışa aktar."
     options:
       appName:
         description: "Dışa aktarılacak uygulamanın adı."
@@ -85,7 +85,7 @@ runtimeCommand:
       binOutput:
         description: "İkili çıktısının yolu (öntanımlı: ~/.local/bin/)."
   unexport:
-    description: "Uygulama ya da ikilinin alt sistemden dışa aktarımını geri al."
+    description: "Ana makineden uygulama ya da ikilinin dışa aktarımını geri al."
     options:
       appName:
         description: "Dışa aktarımın geri alınacağı uygulamanın adı."
@@ -99,7 +99,7 @@ runtimeCommand:
   stop:
     description: Alt sistemi durdur.
   run:
-    description: Run command inside subsystem.
+    description: Komutu alt sistemin içinde çalıştır.
 pkgmanagers:
   description: "Apx içinde kullanılabilir paket yöneticileri ile çalış."
   labels:
@@ -160,7 +160,7 @@ pkgmanagers:
           komut."
       upgrade:
         description: "Paketleri yükseltmek için çalıştırılacak komut."
-    success: Package manager %s created successfully.
+    success: '%s paket yönetici başarıyla oluşturuldu.'
   rm:
     description: "Belirtilen paket yöneticisini kaldır."
 
@@ -168,7 +168,7 @@ pkgmanagers:
       noName: "Ad belirtilmemiş."
       inUse: "Paket yöneticisi %d yığında kullanıldı:"
     info:
-      askConfirmation: "'%s' kaldırmak istediğinizden emin misiniz? [y/N]"
+      askConfirmation: "'%s' kaldırılsın istiyor musunuz?"
       success: "'%s' paket yöneticisi kaldırıldı."
       aborting: "'%s' paket yöneticisinin kaldırılmasından vazgeçiliyor."
     options:
@@ -203,10 +203,10 @@ pkgmanagers:
     description: Belirtilen paket yöneticisini güncelle.
     info:
       success: "'%s' paket yöneticisi güncellendi."
-      askNewCommand: "Enter new command for '%s' (leave empty to keep '%s'):"
+      askNewCommand: "'%s' için yeni komut gir ('%s' tutmak için boş bırak):"
     error:
-      noName: No name specified.
-      missingCommand: Missing command for %s.
+      noName: Ad belirtilmedi.
+      missingCommand: '%s için eksik komut.'
 stacks:
   description: "Apx'te bulunan yığınlarla çalış."
   labels:
@@ -239,15 +239,15 @@ stacks:
       emptyPackages: "Paketler boş olamaz."
       noPackages: "Paket belirtilmemiş."
       alreadyExists: "'%s' adlı yığın zaten var."
-      noPkgManagers: Could not find any package managers. Create one with 'apx pkgmanagers
-        new' or contact the system administrator.
+      noPkgManagers: Herhangi bir paket yönetici bulunamadı. 'apx pkgmanagers new'
+        ile yeni birini oluşturun ya da sistem yöneticisiyle iletişime geçin.
     info:
       askName: "Ad seç:"
       askBase: "Taban seç (örn. 'vanillaos/pico'):"
       askPkgManager: "Paket yöneticisi seç:"
       selectPkgManager: "Paket yöneticisi seç [1-%d]:"
-      noPackages: "Yığına kurulacak herhangi bir paket sağlamadınız. Birkaçını eklemek
-        ister misiniz?"
+      noPackages: "Yığında kurulacak herhangi bir paket sağlamadınız. Şimdi birkaç
+        tane eklemek ister misiniz?"
       confirmPackages: "Geçerli paket listesini onaylıyor musunuz?"
       askPackages: "Lütfen yığına kurmak istediğiniz paketleri aralarında boşluk bırakarak
         yazın:"
@@ -279,9 +279,9 @@ stacks:
         da geçerli olanları onaylayın (%s):"
       success: "'%s' yığını güncellendi."
 
-      confirmPackages: Do you want to confirm the current packages list?
-      noPackages: You have not provided any packages to install in the stack. Do you
-        want to add some now?
+      confirmPackages: Şu anki paket listesini onaylıyor musunuz?
+      noPackages: Yığında kurulacak herhangi bir paket sağlamadınız. Şimdi birkaç
+        tane eklemek ister misiniz?
     options:
       assumeYes:
         description: "Tüm sorulara evet dediğinizi varsayın."
@@ -298,7 +298,7 @@ stacks:
     error:
       noName: "Ad belirtilmedi."
     info:
-      askConfirmation: "'%s' kaldırılsın ister misiniz? [e/H]"
+      askConfirmation: "'%s' kaldırılsın ister misiniz?"
       success: "'%s' kaldırıldı."
     options:
       force:
@@ -361,7 +361,7 @@ subsystems:
       selectStack: "Yığın seç [1-%d]:"
       success: "'%s' alt sistemi oluşturuldu."
       creatingSubsystem: "'%s' alt sistemi '%s' yığınıyla oluşturuluyor…"
-      availableStacks: 'Available stacks:'
+      availableStacks: 'Uygun yığınlar:'
     options:
       name:
         description: "Alt sistemin adı."
@@ -376,7 +376,7 @@ subsystems:
     error:
       noName: "Ad belirtilmedi."
     info:
-      askConfirmation: "'%s' kaldırılsın ister misiniz? [e/H]"
+      askConfirmation: "'%s' kaldırılsın ister misiniz?"
       success: "'%s' alt sistemi kaldırıldı."
     options:
       force:
@@ -388,7 +388,7 @@ subsystems:
     error:
       noName: "Ad belirtilmedi."
     info:
-      askConfirmation: "'%s' sıfırlansın ister misiniz? [y/N]"
+      askConfirmation: "'%s' sıfırlansın ister misiniz?"
       success: "'%s' alt sistemi sıfırlandı."
     options:
       force:
