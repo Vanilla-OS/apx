@@ -15,7 +15,7 @@ apx:
     examples: أمثلة
     aliases: اسماء مستعارة
     usage: الاستخدام
-    moreInfo: Use %s for more information about a command
+    moreInfo: استخدم %s للمزيد من المعلومات حول الأمر
     flags: أعلام
     additionalCommands: الأوامر الإضافية
     availableCommands: الأوامر المتاحة
@@ -75,7 +75,7 @@ runtimeCommand:
   enter:
     description: "دخول بيئة النظام الفرعي."
   export:
-    description: "تصدير تطبيق او برنامج من النظام الفرعي."
+    description: "تصدير تطبيق أو برنامج من النظام الفرعي."
     options:
       appName:
         description: "اسم التطبيق المراد تصدير."
@@ -98,7 +98,7 @@ runtimeCommand:
   stop:
     description: إيقاف النظام الفرعي.
   run:
-    description: Run command inside subsystem.
+    description: تشغيل الأمر داخل النظام الفرعي.
 pkgmanagers:
   description: "يتعامل مع مديري الحزم المتاحة في apx."
   labels:
@@ -157,7 +157,7 @@ pkgmanagers:
         description: "الامر الخاص بتحديث قائمة الحزم المتاحة."
       upgrade:
         description: "الامر الخاص بتطوير الحزم."
-    success: Package manager %s created successfully.
+    success: تم إنشاء مدير الحزم %s بنجاح.
   rm:
     description: "حذف مدير الحزم المحدد."
 
@@ -200,10 +200,10 @@ pkgmanagers:
     description: قم بتحديث مدير الحزم المحدد.
     info:
       success: تم تحديث مدير الحزم '%s'.
-      askNewCommand: "Enter new command for '%s' (leave empty to keep '%s'):"
+      askNewCommand: "أدخل أمرًا جديدًا لأجل '%s' (اتركه فارغًا للإبقاء على '%s'):"
     error:
-      noName: No name specified.
-      missingCommand: Missing command for %s.
+      noName: لم يتم تحديد اسم.
+      missingCommand: الأمر مفقود لأجل %s.
 stacks:
   description: "تستخدم التشكيلات المتاحة في apx."
   labels:
@@ -236,8 +236,8 @@ stacks:
       emptyPackages: "الحزم لا يمكن أن تكون فارغة."
       noPackages: "لم يتم تحديد حزم."
       alreadyExists: "يوجد تشكيلة بالاسم '%s' بالفعل."
-      noPkgManagers: Could not find any package managers. Create one with 'apx pkgmanagers
-        new' or contact the system administrator.
+      noPkgManagers: لا توجد تشكيلات متاحة. قم بإنشاء واحدة جديدة باستخدام 'apx stacks
+        new' أو تحدث إلى مسؤول النظام.
     info:
       askName: "اختر اسما:"
       askBase: "اختر النظام الأساس (على سبيل المثال 'vanillaos/pico'):"
@@ -274,9 +274,8 @@ stacks:
         وافق على الحاليين (%s):"
       success: "تم تحديث التشكيلة '%s':"
 
-      confirmPackages: Do you want to confirm the current packages list?
-      noPackages: You have not provided any packages to install in the stack. Do you
-        want to add some now?
+      confirmPackages: هل تريد الموافقة على قائمة الحزم الحالية؟
+      noPackages: لم تقم بتوفير أي حزم لتثبيتها في التشكيلة. هل تريد إضافة بعضها الآن؟
     options:
       assumeYes:
         description: "افرض الإجابة \"نعم\" لكل الاختيارات."
@@ -356,7 +355,7 @@ subsystems:
       selectStack: "اختر تشكيلة [1-%d]:"
       success: "تم إنشاء النظام الفرعي '%s'."
       creatingSubsystem: "تم إنشاء نظام فرعي '%s' بالطبقة '%s'…"
-      availableStacks: 'Available stacks:'
+      availableStacks: 'التشكيلات المتاحة:'
     options:
       name:
         description: "اسم النظام الفرعي."
@@ -383,7 +382,7 @@ subsystems:
     error:
       noName: "لم يتم تحديد اسم."
     info:
-      askConfirmation: "هل انت متأكد من إعادة الضبط '%s'؟ [y/N]"
+      askConfirmation: "هل انت متأكد من إعادة ضبط '%s'؟"
       success: "تم اعادة انشاء النظام الفرعي '%s'."
     options:
       force:
