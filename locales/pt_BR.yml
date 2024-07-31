@@ -14,7 +14,7 @@ apx:
 
   msg:
     examples: Exemplos
-    flags: Indicadores
+    flags: Sinalizadores
     aliases: Funções sinônimas
     usage: Uso
     moreInfo: Use %s para mais informações sobre um comando
@@ -22,8 +22,8 @@ apx:
     availableCommands: Comandos Disponíveis
     version: Mostrar versão do Apx.
     help: Mostrar ajuda para apx.
-    globalFlags: Indicadores Globais
-    additionalHelpTopics: Tópicos de ajuda adicionais
+    globalFlags: Sinalizadores globais
+    additionalHelpTopics: Tópicos adicionais de ajuda
 runtimeCommand:
   description: "Trabalhe com o subsistema especificado, acessando o gerenciador de
     pacotes e o ambiente."
