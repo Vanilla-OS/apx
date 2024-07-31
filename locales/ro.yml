@@ -13,17 +13,17 @@ apx:
     no: "nu"
 
   msg:
-    additionalCommands: Additional Commands
-    examples: Examples
-    aliases: Aliases
-    usage: Usage
-    moreInfo: Use %s for more information about a command
-    flags: Flags
-    availableCommands: Available Commands
-    version: Show version for apx.
-    help: Show help for apx.
-    globalFlags: Global Flags
-    additionalHelpTopics: Additional help topics
+    additionalCommands: Comenzi Suplimentare
+    examples: Exemple
+    aliases: Aliasuri
+    usage: Utilizare
+    moreInfo: Utilizați %s pentru mai multe informații despre o comandă
+    flags: Parametri
+    availableCommands: Comenzi Disponibile
+    version: Afișați versiunea pentru apx.
+    help: Afișați ajutorul pentru apx.
+    globalFlags: Parametri globali
+    additionalHelpTopics: Alte subiecte de ajutor
 runtimeCommand:
   description: "Lucrează cu subsistemul specificat, accesând managerul de pachete
     și mediul."
@@ -78,7 +78,7 @@ runtimeCommand:
   enter:
     description: "Introdu mediul subsistemului."
   export:
-    description: "Exportă o aplicație sau un fișier binar din subsistem."
+    description: "Exportați o aplicație sau un fișier binar de la subsistem la gazdă."
     options:
       appName:
         description: "Numele aplicației care urmează să fie exportată."
@@ -87,7 +87,7 @@ runtimeCommand:
       binOutput:
         description: "Calea de ieșire a binarului (implicit: ~/.local/bin/)."
   unexport:
-    description: "Anulează exportul unei aplicații sau al unui fișier binar din subsistem."
+    description: "Dezexportă o aplicație sau un fișier binar din gazdă."
     options:
       appName:
         description: "Numele aplicației pentru anularea exportului."
@@ -101,7 +101,7 @@ runtimeCommand:
   stop:
     description: Oprește subsistemul.
   run:
-    description: Run command inside subsystem.
+    description: Rulați comanda în interiorul subsistemului.
 pkgmanagers:
   description: "Lucrează cu managerii de pachete disponibili în apx."
   labels:
@@ -161,7 +161,7 @@ pkgmanagers:
         description: "Comanda de executat pentru actualizarea listei de pachete disponibile."
       upgrade:
         description: "Comanda de executat pentru actualizare pachete instalate."
-    success: Package manager %s created successfully.
+    success: Managerul de pachete %s a fost creat cu succes.
   rm:
     description: "Șterge managerul de pachete specificat."
 
@@ -169,7 +169,7 @@ pkgmanagers:
       noName: "Niciun nume specificat."
       inUse: "Managerul de pachete este utilizat în %d stive:"
     info:
-      askConfirmation: "Sigur dorești să ștergi \"%s\"? [y/N]"
+      askConfirmation: "Sigur doriți să ștergeți \"%s\"?"
       success: "Managerul de pachete \"%s\" a fost șters."
       aborting: Se anulează ștergerea managerului de pachete „%s”.
     options:
@@ -204,10 +204,11 @@ pkgmanagers:
     description: Actualizează managerul de pachete specificat.
     info:
       success: Actualizat managerul de pachete '%s'.
-      askNewCommand: "Enter new command for '%s' (leave empty to keep '%s'):"
+      askNewCommand: "Introduceți o nouă comandă pentru „%s” (lăsați gol pentru a
+        păstra „%s”):"
     error:
-      noName: No name specified.
-      missingCommand: Missing command for %s.
+      noName: Niciun nume specificat.
+      missingCommand: Lipsește comanda pentru %s.
 stacks:
   description: "Lucrează cu stive care sunt disponibile în apx."
   labels:
@@ -240,15 +241,15 @@ stacks:
       emptyPackages: "Pachetele nu pot fi nespecificate."
       noPackages: "Niciun pachet specificat."
       alreadyExists: "O stivă cu numele \"%s\" există deja."
-      noPkgManagers: Could not find any package managers. Create one with 'apx pkgmanagers
-        new' or contact the system administrator.
+      noPkgManagers: Nu s-a putut găsi niciun manager de pachete. Creați unul cu „apx
+        pkgmanagers new” sau contactați administratorul sistemului.
     info:
       askName: "Alege un nume:"
       askBase: "Alegeți o stivă de bază (de exemplu, \"vanillaos/pico\"):"
       askPkgManager: "Alege un manager de pachete:"
       selectPkgManager: "Selectează un manager de pachete [1-%d]:"
-      noPackages: "Nu ai furnizat un pachet pentru instalare în stivă. Dorești să
-        adăugi unul acum?"
+      noPackages: "Nu ați furnizat niciun pachet de instalat în stivă. Doriți să adăugați
+        unele acum?"
       confirmPackages: "Dorești să confirmi lista curentă de pachete?"
       askPackages: "Te rog scrie pachetele pe care dorești să le instalezi în stivă,
         separate prin spațiu:"
@@ -281,9 +282,9 @@ stacks:
         printr-un spațiu, sau confirmă-le pe cele curente (%s):"
       success: "Stiva \"%s\" actualizată."
 
-      confirmPackages: Do you want to confirm the current packages list?
-      noPackages: You have not provided any packages to install in the stack. Do you
-        want to add some now?
+      confirmPackages: Doriți să confirmați lista curentă de pachete?
+      noPackages: Nu ați furnizat niciun pachet de instalat în stivă. Doriți să adăugați
+        unele acum?
     options:
       assumeYes:
         description: "Se presupune că ați răspuns afirmativ la toate solicitările."
@@ -300,7 +301,7 @@ stacks:
     error:
       noName: "Niciun nume specificat."
     info:
-      askConfirmation: "Sigur dorești să ștergi \"%s\"? [y/N]"
+      askConfirmation: "Sigur doriți să eliminați „%s”?"
       success: "Stiva \"%s\" a fost ștersă."
     options:
       force:
@@ -363,7 +364,7 @@ subsystems:
       selectStack: "Selectează o stivă [1-%d]:"
       success: "A fost creat subsistemul \"%s\"."
       creatingSubsystem: "Se creează subsistemul \"%s\" cu stiva \"%s\"…"
-      availableStacks: 'Available stacks:'
+      availableStacks: 'Stive disponibile:'
     options:
       name:
         description: "Numele subsistemului."
@@ -378,7 +379,7 @@ subsystems:
     error:
       noName: "Nu este specificat un nume."
     info:
-      askConfirmation: "Sigur dorești să ștergi \"%s\"? [y/N]"
+      askConfirmation: "Sigur doriți să eliminați „%s”?"
       success: "Subsistemul \"%s\" a fost șters ."
     options:
       force:
@@ -390,7 +391,7 @@ subsystems:
     error:
       noName: "Nu este specificat un nume."
     info:
-      askConfirmation: "Sigur dorești să resetezi \"%s\"? [y/N]"
+      askConfirmation: "Sigur doriți să resetați „%s”?"
       success: "Subsistemul \"%s\" a fost resetat."
     options:
       force:
