@@ -1,6 +1,6 @@
 apx:
-  description: "Apx est un gestionnaire de paquets qui support des sources multiples
-    vous permettant d'installer des paquets dans les sous-systèmes."
+  description: "Apx est un gestionnaire de paquets qui supporte de multiples sources
+    et qui vous permet d'installer des paquets dans les sous-systèmes."
   errors:
     unknownCommand: "Commande inconnue : %s"
     invalidInput: "Entrée invalide."
@@ -13,17 +13,17 @@ apx:
     no: "non"
 
   msg:
-    examples: Examples
-    globalFlags: Global Flags
-    aliases: Aliases
-    usage: Usage
-    moreInfo: Use %s for more information about a command
-    flags: Flags
-    additionalCommands: Additional Commands
-    availableCommands: Available Commands
-    version: Show version for apx.
-    help: Show help for apx.
-    additionalHelpTopics: Additional help topics
+    examples: Exemples
+    globalFlags: Drapeaux Globaux
+    aliases: Alias
+    usage: Utilisation
+    moreInfo: Utilisez %s pour obtenir plus d'information sur une commande
+    flags: Drapeaux
+    additionalCommands: Commandes additionnelles
+    availableCommands: Commandes disponibles
+    version: Affiche la version d'apx.
+    help: Affiche la page d'aide pour apx.
+    additionalHelpTopics: Autres sujets d'aide
 runtimeCommand:
   description: "Travailler avec le sous-système spécifié, en accédant au gestionnaire
     de paquets et à l'environnement."
@@ -39,9 +39,9 @@ runtimeCommand:
       : %s"
     exportingBin: "Une erreur s'est produite lors de l'exportation du binaire : %s"
     unexportingApp: "Une erreur s'est produite lors de l'annulation de l'exportation
-      de l'application: %s"
+      de l'application : %s"
     unexportingBin: "Une erreur s'est produite lors de l'annulation de l'exportation
-      de l'exécutable: %s"
+      de l'exécutable : %s"
     enteringContainer: 'Une erreur s''est produite lors de l''entrée dans le conteneur
       : %s'
     startingContainer: 'Une erreur s''est produite lors du démarrage du conteneur :
@@ -85,7 +85,8 @@ runtimeCommand:
   enter:
     description: "Entrer dans l'environnement du sous-système."
   export:
-    description: "Exporter une application ou un binaire depuis le sous-système."
+    description: "Exporter une application ou un binaire depuis le sous-système vers
+      l'hôte."
     options:
       appName:
         description: "Le nom de l'application à exporter."
@@ -94,7 +95,7 @@ runtimeCommand:
       binOutput:
         description: "Chemin de sortie du binaire (par défaut : ~/.local/bin/)."
   unexport:
-    description: "Exclure une application ou un binaire du sous-système."
+    description: "Exclure une application ou un binaire de l'hôte."
     options:
       appName:
         description: "Le nom de l'application à exclure."
@@ -108,7 +109,7 @@ runtimeCommand:
   stop:
     description: Arrête le sous-système.
   run:
-    description: Run command inside subsystem.
+    description: Exécute une commande dans le sous-système.
 pkgmanagers:
   description: "Travailler avec les gestionnaires de paquets disponibles dans apx."
   labels:
@@ -171,7 +172,7 @@ pkgmanagers:
           disponibles."
       upgrade:
         description: "La commande à exécuter pour mettre à niveau les paquets."
-    success: Package manager %s created successfully.
+    success: Le gestionnaire de paquet %s à été créé avec succès.
   rm:
     description: "Supprime le gestionnaire de paquets spécifié."
 
@@ -179,7 +180,7 @@ pkgmanagers:
       noName: "Aucun nom n'a été spécifié."
       inUse: "Le gestionnaire de paquets est utilisé dans %d piles :"
     info:
-      askConfirmation: "Êtes-vous sûr de vouloir supprimer \"%s\" ? [y/N]"
+      askConfirmation: "Êtes-vous sûr de vouloir supprimer \"%s\" ?"
       success: "Suppression du gestionnaire de paquets '%s'."
       aborting: Abandon de la suppression du gestionnaire de paquets '%s'.
     options:
@@ -214,10 +215,11 @@ pkgmanagers:
     description: Mettez à jour le gestionnaire de paquets spécifié.
     info:
       success: Le gestionnaire de paquets '%s' à été mis à jour.
-      askNewCommand: "Enter new command for '%s' (leave empty to keep '%s'):"
+      askNewCommand: "Entrez une nouvelle commande pour '%s' (laisser vide pour conserver
+        '%s') :"
     error:
-      noName: No name specified.
-      missingCommand: Missing command for %s.
+      noName: Aucun nom spécifié.
+      missingCommand: Commande manquante pour %s.
 stacks:
   description: "Travaillez avec les piles disponibles dans apx."
   labels:
@@ -250,15 +252,15 @@ stacks:
       emptyPackages: "Les paquets ne peuvent pas être vides."
       noPackages: "Aucun paquet n'a été spécifié."
       alreadyExists: "Une pile portant le nom \"%s\" existe déjà."
-      noPkgManagers: Could not find any package managers. Create one with 'apx pkgmanagers
-        new' or contact the system administrator.
+      noPkgManagers: Aucun gestionnaire de paquet trouvé. Créez-en un avec 'apx pkgmanagers
+        new' ou contactez l'administrateur du système.
     info:
       askName: "Choisissez un nom :"
       askBase: "Choisissez une base (par exemple \"vanillaos/pico\") :"
       askPkgManager: "Choisissez un gestionnaire de paquets :"
       selectPkgManager: "Sélectionnez un gestionnaire de paquets [1-%d] :"
       noPackages: "Vous n'avez fourni aucun paquet à installer dans la pile. Voulez-vous
-        en ajouter maintenant ?"
+        en ajouter maintenant ?"
       confirmPackages: "Voulez-vous confirmer la liste actuelle de paquets ?"
       askPackages: "Veuillez saisir les paquets que vous souhaitez installer dans
         la pile, en les séparant par un espace :"
@@ -291,9 +293,9 @@ stacks:
         en les séparant par un espace, ou confirmez les paquets actuels (%s) :"
       success: "Mise à jour de la pile '%s'."
 
-      confirmPackages: Do you want to confirm the current packages list?
-      noPackages: You have not provided any packages to install in the stack. Do you
-        want to add some now?
+      confirmPackages: Voulez vous confirmer la liste de paquets dans son état actuel ?
+      noPackages: Vous n'avez fourni aucun paquets à installer dans la pile. Voulez-vous
+        en ajouter maintenant ?
     options:
       assumeYes:
         description: "Supposons que vous répondez par l'affirmative à toutes les questions."
@@ -310,7 +312,7 @@ stacks:
     error:
       noName: "Aucun nom n'a été spécifié."
     info:
-      askConfirmation: "Êtes-vous sûr de vouloir supprimer \"%s\" ? [y/N]"
+      askConfirmation: "Êtes-vous sûr de vouloir supprimer \"%s\" ?"
       success: "Suppression de la pile '%s'."
     options:
       force:
@@ -373,7 +375,7 @@ subsystems:
       selectStack: "Sélectionner une pile [1-%d] :"
       success: "Création du sous-système \"%s\"."
       creatingSubsystem: "Création du sous-système '%s' avec la pile '%s'…"
-      availableStacks: 'Available stacks:'
+      availableStacks: 'Piles disponibles :'
     options:
       name:
         description: "Nom du sous-système."
@@ -388,7 +390,7 @@ subsystems:
     error:
       noName: "Aucun nom n'a été précisé."
     info:
-      askConfirmation: "Êtes-vous sûr de vouloir supprimer \"%s\" ? [y/N]"
+      askConfirmation: "Êtes-vous sûr de vouloir supprimer \"%s\" ?"
       success: "Suppression du sous-système \"%s\"."
     options:
       force:
@@ -400,7 +402,7 @@ subsystems:
     error:
       noName: "Aucun nom n'a été précisé."
     info:
-      askConfirmation: "Êtes-vous sûr de vouloir réinitialiser \"%s\" ? [y/N]"
+      askConfirmation: "Êtes-vous sûr de vouloir réinitialiser \"%s\" ?"
       success: "Le sous-système \"%s\" a été réinitialisé."
     options:
       force:
