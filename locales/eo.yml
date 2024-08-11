@@ -17,43 +17,42 @@ apx:
     aliases: Sinonimoj
     flags: Flagoj
     globalFlags: Mallokaj flagoj
-    moreInfo: Use %s for more information about a command
+    moreInfo: Uzu %s por pliaj informoj pri komando
     usage: Uzado
     additionalCommands: Pliaj komandoj
     availableCommands: Haveblaj komandoj
     version: Montri la version de apx.
     help: Montri helpon pri apx.
-    additionalHelpTopics: Additional help topics
+    additionalHelpTopics: Pliaj helpaj temoj
 runtimeCommand:
   description: "Work with the specified subsystem, accessing the package manager and
     environment."
   error:
     enteringContainer: "An error occurred while entering the container: %s"
     noPackageSpecified: "Neniu pako specifiĝis."
-    cantAccessPkgManager: "An error occurred while accessing the package manager:
-      %s"
-    executingCommand: "An error occurred while executing the command: %s"
+    cantAccessPkgManager: "Okazis eraro uzante la pakadministrilon: %s"
+    executingCommand: "Okazis eraro rulante la komandon: %s"
     noAppNameOrBin: "Oni devas specifi aŭ «--app-name» aŭ «--bin»."
     sameAppOrBin: "Oni devas ne specifi kaj «--app-name» kaj «--bin»."
-    exportingApp: "Okazis eraro dum eksportado de la programo: %s"
-    exportingBin: "An error occurred while exporting the binary: %s"
-    unexportingApp: "Okazis eraro dum maleksportado de la programo: %s"
-    unexportingBin: "An error occurred while unexporting the binary: %s"
+    exportingApp: "Okazis eraro eksportante la programon: %s"
+    exportingBin: "Okazis eraro eksportante la binaraĵon: %s"
+    unexportingApp: "Okazis eraro maleksportante la programon: %s"
+    unexportingBin: "Okazis eraro maleksportante la binaraĵon: %s"
     startingContainer: 'An error occurred while starting the container: %s'
     stoppingContainer: 'An error occurred while stopping the container: %s'
   info:
     unexportedApps: "Maleksportis %d programojn"
     exportedApps: "Eksportis %d programojn"
     exportedApp: "Eksportis la programon %s"
-    exportedBin: "Exported binary %s"
+    exportedBin: "Eksportis la binaraĵon %s"
     unexportedApp: "Maleksportis la programon %s"
-    unexportedBin: "Unexported binary %s"
+    unexportedBin: "Maleksportis la binaraĵon %s"
     stoppedContainer: Stopped container.
     startedContainer: Started container.
     stoppingContainer: Stopping container…
     startingContainer: Starting container…
   autoremove:
-    description: "Remove packages that are no longer required."
+    description: "Malinstali ne plu bezonatajn pakojn"
   clean:
     description: "Forviŝi la kaŝmemoron de la pakadministrilo."
   install:
@@ -83,18 +82,18 @@ runtimeCommand:
       appName:
         description: "La nomo de la eksportota programo."
       bin:
-        description: "The name of the binary to export."
+        description: "La nomo de la eksportota binaraĵo."
       binOutput:
-        description: "Path of the binary output (default: ~/.local/bin/)."
+        description: "Loko de la eligota binaraĵo (implicite: ~/.local/bin/)."
   unexport:
     description: "Unexport an application or binary from the subsystem."
     options:
       appName:
         description: "La nomo de la maleksportota programo."
       bin:
-        description: "The name of the binary to unexport."
+        description: "La nomo de la eksportota binaraĵo."
       binOutput:
-        description: "Path of the binary output (default: ~/.local/bin/)."
+        description: "Loko de la eligota binaraĵo (implicite: ~/.local/bin/)."
 
   start:
     description: Lanĉi la subsistemon.
@@ -126,50 +125,50 @@ pkgmanagers:
       emptyName: "La nomo devas esti nemalplena."
       noName: "Neniu nomo specifiĝis."
       emptyCommand: "La komando devas esti nemalplena."
-      noCommand: "No command specified for '%s'."
+      noCommand: "Neniu komando specifiĝis por «%s»."
       alreadyExists: "Pakadministrilo nomita «%s» jam ekzistas."
     info:
       askName: "Elektu nomon:"
-      askSudo: "Does the package manager need sudo to run?"
+      askSudo: "Ĉu la pakadministrilo bezonas «sudo»?"
       askCommand: "Tajpu la komandon por «%s»:"
       askOverwrite: "A package manager with the name '%s' already exists. Overwrite
         it?"
     options:
       assumeYes:
-        description: "Assume yes to all prompts."
+        description: "Jesi al ĉiuj demandoj."
       name:
         description: "La nomo de la pakadministrilo."
       needSudo:
-        description: "Whether the package manager needs sudo to run."
+        description: "Ĉu la pakadministrilo bezonas «sudo»."
       autoremove:
-        description: "The command to run to autoremove packages."
+        description: "La komando por aŭtomate malinstali pakojn."
       clean:
-        description: "The command to run to clean the package manager's cache."
+        description: "La komando por forviŝi la kaŝmemoron de la pakadministrilo."
       install:
-        description: "The command to run to install packages."
+        description: "La komando por instali pakojn."
       list:
-        description: "The command to run to list installed packages."
+        description: "La komando por listigi instalitajn pakojn."
       purge:
-        description: "The command to run to purge packages."
+        description: "La komando por plene malinstali pakojn."
       remove:
-        description: "The command to run to remove packages."
+        description: "La komando por malinstali pakojn."
       search:
-        description: "The command to run to search for packages."
+        description: "La komando por serĉi pakojn."
       show:
-        description: "The command to run to show information about packages."
+        description: "La komando por montri informojn pri pakoj."
       update:
         description: "The command to run to update the list of available packages."
       upgrade:
-        description: "The command to run to upgrade packages."
+        description: "La komando por ĝisdatigi pakojn."
     success: Sukcese kreis la pakadministrilon %s.
   rm:
     description: "Remove the specified package manager."
 
     error:
       noName: "Neniu nomo specifiĝis."
-      inUse: "The package manager is used in %d stacks:"
+      inUse: "La pakadministrilo estas uzata en %d stakoj:"
     info:
-      askConfirmation: "Are you sure you want to remove '%s'? [y/N]"
+      askConfirmation: "Ĉu vi certe volas forigi «%s»?"
       success: "Foriĝis pakadministrilo «%s»."
       aborting: "Aborting removal of package manager '%s'."
     options:
@@ -183,13 +182,13 @@ pkgmanagers:
       output:
         description: The path to export the package manager to.
       name:
-        description: The name of the package manager to export.
+        description: La nomo de la eksportota pakadministrilo.
     error:
       noOutput: Neniu eligo specifiĝis.
       noName: Neniu nomo specifiĝis.
-    description: Export the specified package manager.
+    description: Eksporti la specifitan pakadministrilon.
     info:
-      success: Exported package manager '%s' to '%s'.
+      success: Elportis la pakadministrilon «%s» al «%s».
   import:
     error:
       noInput: Neniu enigo specifiĝis.
@@ -201,13 +200,13 @@ pkgmanagers:
       input:
         description: The path to import the package manager from.
   update:
-    description: Update the specified package manager.
+    description: Ĝisdatigi la specifitan pakadministrilon.
     info:
-      success: Updated package manager '%s'.
+      success: Ĝisdatigis la pakadministrilon «%s».
       askNewCommand: "Enter new command for '%s' (leave empty to keep '%s'):"
     error:
       noName: Neniu nomo specifiĝis.
-      missingCommand: Missing command for %s.
+      missingCommand: Mankas komando por %s.
 stacks:
   description: "Work with the stacks that are available in apx."
   labels:
@@ -237,9 +236,9 @@ stacks:
       noPkgManager: "Neniu pakadministrilo specifiĝis."
       pkgManagerDoesNotExist: "The specified package manager does not exist. Create
         it with 'apx pkgmanagers new' or contact the system administrator."
-      emptyPackages: "The packages cannot be empty."
+      emptyPackages: "La pakoj ne povas esti malplenaj."
       noPackages: "Neniu pako specifiĝis."
-      alreadyExists: "A stack with the name '%s' already exists."
+      alreadyExists: "Jam ekzistas stako de la nomo «%s»."
       noPkgManagers: Could not find any package managers. Create one with 'apx pkgmanagers
         new' or contact the system administrator.
     info:
@@ -249,17 +248,18 @@ stacks:
       selectPkgManager: "Elektu pakadministrilon [1-%d]:"
       noPackages: "You have not provided any package to install in the stack. Do you
         want to add some now?"
-      confirmPackages: "Do you want to confirm the current packages list?"
+      confirmPackages: "Ĉu konfirmi la aktualan liston de pakoj?"
       askPackages: "Please type the packages you want to install in the stack, separated
         by a space:"
       success: "Kreiĝis stako «%s»."
     options:
       assumeYes:
-        description: "Assume yes to all prompts."
+        description: "Jesi al ĉiuj demandoj."
       name:
         description: "La nomo de la stako."
       base:
-        description: "The base subsystem to use."
+        description: "La baza distribuaĵo uzota. (Por listo de kongruaj distribuaĵoj,
+          vidu https://distrobox.it/compatibility/#containers-distros)"
       packages:
         description: "La instalotaj pakoj."
       pkgManager:
@@ -279,12 +279,12 @@ stacks:
         by a space, or confirm the current ones (%s):"
       success: "Ĝisdatiĝis stako «%s»."
 
-      confirmPackages: Do you want to confirm the current packages list?
+      confirmPackages: Ĉu konfirmi la aktualan liston de pakoj?
       noPackages: You have not provided any packages to install in the stack. Do you
         want to add some now?
     options:
       assumeYes:
-        description: "Assume yes to all prompts."
+        description: "Jesi al ĉiuj demandoj."
       name:
         description: "La nomo de la stako."
       base:
@@ -298,11 +298,11 @@ stacks:
     error:
       noName: "Neniu nomo specifiĝis."
     info:
-      askConfirmation: "Are you sure you want to remove '%s'? [y/N]"
+      askConfirmation: "Ĉu vi certe volas forigi «%s»?"
       success: "Foriĝis stako «%s»."
     options:
       force:
-        description: "Force removal of the stack."
+        description: "Devigi forigon de la stako."
       name:
         description: "La nomo de la forigota stako."
   export:
@@ -311,7 +311,7 @@ stacks:
       noName: "Neniu nomo specifiĝis."
       noOutput: "Neniu eligo specifiĝis."
     info:
-      success: "Exported stack '%s' to '%s'."
+      success: "Eksportis la stakon «%s» al «%s»."
     options:
       name:
         description: "La nomo de la elportota stako."
