@@ -7,21 +7,21 @@ apx:
     invalidChoice: "Lựa chọn không hợp lệ."
     noRoot: "Không nên chạy Apx với quyền quản trị."
   info:
-    aborting: "Đang hủy bỏ như đã được yêu cầu."
+    aborting: "Đang hủy bỏ theo yêu cầu."
   terminal:
     yes: "có"
     no: "không"
 
   msg:
-    examples: Examples
+    examples: Các ví dụ
     aliases: Aliases
     usage: Usage
-    moreInfo: Use %s for more information about a command
+    moreInfo: Sử dụng %s để biết thêm thông tin về một câu lệnh
     flags: Flags
     additionalCommands: Additional Commands
     availableCommands: Available Commands
-    version: Show version for apx.
-    help: Show help for apx.
+    version: Hiển thị phiên bản của apx.
+    help: Hiển thị trợ giúp cho apx.
     globalFlags: Global Flags
     additionalHelpTopics: Additional help topics
 runtimeCommand:
@@ -29,26 +29,26 @@ runtimeCommand:
     trường."
   error:
     enteringContainer: "Có một lỗi đã xảy ra khi truy cập vào container: %s"
-    noPackageSpecified: "Không có gói nào được xác định."
+    noPackageSpecified: "Chưa có gói nào được xác định."
     cantAccessPkgManager: "Có một lỗi đã xảy ra khi truy cập trình quản lí gói: %s"
     executingCommand: "Có một lỗi đã xảy ra khi thực thi câu lệnh: %s"
     noAppNameOrBin: "--app-name hoặc --bin phải được xác định."
-    sameAppOrBin: "không được phép xác định --app-name và --bin cùng lúc."
+    sameAppOrBin: "không được xác định --app-name và --bin cùng lúc."
     exportingApp: "Có một lỗi đã xảy ra khi xuất ứng dụng: %s"
-    exportingBin: "Có một lỗi đã xảy ra khi xuất mã nhị phân: %s"
+    exportingBin: "Có một lỗi đã xảy ra khi xuất mã biên dịch: %s"
     unexportingApp: "Có một lỗi đã xảy ra khi ngừng xuất ứng dụng: %s"
-    unexportingBin: "Có một lỗi đã xảy ra khi ngừng xuất mã nhị phân: %s"
+    unexportingBin: "Có một lỗi đã xảy ra khi ngừng xuất mã biên dịch: %s"
     startingContainer: "Có một lỗi đã xảy ra khi khởi động container: %s"
     stoppingContainer: "Có một lỗi đã xảy ra khi dừng container: %s"
   info:
     unexportedApps: "Đã huỷ xuất %d ứng dụng"
     exportedApps: "Đã xuất %d ứng dụng"
     exportedApp: "Đã xuất ứng dụng %s"
-    exportedBin: "Đã xuất mã nhị phân %s"
+    exportedBin: "Đã xuất mã biên dịch %s"
     unexportedApp: "Đã huỷ xuất ứng dụng %s"
-    unexportedBin: "Đã huỷ xuất mã nhị phân %s"
-    startingContainer: "Starting container…"
-    startedContainer: "Started container."
+    unexportedBin: "Đã huỷ xuất mã biên dịch %s"
+    startingContainer: "Đang khởi động container…"
+    startedContainer: "Đã khởi động container."
     stoppingContainer: "Stopping container…"
     stoppedContainer: "Stopped container."
   autoremove:
@@ -56,63 +56,63 @@ runtimeCommand:
   clean:
     description: "Dọn sạch cache của trình quản lí gói."
   install:
-    description: "Install the specified package."
+    description: "Cài đặt gói đã chọn."
     options:
       noExport:
         description: "Do not export a desktop entry."
   list:
-    description: "List all installed packages."
+    description: "Liệt kê các gói đã được cài đặt."
   purge:
-    description: "Purge the specified packages."
+    description: "Xóa sạch các gói đã chọn."
   remove:
-    description: "Remove the specified packages."
+    description: "Xóa các gói đã chọn."
   search:
     description: "Search for packages matching the specified query."
   show:
-    description: "Show information about the specified package."
+    description: "Hiển thị thông tin về gói đã chọn."
   update:
-    description: "Update the list of available packages."
+    description: "Cập nhật danh sách các gói có sẵn."
   upgrade:
-    description: "Upgrade all installed packages."
+    description: "Cập nhật tất cả các gói đã cài đặt."
   enter:
-    description: "Enter the subsystem's environment."
+    description: "Truy cập môi trường của hệ thống con."
   export:
-    description: "Export an application or binary from the subsystem."
+    description: "Xuất một ứng dụng hoặc mã biên dịch từ hệ thống con lên máy chủ."
     options:
       appName:
-        description: "The name of the application to export."
+        description: "Tên của ứng dụng cần xuất."
       bin:
-        description: "The name of the binary to export."
+        description: "Tên của mã biên dịch cần xuất."
       binOutput:
-        description: "Path of the binary output (default: ~/.local/bin/)."
+        description: "Đường dẫn xuất mã biên dịch (mặc định: ~/.local/bin/)."
   unexport:
-    description: "Unexport an application or binary from the subsystem."
+    description: "Hủy xuất một ứng dụng hoặc mã biên dịch từ máy chủ."
     options:
       appName:
-        description: "The name of the application to unexport."
+        description: "Tên của ứng dụng cần hủy xuất."
       bin:
-        description: "The name of the binary to unexport."
+        description: "Tên của mã biên dịch cần hủy xuất."
       binOutput:
-        description: "Path of the binary output (default: ~/.local/bin/)."
+        description: "Đường dẫn xuất mã biên dịch (mặc định: ~/.local/bin/)."
   start:
-    description: "Start the subsystem."
+    description: "Khởi động hệ thống con."
   stop:
     description: "Stop the subsystem."
 
   run:
-    description: Run command inside subsystem.
+    description: Chạy câu lệnh trong hệ thống con.
 pkgmanagers:
-  description: "Work with the package managers that are available in apx."
+  description: "Làm việc với các trình quản lí gói có sẵn trong apx."
   labels:
-    name: "Name"
-    builtIn: "Built-in"
+    name: "Tên"
+    builtIn: "Tích hợp sẵn"
 
   list:
-    description: "List all available package managers."
+    description: "Liệt kê các trình quản lí gói có sẵn."
     info:
-      noPkgManagers: "No package managers available. Create a new one with 'apx pkgmanagers
-        new' or contact the system administrator."
-      foundPkgManagers: "Found %d package managers"
+      noPkgManagers: "Chưa có trình quản lí gói nào. Tạo một cái mới bằng lệnh 'apx
+        pkgmanagers new' hoặc liên hệ người quản trị hệ thống."
+      foundPkgManagers: "Đã tìm thấy %d trình quản lí gói"
     options:
       json:
         description: "Output in JSON format."
