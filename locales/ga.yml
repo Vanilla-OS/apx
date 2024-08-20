@@ -1,393 +1,397 @@
 apx:
-  description: "Apx is a package manager with support for multiple sources, allowing
-    you to install packages in subsystems."
+  description: "Is bainisteoir pacáiste é Apx le tacaíocht d'fhoinsí éagsúla, rud
+    a ligeann duit pacáistí a shuiteáil i bhfochórais."
   errors:
-    unknownCommand: "Unknown command: %s"
-    invalidInput: "Invalid input."
-    invalidChoice: "Invalid choice."
-    noRoot: "Do not run Apx as root."
+    unknownCommand: "Ordú anaithnid: %s"
+    invalidInput: "Ionchur neamhbhailí."
+    invalidChoice: "Rogha neamhbhailí."
+    noRoot: "Ná rith Apx mar fhréamh."
   msg:
-    help: "Show help for apx."
-    version: "Show version for apx."
-    usage: "Usage"
-    aliases: "Aliases"
-    examples: "Examples"
-    availableCommands: "Available Commands"
-    additionalCommands: "Additional Commands"
-    flags: "Flags"
-    globalFlags: "Global Flags"
-    additionalHelpTopics: "Additional help topics"
-    moreInfo: "Use %s for more information about a command"
+    help: "Taispeáin cabhair le haghaidh apx."
+    version: "Taispeáin leagan le haghaidh apx."
+    usage: "Úsáid"
+    aliases: "Ailiasanna"
+    examples: "Samplaí"
+    availableCommands: "Orduithe atá ar Fáil"
+    additionalCommands: "Orduithe Breise"
+    flags: "Bratacha"
+    globalFlags: "Bratacha Domhanda"
+    additionalHelpTopics: "Topaicí cabhrach breise"
+    moreInfo: "Úsáid %s le haghaidh tuilleadh eolais faoi ordú"
   info:
-    aborting: "Aborting as requested."
+    aborting: "Tobscor de réir mar a iarrtar."
   terminal:
-    yes: "yes"
-    no: "no"
+    yes: "tá"
+    no: "Ní hea"
 
 runtimeCommand:
-  description: "Work with the specified subsystem, accessing the package manager and
-    environment."
+  description: "Oibriú leis an bhfochóras sonraithe, rochtain a fháil ar an mbainisteoir
+    pacáiste agus ar an timpeallacht."
   error:
-    enteringContainer: "An error occurred while entering the container: %s"
-    noPackageSpecified: "No packages specified."
-    cantAccessPkgManager: "An error occurred while accessing the package manager:
+    enteringContainer: "Tharla earráid agus an coimeádán á iontráil: %s"
+    noPackageSpecified: "Níor sonraíodh aon phacáistí."
+    cantAccessPkgManager: "Tharla earráid agus bainisteoir an phacáiste á rochtain:
       %s"
-    executingCommand: "An error occurred while executing the command: %s"
-    noAppNameOrBin: "--app-name or --bin must be specified."
-    sameAppOrBin: "--app-name and --bin cannot be both specified."
-    exportingApp: "An error occurred while exporting the application: %s"
-    exportingBin: "An error occurred while exporting the binary: %s"
-    unexportingApp: "An error occurred while unexporting the application: %s"
-    unexportingBin: "An error occurred while unexporting the binary: %s"
-    startingContainer: "An error occurred while starting the container: %s"
-    stoppingContainer: "An error occurred while stopping the container: %s"
+    executingCommand: "Tharla earráid agus an t- ordú á rith: %s"
+    noAppNameOrBin: "Ní mór --app-name nó --bin a shonrú."
+    sameAppOrBin: "--app-name agus --bin ní féidir an dá rud a shonrú."
+    exportingApp: "Tharla earráid agus an feidhmchlár á easpórtáil: %s"
+    exportingBin: "Tharla earráid agus an dénártha á easpórtáil: %s"
+    unexportingApp: "Tharla earráid agus an feidhmchlár á dhíchriptiú: %s"
+    unexportingBin: "Tharla earráid agus an dénártha á dhíchriptiú: %s"
+    startingContainer: "Tharla earráid agus an coimeádán á thosú: %s"
+    stoppingContainer: "Tharla earráid agus an coimeádán á stopadh: %s"
   info:
-    unexportedApps: "Unexported %d applications"
-    exportedApps: "Exported %d applications"
-    exportedApp: "Exported application %s"
-    exportedBin: "Exported binary %s"
-    unexportedApp: "Unexported application %s"
-    unexportedBin: "Unexported binary %s"
-    startingContainer: "Starting container…"
-    startedContainer: "Started container."
-    stoppingContainer: "Stopping container…"
-    stoppedContainer: "Stopped container."
+    unexportedApps: "Feidhmchláir %d gan easpórtáil"
+    exportedApps: "Easpórtáil %d feidhmchlár"
+    exportedApp: "Easpórtáil feidhmchlár %s"
+    exportedBin: "Easpórtáil dénártha %s"
+    unexportedApp: "Feidhmchlár neamheaspórtáilte %s"
+    unexportedBin: "Dénártha %s gan easpórtáil"
+    startingContainer: "Coimeádán á thosú…"
+    startedContainer: "Thosaigh an coimeádán."
+    stoppingContainer: "Coimeádán á stopadh…"
+    stoppedContainer: "Coimeádán stoptha."
   autoremove:
-    description: "Remove packages that are no longer required."
+    description: "Bain pacáistí nach bhfuil ag teastáil a thuilleadh."
   clean:
-    description: "Clean the package manager's cache."
+    description: "Glan taisce an bhainisteora pacáiste."
   install:
-    description: "Install the specified package."
+    description: "Suiteáil an pacáiste sonraithe."
     options:
       noExport:
-        description: "Do not export a desktop entry."
+        description: "Ná heaspórtáil iontráil deisce."
   list:
-    description: "List all installed packages."
+    description: "Liostaigh gach pacáiste suiteáilte."
   purge:
-    description: "Purge the specified packages."
+    description: "Purge na pacáistí sonraithe."
   remove:
-    description: "Remove the specified packages."
+    description: "Bain na pacáistí sonraithe."
   search:
-    description: "Search for packages matching the specified query."
+    description: "Cuardaigh pacáistí a mheaitseálann an cheist shonraithe."
   show:
-    description: "Show information about the specified package."
+    description: "Taispeáin faisnéis faoin bpacáiste sonraithe."
   update:
-    description: "Update the list of available packages."
+    description: "Nuashonraigh liosta na bpacáistí atá ar fáil."
   upgrade:
-    description: "Upgrade all installed packages."
+    description: "Uasghrádú gach pacáiste suiteáilte."
   run:
-    description: "Run command inside subsystem."
+    description: "Rith ordú taobh istigh den fhochóras."
   enter:
-    description: "Enter the subsystem's environment."
+    description: "Cuir isteach timpeallacht an fhochórais."
   export:
-    description: "Export an application or binary from the subsystem to the host."
+    description: "Easpórtáil feidhmchlár nó dénártha ón bhfochóras chuig an óstach."
     options:
       appName:
-        description: "The name of the application to export."
+        description: "Ainm an iarratais ar easpórtáil."
       bin:
-        description: "The name of the binary to export."
+        description: "An t-ainm ar an dénártha a onnmhairiú."
       binOutput:
-        description: "Path of the binary output (default: ~/.local/bin/)."
+        description: "Conair an aschuir dhénártha (réamhshocrú: ~ / .local / bin /
+          )."
   unexport:
-    description: "Unexport an application or binary from the host."
+    description: "Unexport iarratas nó dénártha ón óstach."
     options:
       appName:
-        description: "The name of the application to unexport."
+        description: "Ainm an iarratais ar unexport."
       bin:
-        description: "The name of the binary to unexport."
+        description: "An t-ainm ar an dénártha a unexport."
       binOutput:
-        description: "Path of the binary output (default: ~/.local/bin/)."
+        description: "Conair an aschuir dhénártha (réamhshocrú: ~ / .local / bin /
+          )."
   start:
-    description: "Start the subsystem."
+    description: "Tosaigh an fochóras."
   stop:
-    description: "Stop the subsystem."
+    description: "Stop an fochóras."
 
 pkgmanagers:
-  description: "Work with the package managers that are available in apx."
+  description: "Obair leis na bainisteoirí pacáiste atá ar fáil i apx."
   labels:
-    name: "Name"
-    builtIn: "Built-in"
+    name: "Ainm"
+    builtIn: "Tógtha i"
   list:
-    description: "List all available package managers."
+    description: "Liostaigh na bainisteoirí pacáiste go léir atá ar fáil."
     info:
-      noPkgManagers: "No package managers available. Create a new one with 'apx pkgmanagers
-        new' or contact the system administrator."
-      foundPkgManagers: "Found %d package managers"
+      noPkgManagers: "Níl aon bhainisteoirí pacáiste ar fáil. Cruthaigh ceann nua
+        le 'apx pkgmanagers nua' nó déan teagmháil le riarthóir an chórais."
+      foundPkgManagers: "Aimsíodh %d bainisteoirí pacáiste"
     options:
       json:
-        description: "Output in JSON format."
+        description: "Aschur i bhformáid JSON."
   show:
-    description: "Show information about the specified package manager."
+    description: "Taispeáin faisnéis faoin mbainisteoir pacáiste sonraithe."
   new:
-    description: "Create a new package manager."
-    success: "Package manager %s created successfully."
+    description: "Cruthaigh bainisteoir pacáiste nua."
+    success: "D' éirigh le bainisteoir pacáiste %s a chruthú."
     error:
-      emptyName: "The name cannot be empty."
-      noName: "No name specified."
-      emptyCommand: "The command cannot be empty."
-      noCommand: "No command specified for '%s'."
-      alreadyExists: "A package manager with the name '%s' already exists."
+      emptyName: "Ní féidir leis an ainm a bheith folamh."
+      noName: "Níor sonraíodh aon ainm."
+      emptyCommand: "Ní féidir leis an ordú a bheith folamh."
+      noCommand: "Níor sonraíodh ordú le haghaidh '%s'."
+      alreadyExists: "Tá bainisteoir pacáiste leis an ainm '%s' ann cheana."
     info:
-      askName: "Choose a name:"
-      askSudo: "Does the package manager need sudo to run?"
-      askCommand: "Enter the command for '%s':"
-      askOverwrite: "A package manager with the name '%s' already exists. Overwrite
-        it?"
+      askName: "Roghnaigh ainm:"
+      askSudo: "An gá don bhainisteoir pacáiste sudo a rith?"
+      askCommand: "Iontráil an t- ordú do '%s':"
+      askOverwrite: "Tá bainisteoir pacáiste leis an ainm '%s' ann cheana. Forscríobh
+        é?"
     options:
       assumeYes:
-        description: "Assume yes to all prompts."
+        description: "Glac leis go bhfuil gach leid."
       name:
-        description: "The name of the package manager."
+        description: "Ainm an bhainisteora pacáiste."
       needSudo:
-        description: "Whether the package manager needs sudo to run."
+        description: "Cibé an gcaithfidh an bainisteoir pacáiste sudo a rith."
       autoremove:
-        description: "The command to run to autoremove packages."
+        description: "An t-ordú a rith chun pacáistí automove."
       clean:
-        description: "The command to run to clean the package manager's cache."
+        description: "An t-ordú a reáchtáil chun taisce an bhainisteora pacáiste a
+          ghlanadh."
       install:
-        description: "The command to run to install packages."
+        description: "An t-ordú le rith chun pacáistí a shuiteáil."
       list:
-        description: "The command to run to list installed packages."
+        description: "An t- ordú le rith chun pacáistí suiteáilte a liostáil."
       purge:
-        description: "The command to run to purge packages."
+        description: "An t-ordú a reáchtáil chun pacáistí purge."
       remove:
-        description: "The command to run to remove packages."
+        description: "An t-ordú le rith chun pacáistí a bhaint."
       search:
-        description: "The command to run to search for packages."
+        description: "An t-ordú le rith chun pacáistí a chuardach."
       show:
-        description: "The command to run to show information about packages."
+        description: "An t-ordú le rith chun faisnéis faoi phacáistí a thaispeáint."
       update:
-        description: "The command to run to update the list of available packages."
+        description: "An t-ordú le rith chun liosta na bpacáistí atá ar fáil a nuashonrú."
       upgrade:
-        description: "The command to run to upgrade packages."
+        description: "An t-ordú a rith chun pacáistí a uasghrádú."
   update:
-    description: "Update the specified package manager."
+    description: "Nuashonraigh an bainisteoir pacáiste sonraithe."
     info:
-      success: "Updated package manager '%s'."
-      askNewCommand: "Enter new command for '%s' (leave empty to keep '%s'):"
+      success: "Bainisteoir pacáiste nuashonraithe '%s'."
+      askNewCommand: "Iontráil ordú nua do '%s' (fág folamh chun '%s' a choinneáil):"
     error:
-      noName: "No name specified."
-      missingCommand: "Missing command for %s."
+      noName: "Níor sonraíodh aon ainm."
+      missingCommand: "Ordú ar iarraidh le haghaidh %s."
   rm:
-    description: "Remove the specified package manager."
+    description: "Bain an bainisteoir pacáiste sonraithe."
     error:
-      noName: "No name specified."
-      inUse: "The package manager is used in %d stacks:"
+      noName: "Níor sonraíodh aon ainm."
+      inUse: "Úsáidtear bainisteoir an phacáiste i gcruacha %d:"
     info:
-      askConfirmation: "Are you sure you want to remove '%s'?"
-      success: "Removed package manager '%s'."
-      aborting: "Aborting removal of package manager '%s'."
+      askConfirmation: "An bhfuil tú cinnte go bhfuil fonn ort '%s' a bhaint?"
+      success: "Baineadh bainisteoir pacáiste '%s'."
+      aborting: "Bainisteoir pacáiste '%s' a thobscor."
     options:
       force:
-        description: "Force removal of the package manager."
+        description: "Fórsa deireadh a chur leis an mbainisteoir pacáiste."
       name:
-        description: "The name of the package manager to remove."
+        description: "Ainm an bhainisteora pacáiste a bhaint."
   export:
-    description: "Export the specified package manager."
+    description: "Easpórtáil an bainisteoir pacáiste sonraithe."
     error:
-      noName: "No name specified."
-      noOutput: "No output specified."
+      noName: "Níor sonraíodh aon ainm."
+      noOutput: "Níor sonraíodh aschur."
     info:
-      success: "Exported package manager '%s' to '%s'."
+      success: "Easpórtáil bainisteoir pacáiste '%s' go '%s'."
     options:
       name:
-        description: "The name of the package manager to export."
+        description: "Ainm an bhainisteora pacáiste le heaspórtáil."
       output:
-        description: "The path to export the package manager to."
+        description: "An cosán chun an bainisteoir pacáiste a onnmhairiú chuig."
   import:
-    description: "Import the specified package manager."
+    description: "Iompórtáil an bainisteoir pacáiste sonraithe."
     error:
-      noInput: "No input specified."
-      cannotLoad: "Cannot load package manager from '%s'."
+      noInput: "Níor sonraíodh aon ionchur."
+      cannotLoad: "Ní féidir bainisteoir an phacáiste a luchtú ó '%s'."
     info:
-      success: "Imported package manager from '%s'."
+      success: "Bainisteoir pacáiste iompórtáilte ó '%s'."
     options:
       input:
-        description: "The path to import the package manager from."
+        description: "An cosán a allmhairiú an bainisteoir pacáiste ó."
 
 stacks:
-  description: "Work with the stacks that are available in apx."
+  description: "Obair leis na cruacha atá ar fáil i apx."
   labels:
-    name: "Name"
-    builtIn: "Built-in"
+    name: "Ainm"
+    builtIn: "Tógtha i"
   list:
-    description: "List all available stacks."
+    description: "Liostaigh na cruacha go léir atá ar fáil."
     info:
-      noStacks: "No stacks available. Create a new one with 'apx stacks new' or contact
-        the system administrator."
-      foundStacks: "Found %d stacks:"
-      aborting: "Aborting removal of stack '%s'."
+      noStacks: "Níl cruacha ar fáil. Cruthaigh ceann nua le 'apx stacks new' nó déan
+        teagmháil le riarthóir an chórais."
+      foundStacks: "Aimsíodh %d cruacha:"
+      aborting: "Deireadh a chur le cruach '%s'."
     options:
       json:
-        description: "Output in JSON format."
+        description: "Aschur i bhformáid JSON."
   show:
-    description: "Show information about the specified stack."
+    description: "Taispeáin faisnéis faoin gcruach shonraithe."
   new:
-    description: "Create a new stack."
+    description: "Cruthaigh cruach nua."
     error:
-      emptyName: "The name cannot be empty."
-      noName: "No name specified."
-      emptyBase: "The base cannot be empty."
-      noBase: "No base specified."
-      emptyPkgManager: "The package manager cannot be empty."
-      noPkgManager: "No package manager specified."
-      noPkgManagers: "Could not find any package managers. Create one with 'apx pkgmanagers
-        new' or contact the system administrator."
-      pkgManagerDoesNotExist: "The specified package manager does not exist. Create
-        it with 'apx pkgmanagers new' or contact the system administrator."
-      emptyPackages: "The packages cannot be empty."
-      noPackages: "No packages specified."
-      alreadyExists: "A stack with the name '%s' already exists."
+      emptyName: "Ní féidir leis an ainm a bheith folamh."
+      noName: "Níor sonraíodh aon ainm."
+      emptyBase: "Ní féidir leis an mbonn a bheith folamh."
+      noBase: "Níor sonraíodh aon bhonn."
+      emptyPkgManager: "Ní féidir leis an mbainisteoir pacáiste a bheith folamh."
+      noPkgManager: "Níor sonraíodh aon bhainisteoir pacáiste."
+      noPkgManagers: "Níorbh fhéidir bainisteoirí pacáiste ar bith a aimsiú. Cruthaigh
+        ceann le 'apx pkgmanagers nua' nó déan teagmháil le riarthóir an chórais."
+      pkgManagerDoesNotExist: "Níl an bainisteoir pacáiste sonraithe ann. Cruthaigh
+        é le 'apx pkgmanagers nua' nó déan teagmháil le riarthóir an chórais."
+      emptyPackages: "Ní féidir leis na pacáistí a bheith folamh."
+      noPackages: "Níor sonraíodh aon phacáistí."
+      alreadyExists: "Tá cruach leis an ainm '%s' ann cheana."
     info:
-      askName: "Choose a name:"
-      askBase: "Choose a base (e.g. 'vanillaos/pico'):"
-      askPkgManager: "Choose a package manager:"
-      selectPkgManager: "Select a package manager [1-%d]:"
-      noPackages: "You have not provided any packages to install in the stack. Do
-        you want to add some now?"
-      confirmPackages: "Do you want to confirm the current packages list?"
-      askPackages: "Please type the packages you want to install in the stack, separated
-        by a space:"
-      success: "Created stack '%s'."
+      askName: "Roghnaigh ainm:"
+      askBase: "Roghnaigh bonn (m.sh. 'vanillaos/pico'):"
+      askPkgManager: "Roghnaigh bainisteoir pacáiste:"
+      selectPkgManager: "Roghnaigh bainisteoir pacáiste [1-%d]:"
+      noPackages: "Níor chuir tú aon phacáistí ar fáil le suiteáil sa chruach. An
+        bhfuil fonn ort roinnt a chur leis anois?"
+      confirmPackages: "An bhfuil fonn ort liosta na bpacáistí reatha a dheimhniú?"
+      askPackages: "Clóscríobh na pacáistí is mian leat a shuiteáil sa chairn, scartha
+        ag spás:"
+      success: "Cruach '%s' cruthaithe."
     options:
       assumeYes:
-        description: "Assume yes to all prompts."
+        description: "Glac leis go bhfuil gach leid."
       name:
-        description: "The name of the stack."
+        description: "Ainm an chairn."
       base:
-        description: "The base distribution image to use. (For a list of compatible
-          images view: https://distrobox.it/compatibility/#containers-distros)"
+        description: "An íomhá dáilte bonn le húsáid. (Le haghaidh liosta d'íomhánna
+          comhoiriúnacha amharc: https://distrobox.it/compatibility/#containers-distros)"
       packages:
-        description: "The packages to install."
+        description: "Na pacáistí le suiteáil."
       pkgManager:
-        description: "The package manager to use."
+        description: "An bainisteoir pacáiste a úsáid."
   update:
-    description: "Update the specified stack."
+    description: "Nuashonraigh an chairn shonraithe."
     error:
-      noName: "No name specified."
-      noBase: "No base specified."
-      noPkgManager: "No package manager specified."
-      pkgManagerDoesNotExist: "The specified package manager does not exist. Create
-        it with 'apx pkgmanagers new' or contact the system administrator."
+      noName: "Níor sonraíodh aon ainm."
+      noBase: "Níor sonraíodh aon bhonn."
+      noPkgManager: "Níor sonraíodh aon bhainisteoir pacáiste."
+      pkgManagerDoesNotExist: "Níl an bainisteoir pacáiste sonraithe ann. Cruthaigh
+        é le 'apx pkgmanagers nua' nó déan teagmháil le riarthóir an chórais."
     info:
-      askBase: "Type a new base or confirm the current one (%s):"
-      askPkgManager: "Choose a new package manager or confirm the current one (%s):"
-      confirmPackages: "Do you want to confirm the current packages list?"
-      noPackages: "You have not provided any packages to install in the stack. Do
-        you want to add some now?"
-      askPackages: "Type the packages you want to install in the stack, separated
-        by a space, or confirm the current ones (%s):"
-      success: "Updated stack '%s'."
+      askBase: "Clóscríobh bonn nua nó deimhnigh an ceann reatha (%s):"
+      askPkgManager: "Roghnaigh bainisteoir pacáiste nua nó deimhnigh an ceann reatha
+        (%s):"
+      confirmPackages: "An bhfuil fonn ort liosta na bpacáistí reatha a dheimhniú?"
+      noPackages: "Níor chuir tú aon phacáistí ar fáil le suiteáil sa chruach. An
+        bhfuil fonn ort roinnt a chur leis anois?"
+      askPackages: "Clóscríobh na pacáistí is mian leat a shuiteáil sa chruach, scartha
+        le spás, nó deimhnigh na cinn reatha (%s):"
+      success: "Cruach nuashonraithe '%s'."
     options:
       assumeYes:
-        description: "Assume yes to all prompts."
+        description: "Glac leis go bhfuil gach leid."
       name:
-        description: "The name of the stack."
+        description: "Ainm an chairn."
       base:
-        description: "The base subsystem to use."
+        description: "An fochóras bonn le húsáid."
       packages:
-        description: "The packages to install."
+        description: "Na pacáistí le suiteáil."
       pkgManager:
-        description: "The package manager to use."
+        description: "An bainisteoir pacáiste a úsáid."
   rm:
-    description: "Remove the specified stack."
+    description: "Bain an chairn shonraithe."
     error:
-      noName: "No name specified."
+      noName: "Níor sonraíodh aon ainm."
     info:
-      askConfirmation: "Are you sure you want to remove '%s'?"
-      success: "Removed stack '%s'."
+      askConfirmation: "An bhfuil tú cinnte go bhfuil fonn ort '%s' a bhaint?"
+      success: "Baineadh cruach '%s'."
     options:
       force:
-        description: "Force removal of the stack."
+        description: "Fórsa deireadh a chur leis an chairn."
       name:
-        description: "The name of the stack to remove."
+        description: "Ainm an chairn le baint."
   export:
-    description: "Export the specified stack."
+    description: "Easpórtáil an chairn shonraithe."
     error:
-      noName: "No name specified."
-      noOutput: "No output specified."
+      noName: "Níor sonraíodh aon ainm."
+      noOutput: "Níor sonraíodh aschur."
     info:
-      success: "Exported stack '%s' to '%s'."
+      success: "Easpórtáil cruach '%s' go '%s'."
     options:
       name:
-        description: "The name of the stack to export."
+        description: "Ainm an chairn le heaspórtáil."
       output:
-        description: "The path to export the stack to."
+        description: "An cosán a onnmhairiú an chairn a."
   import:
-    description: "Import the specified stack."
+    description: "Iompórtáil an chairn shonraithe."
     error:
-      noInput: "No input specified."
-      cannotLoad: "Cannot load stack from '%s'."
+      noInput: "Níor sonraíodh aon ionchur."
+      cannotLoad: "Ní féidir cruach a luchtú ó '%s'."
     info:
-      success: "Imported stack from '%s'."
+      success: "Cruach iompórtáilte ó '%s'."
     options:
       input:
-        description: "The path to import the stack from."
+        description: "An cosán a allmhairiú an Chairn ó."
 
 subsystems:
-  description: "Work with the subsystems that are available in apx."
+  description: "Obair leis na fochórais atá ar fáil i apx."
   labels:
-    name: "Name"
-    status: "Status"
+    name: "Ainm"
+    status: "Stádas"
 
   list:
-    description: "List all available subsystems."
+    description: "Liostaigh na fochórais go léir atá ar fáil."
     error:
     info:
-      noSubsystems: "No subsystems available. Create a new one with 'apx subsystems
-        new' or contact the system administrator."
-      foundSubsystems: "Found %d subsystems:"
+      noSubsystems: "Níl aon fhochórais ar fáil. Cruthaigh ceann nua le 'fochórais
+        apx nua' nó déan teagmháil le riarthóir an chórais."
+      foundSubsystems: "Aimsíodh fochórais %d:"
     options:
       json:
-        description: "Output in JSON format."
+        description: "Aschur i bhformáid JSON."
   new:
-    description: "Create a new subsystem."
+    description: "Cruthaigh fochóras nua."
     error:
-      noStacks: "A stack is needed to create a subsystem. Create a new one with 'apx
-        stacks new' or contact the system administrator."
-      emptyName: "The name cannot be empty."
-      noName: "No name specified."
-      emptyStack: "The stack cannot be empty."
-      noStack: "No stack specified."
-      stackDoesNotExist: "The specified stack does not exist. Create it with 'apx
-        stacks new' or contact the system administrator."
-      alreadyExists: "A subsystem with the name '%s' already exists."
+      noStacks: "Tá stack ag teastáil chun fochóras a chruthú. Cruthaigh ceann nua
+        le 'apx stacks new' nó déan teagmháil le riarthóir an chórais."
+      emptyName: "Ní féidir leis an ainm a bheith folamh."
+      noName: "Níor sonraíodh aon ainm."
+      emptyStack: "Ní féidir leis an gcruach a bheith folamh."
+      noStack: "Níor sonraíodh aon chruach."
+      stackDoesNotExist: "Níl an chairn shonraithe ann. Cruthaigh é le 'cruacha apx
+        nua' nó déan teagmháil le riarthóir an chórais."
+      alreadyExists: "Tá fochóras leis an ainm '%s' ann cheana."
     info:
-      askName: "Choose a name:"
-      availableStacks: "Available stacks:"
-      selectStack: "Select a stack [1-%d]:"
-      success: "Created subsystem '%s'."
-      creatingSubsystem: "Creating subsystem '%s' with stack '%s'…"
+      askName: "Roghnaigh ainm:"
+      availableStacks: "Cruacha atá ar fáil:"
+      selectStack: "Roghnaigh cruach [1-%d]:"
+      success: "Cruthaíodh fochóras '%s'."
+      creatingSubsystem: "Fochóras '%s' á chruthú le cruach '%s'…"
     options:
       name:
-        description: "The name of the subsystem."
+        description: "Ainm an fhochórais."
       stack:
-        description: "The stack to use."
+        description: "An chairn le húsáid."
       home:
-        description: "The custom home directory of the subsystem."
+        description: "Comhadlann bhaile saincheaptha an fhochórais."
       init:
-        description: "Use systemd inside the subsystem."
+        description: "Úsáid córasaithe taobh istigh den fhochóras."
   rm:
-    description: "Remove the specified subsystem."
+    description: "Bain an fochóras sonraithe."
     error:
-      noName: "No name specified."
+      noName: "Níor sonraíodh aon ainm."
     info:
-      askConfirmation: "Are you sure you want to remove '%s'?"
-      success: "Removed subsystem '%s'."
+      askConfirmation: "An bhfuil tú cinnte go bhfuil fonn ort '%s' a bhaint?"
+      success: "Baineadh fochóras '%s'."
     options:
       force:
-        description: "Force removal of the subsystem."
+        description: "Fórsa deireadh a chur leis an bhfochóras."
       name:
-        description: "The name of the subsystem to remove."
+        description: "Ainm an fhochórais le baint."
   reset:
-    description: "Reset the specified subsystem."
+    description: "Athshocraigh an fochóras sonraithe."
     error:
-      noName: "No name specified."
+      noName: "Níor sonraíodh aon ainm."
     info:
-      askConfirmation: "Are you sure you want to reset '%s'?"
-      success: "The subsystem '%s' has been reset."
+      askConfirmation: "An bhfuil tú cinnte go bhfuil fonn ort '%s' a athshocrú?"
+      success: "Athshocraíodh an fochóras '%s'."
     options:
       force:
-        description: "Force reset of the subsystem."
+        description: "Fórsa athshocrú an fhochórais."
       name:
-        description: "The name of the subsystem to reset."
+        description: "Ainm an fhochórais le athshocrú."
