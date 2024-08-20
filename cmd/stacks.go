@@ -241,7 +241,7 @@ func listStacks(cmd *cobra.Command, args []string) error {
 			return nil
 		}
 
-		fmt.Printf(apx.Trans("stacks.list.info.foundStacks"), stacksCount)
+		cmdr.Info.Printfln(apx.Trans("stacks.list.info.foundStacks"), stacksCount)
 
 		table := core.CreateApxTable(os.Stdout)
 		table.SetHeader([]string{apx.Trans("stacks.labels.name"), "Base", apx.Trans("stacks.labels.builtIn"), "Pkgs", "Pkg manager"})
