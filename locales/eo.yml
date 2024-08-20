@@ -25,10 +25,9 @@ apx:
     help: Montri helpon pri apx.
     additionalHelpTopics: Pliaj helpaj temoj
 runtimeCommand:
-  description: "Work with the specified subsystem, accessing the package manager and
-    environment."
+  description: "Uzi la specifitan subsistemon kaj ĝiajn pakadministrilon kaj medion."
   error:
-    enteringContainer: "An error occurred while entering the container: %s"
+    enteringContainer: "Okazis eraro enirante la ujon: %s"
     noPackageSpecified: "Neniu pako specifiĝis."
     cantAccessPkgManager: "Okazis eraro uzante la pakadministrilon: %s"
     executingCommand: "Okazis eraro rulante la komandon: %s"
@@ -38,8 +37,8 @@ runtimeCommand:
     exportingBin: "Okazis eraro eksportante la binaraĵon: %s"
     unexportingApp: "Okazis eraro maleksportante la programon: %s"
     unexportingBin: "Okazis eraro maleksportante la binaraĵon: %s"
-    startingContainer: 'An error occurred while starting the container: %s'
-    stoppingContainer: 'An error occurred while stopping the container: %s'
+    startingContainer: 'Okazis eraro lanĉante la ujon: %s'
+    stoppingContainer: 'Okazis eraro mallanĉante la ujon: %s'
   info:
     unexportedApps: "Maleksportis %d programojn"
     exportedApps: "Eksportis %d programojn"
@@ -47,19 +46,19 @@ runtimeCommand:
     exportedBin: "Eksportis la binaraĵon %s"
     unexportedApp: "Maleksportis la programon %s"
     unexportedBin: "Maleksportis la binaraĵon %s"
-    stoppedContainer: Stopped container.
-    startedContainer: Started container.
-    stoppingContainer: Stopping container…
-    startingContainer: Starting container…
+    stoppedContainer: Mallanĉis ujon.
+    startedContainer: Lanĉis ujon.
+    stoppingContainer: Mallanĉante ujon…
+    startingContainer: Lanĉante ujon…
   autoremove:
-    description: "Malinstali ne plu bezonatajn pakojn"
+    description: "Malinstali ne plu bezonatajn pakojn."
   clean:
     description: "Forviŝi la kaŝmemoron de la pakadministrilo."
   install:
     description: "Instali la specifitan pakon."
     options:
       noExport:
-        description: "Do not export a desktop entry."
+        description: "Ne eskporti labortablaĵon."
   list:
     description: "Listigi ĉiujn instalitajn pakojn."
   purge:
@@ -67,7 +66,7 @@ runtimeCommand:
   remove:
     description: "Malinstali la specifitajn pakojn."
   search:
-    description: "Search for packages matching the specified query."
+    description: "Serĉi pakojn kongruajn kun la specifita teksto."
   show:
     description: "Montri informojn pri la specifita pako."
   update:
@@ -77,7 +76,7 @@ runtimeCommand:
   enter:
     description: "Eniri la medion de la subsistemo."
   export:
-    description: "Export an application or binary from the subsystem."
+    description: "Eksporti programon aŭ binaraĵon de la subsistemo al la gastiganto."
     options:
       appName:
         description: "La nomo de la eksportota programo."
@@ -86,12 +85,12 @@ runtimeCommand:
       binOutput:
         description: "Loko de la eligota binaraĵo (implicite: ~/.local/bin/)."
   unexport:
-    description: "Unexport an application or binary from the subsystem."
+    description: "Maleksporti programon aŭ binaraĵon el la gastiganto."
     options:
       appName:
         description: "La nomo de la maleksportota programo."
       bin:
-        description: "La nomo de la eksportota binaraĵo."
+        description: "La nomo de la maleksportota binaraĵo."
       binOutput:
         description: "Loko de la eligota binaraĵo (implicite: ~/.local/bin/)."
 
@@ -102,7 +101,7 @@ runtimeCommand:
   run:
     description: Ruli komandon en subsistemo.
 pkgmanagers:
-  description: "Work with the package managers that are available in apx."
+  description: "Uzi pakadministrilojn disponeblajn ĉe apx."
   labels:
     name: "Nomo"
     builtIn: "Integrita"
@@ -110,8 +109,8 @@ pkgmanagers:
   list:
     description: "Listo de ĉiuj disponeblaj pakadministriloj."
     info:
-      noPkgManagers: "No package managers available. Create a new one with 'apx pkgmanagers
-        new' or contact the system administrator."
+      noPkgManagers: "Ekzistas neniu pakadministrilo. Aŭ kreu pakadministrilon per
+        «apx pkgmanagers new», aŭ kontaktu la sistemadimistranton."
       foundPkgManagers: "Troviĝis %d pakadministriloj"
     options:
       json:
@@ -131,8 +130,7 @@ pkgmanagers:
       askName: "Elektu nomon:"
       askSudo: "Ĉu la pakadministrilo bezonas «sudo»?"
       askCommand: "Tajpu la komandon por «%s»:"
-      askOverwrite: "A package manager with the name '%s' already exists. Overwrite
-        it?"
+      askOverwrite: "Pakadministrilo nomita «%s» jam ekzistas. Ĉu anstataŭigi ĝin?"
     options:
       assumeYes:
         description: "Jesi al ĉiuj demandoj."
@@ -157,12 +155,12 @@ pkgmanagers:
       show:
         description: "La komando por montri informojn pri pakoj."
       update:
-        description: "The command to run to update the list of available packages."
+        description: "La komando por ĝisdatigi la liston de haveblaj pakoj."
       upgrade:
         description: "La komando por ĝisdatigi pakojn."
     success: Sukcese kreis la pakadministrilon %s.
   rm:
-    description: "Remove the specified package manager."
+    description: "Malinstali la specifitan pakadministrilon."
 
     error:
       noName: "Neniu nomo specifiĝis."
@@ -170,17 +168,17 @@ pkgmanagers:
     info:
       askConfirmation: "Ĉu vi certe volas forigi «%s»?"
       success: "Foriĝis pakadministrilo «%s»."
-      aborting: "Aborting removal of package manager '%s'."
+      aborting: "Ĉesigante malinstalon de la pakadministrilo «%s»."
     options:
       force:
-        description: "Force removal of the package manager."
+        description: "Devigi la malinstalon de la pakadministrilo."
       name:
-        description: "The name of the package manager to remove."
+        description: "La nomo de la malinstalota pakadministrilo."
 
   export:
     options:
       output:
-        description: The path to export the package manager to.
+        description: La eksporta loko de la pakadministrilo.
       name:
         description: La nomo de la eksportota pakadministrilo.
     error:
@@ -192,23 +190,23 @@ pkgmanagers:
   import:
     error:
       noInput: Neniu enigo specifiĝis.
-      cannotLoad: Cannot load package manager from '%s'.
+      cannotLoad: Ne eblas importi pakadministrilon de «%s».
     info:
-      success: Imported package manager from '%s'.
-    description: Import the specified package manager.
+      success: Importis pakadministrilon de «%s».
+    description: Importi la specifitan pakadministrilon.
     options:
       input:
-        description: The path to import the package manager from.
+        description: La importa loko de la pakadministrilo.
   update:
     description: Ĝisdatigi la specifitan pakadministrilon.
     info:
       success: Ĝisdatigis la pakadministrilon «%s».
-      askNewCommand: "Enter new command for '%s' (leave empty to keep '%s'):"
+      askNewCommand: "Tajpu novan komandon por «%s» (lasu malplena por ne ŝanĝi «%s»):"
     error:
       noName: Neniu nomo specifiĝis.
       missingCommand: Mankas komando por %s.
 stacks:
-  description: "Work with the stacks that are available in apx."
+  description: "Uzi stakojn disponeblajn ĉe apx."
   labels:
     name: "Nomo"
     builtIn: "Integrita"
@@ -216,15 +214,15 @@ stacks:
   list:
     description: "Listigi ĉiujn disponeblajn stakojn."
     info:
-      noStacks: "No stacks available. Create a new one with 'apx stacks new' or contact
-        the system administrator."
+      noStacks: "Ekzistas neniu stako. Aŭ kreu stakon per «apx stacks new», aŭ kontaktu
+        la sistemadimistranton."
       foundStacks: "Troviĝis %d stakoj:"
-      aborting: "Aborting removal of stack '%s'."
+      aborting: "Ĉesigante malinstalon de la stako «%s»."
     options:
       json:
         description: "Eligaĵo kiel JSON."
   show:
-    description: "Show information about the specified stack."
+    description: "Montri informojn pri la specifita stako."
   new:
     description: "Krei novan stakon."
     error:
@@ -234,23 +232,23 @@ stacks:
       noBase: "Neniu bazo specifiĝis."
       emptyPkgManager: "La pakadministrilo devas esti nemalplena."
       noPkgManager: "Neniu pakadministrilo specifiĝis."
-      pkgManagerDoesNotExist: "The specified package manager does not exist. Create
-        it with 'apx pkgmanagers new' or contact the system administrator."
+      pkgManagerDoesNotExist: "La specifita pakadministrilo ne ekzistas. Aŭ kreu ĝin
+        per «apx pkgmanagers new», aŭ kontaktu la sistemadministranton."
       emptyPackages: "La pakoj ne povas esti malplenaj."
       noPackages: "Neniu pako specifiĝis."
       alreadyExists: "Jam ekzistas stako de la nomo «%s»."
-      noPkgManagers: Could not find any package managers. Create one with 'apx pkgmanagers
-        new' or contact the system administrator.
+      noPkgManagers: Ekzistas neniu stako. Aŭ kreu stakon per «apx stacks new», aŭ
+        kontaktu la sistemadimistranton.
     info:
       askName: "Elektu nomon:"
       askBase: "Elektu bazon (ekz. «vanillaos/pico»):"
       askPkgManager: "Elektu pakadministrilon:"
       selectPkgManager: "Elektu pakadministrilon [1-%d]:"
-      noPackages: "You have not provided any package to install in the stack. Do you
-        want to add some now?"
+      noPackages: "Vi ne specifis ajnajn pakaĵojn instalotajn en la stakon. Ĉu specifi
+        nun?"
       confirmPackages: "Ĉu konfirmi la aktualan liston de pakoj?"
-      askPackages: "Please type the packages you want to install in the stack, separated
-        by a space:"
+      askPackages: "Bonvolu tajpi tiujn pakojn, kiujn vi volas instali en la stakon,
+        apartigitajn per spacetoj:"
       success: "Kreiĝis stako «%s»."
     options:
       assumeYes:
@@ -270,18 +268,18 @@ stacks:
       noName: "Neniu nomo specifiĝis."
       noBase: "Neniu bazo specifiĝis."
       noPkgManager: "Neniu pakadministrilo specifiĝis."
-      pkgManagerDoesNotExist: "The specified package manager does not exist. Create
-        it with 'apx pkgmanagers new' or contact the system administrator."
+      pkgManagerDoesNotExist: "La specifita pakadministrilo ne ekzistas. Aŭ kreu ĝin
+        per «apx pkgmanagers new», aŭ kontaktu la sistemadministranton."
     info:
-      askBase: "Type a new base or confirm the current one (%s):"
-      askPkgManager: "Choose a new package manager or confirm the current one (%s):"
-      askPackages: "Type the packages you want to install in the stack, separated
-        by a space, or confirm the current ones (%s):"
+      askBase: "Tajpu novan bazon, aŭ konfirmu la aktualan (%s):"
+      askPkgManager: "Elektu novan pakadministrilon, aŭ konfirmu la aktualan (%s):"
+      askPackages: "Bonvolu tajpi tiujn pakojn, kiujn vi volas instali en la stakon,
+        apartigitajn per spacetoj, aŭ konfirmi la aktualajn pakojn (%s):"
       success: "Ĝisdatiĝis stako «%s»."
 
       confirmPackages: Ĉu konfirmi la aktualan liston de pakoj?
-      noPackages: You have not provided any packages to install in the stack. Do you
-        want to add some now?
+      noPackages: Vi ne specifis ajnajn pakaĵojn instalotajn en la stakon. Ĉu specifi
+        nun?
     options:
       assumeYes:
         description: "Jesi al ĉiuj demandoj."
@@ -316,7 +314,7 @@ stacks:
       name:
         description: "La nomo de la elportota stako."
       output:
-        description: "The path to export the stack to."
+        description: "La eksporta loko de la stako."
   import:
     description: "Enporti la specifitan stakon."
     error:
@@ -326,10 +324,10 @@ stacks:
       success: "Enportis stakon el «%s»."
     options:
       input:
-        description: "The path to import the stack from."
+        description: "La importa loko de la stako."
 
 subsystems:
-  description: "Work with the subsystems that are available in apx."
+  description: "Uzi subsistemojn disponeblajn ĉe apx."
   labels:
     name: "Nomo"
     status: "Stato"
@@ -338,8 +336,8 @@ subsystems:
     description: "Listigi ĉiujn disponeblajn subsistemojn."
     error:
     info:
-      noSubsystems: "No subsystems available. Create a new one with 'apx subsystems
-        new' or contact the system administrator."
+      noSubsystems: "Ekzistas neniu subsistemo. Aŭ kreu subsistemon per «apx subsystems
+        new», aŭ kontaktu la sistemadimistranton."
       foundSubsystems: "Troviĝis %d subsistemoj:"
     options:
       json:
@@ -347,14 +345,14 @@ subsystems:
   new:
     description: "Krei novan subsistemon."
     error:
-      noStacks: "A stack is needed to create a subsystem. Create a new one with 'apx
-        stacks new' or contact the system administrator."
+      noStacks: "Oni bezonas stakon por krei subsistemon. Aŭ kreu stakon per «apx
+        stacks new», aŭ kontaktu la sistemadimistranton."
       emptyName: "La nomo devas esti nemalplena."
       noName: "Neniu nomo specifiĝis."
       emptyStack: "La stako devas esti nemalplena."
       noStack: "Neniu stako specifiĝis."
-      stackDoesNotExist: "The specified stack does not exist. Create it with 'apx
-        stacks new' or contact the system administrator."
+      stackDoesNotExist: "La specifita stako ne ekzistas. Aŭ kreu ĝin per «apx stacks
+        new», aŭ kontaktu la sistemadimistranton."
       alreadyExists: "Subsistemo nomita «%s» jam ekzistas."
     info:
       askName: "Elektu nomon:"
@@ -368,7 +366,7 @@ subsystems:
       stack:
         description: "La uzota stako."
       home:
-        description: The custom home directory of the subsystem.
+        description: La hejmdosierujo de la nova subsistemo.
       init:
         description: Uzi systemd en la subsistemo.
   rm:
@@ -388,10 +386,10 @@ subsystems:
     error:
       noName: "Neniu nomo specifiĝis."
     info:
-      askConfirmation: "Are you sure you want to reset '%s'? [y/N]"
-      success: "The subsystem '%s' has been reset."
+      askConfirmation: "Ĉu vi certe volas restaŭri «%s»?"
+      success: "La subsistemo «%s» estas restaŭrita."
     options:
       force:
-        description: "Force reset of the subsystem."
+        description: "Devigi restaŭradon de la subsistemo."
       name:
-        description: "The name of the subsystem to reset."
+        description: "La nomo de la restaŭrota subsistemo."
