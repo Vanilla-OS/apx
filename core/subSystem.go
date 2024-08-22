@@ -193,8 +193,8 @@ func (s *SubSystem) Create() error {
 	}
 
 	labels := map[string]string{
-		"stack": s.Stack.Name,
-		"name":  s.Name,
+		"stack": strings.ReplaceAll(s.Stack.Name, " ", "\\ "),
+		"name":  strings.ReplaceAll(s.Name, " ", "\\ "),
 	}
 
 	if s.IsManaged {
