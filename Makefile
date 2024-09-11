@@ -1,11 +1,15 @@
-PREFIX=/usr/
-DESTDIR=/
-BINARY_NAME=apx
+PREFIX := /usr
+DESTDIR := /
+BINARY_NAME := apx
 
-all: build
+GO := go
 
-build:
-	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -tags netgo -ldflags '-w -extldflags "-static"' -o ${BINARY_NAME}
+all: clean build
+
+build: ${BINARY_NAME}
+
+${BINARY_NAME}:
+	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 ${GO} build -a -tags netgo -ldflags '-w -extldflags "-static"' -o $@
 
 install: build
 	install -Dm755 ${BINARY_NAME} ${DESTDIR}${PREFIX}/bin/${BINARY_NAME}
@@ -22,7 +26,7 @@ install-manpages:
 	chmod 644 ${DESTDIR}${PREFIX}/share/man/man1/apx*
 
 uninstall: uninstall-manpages
-	rm ${DESTDIR}${PREFIX}/bin/apx
+	rm ${DESTDIR}${PREFIX}/bin/${BINARY_NAME}
 	rm -rf ${DESTDIR}/etc/apx
 	rm -rf ${DESTDIR}${PREFIX}/share/apx
 
@@ -31,4 +35,4 @@ uninstall-manpages:
 
 clean:
 	rm -f ${BINARY_NAME}
-	go clean
+	${GO} clean
