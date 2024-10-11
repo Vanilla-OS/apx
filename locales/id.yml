@@ -9,390 +9,396 @@ apx:
   info:
     aborting: "Membatalkan sesuai permintaan."
   terminal:
-    yes: "yes"
-    no: "no"
+    yes: "ya"
+    no: "tidak"
 
   msg:
-    examples: Examples
-    moreInfo: Use %s for more information about a command
-    flags: Flags
-    globalFlags: Global Flags
-    aliases: Aliases
-    usage: Usage
-    additionalCommands: Additional Commands
-    availableCommands: Available Commands
-    version: Show version for apx.
-    help: Show help for apx.
-    additionalHelpTopics: Additional help topics
+    examples: Contoh
+    moreInfo: Gunakan %s untuk informasi lebih lanjut tentang suatu perintah
+    flags: Tanda (flag)
+    globalFlags: Flag Global
+    aliases: Alias
+    usage: Penggunaan
+    additionalCommands: Perintah Tambahan
+    availableCommands: Perintah yang Tersedia
+    version: Tampilkan versi untuk apx.
+    help: Tampilkan bantuan untuk apx.
+    additionalHelpTopics: Topik bantuan tambahan
 runtimeCommand:
-  description: "Work with the specified subsystem, accessing the package manager and
-    environment."
+  description: "Bekerja dengan subsistem yang ditentukan, mengakses manajer paket
+    dan lingkungan."
   error:
-    enteringContainer: "An error occurred while entering the container: %s"
-    noPackageSpecified: "No packages specified."
-    cantAccessPkgManager: "An error occurred while accessing the package manager:
-      %s"
-    executingCommand: "An error occurred while executing the command: %s"
-    noAppNameOrBin: "--app-name or --bin must be specified."
-    sameAppOrBin: "--app-name and --bin cannot be both specified."
-    exportingApp: "An error occurred while exporting the application: %s"
-    exportingBin: "An error occurred while exporting the binary: %s"
-    unexportingApp: "An error occurred while unexporting the application: %s"
-    unexportingBin: "An error occurred while unexporting the binary: %s"
-    startingContainer: "An error occurred while starting the container: %s"
-    stoppingContainer: "An error occurred while stopping the container: %s"
+    enteringContainer: "Terjadi kesalahan saat memasuki kontainer: %s"
+    noPackageSpecified: "Tidak ada paket yang ditentukan."
+    cantAccessPkgManager: "Terjadi kesalahan saat mengakses manajer paket: %s"
+    executingCommand: "Terjadi kesalahan saat menjalankan perintah: %s"
+    noAppNameOrBin: "<openpyxl.worksheet.formula.ArrayFormula object at 0x7fdb3e098810>"
+    sameAppOrBin: "<openpyxl.worksheet.formula.ArrayFormula object at 0x7fdb3e098090>"
+    exportingApp: "Terjadi kesalahan saat mengekspor aplikasi: %s"
+    exportingBin: "Terjadi kesalahan saat mengekspor biner: %s"
+    unexportingApp: "Terjadi kesalahan saat membatalkan ekspor aplikasi: %s"
+    unexportingBin: "Terjadi kesalahan saat membatalkan ekspor biner: %s"
+    startingContainer: "Terjadi kesalahan saat memulai kontainer: %s"
+    stoppingContainer: "Terjadi kesalahan saat menghentikan kontainer: %s"
   info:
-    unexportedApps: "Unexported %d applications"
-    exportedApps: "Exported %d applications"
-    exportedApp: "Exported application %s"
-    exportedBin: "Exported binary %s"
-    unexportedApp: "Unexported application %s"
-    unexportedBin: "Unexported binary %s"
-    startingContainer: "Starting container…"
-    startedContainer: "Started container."
-    stoppingContainer: "Stopping container…"
-    stoppedContainer: "Stopped container."
+    unexportedApps: "%d aplikasi yang tidak diekspor"
+    exportedApps: "%d aplikasi yang diekspor"
+    exportedApp: "Aplikasi yang diekspor %s"
+    exportedBin: "Biner yang diekspor %s"
+    unexportedApp: "Aplikasi yang tidak diekspor %s"
+    unexportedBin: "Biner yang tidak diekspor %s"
+    startingContainer: "Memulai kontainer…"
+    startedContainer: "Memulai kontainer."
+    stoppingContainer: "Menghentikan kontainer…"
+    stoppedContainer: "Menghentikan kontainer."
   autoremove:
-    description: "Remove packages that are no longer required."
+    description: "Menghapus paket-paket yang tidak lagi diperlukan."
   clean:
-    description: "Clean the package manager's cache."
+    description: "Membersihkan cache manajer paket."
   install:
-    description: "Install the specified package."
+    description: "Menginstal paket yang ditentukan."
     options:
       noExport:
-        description: "Do not export a desktop entry."
+        description: "Jangan mengekspor entri desktop."
   list:
-    description: "List all installed packages."
+    description: "Buat daftar semua paket yang terinstal."
   purge:
-    description: "Purge the specified packages."
+    description: "Menghapus paket yang ditentukan."
   remove:
-    description: "Remove the specified packages."
+    description: "Menghapus paket yang ditentukan."
   search:
-    description: "Search for packages matching the specified query."
+    description: "Mencari paket yang cocok dengan kueri yang ditentukan."
   show:
-    description: "Show information about the specified package."
+    description: "Menampilkan informasi tentang paket yang ditentukan."
   update:
-    description: "Update the list of available packages."
+    description: "Memperbarui daftar paket yang tersedia."
   upgrade:
-    description: "Upgrade all installed packages."
+    description: "Memutakhirkan semua paket yang terinstal."
   enter:
-    description: "Enter the subsystem's environment."
+    description: "Masuk ke lingkungan subsistem."
   export:
-    description: "Export an application or binary from the subsystem."
+    description: "Mengekspor aplikasi atau biner dari subsistem ke host."
     options:
       appName:
-        description: "The name of the application to export."
+        description: "Nama aplikasi yang akan diekspor."
       bin:
-        description: "The name of the binary to export."
+        description: "Nama biner yang akan diekspor."
       binOutput:
-        description: "Path of the binary output (default: ~/.local/bin/)."
+        description: "Jalur keluaran biner (default: ~/.local/bin/)."
   unexport:
-    description: "Unexport an application or binary from the subsystem."
+    description: "Membatalkan ekspor aplikasi atau biner dari host."
     options:
       appName:
-        description: "The name of the application to unexport."
+        description: "Nama aplikasi yang akan dibatalkan ekspornya."
       bin:
-        description: "The name of the binary to unexport."
+        description: "Nama biner yang akan diekspor."
       binOutput:
-        description: "Path of the binary output (default: ~/.local/bin/)."
+        description: "Jalur output biner (default: ~/.local/bin/)."
   start:
-    description: "Start the subsystem."
+    description: "Memulai subsistem."
   stop:
-    description: "Stop the subsystem."
+    description: "Menghentikan subsistem."
 
   run:
-    description: Run command inside subsystem.
+    description: Menjalankan perintah di dalam subsistem.
 pkgmanagers:
-  description: "Work with the package managers that are available in apx."
+  description: "Bekerja dengan manajer paket yang tersedia di apx."
   labels:
-    name: "Name"
-    builtIn: "Built-in"
+    name: "Nama"
+    builtIn: "Bawaan"
 
   list:
-    description: "List all available package managers."
+    description: "Daftar semua manajer paket yang tersedia."
     info:
-      noPkgManagers: "No package managers available. Create a new one with 'apx pkgmanagers
-        new' or contact the system administrator."
-      foundPkgManagers: "Found %d package managers"
+      noPkgManagers: "Tidak ada manajer paket yang tersedia. Buat yang baru dengan
+        'apx pkgmanagers new' atau hubungi administrator sistem."
+      foundPkgManagers: "Ditemukan %d manajer paket"
     options:
       json:
-        description: "Output in JSON format."
+        description: "Keluaran dalam format JSON."
   show:
-    description: "Show information about the specified package manager."
+    description: "Menampilkan informasi tentang manajer paket yang ditentukan."
   new:
-    description: "Create a new package manager."
+    description: "Membuat manajer paket baru."
 
     error:
-      emptyName: "The name cannot be empty."
-      noName: "No name specified."
-      emptyCommand: "The command cannot be empty."
-      noCommand: "No command specified for '%s'."
-      alreadyExists: "A package manager with the name '%s' already exists."
+      emptyName: "Nama tidak boleh kosong."
+      noName: "Tidak ada nama yang ditentukan."
+      emptyCommand: "Perintah tidak boleh kosong."
+      noCommand: "Tidak ada perintah yang ditentukan untuk '%s'."
+      alreadyExists: "Manajer paket dengan nama '%s' sudah ada."
     info:
-      askName: "Choose a name:"
-      askSudo: "Does the package manager need sudo to run?"
-      askCommand: "Enter the command for '%s':"
-      askOverwrite: "A package manager with the name '%s' already exists. Overwrite
-        it?"
+      askName: "Pilih sebuah nama:"
+      askSudo: "Apakah manajer paket membutuhkan sudo untuk dijalankan?"
+      askCommand: "Masukkan perintah untuk '%s':"
+      askOverwrite: "Manajer paket dengan nama '%s' sudah ada. Timpa?"
     options:
       assumeYes:
-        description: "Assume yes to all prompts."
+        description: "Jawab ya untuk semua pertanyaan."
       name:
-        description: "The name of the package manager."
+        description: "Nama manajer paket."
       needSudo:
-        description: "Whether the package manager needs sudo to run."
+        description: "Apakah manajer paket membutuhkan sudo untuk dijalankan."
       autoremove:
-        description: "The command to run to autoremove packages."
+        description: "Perintah yang harus dijalankan untuk menghapus paket secara
+          otomatis."
       clean:
-        description: "The command to run to clean the package manager's cache."
+        description: "Perintah yang harus dijalankan untuk membersihkan cache manajer
+          paket."
       install:
-        description: "The command to run to install packages."
+        description: "Perintah yang harus dijalankan untuk menginstal paket."
       list:
-        description: "The command to run to list installed packages."
+        description: "Perintah yang dijalankan untuk membuat daftar paket yang terinstal."
       purge:
-        description: "The command to run to purge packages."
+        description: "Perintah untuk menjalankan untuk membersihkan paket."
       remove:
-        description: "The command to run to remove packages."
+        description: "Perintah untuk menjalankan untuk menghapus paket."
       search:
-        description: "The command to run to search for packages."
+        description: "Perintah untuk menjalankan untuk mencari paket."
       show:
-        description: "The command to run to show information about packages."
+        description: "Perintah untuk menjalankan untuk menampilkan informasi tentang
+          paket."
       update:
-        description: "The command to run to update the list of available packages."
+        description: "Perintah yang dijalankan untuk mengupdate daftar paket yang
+          tersedia."
       upgrade:
-        description: "The command to run to upgrade packages."
-    success: Package manager %s created successfully.
+        description: "Perintah yang dijalankan untuk mengupgrade paket."
+    success: Manajer paket %s berhasil dibuat.
   update:
-    description: "Update the specified package manager."
+    description: "Memperbarui manajer paket yang ditentukan."
     info:
-      success: "Updated package manager '%s'."
-      askNewCommand: "Enter new command for '%s' (leave empty to keep '%s'):"
+      success: "Memperbarui manajer paket '%s'."
+      askNewCommand: "Masukkan perintah baru untuk '%s' (biarkan kosong untuk menyimpan
+        '%s'):"
     error:
-      noName: No name specified.
-      missingCommand: Missing command for %s.
+      noName: Tidak ada nama yang ditentukan.
+      missingCommand: Tidak ada perintah untuk %s.
   rm:
-    description: "Remove the specified package manager."
+    description: "Menghapus manajer paket yang ditentukan."
 
     error:
-      noName: "No name specified."
-      inUse: "The package manager is used in %d stacks:"
+      noName: "Tidak ada nama yang ditentukan."
+      inUse: "Manajer paket digunakan dalam stack %d:"
     info:
-      askConfirmation: "Are you sure you want to remove '%s'? [y/N]"
-      success: "Removed package manager '%s'."
-      aborting: "Aborting removal of package manager '%s'."
+      askConfirmation: "Apakah Anda yakin ingin menghapus '%s'?"
+      success: "Menghapus manajer paket '%s'."
+      aborting: "Membatalkan penghapusan manajer paket '%s'."
     options:
       force:
-        description: "Force removal of the package manager."
+        description: "Menghapus paksa manajer paket."
       name:
-        description: "The name of the package manager to remove."
+        description: "Nama manajer paket yang akan dihapus."
   export:
-    description: "Export the specified package manager."
+    description: "Mengekspor manajer paket yang ditentukan."
     error:
-      noName: "No name specified."
-      noOutput: "No output specified."
+      noName: "Tidak ada nama yang ditentukan."
+      noOutput: "Tidak ada output yang ditentukan."
     info:
-      success: "Exported package manager '%s' to '%s'."
+      success: "Mengekspor manajer paket '%s' ke '%s'."
     options:
       name:
-        description: "The name of the package manager to export."
+        description: "Nama manajer paket yang akan diekspor."
       output:
-        description: "The path to export the package manager to."
+        description: "Jalur untuk mengekspor manajer paket."
   import:
-    description: "Import the specified package manager."
+    description: "Mengimpor manajer paket tertentu."
     error:
-      noInput: "No input specified."
-      cannotLoad: "Cannot load package manager from '%s'."
+      noInput: "Tidak ada input yang ditentukan."
+      cannotLoad: "Tidak dapat memuat manajer paket dari '%s'."
     info:
-      success: "Imported package manager from '%s'."
+      success: "Mengimpor manajer paket dari '%s'."
     options:
       input:
-        description: "The path to import the package manager from."
+        description: "Jalur untuk mengimpor manajer paket."
 
 stacks:
-  description: "Work with the stacks that are available in apx."
+  description: "Bekerja dengan stack yang tersedia di apx."
   labels:
-    name: "Name"
-    builtIn: "Built-in"
+    name: "Nama"
+    builtIn: "Bawaan"
 
   list:
-    description: "List all available stacks."
+    description: "Daftar semua stack yang tersedia."
     info:
-      noStacks: "No stacks available. Create a new one with 'apx stacks new' or contact
-        the system administrator."
-      foundStacks: "Found %d stacks:"
-      aborting: "Aborting removal of stack '%s'."
+      noStacks: "Tidak ada stack yang tersedia. Buat yang baru dengan 'apx stacks
+        new' atau hubungi administrator sistem."
+      foundStacks: "Menemukan stack %d:"
+      aborting: "Membatalkan penghapusan stack '%s'."
     options:
       json:
-        description: "Output in JSON format."
+        description: "Keluaran dalam format JSON."
   show:
-    description: "Show information about the specified stack."
+    description: "Menampilkan informasi tentang stack yang ditentukan."
   new:
-    description: "Create a new stack."
+    description: "Membuat stack baru."
     error:
-      emptyName: "The name cannot be empty."
-      noName: "No name specified."
-      emptyBase: "The base cannot be empty."
-      noBase: "No base specified."
-      emptyPkgManager: "The package manager cannot be empty."
-      noPkgManager: "No package manager specified."
-      pkgManagerDoesNotExist: "The specified package manager does not exist. Create
-        it with 'apx pkgmanagers new' or contact the system administrator."
-      emptyPackages: "The packages cannot be empty."
-      noPackages: "No packages specified."
-      alreadyExists: "A stack with the name '%s' already exists."
-      noPkgManagers: Could not find any package managers. Create one with 'apx pkgmanagers
-        new' or contact the system administrator.
+      emptyName: "Nama tidak boleh kosong."
+      noName: "Tidak ada nama yang ditentukan."
+      emptyBase: "Basis tidak boleh kosong."
+      noBase: "Tidak ada basis yang ditentukan."
+      emptyPkgManager: "Manajer paket tidak boleh kosong."
+      noPkgManager: "Tidak ada manajer paket yang ditentukan."
+      pkgManagerDoesNotExist: "Manajer paket yang ditentukan tidak ada. Buatlah dengan
+        'apx pkgmanagers new' atau hubungi administrator sistem."
+      emptyPackages: "Paket tidak boleh kosong."
+      noPackages: "Tidak ada paket yang ditentukan."
+      alreadyExists: "stack dengan nama '%s' sudah ada."
+      noPkgManagers: Tidak dapat menemukan manajer paket. Buatlah dengan 'apx pkgmanagers
+        new' atau hubungi administrator sistem.
     info:
-      askName: "Choose a name:"
-      askBase: "Choose a base (e.g. 'vanillaos/pico'):"
-      askPkgManager: "Choose a package manager:"
-      selectPkgManager: "Select a package manager [1-%d]:"
-      noPackages: "You have not provided any package to install in the stack. Do you
-        want to add some now?"
-      confirmPackages: "Do you want to confirm the current packages list?"
-      askPackages: "Please type the packages you want to install in the stack, separated
-        by a space:"
-      success: "Created stack '%s'."
+      askName: "Pilih sebuah nama:"
+      askBase: "Pilih sebuah basis (misal: 'vanillaos/pico'):"
+      askPkgManager: "Pilih manajer paket:"
+      selectPkgManager: "Pilih manajer paket [1-%d]:"
+      noPackages: "Anda belum menyediakan paket apa pun untuk diinstal di dalam stack.
+        Apakah Anda ingin menambahkannya sekarang?"
+      confirmPackages: "Apakah Anda ingin mengkonfirmasi daftar paket yang ada saat
+        ini?"
+      askPackages: "Ketik paket yang ingin Anda instal di dalam stack, dipisahkan
+        dengan spasi:"
+      success: "Membuat stack '%s'."
     options:
       assumeYes:
-        description: "Assume yes to all prompts."
+        description: "Jawab ya untuk semua pertanyaan."
       name:
-        description: "The name of the stack."
+        description: "Nama stack."
       base:
-        description: "The base distribution image to use. (For a list of compatible
-          images view: https://distrobox.it/compatibility/#containers-distros)"
+        description: "Citra distribusi dasar yang akan digunakan. (Untuk daftar citra
+          yang kompatibel, lihat: https://distrobox.it/compatibility/#containers-distros)"
       packages:
-        description: "The packages to install."
+        description: "Paket-paket yang akan diinstal."
       pkgManager:
-        description: "The package manager to use."
+        description: "Manajer paket yang akan digunakan."
   update:
-    description: "Update the specified stack."
+    description: "Memperbarui stack yang ditentukan."
     error:
-      noName: "No name specified."
-      noBase: "No base specified."
-      noPkgManager: "No package manager specified."
-      pkgManagerDoesNotExist: "The specified package manager does not exist. Create
-        it with 'apx pkgmanagers new' or contact the system administrator."
+      noName: "Tidak ada nama yang ditentukan."
+      noBase: "Tidak ada basis yang ditentukan."
+      noPkgManager: "Tidak ada manajer paket yang ditentukan."
+      pkgManagerDoesNotExist: "Manajer paket yang ditentukan tidak ada. Buatlah dengan
+        'apx pkgmanagers new' atau hubungi administrator sistem."
     info:
-      askBase: "Type a new base or confirm the current one (%s):"
-      askPkgManager: "Choose a new package manager or confirm the current one (%s):"
-      askPackages: "Type the packages you want to install in the stack, separated
-        by a space, or confirm the current ones (%s):"
-      success: "Updated stack '%s'."
+      askBase: "Ketik basis baru atau konfirmasikan basis yang ada saat ini (%s):"
+      askPkgManager: "Pilih manajer paket baru atau konfirmasikan manajer paket yang
+        ada saat ini (%s):"
+      askPackages: "Ketik paket yang ingin Anda instal di dalam stack, dipisahkan
+        dengan spasi, atau konfirmasikan paket yang ada saat ini (%s):"
+      success: "stack yang diperbarui '%s'."
 
-      confirmPackages: Do you want to confirm the current packages list?
-      noPackages: You have not provided any packages to install in the stack. Do you
-        want to add some now?
+      confirmPackages: Apakah Anda ingin mengkonfirmasi daftar paket yang ada saat
+        ini?
+      noPackages: Anda belum menyediakan paket apa pun untuk diinstal dalam stack.
+        Apakah Anda ingin menambahkannya sekarang?
     options:
       assumeYes:
-        description: "Assume yes to all prompts."
+        description: "Jawab ya untuk semua pertanyaan."
       name:
-        description: "The name of the stack."
+        description: "Nama stack."
       base:
-        description: "The base subsystem to use."
+        description: "Subsistem dasar yang akan digunakan."
       packages:
-        description: "The packages to install."
+        description: "Paket-paket yang akan diinstal."
       pkgManager:
-        description: "The package manager to use."
+        description: "Manajer paket yang akan digunakan."
   rm:
-    description: "Remove the specified stack."
+    description: "Menghapus stack yang ditentukan."
     error:
-      noName: "No name specified."
+      noName: "Tidak ada nama yang ditentukan."
     info:
-      askConfirmation: "Are you sure you want to remove '%s'? [y/N]"
-      success: "Removed stack '%s'."
+      askConfirmation: "Apakah Anda yakin ingin menghapus '%s'?"
+      success: "Menghapus stack '%s'."
     options:
       force:
-        description: "Force removal of the stack."
+        description: "Menghapus stack secara paksa."
       name:
-        description: "The name of the stack to remove."
+        description: "Nama stack yang akan dihapus."
   export:
-    description: "Export the specified stack."
+    description: "Mengekspor stack yang ditentukan."
     error:
-      noName: "No name specified."
-      noOutput: "No output specified."
+      noName: "Tidak ada nama yang ditentukan."
+      noOutput: "Tidak ada output yang ditentukan."
     info:
-      success: "Exported stack '%s' to '%s'."
+      success: "Mengekspor stack '%s' ke '%s'."
     options:
       name:
-        description: "The name of the stack to export."
+        description: "Nama stack yang akan diekspor."
       output:
-        description: "The path to export the stack to."
+        description: "Jalur untuk mengekspor stack."
   import:
-    description: "Import the specified stack."
+    description: "Mengimpor stack yang ditentukan."
     error:
-      noInput: "No input specified."
-      cannotLoad: "Cannot load stack from '%s'."
+      noInput: "Tidak ada input yang ditentukan."
+      cannotLoad: "Tidak dapat memuat stack dari '%s'."
     info:
-      success: "Imported stack from '%s'."
+      success: "stack yang diimpor dari '%s'."
     options:
       input:
-        description: "The path to import the stack from."
+        description: "Jalur untuk mengimpor stack."
 
 subsystems:
-  description: "Work with the subsystems that are available in apx."
+  description: "Bekerja dengan subsistem yang tersedia di apx."
   labels:
-    name: "Name"
+    name: "Nama"
     status: "Status"
 
   list:
-    description: "List all available subsystems."
+    description: "Daftar semua subsistem yang tersedia."
     error:
     info:
-      noSubsystems: "No subsystems available. Create a new one with 'apx subsystems
-        new' or contact the system administrator."
-      foundSubsystems: "Found %d subsystems:"
+      noSubsystems: "Tidak ada subsistem yang tersedia. Buat yang baru dengan 'apx
+        subsystems new' atau hubungi administrator sistem."
+      foundSubsystems: "Ditemukan %d subsistem:"
     options:
       json:
-        description: "Output in JSON format."
+        description: "Keluaran dalam format JSON."
   new:
-    description: "Create a new subsystem."
+    description: "Membuat subsistem baru."
     error:
-      noStacks: "A stack is needed to create a subsystem. Create a new one with 'apx
-        stacks new' or contact the system administrator."
-      emptyName: "The name cannot be empty."
-      noName: "No name specified."
-      emptyStack: "The stack cannot be empty."
-      noStack: "No stack specified."
-      stackDoesNotExist: "The specified stack does not exist. Create it with 'apx
-        stacks new' or contact the system administrator."
-      alreadyExists: "A subsystem with the name '%s' already exists."
+      noStacks: "stack diperlukan untuk membuat subsistem. Buat yang baru dengan 'apx
+        stacks new' atau hubungi administrator sistem."
+      emptyName: "Nama tidak boleh kosong."
+      noName: "Tidak ada nama yang ditentukan."
+      emptyStack: "stack tidak boleh kosong."
+      noStack: "Tidak ada stack yang ditentukan."
+      stackDoesNotExist: "stack yang ditentukan tidak ada. Buatlah dengan 'apx stacks
+        new' atau hubungi administrator sistem."
+      alreadyExists: "Subsistem dengan nama '%s' sudah ada."
     info:
-      askName: "Choose a name:"
-      selectStack: "Select a stack [1-%d]:"
-      success: "Created subsystem '%s'."
-      creatingSubsystem: "Creating subsystem '%s' with stack '%s'…"
-      availableStacks: 'Available stacks:'
+      askName: "Pilih sebuah nama:"
+      selectStack: "Pilih stack [1-%d]:"
+      success: "Membuat subsistem '%s'."
+      creatingSubsystem: "Membuat subsistem '%s' dengan stack '%s'…"
+      availableStacks: 'stack yang tersedia:'
     options:
       name:
-        description: "The name of the subsystem."
+        description: "Nama subsistem."
       stack:
-        description: "The stack to use."
+        description: "Stack yang akan digunakan."
       home:
-        description: "The custom home directory of the subsystem."
+        description: "Direktori home khusus dari subsistem."
       init:
-        description: "Use systemd inside the subsystem."
+        description: "Menggunakan systemd di dalam subsistem."
   rm:
-    description: "Remove the specified subsystem."
+    description: "Menghapus subsistem yang ditentukan."
     error:
-      noName: "No name specified."
+      noName: "Tidak ada nama yang ditentukan."
     info:
-      askConfirmation: "Are you sure you want to remove '%s'? [y/N]"
-      success: "Removed subsystem '%s'."
+      askConfirmation: "Apakah Anda yakin ingin menghapus '%s'?"
+      success: "Menghapus subsistem '%s'."
     options:
       force:
-        description: "Force removal of the subsystem."
+        description: "Menghapus paksa subsistem."
       name:
-        description: "The name of the subsystem to remove."
+        description: "Nama subsistem yang akan dihapus."
   reset:
-    description: "Reset the specified subsystem."
+    description: "Mengatur ulang subsistem yang ditentukan."
     error:
-      noName: "No name specified."
+      noName: "Tidak ada nama yang ditentukan."
     info:
-      askConfirmation: "Are you sure you want to reset '%s'? [y/N]"
-      success: "The subsystem '%s' has been reset."
+      askConfirmation: "Apakah Anda yakin ingin mereset '%s'?"
+      success: "Subsistem '%s' telah diatur ulang."
     options:
       force:
-        description: "Force reset of the subsystem."
+        description: "Atur ulang paksa subsistem."
       name:
-        description: "The name of the subsystem to reset."
+        description: "Nama subsistem yang akan diatur ulang."
