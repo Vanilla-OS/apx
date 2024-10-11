@@ -12,17 +12,17 @@ apx:
     no: "아니오"
 
   msg:
-    usage: Usage
-    version: Show version for apx.
-    help: Show help for apx.
-    moreInfo: Use %s for more information about a command
-    flags: Flags
-    globalFlags: Global Flags
-    examples: Examples
-    aliases: Aliases
-    additionalCommands: Additional Commands
-    availableCommands: Available Commands
-    additionalHelpTopics: Additional help topics
+    usage: 사용법
+    version: apx에 대한 도움말을 표시합니다.
+    help: apx에 대한 도움말을 표시합니다.
+    moreInfo: 명령어에 대한 자세한 정보를 보려면 %s를 사용하세요
+    flags: 플래그
+    globalFlags: 전역 플래그
+    examples: 예시
+    aliases: 별칭
+    additionalCommands: 추가 명령어
+    availableCommands: 사용 가능한 명령어
+    additionalHelpTopics: 추가 도움말 항목
 runtimeCommand:
   description: "지정된 하위 시스템과 함께 작업하며, 패키지 관리자와 환경에 액세스합니다."
   error:
@@ -36,8 +36,8 @@ runtimeCommand:
     unexportingApp: "응용 프로그램을 unexport하는 중 오류가 발생했습니다: %s"
     unexportingBin: "바이너리를 unexport하는 중 오류가 발생했습니다: %s"
     enteringContainer: '컨테이너에 들어가는 중 오류가 발생했습니다: %s'
-    startingContainer: 'An error occurred while starting the container: %s'
-    stoppingContainer: 'An error occurred while stopping the container: %s'
+    startingContainer: '컨테이너를 시작하는 동안 오류가 발생했습니다: %s'
+    stoppingContainer: '컨테이너를 중지하는 동안 오류가 발생했습니다: %s'
   info:
     unexportedApps: "응용 프로그램(들) %d(을)를 Unexport하였습니다"
     exportedApps: "응용 프로그램(들) %d(을)를 Export하였습니다"
@@ -45,10 +45,10 @@ runtimeCommand:
     exportedBin: "바이너리 %d(을)를 Export하였습니다 %s"
     unexportedApp: "응용 프로그램 %d를 Unexport하였습니다 %s"
     unexportedBin: "바이너리 %d를 Unexport하였습니다 %s"
-    stoppedContainer: Stopped container.
-    startedContainer: Started container.
-    stoppingContainer: Stopping container…
-    startingContainer: Starting container…
+    stoppedContainer: 컨테이너가 중지 되었습니다.
+    startedContainer: 컨테이너를 시작했습니다.
+    stoppingContainer: 컨테이너 중단중…
+    startingContainer: 컨테이너 시작중…
   autoremove:
     description: "더이상 필요하지 않은 패키지를 제거합니다."
   clean:
@@ -75,7 +75,7 @@ runtimeCommand:
   enter:
     description: "하위 시스템 환경에 진입합니다."
   export:
-    description: "하위 시스템에서 응용 프로그램이나 바이너리를 Export합니다."
+    description: "하위 시스템에서 호스트로 응용 프로그램이나 바이너리를 내보냅니다."
     options:
       appName:
         description: "Export할 응용 프로그램 이름입니다."
@@ -84,7 +84,7 @@ runtimeCommand:
       binOutput:
         description: "바이너리 출력 경로 (기본: ~/.local/bin/)."
   unexport:
-    description: "하위시스템에서 응용 프로그램이나 바이너리를 Unexport합니다."
+    description: "호스트에서 응용 프로그램이나 바이너리 내보내기를 취소합니다."
     options:
       appName:
         description: "Unexport할 응용 프로그램 이름입니다."
@@ -94,11 +94,11 @@ runtimeCommand:
         description: "바이너리 출력 경로 (기본값: ~/.local/bin/)."
 
   start:
-    description: Start the subsystem.
+    description: 서브 시스템을 시작하세요.
   stop:
-    description: Stop the subsystem.
+    description: 서브 시스템을 중지하세요.
   run:
-    description: Run command inside subsystem.
+    description: 하위 시스템내에서 명령어를 실행합니다.
 pkgmanagers:
   description: "apx에서 사용 가능한 패키지 관리자와 작업합니다."
   labels:
@@ -157,7 +157,7 @@ pkgmanagers:
         description: "사용 가능한 패키지 목록을 업데이트하는 데 사용할 명령입니다."
       upgrade:
         description: "패키지를 업그레이드하는 데 사용할 명령입니다."
-    success: Package manager %s created successfully.
+    success: 패키지 관리자 %s 이(가) 성공적으로 생성되었습니다.
   rm:
     description: "지정된 패키지 관리자를 제거합니다."
 
@@ -165,7 +165,7 @@ pkgmanagers:
       noName: "지정된 이름이 없습니다."
       inUse: "패키지 관리자는 %d 스택에서 사용 중입니다:"
     info:
-      askConfirmation: "'%s'(을)를 제거하시겠습니까?[y/N]"
+      askConfirmation: "'%s'(을)를 제거 하시겠습니까? [y/N]"
       success: "'%s' 패키지 관리자가 제거되었습니다."
       aborting: "'%s' 패키지 관리자의 제거를 중단합니다."
     options:
@@ -177,33 +177,33 @@ pkgmanagers:
   export:
     options:
       output:
-        description: The path to export the package manager to.
+        description: 패키지 관리자를 내보낼 경로입니다.
       name:
-        description: The name of the package manager to export.
+        description: 내보낼 패키지 관리자의 이름입니다.
     error:
-      noOutput: No output specified.
-      noName: No name specified.
-    description: Export the specified package manager.
+      noOutput: 지정된 출력이 없습니다.
+      noName: 이름이 지정되지 않았습니다.
+    description: 지정된 패키지 관리자를 내보냅니다.
     info:
-      success: Exported package manager '%s' to '%s'.
+      success: 패키지 관리자 '%s'를 '%s'로 내보냈습니다.
   import:
     error:
-      noInput: No input specified.
-      cannotLoad: Cannot load package manager from '%s'.
+      noInput: 지정된 입력이 없습니다.
+      cannotLoad: "'%s'에서 패키지 관리자를 로드할 수 없습니다."
     info:
-      success: Imported package manager from '%s'.
-    description: Import the specified package manager.
+      success: "'%s'에서 패키지 관리자를 가져왔습니다."
+    description: 지정된 패키지 관리자를 가져옵니다.
     options:
       input:
-        description: The path to import the package manager from.
+        description: 패키지 관리자를 가져올 경로입니다.
   update:
-    description: Update the specified package manager.
+    description: 지정된 패키지 관리자를 업데이트합니다.
     info:
-      success: Updated package manager '%s'.
-      askNewCommand: "Enter new command for '%s' (leave empty to keep '%s'):"
+      success: 패키지 관리자 '%s'를 업데이트했습니다.
+      askNewCommand: "'%s'에 대한 새 명령을 입력합니다(%s를 유지하려면 비워 둡니다):"
     error:
-      noName: No name specified.
-      missingCommand: Missing command for %s.
+      noName: 이름이 지정되지 않았습니다.
+      missingCommand: '%s 에 대한 명령이 없습니다.'
 stacks:
   description: "apx에서 사용 가능한 스택과 작업합니다."
   labels:
@@ -235,14 +235,13 @@ stacks:
       emptyPackages: "패키지는 비워둘 수 없습니다."
       noPackages: "지정된 패키지가 없습니다."
       alreadyExists: "'%s'라는 이름의 스택이 이미 있습니다."
-      noPkgManagers: Could not find any package managers. Create one with 'apx pkgmanagers
-        new' or contact the system administrator.
+      noPkgManagers: 패키지 관리자를 찾을 수 없습니다. 'apx pkgmanagers new'로 생성하거나 시스템 관리자에게 문의하세요.
     info:
       askName: "이름을 입력하십시오:"
       askBase: "Base을 입력하십시오 (예: 'vanillaos/pico'):"
       askPkgManager: "패키지 관리자 입력하십시오:"
       selectPkgManager: "패키지 관리자를 선택하십시오 [1-%d]:"
-      noPackages: "스택에 설치할 패키지를 제공하지 않았습니다. 지금 추가하시겠습니까?"
+      noPackages: "스택에 설치할 패키지를 제공하지 않았습니다. 지금 추가 하시겠습니까?"
       confirmPackages: "현재 패키지 목록을 확인하시겠습니까?"
       askPackages: "스택에 설치할 패키지를 띄어쓰기로 구분하여 입력하십시오:"
       success: "'%s' 스택이 생성되었습니다."
@@ -252,7 +251,7 @@ stacks:
       name:
         description: "스택의 이름입니다."
       base:
-        description: "사용할 Base 하위 시스템입니다."
+        description: "사용할 기본 배포 이미지입니다. (호환되는 이미지 목록: https://distrobox.it/compatibility/#containers-distros)"
       packages:
         description: "설치할 패키지입니다."
       pkgManager:
@@ -271,9 +270,8 @@ stacks:
       askPackages: "스택에 설치할 패키지를 띄어쓰기로 구분하여 입력하거나 현재 패키지를 확인하십시오 (%s):"
       success: "'%s' 스택을 업데이트했습니다."
 
-      confirmPackages: Do you want to confirm the current packages list?
-      noPackages: You have not provided any packages to install in the stack. Do you
-        want to add some now?
+      confirmPackages: 현재 패키지 목록을 확인하시겠습니까?
+      noPackages: 스택에 설치할 패키지를 제공하지 않았습니다. 지금 추가 하시겠습니까?
     options:
       assumeYes:
         description: "모든 프롬프트에 '예'로 가정합니다."
@@ -290,7 +288,7 @@ stacks:
     error:
       noName: "지정된 이름이 없습니다."
     info:
-      askConfirmation: "'%s'를 제거하시겠습니까?[y/N]"
+      askConfirmation: "정말로 '%s'를(을) 제거 하시겠습니까? [y/N]"
       success: "'%s' 스택이 제거되었습니다."
     options:
       force:
@@ -352,17 +350,17 @@ subsystems:
       askName: "이름 입력:"
       selectStack: "스택 선택 [1-%d]:"
       success: "하위 시스템 '%s'(을)를 만들었습니다."
-      creatingSubsystem: "스택 '%s'와 하위 시스템 '%s'(을)를 만들었습니다.…"
-      availableStacks: 'Available stacks:'
+      creatingSubsystem: "스택 '%s'을(를) 사용하여 하위 시스템 '%s'(을)를 생성중.…"
+      availableStacks: '사용 가능한 스택:'
     options:
       name:
         description: "하위 시스템의 이름입니다."
       stack:
         description: "사용할 스택입니다."
       home:
-        description: The custom home directory of the subsystem.
+        description: 하위 시스템의 사용자 지정 홈 디렉토리입니다.
       init:
-        description: Use systemd inside the subsystem.
+        description: 서브시스템 내부에서 systemd를 사용합니다.
   rm:
     description: "특정 하위 시스템을 삭제합니다."
     error:
@@ -380,7 +378,7 @@ subsystems:
     error:
       noName: "이름이 특정되지 않았습니다."
     info:
-      askConfirmation: "'%s'(을)를 초기화하시겠습니까? [y/N]"
+      askConfirmation: "정말로 '%s'(을)를 초기화하시겠습니까? [y/N]"
       success: "하위 시스템 '%s'(이)가 초기화되었습니다."
     options:
       force:
