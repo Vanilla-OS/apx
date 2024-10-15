@@ -168,6 +168,7 @@ pkgmanagers:
     error:
       noName: "No name specified."
       missingCommand: "Missing command for %s."
+      builtIn: "Built-in package managers cannot be modified."
   rm:
     description: "Remove the specified package manager."
     error:
@@ -268,6 +269,7 @@ stacks:
       noPkgManager: "No package manager specified."
       pkgManagerDoesNotExist: "The specified package manager does not exist. Create
         it with 'apx pkgmanagers new' or contact the system administrator."
+      builtIn: "Built-in stacks cannot be modified."
     info:
       askBase: "Type a new base or confirm the current one (%s):"
       askPkgManager: "Choose a new package manager or confirm the current one (%s):"
