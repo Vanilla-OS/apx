@@ -675,6 +675,11 @@ func updatePkgManager(cmd *cobra.Command, args []string) error {
 		return error
 	}
 
+	if pkgmanager.BuiltIn {
+		cmdr.Error.Println(apx.Trans("pkgmanagers.update.error.builtIn"))
+		os.Exit(126)
+	}
+
 	if autoRemove == "" {
 		if !assumeYes {
 			cmdr.Info.Printfln(apx.Trans("pkgmanagers.update.info.askNewCommand"), "autoRemove", pkgmanager.CmdAutoRemove)
