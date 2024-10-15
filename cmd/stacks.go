@@ -407,6 +407,11 @@ func updateStack(cmd *cobra.Command, args []string) error {
 		return error
 	}
 
+	if stack.BuiltIn {
+		cmdr.Error.Println(apx.Trans("stacks.update.error.builtIn"))
+		os.Exit(126)
+	}
+
 	if base == "" {
 		if !assumeYes {
 			cmdr.Info.Printfln(apx.Trans("stacks.update.info.askBase"), stack.Base)
