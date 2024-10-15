@@ -84,6 +84,9 @@ func findExportedBinaries(internalName string) map[string]map[string]string {
 		defer file.Close()
 
 		scanner := bufio.NewScanner(file)
+		const maxTokenSize = 1024 * 1024
+		buf := make([]byte, maxTokenSize)
+		scanner.Buffer(buf, maxTokenSize)
 		for scanner.Scan() {
 			if scanner.Text() == "# distrobox_binary" {
 				scanner.Scan()
