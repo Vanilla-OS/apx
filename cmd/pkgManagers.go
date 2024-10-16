@@ -679,13 +679,18 @@ func updatePkgManager(cmd *cobra.Command, args []string) error {
 		cmdr.Error.Println(apx.Trans("pkgmanagers.update.error.builtIn"))
 		os.Exit(126)
 	}
+	
+	reader := bufio.NewReader(os.Stdin)
 
 	if autoRemove == "" {
 		if !assumeYes {
 			cmdr.Info.Printfln(apx.Trans("pkgmanagers.update.info.askNewCommand"), "autoRemove", pkgmanager.CmdAutoRemove)
-			fmt.Scanln(&autoRemove)
-			if autoRemove == "" {
+			answer, _ := reader.ReadString('\n')
+			answer = strings.TrimSpace(answer)
+			if answer == "" {
 				autoRemove = pkgmanager.CmdAutoRemove
+			} else {
+				autoRemove = answer
 			}
 		} else {
 			cmdr.Error.Println(apx.Trans("pkgmanagers.update.error.missingCommand"), "autoRemove")
@@ -696,9 +701,12 @@ func updatePkgManager(cmd *cobra.Command, args []string) error {
 	if clean == "" {
 		if !assumeYes {
 			cmdr.Info.Printfln(apx.Trans("pkgmanagers.update.info.askNewCommand"), "clean", pkgmanager.CmdClean)
-			fmt.Scanln(&clean)
-			if clean == "" {
+			answer, _ := reader.ReadString('\n')
+			answer = strings.TrimSpace(answer)
+			if answer == "" {
 				clean = pkgmanager.CmdClean
+			} else {
+				clean = answer
 			}
 		} else {
 			cmdr.Error.Println(apx.Trans("pkgmanagers.update.error.missingCommand"), "clean")
@@ -709,9 +717,12 @@ func updatePkgManager(cmd *cobra.Command, args []string) error {
 	if install == "" {
 		if !assumeYes {
 			cmdr.Info.Printfln(apx.Trans("pkgmanagers.update.info.askNewCommand"), "install", pkgmanager.CmdInstall)
-			fmt.Scanln(&install)
-			if install == "" {
+			answer, _ := reader.ReadString('\n')
+			answer = strings.TrimSpace(answer)
+			if answer == "" {
 				install = pkgmanager.CmdInstall
+			} else {
+				install = answer
 			}
 		} else {
 			cmdr.Error.Println(apx.Trans("pkgmanagers.update.error.missingCommand"), "install")
@@ -722,9 +733,12 @@ func updatePkgManager(cmd *cobra.Command, args []string) error {
 	if list == "" {
 		if !assumeYes {
 			cmdr.Info.Printfln(apx.Trans("pkgmanagers.update.info.askNewCommand"), "list", pkgmanager.CmdList)
-			fmt.Scanln(&list)
-			if list == "" {
+			answer, _ := reader.ReadString('\n')
+			answer = strings.TrimSpace(answer)
+			if answer == "" {
 				list = pkgmanager.CmdList
+			} else {
+				list = answer
 			}
 		} else {
 			cmdr.Error.Println(apx.Trans("pkgmanagers.update.error.missingCommand"), "list")
@@ -735,9 +749,12 @@ func updatePkgManager(cmd *cobra.Command, args []string) error {
 	if purge == "" {
 		if !assumeYes {
 			cmdr.Info.Printfln(apx.Trans("pkgmanagers.update.info.askNewCommand"), "purge", pkgmanager.CmdPurge)
-			fmt.Scanln(&purge)
-			if purge == "" {
+			answer, _ := reader.ReadString('\n')
+			answer = strings.TrimSpace(answer)
+			if answer == "" {
 				purge = pkgmanager.CmdPurge
+			} else {
+				purge = answer
 			}
 		} else {
 			cmdr.Error.Println(apx.Trans("pkgmanagers.update.error.missingCommand"), "purge")
@@ -748,9 +765,12 @@ func updatePkgManager(cmd *cobra.Command, args []string) error {
 	if remove == "" {
 		if !assumeYes {
 			cmdr.Info.Printfln(apx.Trans("pkgmanagers.update.info.askNewCommand"), "remove", pkgmanager.CmdRemove)
-			fmt.Scanln(&remove)
-			if remove == "" {
+			answer, _ := reader.ReadString('\n')
+			answer = strings.TrimSpace(answer)
+			if answer == "" {
 				remove = pkgmanager.CmdRemove
+			} else {
+				remove = answer
 			}
 		} else {
 			cmdr.Error.Println(apx.Trans("pkgmanagers.update.error.missingCommand"), "remove")
@@ -761,9 +781,12 @@ func updatePkgManager(cmd *cobra.Command, args []string) error {
 	if search == "" {
 		if !assumeYes {
 			cmdr.Info.Printfln(apx.Trans("pkgmanagers.update.info.askNewCommand"), "search", pkgmanager.CmdSearch)
-			fmt.Scanln(&search)
-			if search == "" {
+			answer, _ := reader.ReadString('\n')
+			answer = strings.TrimSpace(answer)
+			if answer == "" {
 				search = pkgmanager.CmdSearch
+			} else {
+				search = answer
 			}
 		} else {
 			cmdr.Error.Println(apx.Trans("pkgmanagers.update.error.missingCommand"), "search")
@@ -774,9 +797,12 @@ func updatePkgManager(cmd *cobra.Command, args []string) error {
 	if show == "" {
 		if !assumeYes {
 			cmdr.Info.Printfln(apx.Trans("pkgmanagers.update.info.askNewCommand"), "show", pkgmanager.CmdShow)
-			fmt.Scanln(&show)
-			if show == "" {
+			answer, _ := reader.ReadString('\n')
+			answer = strings.TrimSpace(answer)
+			if answer == "" {
 				show = pkgmanager.CmdShow
+			} else {
+				show = answer
 			}
 		} else {
 			cmdr.Error.Println(apx.Trans("pkgmanagers.update.error.missingCommand"), "show")
@@ -787,9 +813,12 @@ func updatePkgManager(cmd *cobra.Command, args []string) error {
 	if update == "" {
 		if !assumeYes {
 			cmdr.Info.Printfln(apx.Trans("pkgmanagers.update.info.askNewCommand"), "update", pkgmanager.CmdUpdate)
-			fmt.Scanln(&update)
-			if update == "" {
+			answer, _ := reader.ReadString('\n')
+			answer = strings.TrimSpace(answer)
+			if answer == "" {
 				update = pkgmanager.CmdUpdate
+			} else {
+				update = answer
 			}
 		} else {
 			cmdr.Error.Println(apx.Trans("pkgmanagers.update.error.missingCommand"), "update")
@@ -800,9 +829,12 @@ func updatePkgManager(cmd *cobra.Command, args []string) error {
 	if upgrade == "" {
 		if !assumeYes {
 			cmdr.Info.Printfln(apx.Trans("pkgmanagers.update.info.askNewCommand"), "upgrade", pkgmanager.CmdUpgrade)
-			fmt.Scanln(&upgrade)
-			if upgrade == "" {
+			answer, _ := reader.ReadString('\n')
+			answer = strings.TrimSpace(answer)
+			if answer == "" {
 				upgrade = pkgmanager.CmdUpgrade
+			} else {
+				upgrade = answer
 			}
 		} else {
 			cmdr.Error.Println(apx.Trans("pkgmanagers.update.error.missingCommand"), "upgrade")
