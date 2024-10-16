@@ -273,11 +273,11 @@ stacks:
     info:
       askBase: "Type a new base or confirm the current one (%s):"
       askPkgManager: "Choose a new package manager or confirm the current one (%s):"
-      confirmPackages: "Do you want to confirm the current packages list?"
+      confirmPackages: "Do you want to update the list of packages?"
       noPackages: "You have not provided any packages to install in the stack. Do you
         want to add some now?"
       askPackages: "Type the packages you want to install in the stack, separated
-        by a space, or confirm the current ones (%s):"
+        by a space:"
       success: "Updated stack '%s'."
     options:
       noPrompt:
