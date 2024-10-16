@@ -168,6 +168,7 @@ pkgmanagers:
     error:
       noName: "No name specified."
       missingCommand: "Missing command for %s."
+      builtIn: "Built-in package managers cannot be modified."
   rm:
     description: "Remove the specified package manager."
     error:
