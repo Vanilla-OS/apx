@@ -392,7 +392,6 @@ func updateStack(cmd *cobra.Command, args []string) error {
 	packages, _ := cmd.Flags().GetString("packages")
 	pkgManager, _ := cmd.Flags().GetString("pkg-manager")
 
-	cmdr.Error.Printfln("packages: %s", packages)
 	if name == "" {
 		if len(args) != 1 || args[0] == "" {
 			cmdr.Error.Println(apx.Trans("stacks.update.error.noName"))
@@ -445,35 +444,31 @@ func updateStack(cmd *cobra.Command, args []string) error {
 		return nil
 	}
 
-	packagesArray := strings.Fields(packages)
-	cmdr.Error.Printfln("packagearray: %s", packagesArray)
-	if len(packages) == 0 && !noPrompt {
-		if len(stack.Packages) == 0 {
-			cmdr.Info.Println(apx.Trans("stacks.update.info.noPackages") + "[y/N]")
-		} else {
-			cmdr.Info.Println(apx.Trans("stacks.update.info.confirmPackages") + "\n\t -", strings.Join(stack.Packages, "\n\t - "))
-		}
 
+	if len(packages) > 0 {
+		stack.Packages = strings.Fields(packages)
+	} else if !noPrompt {
+		if len(stack.Packages) > 0 {
+			cmdr.Info.Println(apx.Trans("stacks.update.info.confirmPackages") + "[y/N]"  + "\n\t -", strings.Join(stack.Packages, "\n\t - "))
+		} else {
+			cmdr.Info.Println(apx.Trans("stacks.update.info.noPackages") + "[y/N]")
+		}
 		reader := bufio.NewReader(os.Stdin)
 		answer, _ := reader.ReadString('\n')
 		answer = strings.TrimSpace(answer)
 
+		packagesArray := []string{}
+
 		if answer == "y" || answer == "Y" {
-			if len(stack.Packages) > 0 {
-				packagesArray = stack.Packages
-			} else {
-				cmdr.Info.Println(apx.Trans("stacks.update.info.askPackages"))
-				packagesInput, _ := reader.ReadString('\n')
-				packagesInput = strings.TrimSpace(packagesInput)
-				packagesArray = strings.Fields(packagesInput)
-			}
-		} else {
-			packagesArray = []string{}
+			cmdr.Info.Println(apx.Trans("stacks.update.info.askPackages"))
+			packagesInput, _ := reader.ReadString('\n')
+			packagesInput = strings.TrimSpace(packagesInput)
+			packagesArray = strings.Fields(packagesInput)
+			stack.Packages = packagesArray
 		}
 	}
 
 	stack.Base = base
-	stack.Packages = packagesArray
 	stack.PkgManager = pkgManager
 
 	err := stack.Save()
