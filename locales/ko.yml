@@ -131,7 +131,7 @@ pkgmanagers:
       askCommand: "'%s'에 대한 명령을 입력하십시오:"
       askOverwrite: "'%s'라는 이름의 패키지 관리자가 이미 있습니다. 덮어쓸까요?"
     options:
-      assumeYes:
+      noPrompt:
         description: "모든 프롬프트에 '예'로 가정합니다."
       name:
         description: "패키지 관리자의 이름입니다."
@@ -246,7 +246,7 @@ stacks:
       askPackages: "스택에 설치할 패키지를 띄어쓰기로 구분하여 입력하십시오:"
       success: "'%s' 스택이 생성되었습니다."
     options:
-      assumeYes:
+      noPrompt:
         description: "모든 프롬프트에 '예'로 가정합니다."
       name:
         description: "스택의 이름입니다."
@@ -273,7 +273,7 @@ stacks:
       confirmPackages: 현재 패키지 목록을 확인하시겠습니까?
       noPackages: 스택에 설치할 패키지를 제공하지 않았습니다. 지금 추가 하시겠습니까?
     options:
-      assumeYes:
+      noPrompt:
         description: "모든 프롬프트에 '예'로 가정합니다."
       name:
         description: "스택의 이름입니다."

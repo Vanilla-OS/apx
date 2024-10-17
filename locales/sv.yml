@@ -134,7 +134,7 @@ pkgmanagers:
       askOverwrite: "En pakethanterare med namnet '%s' finns redan. Vill du skriva
         över det?"
     options:
-      assumeYes:
+      noPrompt:
         description: "Anta ja till alla uppmaningar."
       name:
         description: "Namnet på pakethanteraren."
@@ -254,7 +254,7 @@ stacks:
         av ett mellanslag:"
       success: "Skapade stack '%s'."
     options:
-      assumeYes:
+      noPrompt:
         description: "Anta ja till alla uppmaningar."
       name:
         description: "Namnet på stacken."
@@ -284,7 +284,7 @@ stacks:
       noPackages: Du har inte tillhandahållit några paket att installera i stacken.
         Vill du lägga till några nu?
     options:
-      assumeYes:
+      noPrompt:
         description: "Anta ja till alla uppmaningar."
       name:
         description: "Namnet på stacken."

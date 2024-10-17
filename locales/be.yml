@@ -132,7 +132,7 @@ pkgmanagers:
       askCommand: "Увядзіце каманду для «%s»:"
       askOverwrite: "Менеджэр пакетаў з назвай «%s» ужо існуе. Перазапісаць?"
     options:
-      assumeYes:
+      noPrompt:
         description: "Выкажам здагадку, што так на ўсе падказкі."
       name:
         description: "Імя мэнэджэра пакетаў."
@@ -250,7 +250,7 @@ stacks:
         падзеленыя прабелам:"
       success: "Створаны стэк \"%s\"."
     options:
-      assumeYes:
+      noPrompt:
         description: "Выкажам здагадку, што так на ўсе падказкі."
       name:
         description: "Назва стэка."
@@ -279,7 +279,7 @@ stacks:
       noPackages: You have not provided any packages to install in the stack. Do you
         want to add some now?
     options:
-      assumeYes:
+      noPrompt:
         description: "Выкажам здагадку, што так на ўсе падказкі."
       name:
         description: "Назва стэка."

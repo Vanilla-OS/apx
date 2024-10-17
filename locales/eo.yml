@@ -132,7 +132,7 @@ pkgmanagers:
       askCommand: "Tajpu la komandon por «%s»:"
       askOverwrite: "Pakadministrilo nomita «%s» jam ekzistas. Ĉu anstataŭigi ĝin?"
     options:
-      assumeYes:
+      noPrompt:
         description: "Jesi al ĉiuj demandoj."
       name:
         description: "La nomo de la pakadministrilo."
@@ -251,7 +251,7 @@ stacks:
         apartigitajn per spacetoj:"
       success: "Kreiĝis stako «%s»."
     options:
-      assumeYes:
+      noPrompt:
         description: "Jesi al ĉiuj demandoj."
       name:
         description: "La nomo de la stako."
@@ -281,7 +281,7 @@ stacks:
       noPackages: Vi ne specifis ajnajn pakaĵojn instalotajn en la stakon. Ĉu specifi
         nun?
     options:
-      assumeYes:
+      noPrompt:
         description: "Jesi al ĉiuj demandoj."
       name:
         description: "La nomo de la stako."

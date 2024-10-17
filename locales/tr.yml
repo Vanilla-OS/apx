@@ -132,7 +132,7 @@ pkgmanagers:
       askCommand: "'%s' için komutu gir:"
       askOverwrite: "'%s' adlı paket yöneticisi zaten var. Üzerine yazılsın mı?"
     options:
-      assumeYes:
+      noPrompt:
         description: "Tüm sorulara evet dediğinizi varsayın."
       name:
         description: "Paket yöneticisinin adı."
@@ -253,7 +253,7 @@ stacks:
         yazın:"
       success: "'%s' yığını oluşturuldu."
     options:
-      assumeYes:
+      noPrompt:
         description: "Tüm sorulara evet dediğinizi varsayın."
       name:
         description: "Yığının adı."
@@ -283,7 +283,7 @@ stacks:
       noPackages: Yığında kurulacak herhangi bir paket sağlamadınız. Şimdi birkaç
         tane eklemek ister misiniz?
     options:
-      assumeYes:
+      noPrompt:
         description: "Tüm sorulara evet dediğinizi varsayın."
       name:
         description: "Yığının adı."

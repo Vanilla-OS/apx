@@ -66,9 +66,9 @@ func NewPkgManagersCommand() *cmdr.Command {
 
 	newCmd.WithBoolFlag(
 		cmdr.NewBoolFlag(
-			"assume-yes",
+			"no-prompt",
 			"y",
-			apx.Trans("pkgmanagers.new.options.assumeYes.description"),
+			apx.Trans("pkgmanagers.new.options.noPrompt.description"),
 			false,
 		),
 	)
@@ -259,9 +259,9 @@ func NewPkgManagersCommand() *cmdr.Command {
 	)
 	updateCmd.WithBoolFlag(
 		cmdr.NewBoolFlag(
-			"assume-yes",
+			"no-prompt",
 			"y",
-			apx.Trans("pkgmanagers.new.options.assumeYes.description"),
+			apx.Trans("pkgmanagers.new.options.noPrompt.description"),
 			false,
 		),
 	)
@@ -419,7 +419,7 @@ func showPkgManager(cmd *cobra.Command, args []string) error {
 }
 
 func newPkgManager(cmd *cobra.Command, args []string) error {
-	assumeYes, _ := cmd.Flags().GetBool("assume-yes")
+	noPrompt, _ := cmd.Flags().GetBool("no-prompt")
 	name, _ := cmd.Flags().GetString("name")
 	needSudo, _ := cmd.Flags().GetBool("need-sudo")
 	autoRemove, _ := cmd.Flags().GetString("autoremove")
@@ -436,7 +436,7 @@ func newPkgManager(cmd *cobra.Command, args []string) error {
 	reader := bufio.NewReader(os.Stdin)
 
 	if name == "" {
-		if assumeYes {
+		if noPrompt {
 			cmdr.Error.Println(apx.Trans("pkgmanagers.new.error.noName"))
 			return nil
 		}
@@ -451,7 +451,7 @@ func newPkgManager(cmd *cobra.Command, args []string) error {
 		}
 	}
 
-	if !needSudo && !assumeYes {
+	if !needSudo && !noPrompt {
 		validChoice := false
 		for !validChoice {
 			cmdr.Info.Println(apx.Trans("pkgmanagers.new.info.askSudo") + ` [y/N]`)
@@ -488,7 +488,7 @@ func newPkgManager(cmd *cobra.Command, args []string) error {
 
 	for cmdName, cmd := range cmdMap {
 		if *cmd == "" {
-			if assumeYes {
+			if noPrompt {
 				cmdr.Error.Printf(apx.Trans("pkgmanagers.new.error.noCommand"), cmdName)
 				return nil
 			}
@@ -504,7 +504,7 @@ func newPkgManager(cmd *cobra.Command, args []string) error {
 	}
 
 	if core.PkgManagerExists(name) {
-		if assumeYes {
+		if noPrompt {
 			cmdr.Error.Println(apx.Trans("pkgmanagers.new.error.alreadyExists"), name)
 			return nil
 		}
@@ -648,7 +648,7 @@ func importPkgmanager(cmd *cobra.Command, args []string) error {
 func updatePkgManager(cmd *cobra.Command, args []string) error {
 	name, _ := cmd.Flags().GetString("name")
 	needSudo, _ := cmd.Flags().GetBool("need-sudo")
-	assumeYes, _ := cmd.Flags().GetBool("assume-yes")
+	noPrompt, _ := cmd.Flags().GetBool("no-prompt")
 	autoRemove, _ := cmd.Flags().GetString("autoremove")
 	clean, _ := cmd.Flags().GetString("clean")
 	install, _ := cmd.Flags().GetString("install")
@@ -683,7 +683,7 @@ func updatePkgManager(cmd *cobra.Command, args []string) error {
 	reader := bufio.NewReader(os.Stdin)
 
 	if autoRemove == "" {
-		if !assumeYes {
+		if !noPrompt {
 			cmdr.Info.Printfln(apx.Trans("pkgmanagers.update.info.askNewCommand"), "autoRemove", pkgmanager.CmdAutoRemove)
 			answer, _ := reader.ReadString('\n')
 			answer = strings.TrimSpace(answer)
@@ -699,7 +699,7 @@ func updatePkgManager(cmd *cobra.Command, args []string) error {
 	}
 
 	if clean == "" {
-		if !assumeYes {
+		if !noPrompt {
 			cmdr.Info.Printfln(apx.Trans("pkgmanagers.update.info.askNewCommand"), "clean", pkgmanager.CmdClean)
 			answer, _ := reader.ReadString('\n')
 			answer = strings.TrimSpace(answer)
@@ -715,7 +715,7 @@ func updatePkgManager(cmd *cobra.Command, args []string) error {
 	}
 
 	if install == "" {
-		if !assumeYes {
+		if !noPrompt {
 			cmdr.Info.Printfln(apx.Trans("pkgmanagers.update.info.askNewCommand"), "install", pkgmanager.CmdInstall)
 			answer, _ := reader.ReadString('\n')
 			answer = strings.TrimSpace(answer)
@@ -731,7 +731,7 @@ func updatePkgManager(cmd *cobra.Command, args []string) error {
 	}
 
 	if list == "" {
-		if !assumeYes {
+		if !noPrompt {
 			cmdr.Info.Printfln(apx.Trans("pkgmanagers.update.info.askNewCommand"), "list", pkgmanager.CmdList)
 			answer, _ := reader.ReadString('\n')
 			answer = strings.TrimSpace(answer)
@@ -747,7 +747,7 @@ func updatePkgManager(cmd *cobra.Command, args []string) error {
 	}
 
 	if purge == "" {
-		if !assumeYes {
+		if !noPrompt {
 			cmdr.Info.Printfln(apx.Trans("pkgmanagers.update.info.askNewCommand"), "purge", pkgmanager.CmdPurge)
 			answer, _ := reader.ReadString('\n')
 			answer = strings.TrimSpace(answer)
@@ -763,7 +763,7 @@ func updatePkgManager(cmd *cobra.Command, args []string) error {
 	}
 
 	if remove == "" {
-		if !assumeYes {
+		if !noPrompt {
 			cmdr.Info.Printfln(apx.Trans("pkgmanagers.update.info.askNewCommand"), "remove", pkgmanager.CmdRemove)
 			answer, _ := reader.ReadString('\n')
 			answer = strings.TrimSpace(answer)
@@ -779,7 +779,7 @@ func updatePkgManager(cmd *cobra.Command, args []string) error {
 	}
 
 	if search == "" {
-		if !assumeYes {
+		if !noPrompt {
 			cmdr.Info.Printfln(apx.Trans("pkgmanagers.update.info.askNewCommand"), "search", pkgmanager.CmdSearch)
 			answer, _ := reader.ReadString('\n')
 			answer = strings.TrimSpace(answer)
@@ -795,7 +795,7 @@ func updatePkgManager(cmd *cobra.Command, args []string) error {
 	}
 
 	if show == "" {
-		if !assumeYes {
+		if !noPrompt {
 			cmdr.Info.Printfln(apx.Trans("pkgmanagers.update.info.askNewCommand"), "show", pkgmanager.CmdShow)
 			answer, _ := reader.ReadString('\n')
 			answer = strings.TrimSpace(answer)
@@ -811,7 +811,7 @@ func updatePkgManager(cmd *cobra.Command, args []string) error {
 	}
 
 	if update == "" {
-		if !assumeYes {
+		if !noPrompt {
 			cmdr.Info.Printfln(apx.Trans("pkgmanagers.update.info.askNewCommand"), "update", pkgmanager.CmdUpdate)
 			answer, _ := reader.ReadString('\n')
 			answer = strings.TrimSpace(answer)
@@ -827,7 +827,7 @@ func updatePkgManager(cmd *cobra.Command, args []string) error {
 	}
 
 	if upgrade == "" {
-		if !assumeYes {
+		if !noPrompt {
 			cmdr.Info.Printfln(apx.Trans("pkgmanagers.update.info.askNewCommand"), "upgrade", pkgmanager.CmdUpgrade)
 			answer, _ := reader.ReadString('\n')
 			answer = strings.TrimSpace(answer)

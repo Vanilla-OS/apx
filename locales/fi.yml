@@ -134,7 +134,7 @@ pkgmanagers:
       askOverwrite: "A package manager with the name '%s' already exists. Overwrite
         it?"
     options:
-      assumeYes:
+      noPrompt:
         description: "Assume yes to all prompts."
       name:
         description: "The name of the package manager."
@@ -250,7 +250,7 @@ stacks:
         välilyönneillä."
       success: "Luotiin pino '%s'."
     options:
-      assumeYes:
+      noPrompt:
         description: "Vastaa kyllä kaikkiin kehotteisiin."
       name:
         description: "Pinon nimi."
@@ -279,7 +279,7 @@ stacks:
         vahvista nykyiset (%s):"
       success: "Updated stack '%s'."
     options:
-      assumeYes:
+      noPrompt:
         description: "Assume yes to all prompts."
       name:
         description: "The name of the stack."

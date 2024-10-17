@@ -65,9 +65,9 @@ func NewStacksCommand() *cmdr.Command {
 	)
 	newCmd.WithBoolFlag(
 		cmdr.NewBoolFlag(
-			"assume-yes",
+			"no-prompt",
 			"y",
-			apx.Trans("stacks.new.options.assumeYes.description"),
+			apx.Trans("stacks.new.options.noPrompt.description"),
 			false,
 		),
 	)
@@ -113,9 +113,9 @@ func NewStacksCommand() *cmdr.Command {
 	)
 	updateCmd.WithBoolFlag(
 		cmdr.NewBoolFlag(
-			"assume-yes",
+			"no-prompt",
 			"y",
-			apx.Trans("stacks.update.options.assumeYes.description"),
+			apx.Trans("stacks.update.options.noPrompt.description"),
 			false,
 		),
 	)
@@ -284,14 +284,14 @@ func showStack(cmd *cobra.Command, args []string) error {
 }
 
 func newStack(cmd *cobra.Command, args []string) error {
-	assumeYes, _ := cmd.Flags().GetBool("assume-yes")
+	noPrompt, _ := cmd.Flags().GetBool("no-prompt")
 	name, _ := cmd.Flags().GetString("name")
 	base, _ := cmd.Flags().GetString("base")
 	packages, _ := cmd.Flags().GetString("packages")
 	pkgManager, _ := cmd.Flags().GetString("pkg-manager")
 
 	if name == "" {
-		if !assumeYes {
+		if !noPrompt {
 			cmdr.Info.Println(apx.Trans("stacks.new.info.askName"))
 			fmt.Scanln(&name)
 			if name == "" {
@@ -311,7 +311,7 @@ func newStack(cmd *cobra.Command, args []string) error {
 	}
 
 	if base == "" {
-		if !assumeYes {
+		if !noPrompt {
 			cmdr.Info.Println(apx.Trans("stacks.new.info.askBase"))
 			fmt.Scanln(&base)
 			if base == "" {
@@ -358,7 +358,7 @@ func newStack(cmd *cobra.Command, args []string) error {
 	}
 
 	packagesArray := strings.Fields(packages)
-	if len(packagesArray) == 0 && !assumeYes {
+	if len(packagesArray) == 0 && !noPrompt {
 		cmdr.Info.Println(apx.Trans("stacks.new.info.noPackages") + "[y/N]")
 		reader := bufio.NewReader(os.Stdin)
 		answer, _ := reader.ReadString('\n')
@@ -386,7 +386,7 @@ func newStack(cmd *cobra.Command, args []string) error {
 }
 
 func updateStack(cmd *cobra.Command, args []string) error {
-	assumeYes, _ := cmd.Flags().GetBool("assume-yes")
+	noPrompt, _ := cmd.Flags().GetBool("no-prompt")
 	name, _ := cmd.Flags().GetString("name")
 	base, _ := cmd.Flags().GetString("base")
 	packages, _ := cmd.Flags().GetString("packages")
@@ -414,7 +414,7 @@ func updateStack(cmd *cobra.Command, args []string) error {
 	}
 
 	if base == "" {
-		if !assumeYes {
+		if !noPrompt {
 			cmdr.Info.Printfln(apx.Trans("stacks.update.info.askBase"), stack.Base)
 			fmt.Scanln(&base)
 			if base == "" {
@@ -427,7 +427,7 @@ func updateStack(cmd *cobra.Command, args []string) error {
 	}
 
 	if pkgManager == "" {
-		if !assumeYes {
+		if !noPrompt {
 			cmdr.Info.Printfln(apx.Trans("stacks.update.info.askPkgManager"), stack.PkgManager)
 			fmt.Scanln(&pkgManager)
 			if pkgManager == "" {
@@ -447,7 +447,7 @@ func updateStack(cmd *cobra.Command, args []string) error {
 
 	packagesArray := strings.Fields(packages)
 	cmdr.Error.Printfln("packagearray: %s", packagesArray)
-	if len(packages) == 0 && !assumeYes {
+	if len(packages) == 0 && !noPrompt {
 		if len(stack.Packages) == 0 {
 			cmdr.Info.Println(apx.Trans("stacks.update.info.noPackages") + "[y/N]")
 		} else {

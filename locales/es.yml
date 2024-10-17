@@ -134,7 +134,7 @@ pkgmanagers:
       askCommand: "Ingrese el comando para '%s':"
       askOverwrite: "Ya existe un gestor de paquetes con el nombre '%s'. ¿Sobrescribirlo?"
     options:
-      assumeYes:
+      noPrompt:
         description: "Responder 'sí' a todas las solicitudes."
       name:
         description: "El nombre del gestor de paquetes."
@@ -255,7 +255,7 @@ stacks:
         separados por un espacio:"
       success: "Pila creada '%s'."
     options:
-      assumeYes:
+      noPrompt:
         description: "Asumir 'sí' a todas las solicitudes."
       name:
         description: "El nombre de la pila."
@@ -285,7 +285,7 @@ stacks:
       noPackages: No ha proporcionado ningún paquete para instalar en la pila. ¿Quieres
         agregar algunos ahora?
     options:
-      assumeYes:
+      noPrompt:
         description: "Asuma que sí a todas las preguntas."
       name:
         description: "El nombre de la pila."

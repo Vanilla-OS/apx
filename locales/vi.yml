@@ -134,7 +134,7 @@ pkgmanagers:
       askOverwrite: "A package manager with the name '%s' already exists. Overwrite
         it?"
     options:
-      assumeYes:
+      noPrompt:
         description: "Assume yes to all prompts."
       name:
         description: "The name of the package manager."
@@ -253,7 +253,7 @@ stacks:
         by a space:"
       success: "Created stack '%s'."
     options:
-      assumeYes:
+      noPrompt:
         description: "Assume yes to all prompts."
       name:
         description: "The name of the stack."
@@ -283,7 +283,7 @@ stacks:
       noPackages: You have not provided any packages to install in the stack. Do you
         want to add some now?
     options:
-      assumeYes:
+      noPrompt:
         description: "Assume yes to all prompts."
       name:
         description: "The name of the stack."

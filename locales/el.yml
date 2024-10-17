@@ -138,7 +138,7 @@ pkgmanagers:
       askCommand: "Εισαγωγή εντολής για '%s':"
       askOverwrite: "Ένας διαχειριστής πακέτων με το όνομα '%s' υπάρχει ήδη. Να επεγγραφεί;"
     options:
-      assumeYes:
+      noPrompt:
         description: "Να θεωρηθεί το \"ναι\" ως απάντηση σε κάθε προτροπή."
       name:
         description: "Το όνομα του διαχειριστή πακέτων."
@@ -258,7 +258,7 @@ stacks:
         στη στοίβα, χωρισμένα με κενό:"
       success: "Δημιουργήθηκε η στοίβα '%s'."
     options:
-      assumeYes:
+      noPrompt:
         description: "Να θεωρηθεί το \"ναι\" ως απάντηση σε κάθε προτροπή."
       name:
         description: "Το όνομα της στοίβας."
@@ -288,7 +288,7 @@ stacks:
         want to add some now?
       confirmPackages: Do you want to confirm the current packages list?
     options:
-      assumeYes:
+      noPrompt:
         description: "Να θεωρηθεί το \"ναι\" ως απάντηση σε κάθε προτροπή."
       name:
         description: "Το όνομα της στοίβας."

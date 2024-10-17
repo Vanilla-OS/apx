@@ -130,7 +130,7 @@ pkgmanagers:
       askCommand: "输入 '%s' 的命令："
       askOverwrite: "名为 '%s' 的软件包管理器已经存在。要覆盖吗？"
     options:
-      assumeYes:
+      noPrompt:
         description: "为所有操作指定“是”。"
       name:
         description: "软件包管理器的名称。"
@@ -244,7 +244,7 @@ stacks:
       askPackages: "请输入您要安装到包捆中的软件包，用空格隔开："
       success: "已创建包捆 '%s'。"
     options:
-      assumeYes:
+      noPrompt:
         description: "为所有操作指定“是”。"
       name:
         description: "包捆的名称。"
@@ -270,7 +270,7 @@ stacks:
       confirmPackages: 您需要确认目前的软件包列表吗？
       noPackages: 您没有提供任何要安装在包捆中的软件包。需要添加一些吗？
     options:
-      assumeYes:
+      noPrompt:
         description: "为所有操作指定“是”。"
       name:
         description: "包捆的名称。"
