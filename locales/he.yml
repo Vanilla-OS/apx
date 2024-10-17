@@ -132,7 +132,7 @@ pkgmanagers:
       askCommand: "Enter the command for '%s':"
       askOverwrite: "כבר קיים מנהל חבילות בשם '%s'. להחליף אותו?"
     options:
-      assumeYes:
+      noPrompt:
         description: "נניח כן לכל הפניות."
       name:
         description: "שם מנהל החבילה."
@@ -249,7 +249,7 @@ stacks:
       askPackages: "אנא הקלד את החבילות שברצונך להתקין בערימה, מופרדות על ידי חלל:"
       success: "נוצר מחסנית '%s'."
     options:
-      assumeYes:
+      noPrompt:
         description: "נניח כן לכל הפניות."
       name:
         description: "שם הערימה."
@@ -278,7 +278,7 @@ stacks:
       noPackages: You have not provided any packages to install in the stack. Do you
         want to add some now?
     options:
-      assumeYes:
+      noPrompt:
         description: "נניח כן לכל הפניות."
       name:
         description: "שם הערימה."

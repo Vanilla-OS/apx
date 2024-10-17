@@ -134,8 +134,8 @@ pkgmanagers:
       askOverwrite: "A package manager with the name '%s' already exists. Overwrite
         it?"
     options:
-      assumeYes:
-        description: "Assume yes to all prompts."
+      noPrompt:
+        description: "Assume defaults to all prompts."
       name:
         description: "The name of the package manager."
       needSudo:
@@ -251,8 +251,8 @@ stacks:
         by a space:"
       success: "Created stack '%s'."
     options:
-      assumeYes:
-        description: "Assume yes to all prompts."
+      noPrompt:
+        description: "Assume defaults to all prompts."
       name:
         description: "The name of the stack."
       base:
@@ -280,8 +280,8 @@ stacks:
         by a space, or confirm the current ones (%s):"
       success: "Updated stack '%s'."
     options:
-      assumeYes:
-        description: "Assume yes to all prompts."
+      noPrompt:
+        description: "Assume defaults to all prompts."
       name:
         description: "The name of the stack."
       base:

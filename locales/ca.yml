@@ -136,7 +136,7 @@ pkgmanagers:
       askCommand: "Introdueix l'ordre per '%s':"
       askOverwrite: "Ja existeix un gestor de paquets anomenat '%s'. Vols sobre escriure'l?"
     options:
-      assumeYes:
+      noPrompt:
         description: "Assumir sí a totes les preguntes."
       name:
         description: "El nom del gestor de paquets."
@@ -256,7 +256,7 @@ stacks:
         per un espai:"
       success: "Pila Creada '%s'."
     options:
-      assumeYes:
+      noPrompt:
         description: "Assumir sí a totes les preguntes."
       name:
         description: "El nom de la pila."
@@ -285,7 +285,7 @@ stacks:
       noPackages: You have not provided any packages to install in the stack. Do you
         want to add some now?
     options:
-      assumeYes:
+      noPrompt:
         description: "Assumir sí a totes les preguntes."
       name:
         description: "El nom de la pila."

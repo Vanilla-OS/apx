@@ -143,7 +143,7 @@ pkgmanagers:
       askOverwrite: "Un gestionnaire de paquets portant le nom \"%s\" existe déjà.
         L'écraser ?"
     options:
-      assumeYes:
+      noPrompt:
         description: "Supposez que vous répondez par l'affirmative à toutes les questions."
       name:
         description: "Le nom du gestionnaire de paquets."
@@ -266,7 +266,7 @@ stacks:
         la pile, en les séparant par un espace :"
       success: "Pile '%s' a été créée."
     options:
-      assumeYes:
+      noPrompt:
         description: "Supposez que vous répondez oui à toutes les questions."
       name:
         description: "Nom de la pile."
@@ -297,7 +297,7 @@ stacks:
       noPackages: Vous n'avez fourni aucun paquets à installer dans la pile. Voulez-vous
         en ajouter maintenant ?
     options:
-      assumeYes:
+      noPrompt:
         description: "Supposons que vous répondez par l'affirmative à toutes les questions."
       name:
         description: "Le nom de la pile."

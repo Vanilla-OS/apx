@@ -141,7 +141,7 @@ pkgmanagers:
       askCommand: "Voer de opdracht in voor ‘%s’:"
       askOverwrite: "Een pakketbeheerder met de naam ‘%s’ bestaat al. Overschrĳven?"
     options:
-      assumeYes:
+      noPrompt:
         description: "Neem ‘ja’ aan voor alle vragen."
       name:
         description: "De naam van de pakketbeheerder."
@@ -263,7 +263,7 @@ stacks:
         door een spatie:"
       success: "Stack ‘%s’ aangemaakt."
     options:
-      assumeYes:
+      noPrompt:
         description: "Neem ‘ja’ aan voor alle vragen."
       name:
         description: "De naam van de stack."
@@ -293,7 +293,7 @@ stacks:
       noPackages: U heeft geen pakketten opgegeven om in de stack te installeren.
         Wilt u er nu een paar toevoegen?
     options:
-      assumeYes:
+      noPrompt:
         description: "Neem ‘ja’ aan voor alle vragen."
       name:
         description: "De naam van de stack."

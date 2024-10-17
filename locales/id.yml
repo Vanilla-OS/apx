@@ -133,7 +133,7 @@ pkgmanagers:
       askCommand: "Masukkan perintah untuk '%s':"
       askOverwrite: "Manajer paket dengan nama '%s' sudah ada. Timpa?"
     options:
-      assumeYes:
+      noPrompt:
         description: "Jawab ya untuk semua pertanyaan."
       name:
         description: "Nama manajer paket."
@@ -258,7 +258,7 @@ stacks:
         dengan spasi:"
       success: "Membuat stack '%s'."
     options:
-      assumeYes:
+      noPrompt:
         description: "Jawab ya untuk semua pertanyaan."
       name:
         description: "Nama stack."
@@ -290,7 +290,7 @@ stacks:
       noPackages: Anda belum menyediakan paket apa pun untuk diinstal dalam stack.
         Apakah Anda ingin menambahkannya sekarang?
     options:
-      assumeYes:
+      noPrompt:
         description: "Jawab ya untuk semua pertanyaan."
       name:
         description: "Nama stack."

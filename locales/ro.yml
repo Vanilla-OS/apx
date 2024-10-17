@@ -134,7 +134,7 @@ pkgmanagers:
       askCommand: "Introdu comanda pentru \"%s\":"
       askOverwrite: "Un manager de pachete numit \"%s\" există deja. Îl suprascrieți?"
     options:
-      assumeYes:
+      noPrompt:
         description: "Se presupune că ați răspuns afirmativ la toate solicitările."
       name:
         description: "Numele managerului de pachete."
@@ -255,7 +255,7 @@ stacks:
         separate prin spațiu:"
       success: "A fost creată stiva \"%s\"."
     options:
-      assumeYes:
+      noPrompt:
         description: "Se presupune că ați răspuns afirmativ la toate solicitările."
       name:
         description: "Numele stivei."
@@ -286,7 +286,7 @@ stacks:
       noPackages: Nu ați furnizat niciun pachet de instalat în stivă. Doriți să adăugați
         unele acum?
     options:
-      assumeYes:
+      noPrompt:
         description: "Se presupune că ați răspuns afirmativ la toate solicitările."
       name:
         description: "Numele stivei."

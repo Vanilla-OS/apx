@@ -136,7 +136,7 @@ pkgmanagers:
       askOverwrite: "Tá bainisteoir pacáiste leis an ainm '%s' ann cheana. Forscríobh
         é?"
     options:
-      assumeYes:
+      noPrompt:
         description: "Glac leis go bhfuil gach leid."
       name:
         description: "Ainm an bhainisteora pacáiste."
@@ -253,7 +253,7 @@ stacks:
         ag spás:"
       success: "Cruach '%s' cruthaithe."
     options:
-      assumeYes:
+      noPrompt:
         description: "Glac leis go bhfuil gach leid."
       name:
         description: "Ainm an chairn."
@@ -283,7 +283,7 @@ stacks:
         le spás, nó deimhnigh na cinn reatha (%s):"
       success: "Cruach nuashonraithe '%s'."
     options:
-      assumeYes:
+      noPrompt:
         description: "Glac leis go bhfuil gach leid."
       name:
         description: "Ainm an chairn."

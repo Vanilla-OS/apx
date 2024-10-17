@@ -133,7 +133,7 @@ pkgmanagers:
       askCommand: "Zadejte příkaz pro '%s':"
       askOverwrite: "Správce balíčků s názvem '%s' již existuje. Přepsat ho?"
     options:
-      assumeYes:
+      noPrompt:
         description: "Automaticky zadat ano pro všechny dotazy."
       name:
         description: "Název správce balíčků."
@@ -252,7 +252,7 @@ stacks:
         mezerou:"
       success: "Stack '%s' vytvořen."
     options:
-      assumeYes:
+      noPrompt:
         description: "Automaticky zadat ano pro všechny dotazy."
       name:
         description: "Název stacku."
@@ -281,7 +281,7 @@ stacks:
       noPackages: You have not provided any packages to install in the stack. Do you
         want to add some now?
     options:
-      assumeYes:
+      noPrompt:
         description: "Automaticky zadat ano pro všechny dotazy."
       name:
         description: "Název stacku."

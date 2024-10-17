@@ -141,7 +141,7 @@ pkgmanagers:
       askCommand: "Inserire il comando per '%s':"
       askOverwrite: "Esiste già un gestore di pacchetti con il nome '%s'. Sovrascriverlo?"
     options:
-      assumeYes:
+      noPrompt:
         description: "Assumete un sì a tutte le richieste."
       name:
         description: "Il nome del gestore di pacchetti."
@@ -261,7 +261,7 @@ stacks:
         da uno spazio:"
       success: "Creato lo stack '%s'."
     options:
-      assumeYes:
+      noPrompt:
         description: "Assumete un sì a tutte le richieste."
       name:
         description: "Il nome dello stack."
@@ -292,7 +292,7 @@ stacks:
       noPackages: You have not provided any packages to install in the stack. Do you
         want to add some now?
     options:
-      assumeYes:
+      noPrompt:
         description: "Assumete un sì a tutte le richieste."
       name:
         description: "Il nome dello stack."

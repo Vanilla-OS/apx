@@ -134,7 +134,7 @@ pkgmanagers:
       askCommand: "Wpisz polecenie dla '%s':"
       askOverwrite: "Menedżer pakietów z nazwą '%s' już istnieje. Nadpisać go?"
     options:
-      assumeYes:
+      noPrompt:
         description: "Odpowiedz twierdząco na wszystkie komunikaty."
       name:
         description: "Nazwa menedżera pakietów."
@@ -257,7 +257,7 @@ stacks:
         w stosie:"
       success: "Stwórz stos '%s'."
     options:
-      assumeYes:
+      noPrompt:
         description: "Odpowiedz twierdząco na wszystkie komunikaty."
       name:
         description: "Nazwa stosu."
@@ -287,7 +287,7 @@ stacks:
         want to add some now?
       confirmPackages: Do you want to confirm the current packages list?
     options:
-      assumeYes:
+      noPrompt:
         description: "Odpowiedz twierdząco na wszystkie komunikaty."
       name:
         description: "Nazwa stosu."

@@ -139,7 +139,7 @@ pkgmanagers:
       askOverwrite: "Ein Paketmanager mit dem Namen '%s' existiert bereits. Überschreiben
         Sie ihn?"
     options:
-      assumeYes:
+      noPrompt:
         description: "Alle Fragen mit Ja beantworten."
       name:
         description: "Der Name des Paketmanagers."
@@ -260,7 +260,7 @@ stacks:
         durch ein Leerzeichen getrennt ein:"
       success: "Stapel '%s' erstellt."
     options:
-      assumeYes:
+      noPrompt:
         description: "Alle Fragen mit Ja beantworten."
       name:
         description: "Der Name des Stapels."
@@ -292,7 +292,7 @@ stacks:
       noPackages: Sie haben keine Pakete zur Installation im Stapel angegeben. Möchten
         Sie jetzt welche hinzufügen?
     options:
-      assumeYes:
+      noPrompt:
         description: "Alle Fragen mit Ja beantworten."
       name:
         description: "Der Name des Stapels."

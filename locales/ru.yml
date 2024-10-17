@@ -133,7 +133,7 @@ pkgmanagers:
       askCommand: "Введите команду для '%s':"
       askOverwrite: "Менеджер пакетов с именем '%s' уже существует. Перезаписать его?"
     options:
-      assumeYes:
+      noPrompt:
         description: "Предполагать «да» на все вопросы."
       name:
         description: "Имя менеджера пакетов."
@@ -253,7 +253,7 @@ stacks:
         разделяя их пробелом:"
       success: "Создан стек '%s'."
     options:
-      assumeYes:
+      noPrompt:
         description: "Предполагать «да» на все вопросы."
       name:
         description: "Имя стека."
@@ -283,7 +283,7 @@ stacks:
       noPackages: Вы не указали ни одного пакета для установки в стек. Хотите ли Вы
         добавить их сейчас?
     options:
-      assumeYes:
+      noPrompt:
         description: "Предполагать «да» на все вопросы."
       name:
         description: "Имя стека."

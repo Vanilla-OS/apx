@@ -131,7 +131,7 @@ pkgmanagers:
       askCommand: "أدخل الامر لأجل '%s':"
       askOverwrite: "يوجد مدير حزم بنفس الاسم '%s' بالفعل. هل تريد استبداله؟"
     options:
-      assumeYes:
+      noPrompt:
         description: "افرض الإجابة \"نعم\" لكل الاختيارات."
       name:
         description: "اسم مدير الحزم."
@@ -249,7 +249,7 @@ stacks:
       askPackages: "من فضلك قم بكتابة الحزم المراد تنزيلها في التشكيلة مع فصلها بمسافة:"
       success: "تم إنشاء التشكيلة '%s'."
     options:
-      assumeYes:
+      noPrompt:
         description: "افرض الإجابة \"نعم\" لكل الاختيارات."
       name:
         description: "اسم التشكيلة."
@@ -277,7 +277,7 @@ stacks:
       confirmPackages: هل تريد الموافقة على قائمة الحزم الحالية؟
       noPackages: لم تقم بتوفير أي حزم لتثبيتها في التشكيلة. هل تريد إضافة بعضها الآن؟
     options:
-      assumeYes:
+      noPrompt:
         description: "افرض الإجابة \"نعم\" لكل الاختيارات."
       name:
         description: "اسم التشكيلة."
