@@ -131,6 +131,7 @@ pkgmanagers:
       askName: "Choose a name:"
       askSudo: "Does the package manager need sudo to run?"
       askCommand: "Enter the command for '%s':"
+      askCommandWithDefault: "Enter the command for '%s' (default: '%s'):"
       askOverwrite: "A package manager with the name '%s' already exists. Overwrite
         it?"
     options:
