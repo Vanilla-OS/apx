@@ -21,6 +21,32 @@ import (
 	"github.com/vanilla-os/orchid/cmdr"
 )
 
+const (
+	PkgManagerCmdAutoRemove = "autoRemove"
+	PkgManagerCmdClean      = "clean"
+	PkgManagerCmdInstall    = "install"
+	PkgManagerCmdList       = "list"
+	PkgManagerCmdPurge      = "purge"
+	PkgManagerCmdRemove     = "remove"
+	PkgManagerCmdSearch     = "search"
+	PkgManagerCmdShow       = "show"
+	PkgManagerCmdUpdate     = "update"
+	PkgManagerCmdUpgrade    = "upgrade"
+)
+
+var PkgManagerCmdSetOrder = []string{
+	PkgManagerCmdInstall,
+	PkgManagerCmdUpdate,
+	PkgManagerCmdRemove,
+	PkgManagerCmdPurge,
+	PkgManagerCmdAutoRemove,
+	PkgManagerCmdClean,
+	PkgManagerCmdList,
+	PkgManagerCmdSearch,
+	PkgManagerCmdShow,
+	PkgManagerCmdUpgrade,
+}
+
 func NewPkgManagersCommand() *cmdr.Command {
 	// Root command
 	cmd := cmdr.NewCommand(
@@ -474,23 +500,33 @@ func newPkgManager(cmd *cobra.Command, args []string) error {
 	}
 
 	cmdMap := map[string]*string{
-		"autoRemove": &autoRemove,
-		"clean":      &clean,
-		"install":    &install,
-		"list":       &list,
-		"purge":      &purge,
-		"remove":     &remove,
-		"search":     &search,
-		"show":       &show,
-		"update":     &update,
-		"upgrade":    &upgrade,
+		PkgManagerCmdAutoRemove: &autoRemove,
+		PkgManagerCmdClean:      &clean,
+		PkgManagerCmdInstall:    &install,
+		PkgManagerCmdList:       &list,
+		PkgManagerCmdPurge:      &purge,
+		PkgManagerCmdRemove:     &remove,
+		PkgManagerCmdSearch:     &search,
+		PkgManagerCmdShow:       &show,
+		PkgManagerCmdUpdate:     &update,
+		PkgManagerCmdUpgrade:    &upgrade,
 	}
 
-	for cmdName, cmd := range cmdMap {
+	for _, cmdName := range PkgManagerCmdSetOrder {
+		cmd := cmdMap[cmdName]
 		if *cmd == "" {
 			if noPrompt {
 				cmdr.Error.Printf(apx.Trans("pkgmanagers.new.error.noCommand"), cmdName)
 				return nil
+			}
+			if cmdName == PkgManagerCmdPurge || cmdName == PkgManagerCmdAutoRemove {
+				cmdr.Info.Printfln(apx.Trans("pkgmanagers.new.info.askCommandWithDefault"), cmdName, remove)
+				*cmd, _ = reader.ReadString('\n')
+				*cmd = strings.ReplaceAll(*cmd, "\n", "")
+				if *cmd == "" {
+					*cmd = remove
+				}
+				continue
 			}
 
 			cmdr.Info.Printfln(apx.Trans("pkgmanagers.new.info.askCommand"), cmdName)
@@ -679,7 +715,7 @@ func updatePkgManager(cmd *cobra.Command, args []string) error {
 		cmdr.Error.Println(apx.Trans("pkgmanagers.update.error.builtIn"))
 		os.Exit(126)
 	}
-	
+
 	reader := bufio.NewReader(os.Stdin)
 
 	if autoRemove == "" {
