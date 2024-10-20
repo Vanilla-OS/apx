@@ -1,10 +1,19 @@
-# Introduction to APX
+---
+Title: Introduction
+Description: Learn about Apx, a versatile command-line interface (CLI) tool designed to simplify the management of operating system containers.
+PublicationDate: 2024-10-18
+Listed: true
+Authors:
+  - jardon
+Tags:
+  - introduction
+---
 
 APX is a versatile command-line interface (CLI) tool designed to simplify the management of operating system containers. With a focus on efficiency and user-friendliness, APX empowers users to create, manage, and customize containers for a variety of applications and services.
 
 Key features of APX include:
 
-- **Subsystems**: APX supports the management of container-based operating systems running on top of the host.  These are called subsystems in APX.  They are lightweight and provide flexible environments that have no effect on the host system.
+- **Subsystems**: APX supports the management of container-based operating systems running on top of the host. These are called subsystems in APX. They are lightweight and provide flexible environments that have no effect on the host system.
 
 - **Stacks**: Organize related configurations and dependencies into cohesive groups called stacks. This feature creates consistent, reproducable environments to develop software, deploy workloads, or install packages that may be incompatible with your host system.
 
@@ -17,4 +26,3 @@ Key features of APX include:
 By integrating these powerful features, APX provides developers and system administrators with the tools they need to efficiently manage their containerized applications and associated dependencies. Whether you're deploying microservices or managing development environments, APX helps you streamline your container management process.
 
 Explore APX and discover a more efficient approach to managing your operating system containers, stacks, subsystems, and package managers!
-

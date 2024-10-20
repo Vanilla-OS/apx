@@ -1,10 +1,23 @@
-## Working with Stacks
+---
+Title: Working with Stacks
+Description: Learn how to create, manage, and customize stacks in Apx to simplify the management of applications and dependencies.
+PublicationDate: 2024-10-18
+Listed: true
+Authors:
+  - jardon
+Tags:
+  - working
+  - stacks
+---
+
 Stacks are preconfigured operating system images in APX that can be reused across different subsystems. This allows for consistent environments and simplifies the management of applications and dependencies.
 
 To see the available commands for managing stacks, use the following command:
+
 ```bash
 apx stacks --help
 ```
+
 ```
 Work with the stacks that are available in apx.
 
@@ -27,12 +40,15 @@ Use "apx stacks [command] --help" for more information about a command.
 ```
 
 ## Creating a Stack
+
 Creating a stack allows you to define a customized operating environment. APX ships with several default stacks, but you can create user-defined stacks tailored to your needs.
 
 To see the options available for creating a new stack, run:
+
 ```bash
 apx stacks new --help
 ```
+
 ```
 Create a new stack.
 
@@ -47,12 +63,15 @@ Flags:
   -p, --packages string      The packages to install.
   -k, --pkg-manager string   The package manager to use.
 ```
+
 > **NOTE:** Depending on the stack that needs to be added, it may be necessary to create a package manager first.
 
-We want to use the latest Ubuntu LTS which at the time of writing is 24.04 (Noble Numbat) in a subsystem.  Let's begin by listing off the currently available stacks.
+We want to use the latest Ubuntu LTS which at the time of writing is 24.04 (Noble Numbat) in a subsystem. Let's begin by listing off the currently available stacks.
+
 ```bash
 apx stacks list
 ```
+
 ```
  INFO  Found 7 stacks:
 ┼┄┄┄┄┄┄┄┄┄┄┄┄┄┼┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┼┄┄┄┄┄┄┄┄┄┄┼┄┄┄┄┄┄┼┄┄┄┄┄┄┄┄┄┄┄┄┄┼
@@ -73,11 +92,15 @@ apx stacks list
 ┊ vanilla     ┊ ghcr.io/vanilla-os/pico:main                             ┊ yes      ┊ 0    ┊ apt         ┊
 ┼┄┄┄┄┄┄┄┄┄┄┄┄┄┼┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┼┄┄┄┄┄┄┄┄┄┄┼┄┄┄┄┄┄┼┄┄┄┄┄┄┄┄┄┄┄┄┄┼
 ```
-Looking at the above output we see that there is no stack for Ubuntu 24.04.  This means that we need to create one!  To do this, we tell `apx` to create a new stack and pass it some info.
+
+Looking at the above output we see that there is no stack for Ubuntu 24.04. This means that we need to create one! To do this, we tell `apx` to create a new stack and pass it some info.
+
 ```bash
 apx stacks new
 ```
+
 > **NOTE:** These options can be passed as CLI args as shown above in the help output.
+
 ```
  INFO  Choose a name:
 noble
@@ -93,17 +116,20 @@ ubuntu:noble
  INFO  Select a package manager [1-6]:
 3
  INFO  You have not provided any packages to install in the stack. Do you want to add some now?[y/N]
-y           
+y
  INFO  Please type the packages you want to install in the stack, separated by a space:
 neofetch vim
  SUCCESS  Created stack 'noble'.
- ```
-We have received a "SUCCESS" message from `apx`!  To confirm that the new `noble` stack has been created, just list off the available stacks.
- ```bash
- apx stacks list
- ```
- ```
-  INFO  Found 8 stacks:
+```
+
+We have received a "SUCCESS" message from `apx`! To confirm that the new `noble` stack has been created, just list off the available stacks.
+
+```bash
+apx stacks list
+```
+
+```
+ INFO  Found 8 stacks:
 ┼┄┄┄┄┄┄┄┄┄┄┄┄┄┼┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┼┄┄┄┄┄┄┄┄┄┄┼┄┄┄┄┄┄┼┄┄┄┄┄┄┄┄┄┄┄┄┄┼
 ┊ NAME        ┊ BASE                                                     ┊ BUILT-IN ┊ PKGS ┊ PKG MANAGER ┊
 ┼┄┄┄┄┄┄┄┄┄┄┄┄┄┼┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┼┄┄┄┄┄┄┄┄┄┄┼┄┄┄┄┄┄┼┄┄┄┄┄┄┄┄┄┄┄┄┄┼
@@ -124,15 +150,19 @@ We have received a "SUCCESS" message from `apx`!  To confirm that the new `noble
 ┊ vanilla     ┊ ghcr.io/vanilla-os/pico:main                             ┊ yes      ┊ 0    ┊ apt         ┊
 ┼┄┄┄┄┄┄┄┄┄┄┄┄┄┼┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┼┄┄┄┄┄┄┄┄┄┄┼┄┄┄┄┄┄┼┄┄┄┄┄┄┄┄┄┄┄┄┄┼
 ```
+
 > **NOTE:** The new `noble` stack is user-defined and therefore not considered a "built-in".
 
 ## Updating Stacks
+
 Occasionally, you may need to update an existing stack. This could involve changing the base image to a newer version or modifying the list of installed packages.
 
 To see how to update a stack, you can check the help command:
+
 ```bash
 apx stacks update --help
 ```
+
 ```
 Update the specified stack.
 
@@ -147,10 +177,13 @@ Flags:
   -p, --packages string      The packages to install.
   -k, --pkg-manager string   The package manager to use.
 ```
+
 In this example, we are going to update the list of installed packages to include `git`.
+
 ```bash
 apx stacks update noble
 ```
+
 ```
  INFO  Type a new base or confirm the current one (ubuntu:noble):
 
@@ -164,9 +197,11 @@ neofetch vim git
 ```
 
 Let's check the stack to see if the packages were updated correct.
+
 ```bash
 apx stacks show noble
 ```
+
 ```
 ┼┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┼┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┼
 ┊ Name            ┊ noble              ┊
@@ -180,12 +215,15 @@ apx stacks show noble
 ```
 
 ## Exporting Stacks
+
 Exporting a stack allows you to save its configuration and installed packages to a file, which can be shared or stored as a backup.
 
 To see how to export a stack, you can run:
+
 ```bash
 apx stacks export --help
 ```
+
 ```
 Export the specified stack.
 
@@ -197,11 +235,14 @@ Flags:
   -n, --name string     The name of the stack to export.
   -o, --output string   The path to export the stack to.
 ```
+
 To export the noble stack to a file named noble-stack.tar.gz, you can use the following command:
+
 ```bash
 apx stacks export -n noble -o .
-cat noble.yml 
+cat noble.yml
 ```
+
 ```
 name: noble
 base: ubuntu:noble
@@ -214,12 +255,15 @@ builtin: false
 ```
 
 ## Importing Stacks
+
 Importing a stack allows you to bring a previously exported stack back into your APX environment. This can be useful for sharing stacks between different systems or restoring a stack from a backup.
 
 To see how to import a stack, run the following command:
+
 ```bash
 apx stacks import --help
 ```
+
 ```
 Import the specified stack.
 
@@ -230,16 +274,21 @@ Flags:
   -h, --help           help for import
   -i, --input string   The path to import the stack from.
 ```
+
 Assuming you have a stack file named `noble.yml`, you can import it like this:
+
 ```bash
 apx stacks import -i noble.yml
 ```
+
 ```
  INFO  Imported stack from 'noble'.
 ```
+
 ```bash
 apx stacks show noble
 ```
+
 ```
 ┼┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┼┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┼
 ┊ Name            ┊ noble              ┊
@@ -253,12 +302,15 @@ apx stacks show noble
 ```
 
 ## Deleting Stacks
+
 Removing a stack allows you to delete a stack that you no longer need. This can help keep your environment organized and free from unused resources.
 
 To see how to remove a stack, run:
+
 ```bash
 apx stacks rm --help
 ```
+
 ```
 Remove the specified stack.
 
@@ -270,10 +322,13 @@ Flags:
   -h, --help          help for rm
   -n, --name string   The name of the stack to remove.
 ```
-Stacks can be removed easily with `apx`.  We just need to pass the name argument to the `rm` command.
+
+Stacks can be removed easily with `apx`. We just need to pass the name argument to the `rm` command.
+
 ```bash
 apx stacks rm -n noble
 ```
+
 ```
  INFO  Are you sure you want to remove 'noble'? [y/N]
 y
