@@ -17,7 +17,7 @@
 
 ## Help
 
-```
+```bash
 Apx is a package manager with support for multiple sources, allowing you to install packages in subsystems.
 
 Usage:
