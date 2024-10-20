@@ -1,5 +1,17 @@
-## Working with Package Managers
-Package managers can be manipulated in various ways with `apx`.  This includes creation, editing, deleting, importing configurations, and exporting configurations. 
+---
+Title: Working with Package Managers
+Description: Learn how to work with package managers in Apx, including creating, editing, deleting, importing, and exporting configurations.
+PublicationDate: 2024-10-18
+Listed: true
+Authors:
+  - jardon
+Tags:
+  - working
+  - package-managers
+---
+
+Package managers can be manipulated in various ways with `apx`. This includes creation, editing, deleting, importing configurations, and exporting configurations.
+
 ```bash
 apx pkgmanagers --help
 ```
@@ -26,12 +38,14 @@ Use "apx pkgmanagers [command] --help" for more information about a command.
 ```
 
 ## Creating a Package Manager
-APX ships with several package managers out-of-the-box.  These cover a wide range of different Linux distributions.  In the event that you need to add a package manager for a new operating system, this can be done using the `apx` CLI.  Here are the available options for adding a package manager:
+
+APX ships with several package managers out-of-the-box. These cover a wide range of different Linux distributions. In the event that you need to add a package manager for a new operating system, this can be done using the `apx` CLI. Here are the available options for adding a package manager:
 
 ```bash
 apx pkgmanagers new --help
 ```
-```
+
+````
 Create a new package manager.
 
 Usage:
@@ -54,7 +68,8 @@ Flags:
   -U, --upgrade string      The command to run to upgrade packages.
 ```bash
 apx pkgmanagers list
-```
+````
+
 ```
  INFO  Found 5 package managers
 ┼┄┄┄┄┄┄┄┄┼┄┄┄┄┄┄┄┄┄┄┼
@@ -71,12 +86,15 @@ apx pkgmanagers list
 ┊ zypper ┊ yes      ┊
 ┼┄┄┄┄┄┄┄┄┼┄┄┄┄┄┄┄┄┄┄┼
 ```
-Looking at the list, we see that `yum` is not preconfigured for us.  This means that we need to add a package manager to `apx` and give it all the required parameters.
+
+Looking at the list, we see that `yum` is not preconfigured for us. This means that we need to add a package manager to `apx` and give it all the required parameters.
 
 ```bash
 apx pkgmanagers new
 ```
+
 > **NOTE:** These options can be passed as CLI args as shown above in the help output.
+
 ```
  INFO  Choose a name:
 yum
@@ -106,9 +124,11 @@ yum remove
 ```
 
 Now we should be able to see the new yum package manager in the list of available managers.
+
 ```bash
 apx pkgmanagers list
 ```
+
 ```
  INFO  Found 6 package managers
 ┼┄┄┄┄┄┄┄┄┼┄┄┄┄┄┄┄┄┄┄┼
@@ -127,14 +147,17 @@ apx pkgmanagers list
 ┊ zypper ┊ yes      ┊
 ┼┄┄┄┄┄┄┄┄┼┄┄┄┄┄┄┄┄┄┄┼
 ```
+
 > **NOTE:** The new `yum` package manager is user-defined and therefore not considered a "built-in".
 
-
 ## Updating a Package Manager
+
 Updates to package managers can be done similarly to other operations in `apx`.
+
 ```bash
 apx pkgmanagers update --help
 ```
+
 ```
 Update the specified package manager.
 
@@ -158,12 +181,14 @@ Flags:
   -U, --upgrade string      The command to run to upgrade packages.
 ```
 
-Now let's update the autoremove command to add verbosity.  This requires adding the `-v` argument to the command.
+Now let's update the autoremove command to add verbosity. This requires adding the `-v` argument to the command.
 
 ```bash
 apx pkgmanagers update -n yum -S
 ```
-> **NOTE:** Currently, sudo access with `-S` needs to be used every time an update occurs to maintain it.  Leaving off the `-S` will remove sudo access from the command.
+
+> **NOTE:** Currently, sudo access with `-S` needs to be used every time an update occurs to maintain it. Leaving off the `-S` will remove sudo access from the command.
+
 ```
  INFO  Enter new command for 'autoRemove' (leave empty to keep 'yum autoremove'):
 yum autoremove -v
@@ -191,6 +216,7 @@ yum autoremove -v
 ```bash
 apx pkgmanagers show yum
 ```
+
 ```
 ┼┄┄┄┄┄┄┄┄┄┄┄┄┼┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┼
 ┊ Name       ┊ yum                   ┊
@@ -220,10 +246,13 @@ apx pkgmanagers show yum
 ```
 
 ## Exporting a Package Manager
+
 `apx` can export a package manager to a yaml file to be imported later.
+
 ```bash
 apx pkgmanagers export --help
 ```
+
 ```
 Export the specified package manager.
 
@@ -235,11 +264,14 @@ Flags:
   -n, --name string     The name of the package manager to export.
   -o, --output string   The path to export the stack to.
 ```
-Now let's say we are wanting to back up our package manager configuration for usage with some automation tooling.  We just need to specify the name of the package manager and a location to export the yaml file. 
+
+Now let's say we are wanting to back up our package manager configuration for usage with some automation tooling. We just need to specify the name of the package manager and a location to export the yaml file.
+
 ```bash
 apx pkgmanagers export -n yum -o .
 cat yum.yml
 ```
+
 ```
 model: 2
 name: yum
@@ -256,13 +288,17 @@ cmdupdate: yum upgrade
 cmdupgrade: yum upgrade
 builtin: false
 ```
+
 The package manager has been successfully exported!
 
 ## Importing a Package Manager
+
 Package managers can be imported easily with `apx`.
+
 ```bash
 apx pkgmanagers import --help
 ```
+
 ```
 Import the specified package manager.
 
@@ -273,16 +309,21 @@ Flags:
   -h, --help           help for import
   -i, --input string   The path to import the package manager from.
 ```
+
 For this example, we are going to import the yaml file that we exported in the previous section.
+
 ```bash
 apx pkgmanagers import -i yum.yml
 ```
+
 ```
  INFO  Imported package manager from 'yum'.
 ```
+
 ```bash
 apx pkgmanagers show yum
 ```
+
 ```
 ┼┄┄┄┄┄┄┄┄┄┄┄┄┼┄┄┄┄┄┄┄┄┄┄┄┄┄┼
 ┊ Name       ┊ yum         ┊
@@ -310,13 +351,15 @@ apx pkgmanagers show yum
 ┊ Upgrade    ┊ yum upgrade ┊
 ┼┄┄┄┄┄┄┄┄┄┄┄┄┼┄┄┄┄┄┄┄┄┄┄┄┄┄┼
 ```
+
 The package manager has been successfully imported!
 
-
 ## Deleting a Package Manager
+
 ```bash
 apx pkgmanagers rm --help
 ```
+
 ```
 Remove the specified package manager.
 
@@ -328,13 +371,17 @@ Flags:
   -h, --help          help for rm
   -n, --name string   The name of the package manager to remove.
 ```
-Since we are not using the `yum` package manager, we want to delete it.  This can be done by passing the name of the package manager to the `rm` command.
+
+Since we are not using the `yum` package manager, we want to delete it. This can be done by passing the name of the package manager to the `rm` command.
+
 ```bash
 apx pkgmanagers rm -n yum
 ```
+
 ```
  INFO  Are you sure you want to remove 'yum'? [y/N]
 y
  INFO  Removed package manager 'yum'.
 ```
+
 And with that we no longer have the yum package manager!
