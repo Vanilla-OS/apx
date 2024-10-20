@@ -3,7 +3,7 @@ Title: Getting Started
 Description: How to start using Apx on your system.
 PublicationDate: 2024-10-18
 Listed: true
-Authors: -jardon
+Authors: jardon
 Tags:
   - getting-started
 ---
