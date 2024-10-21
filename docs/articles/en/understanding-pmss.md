@@ -10,6 +10,8 @@ Tags:
   - understanding
 ---
 
+## Package Managers
+
 In APX, package managers are essential components that facilitate the management of software packages within operating system containers. They provide a way to install, update, remove, and manage software dependencies seamlessly. Here’s an overview of what package managers do in APX:
 
 ### Key Functions of Package Managers in APX
