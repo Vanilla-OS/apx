@@ -306,7 +306,7 @@ func newStack(cmd *cobra.Command, args []string) error {
 
 	ok := core.StackExists(name)
 	if ok {
-		cmdr.Error.Println(apx.Trans("stacks.new.error.alreadyExists"))
+		cmdr.Error.Printfln(apx.Trans("stacks.new.error.alreadyExists"), name)
 		return nil
 	}
 
