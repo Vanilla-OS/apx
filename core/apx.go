@@ -1,6 +1,7 @@
 package core
 
 import (
+	"fmt"
 	"github.com/vanilla-os/apx/v2/settings"
 )
 
@@ -17,7 +18,9 @@ func NewApx(cnf *settings.Config) *Apx {
 
 	err := apx.EssentialChecks()
 	if err != nil {
-		panic(err)
+		// localisation features aren't available at this stage, so this error can't be translated
+		fmt.Println("ERROR: Unable to find apx configuration files")
+		return nil
 	}
 
 	return apx
@@ -35,8 +38,9 @@ func NewStandardApx() *Apx {
 
 	err = apx.EssentialChecks()
 	if err != nil {
-		panic(err)
+		// localisation features aren't available at this stage, so this error can't be translated
+		fmt.Println("ERROR: Unable to find apx configuration files")
+		return nil
 	}
-
 	return apx
 }
