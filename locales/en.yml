@@ -295,6 +295,7 @@ stacks:
     description: "Remove the specified stack."
     error:
       noName: "No name specified."
+      inUse: "The stack is used in %d subsystems:"
     info:
       askConfirmation: "Are you sure you want to remove '%s'?"
       success: "Removed stack '%s'."

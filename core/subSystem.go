@@ -308,6 +308,47 @@ func ListSubSystems(includeManaged bool, includeRootFull bool) ([]*SubSystem, er
 	return subsystems, nil
 }
 
+// ListSubsystemForStack returns a list of subsystems for the specified stack.
+func ListSubsystemForStack(stackName string) ([]*SubSystem, error) {
+	dbox, err := NewDbox()
+	if err != nil {
+		return nil, err
+	}
+
+	containers, err := dbox.ListContainers(true)
+	if err != nil {
+		return nil, err
+	}
+
+	subsystems := []*SubSystem{}
+	for _, container := range containers {
+		if _, ok := container.Labels["name"]; !ok {
+			continue
+		}
+
+		stack, err := LoadStack(stackName)
+		if err != nil {
+			log.Printf("Error loading stack %s: %s", stackName, err)
+			continue
+		}
+
+		internalName := genInternalName(container.Labels["name"])
+		subsystem := &SubSystem{
+			InternalName:     internalName,
+			Name:             container.Labels["name"],
+			Stack:            stack,
+			Status:           container.Status,
+			ExportedPrograms: findExported(internalName, container.Labels["name"]),
+		}
+
+		if subsystem.Stack.Name == stack.Name {
+			subsystems = append(subsystems, subsystem)
+		}
+	}
+
+	return subsystems, nil
+}
+
 func (s *SubSystem) Exec(captureOutput, detachedMode bool, args ...string) (string, error) {
 	dbox, err := NewDbox()
 	if err != nil {
