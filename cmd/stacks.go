@@ -488,6 +488,23 @@ func removeStack(cmd *cobra.Command, args []string) error {
 		return nil
 	}
 
+	subSystems, _ := core.ListSubsystemForStack(stackName)
+	if len(subSystems) > 0 {
+		cmdr.Error.Printfln(apx.Trans("stacks.rm.error.inUse"), len(subSystems))
+		table := core.CreateApxTable(os.Stdout)
+		table.SetHeader([]string{apx.Trans("subsystems.labels.name"), "Stack", apx.Trans("subsystems.labels.status"), "Pkgs"})
+		for _, subSystem := range subSystems {
+			table.Append([]string{
+				subSystem.Name,
+				subSystem.Stack.Name,
+				subSystem.Status,
+				fmt.Sprintf("%d", len(subSystem.Stack.Packages)),
+			})
+		}
+		table.Render()
+		return nil
+	}
+
 	force, _ := cmd.Flags().GetBool("force")
 
 	if !force {
