@@ -48,10 +48,10 @@ runtimeCommand:
     exportedBin: "Exported binary %s"
     unexportedApp: "Unexported application %s"
     unexportedBin: "Unexported binary %s"
-    startingContainer: "Starting container…"
-    startedContainer: "Started container."
-    stoppingContainer: "Stopping container…"
-    stoppedContainer: "Stopped container."
+    startingContainer: "Starting subsystem %s…"
+    startedContainer: "Started subsystem."
+    stoppingContainer: "Stopping subsystem %s…"
+    stoppedContainer: "Stopped subsystem."
   autoremove:
     description: "Remove packages that are no longer required."
   clean:
