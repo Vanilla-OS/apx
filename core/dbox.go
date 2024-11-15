@@ -17,6 +17,7 @@ import (
 	"os/exec"
 	"strings"
 	"syscall"
+	"io/ioutil"
 )
 
 type dbox struct {
@@ -160,6 +161,8 @@ func (d *dbox) RunCommand(command string, args []string, engineFlags []string, u
 		}
 		return output, err
 	}
+
+	cmd.Stdout = ioutil.Discard
 
 	err := cmd.Run()
 	return nil, err
