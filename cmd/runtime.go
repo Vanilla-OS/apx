@@ -323,7 +323,7 @@ func runPkgCmd(subSystem *core.SubSystem, command string, cmd *cobra.Command, ar
 			return fmt.Errorf(apx.Trans("runtimeCommand.error.startingContainer"), err)
 		}
 
-		cmdr.Info.Printfln(apx.Trans("runtimeCommand.info.startedContainer"), subSystem.Name)
+		cmdr.Info.Printfln(apx.Trans("runtimeCommand.info.startedContainer"))
 	}
 
 	if command == "stop" {
@@ -333,7 +333,7 @@ func runPkgCmd(subSystem *core.SubSystem, command string, cmd *cobra.Command, ar
 			return fmt.Errorf(apx.Trans("runtimeCommand.error.stoppingContainer"), err)
 		}
 
-		cmdr.Info.Printfln(apx.Trans("runtimeCommand.info.stoppedContainer"), subSystem.Name)
+		cmdr.Info.Printfln(apx.Trans("runtimeCommand.info.stoppedContainer"))
 	}
 
 	return nil
