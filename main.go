@@ -68,5 +68,6 @@ func main() {
 	err := apx.Run()
 	if err != nil {
 		cmdr.Error.Println(err)
+		os.Exit(1)
 	}
 }
