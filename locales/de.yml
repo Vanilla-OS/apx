@@ -51,10 +51,10 @@ runtimeCommand:
     exportedBin: "Binärdatei %s exportiert"
     unexportedApp: "Export der Anwendung %s rückgängig gemacht"
     unexportedBin: "Export der Binärdatei %s rückgängig gemacht"
-    stoppedContainer: Container gestoppt.
-    startedContainer: Container gestartet.
-    stoppingContainer: Stoppe Container…
-    startingContainer: Starte Container…
+    stoppedContainer: Subsystem gestoppt.
+    startedContainer: Subsystem gestartet.
+    stoppingContainer: Subsystem %s wird gestoppt…
+    startingContainer: Subsystem %s wird gestartet…
   autoremove:
     description: "Pakete entfernen, die nicht mehr länger benötigt werden."
   clean:
@@ -138,7 +138,7 @@ pkgmanagers:
       askCommand: "Geben Sie den Befehl für '%s' ein:"
       askOverwrite: "Ein Paketmanager mit dem Namen '%s' existiert bereits. Überschreiben
         Sie ihn?"
-      askCommandWithDefault: "Enter the command for '%s' (default: '%s'):"
+      askCommandWithDefault: "Geben Sie den Befehl für ,%s' ein (Standard: ,%s'):"
     options:
       noPrompt:
         description: "Alle Fragen mit Ja beantworten."
@@ -215,7 +215,7 @@ pkgmanagers:
     error:
       noName: Kein Name angegeben.
       missingCommand: Fehlender Befehl für %s.
-      builtIn: Built-in package managers cannot be modified.
+      builtIn: Eingebaute Paketmanager können nicht geändert werden.
 stacks:
   description: "Arbeiten Sie mit den Stapeln, die in apx verfügbar sind."
   labels:
@@ -281,17 +281,16 @@ stacks:
       noPkgManager: "Kein Paketmanager angegeben."
       pkgManagerDoesNotExist: "Der angegebene Paketmanager existiert nicht. Erstellen
         Sie ihn mit 'apx pkgmanagers new' oder wenden Sie sich an den Systemadministrator."
-      builtIn: Built-in stacks cannot be modified.
+      builtIn: Eingebaute Stapel können nicht geändert werden.
     info:
       askBase: "Geben Sie eine neue Basis ein oder bestätigen Sie die aktuelle (%s):"
       askPkgManager: "Wählen Sie einen neuen Paketmanager oder bestätigen Sie den
         aktuellen (%s):"
       askPackages: "Geben Sie die Pakete, die Sie in den Stapel installieren möchten,
-        durch ein Leerzeichen getrennt ein, oder bestätigen Sie die aktuellen Pakete
-        (%s):"
+        durch ein Leerzeichen getrennt ein:"
       success: "Stapel '%s' aktualisiert."
 
-      confirmPackages: Möchten Sie die aktuelle Paketliste bestätigen?
+      confirmPackages: Möchten Sie die Liste der Pakete aktualisieren?
       noPackages: Sie haben keine Pakete zur Installation im Stapel angegeben. Möchten
         Sie jetzt welche hinzufügen?
     options:
@@ -309,7 +308,7 @@ stacks:
     description: "Den angegebenen Stapel entfernen."
     error:
       noName: "Kein Name angegeben."
-      inUse: 'The stack is used in %d subsystems:'
+      inUse: 'Der Stapel wird in %d Subsystemen verwendet:'
     info:
       askConfirmation: "Sind Sie sicher, dass Sie ‚%s‘ entfernen möchten?"
       success: "Stapel '%s' entfernt."
