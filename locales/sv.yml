@@ -47,10 +47,10 @@ runtimeCommand:
     exportedBin: "Exporterad binär %s"
     unexportedApp: "Oexporterat program %s"
     unexportedBin: "Oexporterad binär %s"
-    stoppedContainer: Stoppad behållare.
-    startedContainer: Startad behållare.
-    stoppingContainer: Stoppar behållare…
-    startingContainer: Startar behållare…
+    stoppedContainer: Stoppade undersystem.
+    startedContainer: Startade undersystem.
+    stoppingContainer: Stoppar undersystem %s…
+    startingContainer: Startar undersystem %s…
   autoremove:
     description: "Ta bort paket som inte längre behövs."
   clean:
@@ -133,7 +133,7 @@ pkgmanagers:
       askCommand: "Ange kommandot för '%s':"
       askOverwrite: "En pakethanterare med namnet '%s' finns redan. Vill du skriva
         över det?"
-      askCommandWithDefault: "Enter the command for '%s' (default: '%s'):"
+      askCommandWithDefault: "Ange kommando för '%s' (standard: '%s'):"
     options:
       noPrompt:
         description: "Anta ja till alla uppmaningar."
@@ -209,7 +209,7 @@ pkgmanagers:
     error:
       noName: Inget namn specificerat
       missingCommand: Saknar kommando för %s.
-      builtIn: Built-in package managers cannot be modified.
+      builtIn: Inbyggda pakethanterare kan inte modifieras.
 stacks:
   description: "Arbeta med de stackar som finns tillgängliga i apx."
   labels:
@@ -275,15 +275,15 @@ stacks:
       noPkgManager: "Ingen pakethanterare specificerad."
       pkgManagerDoesNotExist: "Den specificerade pakethanteraren finns inte. Skapa
         den med 'apx pkgmanagers new' eller kontakta systemadministratören."
-      builtIn: Built-in stacks cannot be modified.
+      builtIn: Inbyggda stackar kan inte modifieras.
     info:
       askBase: "Skriv en ny bas eller bekräfta den nuvarande (%s):"
       askPkgManager: "Välj en ny pakethanterare eller bekräfta den nuvarande (%s):"
-      askPackages: "Skriv in de paket du vill installera i stacken, åtskilda av ett
-        mellanslag, eller bekräfta de aktuella (%s):"
+      askPackages: "Skriv in de paketen du vill installera i stacken, åtskilda av
+        ett mellanslag:"
       success: "Uppdaterad stack '%s'."
 
-      confirmPackages: Vill du bekräfta nuvarande paketlista?
+      confirmPackages: Vill du uppdatera listan över paket?
       noPackages: Du har inte tillhandahållit några paket att installera i stacken.
         Vill du lägga till några nu?
     options:
@@ -301,7 +301,7 @@ stacks:
     description: "Ta bort den specificerade stacken."
     error:
       noName: "Inget namn specificerat."
-      inUse: 'The stack is used in %d subsystems:'
+      inUse: 'Stacken används i %d delsystem:'
     info:
       askConfirmation: "Är du säker på att du vill ta bort '%s'?"
       success: "Tog bort stack '%s'."
