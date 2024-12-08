@@ -47,10 +47,10 @@ runtimeCommand:
     exportedBin: "Экспортированный двоичный файл %s"
     unexportedApp: "Деэкспортированное приложение %s"
     unexportedBin: "Деэкспортированный двоичный файл %s"
-    stoppedContainer: Остановленный контейнер.
-    startedContainer: Запущенный контейнер.
-    stoppingContainer: Остановка контейнера…
-    startingContainer: Запуск контейнера…
+    stoppedContainer: Остановленная подсистема.
+    startedContainer: Запущенная подсистема.
+    stoppingContainer: Остановка подсистемы %s…
+    startingContainer: Запуск подсистемы %s…
   autoremove:
     description: "Убрать пакеты, которые больше не требуются."
   clean:
@@ -132,7 +132,7 @@ pkgmanagers:
       askSudo: "Нужен ли менеджеру пакетов sudo для запуска?"
       askCommand: "Введите команду для '%s':"
       askOverwrite: "Менеджер пакетов с именем '%s' уже существует. Перезаписать его?"
-      askCommandWithDefault: "Enter the command for '%s' (default: '%s'):"
+      askCommandWithDefault: "Введите команду для '%s' (по умолчанию: '%s'):"
     options:
       noPrompt:
         description: "Предполагать «да» на все вопросы."
@@ -208,7 +208,7 @@ pkgmanagers:
     error:
       noName: Имя не указано.
       missingCommand: Отсутствует команда для %s.
-      builtIn: Built-in package managers cannot be modified.
+      builtIn: Встроенные пакетные менеджеры не могут быть изменены.
 stacks:
   description: "Работа со стеками, доступными в apx."
   labels:
@@ -274,15 +274,15 @@ stacks:
       noPkgManager: "Менеджер пакетов не указан."
       pkgManagerDoesNotExist: "Указанного менеджера пакетов не существует. Создайте
         его с помощью 'apx pkgmanagers new' или обратитесь к системному администратору."
-      builtIn: Built-in stacks cannot be modified.
+      builtIn: Встроенные стеки не могут быть изменены.
     info:
       askBase: "Введите новую основу или подтвердите текущую (%s):"
       askPkgManager: "Выберите новый менеджер пакетов или подтвердите текущий (%s):"
       askPackages: "Введите пакеты, которые вы хотите установить в стеке, разделяя
-        их пробелом, или подтвердите текущие (%s):"
+        их пробелом:"
       success: "Обновлён стек '%s'."
 
-      confirmPackages: Вы хотите подтвердить текущий список пакетов?
+      confirmPackages: Вы хотите обновить список пакетов?
       noPackages: Вы не указали ни одного пакета для установки в стек. Хотите ли Вы
         добавить их сейчас?
     options:
@@ -300,7 +300,7 @@ stacks:
     description: "Удалить указанный стек."
     error:
       noName: "Имя не указано."
-      inUse: 'The stack is used in %d subsystems:'
+      inUse: 'Стек использован в %d подсистемах:'
     info:
       askConfirmation: "Вы уверены, что хотите удалить '%s'?"
       success: "Удалён стек '%s'."
