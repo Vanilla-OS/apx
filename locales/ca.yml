@@ -135,6 +135,7 @@ pkgmanagers:
       askSudo: "És necessari ser súper usuari per poder executar el gestor de paquets?"
       askCommand: "Introdueix l'ordre per '%s':"
       askOverwrite: "Ja existeix un gestor de paquets anomenat '%s'. Vols sobre escriure'l?"
+      askCommandWithDefault: "Enter the command for '%s' (default: '%s'):"
     options:
       noPrompt:
         description: "Assumir sí a totes les preguntes."
@@ -210,6 +211,7 @@ pkgmanagers:
     error:
       noName: No name specified.
       missingCommand: Missing command for %s.
+      builtIn: Built-in package managers cannot be modified.
 stacks:
   description: "Treballa amb les piles que es troben disponibles a apx."
   labels:
@@ -274,6 +276,7 @@ stacks:
       noPkgManager: "No s'ha especificat cap gestor de paquets."
       pkgManagerDoesNotExist: "El gestor de paquets especificat no existeix. El pots
         crear amb 'apx pkgmanagers new' o contactar amb l'administrador del sistema."
+      builtIn: Built-in stacks cannot be modified.
     info:
       askBase: "Escriu una base nova o confirma l'actual (%s):"
       askPkgManager: "Escull un nou gestor de paquets o confirma l'actual (%s):"
@@ -299,6 +302,7 @@ stacks:
     description: "Esborrar la pila especificada."
     error:
       noName: "No s'ha especificat cap nom."
+      inUse: 'The stack is used in %d subsystems:'
     info:
       askConfirmation: "Segur que vols eliminar '%s'? [s/N]"
       success: "Pila '%s' eliminada."

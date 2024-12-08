@@ -137,6 +137,7 @@ pkgmanagers:
       askSudo: "Χρειάζεται το sudo για να τρέξει ο διαχειριστής πακέτων;"
       askCommand: "Εισαγωγή εντολής για '%s':"
       askOverwrite: "Ένας διαχειριστής πακέτων με το όνομα '%s' υπάρχει ήδη. Να επεγγραφεί;"
+      askCommandWithDefault: "Enter the command for '%s' (default: '%s'):"
     options:
       noPrompt:
         description: "Να θεωρηθεί το \"ναι\" ως απάντηση σε κάθε προτροπή."
@@ -212,6 +213,7 @@ pkgmanagers:
     error:
       noName: No name specified.
       missingCommand: Missing command for %s.
+      builtIn: Built-in package managers cannot be modified.
 stacks:
   description: "Εργαστείτε με τις διαθέσιμες στοίβες στο apx."
   labels:
@@ -276,6 +278,7 @@ stacks:
       noPkgManager: "Δεν καθορίστηκε διαχειριστής πακέτων."
       pkgManagerDoesNotExist: "Ο επιλεγμένος διαχειριστής πακέτων δεν υπάρχει. Δημιουργήστε
         τον με το 'apx pkgmanagers new' ή επικοινωνήστε με τον διαχειριστή του συστήματος."
+      builtIn: Built-in stacks cannot be modified.
     info:
       askBase: "Πληκτρολογήστε μια νέα βάση ή επιβεβαιώστε τη τρέχουσα (%s):"
       askPkgManager: "Επιλέξτε έναν νέο διαχειριστή πακέτων ή επιβεβαιώστε τον τρέχοντα
@@ -302,6 +305,7 @@ stacks:
     description: "Αφαίρεση της επιλεγμένης στοίβας."
     error:
       noName: "Δεν καθορίστηκε όνομα."
+      inUse: 'The stack is used in %d subsystems:'
     info:
       askConfirmation: "Είστε σίγουροι πως επιθυμείτε την αφαίρεση του '%s'; [y/N]"
       success: "Αφαιρέθηκε η στοίβα '%s'."

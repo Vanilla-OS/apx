@@ -131,6 +131,7 @@ pkgmanagers:
       askSudo: "האם מנהל החבילה צריך לרוץ?"
       askCommand: "Enter the command for '%s':"
       askOverwrite: "כבר קיים מנהל חבילות בשם '%s'. להחליף אותו?"
+      askCommandWithDefault: "Enter the command for '%s' (default: '%s'):"
     options:
       noPrompt:
         description: "נניח כן לכל הפניות."
@@ -167,6 +168,7 @@ pkgmanagers:
     error:
       noName: No name specified.
       missingCommand: Missing command for %s.
+      builtIn: Built-in package managers cannot be modified.
   rm:
     description: "להסיר את מנהל החבילה שצוין."
 
@@ -267,6 +269,7 @@ stacks:
       noPkgManager: "אין מנהל חבילה שצוין."
       pkgManagerDoesNotExist: "מנהל החבילה שצוין אינו קיים. צור אותו עם \"apx pkgmanagers
         חדש\" או פנה למנהל המערכת."
+      builtIn: Built-in stacks cannot be modified.
     info:
       askBase: "הקלד בסיס חדש או לאשר את הנוכחי (%s):"
       askPkgManager: "בחר מנהל חבילה חדש או לאשר את הנוכחי (%s):"
@@ -292,6 +295,7 @@ stacks:
     description: "להסיר את הערימה המפורטת."
     error:
       noName: "שום שם לא צוין."
+      inUse: 'The stack is used in %d subsystems:'
     info:
       askConfirmation: "אתה בטוח שאתה רוצה להסיר \"%s\"? [y/N]"
       success: "הסרת ערימה \"%s\"."

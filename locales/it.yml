@@ -140,6 +140,7 @@ pkgmanagers:
       askSudo: "Il gestore di pacchetti ha bisogno di sudo per funzionare?"
       askCommand: "Inserire il comando per '%s':"
       askOverwrite: "Esiste già un gestore di pacchetti con il nome '%s'. Sovrascriverlo?"
+      askCommandWithDefault: "Enter the command for '%s' (default: '%s'):"
     options:
       noPrompt:
         description: "Assumete un sì a tutte le richieste."
@@ -215,6 +216,7 @@ pkgmanagers:
     error:
       noName: No name specified.
       missingCommand: Missing command for %s.
+      builtIn: Built-in package managers cannot be modified.
 stacks:
   description: "Lavora con gli stack disponibili in apx."
   labels:
@@ -280,6 +282,7 @@ stacks:
       noPkgManager: "Non è stato specificato alcun gestore di pacchetti."
       pkgManagerDoesNotExist: "Il gestore di pacchetti specificato non esiste. Crealo
         con 'apx pkgmanagers new' o contatta l'amministratore di sistema."
+      builtIn: Built-in stacks cannot be modified.
     info:
       askBase: "Digita una nuova base o confermare quella attuale (%s):"
       askPkgManager: "Scegliere un nuovo gestore di pacchetti o confermare quello
@@ -306,6 +309,7 @@ stacks:
     description: "Rimuove lo stack specificato."
     error:
       noName: "Non è stato specificato alcun nome."
+      inUse: 'The stack is used in %d subsystems:'
     info:
       askConfirmation: "Si è sicuri di voler rimuovere '%s'? [y/N]"
       success: "Rimosso lo stack '%s'."

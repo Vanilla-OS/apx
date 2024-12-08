@@ -132,6 +132,7 @@ pkgmanagers:
       askSudo: "Apakah manajer paket membutuhkan sudo untuk dijalankan?"
       askCommand: "Masukkan perintah untuk '%s':"
       askOverwrite: "Manajer paket dengan nama '%s' sudah ada. Timpa?"
+      askCommandWithDefault: "Enter the command for '%s' (default: '%s'):"
     options:
       noPrompt:
         description: "Jawab ya untuk semua pertanyaan."
@@ -173,6 +174,7 @@ pkgmanagers:
     error:
       noName: Tidak ada nama yang ditentukan.
       missingCommand: Tidak ada perintah untuk %s.
+      builtIn: Built-in package managers cannot be modified.
   rm:
     description: "Menghapus manajer paket yang ditentukan."
 
@@ -277,6 +279,7 @@ stacks:
       noPkgManager: "Tidak ada manajer paket yang ditentukan."
       pkgManagerDoesNotExist: "Manajer paket yang ditentukan tidak ada. Buatlah dengan
         'apx pkgmanagers new' atau hubungi administrator sistem."
+      builtIn: Built-in stacks cannot be modified.
     info:
       askBase: "Ketik basis baru atau konfirmasikan basis yang ada saat ini (%s):"
       askPkgManager: "Pilih manajer paket baru atau konfirmasikan manajer paket yang
@@ -304,6 +307,7 @@ stacks:
     description: "Menghapus stack yang ditentukan."
     error:
       noName: "Tidak ada nama yang ditentukan."
+      inUse: 'The stack is used in %d subsystems:'
     info:
       askConfirmation: "Apakah Anda yakin ingin menghapus '%s'?"
       success: "Menghapus stack '%s'."

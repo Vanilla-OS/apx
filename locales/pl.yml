@@ -133,6 +133,7 @@ pkgmanagers:
       askSudo: "Czy menedżer pakietów potrzebuje uprawnień root do uruchomienia?"
       askCommand: "Wpisz polecenie dla '%s':"
       askOverwrite: "Menedżer pakietów z nazwą '%s' już istnieje. Nadpisać go?"
+      askCommandWithDefault: "Enter the command for '%s' (default: '%s'):"
     options:
       noPrompt:
         description: "Odpowiedz twierdząco na wszystkie komunikaty."
@@ -211,6 +212,7 @@ pkgmanagers:
     error:
       noName: No name specified.
       missingCommand: Missing command for %s.
+      builtIn: Built-in package managers cannot be modified.
 stacks:
   description: "Pracuj ze stosami, które są dostępne w apx."
   labels:
@@ -276,6 +278,7 @@ stacks:
       noPkgManager: "Nie określono menedżera pakietów."
       pkgManagerDoesNotExist: "Określony menedżer pakietów nie istnieje. Utwórz go
         z użyciem 'apx pkgmanagers new' lub skontaktuj się z administratorem systemu."
+      builtIn: Built-in stacks cannot be modified.
     info:
       askBase: "Wpisz nową bazę lub zatwierdź aktualną (%s):"
       askPkgManager: "Wybierz nowy menedżer pakietów lub zatwierdź aktualny (%s):"
@@ -301,6 +304,7 @@ stacks:
     description: "Usuń określony stos."
     error:
       noName: "Nie określono nazwy."
+      inUse: 'The stack is used in %d subsystems:'
     info:
       askConfirmation: "Czy jesteś pewien, że chcesz usunąć '%s'? [y/N]"
       success: "Usunięto stos '%s'."

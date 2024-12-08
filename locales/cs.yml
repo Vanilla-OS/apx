@@ -132,6 +132,7 @@ pkgmanagers:
       askSudo: "Vyžaduje správce balíčků sudo?"
       askCommand: "Zadejte příkaz pro '%s':"
       askOverwrite: "Správce balíčků s názvem '%s' již existuje. Přepsat ho?"
+      askCommandWithDefault: "Enter the command for '%s' (default: '%s'):"
     options:
       noPrompt:
         description: "Automaticky zadat ano pro všechny dotazy."
@@ -206,6 +207,7 @@ pkgmanagers:
     error:
       noName: No name specified.
       missingCommand: Missing command for %s.
+      builtIn: Built-in package managers cannot be modified.
 stacks:
   description: "Práce se stacky, které jsou k dispozici v apx."
   labels:
@@ -270,6 +272,7 @@ stacks:
       noPkgManager: "Není zadán správce balíčků."
       pkgManagerDoesNotExist: "Zadaný správce balíčků neexistuje. Vytvořte ho pomocí
         'apx pkgmanagers new' nebo kontaktujte Vašeho správce systému."
+      builtIn: Built-in stacks cannot be modified.
     info:
       askBase: "Zadejte nový základ nebo potvrďte aktuální (%s):"
       askPkgManager: "Zvolte nový správce balíčků nebo potvrďte aktuální (%s):"
@@ -295,6 +298,7 @@ stacks:
     description: "Odstranit zadaný stack."
     error:
       noName: "Název není uveden."
+      inUse: 'The stack is used in %d subsystems:'
     info:
       askConfirmation: "Jste si jisti, že chcete odstranit '%s'?"
       success: "Odstraněn stack '%s'."

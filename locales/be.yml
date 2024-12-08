@@ -131,6 +131,7 @@ pkgmanagers:
       askSudo: "Ці патрэбны sudo для запуску мэнэджару пакетаў?"
       askCommand: "Увядзіце каманду для «%s»:"
       askOverwrite: "Менеджэр пакетаў з назвай «%s» ужо існуе. Перазапісаць?"
+      askCommandWithDefault: "Enter the command for '%s' (default: '%s'):"
     options:
       noPrompt:
         description: "Выкажам здагадку, што так на ўсе падказкі."
@@ -205,6 +206,7 @@ pkgmanagers:
     error:
       noName: No name specified.
       missingCommand: Missing command for %s.
+      builtIn: Built-in package managers cannot be modified.
 stacks:
   description: "Працуйце са стэкамі, даступнымі ў apx."
   labels:
@@ -268,6 +270,7 @@ stacks:
       noPkgManager: "Менеджэр пакетаў не ўказаны."
       pkgManagerDoesNotExist: "Указаны менеджэр пакетаў не існуе. Стварыце яго з дапамогай
         «apx pkgmanagers new» або звярніцеся да сістэмнага адміністратара."
+      builtIn: Built-in stacks cannot be modified.
     info:
       askBase: "Увядзіце новую базу або пацвердзіце бягучую (%s):"
       askPkgManager: "Выберыце новы менеджэр пакетаў або пацвердзіце бягучы (%s):"
@@ -293,6 +296,7 @@ stacks:
     description: "Выдаліце ўказаны стэк."
     error:
       noName: "Імя не ўказана."
+      inUse: 'The stack is used in %d subsystems:'
     info:
       askConfirmation: "Вы ўпэўнены, што хочаце выдаліць '%s'?\n[т/Н]"
       success: "Выдалены стэк '%s'."

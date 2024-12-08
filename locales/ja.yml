@@ -129,6 +129,7 @@ pkgmanagers:
       askSudo: "このパッケージマネージャは sudo での実行を必要としますか？"
       askCommand: "'%s' へのコマンドを入力:"
       askOverwrite: "'%s' という名前のパッケージマネージャがすでに存在しています。上書きしますか？"
+      askCommandWithDefault: "Enter the command for '%s' (default: '%s'):"
     options:
       noPrompt:
         description: "すべての質問に yes と回答する。"
@@ -165,6 +166,7 @@ pkgmanagers:
     error:
       noName: No name specified.
       missingCommand: Missing command for %s.
+      builtIn: Built-in package managers cannot be modified.
   rm:
     description: "指定したパッケージマネージャを削除します。"
 
@@ -268,6 +270,7 @@ stacks:
       noPkgManager: "No package manager specified."
       pkgManagerDoesNotExist: "The specified package manager does not exist. Create
         it with 'apx pkgmanagers new' or contact the system administrator."
+      builtIn: Built-in stacks cannot be modified.
     info:
       askBase: "Type a new base or confirm the current one (%s):"
       askPkgManager: "Choose a new package manager or confirm the current one (%s):"
@@ -293,6 +296,7 @@ stacks:
     description: "Remove the specified stack."
     error:
       noName: "No name specified."
+      inUse: 'The stack is used in %d subsystems:'
     info:
       askConfirmation: "Are you sure you want to remove '%s'? [y/N]"
       success: "Removed stack '%s'."

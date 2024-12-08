@@ -131,6 +131,7 @@ pkgmanagers:
       askSudo: "Ĉu la pakadministrilo bezonas «sudo»?"
       askCommand: "Tajpu la komandon por «%s»:"
       askOverwrite: "Pakadministrilo nomita «%s» jam ekzistas. Ĉu anstataŭigi ĝin?"
+      askCommandWithDefault: "Enter the command for '%s' (default: '%s'):"
     options:
       noPrompt:
         description: "Jesi al ĉiuj demandoj."
@@ -205,6 +206,7 @@ pkgmanagers:
     error:
       noName: Neniu nomo specifiĝis.
       missingCommand: Mankas komando por %s.
+      builtIn: Built-in package managers cannot be modified.
 stacks:
   description: "Uzi stakojn disponeblajn ĉe apx."
   labels:
@@ -270,6 +272,7 @@ stacks:
       noPkgManager: "Neniu pakadministrilo specifiĝis."
       pkgManagerDoesNotExist: "La specifita pakadministrilo ne ekzistas. Aŭ kreu ĝin
         per «apx pkgmanagers new», aŭ kontaktu la sistemadministranton."
+      builtIn: Built-in stacks cannot be modified.
     info:
       askBase: "Tajpu novan bazon, aŭ konfirmu la aktualan (%s):"
       askPkgManager: "Elektu novan pakadministrilon, aŭ konfirmu la aktualan (%s):"
@@ -295,6 +298,7 @@ stacks:
     description: "Forigi la specifitan stakon."
     error:
       noName: "Neniu nomo specifiĝis."
+      inUse: 'The stack is used in %d subsystems:'
     info:
       askConfirmation: "Ĉu vi certe volas forigi «%s»?"
       success: "Foriĝis stako «%s»."

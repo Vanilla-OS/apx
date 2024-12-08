@@ -138,6 +138,7 @@ pkgmanagers:
       askCommand: "Geben Sie den Befehl für '%s' ein:"
       askOverwrite: "Ein Paketmanager mit dem Namen '%s' existiert bereits. Überschreiben
         Sie ihn?"
+      askCommandWithDefault: "Enter the command for '%s' (default: '%s'):"
     options:
       noPrompt:
         description: "Alle Fragen mit Ja beantworten."
@@ -214,6 +215,7 @@ pkgmanagers:
     error:
       noName: Kein Name angegeben.
       missingCommand: Fehlender Befehl für %s.
+      builtIn: Built-in package managers cannot be modified.
 stacks:
   description: "Arbeiten Sie mit den Stapeln, die in apx verfügbar sind."
   labels:
@@ -279,6 +281,7 @@ stacks:
       noPkgManager: "Kein Paketmanager angegeben."
       pkgManagerDoesNotExist: "Der angegebene Paketmanager existiert nicht. Erstellen
         Sie ihn mit 'apx pkgmanagers new' oder wenden Sie sich an den Systemadministrator."
+      builtIn: Built-in stacks cannot be modified.
     info:
       askBase: "Geben Sie eine neue Basis ein oder bestätigen Sie die aktuelle (%s):"
       askPkgManager: "Wählen Sie einen neuen Paketmanager oder bestätigen Sie den
@@ -306,6 +309,7 @@ stacks:
     description: "Den angegebenen Stapel entfernen."
     error:
       noName: "Kein Name angegeben."
+      inUse: 'The stack is used in %d subsystems:'
     info:
       askConfirmation: "Sind Sie sicher, dass Sie ‚%s‘ entfernen möchten?"
       success: "Stapel '%s' entfernt."

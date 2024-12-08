@@ -140,6 +140,7 @@ pkgmanagers:
       askSudo: "Moet de pakketbeheerder uitgevoerd worden met root-rechten?"
       askCommand: "Voer de opdracht in voor ‘%s’:"
       askOverwrite: "Een pakketbeheerder met de naam ‘%s’ bestaat al. Overschrĳven?"
+      askCommandWithDefault: "Enter the command for '%s' (default: '%s'):"
     options:
       noPrompt:
         description: "Neem ‘ja’ aan voor alle vragen."
@@ -217,6 +218,7 @@ pkgmanagers:
     error:
       noName: Geen naam opgegeven.
       missingCommand: Ontbrekende opdracht voor ‘%s’.
+      builtIn: Built-in package managers cannot be modified.
 stacks:
   description: "Werk met de in apx beschikbare stacks."
   labels:
@@ -282,6 +284,7 @@ stacks:
       noPkgManager: "Geen pakketbeheerder opgegeven."
       pkgManagerDoesNotExist: "De opgegeven pakketbeheerder bestaat niet. Maak deze
         aan met ‘apx pkgmanagers new’ of neem contact op met de systeembeheerder."
+      builtIn: Built-in stacks cannot be modified.
     info:
       askBase: "Typ een nieuwe basis in of bevestig de huidige (%s):"
       askPkgManager: "Kies een nieuwe pakketbeheerder of bevestig de huidige (%s):"
@@ -307,6 +310,7 @@ stacks:
     description: "Verwĳdert de opgegeven stack."
     error:
       noName: "Geen naam opgegeven."
+      inUse: 'The stack is used in %d subsystems:'
     info:
       askConfirmation: "Weet u zeker dat u ‘%s’ wilt verwĳderen?"
       success: "Stack ‘%s’ verwĳderd."
