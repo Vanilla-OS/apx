@@ -48,10 +48,10 @@ runtimeCommand:
     exportedBin: "Easpórtáil dénártha %s"
     unexportedApp: "Feidhmchlár neamheaspórtáilte %s"
     unexportedBin: "Dénártha %s gan easpórtáil"
-    startingContainer: "Coimeádán á thosú…"
-    startedContainer: "Thosaigh an coimeádán."
-    stoppingContainer: "Coimeádán á stopadh…"
-    stoppedContainer: "Coimeádán stoptha."
+    startingContainer: "Fochóras %s á thosú…"
+    startedContainer: "Cuireadh tús leis an bhfochóras."
+    stoppingContainer: "Fochóras %s á stopadh…"
+    stoppedContainer: "Stopadh an fochóras."
   autoremove:
     description: "Bain pacáistí nach bhfuil ag teastáil a thuilleadh."
   clean:
@@ -135,7 +135,8 @@ pkgmanagers:
       askCommand: "Iontráil an t- ordú do '%s':"
       askOverwrite: "Tá bainisteoir pacáiste leis an ainm '%s' ann cheana. Forscríobh
         é?"
-      askCommandWithDefault: "Enter the command for '%s' (default: '%s'):"
+      askCommandWithDefault: "Cuir isteach an t-ordú le haghaidh '%s' (réamhshocrú:
+        '%s'):"
     options:
       noPrompt:
         description: "Glac leis go bhfuil gach leid."
@@ -172,7 +173,7 @@ pkgmanagers:
     error:
       noName: "Níor sonraíodh aon ainm."
       missingCommand: "Ordú ar iarraidh le haghaidh %s."
-      builtIn: Built-in package managers cannot be modified.
+      builtIn: Ní féidir bainisteoirí pacáiste ionsuite a mhodhnú.
   rm:
     description: "Bain an bainisteoir pacáiste sonraithe."
     error:
@@ -274,16 +275,16 @@ stacks:
       noPkgManager: "Níor sonraíodh aon bhainisteoir pacáiste."
       pkgManagerDoesNotExist: "Níl an bainisteoir pacáiste sonraithe ann. Cruthaigh
         é le 'apx pkgmanagers nua' nó déan teagmháil le riarthóir an chórais."
-      builtIn: Built-in stacks cannot be modified.
+      builtIn: Ní féidir stoic ionsuite a mhodhnú.
     info:
       askBase: "Clóscríobh bonn nua nó deimhnigh an ceann reatha (%s):"
       askPkgManager: "Roghnaigh bainisteoir pacáiste nua nó deimhnigh an ceann reatha
         (%s):"
-      confirmPackages: "An bhfuil fonn ort liosta na bpacáistí reatha a dheimhniú?"
+      confirmPackages: "Ar mhaith leat liosta na bpacáistí a nuashonrú?"
       noPackages: "Níor chuir tú aon phacáistí ar fáil le suiteáil sa chruach. An
         bhfuil fonn ort roinnt a chur leis anois?"
       askPackages: "Clóscríobh na pacáistí is mian leat a shuiteáil sa chruach, scartha
-        le spás, nó deimhnigh na cinn reatha (%s):"
+        le spás:"
       success: "Cruach nuashonraithe '%s'."
     options:
       noPrompt:
@@ -300,7 +301,7 @@ stacks:
     description: "Bain an chairn shonraithe."
     error:
       noName: "Níor sonraíodh aon ainm."
-      inUse: 'The stack is used in %d subsystems:'
+      inUse: 'Úsáidtear an chruach i bhfochórais %d:'
     info:
       askConfirmation: "An bhfuil tú cinnte go bhfuil fonn ort '%s' a bhaint?"
       success: "Baineadh cruach '%s'."
