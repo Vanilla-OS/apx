@@ -45,10 +45,10 @@ runtimeCommand:
     exportedBin: "已导出二进制文件 %s"
     unexportedApp: "已移除导出的应用程序 %s"
     unexportedBin: "已移除导出的二进制文件 %s"
-    stoppedContainer: 已停止容器。
-    startedContainer: 已启动容器。
-    stoppingContainer: 正在停止容器…
-    startingContainer: 正在启动容器…
+    stoppedContainer: 已停止子系统。
+    startedContainer: 已启动子系统。
+    stoppingContainer: 正在停止子系统 %s…
+    startingContainer: 正在启动子系统 %s…
   autoremove:
     description: "移除不再需要的软件包。"
   clean:
@@ -129,7 +129,7 @@ pkgmanagers:
       askSudo: "软件包管理器是否需要 sudo 才能运行？"
       askCommand: "输入 '%s' 的命令："
       askOverwrite: "名为 '%s' 的软件包管理器已经存在。要覆盖吗？"
-      askCommandWithDefault: "Enter the command for '%s' (default: '%s'):"
+      askCommandWithDefault: "输入 '%s' 的命令（默认为 '%s'）："
     options:
       noPrompt:
         description: "为所有操作指定“是”。"
@@ -204,7 +204,7 @@ pkgmanagers:
     error:
       noName: 没有指定名称。
       missingCommand: 缺失 %s 的命令。
-      builtIn: Built-in package managers cannot be modified.
+      builtIn: 不能修改内置的软件包管理器。
 stacks:
   description: "操作 apx 中可用的包捆。"
   labels:
@@ -263,14 +263,14 @@ stacks:
       noBase: "没有指定基础映像。"
       noPkgManager: "没有指定软件包管理器。"
       pkgManagerDoesNotExist: "指定的软件包管理器不存在。请使用 'apx pkgmanagers new' 创建或者联系系统管理员。"
-      builtIn: Built-in stacks cannot be modified.
+      builtIn: 不能修改内置的包捆。
     info:
       askBase: "输入新的基础映像或确认使用目前的（%s）："
       askPkgManager: "选择新的软件包管理器或确认使用目前的（%s）："
-      askPackages: "输入想要安装在包捆中的软件包，用空格隔开，或确认使用目前的（%s）："
+      askPackages: "输入想要安装在包捆中的软件包，用空格隔开："
       success: "已更新包捆 '%s'。"
 
-      confirmPackages: 您需要确认目前的软件包列表吗？
+      confirmPackages: 您需要更新软件包列表吗？
       noPackages: 您没有提供任何要安装在包捆中的软件包。需要添加一些吗？
     options:
       noPrompt:
@@ -287,7 +287,7 @@ stacks:
     description: "移除指定的包捆。"
     error:
       noName: "没有指定名称。"
-      inUse: 'The stack is used in %d subsystems:'
+      inUse: '包捆已被用于 %d 个子系统中：'
     info:
       askConfirmation: "确定要移除 '%s' 吗？"
       success: "已移除包捆 '%s'。"
