@@ -55,10 +55,10 @@ runtimeCommand:
     exportedBin: "Binaire exporté %s"
     unexportedApp: "Applications supprimées de l'exportation %s"
     unexportedBin: "Binaire supprimées de l'exportation %s"
-    stoppedContainer: Conteneur arrêté.
-    startedContainer: Conteneur démarré.
-    stoppingContainer: Arrêt du conteneur…
-    startingContainer: Démarrage du conteneur…
+    stoppedContainer: Sous-système arrêté.
+    startedContainer: Sous-système démarré.
+    stoppingContainer: Arrêt du sous-système %s…
+    startingContainer: Démarrage du conteneur %s…
   autoremove:
     description: "Supprimer les paquets qui ne sont plus nécessaires."
   clean:
@@ -142,7 +142,7 @@ pkgmanagers:
       askCommand: "Entrez la commande pour '%s' :"
       askOverwrite: "Un gestionnaire de paquets portant le nom \"%s\" existe déjà.
         L'écraser ?"
-      askCommandWithDefault: "Enter the command for '%s' (default: '%s'):"
+      askCommandWithDefault: "Entrer la commande pour '%s' (défaut: '%s'):"
     options:
       noPrompt:
         description: "Supposez que vous répondez par l'affirmative à toutes les questions."
@@ -221,7 +221,7 @@ pkgmanagers:
     error:
       noName: Aucun nom spécifié.
       missingCommand: Commande manquante pour %s.
-      builtIn: Built-in package managers cannot be modified.
+      builtIn: Les gestionnaires de paquets intégrés ne peuvent être modifiés.
 stacks:
   description: "Travaillez avec les piles disponibles dans apx."
   labels:
@@ -287,16 +287,16 @@ stacks:
       noPkgManager: "Aucun gestionnaire de paquets n'est précisé."
       pkgManagerDoesNotExist: "Le gestionnaire de paquets indiqué n'existe pas. Créez-le
         avec 'apx pkgmanagers new' ou contactez l'administrateur système."
-      builtIn: Built-in stacks cannot be modified.
+      builtIn: Les piles intégrées ne peuvent être modifiées.
     info:
       askBase: "Saisissez une nouvelle base ou confirmez la base actuelle (%s) :"
       askPkgManager: "Choisissez un nouveau gestionnaire de paquets ou confirmez le
         gestionnaire actuel (%s) :"
       askPackages: "Saisissez les paquets que vous souhaitez installer dans la pile,
-        en les séparant par un espace, ou confirmez les paquets actuels (%s) :"
+        en les séparant par un espace :"
       success: "Mise à jour de la pile '%s'."
 
-      confirmPackages: Voulez vous confirmer la liste de paquets dans son état actuel ?
+      confirmPackages: Voulez vous mettre à jour la liste de paquets ?
       noPackages: Vous n'avez fourni aucun paquets à installer dans la pile. Voulez-vous
         en ajouter maintenant ?
     options:
@@ -314,7 +314,7 @@ stacks:
     description: "Retirer la pile indiquée."
     error:
       noName: "Aucun nom n'a été spécifié."
-      inUse: 'The stack is used in %d subsystems:'
+      inUse: 'La pile est utilisée dans %d sous-systèmes :'
     info:
       askConfirmation: "Êtes-vous sûr de vouloir supprimer \"%s\" ?"
       success: "Suppression de la pile '%s'."
