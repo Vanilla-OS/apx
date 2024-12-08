@@ -47,10 +47,10 @@ runtimeCommand:
     exportedBin: "Binário exportado %s"
     unexportedApp: "Desfeita a exportação do aplicativo %s"
     unexportedBin: "Desfeita a exportação do binário %s"
-    stoppedContainer: Contêiner parado.
-    startedContainer: Contêiner inicializado.
-    stoppingContainer: Parando o contêiner…
-    startingContainer: Inicializando contêiner…
+    stoppedContainer: Subsistema parado.
+    startedContainer: Subsistema iniciado.
+    stoppingContainer: Parando o subsistema %s…
+    startingContainer: Iniciando subsistema %s…
   autoremove:
     description: "Remover pacotes que não são mais necessários."
   clean:
@@ -133,7 +133,7 @@ pkgmanagers:
       askSudo: "O gerenciador de pacotes precisa do sudo para ser executado?"
       askCommand: "Insira o comando para '%s':"
       askOverwrite: "Um gerenciador de pacotes com o nome '%s' já existe. Sobrescrevê-lo?"
-      askCommandWithDefault: "Enter the command for '%s' (default: '%s'):"
+      askCommandWithDefault: "Digite o comando para '%s' (padrão: '%s'):"
     options:
       noPrompt:
         description: "Assuma sim para todas as solicitações."
@@ -211,7 +211,7 @@ pkgmanagers:
     error:
       noName: Nenhum nome foi especificado.
       missingCommand: Comando não encontrado para %s.
-      builtIn: Built-in package managers cannot be modified.
+      builtIn: Gerenciadores de pacotes integrados não podem ser modificados.
 stacks:
   description: "Trabalhar com as pilhas que estão disponíveis no apx."
   labels:
@@ -278,15 +278,15 @@ stacks:
       noPkgManager: "Nenhum gerenciador de pacotes especificado."
       pkgManagerDoesNotExist: "O gerenciador de pacotes especificado não existe. Crie-o
         com 'apx pkgmanagers new' ou entre em contato com o administrador do sistema."
-      builtIn: Built-in stacks cannot be modified.
+      builtIn: Pilhas integradas não podem ser modificadas.
     info:
       askBase: "Digite uma nova base ou confirme a atual (%s):"
       askPkgManager: "Escolha um novo gerenciador de pacotes ou confirme o atual (%s):"
       askPackages: "Digite os pacotes que deseja instalar na pilha, separados por
-        um espaço, ou confirme os atuais (%s):"
+        um espaço:"
       success: "Pilha '%s' atualizada."
 
-      confirmPackages: Deseja confirmar a lista de pacotes atual?
+      confirmPackages: Deseja atualizar a lista de pacotes?
       noPackages: Você não forneceu nenhum pacote para instalar na pilha. Deseja adicionar
         algum?
     options:
@@ -304,7 +304,7 @@ stacks:
     description: "Remover a pilha especificada."
     error:
       noName: "Nenhum nome especificado."
-      inUse: 'The stack is used in %d subsystems:'
+      inUse: 'A pilha é usada em %d subsistemas:'
     info:
       askConfirmation: "Tem certeza de que deseja remover '%s'?"
       success: "Pilha '%s' removida."
