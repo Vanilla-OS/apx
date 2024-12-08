@@ -142,6 +142,7 @@ pkgmanagers:
       askCommand: "Entrez la commande pour '%s' :"
       askOverwrite: "Un gestionnaire de paquets portant le nom \"%s\" existe déjà.
         L'écraser ?"
+      askCommandWithDefault: "Enter the command for '%s' (default: '%s'):"
     options:
       noPrompt:
         description: "Supposez que vous répondez par l'affirmative à toutes les questions."
@@ -220,6 +221,7 @@ pkgmanagers:
     error:
       noName: Aucun nom spécifié.
       missingCommand: Commande manquante pour %s.
+      builtIn: Built-in package managers cannot be modified.
 stacks:
   description: "Travaillez avec les piles disponibles dans apx."
   labels:
@@ -285,6 +287,7 @@ stacks:
       noPkgManager: "Aucun gestionnaire de paquets n'est précisé."
       pkgManagerDoesNotExist: "Le gestionnaire de paquets indiqué n'existe pas. Créez-le
         avec 'apx pkgmanagers new' ou contactez l'administrateur système."
+      builtIn: Built-in stacks cannot be modified.
     info:
       askBase: "Saisissez une nouvelle base ou confirmez la base actuelle (%s) :"
       askPkgManager: "Choisissez un nouveau gestionnaire de paquets ou confirmez le
@@ -311,6 +314,7 @@ stacks:
     description: "Retirer la pile indiquée."
     error:
       noName: "Aucun nom n'a été spécifié."
+      inUse: 'The stack is used in %d subsystems:'
     info:
       askConfirmation: "Êtes-vous sûr de vouloir supprimer \"%s\" ?"
       success: "Suppression de la pile '%s'."

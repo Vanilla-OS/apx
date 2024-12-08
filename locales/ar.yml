@@ -130,6 +130,7 @@ pkgmanagers:
       askSudo: "هل يحتاج مدير الحزم إلى sudo ليعمل؟"
       askCommand: "أدخل الامر لأجل '%s':"
       askOverwrite: "يوجد مدير حزم بنفس الاسم '%s' بالفعل. هل تريد استبداله؟"
+      askCommandWithDefault: "Enter the command for '%s' (default: '%s'):"
     options:
       noPrompt:
         description: "افرض الإجابة \"نعم\" لكل الاختيارات."
@@ -204,6 +205,7 @@ pkgmanagers:
     error:
       noName: لم يتم تحديد اسم.
       missingCommand: الأمر مفقود لأجل %s.
+      builtIn: Built-in package managers cannot be modified.
 stacks:
   description: "تستخدم التشكيلات المتاحة في apx."
   labels:
@@ -267,6 +269,7 @@ stacks:
       noPkgManager: "لم يتم تحديد مدير حزم."
       pkgManagerDoesNotExist: "مدير الحزم المحدد غير موجود. قم بإنشاء واحد جديد باستخدام
         'apx pkgmanagers new' او قم بالتحدث لمسؤول النظام."
+      builtIn: Built-in stacks cannot be modified.
     info:
       askBase: "قم بكتابة نظام أساس جديد أو وافق على الحالي(%s):"
       askPkgManager: "قم باختيار مدير حزم جديد أو وافق على الحالي(%s):"
@@ -291,6 +294,7 @@ stacks:
     description: "حذف التشكيلة المحددة."
     error:
       noName: "لم يتم تحديد اسم."
+      inUse: 'The stack is used in %d subsystems:'
     info:
       askConfirmation: "هل انت متأكد من حذف '%s'؟"
       success: "تم حذف التشكيلة '%s'."

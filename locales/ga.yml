@@ -135,6 +135,7 @@ pkgmanagers:
       askCommand: "Iontráil an t- ordú do '%s':"
       askOverwrite: "Tá bainisteoir pacáiste leis an ainm '%s' ann cheana. Forscríobh
         é?"
+      askCommandWithDefault: "Enter the command for '%s' (default: '%s'):"
     options:
       noPrompt:
         description: "Glac leis go bhfuil gach leid."
@@ -171,6 +172,7 @@ pkgmanagers:
     error:
       noName: "Níor sonraíodh aon ainm."
       missingCommand: "Ordú ar iarraidh le haghaidh %s."
+      builtIn: Built-in package managers cannot be modified.
   rm:
     description: "Bain an bainisteoir pacáiste sonraithe."
     error:
@@ -272,6 +274,7 @@ stacks:
       noPkgManager: "Níor sonraíodh aon bhainisteoir pacáiste."
       pkgManagerDoesNotExist: "Níl an bainisteoir pacáiste sonraithe ann. Cruthaigh
         é le 'apx pkgmanagers nua' nó déan teagmháil le riarthóir an chórais."
+      builtIn: Built-in stacks cannot be modified.
     info:
       askBase: "Clóscríobh bonn nua nó deimhnigh an ceann reatha (%s):"
       askPkgManager: "Roghnaigh bainisteoir pacáiste nua nó deimhnigh an ceann reatha
@@ -297,6 +300,7 @@ stacks:
     description: "Bain an chairn shonraithe."
     error:
       noName: "Níor sonraíodh aon ainm."
+      inUse: 'The stack is used in %d subsystems:'
     info:
       askConfirmation: "An bhfuil tú cinnte go bhfuil fonn ort '%s' a bhaint?"
       success: "Baineadh cruach '%s'."

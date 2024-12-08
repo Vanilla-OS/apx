@@ -133,6 +133,7 @@ pkgmanagers:
       askSudo: "Are managerul de pachete nevoie de sudo pentru a rula?"
       askCommand: "Introdu comanda pentru \"%s\":"
       askOverwrite: "Un manager de pachete numit \"%s\" există deja. Îl suprascrieți?"
+      askCommandWithDefault: "Enter the command for '%s' (default: '%s'):"
     options:
       noPrompt:
         description: "Se presupune că ați răspuns afirmativ la toate solicitările."
@@ -209,6 +210,7 @@ pkgmanagers:
     error:
       noName: Niciun nume specificat.
       missingCommand: Lipsește comanda pentru %s.
+      builtIn: Built-in package managers cannot be modified.
 stacks:
   description: "Lucrează cu stive care sunt disponibile în apx."
   labels:
@@ -274,6 +276,7 @@ stacks:
       noPkgManager: "Niciun manager de pachete specificat."
       pkgManagerDoesNotExist: "Managerul de pachete specificat nu există. Crează-l
         cu 'apx pkgmanagers new' sau contactează administratorul de sistem."
+      builtIn: Built-in stacks cannot be modified.
     info:
       askBase: "Introdu o nouă bază sau confirm-o pe cea actuală (%s):"
       askPkgManager: "Alege un nou manager de pachete sau confirmă-l pe cel actual
@@ -300,6 +303,7 @@ stacks:
     description: "Șterge stiva specificată."
     error:
       noName: "Niciun nume specificat."
+      inUse: 'The stack is used in %d subsystems:'
     info:
       askConfirmation: "Sigur doriți să eliminați „%s”?"
       success: "Stiva \"%s\" a fost ștersă."

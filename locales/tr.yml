@@ -131,6 +131,7 @@ pkgmanagers:
       askSudo: "Paket yöneticisinin çalışması için sudo gerekiyor mu?"
       askCommand: "'%s' için komutu gir:"
       askOverwrite: "'%s' adlı paket yöneticisi zaten var. Üzerine yazılsın mı?"
+      askCommandWithDefault: "Enter the command for '%s' (default: '%s'):"
     options:
       noPrompt:
         description: "Tüm sorulara evet dediğinizi varsayın."
@@ -207,6 +208,7 @@ pkgmanagers:
     error:
       noName: Ad belirtilmedi.
       missingCommand: '%s için eksik komut.'
+      builtIn: Built-in package managers cannot be modified.
 stacks:
   description: "Apx'te bulunan yığınlarla çalış."
   labels:
@@ -272,6 +274,7 @@ stacks:
       noPkgManager: "Paket yöneticisi belirtilmedi."
       pkgManagerDoesNotExist: "Belirtilen paket yöneticisi yok. 'apx pkgmanagers new'
         ile yeni oluşturun ya da sistem yöneticisiyle iletişime geçin."
+      builtIn: Built-in stacks cannot be modified.
     info:
       askBase: "Yeni taban yazın ya da geçerli olanı onaylayın (%s):"
       askPkgManager: "Yeni paket yöneticisi seçin ya da geçerli olanı onaylayın (%s):"
@@ -297,6 +300,7 @@ stacks:
     description: "Belirtilen yığını kaldır."
     error:
       noName: "Ad belirtilmedi."
+      inUse: 'The stack is used in %d subsystems:'
     info:
       askConfirmation: "'%s' kaldırılsın ister misiniz?"
       success: "'%s' kaldırıldı."

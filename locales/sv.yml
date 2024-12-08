@@ -133,6 +133,7 @@ pkgmanagers:
       askCommand: "Ange kommandot för '%s':"
       askOverwrite: "En pakethanterare med namnet '%s' finns redan. Vill du skriva
         över det?"
+      askCommandWithDefault: "Enter the command for '%s' (default: '%s'):"
     options:
       noPrompt:
         description: "Anta ja till alla uppmaningar."
@@ -208,6 +209,7 @@ pkgmanagers:
     error:
       noName: Inget namn specificerat
       missingCommand: Saknar kommando för %s.
+      builtIn: Built-in package managers cannot be modified.
 stacks:
   description: "Arbeta med de stackar som finns tillgängliga i apx."
   labels:
@@ -273,6 +275,7 @@ stacks:
       noPkgManager: "Ingen pakethanterare specificerad."
       pkgManagerDoesNotExist: "Den specificerade pakethanteraren finns inte. Skapa
         den med 'apx pkgmanagers new' eller kontakta systemadministratören."
+      builtIn: Built-in stacks cannot be modified.
     info:
       askBase: "Skriv en ny bas eller bekräfta den nuvarande (%s):"
       askPkgManager: "Välj en ny pakethanterare eller bekräfta den nuvarande (%s):"
@@ -298,6 +301,7 @@ stacks:
     description: "Ta bort den specificerade stacken."
     error:
       noName: "Inget namn specificerat."
+      inUse: 'The stack is used in %d subsystems:'
     info:
       askConfirmation: "Är du säker på att du vill ta bort '%s'?"
       success: "Tog bort stack '%s'."

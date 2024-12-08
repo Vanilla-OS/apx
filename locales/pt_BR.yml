@@ -133,6 +133,7 @@ pkgmanagers:
       askSudo: "O gerenciador de pacotes precisa do sudo para ser executado?"
       askCommand: "Insira o comando para '%s':"
       askOverwrite: "Um gerenciador de pacotes com o nome '%s' já existe. Sobrescrevê-lo?"
+      askCommandWithDefault: "Enter the command for '%s' (default: '%s'):"
     options:
       noPrompt:
         description: "Assuma sim para todas as solicitações."
@@ -210,6 +211,7 @@ pkgmanagers:
     error:
       noName: Nenhum nome foi especificado.
       missingCommand: Comando não encontrado para %s.
+      builtIn: Built-in package managers cannot be modified.
 stacks:
   description: "Trabalhar com as pilhas que estão disponíveis no apx."
   labels:
@@ -276,6 +278,7 @@ stacks:
       noPkgManager: "Nenhum gerenciador de pacotes especificado."
       pkgManagerDoesNotExist: "O gerenciador de pacotes especificado não existe. Crie-o
         com 'apx pkgmanagers new' ou entre em contato com o administrador do sistema."
+      builtIn: Built-in stacks cannot be modified.
     info:
       askBase: "Digite uma nova base ou confirme a atual (%s):"
       askPkgManager: "Escolha um novo gerenciador de pacotes ou confirme o atual (%s):"
@@ -301,6 +304,7 @@ stacks:
     description: "Remover a pilha especificada."
     error:
       noName: "Nenhum nome especificado."
+      inUse: 'The stack is used in %d subsystems:'
     info:
       askConfirmation: "Tem certeza de que deseja remover '%s'?"
       success: "Pilha '%s' removida."

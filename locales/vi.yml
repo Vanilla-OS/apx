@@ -133,6 +133,7 @@ pkgmanagers:
       askCommand: "Enter the command for '%s':"
       askOverwrite: "A package manager with the name '%s' already exists. Overwrite
         it?"
+      askCommandWithDefault: "Enter the command for '%s' (default: '%s'):"
     options:
       noPrompt:
         description: "Assume yes to all prompts."
@@ -169,6 +170,7 @@ pkgmanagers:
     error:
       missingCommand: Missing command for %s.
       noName: No name specified.
+      builtIn: Built-in package managers cannot be modified.
   rm:
     description: "Remove the specified package manager."
 
@@ -272,6 +274,7 @@ stacks:
       noPkgManager: "No package manager specified."
       pkgManagerDoesNotExist: "The specified package manager does not exist. Create
         it with 'apx pkgmanagers new' or contact the system administrator."
+      builtIn: Built-in stacks cannot be modified.
     info:
       askBase: "Type a new base or confirm the current one (%s):"
       askPkgManager: "Choose a new package manager or confirm the current one (%s):"
@@ -297,6 +300,7 @@ stacks:
     description: "Remove the specified stack."
     error:
       noName: "No name specified."
+      inUse: 'The stack is used in %d subsystems:'
     info:
       askConfirmation: "Are you sure you want to remove '%s'? [y/N]"
       success: "Removed stack '%s'."

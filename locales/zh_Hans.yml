@@ -129,6 +129,7 @@ pkgmanagers:
       askSudo: "软件包管理器是否需要 sudo 才能运行？"
       askCommand: "输入 '%s' 的命令："
       askOverwrite: "名为 '%s' 的软件包管理器已经存在。要覆盖吗？"
+      askCommandWithDefault: "Enter the command for '%s' (default: '%s'):"
     options:
       noPrompt:
         description: "为所有操作指定“是”。"
@@ -203,6 +204,7 @@ pkgmanagers:
     error:
       noName: 没有指定名称。
       missingCommand: 缺失 %s 的命令。
+      builtIn: Built-in package managers cannot be modified.
 stacks:
   description: "操作 apx 中可用的包捆。"
   labels:
@@ -261,6 +263,7 @@ stacks:
       noBase: "没有指定基础映像。"
       noPkgManager: "没有指定软件包管理器。"
       pkgManagerDoesNotExist: "指定的软件包管理器不存在。请使用 'apx pkgmanagers new' 创建或者联系系统管理员。"
+      builtIn: Built-in stacks cannot be modified.
     info:
       askBase: "输入新的基础映像或确认使用目前的（%s）："
       askPkgManager: "选择新的软件包管理器或确认使用目前的（%s）："
@@ -284,6 +287,7 @@ stacks:
     description: "移除指定的包捆。"
     error:
       noName: "没有指定名称。"
+      inUse: 'The stack is used in %d subsystems:'
     info:
       askConfirmation: "确定要移除 '%s' 吗？"
       success: "已移除包捆 '%s'。"
