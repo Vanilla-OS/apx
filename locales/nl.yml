@@ -54,10 +54,10 @@ runtimeCommand:
     exportedBin: "Programmabestand %s geëxporteerd"
     unexportedApp: "App %s niet langer geëxporteerd"
     unexportedBin: "Programmabestand %s niet langer geëxporteerd"
-    stoppedContainer: Container gestopt.
-    startedContainer: Container gestart.
-    stoppingContainer: Container stoppen…
-    startingContainer: Container starten…
+    stoppedContainer: Subsysteem gestopt.
+    startedContainer: Subsysteem gestart.
+    stoppingContainer: Subsysteem %s stoppen…
+    startingContainer: Subsysteem %s starten…
   autoremove:
     description: "Verwĳdert pakketten die niet meer vereist zĳn."
   clean:
@@ -140,7 +140,7 @@ pkgmanagers:
       askSudo: "Moet de pakketbeheerder uitgevoerd worden met root-rechten?"
       askCommand: "Voer de opdracht in voor ‘%s’:"
       askOverwrite: "Een pakketbeheerder met de naam ‘%s’ bestaat al. Overschrĳven?"
-      askCommandWithDefault: "Enter the command for '%s' (default: '%s'):"
+      askCommandWithDefault: "Voer de opdracht in voor ‘%s’ (standaard: ‘%s’):"
     options:
       noPrompt:
         description: "Neem ‘ja’ aan voor alle vragen."
@@ -218,7 +218,7 @@ pkgmanagers:
     error:
       noName: Geen naam opgegeven.
       missingCommand: Ontbrekende opdracht voor ‘%s’.
-      builtIn: Built-in package managers cannot be modified.
+      builtIn: Ingebouwde pakket­beheerders kunnen niet worden aangepast.
 stacks:
   description: "Werk met de in apx beschikbare stacks."
   labels:
@@ -284,7 +284,7 @@ stacks:
       noPkgManager: "Geen pakketbeheerder opgegeven."
       pkgManagerDoesNotExist: "De opgegeven pakketbeheerder bestaat niet. Maak deze
         aan met ‘apx pkgmanagers new’ of neem contact op met de systeembeheerder."
-      builtIn: Built-in stacks cannot be modified.
+      builtIn: Ingebouwde stapels kunnen niet worden aangepast.
     info:
       askBase: "Typ een nieuwe basis in of bevestig de huidige (%s):"
       askPkgManager: "Kies een nieuwe pakketbeheerder of bevestig de huidige (%s):"
