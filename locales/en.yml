@@ -349,6 +349,7 @@ subsystems:
       noStacks: "A stack is needed to create a subsystem. Create a new one with 'apx
         stacks new' or contact the system administrator."
       emptyName: "The name cannot be empty."
+      forbiddenName: "The name '%s' is forbidden. Please choose a different name"
       noName: "No name specified."
       emptyStack: "The stack cannot be empty."
       noStack: "No stack specified."

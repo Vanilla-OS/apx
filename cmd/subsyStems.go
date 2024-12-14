@@ -237,6 +237,13 @@ func newSubSystem(cmd *cobra.Command, args []string) error {
 		return nil
 	}
 
+	for _, existcommand := range cmd.Root().Commands() {
+		if subSystemName == existcommand.Name() {
+			cmdr.Error.Printfln(apx.Trans("subsystems.new.error.forbiddenName"), subSystemName)
+			return nil
+		}
+	}
+
 	stack, err := core.LoadStack(stackName)
 	if err != nil {
 		return err
