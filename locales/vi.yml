@@ -360,6 +360,7 @@ subsystems:
       stackDoesNotExist: "The specified stack does not exist. Create it with 'apx
         stacks new' or contact the system administrator."
       alreadyExists: "A subsystem with the name '%s' already exists."
+      forbiddenName: The name '%s' is forbidden. Please choose a different name
     info:
       askName: "Choose a name:"
       selectStack: "Select a stack [1-%d]:"

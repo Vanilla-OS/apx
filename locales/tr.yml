@@ -360,6 +360,7 @@ subsystems:
       stackDoesNotExist: "Belirtilen yığın yok. 'apx stacks new' ile oluşturun ya
         da sistem yöneticisiyle iletişime geçin."
       alreadyExists: "'%s' adlı alt sistem zaten var."
+      forbiddenName: The name '%s' is forbidden. Please choose a different name
     info:
       askName: "Ad seç:"
       selectStack: "Yığın seç [1-%d]:"

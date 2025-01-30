@@ -361,6 +361,7 @@ subsystems:
       stackDoesNotExist: "Níl an chairn shonraithe ann. Cruthaigh é le 'cruacha apx
         nua' nó déan teagmháil le riarthóir an chórais."
       alreadyExists: "Tá fochóras leis an ainm '%s' ann cheana."
+      forbiddenName: The name '%s' is forbidden. Please choose a different name
     info:
       askName: "Roghnaigh ainm:"
       availableStacks: "Cruacha atá ar fáil:"

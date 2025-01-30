@@ -363,6 +363,7 @@ subsystems:
       stackDoesNotExist: "Stiva specificată nu există. Creaz-o cu \"apx stacks new\"\
         \ sau contactează administratorul de sistem."
       alreadyExists: "Un subsistem cu numele \"%s\" există deja."
+      forbiddenName: The name '%s' is forbidden. Please choose a different name
     info:
       askName: "Alege un nume:"
       selectStack: "Selectează o stivă [1-%d]:"

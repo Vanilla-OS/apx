@@ -356,6 +356,7 @@ subsystems:
       stackDoesNotExist: "Указаны стэк не існуе. Стварыце яго з дапамогай «apx stacks
         new» або звярніцеся да сістэмнага адміністратара."
       alreadyExists: "Падсістэма з назвай «%s» ужо існуе."
+      forbiddenName: The name '%s' is forbidden. Please choose a different name
     info:
       askName: "Выберыце назву:"
       selectStack: "Выберыце стос [1-%d]:"

@@ -368,6 +368,7 @@ subsystems:
       stackDoesNotExist: "Der angegebene Stapel existiert nicht. Erstellen Sie ihn
         mit 'apx stacks new' oder wenden Sie sich an den Systemadministrator."
       alreadyExists: "Ein Subsystem mit dem Namen '%s' existiert bereits."
+      forbiddenName: The name '%s' is forbidden. Please choose a different name
     info:
       askName: "Wählen Sie einen Namen:"
       selectStack: "Wählen Sie einen Stapel [1-%d]:"

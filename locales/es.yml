@@ -362,6 +362,7 @@ subsystems:
       stackDoesNotExist: "La pila especificada no existe. Créela con 'apx stacks new'
         o póngase en contacto con el administrador del sistema."
       alreadyExists: "Ya existe un subsistema con el nombre '%s'."
+      forbiddenName: The name '%s' is forbidden. Please choose a different name
     info:
       askName: "Elige un nombre:"
       selectStack: "Seleccione una pila [1-%d]:"

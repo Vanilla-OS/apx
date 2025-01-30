@@ -360,6 +360,7 @@ subsystems:
       stackDoesNotExist: "Вказаного стека не існує. Створіть його за допомогою «apx
         stacks new» або зверніться до системного адміністратора."
       alreadyExists: "Підсистема з назвою «%s» вже існує."
+      forbiddenName: The name '%s' is forbidden. Please choose a different name
     info:
       askName: "Вибрати ім'я:"
       selectStack: "Виберіть стек [1-%d]:"

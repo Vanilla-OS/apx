@@ -355,6 +355,7 @@ subsystems:
       stackDoesNotExist: "הערימה המפורטת אינה קיימת. צור אותו עם \"Apxערימה חדשה\"\
         \ או צור קשר עם מנהל המערכת."
       alreadyExists: "תת-מערכת עם השם '%s' כבר קיימת."
+      forbiddenName: The name '%s' is forbidden. Please choose a different name
     info:
       askName: "בחרו שם:"
       selectStack: "בחר ערימה [1-%d]:"
