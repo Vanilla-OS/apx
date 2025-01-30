@@ -248,8 +248,7 @@ stacks:
       noPackages: "Et ole valinnut paketteja asennettavaksi pinoon. Haluatko valita
         ne nyt?"
       confirmPackages: "Haluatko vahvistaa nykyisen pakettiluettelon?"
-      askPackages: "Määritä paketit jotka haluat asennettavan pinoon. Erota paketit
-        välilyönneillä."
+      askPackages: "Kirjoita pinoon asennettavat paketit välilyönnillä erotettuina:"
       success: "Luotiin pino '%s'."
     options:
       noPrompt:
