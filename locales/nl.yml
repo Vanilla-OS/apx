@@ -370,7 +370,7 @@ subsystems:
       stackDoesNotExist: "De opgegeven stack bestaat niet. Maak deze aan met ‘apx
         stacks new’ of neem contact op met de systeembeheerder."
       alreadyExists: "Er bestaat al een subsysteem met de naam ‘%s’."
-      forbiddenName: The name '%s' is forbidden. Please choose a different name
+      forbiddenName: De naam ‘%s’ is niet toegestaan. Kies een andere naam
     info:
       askName: "Kies een naam:"
       selectStack: "Selecteer een stack [1-%d]:"
