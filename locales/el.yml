@@ -365,6 +365,7 @@ subsystems:
       stackDoesNotExist: "Η επιλεγμένη στοίβα δεν υπάρχει. Δημιουργήστε τη με το 'apx
         stacks new' ή επικοινωνήστε με τον διαχειριστή του συστήματος."
       alreadyExists: "Ένα υποσύστημα με όνομα '%s' υπάρχει ήδη."
+      forbiddenName: The name '%s' is forbidden. Please choose a different name
     info:
       askName: "Επιλέξτε ένα όνομα:"
       selectStack: "Επιλέξτε μια στοίβα [1-%d]:"

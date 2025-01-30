@@ -364,6 +364,7 @@ subsystems:
       stackDoesNotExist: "Określony stos nie istnieje. Utwórz go z użyciem 'apx stacks
         new' lub skontaktuj się z administratorem systemu."
       alreadyExists: "Podsystem o nazwie '%s' już istnieje."
+      forbiddenName: The name '%s' is forbidden. Please choose a different name
     info:
       askName: "Wybierz nazwę:"
       selectStack: "Wybierz stos [1-%d]:"

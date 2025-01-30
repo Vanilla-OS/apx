@@ -358,6 +358,7 @@ subsystems:
       stackDoesNotExist: "La specifita stako ne ekzistas. Aŭ kreu ĝin per «apx stacks
         new», aŭ kontaktu la sistemadimistranton."
       alreadyExists: "Subsistemo nomita «%s» jam ekzistas."
+      forbiddenName: The name '%s' is forbidden. Please choose a different name
     info:
       askName: "Elektu nomon:"
       selectStack: "Elektu stakon [1-%d]:"

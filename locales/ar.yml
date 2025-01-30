@@ -354,6 +354,7 @@ subsystems:
       stackDoesNotExist: "التشكيلة المحددة غير موجودة. قم بإنشاء واحدة جديدة باستخدام
         'apx stacks new' او قم بالتحدث لمسؤول النظام."
       alreadyExists: "يوجد نظام فرعي بنفس الاسم '%s' بالفعل."
+      forbiddenName: The name '%s' is forbidden. Please choose a different name
     info:
       askName: "اختر اسما:"
       selectStack: "اختر تشكيلة [1-%d]:"

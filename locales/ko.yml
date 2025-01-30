@@ -350,6 +350,7 @@ subsystems:
       stackDoesNotExist: "특정된 스택이 존재하지 않습니다. 'apx stacks new' 명령어로 해당 스택을 생성하시거나 시스템
         관리자에게 문의하십시오."
       alreadyExists: "'%s' 이름을 가진 하위 시스템이 이미 존재합니다."
+      forbiddenName: The name '%s' is forbidden. Please choose a different name
     info:
       askName: "이름 입력:"
       selectStack: "스택 선택 [1-%d]:"

@@ -344,6 +344,7 @@ subsystems:
       noStack: "沒有指定包捆。"
       stackDoesNotExist: "指定的包捆不存在。請使用 'apx stacks new' 建立或是聯絡系統管理員。"
       alreadyExists: "名為 '%s' 的子系統已經存在。"
+      forbiddenName: The name '%s' is forbidden. Please choose a different name
     info:
       askName: "選擇名稱："
       selectStack: "選取包捆 [1-%d]："

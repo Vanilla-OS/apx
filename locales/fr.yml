@@ -374,6 +374,7 @@ subsystems:
       stackDoesNotExist: "La pile indiquée n'existe pas. Créez-la avec 'apx stacks
         new' ou contactez l'administrateur système."
       alreadyExists: "Un sous-système portant le nom \"%s\" existe déjà."
+      forbiddenName: The name '%s' is forbidden. Please choose a different name
     info:
       askName: "Choisissez un nom :"
       selectStack: "Sélectionner une pile [1-%d] :"

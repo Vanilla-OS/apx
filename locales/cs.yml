@@ -358,6 +358,7 @@ subsystems:
       stackDoesNotExist: "Zadaný stack neexistuje. Vytvořte jej pomocí příkazu 'apx
         stacks new' nebo kontaktujte správce systému."
       alreadyExists: "Subsystém s názvem '%s' již existuje."
+      forbiddenName: The name '%s' is forbidden. Please choose a different name
     info:
       askName: "Vyberte název:"
       selectStack: "Vyberte stack [1-%d]:"
