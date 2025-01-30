@@ -46,10 +46,10 @@ runtimeCommand:
     exportedBin: "%s ikilisi dışa aktarıldı"
     unexportedApp: "%s uygulaması dışa aktarımı geri alındı"
     unexportedBin: "%s ikilisi dışa aktarımı geri alındı"
-    stoppedContainer: Konteyner durduruldu.
-    startedContainer: Konteyner başlatıldı.
-    stoppingContainer: Konteyner durduruluyor…
-    startingContainer: Konteyner başlatılıyor…
+    stoppedContainer: Alt sistem durduruldu.
+    startedContainer: Alt sistem başlatıldı.
+    stoppingContainer: '%s alt sistemi durduruluyor…'
+    startingContainer: '%s alt sistemi başlatılıyor…'
   autoremove:
     description: "Artık gereksinilmeyen paketleri kaldır."
   clean:
@@ -131,7 +131,7 @@ pkgmanagers:
       askSudo: "Paket yöneticisinin çalışması için sudo gerekiyor mu?"
       askCommand: "'%s' için komutu gir:"
       askOverwrite: "'%s' adlı paket yöneticisi zaten var. Üzerine yazılsın mı?"
-      askCommandWithDefault: "Enter the command for '%s' (default: '%s'):"
+      askCommandWithDefault: "'%s' için komut gir (öntanımlı '%s'):"
     options:
       noPrompt:
         description: "Tüm sorulara evet dediğinizi varsayın."
@@ -208,7 +208,7 @@ pkgmanagers:
     error:
       noName: Ad belirtilmedi.
       missingCommand: '%s için eksik komut.'
-      builtIn: Built-in package managers cannot be modified.
+      builtIn: Gömülü paket yöneticiler düzenlenemez.
 stacks:
   description: "Apx'te bulunan yığınlarla çalış."
   labels:
@@ -274,15 +274,14 @@ stacks:
       noPkgManager: "Paket yöneticisi belirtilmedi."
       pkgManagerDoesNotExist: "Belirtilen paket yöneticisi yok. 'apx pkgmanagers new'
         ile yeni oluşturun ya da sistem yöneticisiyle iletişime geçin."
-      builtIn: Built-in stacks cannot be modified.
+      builtIn: Gömülü yığınlar düzenlenemez.
     info:
       askBase: "Yeni taban yazın ya da geçerli olanı onaylayın (%s):"
       askPkgManager: "Yeni paket yöneticisi seçin ya da geçerli olanı onaylayın (%s):"
-      askPackages: "Yığına kurmak istediğiniz paketleri boşlukla ayırarak yazın ya
-        da geçerli olanları onaylayın (%s):"
+      askPackages: "Yığına kurmak istediğiniz paketleri boşlukla ayırarak yazın:"
       success: "'%s' yığını güncellendi."
 
-      confirmPackages: Şu anki paket listesini onaylıyor musunuz?
+      confirmPackages: Paket listesini güncellemek istiyor musunuz?
       noPackages: Yığında kurulacak herhangi bir paket sağlamadınız. Şimdi birkaç
         tane eklemek ister misiniz?
     options:
@@ -300,7 +299,7 @@ stacks:
     description: "Belirtilen yığını kaldır."
     error:
       noName: "Ad belirtilmedi."
-      inUse: 'The stack is used in %d subsystems:'
+      inUse: 'Yığın, %s alt sistemde kullanılıyor:'
     info:
       askConfirmation: "'%s' kaldırılsın ister misiniz?"
       success: "'%s' kaldırıldı."
@@ -360,7 +359,7 @@ subsystems:
       stackDoesNotExist: "Belirtilen yığın yok. 'apx stacks new' ile oluşturun ya
         da sistem yöneticisiyle iletişime geçin."
       alreadyExists: "'%s' adlı alt sistem zaten var."
-      forbiddenName: The name '%s' is forbidden. Please choose a different name
+      forbiddenName: "'%s' adına izin verilmiyor. Lütfen başka ad seçin"
     info:
       askName: "Ad seç:"
       selectStack: "Yığın seç [1-%d]:"
