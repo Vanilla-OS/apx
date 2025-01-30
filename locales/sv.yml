@@ -361,7 +361,8 @@ subsystems:
       stackDoesNotExist: "Den specificerade stacken finns inte. Skapa den med 'apx
         stack new' eller kontakta systemadministratören."
       alreadyExists: "Ett undersystem med namnet \"%s\" existerar redan."
-      forbiddenName: The name '%s' is forbidden. Please choose a different name
+      forbiddenName: Namnet '%s' är förbjdet. är förbjudet. Vänligen välj ett annat
+        namn
     info:
       askName: "Välj ett namn:"
       selectStack: "Välj en stack [1-%d]:"
