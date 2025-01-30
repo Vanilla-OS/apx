@@ -289,10 +289,10 @@ stacks:
       askBase: "Typ een nieuwe basis in of bevestig de huidige (%s):"
       askPkgManager: "Kies een nieuwe pakketbeheerder of bevestig de huidige (%s):"
       askPackages: "Typ de pakketten in die u in de stack wilt installeren, gescheiden
-        door een spatie; of bevestig de huidige pakketten (%s):"
+        door een spatie:"
       success: "Stack ‘%s’ bĳgewerkt."
 
-      confirmPackages: Wilt u de huidige pakketlĳst bevestigen?
+      confirmPackages: Wilt u de pakketlĳst bĳwerken?
       noPackages: U heeft geen pakketten opgegeven om in de stack te installeren.
         Wilt u er nu een paar toevoegen?
     options:
@@ -310,7 +310,7 @@ stacks:
     description: "Verwĳdert de opgegeven stack."
     error:
       noName: "Geen naam opgegeven."
-      inUse: 'The stack is used in %d subsystems:'
+      inUse: 'De stack wordt gebruikt in %d subsystemen:'
     info:
       askConfirmation: "Weet u zeker dat u ‘%s’ wilt verwĳderen?"
       success: "Stack ‘%s’ verwĳderd."
