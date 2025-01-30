@@ -46,10 +46,10 @@ runtimeCommand:
     exportedBin: "Експортовані бінарні %s"
     unexportedApp: "Неекспортований застосунок %s"
     unexportedBin: "Неекспортовані бінарні %s"
-    stoppedContainer: Контейнер зупинено.
-    startedContainer: Контейнер запущено.
-    stoppingContainer: Зупинка контейнера…
-    startingContainer: Запуск контейнера…
+    stoppedContainer: Підсистему зупинено.
+    startedContainer: Підсистему запущено.
+    stoppingContainer: Зупинка підсистеми %s…
+    startingContainer: Запуск підсистеми %s…
   autoremove:
     description: "Видаліть пакети, які більше не потрібні."
   clean:
@@ -131,7 +131,7 @@ pkgmanagers:
       askSudo: "Чи потрібен менеджер пакунків для запуску sudo?"
       askCommand: "Введіть команду для «%s»:"
       askOverwrite: "Менеджер пакунків з назвою «%s» вже існує. Перезаписати його?"
-      askCommandWithDefault: "Enter the command for '%s' (default: '%s'):"
+      askCommandWithDefault: "Уведіть команду для «%s» (типово: «%s»):"
     options:
       noPrompt:
         description: "Відповідайте \"так\" на всі підказки."
@@ -208,7 +208,7 @@ pkgmanagers:
     error:
       noName: Назву не вказано.
       missingCommand: Відсутня команда для %s.
-      builtIn: Built-in package managers cannot be modified.
+      builtIn: Вбудовані менеджери пакетів не можуть бути змінені.
 stacks:
   description: "Працюйте зі стеками, які доступні в apx."
   labels:
@@ -274,15 +274,14 @@ stacks:
       noPkgManager: "Не вказано менеджер пакунків."
       pkgManagerDoesNotExist: "Вказаного менеджера пакунків не існує. Створіть його
         за допомогою «apx pkgmanagers new» або зверніться до системного адміністратора."
-      builtIn: Built-in stacks cannot be modified.
+      builtIn: Вбудовані стеки не можуть бути змінені.
     info:
       askBase: "Введіть нову базу або підтвердіть поточну (%s):"
       askPkgManager: "Виберіть новий менеджер пакунків або підтвердіть поточний (%s):"
-      askPackages: "Введіть пакунки, які потрібно встановити до стека, через пробіл,
-        або підтвердіть поточні пакунки (%s):"
+      askPackages: "Введіть пакети, які ви хочете встановити в стек, через пробіл:"
       success: "Оновлено стек «%s»."
 
-      confirmPackages: Підтвердити поточний список пакетів?
+      confirmPackages: Хочете оновити список пакетів?
       noPackages: Ви не надали жодних пакетів для встановлення в стек. Бажаєте додати
         їх зараз?
     options:
@@ -300,7 +299,7 @@ stacks:
     description: "Видалити вказаний стек."
     error:
       noName: "Назву не вказано."
-      inUse: 'The stack is used in %d subsystems:'
+      inUse: 'Стек використовується у підсистемах %d:'
     info:
       askConfirmation: "Ви впевнені, що хочете видалити «%s»?"
       success: "Видалено стек «%s»."
@@ -360,7 +359,7 @@ subsystems:
       stackDoesNotExist: "Вказаного стека не існує. Створіть його за допомогою «apx
         stacks new» або зверніться до системного адміністратора."
       alreadyExists: "Підсистема з назвою «%s» вже існує."
-      forbiddenName: The name '%s' is forbidden. Please choose a different name
+      forbiddenName: Назва «%s» заборонена. Виберіть іншу назву
     info:
       askName: "Вибрати ім'я:"
       selectStack: "Виберіть стек [1-%d]:"
