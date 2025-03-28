@@ -135,7 +135,7 @@ func (d *dbox) RunCommand(command string, args []string, engineFlags []string, u
 	cmd.Args = append(cmd.Args, args...)
 
 	if os.Getenv("APX_VERBOSE") == "1" {
-		fmt.Println("Runing a command:")
+		fmt.Println("Running a command:")
 		fmt.Println("\tCommand:", cmd.String())
 		fmt.Println("\tcaptureOutput:", captureOutput)
 		fmt.Println("\tmuteOutput:", muteOutput)
