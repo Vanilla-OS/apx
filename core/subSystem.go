@@ -8,6 +8,7 @@ import (
 	"log"
 	"os"
 	"path/filepath"
+	"slices"
 	"strings"
 
 	"github.com/google/uuid"
@@ -315,10 +316,19 @@ func ListSubsystemForStack(stackName string) ([]*SubSystem, error) {
 		return nil, err
 	}
 
-	containers, err := dbox.ListContainers(true)
+	rootlessContainers, err := dbox.ListContainers(false)
+
 	if err != nil {
 		return nil, err
 	}
+
+	rootfullContainers, err := dbox.ListContainers(true)
+
+	if err != nil {
+		return nil, err
+	}
+
+	containers := slices.Concat(rootlessContainers, rootfullContainers)
 
 	subsystems := []*SubSystem{}
 	for _, container := range containers {
