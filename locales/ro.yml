@@ -48,10 +48,10 @@ runtimeCommand:
     exportedBin: "Binar exportat %s"
     unexportedApp: "Aplicație neexportată %s"
     unexportedBin: "Binar neexportat %s"
-    stoppedContainer: Container oprit.
-    startedContainer: Container pornit.
-    stoppingContainer: Oprirea containerului…
-    startingContainer: Pornire container…
+    stoppedContainer: Subsistem oprit.
+    startedContainer: Subsistem pornit.
+    stoppingContainer: Oprirea subsistemului %s…
+    startingContainer: Pornire subsistem %s…
   autoremove:
     description: "Eliminați pachetele care nu mai sunt necesare."
   clean:
@@ -133,7 +133,7 @@ pkgmanagers:
       askSudo: "Are managerul de pachete nevoie de sudo pentru a rula?"
       askCommand: "Introdu comanda pentru \"%s\":"
       askOverwrite: "Un manager de pachete numit \"%s\" există deja. Îl suprascrieți?"
-      askCommandWithDefault: "Enter the command for '%s' (default: '%s'):"
+      askCommandWithDefault: "Introduceți comanda pentru '%s' (implicit: '%s'):"
     options:
       noPrompt:
         description: "Se presupune că ați răspuns afirmativ la toate solicitările."
@@ -210,7 +210,7 @@ pkgmanagers:
     error:
       noName: Niciun nume specificat.
       missingCommand: Lipsește comanda pentru %s.
-      builtIn: Built-in package managers cannot be modified.
+      builtIn: Managerele de pachete încorporate nu pot fi modificate.
 stacks:
   description: "Lucrează cu stive care sunt disponibile în apx."
   labels:
@@ -276,16 +276,16 @@ stacks:
       noPkgManager: "Niciun manager de pachete specificat."
       pkgManagerDoesNotExist: "Managerul de pachete specificat nu există. Crează-l
         cu 'apx pkgmanagers new' sau contactează administratorul de sistem."
-      builtIn: Built-in stacks cannot be modified.
+      builtIn: Stivele încorporate nu pot fi modificate.
     info:
       askBase: "Introdu o nouă bază sau confirm-o pe cea actuală (%s):"
       askPkgManager: "Alege un nou manager de pachete sau confirmă-l pe cel actual
         (%s):"
       askPackages: "Introdu pachetele pe care dorești să le instalezi în stivă, separate
-        printr-un spațiu, sau confirmă-le pe cele curente (%s):"
+        printr-un spațiu:"
       success: "Stiva \"%s\" actualizată."
 
-      confirmPackages: Doriți să confirmați lista curentă de pachete?
+      confirmPackages: Doriți să actualizați lista de pachete?
       noPackages: Nu ați furnizat niciun pachet de instalat în stivă. Doriți să adăugați
         unele acum?
     options:
@@ -303,7 +303,7 @@ stacks:
     description: "Șterge stiva specificată."
     error:
       noName: "Niciun nume specificat."
-      inUse: 'The stack is used in %d subsystems:'
+      inUse: 'Stiva este folosită în %d subsisteme:'
     info:
       askConfirmation: "Sigur doriți să eliminați „%s”?"
       success: "Stiva \"%s\" a fost ștersă."
@@ -363,7 +363,7 @@ subsystems:
       stackDoesNotExist: "Stiva specificată nu există. Creaz-o cu \"apx stacks new\"\
         \ sau contactează administratorul de sistem."
       alreadyExists: "Un subsistem cu numele \"%s\" există deja."
-      forbiddenName: The name '%s' is forbidden. Please choose a different name
+      forbiddenName: Numele '%s' este interzis. Alegeți alt nume
     info:
       askName: "Alege un nume:"
       selectStack: "Selectează o stivă [1-%d]:"
