@@ -142,7 +142,7 @@ pkgmanagers:
       askCommand: "Entrez la commande pour '%s' :"
       askOverwrite: "Un gestionnaire de paquets portant le nom \"%s\" existe déjà.
         L'écraser ?"
-      askCommandWithDefault: "Entrer la commande pour '%s' (défaut: '%s'):"
+      askCommandWithDefault: "Entrer la commande pour '%s' (défaut : '%s') :"
     options:
       noPrompt:
         description: "Supposez que vous répondez par l'affirmative à toutes les questions."
@@ -374,7 +374,7 @@ subsystems:
       stackDoesNotExist: "La pile indiquée n'existe pas. Créez-la avec 'apx stacks
         new' ou contactez l'administrateur système."
       alreadyExists: "Un sous-système portant le nom \"%s\" existe déjà."
-      forbiddenName: The name '%s' is forbidden. Please choose a different name
+      forbiddenName: Le nom '%s' est interdit. Veuillez en choisir un différent
     info:
       askName: "Choisissez un nom :"
       selectStack: "Sélectionner une pile [1-%d] :"
