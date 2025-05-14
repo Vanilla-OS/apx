@@ -14,16 +14,16 @@ apx:
 
   msg:
     examples: Các ví dụ
-    aliases: Aliases
-    usage: Usage
+    aliases: Bí danh
+    usage: Cách sử dụng
     moreInfo: Sử dụng %s để biết thêm thông tin về một câu lệnh
-    flags: Flags
-    additionalCommands: Additional Commands
-    availableCommands: Available Commands
+    flags: Cờ
+    additionalCommands: Các lệnh bổ sung
+    availableCommands: Các lệnh có sẵn
     version: Hiển thị phiên bản của apx.
     help: Hiển thị trợ giúp cho apx.
-    globalFlags: Global Flags
-    additionalHelpTopics: Additional help topics
+    globalFlags: Cờ chung
+    additionalHelpTopics: Các chủ đề trợ giúp bổ sung
 runtimeCommand:
   description: "Làm việc với hệ thống con đã chọn, truy cập trình quản lí gói và môi
     trường."
@@ -47,10 +47,10 @@ runtimeCommand:
     exportedBin: "Đã xuất mã biên dịch %s"
     unexportedApp: "Đã huỷ xuất ứng dụng %s"
     unexportedBin: "Đã huỷ xuất mã biên dịch %s"
-    startingContainer: "Đang khởi động container…"
-    startedContainer: "Đã khởi động container."
-    stoppingContainer: "Stopping container…"
-    stoppedContainer: "Stopped container."
+    startingContainer: "Đang khởi động hệ thống con %s…"
+    startedContainer: "Đã khởi động hệ thống con."
+    stoppingContainer: "Đang dừng hệ thống con %s…"
+    stoppedContainer: "Hệ thống con đã dừng."
   autoremove:
     description: "Loại bỏ các gói không còn được sử dụng."
   clean:
@@ -59,7 +59,7 @@ runtimeCommand:
     description: "Cài đặt gói đã chọn."
     options:
       noExport:
-        description: "Do not export a desktop entry."
+        description: "Không xuất mục nhập trên máy tính để bàn."
   list:
     description: "Liệt kê các gói đã được cài đặt."
   purge:
@@ -67,7 +67,7 @@ runtimeCommand:
   remove:
     description: "Xóa các gói đã chọn."
   search:
-    description: "Search for packages matching the specified query."
+    description: "Tìm kiếm các gói phù hợp với truy vấn đã chỉ định."
   show:
     description: "Hiển thị thông tin về gói đã chọn."
   update:
@@ -97,7 +97,7 @@ runtimeCommand:
   start:
     description: "Khởi động hệ thống con."
   stop:
-    description: "Stop the subsystem."
+    description: "Dừng hệ thống con."
 
   run:
     description: Chạy câu lệnh trong hệ thống con.
@@ -115,161 +115,160 @@ pkgmanagers:
       foundPkgManagers: "Đã tìm thấy %d trình quản lí gói"
     options:
       json:
-        description: "Output in JSON format."
+        description: "Đầu ra ở định dạng JSON."
   show:
-    description: "Show information about the specified package manager."
+    description: "Hiển thị thông tin về trình quản lý gói được chỉ định."
   new:
-    description: "Create a new package manager."
+    description: "Tạo trình quản lý gói mới."
 
     error:
-      emptyName: "The name cannot be empty."
-      noName: "No name specified."
-      emptyCommand: "The command cannot be empty."
-      noCommand: "No command specified for '%s'."
-      alreadyExists: "A package manager with the name '%s' already exists."
+      emptyName: "Tên không được để trống."
+      noName: "Tên không được nêu rõ."
+      emptyCommand: "Lệnh không được để trống."
+      noCommand: "Không có lệnh nào được chỉ định cho '%s'."
+      alreadyExists: "Trình quản lý gói có tên '%s' đã tồn tại."
     info:
-      askName: "Choose a name:"
-      askSudo: "Does the package manager need sudo to run?"
-      askCommand: "Enter the command for '%s':"
-      askOverwrite: "A package manager with the name '%s' already exists. Overwrite
-        it?"
-      askCommandWithDefault: "Enter the command for '%s' (default: '%s'):"
+      askName: "Chọn tên:"
+      askSudo: "Trình quản lý gói có cần sudo để chạy không?"
+      askCommand: "Nhập lệnh cho '%s':"
+      askOverwrite: "Trình quản lý gói có tên '%s' đã tồn tại. Ghi đè lên nó?"
+      askCommandWithDefault: "Nhập lệnh cho '%s' (mặc định: '%s'):"
     options:
       noPrompt:
         description: "Assume yes to all prompts."
       name:
-        description: "The name of the package manager."
+        description: "Tên của trình quản lý gói."
       needSudo:
-        description: "Whether the package manager needs sudo to run."
+        description: "Trình quản lý gói có cần sudo để chạy không."
       autoremove:
-        description: "The command to run to autoremove packages."
+        description: "Lệnh chạy để tự động xóa các gói."
       clean:
-        description: "The command to run to clean the package manager's cache."
+        description: "Lệnh chạy để dọn sạch bộ nhớ đệm của trình quản lý gói."
       install:
-        description: "The command to run to install packages."
+        description: "Lệnh chạy để cài đặt gói."
       list:
-        description: "The command to run to list installed packages."
+        description: "Lệnh chạy để liệt kê các gói đã cài đặt."
       purge:
-        description: "The command to run to purge packages."
+        description: "Lệnh chạy để xóa các gói tin."
       remove:
-        description: "The command to run to remove packages."
+        description: "Lệnh chạy để xóa các gói."
       search:
-        description: "The command to run to search for packages."
+        description: "Lệnh chạy để tìm kiếm các gói."
       show:
-        description: "The command to run to show information about packages."
+        description: "Lệnh chạy để hiển thị thông tin về các gói."
       update:
-        description: "The command to run to update the list of available packages."
+        description: "Lệnh chạy để cập nhật danh sách các gói có sẵn."
       upgrade:
-        description: "The command to run to upgrade packages."
-    success: Package manager %s created successfully.
+        description: "Lệnh chạy để nâng cấp các gói."
+    success: Trình quản lý gói %s đã được tạo thành công.
   update:
-    description: "Update the specified package manager."
+    description: "Cập nhật trình quản lý gói đã chỉ định."
     info:
-      success: "Updated package manager '%s'."
-      askNewCommand: "Enter new command for '%s' (leave empty to keep '%s'):"
+      success: "Đã cập nhật trình quản lý gói '%s'."
+      askNewCommand: "Nhập lệnh mới cho '%s' (để trống để giữ lại '%s'):"
     error:
-      missingCommand: Missing command for %s.
-      noName: No name specified.
-      builtIn: Built-in package managers cannot be modified.
+      missingCommand: Thiếu lệnh cho %s.
+      noName: Không có tên chỉ định.
+      builtIn: Không thể sửa đổi trình quản lý gói tích hợp.
   rm:
-    description: "Remove the specified package manager."
+    description: "Xóa trình quản lý gói đã chỉ định."
 
     error:
-      noName: "No name specified."
-      inUse: "The package manager is used in %d stacks:"
+      noName: "Không có tên xác định."
+      inUse: "Trình quản lý gói được sử dụng trong ngăn xếp %d:"
     info:
-      askConfirmation: "Are you sure you want to remove '%s'? [y/N]"
-      success: "Removed package manager '%s'."
-      aborting: "Aborting removal of package manager '%s'."
+      askConfirmation: "Bạn có chắc chắn muốn xóa '%s' không?"
+      success: "Đã xóa trình quản lý gói '%s'."
+      aborting: "Đang hủy bỏ việc xóa trình quản lý gói '%s'."
     options:
       force:
-        description: "Force removal of the package manager."
+        description: "Buộc xóa trình quản lý gói."
       name:
-        description: "The name of the package manager to remove."
+        description: "Tên của trình quản lý gói cần xóa."
   export:
-    description: "Export the specified package manager."
+    description: "Xuất trình quản lý gói đã chỉ định."
     error:
-      noName: "No name specified."
-      noOutput: "No output specified."
+      noName: "Không có tên xác định."
+      noOutput: "Không có đầu ra xác định."
     info:
-      success: "Exported package manager '%s' to '%s'."
+      success: "Đã xuất trình quản lý gói '%s' sang '%s'."
     options:
       name:
-        description: "The name of the package manager to export."
+        description: "Tên của trình quản lý gói để xuất."
       output:
-        description: "The path to export the package manager to."
+        description: "Đường dẫn để xuất trình quản lý gói tới."
   import:
-    description: "Import the specified package manager."
+    description: "Nhập trình quản lý gói đã chỉ định."
     error:
-      noInput: "No input specified."
-      cannotLoad: "Cannot load package manager from '%s'."
+      noInput: "Thông tin đầu vào không xác định."
+      cannotLoad: "Không thể tải trình quản lý gói từ '%s'."
     info:
-      success: "Imported package manager from '%s'."
+      success: "Đã nhập trình quản lý gói từ '%s'."
     options:
       input:
-        description: "The path to import the package manager from."
+        description: "Đường dẫn để nhập trình quản lý gói."
 
 stacks:
-  description: "Work with the stacks that are available in apx."
+  description: "Làm việc với các ngăn xếp có sẵn trong apx."
   labels:
-    name: "Name"
-    builtIn: "Built-in"
+    name: "Tên"
+    builtIn: "Tích hợp sẵn"
 
   list:
-    description: "List all available stacks."
+    description: "Liệt kê tất cả các ngăn xếp có sẵn."
     info:
-      noStacks: "No stacks available. Create a new one with 'apx stacks new' or contact
-        the system administrator."
-      foundStacks: "Found %d stacks:"
-      aborting: "Aborting removal of stack '%s'."
+      noStacks: "Không có ngăn xếp nào khả dụng. Tạo ngăn xếp mới bằng 'apx stacks
+        new' hoặc liên hệ với quản trị viên hệ thống."
+      foundStacks: "Đã tìm thấy %d ngăn xếp:"
+      aborting: "Đang hủy bỏ việc xóa ngăn xếp '%s'."
     options:
       json:
-        description: "Output in JSON format."
+        description: "Đầu ra ở định dạng JSON."
   show:
-    description: "Show information about the specified stack."
+    description: "Hiển thị thông tin về ngăn xếp được chỉ định."
   new:
-    description: "Create a new stack."
+    description: "Tạo một ngăn xếp mới."
     error:
-      emptyName: "The name cannot be empty."
-      noName: "No name specified."
-      emptyBase: "The base cannot be empty."
-      noBase: "No base specified."
-      emptyPkgManager: "The package manager cannot be empty."
-      noPkgManager: "No package manager specified."
-      pkgManagerDoesNotExist: "The specified package manager does not exist. Create
-        it with 'apx pkgmanagers new' or contact the system administrator."
-      emptyPackages: "The packages cannot be empty."
-      noPackages: "No packages specified."
-      alreadyExists: "A stack with the name '%s' already exists."
-      noPkgManagers: Could not find any package managers. Create one with 'apx pkgmanagers
-        new' or contact the system administrator.
+      emptyName: "Tên không được để trống."
+      noName: "Không có tên xác định."
+      emptyBase: "Phần đế không được để trống."
+      noBase: "Không có cơ sở chỉ định."
+      emptyPkgManager: "Trình quản lý gói không được để trống."
+      noPkgManager: "Không có trình quản lý gói nào chỉ định."
+      pkgManagerDoesNotExist: "Trình quản lý gói được chỉ định không tồn tại. Hãy
+        tạo nó bằng 'apx pkgmanagers new' hoặc liên hệ với quản trị viên hệ thống."
+      emptyPackages: "Các gói không được để trống."
+      noPackages: "Không có gói nào chỉ định."
+      alreadyExists: "Một ngăn xếp có tên '%s' đã tồn tại."
+      noPkgManagers: Không tìm thấy bất kỳ trình quản lý gói nào. Hãy tạo một trình
+        quản lý gói với 'apx pkgmanagers new' hoặc liên hệ với quản trị viên hệ thống.
     info:
-      askName: "Choose a name:"
-      askBase: "Choose a base (e.g. 'vanillaos/pico'):"
-      askPkgManager: "Choose a package manager:"
-      selectPkgManager: "Select a package manager [1-%d]:"
-      noPackages: "You have not provided any package to install in the stack. Do you
-        want to add some now?"
-      confirmPackages: "Do you want to confirm the current packages list?"
-      askPackages: "Please type the packages you want to install in the stack, separated
-        by a space:"
-      success: "Created stack '%s'."
+      askName: "Chọn tên:"
+      askBase: "Chọn một loại cơ sở (ví dụ: 'vanillaos/pico'):"
+      askPkgManager: "Chọn trình quản lý gói:"
+      selectPkgManager: "Chọn trình quản lý gói [1-%d]:"
+      noPackages: "Bạn chưa cung cấp bất kỳ gói nào để cài đặt trong ngăn xếp. Bạn
+        có muốn thêm một số gói bây giờ không?"
+      confirmPackages: "Bạn có muốn xác nhận danh sách các gói hiện tại không?"
+      askPackages: "Vui lòng nhập các gói bạn muốn cài đặt vào ngăn xếp, cách nhau
+        bằng dấu cách:"
+      success: "Đã tạo ngăn xếp '%s'."
     options:
       noPrompt:
         description: "Assume yes to all prompts."
       name:
-        description: "The name of the stack."
+        description: "Tên của ngăn xếp."
       base:
-        description: "The base distribution image to use. (For a list of compatible
-          images view: https://distrobox.it/compatibility/#containers-distros)"
+        description: "Hình ảnh phân phối cơ sở để sử dụng. (Để biết danh sách hình
+          ảnh tương thích, hãy xem: https://distrobox.it/compatibility/#containers-distros)"
       packages:
-        description: "The packages to install."
+        description: "Các gói cần cài đặt."
       pkgManager:
-        description: "The package manager to use."
+        description: "Trình quản lý gói để sử dụng."
   update:
-    description: "Update the specified stack."
+    description: "Cập nhật ngăn xếp chỉ định."
     error:
-      noName: "No name specified."
+      noName: "Không có tên xác định."
       noBase: "No base specified."
       noPkgManager: "No package manager specified."
       pkgManagerDoesNotExist: "The specified package manager does not exist. Create
