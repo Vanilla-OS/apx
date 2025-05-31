@@ -1,7 +1,6 @@
 package core
 
 import (
-	"bufio"
 	"fmt"
 	"io"
 	"io/fs"
@@ -84,28 +83,23 @@ func findExportedBinaries(internalName string) map[string]map[string]string {
 		}
 		defer file.Close()
 
-		scanner := bufio.NewScanner(file)
-		const maxTokenSize = 1024 * 2048
-		buf := make([]byte, maxTokenSize)
-		scanner.Buffer(buf, maxTokenSize)
-		for scanner.Scan() {
-			if scanner.Text() == "# distrobox_binary" {
-				scanner.Scan()
-				if strings.HasSuffix(scanner.Text(), internalName) {
-					name := filepath.Base(path)
-					binaries[name] = map[string]string{
-						"Exec": path,
-						// "Icon":        pIcon,
-						"Name": name,
-						// "GenericName": pGenericName,
-					}
-				}
-				break
-			}
+		var header = "#!/bin/sh\n# distrobox_binary\n# name: " + internalName
+		var maxTokenSize = len(header)
+		var buffer = make([]byte, maxTokenSize)
+
+		n, err := file.Read(buffer)
+		if err != nil && err != io.EOF {
+			return err
 		}
 
-		if err := scanner.Err(); err != nil {
-			return err
+		buffer = buffer[:n]
+
+		if string(buffer) == header {
+			name := filepath.Base(path)
+			binaries[name] = map[string]string{
+				"Exec": path,
+				"Name": name,
+			}
 		}
 
 		return nil
