@@ -21,23 +21,20 @@ jobs:
         go-version-file: go.mod
 
     - name: Build
-      run: go build -o apx -ldflags="-X 'main.Version=${{ github.sha }}'"
+      run: |
+        go build -o apx -ldflags="-X 'main.Version=${{ github.sha }}'"
+        tar -czvf apx-amd64.tar.gz apx
+        GOARCH=arm64 go build -o apx -ldflags="-X 'main.Version=${{ github.sha }}'"
+        tar -czvf apx-arm64.tar.gz apx
+        tar -czvf apx-man.tar.gz man/man1/apx.1
 
     - name: Check for missing strings
       uses: vanilla-os/missing-strings-golang-action@v0.1.0
 
-    - name: Compress
-      run: tar -czvf apx.tar.gz apx
-
-    - name: Compress-manpage
-      run: tar -czvf apx-man.tar.gz man/man1/apx.1
-
     - uses: actions/upload-artifact@v4
       with:
         name: apx
-        path: |
-          apx.tar.gz
-          apx-man.tar.gz
+        path: apx*.tar.gz
 
     - uses: softprops/action-gh-release@v2
       if: github.repository == 'vanilla-os/apx' && github.ref == 'refs/heads/main'
@@ -46,6 +43,4 @@ jobs:
         tag_name: "continuous"
         prerelease: true
         name: "Continuous Build"
-        files: |
-          apx.tar.gz
-          apx-man.tar.gz
+        files: apx*.tar.gz

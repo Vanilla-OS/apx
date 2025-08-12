@@ -22,25 +22,21 @@ jobs:
           go-version-file: go.mod
 
       - name: Build
-        run: go build -o apx -ldflags="-X 'main.Version=${{ github.ref_name }}'"
-
-      - name: Compress Package
-        run: tar -czvf apx.tar.gz apx
-
-      - name: Compress Manpage
-        run: tar -czvf apx-man.tar.gz man/man1/apx.1
+        run: |
+          go build -o apx -ldflags="-X 'main.Version=${{ github.ref_name }}'"
+          tar -czvf apx-amd64.tar.gz apx
+          GOARCH=arm64 go build -o apx -ldflags="-X 'main.Version=${{ github.sha }}'"
+          tar -czvf apx-arm64.tar.gz apx
+          tar -czvf apx-man.tar.gz man/man1/apx.1
 
       - name: Calculate and Save Checksums
-        run: |
-          sha256sum apx.tar.gz >> checksums.txt
-          sha256sum apx-man.tar.gz >> checksums.txt
+        run: sha256sum apx*.tar.gz >> checksums.txt
 
       - uses: actions/upload-artifact@v4
         with:
           name: apx
           path: |
-            apx.tar.gz
-            apx-man.tar.gz
+            apx*.tar.gz
             checksums.txt
 
   release:
@@ -65,10 +61,10 @@ jobs:
       - name: Create Release
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh release create "${{ github.ref_name }}" --generate-notes *.tar.gz checksums.txt
+        run: gh release create "${{ github.ref_name }}" --generate-notes apx*.tar.gz checksums.txt
       
       - name: Attest Release Files
         id: attest
         uses: actions/attest-build-provenance@v2
         with:
-          subject-path: '*.tar.gz, checksums.txt'
+          subject-path: 'apx*.tar.gz, checksums.txt'
