@@ -4,7 +4,7 @@ go 1.22
 
 require (
 	github.com/google/uuid v1.6.0
-	github.com/spf13/cobra v1.8.1
+	github.com/spf13/cobra v1.9.1
 	github.com/vanilla-os/orchid v0.6.1
 	gopkg.in/yaml.v2 v2.4.0
 )
@@ -14,7 +14,7 @@ require (
 	atomicgo.dev/keyboard v0.2.9 // indirect
 	atomicgo.dev/schedule v0.1.0 // indirect
 	github.com/containerd/console v1.0.4 // indirect
-	github.com/cpuguy83/go-md2man/v2 v2.0.4 // indirect
+	github.com/cpuguy83/go-md2man/v2 v2.0.6 // indirect
 	github.com/fitv/go-i18n v1.0.4 // indirect
 	github.com/fsnotify/fsnotify v1.7.0 // indirect
 	github.com/gookit/color v1.5.4 // indirect
@@ -46,6 +46,6 @@ require (
 require (
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
 	github.com/olekukonko/tablewriter v0.0.5
-	github.com/spf13/pflag v1.0.5 // indirect
+	github.com/spf13/pflag v1.0.6 // indirect
 	github.com/spf13/viper v1.19.0
 )
