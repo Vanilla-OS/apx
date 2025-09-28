@@ -316,9 +316,19 @@ func ListSubsystemForStack(stackName string) ([]*SubSystem, error) {
 		return nil, err
 	}
 
-	rootfullContainers, err := dbox.ListContainers(true)
+	// Listing rootful containers requires root privileges
+	// should not be used unless better solution is found
 
+	// rootfullContainers, err := dbox.ListContainers(true)
+
+	// if err != nil {
+	// 	return nil, err
+	// }
+	rootfullContainers := []dboxContainer{}
+
+	stack, err := LoadStack(stackName)
 	if err != nil {
+		log.Printf("Error loading stack %s: %s", stackName, err)
 		return nil, err
 	}
 
@@ -327,12 +337,6 @@ func ListSubsystemForStack(stackName string) ([]*SubSystem, error) {
 	subsystems := []*SubSystem{}
 	for _, container := range containers {
 		if _, ok := container.Labels["name"]; !ok {
-			continue
-		}
-
-		stack, err := LoadStack(stackName)
-		if err != nil {
-			log.Printf("Error loading stack %s: %s", stackName, err)
 			continue
 		}
 
