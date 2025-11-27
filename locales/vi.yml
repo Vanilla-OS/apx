@@ -240,8 +240,9 @@ stacks:
       emptyPackages: "Các gói không được để trống."
       noPackages: "Không có gói nào chỉ định."
       alreadyExists: "Một ngăn xếp có tên '%s' đã tồn tại."
-      noPkgManagers: Không tìm thấy bất kỳ trình quản lý gói nào. Hãy tạo một trình
-        quản lý gói với 'apx pkgmanagers new' hoặc liên hệ với quản trị viên hệ thống.
+      noPkgManagers: Không tìm thấy bất kỳ trình quản lý gói nào. Hãy tạo một 
+        trình quản lý gói với 'apx pkgmanagers new' hoặc liên hệ với quản trị 
+        viên hệ thống.
     info:
       askName: "Chọn tên:"
       askBase: "Chọn một loại cơ sở (ví dụ: 'vanillaos/pico'):"
@@ -270,7 +271,7 @@ stacks:
     error:
       noName: "Không có tên xác định."
       noBase: "No base specified."
-      noPkgManager: "No package manager specified."
+      noPkgManager: "Không có trình quản lí gói nào được chỉ định."
       pkgManagerDoesNotExist: "The specified package manager does not exist. Create
         it with 'apx pkgmanagers new' or contact the system administrator."
       builtIn: Built-in stacks cannot be modified.
@@ -282,8 +283,8 @@ stacks:
       success: "Updated stack '%s'."
 
       confirmPackages: Do you want to confirm the current packages list?
-      noPackages: You have not provided any packages to install in the stack. Do you
-        want to add some now?
+      noPackages: You have not provided any packages to install in the stack. Do
+        you want to add some now?
     options:
       noPrompt:
         description: "Assume yes to all prompts."
