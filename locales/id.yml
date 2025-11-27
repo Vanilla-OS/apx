@@ -47,10 +47,10 @@ runtimeCommand:
     exportedBin: "Biner yang diekspor %s"
     unexportedApp: "Aplikasi yang tidak diekspor %s"
     unexportedBin: "Biner yang tidak diekspor %s"
-    startingContainer: "Memulai kontainer…"
-    startedContainer: "Memulai kontainer."
-    stoppingContainer: "Menghentikan kontainer…"
-    stoppedContainer: "Menghentikan kontainer."
+    startingContainer: "Memulai subsistem %s…"
+    startedContainer: "Subsistem telah dimulai."
+    stoppingContainer: "Menghentikan subsistem %s…"
+    stoppedContainer: "Subsistem telah dihentikan."
   autoremove:
     description: "Menghapus paket-paket yang tidak lagi diperlukan."
   clean:
@@ -132,7 +132,7 @@ pkgmanagers:
       askSudo: "Apakah manajer paket membutuhkan sudo untuk dijalankan?"
       askCommand: "Masukkan perintah untuk '%s':"
       askOverwrite: "Manajer paket dengan nama '%s' sudah ada. Timpa?"
-      askCommandWithDefault: "Enter the command for '%s' (default: '%s'):"
+      askCommandWithDefault: "Masukkan perintah untuk '%s' (default: '%s'):"
     options:
       noPrompt:
         description: "Jawab ya untuk semua pertanyaan."
@@ -174,7 +174,7 @@ pkgmanagers:
     error:
       noName: Tidak ada nama yang ditentukan.
       missingCommand: Tidak ada perintah untuk %s.
-      builtIn: Built-in package managers cannot be modified.
+      builtIn: Manajer paket bawaan tidak dapat dimodifikasi.
   rm:
     description: "Menghapus manajer paket yang ditentukan."
 
@@ -245,8 +245,8 @@ stacks:
       emptyPackages: "Paket tidak boleh kosong."
       noPackages: "Tidak ada paket yang ditentukan."
       alreadyExists: "stack dengan nama '%s' sudah ada."
-      noPkgManagers: Tidak dapat menemukan manajer paket. Buatlah dengan 'apx pkgmanagers
-        new' atau hubungi administrator sistem.
+      noPkgManagers: Tidak dapat menemukan manajer paket. Buatlah dengan 'apx 
+        pkgmanagers new' atau hubungi administrator sistem.
     info:
       askName: "Pilih sebuah nama:"
       askBase: "Pilih sebuah basis (misal: 'vanillaos/pico'):"
@@ -279,19 +279,18 @@ stacks:
       noPkgManager: "Tidak ada manajer paket yang ditentukan."
       pkgManagerDoesNotExist: "Manajer paket yang ditentukan tidak ada. Buatlah dengan
         'apx pkgmanagers new' atau hubungi administrator sistem."
-      builtIn: Built-in stacks cannot be modified.
+      builtIn: Stack bawaan tidak dapat dimodifikasi.
     info:
       askBase: "Ketik basis baru atau konfirmasikan basis yang ada saat ini (%s):"
       askPkgManager: "Pilih manajer paket baru atau konfirmasikan manajer paket yang
         ada saat ini (%s):"
-      askPackages: "Ketik paket yang ingin Anda instal di dalam stack, dipisahkan
-        dengan spasi, atau konfirmasikan paket yang ada saat ini (%s):"
+      askPackages: "Ketik paket-paket yang ingin Anda instal dalam stack, dipisahkan
+        dengan spasi:"
       success: "stack yang diperbarui '%s'."
 
-      confirmPackages: Apakah Anda ingin mengkonfirmasi daftar paket yang ada saat
-        ini?
-      noPackages: Anda belum menyediakan paket apa pun untuk diinstal dalam stack.
-        Apakah Anda ingin menambahkannya sekarang?
+      confirmPackages: Apakah Anda ingin memperbarui daftar paket?
+      noPackages: Anda belum menyediakan paket apa pun untuk diinstal dalam 
+        stack. Apakah Anda ingin menambahkannya sekarang?
     options:
       noPrompt:
         description: "Jawab ya untuk semua pertanyaan."
@@ -307,7 +306,7 @@ stacks:
     description: "Menghapus stack yang ditentukan."
     error:
       noName: "Tidak ada nama yang ditentukan."
-      inUse: 'The stack is used in %d subsystems:'
+      inUse: 'Stack digunakan dalam %d subsistem:'
     info:
       askConfirmation: "Apakah Anda yakin ingin menghapus '%s'?"
       success: "Menghapus stack '%s'."
@@ -367,7 +366,7 @@ subsystems:
       stackDoesNotExist: "stack yang ditentukan tidak ada. Buatlah dengan 'apx stacks
         new' atau hubungi administrator sistem."
       alreadyExists: "Subsistem dengan nama '%s' sudah ada."
-      forbiddenName: The name '%s' is forbidden. Please choose a different name
+      forbiddenName: Nama '%s' dilarang. Silakan pilih nama yang berbeda
     info:
       askName: "Pilih sebuah nama:"
       selectStack: "Pilih stack [1-%d]:"
