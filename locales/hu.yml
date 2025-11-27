@@ -13,17 +13,17 @@ apx:
     no: "nem"
 
   msg:
-    version: Show version for apx.
-    help: Show help for apx.
-    examples: Examples
-    usage: Usage
-    aliases: Aliases
-    moreInfo: Use %s for more information about a command
-    flags: Flags
-    additionalCommands: Additional Commands
-    availableCommands: Available Commands
-    globalFlags: Global Flags
-    additionalHelpTopics: Additional help topics
+    version: APX verziója.
+    help: Segítség mutatása az APX-hez.
+    examples: Példák
+    usage: Használat
+    aliases: Álnevek
+    moreInfo: A parancsokkal kapcsolatos további információkért használja a %s-t
+    flags: Zászlók
+    additionalCommands: További Parancsok
+    availableCommands: Elérhető Parancsok
+    globalFlags: Globális Zászlók
+    additionalHelpTopics: További súgótémák
 runtimeCommand:
   description: "Dolgozzon a megadott alrendszerrel, hogy elérje a csomagkezelőt és
     a környezetet."
@@ -102,7 +102,7 @@ runtimeCommand:
   stop:
     description: Az alrendszer leállítása.
   run:
-    description: Run command inside subsystem.
+    description: Parancsok futtatása az alrendszerben.
 pkgmanagers:
   description: "Dolgozzon az apx-ben elérhető csomagkezelőkkel."
   labels:
@@ -243,8 +243,8 @@ stacks:
       emptyPackages: "The packages cannot be empty."
       noPackages: "No packages specified."
       alreadyExists: "A stack with the name '%s' already exists."
-      noPkgManagers: Could not find any package managers. Create one with 'apx pkgmanagers
-        new' or contact the system administrator.
+      noPkgManagers: Could not find any package managers. Create one with 'apx 
+        pkgmanagers new' or contact the system administrator.
     info:
       askName: "Choose a name:"
       askBase: "Choose a base (e.g. 'vanillaos/pico'):"
@@ -283,8 +283,8 @@ stacks:
         by a space, or confirm the current ones (%s):"
       success: "Updated stack '%s'."
 
-      noPackages: You have not provided any packages to install in the stack. Do you
-        want to add some now?
+      noPackages: You have not provided any packages to install in the stack. Do
+        you want to add some now?
       confirmPackages: Do you want to confirm the current packages list?
     options:
       noPrompt:
