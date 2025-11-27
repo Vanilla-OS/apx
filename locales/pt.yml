@@ -1,6 +1,6 @@
 apx:
-  description: "O Apx é um gestor de pacotes com suporte para várias origens, permitindo
-    que instale pacotes em subsistemas."
+  description: "O Apx é um gerenciador de pacotes com suporte para múltiplas fontes,
+    lhe permitindo que instale pacotes em subsistemas."
   errors:
     unknownCommand: "Comando desconhecido: %s"
     invalidInput: "Entrada inválida."
@@ -242,8 +242,8 @@ stacks:
       emptyPackages: "Os pacotes não podem estar vazios."
       noPackages: "Não há pacotes especificados."
       alreadyExists: "Já existe uma pilha com o nome '%s'."
-      noPkgManagers: Não foi possível encontrar nenhum gerenciador de pacotes. Crie
-        um com 'apx pkgmanagers new' ou contate o administrador do sistema
+      noPkgManagers: Não foi possível encontrar nenhum gerenciador de pacotes. 
+        Crie um com 'apx pkgmanagers new' ou contate o administrador do sistema
     info:
       askName: "Escolha um nome:"
       askBase: "Escolha uma base (por exemplo, 'vanillaos/pico'):"
@@ -284,8 +284,8 @@ stacks:
       success: "Pilha '%s' atualizada."
 
       confirmPackages: Você confirma a lista de pacotes atuais?
-      noPackages: Você não adicionou nenhum pacote para instalar na pilha. Deseja
-        adicionar algum agora?
+      noPackages: Você não adicionou nenhum pacote para instalar na pilha. 
+        Deseja adicionar algum agora?
     options:
       noPrompt:
         description: "Assuma que sim para todas as solicitações."
