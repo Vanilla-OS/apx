@@ -41,6 +41,7 @@ runtimeCommand:
     unexportingBin: "An error occurred while unexporting the binary: %s"
     startingContainer: "An error occurred while starting the container: %s"
     stoppingContainer: "An error occurred while stopping the container: %s"
+    protectedBin: "Binary already exists on the host."
   info:
     unexportedApps: "Unexported %d applications"
     exportedApps: "Exported %d applications"
