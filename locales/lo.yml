@@ -1,398 +1,388 @@
 apx:
-  description: "Apx is a package manager with support for multiple sources, allowing
-    you to install packages in subsystems."
+  description: "Apx ແມ່ນຕົວຈັດການແພັກເກັດທີ່ຮອງຮັບຫຼາຍແຫຼ່ງ, ຊ່ວຍໃຫ້ທ່ານສາມາດຕິດຕັ້ງແພັກເກັດໃນລະບົບຍ່ອຍໄດ້."
   errors:
-    unknownCommand: "Unknown command: %s"
-    invalidInput: "Invalid input."
-    invalidChoice: "Invalid choice."
-    noRoot: "Do not run Apx as root."
+    unknownCommand: "ຄຳສັ່ງທີ່ບໍ່ຮູ້ຈັກ: %s"
+    invalidInput: "ຂໍ້ມູນນຳເຂົ້າບໍ່ຖືກຕ້ອງ."
+    invalidChoice: "ທາງເລືອກບໍ່ຖືກຕ້ອງ."
+    noRoot: "ຫ້າມແລ່ນ Apx ໃນຖານະ root."
   msg:
-    help: "Show help for apx."
-    version: "Show version for apx."
-    usage: "Usage"
-    aliases: "Aliases"
-    examples: "Examples"
-    availableCommands: "Available Commands"
-    additionalCommands: "Additional Commands"
-    flags: "Flags"
-    globalFlags: "Global Flags"
-    additionalHelpTopics: "Additional help topics"
-    moreInfo: "Use %s for more information about a command"
+    help: "ສະແດງວິທີໃຊ້ສຳລັບ apx."
+    version: "ສະແດງເວີຊັນສຳລັບ apx."
+    usage: "ການນຳໃຊ້"
+    aliases: "ຊື່ແຝງ"
+    examples: "ຕົວຢ່າງ"
+    availableCommands: "ຄຳສັ່ງທີ່ມີໃຫ້ໃຊ້"
+    additionalCommands: "ຄຳສັ່ງເພີ່ມເຕີມ"
+    flags: "ທຸງ (Flags)"
+    globalFlags: "ທຸງທົ່ວໄປ (Global Flags)"
+    additionalHelpTopics: "ຫົວຂໍ້ຊ່ວຍເຫຼືອເພີ່ມເຕີມ"
+    moreInfo: "ໃຊ້ %s ສຳລັບຂໍ້ມູນເພີ່ມເຕີມກ່ຽວກັບຄຳສັ່ງ"
   info:
-    aborting: "Aborting as requested."
+    aborting: "ຍົກເລີກຕາມການຮ້ອງຂໍ."
   terminal:
-    yes: "yes"
-    no: "no"
+    yes: "ແມ່ນ"
+    no: "ບໍ່"
 
 runtimeCommand:
-  description: "Work with the specified subsystem, accessing the package manager and
-    environment."
+  description: "ເຮັດວຽກກັບລະບົບຍ່ອຍທີ່ລະບຸ, ເຂົ້າເຖິງຕົວຈັດການແພັກເກັດ ແລະ ສະພາບແວດລ້ອມ."
   error:
-    enteringContainer: "An error occurred while entering the container: %s"
-    noPackageSpecified: "No packages specified."
-    cantAccessPkgManager: "An error occurred while accessing the package manager:
-      %s"
-    executingCommand: "An error occurred while executing the command: %s"
-    noAppNameOrBin: "--app-name or --bin must be specified."
-    sameAppOrBin: "--app-name and --bin cannot be both specified."
-    exportingApp: "An error occurred while exporting the application: %s"
-    exportingBin: "An error occurred while exporting the binary: %s"
-    unexportingApp: "An error occurred while unexporting the application: %s"
-    unexportingBin: "An error occurred while unexporting the binary: %s"
-    startingContainer: "An error occurred while starting the container: %s"
-    stoppingContainer: "An error occurred while stopping the container: %s"
+    enteringContainer: "ເກີດຂໍ້ຜິດພາດຂະນະເຂົ້າສູ່ຄອນເທນເນີ: %s"
+    noPackageSpecified: "ບໍ່ໄດ້ລະບຸແພັກເກັດ."
+    cantAccessPkgManager: "ເກີດຂໍ້ຜິດພາດຂະນະເຂົ້າເຖິງຕົວຈັດການແພັກເກັດ: %s"
+    executingCommand: "ເກີດຂໍ້ຜິດພາດຂະນະປະຕິບັດຄຳສັ່ງ: %s"
+    noAppNameOrBin: "ຕ້ອງລະບຸ --app-name ຫຼື --bin."
+    sameAppOrBin: "ບໍ່ສາມາດລະບຸ --app-name ແລະ --bin ພ້ອມກັນໄດ້."
+    exportingApp: "ເກີດຂໍ້ຜິດພາດຂະນະສົ່ງອອກແອັບພລິເຄຊັນ: %s"
+    exportingBin: "ເກີດຂໍ້ຜິດພາດຂະນະສົ່ງອອກໄຟລ໌ບີນາຣີ: %s"
+    unexportingApp: "ເກີດຂໍ້ຜິດພາດຂະນະຍົກເລີກການສົ່ງອອກແອັບພລິເຄຊັນ: %s"
+    unexportingBin: "ເກີດຂໍ້ຜິດພາດຂະນະຍົກເລີກການສົ່ງອອກໄຟລ໌ບີນາຣີ: %s"
+    startingContainer: "ເກີດຂໍ້ຜິດພາດຂະນະເລີ່ມຕົ້ນຄອນເທນເນີ: %s"
+    stoppingContainer: "ເກີດຂໍ້ຜິດພາດຂະນະຢຸດຄອນເທນເນີ: %s"
   info:
-    unexportedApps: "Unexported %d applications"
-    exportedApps: "Exported %d applications"
-    exportedApp: "Exported application %s"
-    exportedBin: "Exported binary %s"
-    unexportedApp: "Unexported application %s"
-    unexportedBin: "Unexported binary %s"
-    startingContainer: "Starting subsystem %s…"
-    startedContainer: "Started subsystem."
-    stoppingContainer: "Stopping subsystem %s…"
-    stoppedContainer: "Stopped subsystem."
+    unexportedApps: "ຍົກເລີກການສົ່ງອອກ %d ແອັບພລິເຄຊັນ"
+    exportedApps: "ສົ່ງອອກແລ້ວ %d ແອັບພລິເຄຊັນ"
+    exportedApp: "ສົ່ງອອກແອັບພລິເຄຊັນ %s ແລ້ວ"
+    exportedBin: "ສົ່ງອອກໄຟລ໌ບີນາຣີ %s ແລ້ວ"
+    unexportedApp: "ຍົກເລີກການສົ່ງອອກແອັບພລິເຄຊັນ %s ແລ້ວ"
+    unexportedBin: "ຍົກເລີກການສົ່ງອອກໄຟລ໌ບີນາຣີ %s ແລ້ວ"
+    startingContainer: "ກຳລັງເລີ່ມຕົ້ນລະບົບຍ່ອຍ %s…"
+    startedContainer: "ເລີ່ມຕົ້ນລະບົບຍ່ອຍແລ້ວ."
+    stoppingContainer: "ກຳລັງຢຸດລະບົບຍ່ອຍ %s…"
+    stoppedContainer: "ຢຸດລະບົບຍ່ອຍແລ້ວ."
   autoremove:
-    description: "Remove packages that are no longer required."
+    description: "ລຶບແພັກເກັດທີ່ບໍ່ຕ້ອງການແລ້ວ."
   clean:
-    description: "Clean the package manager's cache."
+    description: "ລ້າງແຄດ (cache) ຂອງຕົວຈັດການແພັກເກັດ."
   install:
-    description: "Install the specified package."
+    description: "ຕິດຕັ້ງແພັກເກັດທີ່ລະບຸ."
     options:
       noExport:
-        description: "Do not export a desktop entry."
+        description: "ບໍ່ຕ້ອງສົ່ງອອກ desktop entry."
   list:
-    description: "List all installed packages."
+    description: "ສະແດງລາຍຊື່ແພັກເກັດທີ່ຕິດຕັ້ງທັງໝົດ."
   purge:
-    description: "Purge the specified packages."
+    description: "ລຶບລ້າງແພັກເກັດທີ່ລະບຸ (Purge)."
   remove:
-    description: "Remove the specified packages."
+    description: "ລຶບແພັກເກັດທີ່ລະບຸ."
   search:
-    description: "Search for packages matching the specified query."
+    description: "ຄົ້ນຫາແພັກເກັດທີ່ກົງກັບຄຳຄົ້ນ."
   show:
-    description: "Show information about the specified package."
+    description: "ສະແດງຂໍ້ມູນກ່ຽວກັບແພັກເກັດທີ່ລະບຸ."
   update:
-    description: "Update the list of available packages."
+    description: "ອັບເດດລາຍຊື່ແພັກເກັດທີ່ມີໃຫ້ໃຊ້."
   upgrade:
-    description: "Upgrade all installed packages."
+    description: "ອັບເກຣດແພັກເກັດທີ່ຕິດຕັ້ງທັງໝົດ."
   run:
-    description: "Run command inside subsystem."
+    description: "ແລ່ນຄຳສັ່ງພາຍໃນລະບົບຍ່ອຍ."
   enter:
-    description: "Enter the subsystem's environment."
+    description: "ເຂົ້າສູ່ສະພາບແວດລ້ອມຂອງລະບົບຍ່ອຍ."
   export:
-    description: "Export an application or binary from the subsystem to the host."
+    description: "ສົ່ງອອກແອັບພລິເຄຊັນ ຫຼື ໄຟລ໌ບີນາຣີ ຈາກລະບົບຍ່ອຍໄປຍັງໂຮສ (host)."
     options:
       appName:
-        description: "The name of the application to export."
+        description: "ຊື່ຂອງແອັບພລິເຄຊັນທີ່ຈະສົ່ງອອກ."
       bin:
-        description: "The name of the binary to export."
+        description: "ຊື່ຂອງໄຟລ໌ບີນາຣີທີ່ຈະສົ່ງອອກ."
       binOutput:
-        description: "Path of the binary output (default: ~/.local/bin/)."
+        description: "ເສັ້ນທາງຂອງໄຟລ໌ບີນາຣີທີ່ຈະສົ່ງອອກ (ຄ່າເລີ່ມຕົ້ນ: ~/.local/bin/)."
   unexport:
-    description: "Unexport an application or binary from the host."
+    description: "ຍົກເລີກການສົ່ງອອກແອັບພລິເຄຊັນ ຫຼື ໄຟລ໌ບີນາຣີ ຈາກໂຮສ."
     options:
       appName:
-        description: "The name of the application to unexport."
+        description: "ຊື່ຂອງແອັບພລິເຄຊັນທີ່ຈະຍົກເລີກການສົ່ງອອກ."
       bin:
-        description: "The name of the binary to unexport."
+        description: "ຊື່ຂອງໄຟລ໌ບີນາຣີທີ່ຈະຍົກເລີກການສົ່ງອອກ."
       binOutput:
-        description: "Path of the binary output (default: ~/.local/bin/)."
+        description: "ເສັ້ນທາງຂອງໄຟລ໌ບີນາຣີທີ່ຈະສົ່ງອອກ (ຄ່າເລີ່ມຕົ້ນ: ~/.local/bin/)."
   start:
-    description: "Start the subsystem."
+    description: "ເລີ່ມຕົ້ນລະບົບຍ່ອຍ."
   stop:
-    description: "Stop the subsystem."
+    description: "ຢຸດລະບົບຍ່ອຍ."
 
 pkgmanagers:
-  description: "Work with the package managers that are available in apx."
+  description: "ເຮັດວຽກກັບຕົວຈັດການແພັກເກັດທີ່ມີໃນ apx."
   labels:
-    name: "Name"
-    builtIn: "Built-in"
+    name: "ຊື່"
+    builtIn: "ທີ່ມີໃນຕົວ (Built-in)"
   list:
-    description: "List all available package managers."
+    description: "ສະແດງລາຍຊື່ຕົວຈັດການແພັກເກັດທັງໝົດທີ່ມີ."
     info:
-      noPkgManagers: "No package managers available. Create a new one with 'apx pkgmanagers
-        new' or contact the system administrator."
-      foundPkgManagers: "Found %d package managers"
+      noPkgManagers: "ບໍ່ມີຕົວຈັດການແພັກເກັດ. ສ້າງໃໝ່ດ້ວຍ 'apx pkgmanagers new' ຫຼື
+        ຕິດຕໍ່ຜູ້ຄຸມລະບົບ."
+      foundPkgManagers: "ພົບຕົວຈັດການແພັກເກັດ %d ຕົວ"
     options:
       json:
-        description: "Output in JSON format."
+        description: "ສະແດງຜົນໃນຮູບແບບ JSON."
   show:
-    description: "Show information about the specified package manager."
+    description: "ສະແດງຂໍ້ມູນກ່ຽວກັບຕົວຈັດການແພັກເກັດທີ່ລະບຸ."
   new:
-    description: "Create a new package manager."
-    success: "Package manager %s created successfully."
+    description: "ສ້າງຕົວຈັດການແພັກເກັດໃໝ່."
+    success: "ສ້າງຕົວຈັດການແພັກເກັດ %s ສຳເລັດແລ້ວ."
     error:
-      emptyName: "The name cannot be empty."
-      noName: "No name specified."
-      emptyCommand: "The command cannot be empty."
-      noCommand: "No command specified for '%s'."
-      alreadyExists: "A package manager with the name '%s' already exists."
+      emptyName: "ຊື່ຕ້ອງບໍ່ຫວ່າງເປົ່າ."
+      noName: "ບໍ່ໄດ້ລະບຸຊື່."
+      emptyCommand: "ຄຳສັ່ງຕ້ອງບໍ່ຫວ່າງເປົ່າ."
+      noCommand: "ບໍ່ໄດ້ລະບຸຄຳສັ່ງສຳລັບ '%s'."
+      alreadyExists: "ຕົວຈັດການແພັກເກັດຊື່ '%s' ມີຢູ່ແລ້ວ."
     info:
-      askName: "Choose a name:"
-      askSudo: "Does the package manager need sudo to run?"
-      askCommand: "Enter the command for '%s':"
-      askCommandWithDefault: "Enter the command for '%s' (default: '%s'):"
-      askOverwrite: "A package manager with the name '%s' already exists. Overwrite
-        it?"
+      askName: "ເລືອກຊື່:"
+      askSudo: "ຕົວຈັດການແພັກເກັດຕ້ອງການ sudo ເພື່ອເຮັດວຽກບໍ່?"
+      askCommand: "ປ້ອນຄຳສັ່ງສຳລັບ '%s':"
+      askCommandWithDefault: "ປ້ອນຄຳສັ່ງສຳລັບ '%s' (ຄ່າເລີ່ມຕົ້ນ: '%s'):"
+      askOverwrite: "ຕົວຈັດການແພັກເກັດຊື່ '%s' ມີຢູ່ແລ້ວ. ຕ້ອງການຂຽນທັບບໍ່?"
     options:
       noPrompt:
-        description: "Assume defaults to all prompts."
+        description: "ໃຊ້ຄ່າເລີ່ມຕົ້ນສຳລັບທຸກຄຳຖາມ."
       name:
-        description: "The name of the package manager."
+        description: "ຊື່ຂອງຕົວຈັດການແພັກເກັດ."
       needSudo:
-        description: "Whether the package manager needs sudo to run."
+        description: "ຕົວຈັດການແພັກເກັດຕ້ອງການ sudo ເພື່ອເຮັດວຽກຫຼືບໍ່."
       autoremove:
-        description: "The command to run to autoremove packages."
+        description: "ຄຳສັ່ງສຳລັບການລຶບແພັກເກັດແບບອັດຕະໂນມັດ (autoremove)."
       clean:
-        description: "The command to run to clean the package manager's cache."
+        description: "ຄຳສັ່ງສຳລັບການລ້າງແຄດຂອງຕົວຈັດການແພັກເກັດ."
       install:
-        description: "The command to run to install packages."
+        description: "ຄຳສັ່ງສຳລັບການຕິດຕັ້ງແພັກເກັດ."
       list:
-        description: "The command to run to list installed packages."
+        description: "ຄຳສັ່ງສຳລັບການສະແດງລາຍຊື່ແພັກເກັດທີ່ຕິດຕັ້ງແລ້ວ."
       purge:
-        description: "The command to run to purge packages."
+        description: "ຄຳສັ່ງສຳລັບການລຶບລ້າງແພັກເກັດ (purge)."
       remove:
-        description: "The command to run to remove packages."
+        description: "ຄຳສັ່ງສຳລັບການລຶບແພັກເກັດ."
       search:
-        description: "The command to run to search for packages."
+        description: "ຄຳສັ່ງສຳລັບການຄົ້ນຫາແພັກເກັດ."
       show:
-        description: "The command to run to show information about packages."
+        description: "ຄຳສັ່ງສຳລັບການສະແດງຂໍ້ມູນກ່ຽວກັບແພັກເກັດ."
       update:
-        description: "The command to run to update the list of available packages."
+        description: "ຄຳສັ່ງສຳລັບການອັບເດດລາຍຊື່ແພັກເກັດ."
       upgrade:
-        description: "The command to run to upgrade packages."
+        description: "ຄຳສັ່ງສຳລັບການອັບເກຣດແພັກເກັດ."
   update:
-    description: "Update the specified package manager."
+    description: "ອັບເດດຕົວຈັດການແພັກເກັດທີ່ລະບຸ."
     info:
-      success: "Updated package manager '%s'."
-      askNewCommand: "Enter new command for '%s' (leave empty to keep '%s'):"
+      success: "ອັບເດດຕົວຈັດການແພັກເກັດ '%s' ແລ້ວ."
+      askNewCommand: "ປ້ອນຄຳສັ່ງໃໝ່ສຳລັບ '%s' (ປ່ອຍວ່າງເພື່ອໃຊ້ຄ່າເດີມ '%s'):"
     error:
-      noName: "No name specified."
-      missingCommand: "Missing command for %s."
-      builtIn: "Built-in package managers cannot be modified."
+      noName: "ບໍ່ໄດ້ລະບຸຊື່."
+      missingCommand: "ຂາດຄຳສັ່ງສຳລັບ %s."
+      builtIn: "ບໍ່ສາມາດແກ້ໄຂຕົວຈັດການແພັກເກັດທີ່ມີໃນຕົວ (built-in) ໄດ້."
   rm:
-    description: "Remove the specified package manager."
+    description: "ລຶບຕົວຈັດການແພັກເກັດທີ່ລະບຸ."
     error:
-      noName: "No name specified."
-      inUse: "The package manager is used in %d stacks:"
+      noName: "ບໍ່ໄດ້ລະບຸຊື່."
+      inUse: "ຕົວຈັດການແພັກເກັດກຳລັງຖືກໃຊ້ໃນ %d ສະແຕັກ:"
     info:
-      askConfirmation: "Are you sure you want to remove '%s'?"
-      success: "Removed package manager '%s'."
-      aborting: "Aborting removal of package manager '%s'."
+      askConfirmation: "ທ່ານແນ່ໃຈບໍ່ວ່າຕ້ອງການລຶບ '%s'?"
+      success: "ລຶບຕົວຈັດການແພັກເກັດ '%s' ແລ້ວ."
+      aborting: "ຍົກເລີກການລຶບຕົວຈັດການແພັກເກັດ '%s'."
     options:
       force:
-        description: "Force removal of the package manager."
+        description: "ບັງຄັບລຶບຕົວຈັດການແພັກເກັດ."
       name:
-        description: "The name of the package manager to remove."
+        description: "ຊື່ຂອງຕົວຈັດການແພັກເກັດທີ່ຈະລຶບ."
   export:
-    description: "Export the specified package manager."
+    description: "ສົ່ງອອກຕົວຈັດການແພັກເກັດທີ່ລະບຸ."
     error:
-      noName: "No name specified."
-      noOutput: "No output specified."
+      noName: "ບໍ່ໄດ້ລະບຸຊື່."
+      noOutput: "ບໍ່ໄດ້ລະບຸບ່ອນສົ່ງອອກ."
     info:
-      success: "Exported package manager '%s' to '%s'."
+      success: "ສົ່ງອອກຕົວຈັດການແພັກເກັດ '%s' ໄປຍັງ '%s' ແລ້ວ."
     options:
       name:
-        description: "The name of the package manager to export."
+        description: "ຊື່ຂອງຕົວຈັດການແພັກເກັດທີ່ຈະສົ່ງອອກ."
       output:
-        description: "The path to export the package manager to."
+        description: "ເສັ້ນທາງທີ່ຈະສົ່ງອອກຕົວຈັດການແພັກເກັດໄປ."
   import:
-    description: "Import the specified package manager."
+    description: "ນຳເຂົ້າຕົວຈັດການແພັກເກັດທີ່ລະບຸ."
     error:
-      noInput: "No input specified."
-      cannotLoad: "Cannot load package manager from '%s'."
+      noInput: "ບໍ່ໄດ້ລະບຸຂໍ້ມູນນຳເຂົ້າ."
+      cannotLoad: "ບໍ່ສາມາດໂຫຼດຕົວຈັດການແພັກເກັດຈາກ '%s'."
     info:
-      success: "Imported package manager from '%s'."
+      success: "ນຳເຂົ້າຕົວຈັດການແພັກເກັດຈາກ '%s' ແລ້ວ."
     options:
       input:
-        description: "The path to import the package manager from."
+        description: "ເສັ້ນທາງທີ່ຈະນຳເຂົ້າຕົວຈັດການແພັກເກັດ."
 
 stacks:
-  description: "Work with the stacks that are available in apx."
+  description: "ເຮັດວຽກກັບສະແຕັກ (stacks) ທີ່ມີໃນ apx."
   labels:
-    name: "Name"
-    builtIn: "Built-in"
+    name: "ຊື່"
+    builtIn: "ທີ່ມີໃນຕົວ (Built-in)"
   list:
-    description: "List all available stacks."
+    description: "ສະແດງລາຍຊື່ສະແຕັກທັງໝົດທີ່ມີ."
     info:
-      noStacks: "No stacks available. Create a new one with 'apx stacks new' or contact
-        the system administrator."
-      foundStacks: "Found %d stacks:"
-      aborting: "Aborting removal of stack '%s'."
+      noStacks: "ບໍ່ມີສະແຕັກ. ສ້າງໃໝ່ດ້ວຍ 'apx stacks new' ຫຼື ຕິດຕໍ່ຜູ້ຄຸມລະບົບ."
+      foundStacks: "ພົບ %d ສະແຕັກ:"
+      aborting: "ຍົກເລີກການລຶບສະແຕັກ '%s'."
     options:
       json:
-        description: "Output in JSON format."
+        description: "ສະແດງຜົນໃນຮູບແບບ JSON."
   show:
-    description: "Show information about the specified stack."
+    description: "ສະແດງຂໍ້ມູນກ່ຽວກັບສະແຕັກທີ່ລະບຸ."
   new:
-    description: "Create a new stack."
+    description: "ສ້າງສະແຕັກໃໝ່."
     error:
-      emptyName: "The name cannot be empty."
-      noName: "No name specified."
-      emptyBase: "The base cannot be empty."
-      noBase: "No base specified."
-      emptyPkgManager: "The package manager cannot be empty."
-      noPkgManager: "No package manager specified."
-      noPkgManagers: "Could not find any package managers. Create one with 'apx pkgmanagers
-        new' or contact the system administrator."
-      pkgManagerDoesNotExist: "The specified package manager does not exist. Create
-        it with 'apx pkgmanagers new' or contact the system administrator."
-      emptyPackages: "The packages cannot be empty."
-      noPackages: "No packages specified."
-      alreadyExists: "A stack with the name '%s' already exists."
+      emptyName: "ຊື່ຕ້ອງບໍ່ຫວ່າງເປົ່າ."
+      noName: "ບໍ່ໄດ້ລະບຸຊື່."
+      emptyBase: "Base ຕ້ອງບໍ່ຫວ່າງເປົ່າ."
+      noBase: "ບໍ່ໄດ້ລະບຸ Base."
+      emptyPkgManager: "ຕົວຈັດການແພັກເກັດຕ້ອງບໍ່ຫວ່າງເປົ່າ."
+      noPkgManager: "ບໍ່ໄດ້ລະບຸຕົວຈັດການແພັກເກັດ."
+      noPkgManagers: "ບໍ່ພົບຕົວຈັດການແພັກເກັດ. ສ້າງໃໝ່ດ້ວຍ 'apx pkgmanagers new' ຫຼື
+        ຕິດຕໍ່ຜູ້ຄຸມລະບົບ."
+      pkgManagerDoesNotExist: "ຕົວຈັດການແພັກເກັດທີ່ລະບຸບໍ່ມີຢູ່. ສ້າງມັນດ້ວຍ 'apx
+        pkgmanagers new' ຫຼື ຕິດຕໍ່ຜູ້ຄຸມລະບົບ."
+      emptyPackages: "ແພັກເກັດຕ້ອງບໍ່ຫວ່າງເປົ່າ."
+      noPackages: "ບໍ່ໄດ້ລະບຸແພັກເກັດ."
+      alreadyExists: "ສະແຕັກຊື່ '%s' ມີຢູ່ແລ້ວ."
     info:
-      askName: "Choose a name:"
-      askBase: "Choose a base (e.g. 'vanillaos/pico'):"
-      askPkgManager: "Choose a package manager:"
-      selectPkgManager: "Select a package manager [1-%d]:"
-      noPackages: "You have not provided any packages to install in the stack. Do
-        you want to add some now?"
-      confirmPackages: "Do you want to confirm the current packages list?"
-      askPackages: "Please type the packages you want to install in the stack, separated
-        by a space:"
-      success: "Created stack '%s'."
+      askName: "ເລືອກຊື່:"
+      askBase: "ເລືອກ base (ເຊັ່ນ: 'vanillaos/pico'):"
+      askPkgManager: "ເລືອກຕົວຈັດການແພັກເກັດ:"
+      selectPkgManager: "ເລືອກຕົວຈັດການແພັກເກັດ [1-%d]:"
+      noPackages: "ທ່ານຍັງບໍ່ໄດ້ລະບຸແພັກເກັດທີ່ຈະຕິດຕັ້ງໃນສະແຕັກ. ຕ້ອງການເພີ່ມຕອນນີ້ບໍ່?"
+      confirmPackages: "ທ່ານຕ້ອງການຢືນຢັນລາຍຊື່ແພັກເກັດປັດຈຸບັນບໍ່?"
+      askPackages: "ກະລຸນາພິມຊື່ແພັກເກັດທີ່ຕ້ອງການຕິດຕັ້ງໃນສະແຕັກ, ແຍກດ້ວຍຍະຫວ່າງ:"
+      success: "ສ້າງສະແຕັກ '%s' ແລ້ວ."
     options:
       noPrompt:
-        description: "Assume defaults to all prompts."
+        description: "ໃຊ້ຄ່າເລີ່ມຕົ້ນສຳລັບທຸກຄຳຖາມ."
       name:
-        description: "The name of the stack."
+        description: "ຊື່ຂອງສະແຕັກ."
       base:
-        description: "The base distribution image to use. (For a list of compatible
-          images view: https://distrobox.it/compatibility/#containers-distros)"
+        description: "ອິມເມຈ (image) ການແຈກຢາຍພື້ນຖານທີ່ຈະໃຊ້. (ສຳລັບລາຍຊື່ທີ່ຮອງຮັບ
+          ເບິ່ງທີ່: https://distrobox.it/compatibility/#containers-distros)"
       packages:
-        description: "The packages to install."
+        description: "ແພັກເກັດທີ່ຈະຕິດຕັ້ງ."
       pkgManager:
-        description: "The package manager to use."
+        description: "ຕົວຈັດການແພັກເກັດທີ່ຈະໃຊ້."
   update:
-    description: "Update the specified stack."
+    description: "ອັບເດດສະແຕັກທີ່ລະບຸ."
     error:
-      noName: "No name specified."
-      noBase: "No base specified."
-      noPkgManager: "No package manager specified."
-      pkgManagerDoesNotExist: "The specified package manager does not exist. Create
-        it with 'apx pkgmanagers new' or contact the system administrator."
-      builtIn: "Built-in stacks cannot be modified."
+      noName: "ບໍ່ໄດ້ລະບຸຊື່."
+      noBase: "ບໍ່ໄດ້ລະບຸ base."
+      noPkgManager: "ບໍ່ໄດ້ລະບຸຕົວຈັດການແພັກເກັດ."
+      pkgManagerDoesNotExist: "ຕົວຈັດການແພັກເກັດທີ່ລະບຸບໍ່ມີຢູ່. ສ້າງມັນດ້ວຍ 'apx
+        pkgmanagers new' ຫຼື ຕິດຕໍ່ຜູ້ຄຸມລະບົບ."
+      builtIn: "ບໍ່ສາມາດແກ້ໄຂສະແຕັກທີ່ມີໃນຕົວ (built-in) ໄດ້."
     info:
-      askBase: "Type a new base or confirm the current one (%s):"
-      askPkgManager: "Choose a new package manager or confirm the current one (%s):"
-      confirmPackages: "Do you want to update the list of packages?"
-      noPackages: "You have not provided any packages to install in the stack. Do
-        you want to add some now?"
-      askPackages: "Type the packages you want to install in the stack, separated
-        by a space:"
-      success: "Updated stack '%s'."
+      askBase: "ພິມ base ໃໝ່ ຫຼື ຢືນຢັນອັນປັດຈຸບັນ (%s):"
+      askPkgManager: "ເລືອກຕົວຈັດການແພັກເກັດໃໝ່ ຫຼື ຢືນຢັນອັນປັດຈຸບັນ (%s):"
+      confirmPackages: "ທ່ານຕ້ອງການອັບເດດລາຍຊື່ແພັກເກັດບໍ່?"
+      noPackages: "ທ່ານຍັງບໍ່ໄດ້ລະບຸແພັກເກັດທີ່ຈະຕິດຕັ້ງໃນສະແຕັກ. ຕ້ອງການເພີ່ມຕອນນີ້ບໍ່?"
+      askPackages: "ພິມຊື່ແພັກເກັດທີ່ຕ້ອງການຕິດຕັ້ງໃນສະແຕັກ, ແຍກດ້ວຍຍະຫວ່າງ:"
+      success: "ອັບເດດສະແຕັກ '%s' ແລ້ວ."
     options:
       noPrompt:
-        description: "Assume defaults to all prompts."
+        description: "ໃຊ້ຄ່າເລີ່ມຕົ້ນສຳລັບທຸກຄຳຖາມ."
       name:
-        description: "The name of the stack."
+        description: "ຊື່ຂອງສະແຕັກ."
       base:
-        description: "The base subsystem to use."
+        description: "ລະບົບຍ່ອຍພື້ນຖານທີ່ຈະໃຊ້."
       packages:
-        description: "The packages to install."
+        description: "ແພັກເກັດທີ່ຈະຕິດຕັ້ງ."
       pkgManager:
-        description: "The package manager to use."
+        description: "ຕົວຈັດການແພັກເກັດທີ່ຈະໃຊ້."
   rm:
-    description: "Remove the specified stack."
+    description: "ລຶບສະແຕັກທີ່ລະບຸ."
     error:
-      noName: "No name specified."
-      inUse: "The stack is used in %d subsystems:"
+      noName: "ບໍ່ໄດ້ລະບຸຊື່."
+      inUse: "ສະແຕັກກຳລັງຖືກໃຊ້ໃນ %d ລະບົບຍ່ອຍ:"
     info:
-      askConfirmation: "Are you sure you want to remove '%s'?"
-      success: "Removed stack '%s'."
+      askConfirmation: "ທ່ານແນ່ໃຈບໍ່ວ່າຕ້ອງການລຶບ '%s'?"
+      success: "ລຶບສະແຕັກ '%s' ແລ້ວ."
     options:
       force:
-        description: "Force removal of the stack."
+        description: "ບັງຄັບລຶບສະແຕັກ."
       name:
-        description: "The name of the stack to remove."
+        description: "ຊື່ຂອງສະແຕັກທີ່ຈະລຶບ."
   export:
-    description: "Export the specified stack."
+    description: "ສົ່ງອອກສະແຕັກທີ່ລະບຸ."
     error:
-      noName: "No name specified."
-      noOutput: "No output specified."
+      noName: "ບໍ່ໄດ້ລະບຸຊື່."
+      noOutput: "ບໍ່ໄດ້ລະບຸບ່ອນສົ່ງອອກ."
     info:
-      success: "Exported stack '%s' to '%s'."
+      success: "ສົ່ງອອກສະແຕັກ '%s' ໄປຍັງ '%s' ແລ້ວ."
     options:
       name:
-        description: "The name of the stack to export."
+        description: "ຊື່ຂອງສະແຕັກທີ່ຈະສົ່ງອອກ."
       output:
-        description: "The path to export the stack to."
+        description: "ເສັ້ນທາງທີ່ຈະສົ່ງອອກສະແຕັກໄປ."
   import:
-    description: "Import the specified stack."
+    description: "ນຳເຂົ້າສະແຕັກທີ່ລະບຸ."
     error:
-      noInput: "No input specified."
-      cannotLoad: "Cannot load stack from '%s'."
+      noInput: "ບໍ່ໄດ້ລະບຸຂໍ້ມູນນຳເຂົ້າ."
+      cannotLoad: "ບໍ່ສາມາດໂຫຼດສະແຕັກຈາກ '%s'."
     info:
-      success: "Imported stack from '%s'."
+      success: "ນຳເຂົ້າສະແຕັກຈາກ '%s' ແລ້ວ."
     options:
       input:
-        description: "The path to import the stack from."
+        description: "ເສັ້ນທາງທີ່ຈະນຳເຂົ້າສະແຕັກ."
 
 subsystems:
-  description: "Work with the subsystems that are available in apx."
+  description: "ເຮັດວຽກກັບລະບົບຍ່ອຍ (subsystems) ທີ່ມີໃນ apx."
   labels:
-    name: "Name"
-    status: "Status"
+    name: "ຊື່"
+    status: "ສະຖານະ"
 
   list:
-    description: "List all available subsystems."
+    description: "ສະແດງລາຍຊື່ລະບົບຍ່ອຍທັງໝົດທີ່ມີ."
     error:
     info:
-      noSubsystems: "No subsystems available. Create a new one with 'apx subsystems
-        new' or contact the system administrator."
-      foundSubsystems: "Found %d subsystems:"
+      noSubsystems: "ບໍ່ມີລະບົບຍ່ອຍ. ສ້າງໃໝ່ດ້ວຍ 'apx subsystems new' ຫຼື ຕິດຕໍ່ຜູ້ຄຸມລະບົບ."
+      foundSubsystems: "ພົບ %d ລະບົບຍ່ອຍ:"
     options:
       json:
-        description: "Output in JSON format."
+        description: "ສະແດງຜົນໃນຮູບແບບ JSON."
   new:
-    description: "Create a new subsystem."
+    description: "ສ້າງລະບົບຍ່ອຍໃໝ່."
     error:
-      noStacks: "A stack is needed to create a subsystem. Create a new one with 'apx
-        stacks new' or contact the system administrator."
-      emptyName: "The name cannot be empty."
-      forbiddenName: "The name '%s' is forbidden. Please choose a different name"
-      noName: "No name specified."
-      emptyStack: "The stack cannot be empty."
-      noStack: "No stack specified."
-      stackDoesNotExist: "The specified stack does not exist. Create it with 'apx
-        stacks new' or contact the system administrator."
-      alreadyExists: "A subsystem with the name '%s' already exists."
+      noStacks: "ຈຳເປັນຕ້ອງມີສະແຕັກເພື່ອສ້າງລະບົບຍ່ອຍ. ສ້າງໃໝ່ດ້ວຍ 'apx stacks new'
+        ຫຼື ຕິດຕໍ່ຜູ້ຄຸມລະບົບ."
+      emptyName: "ຊື່ຕ້ອງບໍ່ຫວ່າງເປົ່າ."
+      forbiddenName: "ຊື່ '%s' ຖືກຫ້າມ. ກະລຸນາເລືອກຊື່ທີ່ແຕກຕ່າງ"
+      noName: "ບໍ່ໄດ້ລະບຸຊື່."
+      emptyStack: "ສະແຕັກຕ້ອງບໍ່ຫວ່າງເປົ່າ."
+      noStack: "ບໍ່ໄດ້ລະບຸສະແຕັກ."
+      stackDoesNotExist: "ສະແຕັກທີ່ລະບຸບໍ່ມີຢູ່. ສ້າງມັນດ້ວຍ 'apx stacks new' ຫຼື
+        ຕິດຕໍ່ຜູ້ຄຸມລະບົບ."
+      alreadyExists: "ລະບົບຍ່ອຍຊື່ '%s' ມີຢູ່ແລ້ວ."
     info:
-      askName: "Choose a name:"
-      availableStacks: "Available stacks:"
-      selectStack: "Select a stack [1-%d]:"
-      success: "Created subsystem '%s'."
-      creatingSubsystem: "Creating subsystem '%s' with stack '%s'…"
+      askName: "ເລືອກຊື່:"
+      availableStacks: "ສະແຕັກທີ່ມີ:"
+      selectStack: "ເລືອກສະແຕັກ [1-%d]:"
+      success: "ສ້າງລະບົບຍ່ອຍ '%s' ແລ້ວ."
+      creatingSubsystem: "ກຳລັງສ້າງລະບົບຍ່ອຍ '%s' ດ້ວຍສະແຕັກ '%s'…"
     options:
       name:
-        description: "The name of the subsystem."
+        description: "ຊື່ຂອງລະບົບຍ່ອຍ."
       stack:
-        description: "The stack to use."
+        description: "ສະແຕັກທີ່ຈະໃຊ້."
       home:
-        description: "The custom home directory of the subsystem."
+        description: "ໄດເຣັກທໍຣີ home ແບບກຳນົດເອງຂອງລະບົບຍ່ອຍ."
       init:
-        description: "Use systemd inside the subsystem."
+        description: "ໃຊ້ systemd ພາຍໃນລະບົບຍ່ອຍ."
   rm:
-    description: "Remove the specified subsystem."
+    description: "ລຶບລະບົບຍ່ອຍທີ່ລະບຸ."
     error:
-      noName: "No name specified."
+      noName: "ບໍ່ໄດ້ລະບຸຊື່."
     info:
-      askConfirmation: "Are you sure you want to remove '%s'?"
-      success: "Removed subsystem '%s'."
+      askConfirmation: "ທ່ານແນ່ໃຈບໍ່ວ່າຕ້ອງການລຶບ '%s'?"
+      success: "ລຶບລະບົບຍ່ອຍ '%s' ແລ້ວ."
     options:
       force:
-        description: "Force removal of the subsystem."
+        description: "ບັງຄັບລຶບລະບົບຍ່ອຍ."
       name:
-        description: "The name of the subsystem to remove."
+        description: "ຊື່ຂອງລະບົບຍ່ອຍທີ່ຈະລຶບ."
   reset:
-    description: "Reset the specified subsystem."
+    description: "ຣີເຊັດລະບົບຍ່ອຍທີ່ລະບຸ."
     error:
-      noName: "No name specified."
+      noName: "ບໍ່ໄດ້ລະບຸຊື່."
     info:
-      askConfirmation: "Are you sure you want to reset '%s'?"
-      success: "The subsystem '%s' has been reset."
+      askConfirmation: "ທ່ານແນ່ໃຈບໍ່ວ່າຕ້ອງການຣີເຊັດ '%s'?"
+      success: "ລະບົບຍ່ອຍ '%s' ຖືກຣີເຊັດແລ້ວ."
     options:
       force:
-        description: "Force reset of the subsystem."
+        description: "ບັງຄັບຣີເຊັດລະບົບຍ່ອຍ."
       name:
-        description: "The name of the subsystem to reset."
+        description: "ຊື່ຂອງລະບົບຍ່ອຍທີ່ຈະຣີເຊັດ."
