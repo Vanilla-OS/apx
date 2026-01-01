@@ -1,398 +1,404 @@
 apx:
-  description: "Apx is a package manager with support for multiple sources, allowing
-    you to install packages in subsystems."
+  description: "Apx என்பது பல ஆதாரங்களுக்கான ஆதரவுடன் ஒரு தொகுப்பு மேலாளர் ஆகும்,
+    இது துணை அமைப்புகளில் தொகுப்புகளை நிறுவ உங்களை அனுமதிக்கிறது."
   errors:
-    unknownCommand: "Unknown command: %s"
-    invalidInput: "Invalid input."
-    invalidChoice: "Invalid choice."
-    noRoot: "Do not run Apx as root."
+    unknownCommand: "அறியப்படாத கட்டளை: %s"
+    invalidInput: "தவறான உள்ளீடு."
+    invalidChoice: "தவறான தேர்வு."
+    noRoot: "Apx ஐ ரூட்டாக இயக்க வேண்டாம்."
   msg:
-    help: "Show help for apx."
-    version: "Show version for apx."
-    usage: "Usage"
-    aliases: "Aliases"
-    examples: "Examples"
-    availableCommands: "Available Commands"
-    additionalCommands: "Additional Commands"
-    flags: "Flags"
-    globalFlags: "Global Flags"
-    additionalHelpTopics: "Additional help topics"
-    moreInfo: "Use %s for more information about a command"
+    help: "apx க்கான உதவியைக் காட்டு."
+    version: "apxக்கான பதிப்பைக் காட்டு."
+    usage: "பயன்பாடு"
+    aliases: "மாற்றுப்பெயர்கள்"
+    examples: "எடுத்துக்காட்டுகள்"
+    availableCommands: "கிடைக்கும் கட்டளைகள்"
+    additionalCommands: "கூடுதல் கட்டளைகள்"
+    flags: "கொடிகள்"
+    globalFlags: "உலகளாவிய கொடிகள்"
+    additionalHelpTopics: "கூடுதல் உதவி தலைப்புகள்"
+    moreInfo: "கட்டளையைப் பற்றிய கூடுதல் தகவலுக்கு %s ஐப் பயன்படுத்தவும்"
   info:
-    aborting: "Aborting as requested."
+    aborting: "கோரிக்கையின்படி நிறுத்தப்படுகிறது."
   terminal:
-    yes: "yes"
-    no: "no"
+    yes: "ஆம்"
+    no: "இல்லை"
 
 runtimeCommand:
-  description: "Work with the specified subsystem, accessing the package manager and
-    environment."
+  description: "தொகுப்பு மேலாளர் மற்றும் சூழலை அணுகுவதன் மூலம், குறிப்பிட்ட துணை அமைப்புடன்
+    வேலை செய்யுங்கள்."
   error:
-    enteringContainer: "An error occurred while entering the container: %s"
-    noPackageSpecified: "No packages specified."
-    cantAccessPkgManager: "An error occurred while accessing the package manager:
-      %s"
-    executingCommand: "An error occurred while executing the command: %s"
-    noAppNameOrBin: "--app-name or --bin must be specified."
-    sameAppOrBin: "--app-name and --bin cannot be both specified."
-    exportingApp: "An error occurred while exporting the application: %s"
-    exportingBin: "An error occurred while exporting the binary: %s"
-    unexportingApp: "An error occurred while unexporting the application: %s"
-    unexportingBin: "An error occurred while unexporting the binary: %s"
-    startingContainer: "An error occurred while starting the container: %s"
-    stoppingContainer: "An error occurred while stopping the container: %s"
+    enteringContainer: "கொள்கலனுக்குள் நுழையும் போது பிழை ஏற்பட்டது: %s"
+    noPackageSpecified: "தொகுப்புகள் எதுவும் குறிப்பிடப்படவில்லை."
+    cantAccessPkgManager: "தொகுப்பு நிர்வாகியை அணுகும் போது பிழை ஏற்பட்டது: %s"
+    executingCommand: "கட்டளையை இயக்கும் போது பிழை ஏற்பட்டது: %s"
+    noAppNameOrBin: "--app-name அல்லது --bin குறிப்பிடப்பட வேண்டும்."
+    sameAppOrBin: "--app-name மற்றும் --bin இரண்டையும் குறிப்பிட முடியாது."
+    exportingApp: "பயன்பாட்டை ஏற்றுமதி செய்யும் போது பிழை ஏற்பட்டது: %s"
+    exportingBin: "பைனரியை ஏற்றுமதி செய்யும் போது பிழை ஏற்பட்டது: %s"
+    unexportingApp: "பயன்பாடுகளை ஏற்றுமதி செய்யும் போது பிழை ஏற்பட்டது"
+    unexportingBin: "பைனரி ஏற்றுமதியை நீக்கும் போது பிழை ஏற்பட்டது: %s"
+    startingContainer: "கொள்கலனைத் தொடங்கும் போது பிழை ஏற்பட்டது: %s"
+    stoppingContainer: "கொள்கலனை நிறுத்தும்போது பிழை ஏற்பட்டது: %s"
   info:
-    unexportedApps: "Unexported %d applications"
-    exportedApps: "Exported %d applications"
-    exportedApp: "Exported application %s"
-    exportedBin: "Exported binary %s"
-    unexportedApp: "Unexported application %s"
-    unexportedBin: "Unexported binary %s"
-    startingContainer: "Starting subsystem %s…"
-    startedContainer: "Started subsystem."
-    stoppingContainer: "Stopping subsystem %s…"
-    stoppedContainer: "Stopped subsystem."
+    unexportedApps: "ஏற்றுமதி செய்யப்படாத %d பயன்பாடுகள்"
+    exportedApps: "%d பயன்பாடுகள் ஏற்றுமதி செய்யப்பட்டன"
+    exportedApp: "ஏற்றுமதி செய்யப்பட்ட பயன்பாடு %s"
+    exportedBin: "பைனரி %s ஏற்றுமதி செய்யப்பட்டது"
+    unexportedApp: "ஏற்றுமதி செய்யப்படாத பயன்பாடு %s"
+    unexportedBin: "ஏற்றுமதி செய்யப்படாத பைனரி %s"
+    startingContainer: "துணை அமைப்பு %sஐத் தொடங்குகிறது…"
+    startedContainer: "துணை அமைப்பு தொடங்கப்பட்டது."
+    stoppingContainer: "%s துணை அமைப்பை நிறுத்துகிறது…"
+    stoppedContainer: "துணை அமைப்பு நிறுத்தப்பட்டது."
   autoremove:
-    description: "Remove packages that are no longer required."
+    description: "இனி தேவைப்படாத தொகுப்புகளை அகற்றவும்."
   clean:
-    description: "Clean the package manager's cache."
+    description: "தொகுப்பு மேலாளரின் தற்காலிக சேமிப்பை தூய்மை செய்யவும்."
   install:
-    description: "Install the specified package."
+    description: "குறிப்பிட்ட தொகுப்பை நிறுவவும்."
     options:
       noExport:
-        description: "Do not export a desktop entry."
+        description: "டெச்க்டாப் உள்ளீட்டை ஏற்றுமதி செய்ய வேண்டாம்."
   list:
-    description: "List all installed packages."
+    description: "நிறுவப்பட்ட அனைத்து தொகுப்புகளையும் பட்டியலிடுங்கள்."
   purge:
-    description: "Purge the specified packages."
+    description: "குறிப்பிட்ட தொகுப்புகளை அகற்றவும்."
   remove:
-    description: "Remove the specified packages."
+    description: "குறிப்பிட்ட தொகுப்புகளை அகற்றவும்."
   search:
-    description: "Search for packages matching the specified query."
+    description: "குறிப்பிட்ட வினவலுடன் பொருந்தக்கூடிய தொகுப்புகளைத் தேடவும்."
   show:
-    description: "Show information about the specified package."
+    description: "குறிப்பிட்ட தொகுப்பு பற்றிய தகவலைக் காட்டு."
   update:
-    description: "Update the list of available packages."
+    description: "கிடைக்கக்கூடிய தொகுப்புகளின் பட்டியலைப் புதுப்பிக்கவும்."
   upgrade:
-    description: "Upgrade all installed packages."
+    description: "நிறுவப்பட்ட அனைத்து தொகுப்புகளையும் மேம்படுத்தவும்."
   run:
-    description: "Run command inside subsystem."
+    description: "துணை அமைப்புக்குள் கட்டளையை இயக்கவும்."
   enter:
-    description: "Enter the subsystem's environment."
+    description: "துணை அமைப்பின் சூழலை உள்ளிடவும்."
   export:
-    description: "Export an application or binary from the subsystem to the host."
+    description: "துணை அமைப்பிலிருந்து ஓச்டுக்கு ஒரு பயன்பாடு அல்லது பைனரியை ஏற்றுமதி
+      செய்யவும்."
     options:
       appName:
-        description: "The name of the application to export."
+        description: "ஏற்றுமதி செய்வதற்கான பயன்பாட்டின் பெயர்."
       bin:
-        description: "The name of the binary to export."
+        description: "ஏற்றுமதி செய்ய பைனரியின் பெயர்."
       binOutput:
-        description: "Path of the binary output (default: ~/.local/bin/)."
+        description: "பைனரி வெளியீட்டின் பாதை (இயல்புநிலை: ~/.local/bin/)."
   unexport:
-    description: "Unexport an application or binary from the host."
+    description: "ஓச்டிலிருந்து ஒரு பயன்பாடு அல்லது பைனரி ஏற்றுமதியை நீக்கவும்."
     options:
       appName:
-        description: "The name of the application to unexport."
+        description: "ஏற்றுமதியை நீக்குவதற்கான பயன்பாட்டின் பெயர்."
       bin:
-        description: "The name of the binary to unexport."
+        description: "ஏற்றுமதி செய்யாத பைனரியின் பெயர்."
       binOutput:
-        description: "Path of the binary output (default: ~/.local/bin/)."
+        description: "பைனரி வெளியீட்டின் பாதை (இயல்புநிலை: ~/.local/bin/)."
   start:
-    description: "Start the subsystem."
+    description: "துணை அமைப்பைத் தொடங்கவும்."
   stop:
-    description: "Stop the subsystem."
+    description: "துணை அமைப்பை நிறுத்து."
 
 pkgmanagers:
-  description: "Work with the package managers that are available in apx."
+  description: "apx இல் கிடைக்கும் தொகுப்பு மேலாளர்களுடன் வேலை செய்யுங்கள்."
   labels:
-    name: "Name"
-    builtIn: "Built-in"
+    name: "பெயர்"
+    builtIn: "உள்ளமைக்கப்பட்ட"
   list:
-    description: "List all available package managers."
+    description: "கிடைக்கக்கூடிய அனைத்து தொகுப்பு மேலாளர்களையும் பட்டியலிடுங்கள்."
     info:
-      noPkgManagers: "No package managers available. Create a new one with 'apx pkgmanagers
-        new' or contact the system administrator."
-      foundPkgManagers: "Found %d package managers"
+      noPkgManagers: "தொகுப்பு மேலாளர்கள் இல்லை. 'apx pkgmanagers new' உடன் புதிய
+        ஒன்றை உருவாக்கவும் அல்லது கணினி நிர்வாகியைத் தொடர்பு கொள்ளவும்."
+      foundPkgManagers: "%d தொகுப்பு நிர்வாகிகள் உள்ளனர்"
     options:
       json:
-        description: "Output in JSON format."
+        description: "சாதொபொகு வடிவத்தில் வெளியீடு."
   show:
-    description: "Show information about the specified package manager."
+    description: "குறிப்பிட்ட தொகுப்பு மேலாளர் பற்றிய தகவலைக் காட்டு."
   new:
-    description: "Create a new package manager."
-    success: "Package manager %s created successfully."
+    description: "புதிய தொகுப்பு மேலாளரை உருவாக்கவும்."
+    success: "தொகுப்பு மேலாளர் %s வெற்றிகரமாக உருவாக்கப்பட்டது."
     error:
-      emptyName: "The name cannot be empty."
-      noName: "No name specified."
-      emptyCommand: "The command cannot be empty."
-      noCommand: "No command specified for '%s'."
-      alreadyExists: "A package manager with the name '%s' already exists."
+      emptyName: "பெயர் காலியாக இருக்க முடியாது."
+      noName: "பெயர் குறிப்பிடப்படவில்லை."
+      emptyCommand: "கட்டளை காலியாக இருக்க முடியாது."
+      noCommand: "'%s'க்கு எந்த கட்டளையும் குறிப்பிடப்படவில்லை."
+      alreadyExists: "'%s' என்ற பெயரில் ஒரு தொகுப்பு மேலாளர் ஏற்கனவே உள்ளது."
     info:
-      askName: "Choose a name:"
-      askSudo: "Does the package manager need sudo to run?"
-      askCommand: "Enter the command for '%s':"
-      askCommandWithDefault: "Enter the command for '%s' (default: '%s'):"
-      askOverwrite: "A package manager with the name '%s' already exists. Overwrite
-        it?"
+      askName: "ஒரு பெயரை தேர்வு செய்யவும்:"
+      askSudo: "தொகுப்பு மேலாளருக்கு இயக்க சூடோ தேவையா?"
+      askCommand: "'%s' க்கான கட்டளையை உள்ளிடவும்:"
+      askCommandWithDefault: "'%s' க்கான கட்டளையை உள்ளிடவும் (இயல்புநிலை: '%s'):"
+      askOverwrite: "'%s' என்ற பெயரில் ஒரு தொகுப்பு மேலாளர் ஏற்கனவே உள்ளது. மேலெழுதவா?"
     options:
       noPrompt:
-        description: "Assume defaults to all prompts."
+        description: "அனைத்து அறிவுறுத்தல்களுக்கும் இயல்புநிலையை எடுத்துக் கொள்ளுங்கள்."
       name:
-        description: "The name of the package manager."
+        description: "தொகுப்பு மேலாளரின் பெயர்."
       needSudo:
-        description: "Whether the package manager needs sudo to run."
+        description: "பேக்கேச் மேனேசருக்கு இயக்க சூடோ தேவையா."
       autoremove:
-        description: "The command to run to autoremove packages."
+        description: "தொகுப்புகளை தானாக அகற்ற இயக்க கட்டளை."
       clean:
-        description: "The command to run to clean the package manager's cache."
+        description: "தொகுப்பு மேலாளரின் தற்காலிக சேமிப்பை தூய்மை செய்ய இயக்குவதற்கான
+          கட்டளை."
       install:
-        description: "The command to run to install packages."
+        description: "தொகுப்புகளை நிறுவ இயக்க கட்டளை."
       list:
-        description: "The command to run to list installed packages."
+        description: "நிறுவப்பட்ட தொகுப்புகளை பட்டியலிட இயக்க கட்டளை."
       purge:
-        description: "The command to run to purge packages."
+        description: "தொகுப்புகளை சுத்தப்படுத்த இயக்க கட்டளை."
       remove:
-        description: "The command to run to remove packages."
+        description: "தொகுப்புகளை அகற்ற இயக்க கட்டளை."
       search:
-        description: "The command to run to search for packages."
+        description: "தொகுப்புகளைத் தேட இயக்க கட்டளை."
       show:
-        description: "The command to run to show information about packages."
+        description: "தொகுப்புகளைப் பற்றிய தகவலைக் காட்ட இயக்க கட்டளை."
       update:
-        description: "The command to run to update the list of available packages."
+        description: "கிடைக்கக்கூடிய தொகுப்புகளின் பட்டியலைப் புதுப்பிக்க இயக்க வேண்டிய
+          கட்டளை."
       upgrade:
-        description: "The command to run to upgrade packages."
+        description: "தொகுப்புகளை மேம்படுத்த இயக்க கட்டளை."
   update:
-    description: "Update the specified package manager."
+    description: "குறிப்பிட்ட தொகுப்பு மேலாளரைப் புதுப்பிக்கவும்."
     info:
-      success: "Updated package manager '%s'."
-      askNewCommand: "Enter new command for '%s' (leave empty to keep '%s'):"
+      success: "புதுப்பிக்கப்பட்ட தொகுப்பு மேலாளர் '%s'."
+      askNewCommand: "'%s'க்கான புதிய கட்டளையை உள்ளிடவும் ('%s' ஐ வைத்திருக்க காலியாக
+        விடவும்):"
     error:
-      noName: "No name specified."
-      missingCommand: "Missing command for %s."
-      builtIn: "Built-in package managers cannot be modified."
+      noName: "பெயர் குறிப்பிடப்படவில்லை."
+      missingCommand: "%sக்கான கட்டளை இல்லை."
+      builtIn: "உள்ளமைக்கப்பட்ட தொகுப்பு மேலாளர்களை மாற்ற முடியாது."
   rm:
-    description: "Remove the specified package manager."
+    description: "குறிப்பிட்ட தொகுப்பு மேலாளரை அகற்றவும்."
     error:
-      noName: "No name specified."
-      inUse: "The package manager is used in %d stacks:"
+      noName: "பெயர் குறிப்பிடப்படவில்லை."
+      inUse: "தொகுப்பு மேலாளர் %d அடுக்குகளில் பயன்படுத்தப்படுகிறது:"
     info:
-      askConfirmation: "Are you sure you want to remove '%s'?"
-      success: "Removed package manager '%s'."
-      aborting: "Aborting removal of package manager '%s'."
+      askConfirmation: "'%s' ஐ நிச்சயமாக அகற்ற விரும்புகிறீர்களா?"
+      success: "தொகுப்பு மேலாளர் '%s' அகற்றப்பட்டது."
+      aborting: "தொகுப்பு மேலாளர் '%s' ஐ அகற்றுவதை நிறுத்துகிறது."
     options:
       force:
-        description: "Force removal of the package manager."
+        description: "தொகுப்பு மேலாளரின் கட்டாய நீக்கம்."
       name:
-        description: "The name of the package manager to remove."
+        description: "அகற்ற வேண்டிய தொகுப்பு மேலாளரின் பெயர்."
   export:
-    description: "Export the specified package manager."
+    description: "குறிப்பிட்ட தொகுப்பு மேலாளரை ஏற்றுமதி செய்யவும்."
     error:
-      noName: "No name specified."
-      noOutput: "No output specified."
+      noName: "பெயர் குறிப்பிடப்படவில்லை."
+      noOutput: "வெளியீடு குறிப்பிடப்படவில்லை."
     info:
-      success: "Exported package manager '%s' to '%s'."
+      success: "தொகுப்பு மேலாளர் '%s' க்கு '%s' க்கு ஏற்றுமதி செய்யப்பட்டது."
     options:
       name:
-        description: "The name of the package manager to export."
+        description: "ஏற்றுமதி செய்ய வேண்டிய தொகுப்பு மேலாளரின் பெயர்."
       output:
-        description: "The path to export the package manager to."
+        description: "தொகுப்பு மேலாளரை ஏற்றுமதி செய்வதற்கான பாதை."
   import:
-    description: "Import the specified package manager."
+    description: "குறிப்பிட்ட தொகுப்பு மேலாளரை இறக்குமதி செய்யவும்."
     error:
-      noInput: "No input specified."
-      cannotLoad: "Cannot load package manager from '%s'."
+      noInput: "உள்ளீடு எதுவும் குறிப்பிடப்படவில்லை."
+      cannotLoad: "'%s' இலிருந்து தொகுப்பு நிர்வாகியை ஏற்ற முடியவில்லை."
     info:
-      success: "Imported package manager from '%s'."
+      success: "'%s' இலிருந்து இறக்குமதி செய்யப்பட்ட தொகுப்பு மேலாளர்."
     options:
       input:
-        description: "The path to import the package manager from."
+        description: "தொகுப்பு மேலாளரை இறக்குமதி செய்வதற்கான பாதை."
 
 stacks:
-  description: "Work with the stacks that are available in apx."
+  description: "apx இல் கிடைக்கும் அடுக்குகளுடன் வேலை செய்யுங்கள்."
   labels:
-    name: "Name"
-    builtIn: "Built-in"
+    name: "பெயர்"
+    builtIn: "உள்ளமைக்கப்பட்ட"
   list:
-    description: "List all available stacks."
+    description: "கிடைக்கக்கூடிய அனைத்து அடுக்குகளையும் பட்டியலிடுங்கள்."
     info:
-      noStacks: "No stacks available. Create a new one with 'apx stacks new' or contact
-        the system administrator."
-      foundStacks: "Found %d stacks:"
-      aborting: "Aborting removal of stack '%s'."
+      noStacks: "அடுக்குகள் இல்லை. 'apx stacks new' உடன் புதிய ஒன்றை உருவாக்கவும்
+        அல்லது கணினி நிர்வாகியைத் தொடர்பு கொள்ளவும்."
+      foundStacks: "%d அடுக்குகள் உள்ளன:"
+      aborting: "'%s' அடுக்கை அகற்றுவதை நிறுத்துகிறது."
     options:
       json:
-        description: "Output in JSON format."
+        description: "சாதொபொகு வடிவத்தில் வெளியீடு."
   show:
-    description: "Show information about the specified stack."
+    description: "குறிப்பிட்ட அடுக்கைப் பற்றிய தகவலைக் காட்டு."
   new:
-    description: "Create a new stack."
+    description: "புதிய அடுக்கை உருவாக்கவும்."
     error:
-      emptyName: "The name cannot be empty."
-      noName: "No name specified."
-      emptyBase: "The base cannot be empty."
-      noBase: "No base specified."
-      emptyPkgManager: "The package manager cannot be empty."
-      noPkgManager: "No package manager specified."
-      noPkgManagers: "Could not find any package managers. Create one with 'apx pkgmanagers
-        new' or contact the system administrator."
-      pkgManagerDoesNotExist: "The specified package manager does not exist. Create
-        it with 'apx pkgmanagers new' or contact the system administrator."
-      emptyPackages: "The packages cannot be empty."
-      noPackages: "No packages specified."
-      alreadyExists: "A stack with the name '%s' already exists."
+      emptyName: "பெயர் காலியாக இருக்க முடியாது."
+      noName: "பெயர் குறிப்பிடப்படவில்லை."
+      emptyBase: "அடித்தளம் காலியாக இருக்க முடியாது."
+      noBase: "எந்த அடிப்படையும் குறிப்பிடப்படவில்லை."
+      emptyPkgManager: "தொகுப்பு மேலாளர் காலியாக இருக்க முடியாது."
+      noPkgManager: "தொகுப்பு மேலாளர் குறிப்பிடப்படவில்லை."
+      noPkgManagers: "தொகுப்பு நிர்வாகிகள் எதையும் கண்டுபிடிக்க முடியவில்லை. 'apx
+        pkgmanagers new' உடன் ஒன்றை உருவாக்கவும் அல்லது கணினி நிர்வாகியைத் தொடர்பு
+        கொள்ளவும்."
+      pkgManagerDoesNotExist: "குறிப்பிட்ட தொகுப்பு மேலாளர் இல்லை. அதை 'apx pkgmanagers
+        new' மூலம் உருவாக்கவும் அல்லது கணினி நிர்வாகியைத் தொடர்பு கொள்ளவும்."
+      emptyPackages: "தொகுப்புகள் காலியாக இருக்கக்கூடாது."
+      noPackages: "தொகுப்புகள் எதுவும் குறிப்பிடப்படவில்லை."
+      alreadyExists: "'%s' என்ற பெயரில் ஒரு அடுக்கு ஏற்கனவே உள்ளது."
     info:
-      askName: "Choose a name:"
-      askBase: "Choose a base (e.g. 'vanillaos/pico'):"
-      askPkgManager: "Choose a package manager:"
-      selectPkgManager: "Select a package manager [1-%d]:"
-      noPackages: "You have not provided any packages to install in the stack. Do
-        you want to add some now?"
-      confirmPackages: "Do you want to confirm the current packages list?"
-      askPackages: "Please type the packages you want to install in the stack, separated
-        by a space:"
-      success: "Created stack '%s'."
+      askName: "ஒரு பெயரை தேர்வு செய்யவும்:"
+      askBase: "ஒரு தளத்தைத் தேர்ந்தெடுக்கவும் (எ.கா. 'வெண்ணிலாச்/பிகோ'):"
+      askPkgManager: "தொகுப்பு மேலாளரைத் தேர்ந்தெடுக்கவும்:"
+      selectPkgManager: "தொகுப்பு மேலாளரைத் தேர்ந்தெடுக்கவும் [1-%d]:"
+      noPackages: "அடுக்கில் நிறுவுவதற்கு நீங்கள் எந்த தொகுப்புகளையும் வழங்கவில்லை.
+        இப்போது சிலவற்றைச் சேர்க்க விரும்புகிறீர்களா?"
+      confirmPackages: "தற்போதைய தொகுப்புகளின் பட்டியலை உறுதிப்படுத்த விரும்புகிறீர்களா?"
+      askPackages: "ச்பேசால் பிரிக்கப்பட்ட அடுக்கில் நீங்கள் நிறுவ விரும்பும் தொகுப்புகளை
+        தட்டச்சு செய்யவும்:"
+      success: "'%s' அடுக்கு உருவாக்கப்பட்டது."
     options:
       noPrompt:
-        description: "Assume defaults to all prompts."
+        description: "அனைத்து அறிவுறுத்தல்களுக்கும் இயல்புநிலையை எடுத்துக் கொள்ளுங்கள்."
       name:
-        description: "The name of the stack."
+        description: "அடுக்கின் பெயர்."
       base:
-        description: "The base distribution image to use. (For a list of compatible
-          images view: https://distrobox.it/compatibility/#containers-distros)"
+        description: "பயன்படுத்த வேண்டிய அடிப்படை விநியோகப் படம். (இணக்கமான படங்களின்
+          பட்டியலுக்கு பார்க்க: https://distrobox.it/compatibility/#containers-distros)"
       packages:
-        description: "The packages to install."
+        description: "நிறுவ வேண்டிய தொகுப்புகள்."
       pkgManager:
-        description: "The package manager to use."
+        description: "பயன்படுத்த வேண்டிய தொகுப்பு மேலாளர்."
   update:
-    description: "Update the specified stack."
+    description: "குறிப்பிட்ட அடுக்கைப் புதுப்பிக்கவும்."
     error:
-      noName: "No name specified."
-      noBase: "No base specified."
-      noPkgManager: "No package manager specified."
-      pkgManagerDoesNotExist: "The specified package manager does not exist. Create
-        it with 'apx pkgmanagers new' or contact the system administrator."
-      builtIn: "Built-in stacks cannot be modified."
+      noName: "பெயர் குறிப்பிடப்படவில்லை."
+      noBase: "எந்த அடிப்படையும் குறிப்பிடப்படவில்லை."
+      noPkgManager: "தொகுப்பு மேலாளர் குறிப்பிடப்படவில்லை."
+      pkgManagerDoesNotExist: "குறிப்பிட்ட தொகுப்பு மேலாளர் இல்லை. அதை 'apx pkgmanagers
+        new' மூலம் உருவாக்கவும் அல்லது கணினி நிர்வாகியைத் தொடர்பு கொள்ளவும்."
+      builtIn: "உள்ளமைக்கப்பட்ட அடுக்குகளை மாற்ற முடியாது."
     info:
-      askBase: "Type a new base or confirm the current one (%s):"
-      askPkgManager: "Choose a new package manager or confirm the current one (%s):"
-      confirmPackages: "Do you want to update the list of packages?"
-      noPackages: "You have not provided any packages to install in the stack. Do
-        you want to add some now?"
-      askPackages: "Type the packages you want to install in the stack, separated
-        by a space:"
-      success: "Updated stack '%s'."
+      askBase: "புதிய தளத்தைத் தட்டச்சு செய்யவும் அல்லது தற்போதைய ஒன்றை உறுதிப்படுத்தவும்
+        (%s):"
+      askPkgManager: "புதிய தொகுப்பு மேலாளரைத் தேர்வு செய்யவும் அல்லது தற்போதைய ஒன்றை
+        (%s) உறுதிப்படுத்தவும்:"
+      confirmPackages: "தொகுப்புகளின் பட்டியலைப் புதுப்பிக்க விரும்புகிறீர்களா?"
+      noPackages: "அடுக்கில் நிறுவுவதற்கு நீங்கள் எந்த தொகுப்புகளையும் வழங்கவில்லை.
+        இப்போது சிலவற்றைச் சேர்க்க விரும்புகிறீர்களா?"
+      askPackages: "நீங்கள் நிறுவ விரும்பும் தொகுப்புகளை அடுக்கில் உள்ளிடவும், இடைவெளியால்
+        பிரிக்கவும்:"
+      success: "புதுப்பிக்கப்பட்ட அடுக்கு '%s'."
     options:
       noPrompt:
-        description: "Assume defaults to all prompts."
+        description: "அனைத்து அறிவுறுத்தல்களுக்கும் இயல்புநிலையை எடுத்துக் கொள்ளுங்கள்."
       name:
-        description: "The name of the stack."
+        description: "அடுக்கின் பெயர்."
       base:
-        description: "The base subsystem to use."
+        description: "பயன்படுத்த அடிப்படை துணை அமைப்பு."
       packages:
-        description: "The packages to install."
+        description: "நிறுவ வேண்டிய தொகுப்புகள்."
       pkgManager:
-        description: "The package manager to use."
+        description: "பயன்படுத்த வேண்டிய தொகுப்பு மேலாளர்."
   rm:
-    description: "Remove the specified stack."
+    description: "குறிப்பிட்ட அடுக்கை அகற்றவும்."
     error:
-      noName: "No name specified."
-      inUse: "The stack is used in %d subsystems:"
+      noName: "பெயர் குறிப்பிடப்படவில்லை."
+      inUse: "அடுக்கு %d துணை அமைப்புகளில் பயன்படுத்தப்படுகிறது:"
     info:
-      askConfirmation: "Are you sure you want to remove '%s'?"
-      success: "Removed stack '%s'."
+      askConfirmation: "'%s' ஐ நிச்சயமாக அகற்ற விரும்புகிறீர்களா?"
+      success: "'%s' அடுக்கு அகற்றப்பட்டது."
     options:
       force:
-        description: "Force removal of the stack."
+        description: "அடுக்கை வலுக்கட்டாயமாக அகற்றுதல்."
       name:
-        description: "The name of the stack to remove."
+        description: "அகற்ற வேண்டிய அடுக்கின் பெயர்."
   export:
-    description: "Export the specified stack."
+    description: "குறிப்பிட்ட அடுக்கை ஏற்றுமதி செய்யவும்."
     error:
-      noName: "No name specified."
-      noOutput: "No output specified."
+      noName: "பெயர் குறிப்பிடப்படவில்லை."
+      noOutput: "வெளியீடு குறிப்பிடப்படவில்லை."
     info:
-      success: "Exported stack '%s' to '%s'."
+      success: "'%s' அடுக்கு '%s'க்கு ஏற்றுமதி செய்யப்பட்டது."
     options:
       name:
-        description: "The name of the stack to export."
+        description: "ஏற்றுமதி செய்ய வேண்டிய அடுக்கின் பெயர்."
       output:
-        description: "The path to export the stack to."
+        description: "ச்டாக்கை ஏற்றுமதி செய்வதற்கான பாதை."
   import:
-    description: "Import the specified stack."
+    description: "குறிப்பிட்ட அடுக்கை இறக்குமதி செய்யவும்."
     error:
-      noInput: "No input specified."
-      cannotLoad: "Cannot load stack from '%s'."
+      noInput: "உள்ளீடு எதுவும் குறிப்பிடப்படவில்லை."
+      cannotLoad: "'%s' இலிருந்து அடுக்கை ஏற்ற முடியவில்லை."
     info:
-      success: "Imported stack from '%s'."
+      success: "'%s' இலிருந்து ச்டாக் இறக்குமதி செய்யப்பட்டது."
     options:
       input:
-        description: "The path to import the stack from."
+        description: "ச்டாக்கை இறக்குமதி செய்வதற்கான பாதை."
 
 subsystems:
-  description: "Work with the subsystems that are available in apx."
+  description: "apx இல் கிடைக்கும் துணை அமைப்புகளுடன் வேலை செய்யுங்கள்."
   labels:
-    name: "Name"
-    status: "Status"
+    name: "பெயர்"
+    status: "நிலை"
 
   list:
-    description: "List all available subsystems."
+    description: "கிடைக்கக்கூடிய அனைத்து துணை அமைப்புகளையும் பட்டியலிடுங்கள்."
     error:
     info:
-      noSubsystems: "No subsystems available. Create a new one with 'apx subsystems
-        new' or contact the system administrator."
-      foundSubsystems: "Found %d subsystems:"
+      noSubsystems: "துணை அமைப்புகள் எதுவும் இல்லை. 'apx subsystems new' உடன் புதிய
+        ஒன்றை உருவாக்கவும் அல்லது கணினி நிர்வாகியைத் தொடர்பு கொள்ளவும்."
+      foundSubsystems: "%d துணை அமைப்புகள் உள்ளன:"
     options:
       json:
-        description: "Output in JSON format."
+        description: "சாதொபொகு வடிவத்தில் வெளியீடு."
   new:
-    description: "Create a new subsystem."
+    description: "புதிய துணை அமைப்பை உருவாக்கவும்."
     error:
-      noStacks: "A stack is needed to create a subsystem. Create a new one with 'apx
-        stacks new' or contact the system administrator."
-      emptyName: "The name cannot be empty."
-      forbiddenName: "The name '%s' is forbidden. Please choose a different name"
-      noName: "No name specified."
-      emptyStack: "The stack cannot be empty."
-      noStack: "No stack specified."
-      stackDoesNotExist: "The specified stack does not exist. Create it with 'apx
-        stacks new' or contact the system administrator."
-      alreadyExists: "A subsystem with the name '%s' already exists."
+      noStacks: "ஒரு துணை அமைப்பை உருவாக்க ஒரு அடுக்கு தேவை. 'apx stacks new' உடன்
+        புதிய ஒன்றை உருவாக்கவும் அல்லது கணினி நிர்வாகியைத் தொடர்பு கொள்ளவும்."
+      emptyName: "பெயர் காலியாக இருக்க முடியாது."
+      forbiddenName: "'%s' என்ற பெயர் தடைசெய்யப்பட்டுள்ளது. தயவுசெய்து வேறு பெயரைத்
+        தேர்ந்தெடுக்கவும்"
+      noName: "பெயர் குறிப்பிடப்படவில்லை."
+      emptyStack: "ச்டாக் காலியாக இருக்க முடியாது."
+      noStack: "ச்டாக் எதுவும் குறிப்பிடப்படவில்லை."
+      stackDoesNotExist: "குறிப்பிடப்பட்ட அடுக்கு இல்லை. 'apx stacks new' உடன் உருவாக்கவும்
+        அல்லது கணினி நிர்வாகியைத் தொடர்பு கொள்ளவும்."
+      alreadyExists: "'%s' என்ற பெயரில் ஒரு துணை அமைப்பு ஏற்கனவே உள்ளது."
     info:
-      askName: "Choose a name:"
-      availableStacks: "Available stacks:"
-      selectStack: "Select a stack [1-%d]:"
-      success: "Created subsystem '%s'."
-      creatingSubsystem: "Creating subsystem '%s' with stack '%s'…"
+      askName: "ஒரு பெயரை தேர்வு செய்யவும்:"
+      availableStacks: "கிடைக்கும் அடுக்குகள்:"
+      selectStack: "ஒரு அடுக்கைத் தேர்ந்தெடு [1-%d]:"
+      success: "'%s' துணை அமைப்பு உருவாக்கப்பட்டது."
+      creatingSubsystem: "'%s' அடுக்குடன் '%s' துணை அமைப்பை உருவாக்குகிறது…"
     options:
       name:
-        description: "The name of the subsystem."
+        description: "துணை அமைப்பின் பெயர்."
       stack:
-        description: "The stack to use."
+        description: "பயன்படுத்த வேண்டிய அடுக்கு."
       home:
-        description: "The custom home directory of the subsystem."
+        description: "துணை அமைப்பின் தனிப்பயன் முகப்பு அடைவு."
       init:
-        description: "Use systemd inside the subsystem."
+        description: "துணை அமைப்பில் systemd ஐப் பயன்படுத்தவும்."
   rm:
-    description: "Remove the specified subsystem."
+    description: "குறிப்பிட்ட துணை அமைப்பை அகற்று."
     error:
-      noName: "No name specified."
+      noName: "பெயர் குறிப்பிடப்படவில்லை."
     info:
-      askConfirmation: "Are you sure you want to remove '%s'?"
-      success: "Removed subsystem '%s'."
+      askConfirmation: "'%s' ஐ நிச்சயமாக அகற்ற விரும்புகிறீர்களா?"
+      success: "'%s' துணை அமைப்பு அகற்றப்பட்டது."
     options:
       force:
-        description: "Force removal of the subsystem."
+        description: "துணை அமைப்பை வலுக்கட்டாயமாக அகற்றுதல்."
       name:
-        description: "The name of the subsystem to remove."
+        description: "அகற்ற வேண்டிய துணை அமைப்பின் பெயர்."
   reset:
-    description: "Reset the specified subsystem."
+    description: "குறிப்பிட்ட துணை அமைப்பை மீட்டமைக்கவும்."
     error:
-      noName: "No name specified."
+      noName: "பெயர் குறிப்பிடப்படவில்லை."
     info:
-      askConfirmation: "Are you sure you want to reset '%s'?"
-      success: "The subsystem '%s' has been reset."
+      askConfirmation: "'%s' ஐ நிச்சயமாக மீட்டமைக்க விரும்புகிறீர்களா?"
+      success: "துணை அமைப்பு '%s' மீட்டமைக்கப்பட்டது."
     options:
       force:
-        description: "Force reset of the subsystem."
+        description: "துணை அமைப்பின் கட்டாய மீட்டமைப்பு."
       name:
-        description: "The name of the subsystem to reset."
+        description: "மீட்டமைக்க வேண்டிய துணை அமைப்பின் பெயர்."
