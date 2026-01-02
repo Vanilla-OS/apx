@@ -16,6 +16,8 @@ import (
 	"os"
 	"os/exec"
 	"strings"
+
+	"github.com/vanilla-os/apx/v2/settings"
 )
 
 func (a *Apx) EssentialChecks() error {
@@ -48,7 +50,7 @@ Please refer to our documentation at https://documentation.vanillaos.org/`)
 }
 
 func (a *Apx) CheckContainerTools() error {
-	_, err := os.Stat(a.Cnf.DistroboxPath)
+	err := settings.TestFile(a.Cnf.DistroboxPath)
 	if err != nil {
 		if os.IsNotExist(err) {
 			return errors.New("distrobox is not installed")
@@ -56,8 +58,8 @@ func (a *Apx) CheckContainerTools() error {
 		return err
 	}
 
-	if _, err := exec.LookPath("docker"); err != nil {
-		if _, err := exec.LookPath("podman"); err != nil {
+	if _, err := settings.LookPath("docker"); err != nil {
+		if _, err := settings.LookPath("podman"); err != nil {
 			return errors.New("container engine (docker or podman) not found")
 		}
 	}
