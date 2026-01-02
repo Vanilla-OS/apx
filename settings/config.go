@@ -14,6 +14,7 @@ import (
 	"os"
 	"os/exec"
 	"path/filepath"
+	"strings"
 
 	"github.com/spf13/viper"
 )
@@ -52,6 +53,9 @@ func GetApxDefaultConfig() (*Config, error) {
 	viper.AddConfigPath("/etc/apx/")
 	viper.AddConfigPath("/usr/share/apx/")
 
+    // flatpak paths
+    viper.AddConfigPath("/app/share/apx/")
+
 	viper.SetConfigName("apx")
 	viper.SetConfigType("json")
 
@@ -67,10 +71,10 @@ func GetApxDefaultConfig() (*Config, error) {
 
 	distroboxPath := viper.GetString("distroboxPath")
 
-	_, err = os.Stat(distroboxPath)
+	err = TestFile(distroboxPath)
 	if err != nil {
 		if os.IsNotExist(err) {
-			path, err := exec.LookPath("distrobox")
+			path, err := LookPath("distrobox")
 			if err != nil {
 				fmt.Printf("Unable to find distrobox in PATH.\n")
 			} else {
@@ -129,4 +133,33 @@ func UserDataDir() (string, error) {
 		return "", err
 	}
 	return filepath.Join(userHome, ".local", "share"), nil
+}
+
+func IsFlatpak() bool {
+	id := os.Getenv("FLATPAK_ID")
+	return id != ""
+}
+
+func TestFile(path string) error {
+	if IsFlatpak() {
+		cmd := exec.Command("flatpak-spawn", "--host", "test", "-f", path)
+		if err := cmd.Run(); err != nil {
+			return os.ErrNotExist
+		}
+		return nil
+	}
+	_, err := os.Stat(path)
+	return err
+}
+
+func LookPath(file string) (string, error) {
+	if IsFlatpak() {
+		cmd := exec.Command("flatpak-spawn", "--host", "which", file)
+		output, err := cmd.Output()
+		if err != nil {
+			return "", err
+		}
+		return strings.TrimSpace(string(output)), nil
+	}
+	return exec.LookPath(file)
 }
