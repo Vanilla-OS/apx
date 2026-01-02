@@ -34,7 +34,7 @@ type Config struct {
 }
 
 func GetApxDefaultConfig() (*Config, error) {
-	userHome, err := os.UserHomeDir()
+	userConfigDir, err := os.UserConfigDir()
 	if err != nil {
 		return nil, err
 	}
@@ -46,7 +46,7 @@ func GetApxDefaultConfig() (*Config, error) {
 	viper.AddConfigPath("../config/")
 
 	// user paths
-	viper.AddConfigPath(filepath.Join(userHome, ".config/apx/"))
+	viper.AddConfigPath(filepath.Join(userConfigDir, "apx/"))
 
 	// prod paths
 	viper.AddConfigPath("/etc/apx/")
@@ -88,7 +88,7 @@ func GetApxDefaultConfig() (*Config, error) {
 }
 
 func NewApxConfig(apxPath, distroboxPath, storageDriver string) *Config {
-	userHome, err := os.UserHomeDir()
+	userDataDir, err := UserDataDir()
 	if err != nil {
 		panic(err)
 	}
@@ -108,7 +108,7 @@ func NewApxConfig(apxPath, distroboxPath, storageDriver string) *Config {
 		UserPkgManagersPath: "",
 	}
 
-	Cnf.UserApxPath = filepath.Join(userHome, ".local/share/apx")
+	Cnf.UserApxPath = filepath.Join(userDataDir, "apx")
 	Cnf.ApxStoragePath = filepath.Join(Cnf.UserApxPath, "storage")
 	Cnf.StacksPath = filepath.Join(Cnf.ApxPath, "stacks")
 	Cnf.UserStacksPath = filepath.Join(Cnf.UserApxPath, "stacks")
@@ -116,4 +116,17 @@ func NewApxConfig(apxPath, distroboxPath, storageDriver string) *Config {
 	Cnf.UserPkgManagersPath = filepath.Join(Cnf.UserApxPath, "package-managers")
 
 	return Cnf
+}
+
+func UserDataDir() (string, error) {
+	dir := os.Getenv("XDG_DATA_HOME")
+	if dir != "" {
+		return dir, nil
+	}
+
+	userHome, err := os.UserHomeDir()
+	if err != nil {
+		return "", err
+	}
+	return filepath.Join(userHome, ".local", "share"), nil
 }
