@@ -17,6 +17,8 @@ import (
 	"os/exec"
 	"strings"
 	"syscall"
+
+	"github.com/vanilla-os/apx/v2/settings"
 )
 
 type dbox struct {
@@ -49,12 +51,12 @@ func NewDbox() (*dbox, error) {
 }
 
 func getEngine() (string, string) {
-	podmanBinary, err := exec.LookPath("podman")
+	podmanBinary, err := settings.LookPath("podman")
 	if err == nil {
 		return podmanBinary, "podman"
 	}
 
-	dockerBinary, err := exec.LookPath("docker")
+	dockerBinary, err := settings.LookPath("docker")
 	if err == nil {
 		return dockerBinary, "docker"
 	}
@@ -64,7 +66,13 @@ func getEngine() (string, string) {
 }
 
 func dboxGetVersion() (version string, err error) {
-	output, err := exec.Command(apx.Cnf.DistroboxPath, "version").Output()
+	entrypoint := apx.Cnf.DistroboxPath
+	finalArgs := []string{"version"}
+	if settings.IsFlatpak() {
+		finalArgs = append([]string{"--host", entrypoint}, finalArgs...)
+		entrypoint = "flatpak-spawn"
+	}
+	output, err := exec.Command(entrypoint, finalArgs...).Output()
 	if err != nil {
 		return "", err
 	}
@@ -94,6 +102,28 @@ func (d *dbox) RunCommand(command string, args []string, engineFlags []string, u
 		finalArgs = []string{d.EngineBinary, command}
 	}
 
+	envVars := []string{"DBX_SUDO_PROGRAM=pkexec"}
+
+	// NOTE: the custom storage is not being used since it prevent other
+	//		 utilities, like VSCode, to access the container.
+	if d.Engine == "podman" {
+		envVars = append(envVars, "CONTAINER_STORAGE_DRIVER="+apx.Cnf.StorageDriver)
+		// envVars = append(envVars, "XDG_DATA_HOME="+apx.Cnf.ApxStoragePath)
+	} else if d.Engine == "docker" {
+		envVars = append(envVars, "DOCKER_STORAGE_DRIVER="+apx.Cnf.StorageDriver)
+		// envVars = append(envVars, "DOCKER_DATA_ROOT="+apx.Cnf.ApxStoragePath)
+	}
+
+	if settings.IsFlatpak() {
+		finalArgs = append([]string{entrypoint}, finalArgs...)
+		for i := range envVars {
+			envVars[i] = "--env=" + envVars[i]
+		}
+		finalArgs = append(envVars, finalArgs...)
+		finalArgs = append([]string{"--host"}, finalArgs...)
+		entrypoint = "flatpak-spawn"
+	}
+
 	cmd := exec.Command(entrypoint, finalArgs...)
 
 	if detachedMode {
@@ -108,17 +138,8 @@ func (d *dbox) RunCommand(command string, args []string, engineFlags []string, u
 	}
 	cmd.Stdin = os.Stdin
 
-	cmd.Env = os.Environ()
-	cmd.Env = append(cmd.Env, "DBX_SUDO_PROGRAM=pkexec")
-
-	// NOTE: the custom storage is not being used since it prevent other
-	//		 utilities, like VSCode, to access the container.
-	if d.Engine == "podman" {
-		cmd.Env = append(cmd.Env, "CONTAINER_STORAGE_DRIVER="+apx.Cnf.StorageDriver)
-		// cmd.Env = append(cmd.Env, "XDG_DATA_HOME="+apx.Cnf.ApxStoragePath)
-	} else if d.Engine == "docker" {
-		cmd.Env = append(cmd.Env, "DOCKER_STORAGE_DRIVER="+apx.Cnf.StorageDriver)
-		// cmd.Env = append(cmd.Env, "DOCKER_DATA_ROOT="+apx.Cnf.ApxStoragePath)
+	if !settings.IsFlatpak() {
+		cmd.Env = append(os.Environ(), envVars...)
 	}
 
 	if len(engineFlags) > 0 {

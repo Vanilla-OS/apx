@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"io"
 	"os"
-	"os/user"
 	"path/filepath"
 	"time"
 
@@ -35,12 +34,12 @@ func AskConfirmation(s string) bool {
 }
 
 func CopyToUserTemp(path string) (string, error) {
-	user, err := user.Current()
+	userCacheDir, err := os.UserCacheDir()
 	if err != nil {
 		return "", err
 	}
 
-	cacheDir := filepath.Join(user.HomeDir, ".cache", "apx")
+	cacheDir := filepath.Join(userCacheDir, "apx")
 	if _, err := os.Stat(cacheDir); os.IsNotExist(err) {
 		if err := os.MkdirAll(cacheDir, 0755); err != nil {
 			return "", err
