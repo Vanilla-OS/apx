@@ -7,7 +7,6 @@ import (
 	"log"
 	"os"
 	"path/filepath"
-	"slices"
 	"strings"
 
 	"github.com/google/uuid"
@@ -310,48 +309,44 @@ func ListSubsystemForStack(stackName string) ([]*SubSystem, error) {
 		return nil, err
 	}
 
-	rootlessContainers, err := dbox.ListContainers(false)
-
+	containers, err := dbox.ListContainers(false)
 	if err != nil {
 		return nil, err
 	}
-
-	// Listing rootful containers requires root privileges
-	// should not be used unless better solution is found
-
-	// rootfullContainers, err := dbox.ListContainers(true)
-
-	// if err != nil {
-	// 	return nil, err
-	// }
-	rootfullContainers := []dboxContainer{}
-
-	stack, err := LoadStack(stackName)
-	if err != nil {
-		log.Printf("Error loading stack %s: %s", stackName, err)
-		return nil, err
-	}
-
-	containers := slices.Concat(rootlessContainers, rootfullContainers)
 
 	subsystems := []*SubSystem{}
 	for _, container := range containers {
-		if _, ok := container.Labels["name"]; !ok {
+		containerManager, ok := container.Labels["manager"]
+		if !ok || containerManager != "apx" {
 			continue
 		}
 
-		internalName := genInternalName(container.Labels["name"])
-		subsystem := &SubSystem{
-			InternalName:     internalName,
-			Name:             container.Labels["name"],
-			Stack:            stack,
-			Status:           container.Status,
-			ExportedPrograms: findExported(internalName, container.Labels["name"]),
+		containerName, ok := container.Labels["name"]
+		if !ok {
+			continue
 		}
 
-		if subsystem.Stack.Name == stack.Name {
-			subsystems = append(subsystems, subsystem)
+		containerStack, ok := container.Labels["stack"]
+		if !ok || containerStack != stackName {
+			continue
 		}
+
+		stack, err := LoadStack(containerStack)
+		if err != nil {
+			log.Printf("Error loading stack %s: %s", containerStack, err)
+			continue
+		}
+
+		internalName := genInternalName(containerName)
+		subsystem := &SubSystem{
+			InternalName:     internalName,
+			Name:             containerName,
+			Stack:            stack,
+			Status:           container.Status,
+			ExportedPrograms: findExported(internalName, containerName),
+		}
+
+		subsystems = append(subsystems, subsystem)
 	}
 
 	return subsystems, nil
