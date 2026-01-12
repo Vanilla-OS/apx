@@ -32,7 +32,7 @@ jobs:
       - name: Calculate and Save Checksums
         run: sha256sum apx*.tar.gz >> checksums.txt
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v6
         with:
           name: apx
           path: |

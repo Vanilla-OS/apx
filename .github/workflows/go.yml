@@ -31,7 +31,7 @@ jobs:
     - name: Check for missing strings
       uses: vanilla-os/missing-strings-golang-action@v0.1.0
 
-    - uses: actions/upload-artifact@v4
+    - uses: actions/upload-artifact@v6
       with:
         name: apx
         path: apx*.tar.gz
