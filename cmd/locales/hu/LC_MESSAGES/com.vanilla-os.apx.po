@@ -1,0 +1,694 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: hu\n"
+
+msgid "apx.cmd.pkgmanagers"
+msgstr "Dolgozzon az apx-ben elérhető csomagkezelőkkel."
+
+msgid "apx.cmd.pkgmanagers.export"
+msgstr "Export the specified package manager."
+
+msgid "apx.cmd.pkgmanagers.export.options.name"
+msgstr "The name of the package manager to export."
+
+msgid "apx.cmd.pkgmanagers.export.options.output"
+msgstr "The path to export the package manager to."
+
+msgid "apx.cmd.pkgmanagers.import"
+msgstr "Import the specified package manager."
+
+msgid "apx.cmd.pkgmanagers.import.options.input"
+msgstr "The path to import the package manager from."
+
+msgid "apx.cmd.pkgmanagers.list"
+msgstr "Az összes elérhető csomagkezelő listája."
+
+msgid "apx.cmd.pkgmanagers.list.options.json"
+msgstr "Kimenet JSON formátumban."
+
+msgid "apx.cmd.pkgmanagers.new"
+msgstr "Create a new package manager."
+
+msgid "apx.cmd.pkgmanagers.new.options.autoremove"
+msgstr "The command to run to autoremove packages."
+
+msgid "apx.cmd.pkgmanagers.new.options.clean"
+msgstr "The command to run to clean the package manager's cache."
+
+msgid "apx.cmd.pkgmanagers.new.options.install"
+msgstr "The command to run to install packages."
+
+msgid "apx.cmd.pkgmanagers.new.options.list"
+msgstr "The command to run to list installed packages."
+
+msgid "apx.cmd.pkgmanagers.new.options.name"
+msgstr "The name of the package manager."
+
+msgid "apx.cmd.pkgmanagers.new.options.needSudo"
+msgstr "Whether the package manager needs sudo to run."
+
+msgid "apx.cmd.pkgmanagers.new.options.noPrompt"
+msgstr "Assume yes to all prompts."
+
+msgid "apx.cmd.pkgmanagers.new.options.purge"
+msgstr "The command to run to purge packages."
+
+msgid "apx.cmd.pkgmanagers.new.options.remove"
+msgstr "The command to run to remove packages."
+
+msgid "apx.cmd.pkgmanagers.new.options.search"
+msgstr "The command to run to search for packages."
+
+msgid "apx.cmd.pkgmanagers.new.options.show"
+msgstr "The command to run to show information about packages."
+
+msgid "apx.cmd.pkgmanagers.new.options.update"
+msgstr "The command to run to update the list of available packages."
+
+msgid "apx.cmd.pkgmanagers.new.options.upgrade"
+msgstr "The command to run to upgrade packages."
+
+msgid "apx.cmd.pkgmanagers.rm"
+msgstr "Remove the specified package manager."
+
+msgid "apx.cmd.pkgmanagers.rm.options.force"
+msgstr "Force removal of the package manager."
+
+msgid "apx.cmd.pkgmanagers.rm.options.name"
+msgstr "The name of the package manager to remove."
+
+msgid "apx.cmd.pkgmanagers.show"
+msgstr "Show information about the specified package manager."
+
+msgid "apx.cmd.pkgmanagers.update"
+msgstr "Update the specified package manager."
+
+msgid "apx.cmd.stacks"
+msgstr "Work with the stacks that are available in apx."
+
+msgid "apx.cmd.stacks.export"
+msgstr "Export the specified stack."
+
+msgid "apx.cmd.stacks.export.options.name"
+msgstr "The name of the stack to export."
+
+msgid "apx.cmd.stacks.export.options.output"
+msgstr "The path to export the stack to."
+
+msgid "apx.cmd.stacks.import"
+msgstr "Import the specified stack."
+
+msgid "apx.cmd.stacks.import.options.input"
+msgstr "The path to import the stack from."
+
+msgid "apx.cmd.stacks.list"
+msgstr "List all available stacks."
+
+msgid "apx.cmd.stacks.list.options.json"
+msgstr "Output in JSON format."
+
+msgid "apx.cmd.stacks.new"
+msgstr "Create a new stack."
+
+msgid "apx.cmd.stacks.new.options.base"
+msgstr "The base subsystem to use."
+
+msgid "apx.cmd.stacks.new.options.name"
+msgstr "The name of the stack."
+
+msgid "apx.cmd.stacks.new.options.noPrompt"
+msgstr "Assume yes to all prompts."
+
+msgid "apx.cmd.stacks.new.options.packages"
+msgstr "The packages to install."
+
+msgid "apx.cmd.stacks.new.options.pkgManager"
+msgstr "The package manager to use."
+
+msgid "apx.cmd.stacks.rm"
+msgstr "Remove the specified stack."
+
+msgid "apx.cmd.stacks.rm.options.force"
+msgstr "Force removal of the stack."
+
+msgid "apx.cmd.stacks.rm.options.name"
+msgstr "The name of the stack to remove."
+
+msgid "apx.cmd.stacks.show"
+msgstr "Show information about the specified stack."
+
+msgid "apx.cmd.stacks.update"
+msgstr "Update the specified stack."
+
+msgid "apx.cmd.stacks.update.options.base"
+msgstr "The base subsystem to use."
+
+msgid "apx.cmd.stacks.update.options.name"
+msgstr "The name of the stack."
+
+msgid "apx.cmd.stacks.update.options.noPrompt"
+msgstr "Assume yes to all prompts."
+
+msgid "apx.cmd.stacks.update.options.packages"
+msgstr "The packages to install."
+
+msgid "apx.cmd.stacks.update.options.pkgManager"
+msgstr "The package manager to use."
+
+msgid "apx.cmd.subsystem.autoremove"
+msgstr "A már nem szükséges csomagok eltávolítása."
+
+msgid "apx.cmd.subsystem.clean"
+msgstr "A csomagkezelő gyorsítótárának tisztítása."
+
+msgid "apx.cmd.subsystem.enter"
+msgstr "Belépés az alrendszer környezetébe."
+
+msgid "apx.cmd.subsystem.export"
+msgstr "Egy alkalmazás vagy bináris fájl exportálása az alrendszerből."
+
+msgid "apx.cmd.subsystem.export.options.appName"
+msgstr "Az exportálandó alkalmazás neve."
+
+msgid "apx.cmd.subsystem.export.options.bin"
+msgstr "Az exportálandó bináris neve."
+
+msgid "apx.cmd.subsystem.export.options.binOutput"
+msgstr "A bináris kimenet elérési útja (alapértelmezett: ~/.local/bin/)."
+
+msgid "apx.cmd.subsystem.install"
+msgstr "A megadott csomag telepítése."
+
+msgid "apx.cmd.subsystem.install.options.noExport"
+msgstr "Ne exportáljon asztali bejegyzést."
+
+msgid "apx.cmd.subsystem.list"
+msgstr "Az összes telepített csomag listázása."
+
+msgid "apx.cmd.subsystem.list.options.json"
+msgstr "Output in JSON format."
+
+msgid "apx.cmd.subsystem.new.options.home"
+msgstr "The custom home directory of the subsystem."
+
+msgid "apx.cmd.subsystem.new.options.init"
+msgstr "Use systemd inside the subsystem."
+
+msgid "apx.cmd.subsystem.new.options.name"
+msgstr "The name of the subsystem."
+
+msgid "apx.cmd.subsystem.new.options.stack"
+msgstr "The stack to use."
+
+msgid "apx.cmd.subsystem.purge"
+msgstr "A megadott csomagok törlése."
+
+msgid "apx.cmd.subsystem.remove"
+msgstr "A megadott csomagok eltávolítása."
+
+msgid "apx.cmd.subsystem.reset.options.force"
+msgstr "Force reset of the subsystem."
+
+msgid "apx.cmd.subsystem.reset.options.name"
+msgstr "The name of the subsystem to reset."
+
+msgid "apx.cmd.subsystem.rm.options.force"
+msgstr "Force removal of the subsystem."
+
+msgid "apx.cmd.subsystem.rm.options.name"
+msgstr "The name of the subsystem to remove."
+
+msgid "apx.cmd.subsystem.run"
+msgstr "Parancsok futtatása az alrendszerben."
+
+msgid "apx.cmd.subsystem.search"
+msgstr "A megadott lekérdezésnek megfelelő csomagok keresése."
+
+msgid "apx.cmd.subsystem.show"
+msgstr "Információk megjelenítése a megadott csomagról."
+
+msgid "apx.cmd.subsystem.start"
+msgstr "Az alrendszer indítása."
+
+msgid "apx.cmd.subsystem.stop"
+msgstr "Az alrendszer leállítása."
+
+msgid "apx.cmd.subsystem.unexport"
+msgstr "Egy alkalmazás vagy bináris fájl exportálás visszavonása az alrendszerből."
+
+msgid "apx.cmd.subsystem.unexport.options.appName"
+msgstr "Az exportálásból visszavont alkalmazás neve."
+
+msgid "apx.cmd.subsystem.unexport.options.bin"
+msgstr "Az exportálásból visszavont bináris neve."
+
+msgid "apx.cmd.subsystem.unexport.options.binOutput"
+msgstr "A bináris kimenet elérési útja (alapértelmezett: ~/.local/bin/)."
+
+msgid "apx.cmd.subsystem.update"
+msgstr "Az elérhető csomagok listájának frissítése."
+
+msgid "apx.cmd.subsystem.upgrade"
+msgstr "Az összes telepített csomag frissítése."
+
+msgid "apx.cmd.subsystems"
+msgstr "Work with the subsystems that are available in apx."
+
+msgid "apx.cmd.subsystems.list"
+msgstr "List all available subsystems."
+
+msgid "apx.cmd.subsystems.new"
+msgstr "Create a new subsystem."
+
+msgid "apx.cmd.subsystems.reset"
+msgstr "Reset the specified subsystem."
+
+msgid "apx.cmd.subsystems.rm"
+msgstr "Remove the specified subsystem."
+
+msgid "apx.errors.invalidChoice"
+msgstr "Érvénytelen választás."
+
+msgid "apx.errors.invalidInput"
+msgstr "Érvénytelen bemenet."
+
+msgid "apx.errors.noRoot"
+msgstr "Ne futtasd az Apx-et rootként."
+
+msgid "apx.errors.unknownCommand"
+msgstr "Ismeretlen parancs: %s"
+
+msgid "apx.info.aborting"
+msgstr "Megszakítás kérés szerint."
+
+msgid "apx.msg.additionalCommands"
+msgstr "További Parancsok"
+
+msgid "apx.msg.additionalHelpTopics"
+msgstr "További súgótémák"
+
+msgid "apx.msg.aliases"
+msgstr "Álnevek"
+
+msgid "apx.msg.availableCommands"
+msgstr "Elérhető Parancsok"
+
+msgid "apx.msg.examples"
+msgstr "Példák"
+
+msgid "apx.msg.flags"
+msgstr "Zászlók"
+
+msgid "apx.msg.globalFlags"
+msgstr "Globális Zászlók"
+
+msgid "apx.msg.help"
+msgstr "Az Apx egy csomagkezelő, amely több forrást is támogat, és lehetővé teszi a csomagok alrendszerekbe történő telepítését."
+
+msgid "apx.msg.moreInfo"
+msgstr "A parancsokkal kapcsolatos további információkért használja a %s-t"
+
+msgid "apx.msg.usage"
+msgstr "Használat"
+
+msgid "apx.msg.version"
+msgstr "APX verziója."
+
+msgid "apx.terminal.false"
+msgstr "nem"
+
+msgid "apx.terminal.true"
+msgstr "igen"
+
+msgid "pkgmanagers.export.error.noName"
+msgstr "No name specified."
+
+msgid "pkgmanagers.export.error.noOutput"
+msgstr "No output specified."
+
+msgid "pkgmanagers.export.info.success"
+msgstr "Exported package manager '%s' to '%s'."
+
+msgid "pkgmanagers.import.error.cannotLoad"
+msgstr "Cannot load package manager from '%s'."
+
+msgid "pkgmanagers.import.error.noInput"
+msgstr "No input specified."
+
+msgid "pkgmanagers.import.info.success"
+msgstr "Imported package manager from '%s'."
+
+msgid "pkgmanagers.labels.builtIn"
+msgstr "Beépített"
+
+msgid "pkgmanagers.labels.name"
+msgstr "Név"
+
+msgid "pkgmanagers.list.info.foundPkgManagers"
+msgstr "%d csomagkezelőt találtunk"
+
+msgid "pkgmanagers.list.info.noPkgManagers"
+msgstr "Nincsenek elérhető csomagkezelők. Hozzon létre egy újat az „apx pkgmanagers new” használatával, vagy forduljon a rendszergazdához."
+
+msgid "pkgmanagers.new.error.alreadyExists"
+msgstr "A package manager with the name '%s' already exists."
+
+msgid "pkgmanagers.new.error.emptyCommand"
+msgstr "The command cannot be empty."
+
+msgid "pkgmanagers.new.error.emptyName"
+msgstr "The name cannot be empty."
+
+msgid "pkgmanagers.new.error.noCommand"
+msgstr "No command specified for '%s'."
+
+msgid "pkgmanagers.new.error.noName"
+msgstr "No name specified."
+
+msgid "pkgmanagers.new.info.askCommand"
+msgstr "Enter the command for '%s':"
+
+msgid "pkgmanagers.new.info.askCommandWithDefault"
+msgstr "Enter the command for '%s' (default: '%s'):"
+
+msgid "pkgmanagers.new.info.askName"
+msgstr "Choose a name:"
+
+msgid "pkgmanagers.new.info.askOverwrite"
+msgstr "A package manager with the name '%s' already exists. Overwrite it?"
+
+msgid "pkgmanagers.new.info.askSudo"
+msgstr "Does the package manager need sudo to run?"
+
+msgid "pkgmanagers.new.success"
+msgstr "Package manager %s created successfully."
+
+msgid "pkgmanagers.rm.error.inUse"
+msgstr "The package manager is used in %d stacks:\n"
+
+msgid "pkgmanagers.rm.error.noName"
+msgstr "No name specified."
+
+msgid "pkgmanagers.rm.info.aborting"
+msgstr "Aborting removal of package manager '%s'."
+
+msgid "pkgmanagers.rm.info.askConfirmation"
+msgstr "Are you sure you want to remove '%s'? [y/N]"
+
+msgid "pkgmanagers.rm.info.success"
+msgstr "Removed package manager '%s'."
+
+msgid "pkgmanagers.update.error.builtIn"
+msgstr "Built-in package managers cannot be modified."
+
+msgid "pkgmanagers.update.error.missingCommand"
+msgstr "Missing command for %s."
+
+msgid "pkgmanagers.update.error.noName"
+msgstr "No name specified."
+
+msgid "pkgmanagers.update.info.askNewCommand"
+msgstr "Enter new command for '%s' (leave empty to keep '%s'):"
+
+msgid "pkgmanagers.update.info.success"
+msgstr "Updated package manager '%s'."
+
+msgid "runtimeCommand.description"
+msgstr "Dolgozzon a megadott alrendszerrel, hogy elérje a csomagkezelőt és a környezetet."
+
+msgid "runtimeCommand.error.cantAccessPkgManager"
+msgstr "Hiba történt a csomagkezelő elérésekor: %s"
+
+msgid "runtimeCommand.error.enteringContainer"
+msgstr "Hiba történt a konténerbe való belépéskor: %s"
+
+msgid "runtimeCommand.error.executingCommand"
+msgstr "Hiba történt a parancs végrehajtása közben: %s"
+
+msgid "runtimeCommand.error.exportingApp"
+msgstr "Hiba történt az alkalmazás exportálása során: %s"
+
+msgid "runtimeCommand.error.exportingBin"
+msgstr "Hiba történt a bináris fájl exportálása során: %s"
+
+msgid "runtimeCommand.error.noAppNameOrBin"
+msgstr "--app-name vagy --bin értéket meg kell adni."
+
+msgid "runtimeCommand.error.noPackageSpecified"
+msgstr "Nincsenek meghatározott csomagok."
+
+msgid "runtimeCommand.error.sameAppOrBin"
+msgstr "--app-name és --bin nem adható meg egyszerre."
+
+msgid "runtimeCommand.error.startingContainer"
+msgstr "Hiba történt a konténer indításakor: %s"
+
+msgid "runtimeCommand.error.stoppingContainer"
+msgstr "Hiba történt a konténer leállítása közben: %s"
+
+msgid "runtimeCommand.error.unexportingApp"
+msgstr "Hiba történt az alkalmazás exportálásának visszavonása közben: %s"
+
+msgid "runtimeCommand.error.unexportingBin"
+msgstr "Hiba történt a bináris fájl exportálásának visszavonása közben: %s"
+
+msgid "runtimeCommand.info.exportedApp"
+msgstr "Exportált alkalmazás: %s"
+
+msgid "runtimeCommand.info.exportedApps"
+msgstr "Exportált alkalmazások: %d"
+
+msgid "runtimeCommand.info.exportedBin"
+msgstr "Exportált bináris alkalmazás: %s"
+
+msgid "runtimeCommand.info.startedContainer"
+msgstr "Konténer elindult."
+
+msgid "runtimeCommand.info.startingContainer"
+msgstr "Konténer indítása…"
+
+msgid "runtimeCommand.info.stoppedContainer"
+msgstr "Konténer leállt."
+
+msgid "runtimeCommand.info.stoppingContainer"
+msgstr "Konténer leállítása…"
+
+msgid "runtimeCommand.info.unexportedApp"
+msgstr "Nem exportált alkalmazás: %s"
+
+msgid "runtimeCommand.info.unexportedApps"
+msgstr "Nem exportált alkalmazások: %d"
+
+msgid "runtimeCommand.info.unexportedBin"
+msgstr "Nem exportált bináris alkalmazás: %s"
+
+msgid "stacks.export.error.noName"
+msgstr "No name specified."
+
+msgid "stacks.export.error.noOutput"
+msgstr "No output specified."
+
+msgid "stacks.export.info.success"
+msgstr "Exported stack '%s' to '%s'."
+
+msgid "stacks.import.error.cannotLoad"
+msgstr "Cannot load stack from '%s'."
+
+msgid "stacks.import.error.noInput"
+msgstr "No input specified."
+
+msgid "stacks.import.info.success"
+msgstr "Imported stack from '%s'."
+
+msgid "stacks.labels.builtIn"
+msgstr "Beépített"
+
+msgid "stacks.labels.name"
+msgstr "Name"
+
+msgid "stacks.list.info.aborting"
+msgstr "Aborting removal of stack '%s'."
+
+msgid "stacks.list.info.foundStacks"
+msgstr "Found %d stacks:\n"
+
+msgid "stacks.list.info.noStacks"
+msgstr "No stacks available. Create a new one with 'apx stacks new' or contact the system administrator."
+
+msgid "stacks.new.error.alreadyExists"
+msgstr "A stack with the name '%s' already exists."
+
+msgid "stacks.new.error.emptyBase"
+msgstr "The base cannot be empty."
+
+msgid "stacks.new.error.emptyName"
+msgstr "The name cannot be empty."
+
+msgid "stacks.new.error.emptyPackages"
+msgstr "The packages cannot be empty."
+
+msgid "stacks.new.error.emptyPkgManager"
+msgstr "The package manager cannot be empty."
+
+msgid "stacks.new.error.noBase"
+msgstr "No base specified."
+
+msgid "stacks.new.error.noName"
+msgstr "No name specified."
+
+msgid "stacks.new.error.noPackages"
+msgstr "No packages specified."
+
+msgid "stacks.new.error.noPkgManager"
+msgstr "No package manager specified."
+
+msgid "stacks.new.error.noPkgManagers"
+msgstr "Could not find any package managers. Create one with 'apx pkgmanagers new' or contact the system administrator."
+
+msgid "stacks.new.error.pkgManagerDoesNotExist"
+msgstr "The specified package manager does not exist. Create it with 'apx pkgmanagers new' or contact the system administrator."
+
+msgid "stacks.new.info.askBase"
+msgstr "Choose a base (e.g. 'vanillaos/pico'):"
+
+msgid "stacks.new.info.askName"
+msgstr "Choose a name:"
+
+msgid "stacks.new.info.askPackages"
+msgstr "Please type the packages you want to install in the stack, separated by a space:"
+
+msgid "stacks.new.info.askPkgManager"
+msgstr "Choose a package manager:"
+
+msgid "stacks.new.info.confirmPackages"
+msgstr "Do you want to confirm the current packages list?"
+
+msgid "stacks.new.info.noPackages"
+msgstr "You have not provided any package to install in the stack. Do you want to add some now?"
+
+msgid "stacks.new.info.selectPkgManager"
+msgstr "Select a package manager [1-%d]:"
+
+msgid "stacks.new.info.success"
+msgstr "Created stack '%s'."
+
+msgid "stacks.rm.error.inUse"
+msgstr "The stack is used in %d subsystems:"
+
+msgid "stacks.rm.error.noName"
+msgstr "No name specified."
+
+msgid "stacks.rm.info.askConfirmation"
+msgstr "Are you sure you want to remove '%s'?"
+
+msgid "stacks.rm.info.success"
+msgstr "Removed stack '%s'."
+
+msgid "stacks.update.error.builtIn"
+msgstr "Built-in stacks cannot be modified."
+
+msgid "stacks.update.error.noBase"
+msgstr "No base specified."
+
+msgid "stacks.update.error.noName"
+msgstr "No name specified."
+
+msgid "stacks.update.error.noPkgManager"
+msgstr "No package manager specified."
+
+msgid "stacks.update.error.pkgManagerDoesNotExist"
+msgstr "The specified package manager does not exist. Create it with 'apx pkgmanagers new' or contact the system administrator."
+
+msgid "stacks.update.info.askBase"
+msgstr "Type a new base or confirm the current one (%s):"
+
+msgid "stacks.update.info.askPackages"
+msgstr "Type the packages you want to install in the stack, separated by a space, or confirm the current ones (%s):"
+
+msgid "stacks.update.info.askPkgManager"
+msgstr "Choose a new package manager or confirm the current one (%s):"
+
+msgid "stacks.update.info.confirmPackages"
+msgstr "Do you want to confirm the current packages list?"
+
+msgid "stacks.update.info.noPackages"
+msgstr "You have not provided any packages to install in the stack. Do you want to add some now?"
+
+msgid "stacks.update.info.success"
+msgstr "Updated stack '%s'."
+
+msgid "subsystems.labels.name"
+msgstr "Name"
+
+msgid "subsystems.labels.status"
+msgstr "Status"
+
+msgid "subsystems.list.error"
+msgstr "<nil>"
+
+msgid "subsystems.list.info.foundSubsystems"
+msgstr "Found %d subsystems:\n"
+
+msgid "subsystems.list.info.noSubsystems"
+msgstr "No subsystems available. Create a new one with 'apx subsystems new' or contact the system administrator."
+
+msgid "subsystems.new.error.alreadyExists"
+msgstr "A subsystem with the name '%s' already exists."
+
+msgid "subsystems.new.error.emptyName"
+msgstr "The name cannot be empty."
+
+msgid "subsystems.new.error.emptyStack"
+msgstr "The stack cannot be empty."
+
+msgid "subsystems.new.error.forbiddenName"
+msgstr "The name '%s' is forbidden. Please choose a different name"
+
+msgid "subsystems.new.error.noName"
+msgstr "No name specified."
+
+msgid "subsystems.new.error.noStack"
+msgstr "No stack specified."
+
+msgid "subsystems.new.error.noStacks"
+msgstr "A stack is needed to create a subsystem. Create a new one with 'apx stacks new' or contact the system administrator."
+
+msgid "subsystems.new.error.stackDoesNotExist"
+msgstr "The specified stack does not exist. Create it with 'apx stacks new' or contact the system administrator."
+
+msgid "subsystems.new.info.askName"
+msgstr "Choose a name:"
+
+msgid "subsystems.new.info.availableStacks"
+msgstr "Available stacks:"
+
+msgid "subsystems.new.info.creatingSubsystem"
+msgstr "Created subsystem '%s' with stack '%s'…"
+
+msgid "subsystems.new.info.selectStack"
+msgstr "Select a stack [1-%d]:"
+
+msgid "subsystems.new.info.success"
+msgstr "Created subsystem '%s'."
+
+msgid "subsystems.reset.error.noName"
+msgstr "No name specified."
+
+msgid "subsystems.reset.info.askConfirmation"
+msgstr "Are you sure you want to reset '%s'? [y/N]"
+
+msgid "subsystems.reset.info.success"
+msgstr "The subsystem '%s' has been reset."
+
+msgid "subsystems.rm.error.noName"
+msgstr "No name specified."
+
+msgid "subsystems.rm.info.askConfirmation"
+msgstr "Are you sure you want to remove '%s'?"
+
+msgid "subsystems.rm.info.success"
+msgstr "Removed subsystem '%s'."
+

@@ -1,0 +1,694 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: eo\n"
+
+msgid "apx.cmd.pkgmanagers"
+msgstr "Uzi pakadministrilojn disponeblajn ĉe apx."
+
+msgid "apx.cmd.pkgmanagers.export"
+msgstr "Eksporti la specifitan pakadministrilon."
+
+msgid "apx.cmd.pkgmanagers.export.options.name"
+msgstr "La nomo de la eksportota pakadministrilo."
+
+msgid "apx.cmd.pkgmanagers.export.options.output"
+msgstr "La eksporta loko de la pakadministrilo."
+
+msgid "apx.cmd.pkgmanagers.import"
+msgstr "Importi la specifitan pakadministrilon."
+
+msgid "apx.cmd.pkgmanagers.import.options.input"
+msgstr "La importa loko de la pakadministrilo."
+
+msgid "apx.cmd.pkgmanagers.list"
+msgstr "Listo de ĉiuj disponeblaj pakadministriloj."
+
+msgid "apx.cmd.pkgmanagers.list.options.json"
+msgstr "Eligaĵo kiel JSON."
+
+msgid "apx.cmd.pkgmanagers.new"
+msgstr "Krei novan pakadministrilon."
+
+msgid "apx.cmd.pkgmanagers.new.options.autoremove"
+msgstr "La komando por aŭtomate malinstali pakojn."
+
+msgid "apx.cmd.pkgmanagers.new.options.clean"
+msgstr "La komando por forviŝi la kaŝmemoron de la pakadministrilo."
+
+msgid "apx.cmd.pkgmanagers.new.options.install"
+msgstr "La komando por instali pakojn."
+
+msgid "apx.cmd.pkgmanagers.new.options.list"
+msgstr "La komando por listigi instalitajn pakojn."
+
+msgid "apx.cmd.pkgmanagers.new.options.name"
+msgstr "La nomo de la pakadministrilo."
+
+msgid "apx.cmd.pkgmanagers.new.options.needSudo"
+msgstr "Ĉu la pakadministrilo bezonas «sudo»."
+
+msgid "apx.cmd.pkgmanagers.new.options.noPrompt"
+msgstr "Jesi al ĉiuj demandoj."
+
+msgid "apx.cmd.pkgmanagers.new.options.purge"
+msgstr "La komando por plene malinstali pakojn."
+
+msgid "apx.cmd.pkgmanagers.new.options.remove"
+msgstr "La komando por malinstali pakojn."
+
+msgid "apx.cmd.pkgmanagers.new.options.search"
+msgstr "La komando por serĉi pakojn."
+
+msgid "apx.cmd.pkgmanagers.new.options.show"
+msgstr "La komando por montri informojn pri pakoj."
+
+msgid "apx.cmd.pkgmanagers.new.options.update"
+msgstr "La komando por ĝisdatigi la liston de haveblaj pakoj."
+
+msgid "apx.cmd.pkgmanagers.new.options.upgrade"
+msgstr "La komando por ĝisdatigi pakojn."
+
+msgid "apx.cmd.pkgmanagers.rm"
+msgstr "Malinstali la specifitan pakadministrilon."
+
+msgid "apx.cmd.pkgmanagers.rm.options.force"
+msgstr "Devigi la malinstalon de la pakadministrilo."
+
+msgid "apx.cmd.pkgmanagers.rm.options.name"
+msgstr "La nomo de la malinstalota pakadministrilo."
+
+msgid "apx.cmd.pkgmanagers.show"
+msgstr "Montri informojn pri la specifita pakadministrilo."
+
+msgid "apx.cmd.pkgmanagers.update"
+msgstr "Ĝisdatigi la specifitan pakadministrilon."
+
+msgid "apx.cmd.stacks"
+msgstr "Uzi stakojn disponeblajn ĉe apx."
+
+msgid "apx.cmd.stacks.export"
+msgstr "Elporti la specifitan stakon."
+
+msgid "apx.cmd.stacks.export.options.name"
+msgstr "La nomo de la elportota stako."
+
+msgid "apx.cmd.stacks.export.options.output"
+msgstr "La eksporta loko de la stako."
+
+msgid "apx.cmd.stacks.import"
+msgstr "Enporti la specifitan stakon."
+
+msgid "apx.cmd.stacks.import.options.input"
+msgstr "La importa loko de la stako."
+
+msgid "apx.cmd.stacks.list"
+msgstr "Listigi ĉiujn disponeblajn stakojn."
+
+msgid "apx.cmd.stacks.list.options.json"
+msgstr "Eligaĵo kiel JSON."
+
+msgid "apx.cmd.stacks.new"
+msgstr "Krei novan stakon."
+
+msgid "apx.cmd.stacks.new.options.base"
+msgstr "La baza distribuaĵo uzota. (Por listo de kongruaj distribuaĵoj, vidu https://distrobox.it/compatibility/#containers-distros)"
+
+msgid "apx.cmd.stacks.new.options.name"
+msgstr "La nomo de la stako."
+
+msgid "apx.cmd.stacks.new.options.noPrompt"
+msgstr "Jesi al ĉiuj demandoj."
+
+msgid "apx.cmd.stacks.new.options.packages"
+msgstr "La instalotaj pakoj."
+
+msgid "apx.cmd.stacks.new.options.pkgManager"
+msgstr "La uzota pakadministrilo."
+
+msgid "apx.cmd.stacks.rm"
+msgstr "Forigi la specifitan stakon."
+
+msgid "apx.cmd.stacks.rm.options.force"
+msgstr "Devigi forigon de la stako."
+
+msgid "apx.cmd.stacks.rm.options.name"
+msgstr "La nomo de la forigota stako."
+
+msgid "apx.cmd.stacks.show"
+msgstr "Montri informojn pri la specifita stako."
+
+msgid "apx.cmd.stacks.update"
+msgstr "Ĝisdatigi la specifitan stakon."
+
+msgid "apx.cmd.stacks.update.options.base"
+msgstr "La uzota baza subsistemo."
+
+msgid "apx.cmd.stacks.update.options.name"
+msgstr "La nomo de la stako."
+
+msgid "apx.cmd.stacks.update.options.noPrompt"
+msgstr "Jesi al ĉiuj demandoj."
+
+msgid "apx.cmd.stacks.update.options.packages"
+msgstr "La instalotaj pakoj."
+
+msgid "apx.cmd.stacks.update.options.pkgManager"
+msgstr "La uzota pakadministrilo."
+
+msgid "apx.cmd.subsystem.autoremove"
+msgstr "Malinstali ne plu bezonatajn pakojn."
+
+msgid "apx.cmd.subsystem.clean"
+msgstr "Forviŝi la kaŝmemoron de la pakadministrilo."
+
+msgid "apx.cmd.subsystem.enter"
+msgstr "Eniri la medion de la subsistemo."
+
+msgid "apx.cmd.subsystem.export"
+msgstr "Eksporti programon aŭ binaraĵon de la subsistemo al la gastiganto."
+
+msgid "apx.cmd.subsystem.export.options.appName"
+msgstr "La nomo de la eksportota programo."
+
+msgid "apx.cmd.subsystem.export.options.bin"
+msgstr "La nomo de la eksportota binaraĵo."
+
+msgid "apx.cmd.subsystem.export.options.binOutput"
+msgstr "Loko de la eligota binaraĵo (implicite: ~/.local/bin/)."
+
+msgid "apx.cmd.subsystem.install"
+msgstr "Instali la specifitan pakon."
+
+msgid "apx.cmd.subsystem.install.options.noExport"
+msgstr "Ne eskporti labortablaĵon."
+
+msgid "apx.cmd.subsystem.list"
+msgstr "Listigi ĉiujn instalitajn pakojn."
+
+msgid "apx.cmd.subsystem.list.options.json"
+msgstr "Eligaĵo kiel JSON."
+
+msgid "apx.cmd.subsystem.new.options.home"
+msgstr "La hejmdosierujo de la nova subsistemo."
+
+msgid "apx.cmd.subsystem.new.options.init"
+msgstr "Uzi systemd en la subsistemo."
+
+msgid "apx.cmd.subsystem.new.options.name"
+msgstr "La nomo de la subsistemo."
+
+msgid "apx.cmd.subsystem.new.options.stack"
+msgstr "La uzota stako."
+
+msgid "apx.cmd.subsystem.purge"
+msgstr "Plene malinstali la specifitajn pakojn."
+
+msgid "apx.cmd.subsystem.remove"
+msgstr "Malinstali la specifitajn pakojn."
+
+msgid "apx.cmd.subsystem.reset.options.force"
+msgstr "Devigi restaŭradon de la subsistemo."
+
+msgid "apx.cmd.subsystem.reset.options.name"
+msgstr "La nomo de la restaŭrota subsistemo."
+
+msgid "apx.cmd.subsystem.rm.options.force"
+msgstr "Devigi forigon de la subsistemo."
+
+msgid "apx.cmd.subsystem.rm.options.name"
+msgstr "La nomo de la forigota subsistemo."
+
+msgid "apx.cmd.subsystem.run"
+msgstr "Ruli komandon en subsistemo."
+
+msgid "apx.cmd.subsystem.search"
+msgstr "Serĉi pakojn kongruajn kun la specifita teksto."
+
+msgid "apx.cmd.subsystem.show"
+msgstr "Montri informojn pri la specifita pako."
+
+msgid "apx.cmd.subsystem.start"
+msgstr "Lanĉi la subsistemon."
+
+msgid "apx.cmd.subsystem.stop"
+msgstr "Mallanĉi la subsistemon."
+
+msgid "apx.cmd.subsystem.unexport"
+msgstr "Maleksporti programon aŭ binaraĵon el la gastiganto."
+
+msgid "apx.cmd.subsystem.unexport.options.appName"
+msgstr "La nomo de la maleksportota programo."
+
+msgid "apx.cmd.subsystem.unexport.options.bin"
+msgstr "La nomo de la maleksportota binaraĵo."
+
+msgid "apx.cmd.subsystem.unexport.options.binOutput"
+msgstr "Loko de la eligota binaraĵo (implicite: ~/.local/bin/)."
+
+msgid "apx.cmd.subsystem.update"
+msgstr "Ĝisdatigi la liston de haveblaj pakoj."
+
+msgid "apx.cmd.subsystem.upgrade"
+msgstr "Ĝisdatigi ĉiujn instalitajn pakojn."
+
+msgid "apx.cmd.subsystems"
+msgstr "Uzi subsistemojn disponeblajn ĉe apx."
+
+msgid "apx.cmd.subsystems.list"
+msgstr "Listigi ĉiujn disponeblajn subsistemojn."
+
+msgid "apx.cmd.subsystems.new"
+msgstr "Krei novan subsistemon."
+
+msgid "apx.cmd.subsystems.reset"
+msgstr "Restarigi la specifitan subsistemon."
+
+msgid "apx.cmd.subsystems.rm"
+msgstr "Forigi la specifitan subsistemon."
+
+msgid "apx.errors.invalidChoice"
+msgstr "Nevalida elekto."
+
+msgid "apx.errors.invalidInput"
+msgstr "Nevalida enigaĵo."
+
+msgid "apx.errors.noRoot"
+msgstr "Ne rulu Apx kiel ĉefuzanto."
+
+msgid "apx.errors.unknownCommand"
+msgstr "Nekonata komando: %s"
+
+msgid "apx.info.aborting"
+msgstr "Forlasante laŭ peto."
+
+msgid "apx.msg.additionalCommands"
+msgstr "Pliaj komandoj"
+
+msgid "apx.msg.additionalHelpTopics"
+msgstr "Pliaj helpaj temoj"
+
+msgid "apx.msg.aliases"
+msgstr "Sinonimoj"
+
+msgid "apx.msg.availableCommands"
+msgstr "Haveblaj komandoj"
+
+msgid "apx.msg.examples"
+msgstr "Ekzemploj"
+
+msgid "apx.msg.flags"
+msgstr "Flagoj"
+
+msgid "apx.msg.globalFlags"
+msgstr "Mallokaj flagoj"
+
+msgid "apx.msg.help"
+msgstr "Apx estas pakadministrilo subtenanta plurajn fontojn, permesanta al vi instali pakojn en subsistemojn."
+
+msgid "apx.msg.moreInfo"
+msgstr "Uzu %s por pliaj informoj pri komando"
+
+msgid "apx.msg.usage"
+msgstr "Uzado"
+
+msgid "apx.msg.version"
+msgstr "Montri la version de apx."
+
+msgid "apx.terminal.false"
+msgstr "ne"
+
+msgid "apx.terminal.true"
+msgstr "jes"
+
+msgid "pkgmanagers.export.error.noName"
+msgstr "Neniu nomo specifiĝis."
+
+msgid "pkgmanagers.export.error.noOutput"
+msgstr "Neniu eligo specifiĝis."
+
+msgid "pkgmanagers.export.info.success"
+msgstr "Elportis la pakadministrilon «%s» al «%s»."
+
+msgid "pkgmanagers.import.error.cannotLoad"
+msgstr "Ne eblas importi pakadministrilon de «%s»."
+
+msgid "pkgmanagers.import.error.noInput"
+msgstr "Neniu enigo specifiĝis."
+
+msgid "pkgmanagers.import.info.success"
+msgstr "Importis pakadministrilon de «%s»."
+
+msgid "pkgmanagers.labels.builtIn"
+msgstr "Integrita"
+
+msgid "pkgmanagers.labels.name"
+msgstr "Nomo"
+
+msgid "pkgmanagers.list.info.foundPkgManagers"
+msgstr "Troviĝis %d pakadministriloj"
+
+msgid "pkgmanagers.list.info.noPkgManagers"
+msgstr "Ekzistas neniu pakadministrilo. Aŭ kreu pakadministrilon per «apx pkgmanagers new», aŭ kontaktu la sistemadimistranton."
+
+msgid "pkgmanagers.new.error.alreadyExists"
+msgstr "Pakadministrilo nomita «%s» jam ekzistas."
+
+msgid "pkgmanagers.new.error.emptyCommand"
+msgstr "La komando devas esti nemalplena."
+
+msgid "pkgmanagers.new.error.emptyName"
+msgstr "La nomo devas esti nemalplena."
+
+msgid "pkgmanagers.new.error.noCommand"
+msgstr "Neniu komando specifiĝis por «%s»."
+
+msgid "pkgmanagers.new.error.noName"
+msgstr "Neniu nomo specifiĝis."
+
+msgid "pkgmanagers.new.info.askCommand"
+msgstr "Tajpu la komandon por «%s»:"
+
+msgid "pkgmanagers.new.info.askCommandWithDefault"
+msgstr "Enter the command for '%s' (default: '%s'):"
+
+msgid "pkgmanagers.new.info.askName"
+msgstr "Elektu nomon:"
+
+msgid "pkgmanagers.new.info.askOverwrite"
+msgstr "Pakadministrilo nomita «%s» jam ekzistas. Ĉu anstataŭigi ĝin?"
+
+msgid "pkgmanagers.new.info.askSudo"
+msgstr "Ĉu la pakadministrilo bezonas «sudo»?"
+
+msgid "pkgmanagers.new.success"
+msgstr "Sukcese kreis la pakadministrilon %s."
+
+msgid "pkgmanagers.rm.error.inUse"
+msgstr "La pakadministrilo estas uzata en %d stakoj:"
+
+msgid "pkgmanagers.rm.error.noName"
+msgstr "Neniu nomo specifiĝis."
+
+msgid "pkgmanagers.rm.info.aborting"
+msgstr "Ĉesigante malinstalon de la pakadministrilo «%s»."
+
+msgid "pkgmanagers.rm.info.askConfirmation"
+msgstr "Ĉu vi certe volas forigi «%s»?"
+
+msgid "pkgmanagers.rm.info.success"
+msgstr "Foriĝis pakadministrilo «%s»."
+
+msgid "pkgmanagers.update.error.builtIn"
+msgstr "Built-in package managers cannot be modified."
+
+msgid "pkgmanagers.update.error.missingCommand"
+msgstr "Mankas komando por %s."
+
+msgid "pkgmanagers.update.error.noName"
+msgstr "Neniu nomo specifiĝis."
+
+msgid "pkgmanagers.update.info.askNewCommand"
+msgstr "Tajpu novan komandon por «%s» (lasu malplena por ne ŝanĝi «%s»):"
+
+msgid "pkgmanagers.update.info.success"
+msgstr "Ĝisdatigis la pakadministrilon «%s»."
+
+msgid "runtimeCommand.description"
+msgstr "Uzi la specifitan subsistemon kaj ĝiajn pakadministrilon kaj medion."
+
+msgid "runtimeCommand.error.cantAccessPkgManager"
+msgstr "Okazis eraro uzante la pakadministrilon: %s"
+
+msgid "runtimeCommand.error.enteringContainer"
+msgstr "Okazis eraro enirante la ujon: %s"
+
+msgid "runtimeCommand.error.executingCommand"
+msgstr "Okazis eraro rulante la komandon: %s"
+
+msgid "runtimeCommand.error.exportingApp"
+msgstr "Okazis eraro eksportante la programon: %s"
+
+msgid "runtimeCommand.error.exportingBin"
+msgstr "Okazis eraro eksportante la binaraĵon: %s"
+
+msgid "runtimeCommand.error.noAppNameOrBin"
+msgstr "Oni devas specifi aŭ «--app-name» aŭ «--bin»."
+
+msgid "runtimeCommand.error.noPackageSpecified"
+msgstr "Neniu pako specifiĝis."
+
+msgid "runtimeCommand.error.sameAppOrBin"
+msgstr "Oni devas ne specifi kaj «--app-name» kaj «--bin»."
+
+msgid "runtimeCommand.error.startingContainer"
+msgstr "Okazis eraro lanĉante la ujon: %s"
+
+msgid "runtimeCommand.error.stoppingContainer"
+msgstr "Okazis eraro mallanĉante la ujon: %s"
+
+msgid "runtimeCommand.error.unexportingApp"
+msgstr "Okazis eraro maleksportante la programon: %s"
+
+msgid "runtimeCommand.error.unexportingBin"
+msgstr "Okazis eraro maleksportante la binaraĵon: %s"
+
+msgid "runtimeCommand.info.exportedApp"
+msgstr "Eksportis la programon %s"
+
+msgid "runtimeCommand.info.exportedApps"
+msgstr "Eksportis %d programojn"
+
+msgid "runtimeCommand.info.exportedBin"
+msgstr "Eksportis la binaraĵon %s"
+
+msgid "runtimeCommand.info.startedContainer"
+msgstr "Lanĉis ujon."
+
+msgid "runtimeCommand.info.startingContainer"
+msgstr "Lanĉante ujon…"
+
+msgid "runtimeCommand.info.stoppedContainer"
+msgstr "Mallanĉis ujon."
+
+msgid "runtimeCommand.info.stoppingContainer"
+msgstr "Mallanĉante ujon…"
+
+msgid "runtimeCommand.info.unexportedApp"
+msgstr "Maleksportis la programon %s"
+
+msgid "runtimeCommand.info.unexportedApps"
+msgstr "Maleksportis %d programojn"
+
+msgid "runtimeCommand.info.unexportedBin"
+msgstr "Maleksportis la binaraĵon %s"
+
+msgid "stacks.export.error.noName"
+msgstr "Neniu nomo specifiĝis."
+
+msgid "stacks.export.error.noOutput"
+msgstr "Neniu eligo specifiĝis."
+
+msgid "stacks.export.info.success"
+msgstr "Eksportis la stakon «%s» al «%s»."
+
+msgid "stacks.import.error.cannotLoad"
+msgstr "Ne eblas ŝargi stakon el «%s»."
+
+msgid "stacks.import.error.noInput"
+msgstr "Neniu enigo specifiĝis."
+
+msgid "stacks.import.info.success"
+msgstr "Enportis stakon el «%s»."
+
+msgid "stacks.labels.builtIn"
+msgstr "Integrita"
+
+msgid "stacks.labels.name"
+msgstr "Nomo"
+
+msgid "stacks.list.info.aborting"
+msgstr "Ĉesigante malinstalon de la stako «%s»."
+
+msgid "stacks.list.info.foundStacks"
+msgstr "Troviĝis %d stakoj:"
+
+msgid "stacks.list.info.noStacks"
+msgstr "Ekzistas neniu stako. Aŭ kreu stakon per «apx stacks new», aŭ kontaktu la sistemadimistranton."
+
+msgid "stacks.new.error.alreadyExists"
+msgstr "Jam ekzistas stako de la nomo «%s»."
+
+msgid "stacks.new.error.emptyBase"
+msgstr "La bazo devas esti nemalplena."
+
+msgid "stacks.new.error.emptyName"
+msgstr "La nomo devas esti nemalplena."
+
+msgid "stacks.new.error.emptyPackages"
+msgstr "La pakoj ne povas esti malplenaj."
+
+msgid "stacks.new.error.emptyPkgManager"
+msgstr "La pakadministrilo devas esti nemalplena."
+
+msgid "stacks.new.error.noBase"
+msgstr "Neniu bazo specifiĝis."
+
+msgid "stacks.new.error.noName"
+msgstr "Neniu nomo specifiĝis."
+
+msgid "stacks.new.error.noPackages"
+msgstr "Neniu pako specifiĝis."
+
+msgid "stacks.new.error.noPkgManager"
+msgstr "Neniu pakadministrilo specifiĝis."
+
+msgid "stacks.new.error.noPkgManagers"
+msgstr "Ekzistas neniu stako. Aŭ kreu stakon per «apx stacks new», aŭ kontaktu la sistemadimistranton."
+
+msgid "stacks.new.error.pkgManagerDoesNotExist"
+msgstr "La specifita pakadministrilo ne ekzistas. Aŭ kreu ĝin per «apx pkgmanagers new», aŭ kontaktu la sistemadministranton."
+
+msgid "stacks.new.info.askBase"
+msgstr "Elektu bazon (ekz. «vanillaos/pico»):"
+
+msgid "stacks.new.info.askName"
+msgstr "Elektu nomon:"
+
+msgid "stacks.new.info.askPackages"
+msgstr "Bonvolu tajpi tiujn pakojn, kiujn vi volas instali en la stakon, apartigitajn per spacetoj:"
+
+msgid "stacks.new.info.askPkgManager"
+msgstr "Elektu pakadministrilon:"
+
+msgid "stacks.new.info.confirmPackages"
+msgstr "Ĉu konfirmi la aktualan liston de pakoj?"
+
+msgid "stacks.new.info.noPackages"
+msgstr "Vi ne specifis ajnajn pakaĵojn instalotajn en la stakon. Ĉu specifi nun?"
+
+msgid "stacks.new.info.selectPkgManager"
+msgstr "Elektu pakadministrilon [1-%d]:"
+
+msgid "stacks.new.info.success"
+msgstr "Kreiĝis stako «%s»."
+
+msgid "stacks.rm.error.inUse"
+msgstr "The stack is used in %d subsystems:"
+
+msgid "stacks.rm.error.noName"
+msgstr "Neniu nomo specifiĝis."
+
+msgid "stacks.rm.info.askConfirmation"
+msgstr "Ĉu vi certe volas forigi «%s»?"
+
+msgid "stacks.rm.info.success"
+msgstr "Foriĝis stako «%s»."
+
+msgid "stacks.update.error.builtIn"
+msgstr "Built-in stacks cannot be modified."
+
+msgid "stacks.update.error.noBase"
+msgstr "Neniu bazo specifiĝis."
+
+msgid "stacks.update.error.noName"
+msgstr "Neniu nomo specifiĝis."
+
+msgid "stacks.update.error.noPkgManager"
+msgstr "Neniu pakadministrilo specifiĝis."
+
+msgid "stacks.update.error.pkgManagerDoesNotExist"
+msgstr "La specifita pakadministrilo ne ekzistas. Aŭ kreu ĝin per «apx pkgmanagers new», aŭ kontaktu la sistemadministranton."
+
+msgid "stacks.update.info.askBase"
+msgstr "Tajpu novan bazon, aŭ konfirmu la aktualan (%s):"
+
+msgid "stacks.update.info.askPackages"
+msgstr "Bonvolu tajpi tiujn pakojn, kiujn vi volas instali en la stakon, apartigitajn per spacetoj, aŭ konfirmi la aktualajn pakojn (%s):"
+
+msgid "stacks.update.info.askPkgManager"
+msgstr "Elektu novan pakadministrilon, aŭ konfirmu la aktualan (%s):"
+
+msgid "stacks.update.info.confirmPackages"
+msgstr "Ĉu konfirmi la aktualan liston de pakoj?"
+
+msgid "stacks.update.info.noPackages"
+msgstr "Vi ne specifis ajnajn pakaĵojn instalotajn en la stakon. Ĉu specifi nun?"
+
+msgid "stacks.update.info.success"
+msgstr "Ĝisdatiĝis stako «%s»."
+
+msgid "subsystems.labels.name"
+msgstr "Nomo"
+
+msgid "subsystems.labels.status"
+msgstr "Stato"
+
+msgid "subsystems.list.error"
+msgstr "<nil>"
+
+msgid "subsystems.list.info.foundSubsystems"
+msgstr "Troviĝis %d subsistemoj:"
+
+msgid "subsystems.list.info.noSubsystems"
+msgstr "Ekzistas neniu subsistemo. Aŭ kreu subsistemon per «apx subsystems new», aŭ kontaktu la sistemadimistranton."
+
+msgid "subsystems.new.error.alreadyExists"
+msgstr "Subsistemo nomita «%s» jam ekzistas."
+
+msgid "subsystems.new.error.emptyName"
+msgstr "La nomo devas esti nemalplena."
+
+msgid "subsystems.new.error.emptyStack"
+msgstr "La stako devas esti nemalplena."
+
+msgid "subsystems.new.error.forbiddenName"
+msgstr "The name '%s' is forbidden. Please choose a different name"
+
+msgid "subsystems.new.error.noName"
+msgstr "Neniu nomo specifiĝis."
+
+msgid "subsystems.new.error.noStack"
+msgstr "Neniu stako specifiĝis."
+
+msgid "subsystems.new.error.noStacks"
+msgstr "Oni bezonas stakon por krei subsistemon. Aŭ kreu stakon per «apx stacks new», aŭ kontaktu la sistemadimistranton."
+
+msgid "subsystems.new.error.stackDoesNotExist"
+msgstr "La specifita stako ne ekzistas. Aŭ kreu ĝin per «apx stacks new», aŭ kontaktu la sistemadimistranton."
+
+msgid "subsystems.new.info.askName"
+msgstr "Elektu nomon:"
+
+msgid "subsystems.new.info.availableStacks"
+msgstr "Haveblaj stakoj:"
+
+msgid "subsystems.new.info.creatingSubsystem"
+msgstr "Kreante subsistemon «%s» kun stako «%s»…"
+
+msgid "subsystems.new.info.selectStack"
+msgstr "Elektu stakon [1-%d]:"
+
+msgid "subsystems.new.info.success"
+msgstr "Kreiĝis subsistemo «%s»."
+
+msgid "subsystems.reset.error.noName"
+msgstr "Neniu nomo specifiĝis."
+
+msgid "subsystems.reset.info.askConfirmation"
+msgstr "Ĉu vi certe volas restaŭri «%s»?"
+
+msgid "subsystems.reset.info.success"
+msgstr "La subsistemo «%s» estas restaŭrita."
+
+msgid "subsystems.rm.error.noName"
+msgstr "Neniu nomo specifiĝis."
+
+msgid "subsystems.rm.info.askConfirmation"
+msgstr "Ĉu vi certe volas forigi «%s»?"
+
+msgid "subsystems.rm.info.success"
+msgstr "Foriĝis subsistemo «%s»."
+

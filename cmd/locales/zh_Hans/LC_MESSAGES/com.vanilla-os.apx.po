@@ -1,0 +1,694 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_Hans\n"
+
+msgid "apx.cmd.pkgmanagers"
+msgstr "操作 apx 中可用的软件包管理器。"
+
+msgid "apx.cmd.pkgmanagers.export"
+msgstr "导出指定的软件包管理器。"
+
+msgid "apx.cmd.pkgmanagers.export.options.name"
+msgstr "要导出的软件包管理器的名称。"
+
+msgid "apx.cmd.pkgmanagers.export.options.output"
+msgstr "软件包管理器导出到的路径。"
+
+msgid "apx.cmd.pkgmanagers.import"
+msgstr "导入指定的软件包管理器。"
+
+msgid "apx.cmd.pkgmanagers.import.options.input"
+msgstr "要导入的软件包管理器的路径。"
+
+msgid "apx.cmd.pkgmanagers.list"
+msgstr "列出所有可用的软件包管理器。"
+
+msgid "apx.cmd.pkgmanagers.list.options.json"
+msgstr "以 JSON 格式输出。"
+
+msgid "apx.cmd.pkgmanagers.new"
+msgstr "创建新的软件包管理器。"
+
+msgid "apx.cmd.pkgmanagers.new.options.autoremove"
+msgstr "执行自动移除软件包的命令。"
+
+msgid "apx.cmd.pkgmanagers.new.options.clean"
+msgstr "执行清除软件包管理器缓存的命令。"
+
+msgid "apx.cmd.pkgmanagers.new.options.install"
+msgstr "执行安装软件包的命令。"
+
+msgid "apx.cmd.pkgmanagers.new.options.list"
+msgstr "执行列出所有已安装软件包的命令。"
+
+msgid "apx.cmd.pkgmanagers.new.options.name"
+msgstr "软件包管理器的名称。"
+
+msgid "apx.cmd.pkgmanagers.new.options.needSudo"
+msgstr "软件包管理器是否需要 sudo 才能运行。"
+
+msgid "apx.cmd.pkgmanagers.new.options.noPrompt"
+msgstr "为所有操作指定“是”。"
+
+msgid "apx.cmd.pkgmanagers.new.options.purge"
+msgstr "执行清除（purge）软件包的命令。"
+
+msgid "apx.cmd.pkgmanagers.new.options.remove"
+msgstr "执行移除软件包的命令。"
+
+msgid "apx.cmd.pkgmanagers.new.options.search"
+msgstr "执行搜索软件包的命令。"
+
+msgid "apx.cmd.pkgmanagers.new.options.show"
+msgstr "执行显示软件包信息的命令。"
+
+msgid "apx.cmd.pkgmanagers.new.options.update"
+msgstr "执行更新可用软件包列表的命令。"
+
+msgid "apx.cmd.pkgmanagers.new.options.upgrade"
+msgstr "执行升级软件包的命令。"
+
+msgid "apx.cmd.pkgmanagers.rm"
+msgstr "移除指定的软件包管理器。"
+
+msgid "apx.cmd.pkgmanagers.rm.options.force"
+msgstr "强制移除软件包管理器。"
+
+msgid "apx.cmd.pkgmanagers.rm.options.name"
+msgstr "要移除的软件包管理器的名称。"
+
+msgid "apx.cmd.pkgmanagers.show"
+msgstr "显示有关指定软件包管理器的信息。"
+
+msgid "apx.cmd.pkgmanagers.update"
+msgstr "更新选定的软件包管理器。"
+
+msgid "apx.cmd.stacks"
+msgstr "操作 apx 中可用的包捆。"
+
+msgid "apx.cmd.stacks.export"
+msgstr "导出指定的包捆。"
+
+msgid "apx.cmd.stacks.export.options.name"
+msgstr "要导出的包捆的名称。"
+
+msgid "apx.cmd.stacks.export.options.output"
+msgstr "要导出的包捆的导出路径。"
+
+msgid "apx.cmd.stacks.import"
+msgstr "导入指定的包捆。"
+
+msgid "apx.cmd.stacks.import.options.input"
+msgstr "要导入的包捆的路径。"
+
+msgid "apx.cmd.stacks.list"
+msgstr "列出所有可用的包捆。"
+
+msgid "apx.cmd.stacks.list.options.json"
+msgstr "以 JSON 格式输出。"
+
+msgid "apx.cmd.stacks.new"
+msgstr "创建新包捆。"
+
+msgid "apx.cmd.stacks.new.options.base"
+msgstr "要使用的基础发行版映像。（有关兼容映像的列表参见：https://distrobox.it/compatibility/#containers-distros）"
+
+msgid "apx.cmd.stacks.new.options.name"
+msgstr "包捆的名称。"
+
+msgid "apx.cmd.stacks.new.options.noPrompt"
+msgstr "为所有操作指定“是”。"
+
+msgid "apx.cmd.stacks.new.options.packages"
+msgstr "要安装的软件包。"
+
+msgid "apx.cmd.stacks.new.options.pkgManager"
+msgstr "要使用的软件包管理器。"
+
+msgid "apx.cmd.stacks.rm"
+msgstr "移除指定的包捆。"
+
+msgid "apx.cmd.stacks.rm.options.force"
+msgstr "强制移除包捆。"
+
+msgid "apx.cmd.stacks.rm.options.name"
+msgstr "要移除的包捆的名称。"
+
+msgid "apx.cmd.stacks.show"
+msgstr "显示有关指定包捆的信息。"
+
+msgid "apx.cmd.stacks.update"
+msgstr "更新指定的包捆。"
+
+msgid "apx.cmd.stacks.update.options.base"
+msgstr "要使用的基础子系统。"
+
+msgid "apx.cmd.stacks.update.options.name"
+msgstr "包捆的名称。"
+
+msgid "apx.cmd.stacks.update.options.noPrompt"
+msgstr "为所有操作指定“是”。"
+
+msgid "apx.cmd.stacks.update.options.packages"
+msgstr "要安装的软件包。"
+
+msgid "apx.cmd.stacks.update.options.pkgManager"
+msgstr "要使用的软件包管理器。"
+
+msgid "apx.cmd.subsystem.autoremove"
+msgstr "移除不再需要的软件包。"
+
+msgid "apx.cmd.subsystem.clean"
+msgstr "清理软件包管理器的缓存。"
+
+msgid "apx.cmd.subsystem.enter"
+msgstr "进入子系统的环境。"
+
+msgid "apx.cmd.subsystem.export"
+msgstr "从子系统向主机导出应用程序或二进制文件。"
+
+msgid "apx.cmd.subsystem.export.options.appName"
+msgstr "要导出的应用程序的名称。"
+
+msgid "apx.cmd.subsystem.export.options.bin"
+msgstr "要导出的二进制文件的名称。"
+
+msgid "apx.cmd.subsystem.export.options.binOutput"
+msgstr "二进制输出的路径（默认为 ~/.local/bin/）。"
+
+msgid "apx.cmd.subsystem.install"
+msgstr "安装指定的软件包。"
+
+msgid "apx.cmd.subsystem.install.options.noExport"
+msgstr "不导出桌面条目。"
+
+msgid "apx.cmd.subsystem.list"
+msgstr "列出所有已安装的软件包。"
+
+msgid "apx.cmd.subsystem.list.options.json"
+msgstr "以 JSON 格式输出。"
+
+msgid "apx.cmd.subsystem.new.options.home"
+msgstr "子系统的自定义家目录。"
+
+msgid "apx.cmd.subsystem.new.options.init"
+msgstr "在子系统内部使用 systemd。"
+
+msgid "apx.cmd.subsystem.new.options.name"
+msgstr "子系统的名称。"
+
+msgid "apx.cmd.subsystem.new.options.stack"
+msgstr "要使用的包捆。"
+
+msgid "apx.cmd.subsystem.purge"
+msgstr "清除（purge）指定的软件包。"
+
+msgid "apx.cmd.subsystem.remove"
+msgstr "移除指定的软件包。"
+
+msgid "apx.cmd.subsystem.reset.options.force"
+msgstr "强制重置子系统。"
+
+msgid "apx.cmd.subsystem.reset.options.name"
+msgstr "要重置的子系统的名称。"
+
+msgid "apx.cmd.subsystem.rm.options.force"
+msgstr "强制移除子系统。"
+
+msgid "apx.cmd.subsystem.rm.options.name"
+msgstr "要移除的子系统的名称。"
+
+msgid "apx.cmd.subsystem.run"
+msgstr "在子系统内部运行命令。"
+
+msgid "apx.cmd.subsystem.search"
+msgstr "搜索匹配指定查询的软件包。"
+
+msgid "apx.cmd.subsystem.show"
+msgstr "显示有关指定软件包的信息。"
+
+msgid "apx.cmd.subsystem.start"
+msgstr "启动子系统。"
+
+msgid "apx.cmd.subsystem.stop"
+msgstr "停止子系统。"
+
+msgid "apx.cmd.subsystem.unexport"
+msgstr "从主机中移除导出的应用程序或二进制文件。"
+
+msgid "apx.cmd.subsystem.unexport.options.appName"
+msgstr "要移除的导出的应用程序的名称。"
+
+msgid "apx.cmd.subsystem.unexport.options.bin"
+msgstr "要移除的导出的二进制文件的名称。"
+
+msgid "apx.cmd.subsystem.unexport.options.binOutput"
+msgstr "二进制输出的路径（默认为 ~/.local/bin/）。"
+
+msgid "apx.cmd.subsystem.update"
+msgstr "更新可用软件包的列表。"
+
+msgid "apx.cmd.subsystem.upgrade"
+msgstr "升级所有已安装的软件包。"
+
+msgid "apx.cmd.subsystems"
+msgstr "操作 apx 中可用的子系统。"
+
+msgid "apx.cmd.subsystems.list"
+msgstr "列出所有可用的子系统。"
+
+msgid "apx.cmd.subsystems.new"
+msgstr "创建新的子系统。"
+
+msgid "apx.cmd.subsystems.reset"
+msgstr "重置指定的子系统。"
+
+msgid "apx.cmd.subsystems.rm"
+msgstr "移除指定的子系统。"
+
+msgid "apx.errors.invalidChoice"
+msgstr "选择无效。"
+
+msgid "apx.errors.invalidInput"
+msgstr "输入无效。"
+
+msgid "apx.errors.noRoot"
+msgstr "请不要以 root 用户运行 Apx。"
+
+msgid "apx.errors.unknownCommand"
+msgstr "未知的命令：%s"
+
+msgid "apx.info.aborting"
+msgstr "应用户要求取消操作。"
+
+msgid "apx.msg.additionalCommands"
+msgstr "附加命令"
+
+msgid "apx.msg.additionalHelpTopics"
+msgstr "附加帮助主题"
+
+msgid "apx.msg.aliases"
+msgstr "别名"
+
+msgid "apx.msg.availableCommands"
+msgstr "可用命令"
+
+msgid "apx.msg.examples"
+msgstr "示例"
+
+msgid "apx.msg.flags"
+msgstr "参数"
+
+msgid "apx.msg.globalFlags"
+msgstr "全局参数"
+
+msgid "apx.msg.help"
+msgstr "显示 apx 的帮助。"
+
+msgid "apx.msg.moreInfo"
+msgstr "使用 %s 获取有关命令的更多信息"
+
+msgid "apx.msg.usage"
+msgstr "用法"
+
+msgid "apx.msg.version"
+msgstr "显示 apx 的版本。"
+
+msgid "apx.terminal.false"
+msgstr "否"
+
+msgid "apx.terminal.true"
+msgstr "是"
+
+msgid "pkgmanagers.export.error.noName"
+msgstr "没有指定名称。"
+
+msgid "pkgmanagers.export.error.noOutput"
+msgstr "没有指定输出。"
+
+msgid "pkgmanagers.export.info.success"
+msgstr "已导出软件包管理器 '%s' 到 '%s'。"
+
+msgid "pkgmanagers.import.error.cannotLoad"
+msgstr "无法从 '%s' 加载软件包管理器。"
+
+msgid "pkgmanagers.import.error.noInput"
+msgstr "没有指定输入。"
+
+msgid "pkgmanagers.import.info.success"
+msgstr "已从 '%s' 导入软件包管理器。"
+
+msgid "pkgmanagers.labels.builtIn"
+msgstr "内置"
+
+msgid "pkgmanagers.labels.name"
+msgstr "名称"
+
+msgid "pkgmanagers.list.info.foundPkgManagers"
+msgstr "找到 %d 个软件包管理器"
+
+msgid "pkgmanagers.list.info.noPkgManagers"
+msgstr "没有可用的软件包管理器。请使用 'apx pkgmanagers new' 创建新的软件包管理器，或者联系系统管理员。"
+
+msgid "pkgmanagers.new.error.alreadyExists"
+msgstr "名为 '%s' 的软件包管理器已经存在。"
+
+msgid "pkgmanagers.new.error.emptyCommand"
+msgstr "命令不能为空。"
+
+msgid "pkgmanagers.new.error.emptyName"
+msgstr "名称不能为空。"
+
+msgid "pkgmanagers.new.error.noCommand"
+msgstr "没有为 '%s' 指定命令。"
+
+msgid "pkgmanagers.new.error.noName"
+msgstr "没有指定名称。"
+
+msgid "pkgmanagers.new.info.askCommand"
+msgstr "输入 '%s' 的命令："
+
+msgid "pkgmanagers.new.info.askCommandWithDefault"
+msgstr "输入 '%s' 的命令（默认为 '%s'）："
+
+msgid "pkgmanagers.new.info.askName"
+msgstr "选择名称："
+
+msgid "pkgmanagers.new.info.askOverwrite"
+msgstr "名为 '%s' 的软件包管理器已经存在。要覆盖吗？"
+
+msgid "pkgmanagers.new.info.askSudo"
+msgstr "软件包管理器是否需要 sudo 才能运行？"
+
+msgid "pkgmanagers.new.success"
+msgstr "软件包管理器 %s 创建成功。"
+
+msgid "pkgmanagers.rm.error.inUse"
+msgstr "软件包管理器被用于 %d 个包捆中："
+
+msgid "pkgmanagers.rm.error.noName"
+msgstr "没有指定名称。"
+
+msgid "pkgmanagers.rm.info.aborting"
+msgstr "中止移除软件包管理器 '%s'。"
+
+msgid "pkgmanagers.rm.info.askConfirmation"
+msgstr "确定要移除 '%s' 吗？"
+
+msgid "pkgmanagers.rm.info.success"
+msgstr "已移除软件包管理器 '%s'。"
+
+msgid "pkgmanagers.update.error.builtIn"
+msgstr "不能修改内置的软件包管理器。"
+
+msgid "pkgmanagers.update.error.missingCommand"
+msgstr "缺失 %s 的命令。"
+
+msgid "pkgmanagers.update.error.noName"
+msgstr "没有指定名称。"
+
+msgid "pkgmanagers.update.info.askNewCommand"
+msgstr "输入 '%s' 的新命令（留空以保留 '%s'）："
+
+msgid "pkgmanagers.update.info.success"
+msgstr "已更新软件包管理器 '%s'。"
+
+msgid "runtimeCommand.description"
+msgstr "操作指定的子系统，访问软件包管理器及环境。"
+
+msgid "runtimeCommand.error.cantAccessPkgManager"
+msgstr "访问软件包管理器时发生错误：%s"
+
+msgid "runtimeCommand.error.enteringContainer"
+msgstr "进入容器时发生错误：%s"
+
+msgid "runtimeCommand.error.executingCommand"
+msgstr "执行命令时发生错误：%s"
+
+msgid "runtimeCommand.error.exportingApp"
+msgstr "导出应用程序时发生错误：%s"
+
+msgid "runtimeCommand.error.exportingBin"
+msgstr "导出二进制文件时发生错误：%s"
+
+msgid "runtimeCommand.error.noAppNameOrBin"
+msgstr "必须指定 --app-name 或 --bin。"
+
+msgid "runtimeCommand.error.noPackageSpecified"
+msgstr "没有指定软件包。"
+
+msgid "runtimeCommand.error.sameAppOrBin"
+msgstr "不能同时指定 --app-name 和 --bin。"
+
+msgid "runtimeCommand.error.startingContainer"
+msgstr "启动容器时发生错误：%s"
+
+msgid "runtimeCommand.error.stoppingContainer"
+msgstr "停止容器时发生错误：%s"
+
+msgid "runtimeCommand.error.unexportingApp"
+msgstr "移除导出的应用程序时发生错误：%s"
+
+msgid "runtimeCommand.error.unexportingBin"
+msgstr "移除导出的二进制文件时发生错误：%s"
+
+msgid "runtimeCommand.info.exportedApp"
+msgstr "已导出应用程序 %s"
+
+msgid "runtimeCommand.info.exportedApps"
+msgstr "已导出 %d 个应用程序"
+
+msgid "runtimeCommand.info.exportedBin"
+msgstr "已导出二进制文件 %s"
+
+msgid "runtimeCommand.info.startedContainer"
+msgstr "已启动子系统。"
+
+msgid "runtimeCommand.info.startingContainer"
+msgstr "正在启动子系统 %s…"
+
+msgid "runtimeCommand.info.stoppedContainer"
+msgstr "已停止子系统。"
+
+msgid "runtimeCommand.info.stoppingContainer"
+msgstr "正在停止子系统 %s…"
+
+msgid "runtimeCommand.info.unexportedApp"
+msgstr "已移除导出的应用程序 %s"
+
+msgid "runtimeCommand.info.unexportedApps"
+msgstr "已移除导出的 %d 个应用程序"
+
+msgid "runtimeCommand.info.unexportedBin"
+msgstr "已移除导出的二进制文件 %s"
+
+msgid "stacks.export.error.noName"
+msgstr "没有指定名称。"
+
+msgid "stacks.export.error.noOutput"
+msgstr "没有指定输出。"
+
+msgid "stacks.export.info.success"
+msgstr "已导出包捆 '%s' 到 '%s'。"
+
+msgid "stacks.import.error.cannotLoad"
+msgstr "无法从 '%s' 加载包捆。"
+
+msgid "stacks.import.error.noInput"
+msgstr "没有指定输入。"
+
+msgid "stacks.import.info.success"
+msgstr "已从 '%s' 导入包捆。"
+
+msgid "stacks.labels.builtIn"
+msgstr "内置"
+
+msgid "stacks.labels.name"
+msgstr "名称"
+
+msgid "stacks.list.info.aborting"
+msgstr "中止移除包捆 '%s'。"
+
+msgid "stacks.list.info.foundStacks"
+msgstr "找到 %d 个包捆："
+
+msgid "stacks.list.info.noStacks"
+msgstr "没有可用的包捆。请使用 'apx stacks new' 创建新的包捆，或者联系系统管理员。"
+
+msgid "stacks.new.error.alreadyExists"
+msgstr "名为 '%s' 的包捆已经存在。"
+
+msgid "stacks.new.error.emptyBase"
+msgstr "基础映像不能为空。"
+
+msgid "stacks.new.error.emptyName"
+msgstr "名称不能为空。"
+
+msgid "stacks.new.error.emptyPackages"
+msgstr "软件包不能为空。"
+
+msgid "stacks.new.error.emptyPkgManager"
+msgstr "软件包管理器不能为空。"
+
+msgid "stacks.new.error.noBase"
+msgstr "没有指定基础映像。"
+
+msgid "stacks.new.error.noName"
+msgstr "没有指定名称。"
+
+msgid "stacks.new.error.noPackages"
+msgstr "没有指定软件包。"
+
+msgid "stacks.new.error.noPkgManager"
+msgstr "没有指定软件包管理器。"
+
+msgid "stacks.new.error.noPkgManagers"
+msgstr "无法找到任何软件包管理器。请使用 'apx pkgmanagers new' 创建，或者联系系统管理员。"
+
+msgid "stacks.new.error.pkgManagerDoesNotExist"
+msgstr "指定的软件包管理器不存在。请使用 'apx pkgmanagers new' 创建或者联系系统管理员。"
+
+msgid "stacks.new.info.askBase"
+msgstr "选择基础映像（如 'vanillaos/pico'）："
+
+msgid "stacks.new.info.askName"
+msgstr "选择名称："
+
+msgid "stacks.new.info.askPackages"
+msgstr "请输入您要安装到包捆中的软件包，用空格隔开："
+
+msgid "stacks.new.info.askPkgManager"
+msgstr "选择软件包管理器："
+
+msgid "stacks.new.info.confirmPackages"
+msgstr "您需要确认目前的软件包列表吗？"
+
+msgid "stacks.new.info.noPackages"
+msgstr "您没有提供任何要安装在包捆中的软件包。需要添加一些吗？"
+
+msgid "stacks.new.info.selectPkgManager"
+msgstr "选择软件包管理器 [1-%d]："
+
+msgid "stacks.new.info.success"
+msgstr "已创建包捆 '%s'。"
+
+msgid "stacks.rm.error.inUse"
+msgstr "包捆已被用于 %d 个子系统中："
+
+msgid "stacks.rm.error.noName"
+msgstr "没有指定名称。"
+
+msgid "stacks.rm.info.askConfirmation"
+msgstr "确定要移除 '%s' 吗？"
+
+msgid "stacks.rm.info.success"
+msgstr "已移除包捆 '%s'。"
+
+msgid "stacks.update.error.builtIn"
+msgstr "不能修改内置的包捆。"
+
+msgid "stacks.update.error.noBase"
+msgstr "没有指定基础映像。"
+
+msgid "stacks.update.error.noName"
+msgstr "没有指定名称。"
+
+msgid "stacks.update.error.noPkgManager"
+msgstr "没有指定软件包管理器。"
+
+msgid "stacks.update.error.pkgManagerDoesNotExist"
+msgstr "指定的软件包管理器不存在。请使用 'apx pkgmanagers new' 创建或者联系系统管理员。"
+
+msgid "stacks.update.info.askBase"
+msgstr "输入新的基础映像或确认使用目前的（%s）："
+
+msgid "stacks.update.info.askPackages"
+msgstr "输入想要安装在包捆中的软件包，用空格隔开："
+
+msgid "stacks.update.info.askPkgManager"
+msgstr "选择新的软件包管理器或确认使用目前的（%s）："
+
+msgid "stacks.update.info.confirmPackages"
+msgstr "您需要更新软件包列表吗？"
+
+msgid "stacks.update.info.noPackages"
+msgstr "您没有提供任何要安装在包捆中的软件包。需要添加一些吗？"
+
+msgid "stacks.update.info.success"
+msgstr "已更新包捆 '%s'。"
+
+msgid "subsystems.labels.name"
+msgstr "名称"
+
+msgid "subsystems.labels.status"
+msgstr "状态"
+
+msgid "subsystems.list.error"
+msgstr "<nil>"
+
+msgid "subsystems.list.info.foundSubsystems"
+msgstr "找到 %d 个子系统："
+
+msgid "subsystems.list.info.noSubsystems"
+msgstr "没有可用的子系统。请使用 'apx subsystems new' 创建新的子系统，或者联系系统管理员。"
+
+msgid "subsystems.new.error.alreadyExists"
+msgstr "名为 '%s' 的子系统已经存在。"
+
+msgid "subsystems.new.error.emptyName"
+msgstr "名称不能为空。"
+
+msgid "subsystems.new.error.emptyStack"
+msgstr "包捆不能为空。"
+
+msgid "subsystems.new.error.forbiddenName"
+msgstr "名称 '%s' 被禁止使用。请使用另一个名称"
+
+msgid "subsystems.new.error.noName"
+msgstr "没有指定名称。"
+
+msgid "subsystems.new.error.noStack"
+msgstr "没有指定包捆。"
+
+msgid "subsystems.new.error.noStacks"
+msgstr "创建子系统需要包捆。请使用 'apx stacks new' 创建新包捆，或者联系系统管理员。"
+
+msgid "subsystems.new.error.stackDoesNotExist"
+msgstr "指定的包捆不存在。请使用 'apx stacks new' 创建或者联系系统管理员。"
+
+msgid "subsystems.new.info.askName"
+msgstr "选择名称："
+
+msgid "subsystems.new.info.availableStacks"
+msgstr "可用的包捆："
+
+msgid "subsystems.new.info.creatingSubsystem"
+msgstr "正在创建子系统 '%s'，使用包捆 '%s'…"
+
+msgid "subsystems.new.info.selectStack"
+msgstr "选择包捆 [1-%d]："
+
+msgid "subsystems.new.info.success"
+msgstr "已创建子系统 '%s'。"
+
+msgid "subsystems.reset.error.noName"
+msgstr "没有指定名称。"
+
+msgid "subsystems.reset.info.askConfirmation"
+msgstr "确定要重置 '%s' 吗？"
+
+msgid "subsystems.reset.info.success"
+msgstr "已重置子系统 '%s'。"
+
+msgid "subsystems.rm.error.noName"
+msgstr "没有指定名称。"
+
+msgid "subsystems.rm.info.askConfirmation"
+msgstr "确定要移除 '%s' 吗？"
+
+msgid "subsystems.rm.info.success"
+msgstr "已移除子系统 '%s'。"
+

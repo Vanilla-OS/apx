@@ -1,0 +1,694 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: el\n"
+
+msgid "apx.cmd.pkgmanagers"
+msgstr "Εργαστείτε με τους διαθέσιμους διαχειριστές πακέτων στο apx."
+
+msgid "apx.cmd.pkgmanagers.export"
+msgstr "Export the specified package manager."
+
+msgid "apx.cmd.pkgmanagers.export.options.name"
+msgstr "The name of the package manager to export."
+
+msgid "apx.cmd.pkgmanagers.export.options.output"
+msgstr "The path to export the package manager to."
+
+msgid "apx.cmd.pkgmanagers.import"
+msgstr "Import the specified package manager."
+
+msgid "apx.cmd.pkgmanagers.import.options.input"
+msgstr "The path to import the package manager from."
+
+msgid "apx.cmd.pkgmanagers.list"
+msgstr "Καταγραφή των διαθέσιμων διαχειριστών πακέτων."
+
+msgid "apx.cmd.pkgmanagers.list.options.json"
+msgstr "Εξαγωγή σε μορφοποίηση JSON."
+
+msgid "apx.cmd.pkgmanagers.new"
+msgstr "Δημιουργία νέου διαχειριστή πακέτων."
+
+msgid "apx.cmd.pkgmanagers.new.options.autoremove"
+msgstr "Η εντολή για την αυτόματη αφαίρεση πακέτων."
+
+msgid "apx.cmd.pkgmanagers.new.options.clean"
+msgstr "Η εντολή για τον καθαρισμό της κρυφής μνήμης του διαχειριστή πακέτων."
+
+msgid "apx.cmd.pkgmanagers.new.options.install"
+msgstr "Η εντολή για την εγκατάσταση πακέτων."
+
+msgid "apx.cmd.pkgmanagers.new.options.list"
+msgstr "Η εντολή για την καταγραφή των εγκατεστημένων πακέτων."
+
+msgid "apx.cmd.pkgmanagers.new.options.name"
+msgstr "Το όνομα του διαχειριστή πακέτων."
+
+msgid "apx.cmd.pkgmanagers.new.options.needSudo"
+msgstr "Αν χρειάζεται ο διαχειριστής πακέτων το sudo για να τρέξει."
+
+msgid "apx.cmd.pkgmanagers.new.options.noPrompt"
+msgstr "Να θεωρηθεί το \"ναι\" ως απάντηση σε κάθε προτροπή."
+
+msgid "apx.cmd.pkgmanagers.new.options.purge"
+msgstr "Η εντολή για την εκκαθάριση πακέτων."
+
+msgid "apx.cmd.pkgmanagers.new.options.remove"
+msgstr "Η εντολή για την αφαίρεση πακέτων."
+
+msgid "apx.cmd.pkgmanagers.new.options.search"
+msgstr "Η εντολή για την αναζήτηση πακέτων."
+
+msgid "apx.cmd.pkgmanagers.new.options.show"
+msgstr "Η εντολή για την προβολή των πληροφοριών των πακέτων."
+
+msgid "apx.cmd.pkgmanagers.new.options.update"
+msgstr "Η εντολή για την ενημέρωση της καταγραφής των διαθέσιμων πακέτων."
+
+msgid "apx.cmd.pkgmanagers.new.options.upgrade"
+msgstr "Η εντολή για την αναβάθμιση των πακέτων."
+
+msgid "apx.cmd.pkgmanagers.rm"
+msgstr "Αφαίρεση του επιλεγμένου διαχειριστή πακέτων."
+
+msgid "apx.cmd.pkgmanagers.rm.options.force"
+msgstr "Εξαναγκαστική αφαίρεση του διαχειριστή πακέτων."
+
+msgid "apx.cmd.pkgmanagers.rm.options.name"
+msgstr "Το όνομα του διαχειριστή πακέτων που να αφαιρεθεί."
+
+msgid "apx.cmd.pkgmanagers.show"
+msgstr "Εμφάνιση πληροφοριών σχετικά με τον επιλεγμένο διαχειριστή πακέτων."
+
+msgid "apx.cmd.pkgmanagers.update"
+msgstr "Update the specified package manager."
+
+msgid "apx.cmd.stacks"
+msgstr "Εργαστείτε με τις διαθέσιμες στοίβες στο apx."
+
+msgid "apx.cmd.stacks.export"
+msgstr "Εξαγωγή της επιλεγμένης στοίβας."
+
+msgid "apx.cmd.stacks.export.options.name"
+msgstr "Το όνομα της στοίβας για εξαγωγή."
+
+msgid "apx.cmd.stacks.export.options.output"
+msgstr "Η διαδρομή όπου θα εξαχθεί η στοίβα."
+
+msgid "apx.cmd.stacks.import"
+msgstr "Εισαγωγή της επιλεγμένης στοίβας."
+
+msgid "apx.cmd.stacks.import.options.input"
+msgstr "Η διαδρομή απ' όπου θα εισαχθεί η στοίβα."
+
+msgid "apx.cmd.stacks.list"
+msgstr "Καταγραφή των διαθέσιμων στοιβών."
+
+msgid "apx.cmd.stacks.list.options.json"
+msgstr "Εξαγωγή σε μορφοποίηση JSON."
+
+msgid "apx.cmd.stacks.new"
+msgstr "Δημιουργία νέας στοίβας."
+
+msgid "apx.cmd.stacks.new.options.base"
+msgstr "Το υποσύστημα βάσης που θα χρησιμοποιηθεί."
+
+msgid "apx.cmd.stacks.new.options.name"
+msgstr "Το όνομα της στοίβας."
+
+msgid "apx.cmd.stacks.new.options.noPrompt"
+msgstr "Να θεωρηθεί το \"ναι\" ως απάντηση σε κάθε προτροπή."
+
+msgid "apx.cmd.stacks.new.options.packages"
+msgstr "Τα πακέτα που θα εγκατασταθούν."
+
+msgid "apx.cmd.stacks.new.options.pkgManager"
+msgstr "Ο διαχειριστής πακέτων που θα χρησιμοποιηθεί."
+
+msgid "apx.cmd.stacks.rm"
+msgstr "Αφαίρεση της επιλεγμένης στοίβας."
+
+msgid "apx.cmd.stacks.rm.options.force"
+msgstr "Εξαναγκαστική αφαίρεση της στοίβας."
+
+msgid "apx.cmd.stacks.rm.options.name"
+msgstr "Το όνομα της στοίβας που να αφαιρεθεί."
+
+msgid "apx.cmd.stacks.show"
+msgstr "Εμφάνιση πληροφοριών σχετικά με την επιλεγμένη στοίβα."
+
+msgid "apx.cmd.stacks.update"
+msgstr "Ενημέρωση της επιλεγμένης στοίβας."
+
+msgid "apx.cmd.stacks.update.options.base"
+msgstr "Το υποσύστημα βάσης που να χρησιμοποιηθεί."
+
+msgid "apx.cmd.stacks.update.options.name"
+msgstr "Το όνομα της στοίβας."
+
+msgid "apx.cmd.stacks.update.options.noPrompt"
+msgstr "Να θεωρηθεί το \"ναι\" ως απάντηση σε κάθε προτροπή."
+
+msgid "apx.cmd.stacks.update.options.packages"
+msgstr "Τα πακέτα που να εγκατασταθούν."
+
+msgid "apx.cmd.stacks.update.options.pkgManager"
+msgstr "Ο διαχειριστής πακέτων που να εγκατασταθεί."
+
+msgid "apx.cmd.subsystem.autoremove"
+msgstr "Αφαίρεση πακέτων που δεν χρειάζονται πλέον."
+
+msgid "apx.cmd.subsystem.clean"
+msgstr "Εκκαθάριση της κρυφής μνήμης του διαχειριστή πακέτων."
+
+msgid "apx.cmd.subsystem.enter"
+msgstr "Εισέλθετε στο περιβάλλον του υποσυστήματος."
+
+msgid "apx.cmd.subsystem.export"
+msgstr "Εξαγωγή μιας εφαρμογής ή ενός εκτελέσιμου αρχείου από το υποσύστημα."
+
+msgid "apx.cmd.subsystem.export.options.appName"
+msgstr "Το όνομα της εφαρμογής που θα εξαχθεί."
+
+msgid "apx.cmd.subsystem.export.options.bin"
+msgstr "Το όνομα του εκτελέσιμου αρχείου που θα εξαχθεί."
+
+msgid "apx.cmd.subsystem.export.options.binOutput"
+msgstr "Διαδρομή της εξόδου του εκτελέσιμου αρχείου (Προεπιλεγμένη: ~/.local/bin/)."
+
+msgid "apx.cmd.subsystem.install"
+msgstr "Εγκατάσταση του επιλεγμένου πακέτου."
+
+msgid "apx.cmd.subsystem.install.options.noExport"
+msgstr "Να μην εξαχθεί εγγραφή στην επιφάνεια εργασίας."
+
+msgid "apx.cmd.subsystem.list"
+msgstr "Καταγραφή των εγκατεστημένων πακέτων."
+
+msgid "apx.cmd.subsystem.list.options.json"
+msgstr "Εξαγωγή σε μορφοποίηση JSON."
+
+msgid "apx.cmd.subsystem.new.options.home"
+msgstr "The custom home directory of the subsystem."
+
+msgid "apx.cmd.subsystem.new.options.init"
+msgstr "Use systemd inside the subsystem."
+
+msgid "apx.cmd.subsystem.new.options.name"
+msgstr "Το όνομα του υποσυστήματος."
+
+msgid "apx.cmd.subsystem.new.options.stack"
+msgstr "Η στοίβα που θα χρησιμοποιηθεί."
+
+msgid "apx.cmd.subsystem.purge"
+msgstr "Εκκαθάριση των επιλεγμένων πακέτων."
+
+msgid "apx.cmd.subsystem.remove"
+msgstr "Αφαίρεση των επιλεγμένων πακέτων."
+
+msgid "apx.cmd.subsystem.reset.options.force"
+msgstr "Εξαναγκαστική επαναφορά του υποσυστήματος."
+
+msgid "apx.cmd.subsystem.reset.options.name"
+msgstr "Το όνομα του υποσυστήματος που θα επαναφερθεί."
+
+msgid "apx.cmd.subsystem.rm.options.force"
+msgstr "Εξαναγκαστική αφαίρεση του υποσυστήματος."
+
+msgid "apx.cmd.subsystem.rm.options.name"
+msgstr "Το όνομα του υποσυστήματος που θα αφαιρεθεί."
+
+msgid "apx.cmd.subsystem.run"
+msgstr "Run command inside subsystem."
+
+msgid "apx.cmd.subsystem.search"
+msgstr "Αναζήτηση για πακέτα που ταιριάζουν με το συγκεκριμένο ερώτημα."
+
+msgid "apx.cmd.subsystem.show"
+msgstr "Εμφάνιση πληροφοριών σχετικά με το συγκεκριμένο πακέτο."
+
+msgid "apx.cmd.subsystem.start"
+msgstr "Start the subsystem."
+
+msgid "apx.cmd.subsystem.stop"
+msgstr "Stop the subsystem."
+
+msgid "apx.cmd.subsystem.unexport"
+msgstr "Άρση εξαγωγής της εφαρμογής ή του εκτελέσιμου αρχείου από το υποσύστημα."
+
+msgid "apx.cmd.subsystem.unexport.options.appName"
+msgstr "Το όνομα της εφαρμογής για άρση εξαγωγής της."
+
+msgid "apx.cmd.subsystem.unexport.options.bin"
+msgstr "Το όνομα του εκτελέσιμου αρχείου για άρση εξαγωγής του."
+
+msgid "apx.cmd.subsystem.unexport.options.binOutput"
+msgstr "Η διαδρομή για την εξαγωγή του εκτελέσιμου αρχείου (Προεπιλεγμένη: ~/.local/bin/)."
+
+msgid "apx.cmd.subsystem.update"
+msgstr "Ενημέρωση της λίστας διαθέσιμων πακέτων."
+
+msgid "apx.cmd.subsystem.upgrade"
+msgstr "Αναβάθμιση όλων των εγκατεστημένων πακέτων."
+
+msgid "apx.cmd.subsystems"
+msgstr "Εργαστείτε με τα διαθέσιμα υποσυστήματα στο apx."
+
+msgid "apx.cmd.subsystems.list"
+msgstr "Καταγραφή των διαθέσιμων υποσυστημάτων."
+
+msgid "apx.cmd.subsystems.new"
+msgstr "Δημιουργία ενός νέου υποσυστήματος."
+
+msgid "apx.cmd.subsystems.reset"
+msgstr "Επαναφορά του επιλεγμένου υποσυστήματος."
+
+msgid "apx.cmd.subsystems.rm"
+msgstr "Αφαίρεση του επιλεγμένου υποσυστήματος."
+
+msgid "apx.errors.invalidChoice"
+msgstr "Μη έγκυρη επιλογή."
+
+msgid "apx.errors.invalidInput"
+msgstr "Μη έγκυρη είσοδος."
+
+msgid "apx.errors.noRoot"
+msgstr "Do not run Apx as root."
+
+msgid "apx.errors.unknownCommand"
+msgstr "Άγνωστη εντολή: %s"
+
+msgid "apx.info.aborting"
+msgstr "Πραγματοποιείται ματαίωση, όπως ζητήθηκε."
+
+msgid "apx.msg.additionalCommands"
+msgstr "Additional Commands"
+
+msgid "apx.msg.additionalHelpTopics"
+msgstr "Additional help topics"
+
+msgid "apx.msg.aliases"
+msgstr "Aliases"
+
+msgid "apx.msg.availableCommands"
+msgstr "Available Commands"
+
+msgid "apx.msg.examples"
+msgstr "Examples"
+
+msgid "apx.msg.flags"
+msgstr "Flags"
+
+msgid "apx.msg.globalFlags"
+msgstr "Global Flags"
+
+msgid "apx.msg.help"
+msgstr "Το apx είναι ένας διαχειριστής πακέτων με υποστήριξη πολλών πηγών, επιτρέποντας σας να εγκαταστήσετε πακέτα σε υποσυστήματα."
+
+msgid "apx.msg.moreInfo"
+msgstr "Use %s for more information about a command"
+
+msgid "apx.msg.usage"
+msgstr "Usage"
+
+msgid "apx.msg.version"
+msgstr "Show version for apx."
+
+msgid "apx.terminal.false"
+msgstr "όχι"
+
+msgid "apx.terminal.true"
+msgstr "ναι"
+
+msgid "pkgmanagers.export.error.noName"
+msgstr "No name specified."
+
+msgid "pkgmanagers.export.error.noOutput"
+msgstr "No output specified."
+
+msgid "pkgmanagers.export.info.success"
+msgstr "Exported package manager '%s' to '%s'."
+
+msgid "pkgmanagers.import.error.cannotLoad"
+msgstr "Cannot load package manager from '%s'."
+
+msgid "pkgmanagers.import.error.noInput"
+msgstr "No input specified."
+
+msgid "pkgmanagers.import.info.success"
+msgstr "Imported package manager from '%s'."
+
+msgid "pkgmanagers.labels.builtIn"
+msgstr "Ενσωματωμένοι"
+
+msgid "pkgmanagers.labels.name"
+msgstr "Όνομα"
+
+msgid "pkgmanagers.list.info.foundPkgManagers"
+msgstr "Βρέθηκαν %d διαχειριστές πακέτων"
+
+msgid "pkgmanagers.list.info.noPkgManagers"
+msgstr "Δεν υπάρχουν διαθέσιμοι διαχειριστές πακέτων. Δημιουργήστε έναν νέο με το 'apx pkgmanagers new' ή επικοινωνήστε με τον διαχειριστή του συστήματος."
+
+msgid "pkgmanagers.new.error.alreadyExists"
+msgstr "Ένας διαχειριστής πακέτων με το όνομα '%s' υπάρχει ήδη."
+
+msgid "pkgmanagers.new.error.emptyCommand"
+msgstr "Η εντολή δεν μπορεί να είναι κενή."
+
+msgid "pkgmanagers.new.error.emptyName"
+msgstr "Το όνομα δεν μπορεί να είναι κενό."
+
+msgid "pkgmanagers.new.error.noCommand"
+msgstr "Δεν καθορίστηκε εντολή για το '%s'."
+
+msgid "pkgmanagers.new.error.noName"
+msgstr "Δεν καθορίστηκε όνομα."
+
+msgid "pkgmanagers.new.info.askCommand"
+msgstr "Εισαγωγή εντολής για '%s':"
+
+msgid "pkgmanagers.new.info.askCommandWithDefault"
+msgstr "Enter the command for '%s' (default: '%s'):"
+
+msgid "pkgmanagers.new.info.askName"
+msgstr "Επιλέξτε ένα όνομα:"
+
+msgid "pkgmanagers.new.info.askOverwrite"
+msgstr "Ένας διαχειριστής πακέτων με το όνομα '%s' υπάρχει ήδη. Να επεγγραφεί;"
+
+msgid "pkgmanagers.new.info.askSudo"
+msgstr "Χρειάζεται το sudo για να τρέξει ο διαχειριστής πακέτων;"
+
+msgid "pkgmanagers.new.success"
+msgstr "Package manager %s created successfully."
+
+msgid "pkgmanagers.rm.error.inUse"
+msgstr "Ο διαχειριστής πακέτων χρησιμοποιείται σε %d στοίβες:"
+
+msgid "pkgmanagers.rm.error.noName"
+msgstr "Δεν καθορίστηκε όνομα."
+
+msgid "pkgmanagers.rm.info.aborting"
+msgstr "Ματαίωση της αφαίρεσης του διαχειριστή πακέτων '%s'."
+
+msgid "pkgmanagers.rm.info.askConfirmation"
+msgstr "Είστε σίγουροι πως θέλετε να αφαιρέσετε το '%s'; [y/N]"
+
+msgid "pkgmanagers.rm.info.success"
+msgstr "Αφαιρέθηκε ο διαχειριστής πακέτων '%s'."
+
+msgid "pkgmanagers.update.error.builtIn"
+msgstr "Built-in package managers cannot be modified."
+
+msgid "pkgmanagers.update.error.missingCommand"
+msgstr "Missing command for %s."
+
+msgid "pkgmanagers.update.error.noName"
+msgstr "No name specified."
+
+msgid "pkgmanagers.update.info.askNewCommand"
+msgstr "Enter new command for '%s' (leave empty to keep '%s'):"
+
+msgid "pkgmanagers.update.info.success"
+msgstr "Updated package manager '%s'."
+
+msgid "runtimeCommand.description"
+msgstr "Εργαστείτε στο επιλεγμένο υποσύστημα, με πρόσβαση στον διαχειριστή πακέτων και στο περιβάλλον."
+
+msgid "runtimeCommand.error.cantAccessPkgManager"
+msgstr "Εμφανίστηκε σφάλμα κατά τη πρόσβαση στον διαχειριστή πακέτων: %s"
+
+msgid "runtimeCommand.error.enteringContainer"
+msgstr "An error occurred while entering the container: %s"
+
+msgid "runtimeCommand.error.executingCommand"
+msgstr "Εμφανίστηκε σφάλμα κατά την εκτέλεση της εντολής: %s"
+
+msgid "runtimeCommand.error.exportingApp"
+msgstr "Προέκυψε σφάλμα κατά την εξαγωγή της εφαρμογής: %s"
+
+msgid "runtimeCommand.error.exportingBin"
+msgstr "Προέκυψε σφάλμα κατά την εξαγωγή του εκτελέσιμου αρχείου: %s"
+
+msgid "runtimeCommand.error.noAppNameOrBin"
+msgstr "Πρέπει να προσδιοριστεί το --όνομα-της-εφαρμογής ή --του-εκτελέσιμου-αρχείου."
+
+msgid "runtimeCommand.error.noPackageSpecified"
+msgstr "Δεν επιλέχθηκαν πακέτα."
+
+msgid "runtimeCommand.error.sameAppOrBin"
+msgstr "Δεν γίνεται να καθοριστεί το --όνομα-της-εφαρμογής και το --εκτελέσιμο-αρχείο ταυτόχρονα."
+
+msgid "runtimeCommand.error.startingContainer"
+msgstr "An error occurred while starting the container: %s"
+
+msgid "runtimeCommand.error.stoppingContainer"
+msgstr "An error occurred while stopping the container: %s"
+
+msgid "runtimeCommand.error.unexportingApp"
+msgstr "Προέκυψε ένα σφάλμα κατά την άρση εξαγωγής της εφαρμογής: %s"
+
+msgid "runtimeCommand.error.unexportingBin"
+msgstr "Προέκυψε ένα σφάλμα κατά την άρση εξαγωγής του εκτελέσιμου αρχείου: %s"
+
+msgid "runtimeCommand.info.exportedApp"
+msgstr "Εξήχθη η εφαρμογή %s"
+
+msgid "runtimeCommand.info.exportedApps"
+msgstr "Εξήχθησαν %d εφαρμογές"
+
+msgid "runtimeCommand.info.exportedBin"
+msgstr "Εξήχθη το εκτελέσιμο αρχείο %s"
+
+msgid "runtimeCommand.info.startedContainer"
+msgstr "Started container."
+
+msgid "runtimeCommand.info.startingContainer"
+msgstr "Starting container…"
+
+msgid "runtimeCommand.info.stoppedContainer"
+msgstr "Stopped container."
+
+msgid "runtimeCommand.info.stoppingContainer"
+msgstr "Stopping container…"
+
+msgid "runtimeCommand.info.unexportedApp"
+msgstr "Ήρθη η εξαγωγή της εφαρμογής %s"
+
+msgid "runtimeCommand.info.unexportedApps"
+msgstr "Ήρθη η εξαγωγή %d εφαρμογών"
+
+msgid "runtimeCommand.info.unexportedBin"
+msgstr "Ήρθη η εξαγωγή του εκτελέσιμου αρχείου %s"
+
+msgid "stacks.export.error.noName"
+msgstr "Δεν καθορίστηκε όνομα."
+
+msgid "stacks.export.error.noOutput"
+msgstr "Δεν καθορίστηκε έξοδος."
+
+msgid "stacks.export.info.success"
+msgstr "Η στοίβα '%s' εξήχθη στο '%s'."
+
+msgid "stacks.import.error.cannotLoad"
+msgstr "Αδυναμία φόρτωσης της στοίβας από '%s'."
+
+msgid "stacks.import.error.noInput"
+msgstr "Δεν καθορίστηκε είσοδος."
+
+msgid "stacks.import.info.success"
+msgstr "Εισήχθη στοίβα από το '%s'."
+
+msgid "stacks.labels.builtIn"
+msgstr "Ενσωματωμένες"
+
+msgid "stacks.labels.name"
+msgstr "Όνομα"
+
+msgid "stacks.list.info.aborting"
+msgstr "Ματαίωση της αφαίρεσης της στοίβας '%s'."
+
+msgid "stacks.list.info.foundStacks"
+msgstr "Βρέθηκαν %d στόιβες:"
+
+msgid "stacks.list.info.noStacks"
+msgstr "Δεν υπάρχουν διαθέσιμες στοίβες. Δημιουργήστε μια νέα με το 'apx stacks new' ή επικοινωνήστε με τον διαχειριστή του συστήματος."
+
+msgid "stacks.new.error.alreadyExists"
+msgstr "Υπάρχει ήδη μια στοίβα με το όνομα '%s'."
+
+msgid "stacks.new.error.emptyBase"
+msgstr "Η βάση δεν μπορεί να είναι κενή."
+
+msgid "stacks.new.error.emptyName"
+msgstr "Το όνομα δεν μπορεί να είναι κενό."
+
+msgid "stacks.new.error.emptyPackages"
+msgstr "Τα πακέτα δεν μπορεί να είναι κενά."
+
+msgid "stacks.new.error.emptyPkgManager"
+msgstr "Ο διαχειριστής πακέτων δεν μπορεί να είναι κενός."
+
+msgid "stacks.new.error.noBase"
+msgstr "Δεν καθορίστηκε βάση."
+
+msgid "stacks.new.error.noName"
+msgstr "Δεν καθορίστηκε όνομα."
+
+msgid "stacks.new.error.noPackages"
+msgstr "Δεν καθορίστηκαν πακέτα."
+
+msgid "stacks.new.error.noPkgManager"
+msgstr "Δεν καθορίστηκε διαχειριστής πακέτων."
+
+msgid "stacks.new.error.noPkgManagers"
+msgstr "Could not find any package managers. Create one with 'apx pkgmanagers new' or contact the system administrator."
+
+msgid "stacks.new.error.pkgManagerDoesNotExist"
+msgstr "Ο επιλεγμένος διαχειριστής πακέτων δεν υπάρχει. Δημιουργήστε τον με το 'apx pkgmanagers new' ή επικοινωνήστε με τον διαχειριστή του συστήματος."
+
+msgid "stacks.new.info.askBase"
+msgstr "Επιλογή μιας βάσης (π.χ. 'vanillaos/pico'):"
+
+msgid "stacks.new.info.askName"
+msgstr "Επιλογή ονόματος:"
+
+msgid "stacks.new.info.askPackages"
+msgstr "Παρακαλείστε να πληκτρολογήσετε τα πακέτα που επιθυμείτε να εγκατασταθούν στη στοίβα, χωρισμένα με κενό:"
+
+msgid "stacks.new.info.askPkgManager"
+msgstr "Επιλογή ενός διαχειριστή πακέτων:"
+
+msgid "stacks.new.info.confirmPackages"
+msgstr "Θέλετε να επιβεβαιώσετε την τρέχουσα λίστα πακέτων?"
+
+msgid "stacks.new.info.noPackages"
+msgstr "Δεν έχετε περιλάβει κάποια πακέτα για εγκατάσταση στη στοίβα. Θέλετε να προσθέσετε μερικά τώρα;"
+
+msgid "stacks.new.info.selectPkgManager"
+msgstr "Επιλέξτε έναν διαχειριστή πακέτων [1-%d]:"
+
+msgid "stacks.new.info.success"
+msgstr "Δημιουργήθηκε η στοίβα '%s'."
+
+msgid "stacks.rm.error.inUse"
+msgstr "The stack is used in %d subsystems:"
+
+msgid "stacks.rm.error.noName"
+msgstr "Δεν καθορίστηκε όνομα."
+
+msgid "stacks.rm.info.askConfirmation"
+msgstr "Είστε σίγουροι πως επιθυμείτε την αφαίρεση του '%s'; [y/N]"
+
+msgid "stacks.rm.info.success"
+msgstr "Αφαιρέθηκε η στοίβα '%s'."
+
+msgid "stacks.update.error.builtIn"
+msgstr "Built-in stacks cannot be modified."
+
+msgid "stacks.update.error.noBase"
+msgstr "Δεν καθορίστηκε βάση."
+
+msgid "stacks.update.error.noName"
+msgstr "Δεν καθορίστηκε όνομα."
+
+msgid "stacks.update.error.noPkgManager"
+msgstr "Δεν καθορίστηκε διαχειριστής πακέτων."
+
+msgid "stacks.update.error.pkgManagerDoesNotExist"
+msgstr "Ο επιλεγμένος διαχειριστής πακέτων δεν υπάρχει. Δημιουργήστε τον με το 'apx pkgmanagers new' ή επικοινωνήστε με τον διαχειριστή του συστήματος."
+
+msgid "stacks.update.info.askBase"
+msgstr "Πληκτρολογήστε μια νέα βάση ή επιβεβαιώστε τη τρέχουσα (%s):"
+
+msgid "stacks.update.info.askPackages"
+msgstr "Πληκτρολογήστε τα πακέτα που επιθυμείτε να εγκατασταθούν στη στοίβα, χωρισμένα με κενό, ή επιβεβαιώστε τα τρέχοντα (%s):"
+
+msgid "stacks.update.info.askPkgManager"
+msgstr "Επιλέξτε έναν νέο διαχειριστή πακέτων ή επιβεβαιώστε τον τρέχοντα (%s):"
+
+msgid "stacks.update.info.confirmPackages"
+msgstr "Do you want to confirm the current packages list?"
+
+msgid "stacks.update.info.noPackages"
+msgstr "You have not provided any packages to install in the stack. Do you want to add some now?"
+
+msgid "stacks.update.info.success"
+msgstr "Ενημερώθηκε η στοίβα '%s'."
+
+msgid "subsystems.labels.name"
+msgstr "Όνομα"
+
+msgid "subsystems.labels.status"
+msgstr "Κατάσταση"
+
+msgid "subsystems.list.error"
+msgstr "<nil>"
+
+msgid "subsystems.list.info.foundSubsystems"
+msgstr "Βρέθηκαν %d υποσυστήματα:"
+
+msgid "subsystems.list.info.noSubsystems"
+msgstr "Δεν υπάρχουν διαθέσιμα υποσυστήματα. Δημιουργήστε ένα νέο με το 'apx subsystems new' ή επικοινωνήστε με τον διαχειριστή του συστήματος."
+
+msgid "subsystems.new.error.alreadyExists"
+msgstr "Ένα υποσύστημα με όνομα '%s' υπάρχει ήδη."
+
+msgid "subsystems.new.error.emptyName"
+msgstr "Το όνομα δεν μπορεί να είναι κενό."
+
+msgid "subsystems.new.error.emptyStack"
+msgstr "Η στοίβα δεν μπορεί να είναι κενή."
+
+msgid "subsystems.new.error.forbiddenName"
+msgstr "The name '%s' is forbidden. Please choose a different name"
+
+msgid "subsystems.new.error.noName"
+msgstr "Δεν καθορίστηκε όνομα."
+
+msgid "subsystems.new.error.noStack"
+msgstr "Δεν καθορίστηκε στοίβα."
+
+msgid "subsystems.new.error.noStacks"
+msgstr "Χρειάζεται μια στοίβα για την δημιουργία ενός υποσυστήματος. Δημιουργήστε μια νέα με το 'apx stacks new' ή επικοινωνήστε με τον διαχειριστή του συστήματος."
+
+msgid "subsystems.new.error.stackDoesNotExist"
+msgstr "Η επιλεγμένη στοίβα δεν υπάρχει. Δημιουργήστε τη με το 'apx stacks new' ή επικοινωνήστε με τον διαχειριστή του συστήματος."
+
+msgid "subsystems.new.info.askName"
+msgstr "Επιλέξτε ένα όνομα:"
+
+msgid "subsystems.new.info.availableStacks"
+msgstr "Available stacks:"
+
+msgid "subsystems.new.info.creatingSubsystem"
+msgstr "Δημιουργήθηκε το υποσύστημα '%s' με τη στοίβα '%s'…"
+
+msgid "subsystems.new.info.selectStack"
+msgstr "Επιλέξτε μια στοίβα [1-%d]:"
+
+msgid "subsystems.new.info.success"
+msgstr "Δημιουργήθηκε το υποσύστημα '%s'."
+
+msgid "subsystems.reset.error.noName"
+msgstr "Δεν καθορίστηκε όνομα."
+
+msgid "subsystems.reset.info.askConfirmation"
+msgstr "Είστε σίγουροι πως επιθυμείτε την επαναφορά του '%s'; [y/N]"
+
+msgid "subsystems.reset.info.success"
+msgstr "Το υποσύστημα '%s' επαναφέρθηκε."
+
+msgid "subsystems.rm.error.noName"
+msgstr "Δεν καθορίστηκε όνομα."
+
+msgid "subsystems.rm.info.askConfirmation"
+msgstr "Είστε σίγουροι πως επιθυμείτε την αφαίρεση του '%s'; [y/N]"
+
+msgid "subsystems.rm.info.success"
+msgstr "Αφαιρέθηκε το υποσύστημα '%s'."
+

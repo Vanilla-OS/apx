@@ -1,0 +1,694 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ro\n"
+
+msgid "apx.cmd.pkgmanagers"
+msgstr "Lucrează cu managerii de pachete disponibili în apx."
+
+msgid "apx.cmd.pkgmanagers.export"
+msgstr "Exportă managerul de pachete specificat."
+
+msgid "apx.cmd.pkgmanagers.export.options.name"
+msgstr "Nume manager de pachete pentru export."
+
+msgid "apx.cmd.pkgmanagers.export.options.output"
+msgstr "Calea pentru export a managerului de pachete."
+
+msgid "apx.cmd.pkgmanagers.import"
+msgstr "Importă managerul de pachete specificat."
+
+msgid "apx.cmd.pkgmanagers.import.options.input"
+msgstr "Calea pentru import a managerului de pachete."
+
+msgid "apx.cmd.pkgmanagers.list"
+msgstr "Listează toți managerii de pachete disponibili."
+
+msgid "apx.cmd.pkgmanagers.list.options.json"
+msgstr "Ieșire în format JSON."
+
+msgid "apx.cmd.pkgmanagers.new"
+msgstr "Creați un nou manager de pachete."
+
+msgid "apx.cmd.pkgmanagers.new.options.autoremove"
+msgstr "Comanda de executat pentru ștergerea automată a pachetelor."
+
+msgid "apx.cmd.pkgmanagers.new.options.clean"
+msgstr "Comanda de executat pentru a curăța memoria cache a managerului de pachete."
+
+msgid "apx.cmd.pkgmanagers.new.options.install"
+msgstr "Comanda de executat pentru instalare pachete."
+
+msgid "apx.cmd.pkgmanagers.new.options.list"
+msgstr "Comanda de executat pentru listare pachete instalate."
+
+msgid "apx.cmd.pkgmanagers.new.options.name"
+msgstr "Numele managerului de pachete."
+
+msgid "apx.cmd.pkgmanagers.new.options.needSudo"
+msgstr "Dacă managerul de pachete are nevoie de sudo pentru a rula."
+
+msgid "apx.cmd.pkgmanagers.new.options.noPrompt"
+msgstr "Se presupune că ați răspuns afirmativ la toate solicitările."
+
+msgid "apx.cmd.pkgmanagers.new.options.purge"
+msgstr "Comanda de executat pentru eliminare pachete."
+
+msgid "apx.cmd.pkgmanagers.new.options.remove"
+msgstr "Comanda de executat pentru ștergere pachete."
+
+msgid "apx.cmd.pkgmanagers.new.options.search"
+msgstr "Comanda de executat pentru căutare pachete."
+
+msgid "apx.cmd.pkgmanagers.new.options.show"
+msgstr "Comanda de executat pentru afișare informații despre pachete."
+
+msgid "apx.cmd.pkgmanagers.new.options.update"
+msgstr "Comanda de executat pentru actualizarea listei de pachete disponibile."
+
+msgid "apx.cmd.pkgmanagers.new.options.upgrade"
+msgstr "Comanda de executat pentru actualizare pachete instalate."
+
+msgid "apx.cmd.pkgmanagers.rm"
+msgstr "Șterge managerul de pachete specificat."
+
+msgid "apx.cmd.pkgmanagers.rm.options.force"
+msgstr "Forțează ștergerea managerului de pachete."
+
+msgid "apx.cmd.pkgmanagers.rm.options.name"
+msgstr "Numele managerului de pachete de șters."
+
+msgid "apx.cmd.pkgmanagers.show"
+msgstr "Afișează informații despre managerul de pachete specificat."
+
+msgid "apx.cmd.pkgmanagers.update"
+msgstr "Actualizează managerul de pachete specificat."
+
+msgid "apx.cmd.stacks"
+msgstr "Lucrează cu stive care sunt disponibile în apx."
+
+msgid "apx.cmd.stacks.export"
+msgstr "Exportă stiva specificată."
+
+msgid "apx.cmd.stacks.export.options.name"
+msgstr "Numele stivei de exportat."
+
+msgid "apx.cmd.stacks.export.options.output"
+msgstr "Calea de export pentru stivă."
+
+msgid "apx.cmd.stacks.import"
+msgstr "Importă stiva specificată."
+
+msgid "apx.cmd.stacks.import.options.input"
+msgstr "Calea de import a stivei."
+
+msgid "apx.cmd.stacks.list"
+msgstr "Afișează toate stivele disponibile."
+
+msgid "apx.cmd.stacks.list.options.json"
+msgstr "Ieșire în format JSON."
+
+msgid "apx.cmd.stacks.new"
+msgstr "Crează o stivă nouă."
+
+msgid "apx.cmd.stacks.new.options.base"
+msgstr "Imaginea de bază a distribuției de utilizat. (Pentru o listă cu imaginile compatibile vezi: https://distrobox.it/compatibility/#containers-distros)"
+
+msgid "apx.cmd.stacks.new.options.name"
+msgstr "Numele stivei."
+
+msgid "apx.cmd.stacks.new.options.noPrompt"
+msgstr "Se presupune că ați răspuns afirmativ la toate solicitările."
+
+msgid "apx.cmd.stacks.new.options.packages"
+msgstr "Pachetele de instalat."
+
+msgid "apx.cmd.stacks.new.options.pkgManager"
+msgstr "Managerul de pachete de utilizat."
+
+msgid "apx.cmd.stacks.rm"
+msgstr "Șterge stiva specificată."
+
+msgid "apx.cmd.stacks.rm.options.force"
+msgstr "Forțează ștergerea stivei."
+
+msgid "apx.cmd.stacks.rm.options.name"
+msgstr "Numele stivei de șters."
+
+msgid "apx.cmd.stacks.show"
+msgstr "Afișează informații despre stiva specificată."
+
+msgid "apx.cmd.stacks.update"
+msgstr "Actualizează stiva specificată."
+
+msgid "apx.cmd.stacks.update.options.base"
+msgstr "Subsistemul de bază de utilizat."
+
+msgid "apx.cmd.stacks.update.options.name"
+msgstr "Numele stivei."
+
+msgid "apx.cmd.stacks.update.options.noPrompt"
+msgstr "Se presupune că ați răspuns afirmativ la toate solicitările."
+
+msgid "apx.cmd.stacks.update.options.packages"
+msgstr "Pachetele de instalat."
+
+msgid "apx.cmd.stacks.update.options.pkgManager"
+msgstr "Managerul de pachete de utilizat."
+
+msgid "apx.cmd.subsystem.autoremove"
+msgstr "Eliminați pachetele care nu mai sunt necesare."
+
+msgid "apx.cmd.subsystem.clean"
+msgstr "Curăță memoria cache a managerului de pachete."
+
+msgid "apx.cmd.subsystem.enter"
+msgstr "Introdu mediul subsistemului."
+
+msgid "apx.cmd.subsystem.export"
+msgstr "Exportați o aplicație sau un fișier binar de la subsistem la gazdă."
+
+msgid "apx.cmd.subsystem.export.options.appName"
+msgstr "Numele aplicației care urmează să fie exportată."
+
+msgid "apx.cmd.subsystem.export.options.bin"
+msgstr "Numele fișierului binar de exportat."
+
+msgid "apx.cmd.subsystem.export.options.binOutput"
+msgstr "Calea de ieșire a binarului (implicit: ~/.local/bin/)."
+
+msgid "apx.cmd.subsystem.install"
+msgstr "Instalează pachetul specificat."
+
+msgid "apx.cmd.subsystem.install.options.noExport"
+msgstr "Nu exporta o intrare pe desktop."
+
+msgid "apx.cmd.subsystem.list"
+msgstr "Listează toate pachetele instalate."
+
+msgid "apx.cmd.subsystem.list.options.json"
+msgstr "Ieșire în format JSON."
+
+msgid "apx.cmd.subsystem.new.options.home"
+msgstr "Directorul de bază personalizat al subsistemului."
+
+msgid "apx.cmd.subsystem.new.options.init"
+msgstr "Folosește systemd în interiorul subsistemului."
+
+msgid "apx.cmd.subsystem.new.options.name"
+msgstr "Numele subsistemului."
+
+msgid "apx.cmd.subsystem.new.options.stack"
+msgstr "Stiva de utilizat."
+
+msgid "apx.cmd.subsystem.purge"
+msgstr "Elimină pachetele specificate."
+
+msgid "apx.cmd.subsystem.remove"
+msgstr "Șterge pachetele specificate."
+
+msgid "apx.cmd.subsystem.reset.options.force"
+msgstr "Forțează resetarea subsistemului."
+
+msgid "apx.cmd.subsystem.reset.options.name"
+msgstr "Numele subsistemului de resetat."
+
+msgid "apx.cmd.subsystem.rm.options.force"
+msgstr "Forțează ștergerea subsistemului."
+
+msgid "apx.cmd.subsystem.rm.options.name"
+msgstr "Numele subsistemului de șters."
+
+msgid "apx.cmd.subsystem.run"
+msgstr "Rulați comanda în interiorul subsistemului."
+
+msgid "apx.cmd.subsystem.search"
+msgstr "Caută pachete care corespund interogării specificate."
+
+msgid "apx.cmd.subsystem.show"
+msgstr "Afișează informații despre pachetul specificat."
+
+msgid "apx.cmd.subsystem.start"
+msgstr "Pornește subsistemul."
+
+msgid "apx.cmd.subsystem.stop"
+msgstr "Oprește subsistemul."
+
+msgid "apx.cmd.subsystem.unexport"
+msgstr "Dezexportă o aplicație sau un fișier binar din gazdă."
+
+msgid "apx.cmd.subsystem.unexport.options.appName"
+msgstr "Numele aplicației pentru anularea exportului."
+
+msgid "apx.cmd.subsystem.unexport.options.bin"
+msgstr "Numele fișierului binar pentru anularea exportului."
+
+msgid "apx.cmd.subsystem.unexport.options.binOutput"
+msgstr "Calea de ieșire a binarelor (implicit: ~/.local/bin/)."
+
+msgid "apx.cmd.subsystem.update"
+msgstr "Actualizează lista pachetelor disponibile."
+
+msgid "apx.cmd.subsystem.upgrade"
+msgstr "Actualizează toate pachetele instalate."
+
+msgid "apx.cmd.subsystems"
+msgstr "Lucrează cu subsistemele disponibile în apx."
+
+msgid "apx.cmd.subsystems.list"
+msgstr "Listează toate subsistemele disponibile."
+
+msgid "apx.cmd.subsystems.new"
+msgstr "Crează un subsistem nou."
+
+msgid "apx.cmd.subsystems.reset"
+msgstr "Resetează subsistemul specificat."
+
+msgid "apx.cmd.subsystems.rm"
+msgstr "Șterge subsistemul specificat."
+
+msgid "apx.errors.invalidChoice"
+msgstr "Alegere invalidă."
+
+msgid "apx.errors.invalidInput"
+msgstr "Intrare invalidă."
+
+msgid "apx.errors.noRoot"
+msgstr "Nu rula Apx ca root."
+
+msgid "apx.errors.unknownCommand"
+msgstr "Comandă necunoscută: %s"
+
+msgid "apx.info.aborting"
+msgstr "Se anulează conform solicitării."
+
+msgid "apx.msg.additionalCommands"
+msgstr "Comenzi Suplimentare"
+
+msgid "apx.msg.additionalHelpTopics"
+msgstr "Alte subiecte de ajutor"
+
+msgid "apx.msg.aliases"
+msgstr "Aliasuri"
+
+msgid "apx.msg.availableCommands"
+msgstr "Comenzi Disponibile"
+
+msgid "apx.msg.examples"
+msgstr "Exemple"
+
+msgid "apx.msg.flags"
+msgstr "Parametri"
+
+msgid "apx.msg.globalFlags"
+msgstr "Parametri globali"
+
+msgid "apx.msg.help"
+msgstr "Afișați ajutorul pentru apx."
+
+msgid "apx.msg.moreInfo"
+msgstr "Utilizați %s pentru mai multe informații despre o comandă"
+
+msgid "apx.msg.usage"
+msgstr "Utilizare"
+
+msgid "apx.msg.version"
+msgstr "Afișați versiunea pentru apx."
+
+msgid "apx.terminal.false"
+msgstr "nu"
+
+msgid "apx.terminal.true"
+msgstr "da"
+
+msgid "pkgmanagers.export.error.noName"
+msgstr "Nume nespecificat."
+
+msgid "pkgmanagers.export.error.noOutput"
+msgstr "Ieșire nespecificată."
+
+msgid "pkgmanagers.export.info.success"
+msgstr "Managerul de pachete '%s' exportat la '%s'."
+
+msgid "pkgmanagers.import.error.cannotLoad"
+msgstr "Managerul de pachete nu poate fi încărcat de la '%s'."
+
+msgid "pkgmanagers.import.error.noInput"
+msgstr "Input nespecificat."
+
+msgid "pkgmanagers.import.info.success"
+msgstr "Manager de pachete importat de la '%s'."
+
+msgid "pkgmanagers.labels.builtIn"
+msgstr "Încorporat"
+
+msgid "pkgmanagers.labels.name"
+msgstr "Nume"
+
+msgid "pkgmanagers.list.info.foundPkgManagers"
+msgstr "S-au găsit %d manageri de pachete"
+
+msgid "pkgmanagers.list.info.noPkgManagers"
+msgstr "Niciun manager de pachete disponibil. Crează unul nou cu 'apx pkgmanagers new' sau contactează administratorul de sistem."
+
+msgid "pkgmanagers.new.error.alreadyExists"
+msgstr "Un manager de pachete numit \"%s\" există deja."
+
+msgid "pkgmanagers.new.error.emptyCommand"
+msgstr "Comanda nu poate fi nespecificată."
+
+msgid "pkgmanagers.new.error.emptyName"
+msgstr "Numele nu poate fi nespecificat."
+
+msgid "pkgmanagers.new.error.noCommand"
+msgstr "Nu s-a specificat comandă pentru \"%s\"."
+
+msgid "pkgmanagers.new.error.noName"
+msgstr "Niciun nume specificat."
+
+msgid "pkgmanagers.new.info.askCommand"
+msgstr "Introdu comanda pentru \"%s\":"
+
+msgid "pkgmanagers.new.info.askCommandWithDefault"
+msgstr "Introduceți comanda pentru '%s' (implicit: '%s'):"
+
+msgid "pkgmanagers.new.info.askName"
+msgstr "Alege un nume:"
+
+msgid "pkgmanagers.new.info.askOverwrite"
+msgstr "Un manager de pachete numit \"%s\" există deja. Îl suprascrieți?"
+
+msgid "pkgmanagers.new.info.askSudo"
+msgstr "Are managerul de pachete nevoie de sudo pentru a rula?"
+
+msgid "pkgmanagers.new.success"
+msgstr "Managerul de pachete %s a fost creat cu succes."
+
+msgid "pkgmanagers.rm.error.inUse"
+msgstr "Managerul de pachete este utilizat în %d stive:"
+
+msgid "pkgmanagers.rm.error.noName"
+msgstr "Niciun nume specificat."
+
+msgid "pkgmanagers.rm.info.aborting"
+msgstr "Se anulează ștergerea managerului de pachete „%s”."
+
+msgid "pkgmanagers.rm.info.askConfirmation"
+msgstr "Sigur doriți să ștergeți \"%s\"?"
+
+msgid "pkgmanagers.rm.info.success"
+msgstr "Managerul de pachete \"%s\" a fost șters."
+
+msgid "pkgmanagers.update.error.builtIn"
+msgstr "Managerele de pachete încorporate nu pot fi modificate."
+
+msgid "pkgmanagers.update.error.missingCommand"
+msgstr "Lipsește comanda pentru %s."
+
+msgid "pkgmanagers.update.error.noName"
+msgstr "Niciun nume specificat."
+
+msgid "pkgmanagers.update.info.askNewCommand"
+msgstr "Introduceți o nouă comandă pentru „%s” (lăsați gol pentru a păstra „%s”):"
+
+msgid "pkgmanagers.update.info.success"
+msgstr "Actualizat managerul de pachete '%s'."
+
+msgid "runtimeCommand.description"
+msgstr "Lucrează cu subsistemul specificat, accesând managerul de pachete și mediul."
+
+msgid "runtimeCommand.error.cantAccessPkgManager"
+msgstr "A apărut o eroare la accesarea managerului de pachete: %s"
+
+msgid "runtimeCommand.error.enteringContainer"
+msgstr "A apărut o eroare la accesarea containerului: %s"
+
+msgid "runtimeCommand.error.executingCommand"
+msgstr "A apărut o eroare la executarea comenzii: %s"
+
+msgid "runtimeCommand.error.exportingApp"
+msgstr "S-a produs o eroare în timpul exportului aplicației: %s"
+
+msgid "runtimeCommand.error.exportingBin"
+msgstr "S-a produs o eroare la exportul binarului: %s"
+
+msgid "runtimeCommand.error.noAppNameOrBin"
+msgstr "Trebuie să se specifice --app-name sau --bin."
+
+msgid "runtimeCommand.error.noPackageSpecified"
+msgstr "Niciun pachet specificat."
+
+msgid "runtimeCommand.error.sameAppOrBin"
+msgstr "--app-name și --bin nu pot fi specificate amândouă."
+
+msgid "runtimeCommand.error.startingContainer"
+msgstr "A apărut o eroare la pornirea containerului: %s"
+
+msgid "runtimeCommand.error.stoppingContainer"
+msgstr "A apărut o eroare la oprirea containerului: %s"
+
+msgid "runtimeCommand.error.unexportingApp"
+msgstr "S-a produs o eroare în timpul exportării aplicației: %s"
+
+msgid "runtimeCommand.error.unexportingBin"
+msgstr "S-a produs o eroare la anularea exportului binarului: %s"
+
+msgid "runtimeCommand.info.exportedApp"
+msgstr "Aplicație exportată %s"
+
+msgid "runtimeCommand.info.exportedApps"
+msgstr "Aplicații exportate %d"
+
+msgid "runtimeCommand.info.exportedBin"
+msgstr "Binar exportat %s"
+
+msgid "runtimeCommand.info.startedContainer"
+msgstr "Subsistem pornit."
+
+msgid "runtimeCommand.info.startingContainer"
+msgstr "Pornire subsistem %s…"
+
+msgid "runtimeCommand.info.stoppedContainer"
+msgstr "Subsistem oprit."
+
+msgid "runtimeCommand.info.stoppingContainer"
+msgstr "Oprirea subsistemului %s…"
+
+msgid "runtimeCommand.info.unexportedApp"
+msgstr "Aplicație neexportată %s"
+
+msgid "runtimeCommand.info.unexportedApps"
+msgstr "Aplicații neexportate %d"
+
+msgid "runtimeCommand.info.unexportedBin"
+msgstr "Binar neexportat %s"
+
+msgid "stacks.export.error.noName"
+msgstr "Niciun nume specificat."
+
+msgid "stacks.export.error.noOutput"
+msgstr "Nicio ieșire specificată."
+
+msgid "stacks.export.info.success"
+msgstr "Stiva \"%s\" exportată în \"%s\"."
+
+msgid "stacks.import.error.cannotLoad"
+msgstr "Nu se poate încărca stiva din '%s'."
+
+msgid "stacks.import.error.noInput"
+msgstr "Nicio intrare specificată."
+
+msgid "stacks.import.info.success"
+msgstr "Stivă importată din \"%s\"."
+
+msgid "stacks.labels.builtIn"
+msgstr "Încorporat"
+
+msgid "stacks.labels.name"
+msgstr "Nume"
+
+msgid "stacks.list.info.aborting"
+msgstr "Se anulează ștergerea stivei „%s”."
+
+msgid "stacks.list.info.foundStacks"
+msgstr "S-au găsit %d stive:"
+
+msgid "stacks.list.info.noStacks"
+msgstr "Nicio stivă disponibilă. Crează una nouă cu 'apx stacks new' sau contactează administratorul de sistem."
+
+msgid "stacks.new.error.alreadyExists"
+msgstr "O stivă cu numele \"%s\" există deja."
+
+msgid "stacks.new.error.emptyBase"
+msgstr "Stiva de bază nu poate fi goală."
+
+msgid "stacks.new.error.emptyName"
+msgstr "Numele nu poate fi nespecificat."
+
+msgid "stacks.new.error.emptyPackages"
+msgstr "Pachetele nu pot fi nespecificate."
+
+msgid "stacks.new.error.emptyPkgManager"
+msgstr "Managerul de pachete nu poate fi nespecificat."
+
+msgid "stacks.new.error.noBase"
+msgstr "Nu este specificată o stivă de bază."
+
+msgid "stacks.new.error.noName"
+msgstr "Nu este specificat un nume."
+
+msgid "stacks.new.error.noPackages"
+msgstr "Niciun pachet specificat."
+
+msgid "stacks.new.error.noPkgManager"
+msgstr "Niciun manager de pachete specificat."
+
+msgid "stacks.new.error.noPkgManagers"
+msgstr "Nu s-a putut găsi niciun manager de pachete. Creați unul cu „apx pkgmanagers new” sau contactați administratorul sistemului."
+
+msgid "stacks.new.error.pkgManagerDoesNotExist"
+msgstr "Managerul de pachete specificat nu există. Crează-l cu 'apx pkgmanagers new' sau contactează administratorul de sistem."
+
+msgid "stacks.new.info.askBase"
+msgstr "Alegeți o stivă de bază (de exemplu, \"vanillaos/pico\"):"
+
+msgid "stacks.new.info.askName"
+msgstr "Alege un nume:"
+
+msgid "stacks.new.info.askPackages"
+msgstr "Te rog scrie pachetele pe care dorești să le instalezi în stivă, separate prin spațiu:"
+
+msgid "stacks.new.info.askPkgManager"
+msgstr "Alege un manager de pachete:"
+
+msgid "stacks.new.info.confirmPackages"
+msgstr "Dorești să confirmi lista curentă de pachete?"
+
+msgid "stacks.new.info.noPackages"
+msgstr "Nu ați furnizat niciun pachet de instalat în stivă. Doriți să adăugați unele acum?"
+
+msgid "stacks.new.info.selectPkgManager"
+msgstr "Selectează un manager de pachete [1-%d]:"
+
+msgid "stacks.new.info.success"
+msgstr "A fost creată stiva \"%s\"."
+
+msgid "stacks.rm.error.inUse"
+msgstr "Stiva este folosită în %d subsisteme:"
+
+msgid "stacks.rm.error.noName"
+msgstr "Niciun nume specificat."
+
+msgid "stacks.rm.info.askConfirmation"
+msgstr "Sigur doriți să eliminați „%s”?"
+
+msgid "stacks.rm.info.success"
+msgstr "Stiva \"%s\" a fost ștersă."
+
+msgid "stacks.update.error.builtIn"
+msgstr "Stivele încorporate nu pot fi modificate."
+
+msgid "stacks.update.error.noBase"
+msgstr "Nicio stivă de bază specificată."
+
+msgid "stacks.update.error.noName"
+msgstr "Niciun nume specificat."
+
+msgid "stacks.update.error.noPkgManager"
+msgstr "Niciun manager de pachete specificat."
+
+msgid "stacks.update.error.pkgManagerDoesNotExist"
+msgstr "Managerul de pachete specificat nu există. Crează-l cu 'apx pkgmanagers new' sau contactează administratorul de sistem."
+
+msgid "stacks.update.info.askBase"
+msgstr "Introdu o nouă bază sau confirm-o pe cea actuală (%s):"
+
+msgid "stacks.update.info.askPackages"
+msgstr "Introdu pachetele pe care dorești să le instalezi în stivă, separate printr-un spațiu:"
+
+msgid "stacks.update.info.askPkgManager"
+msgstr "Alege un nou manager de pachete sau confirmă-l pe cel actual (%s):"
+
+msgid "stacks.update.info.confirmPackages"
+msgstr "Doriți să actualizați lista de pachete?"
+
+msgid "stacks.update.info.noPackages"
+msgstr "Nu ați furnizat niciun pachet de instalat în stivă. Doriți să adăugați unele acum?"
+
+msgid "stacks.update.info.success"
+msgstr "Stiva \"%s\" actualizată."
+
+msgid "subsystems.labels.name"
+msgstr "Nume"
+
+msgid "subsystems.labels.status"
+msgstr "Stare"
+
+msgid "subsystems.list.error"
+msgstr "<nil>"
+
+msgid "subsystems.list.info.foundSubsystems"
+msgstr "S-au găsit %d subsisteme:"
+
+msgid "subsystems.list.info.noSubsystems"
+msgstr "Nu există subsisteme disponibile. Crează unul nou cu 'apx subsystems new' sau contactează administratorul de sistem."
+
+msgid "subsystems.new.error.alreadyExists"
+msgstr "Un subsistem cu numele \"%s\" există deja."
+
+msgid "subsystems.new.error.emptyName"
+msgstr "Numele nu poate fi nespecificat."
+
+msgid "subsystems.new.error.emptyStack"
+msgstr "Stiva nu poate fi nespecificată."
+
+msgid "subsystems.new.error.forbiddenName"
+msgstr "Numele '%s' este interzis. Alegeți alt nume"
+
+msgid "subsystems.new.error.noName"
+msgstr "Nu este specificat un nume."
+
+msgid "subsystems.new.error.noStack"
+msgstr "Nu este specificată nicio stivă."
+
+msgid "subsystems.new.error.noStacks"
+msgstr "Pentru a crea un subsistem este necesară o stivă. Crează una nouă cu \"apx stacks new\" sau contactează administratorul de sistem."
+
+msgid "subsystems.new.error.stackDoesNotExist"
+msgstr "Stiva specificată nu există. Creaz-o cu \"apx stacks new\" sau contactează administratorul de sistem."
+
+msgid "subsystems.new.info.askName"
+msgstr "Alege un nume:"
+
+msgid "subsystems.new.info.availableStacks"
+msgstr "Stive disponibile:"
+
+msgid "subsystems.new.info.creatingSubsystem"
+msgstr "Se creează subsistemul \"%s\" cu stiva \"%s\"…"
+
+msgid "subsystems.new.info.selectStack"
+msgstr "Selectează o stivă [1-%d]:"
+
+msgid "subsystems.new.info.success"
+msgstr "A fost creat subsistemul \"%s\"."
+
+msgid "subsystems.reset.error.noName"
+msgstr "Nu este specificat un nume."
+
+msgid "subsystems.reset.info.askConfirmation"
+msgstr "Sigur doriți să resetați „%s”?"
+
+msgid "subsystems.reset.info.success"
+msgstr "Subsistemul \"%s\" a fost resetat."
+
+msgid "subsystems.rm.error.noName"
+msgstr "Nu este specificat un nume."
+
+msgid "subsystems.rm.info.askConfirmation"
+msgstr "Sigur doriți să eliminați „%s”?"
+
+msgid "subsystems.rm.info.success"
+msgstr "Subsistemul \"%s\" a fost șters ."
+

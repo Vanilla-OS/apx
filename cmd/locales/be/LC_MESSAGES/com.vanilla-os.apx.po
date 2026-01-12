@@ -1,0 +1,694 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: be\n"
+
+msgid "apx.cmd.pkgmanagers"
+msgstr "Працуйце з менеджэрамі пакетаў, даступнымі ў apx."
+
+msgid "apx.cmd.pkgmanagers.export"
+msgstr "Export the specified package manager."
+
+msgid "apx.cmd.pkgmanagers.export.options.name"
+msgstr "The name of the package manager to export."
+
+msgid "apx.cmd.pkgmanagers.export.options.output"
+msgstr "The path to export the package manager to."
+
+msgid "apx.cmd.pkgmanagers.import"
+msgstr "Import the specified package manager."
+
+msgid "apx.cmd.pkgmanagers.import.options.input"
+msgstr "The path to import the package manager from."
+
+msgid "apx.cmd.pkgmanagers.list"
+msgstr "Пералічыце ўсе даступныя менеджэры пакетаў."
+
+msgid "apx.cmd.pkgmanagers.list.options.json"
+msgstr "Вывад у фармаце JSON."
+
+msgid "apx.cmd.pkgmanagers.new"
+msgstr "Стварыце новы менеджэр пакетаў."
+
+msgid "apx.cmd.pkgmanagers.new.options.autoremove"
+msgstr "Каманда для аўтаматычнага выдалення пакетаў."
+
+msgid "apx.cmd.pkgmanagers.new.options.clean"
+msgstr "Каманда для ачысткі кэша дыспетчара пакетаў."
+
+msgid "apx.cmd.pkgmanagers.new.options.install"
+msgstr "Каманда для запуску для ўстаноўкі пакетаў."
+
+msgid "apx.cmd.pkgmanagers.new.options.list"
+msgstr "Каманда для запуску спісу ўсталяваных пакетаў."
+
+msgid "apx.cmd.pkgmanagers.new.options.name"
+msgstr "Імя мэнэджэра пакетаў."
+
+msgid "apx.cmd.pkgmanagers.new.options.needSudo"
+msgstr "Ці патрабуецца дыспетчару пакетаў sudo для запуску."
+
+msgid "apx.cmd.pkgmanagers.new.options.noPrompt"
+msgstr "Выкажам здагадку, што так на ўсе падказкі."
+
+msgid "apx.cmd.pkgmanagers.new.options.purge"
+msgstr "Каманда выканання ачысткі пакетаў."
+
+msgid "apx.cmd.pkgmanagers.new.options.remove"
+msgstr "Каманда для выдалення пакетаў."
+
+msgid "apx.cmd.pkgmanagers.new.options.search"
+msgstr "Каманда для запуску для пошуку пакетаў."
+
+msgid "apx.cmd.pkgmanagers.new.options.show"
+msgstr "Каманда для запуску, каб паказаць інфармацыю аб пакетах."
+
+msgid "apx.cmd.pkgmanagers.new.options.update"
+msgstr "Каманда для абнаўлення спісу даступных пакетаў."
+
+msgid "apx.cmd.pkgmanagers.new.options.upgrade"
+msgstr "Каманда для абнаўлення пакетаў."
+
+msgid "apx.cmd.pkgmanagers.rm"
+msgstr "Выдаліце ўказаны менеджэр пакетаў."
+
+msgid "apx.cmd.pkgmanagers.rm.options.force"
+msgstr "Прымусовае выдаленне дыспетчара пакетаў."
+
+msgid "apx.cmd.pkgmanagers.rm.options.name"
+msgstr "Імя дыспетчара пакетаў, які трэба выдаліць."
+
+msgid "apx.cmd.pkgmanagers.show"
+msgstr "Паказаць інфармацыю пра ўказаны менеджэр пакетаў."
+
+msgid "apx.cmd.pkgmanagers.update"
+msgstr "Update the specified package manager."
+
+msgid "apx.cmd.stacks"
+msgstr "Працуйце са стэкамі, даступнымі ў apx."
+
+msgid "apx.cmd.stacks.export"
+msgstr "Экспартаваць указаны стэк."
+
+msgid "apx.cmd.stacks.export.options.name"
+msgstr "Імя стэка для экспарту."
+
+msgid "apx.cmd.stacks.export.options.output"
+msgstr "Шлях для экспарту стэка."
+
+msgid "apx.cmd.stacks.import"
+msgstr "Імпартаваць указаны стэк."
+
+msgid "apx.cmd.stacks.import.options.input"
+msgstr "Шлях для імпарту стэка."
+
+msgid "apx.cmd.stacks.list"
+msgstr "Пералічыце ўсе даступныя стэкі."
+
+msgid "apx.cmd.stacks.list.options.json"
+msgstr "Вывад у фармаце JSON."
+
+msgid "apx.cmd.stacks.new"
+msgstr "Стварыце новы стэк."
+
+msgid "apx.cmd.stacks.new.options.base"
+msgstr "Базавая падсістэма для выкарыстання."
+
+msgid "apx.cmd.stacks.new.options.name"
+msgstr "Назва стэка."
+
+msgid "apx.cmd.stacks.new.options.noPrompt"
+msgstr "Выкажам здагадку, што так на ўсе падказкі."
+
+msgid "apx.cmd.stacks.new.options.packages"
+msgstr "Пакеты для ўстаноўкі."
+
+msgid "apx.cmd.stacks.new.options.pkgManager"
+msgstr "Менеджэр пакетаў для выкарыстання."
+
+msgid "apx.cmd.stacks.rm"
+msgstr "Выдаліце ўказаны стэк."
+
+msgid "apx.cmd.stacks.rm.options.force"
+msgstr "Прымусовае выдаленне стэка."
+
+msgid "apx.cmd.stacks.rm.options.name"
+msgstr "Назва стэка для выдалення."
+
+msgid "apx.cmd.stacks.show"
+msgstr "Паказаць інфармацыю пра ўказаны стэк."
+
+msgid "apx.cmd.stacks.update"
+msgstr "Абнавіць указаны стэк."
+
+msgid "apx.cmd.stacks.update.options.base"
+msgstr "Базавая падсістэма для выкарыстання."
+
+msgid "apx.cmd.stacks.update.options.name"
+msgstr "Назва стэка."
+
+msgid "apx.cmd.stacks.update.options.noPrompt"
+msgstr "Выкажам здагадку, што так на ўсе падказкі."
+
+msgid "apx.cmd.stacks.update.options.packages"
+msgstr "Пакеты для ўстаноўкі."
+
+msgid "apx.cmd.stacks.update.options.pkgManager"
+msgstr "Менеджэр пакетаў для выкарыстання."
+
+msgid "apx.cmd.subsystem.autoremove"
+msgstr "Выдаліце пакеты, якія больш не патрэбныя."
+
+msgid "apx.cmd.subsystem.clean"
+msgstr "Ачысціце кэш дыспетчара пакетаў."
+
+msgid "apx.cmd.subsystem.enter"
+msgstr "Увядзіце асяроддзе падсістэмы."
+
+msgid "apx.cmd.subsystem.export"
+msgstr "Экспарт прыкладання або бінарнага файла з падсістэмы."
+
+msgid "apx.cmd.subsystem.export.options.appName"
+msgstr "Назва праграмы для экспарту."
+
+msgid "apx.cmd.subsystem.export.options.bin"
+msgstr "Імя двайковага файла для экспарту."
+
+msgid "apx.cmd.subsystem.export.options.binOutput"
+msgstr "Шлях двайковага вываду (па змаўчанні: ~/.local/bin/)."
+
+msgid "apx.cmd.subsystem.install"
+msgstr "Усталюйце ўказаны пакет."
+
+msgid "apx.cmd.subsystem.install.options.noExport"
+msgstr "Не экспартуйце запіс працоўнага стала."
+
+msgid "apx.cmd.subsystem.list"
+msgstr "Спіс усіх усталяваных пакетаў."
+
+msgid "apx.cmd.subsystem.list.options.json"
+msgstr "Вывад у фармаце JSON."
+
+msgid "apx.cmd.subsystem.new.options.home"
+msgstr "The custom home directory of the subsystem."
+
+msgid "apx.cmd.subsystem.new.options.init"
+msgstr "Use systemd inside the subsystem."
+
+msgid "apx.cmd.subsystem.new.options.name"
+msgstr "Назва падсістэмы."
+
+msgid "apx.cmd.subsystem.new.options.stack"
+msgstr "Стэк для выкарыстання."
+
+msgid "apx.cmd.subsystem.purge"
+msgstr "Ачысціце названыя пакеты."
+
+msgid "apx.cmd.subsystem.remove"
+msgstr "Выдаліць названыя пакеты."
+
+msgid "apx.cmd.subsystem.reset.options.force"
+msgstr "Прымусовы скід падсістэмы."
+
+msgid "apx.cmd.subsystem.reset.options.name"
+msgstr "Назва падсістэмы для скіду."
+
+msgid "apx.cmd.subsystem.rm.options.force"
+msgstr "Прымусовае выдаленне падсістэмы."
+
+msgid "apx.cmd.subsystem.rm.options.name"
+msgstr "Назва падсістэмы, якую трэба выдаліць."
+
+msgid "apx.cmd.subsystem.run"
+msgstr "Run command inside subsystem."
+
+msgid "apx.cmd.subsystem.search"
+msgstr "Пошук пакетаў, якія адпавядаюць зададзенаму запыту."
+
+msgid "apx.cmd.subsystem.show"
+msgstr "Паказаць інфармацыю пра ўказаны пакет."
+
+msgid "apx.cmd.subsystem.start"
+msgstr "Start the subsystem."
+
+msgid "apx.cmd.subsystem.stop"
+msgstr "Stop the subsystem."
+
+msgid "apx.cmd.subsystem.unexport"
+msgstr "Адмяніць экспарт прыкладання або бінарнага файла з падсістэмы."
+
+msgid "apx.cmd.subsystem.unexport.options.appName"
+msgstr "Назва праграмы, якую трэба адмяніць."
+
+msgid "apx.cmd.subsystem.unexport.options.bin"
+msgstr "Імя двайковага файла, які трэба скасаваць."
+
+msgid "apx.cmd.subsystem.unexport.options.binOutput"
+msgstr "Шлях двайковага вываду (па змаўчанні: ~/.local/bin/)."
+
+msgid "apx.cmd.subsystem.update"
+msgstr "Абнавіць спіс даступных пакетаў."
+
+msgid "apx.cmd.subsystem.upgrade"
+msgstr "Абнавіце ўсе ўсталяваныя пакеты."
+
+msgid "apx.cmd.subsystems"
+msgstr "Працуйце з падсістэмамі, даступнымі ў apx."
+
+msgid "apx.cmd.subsystems.list"
+msgstr "Пералічыце ўсе даступныя падсістэмы."
+
+msgid "apx.cmd.subsystems.new"
+msgstr "Стварыце новую падсістэму."
+
+msgid "apx.cmd.subsystems.reset"
+msgstr "Скінуць паказаную падсістэму."
+
+msgid "apx.cmd.subsystems.rm"
+msgstr "Выдаліце ўказаную падсістэму."
+
+msgid "apx.errors.invalidChoice"
+msgstr "Няправільны выбар."
+
+msgid "apx.errors.invalidInput"
+msgstr "Няправільны ўвод."
+
+msgid "apx.errors.noRoot"
+msgstr "Не запускайце Apx ад імя root."
+
+msgid "apx.errors.unknownCommand"
+msgstr "Невядомая каманда: %s"
+
+msgid "apx.info.aborting"
+msgstr "Перапыненне па запыце."
+
+msgid "apx.msg.additionalCommands"
+msgstr "Additional Commands"
+
+msgid "apx.msg.additionalHelpTopics"
+msgstr "Additional help topics"
+
+msgid "apx.msg.aliases"
+msgstr "Aliases"
+
+msgid "apx.msg.availableCommands"
+msgstr "Available Commands"
+
+msgid "apx.msg.examples"
+msgstr "Examples"
+
+msgid "apx.msg.flags"
+msgstr "Flags"
+
+msgid "apx.msg.globalFlags"
+msgstr "Global Flags"
+
+msgid "apx.msg.help"
+msgstr "Show help for apx."
+
+msgid "apx.msg.moreInfo"
+msgstr "Use %s for more information about a command"
+
+msgid "apx.msg.usage"
+msgstr "Usage"
+
+msgid "apx.msg.version"
+msgstr "Show version for apx."
+
+msgid "apx.terminal.false"
+msgstr "няма"
+
+msgid "apx.terminal.true"
+msgstr "так"
+
+msgid "pkgmanagers.export.error.noName"
+msgstr "No name specified."
+
+msgid "pkgmanagers.export.error.noOutput"
+msgstr "No output specified."
+
+msgid "pkgmanagers.export.info.success"
+msgstr "Exported package manager '%s' to '%s'."
+
+msgid "pkgmanagers.import.error.cannotLoad"
+msgstr "Cannot load package manager from '%s'."
+
+msgid "pkgmanagers.import.error.noInput"
+msgstr "No input specified."
+
+msgid "pkgmanagers.import.info.success"
+msgstr "Imported package manager from '%s'."
+
+msgid "pkgmanagers.labels.builtIn"
+msgstr "Убудаваны"
+
+msgid "pkgmanagers.labels.name"
+msgstr "Імя"
+
+msgid "pkgmanagers.list.info.foundPkgManagers"
+msgstr "Знойдзена %d менеджэраў пакетаў"
+
+msgid "pkgmanagers.list.info.noPkgManagers"
+msgstr "Няма даступных менеджэраў пакетаў. Стварыце новы з «apx pkgmanagers new» або звярніцеся да сістэмнага адміністратара."
+
+msgid "pkgmanagers.new.error.alreadyExists"
+msgstr "Менеджэр пакетаў з назвай «%s» ужо існуе."
+
+msgid "pkgmanagers.new.error.emptyCommand"
+msgstr "Каманда не можа быць пустой."
+
+msgid "pkgmanagers.new.error.emptyName"
+msgstr "Імя не можа быць пустым."
+
+msgid "pkgmanagers.new.error.noCommand"
+msgstr "Для '%s' не вызначана каманда."
+
+msgid "pkgmanagers.new.error.noName"
+msgstr "Імя не ўказана."
+
+msgid "pkgmanagers.new.info.askCommand"
+msgstr "Увядзіце каманду для «%s»:"
+
+msgid "pkgmanagers.new.info.askCommandWithDefault"
+msgstr "Enter the command for '%s' (default: '%s'):"
+
+msgid "pkgmanagers.new.info.askName"
+msgstr "Выберыце назву:"
+
+msgid "pkgmanagers.new.info.askOverwrite"
+msgstr "Менеджэр пакетаў з назвай «%s» ужо існуе. Перазапісаць?"
+
+msgid "pkgmanagers.new.info.askSudo"
+msgstr "Ці патрэбны sudo для запуску мэнэджару пакетаў?"
+
+msgid "pkgmanagers.new.success"
+msgstr "Package manager %s created successfully."
+
+msgid "pkgmanagers.rm.error.inUse"
+msgstr "Менеджар пакетаў выкарыстоўваецца ў %d стэках:"
+
+msgid "pkgmanagers.rm.error.noName"
+msgstr "Імя не ўказана."
+
+msgid "pkgmanagers.rm.info.aborting"
+msgstr "Перапыненне выдалення дыспетчара пакетаў «%s»."
+
+msgid "pkgmanagers.rm.info.askConfirmation"
+msgstr "Вы ўпэўнены, што хочаце выдаліць '%s'? [y/N]"
+
+msgid "pkgmanagers.rm.info.success"
+msgstr "Выдалены менеджэр пакетаў «%s»."
+
+msgid "pkgmanagers.update.error.builtIn"
+msgstr "Built-in package managers cannot be modified."
+
+msgid "pkgmanagers.update.error.missingCommand"
+msgstr "Missing command for %s."
+
+msgid "pkgmanagers.update.error.noName"
+msgstr "No name specified."
+
+msgid "pkgmanagers.update.info.askNewCommand"
+msgstr "Enter new command for '%s' (leave empty to keep '%s'):"
+
+msgid "pkgmanagers.update.info.success"
+msgstr "Updated package manager '%s'."
+
+msgid "runtimeCommand.description"
+msgstr "Праца з названай падсістэмай, доступ да мэнэджара пакетаў і асяроддзя."
+
+msgid "runtimeCommand.error.cantAccessPkgManager"
+msgstr "Адбылася памылка пры доступе да дыспетчара пакетаў: %s"
+
+msgid "runtimeCommand.error.enteringContainer"
+msgstr "An error occurred while entering the container: %s"
+
+msgid "runtimeCommand.error.executingCommand"
+msgstr "Адбылася памылка падчас выканання каманды: %s"
+
+msgid "runtimeCommand.error.exportingApp"
+msgstr "Адбылася памылка падчас экспарту прыкладання: %s"
+
+msgid "runtimeCommand.error.exportingBin"
+msgstr "Падчас экспарту двайковага файла адбылася памылка: %s"
+
+msgid "runtimeCommand.error.noAppNameOrBin"
+msgstr "Трэба ўказаць --app-name або --bin."
+
+msgid "runtimeCommand.error.noPackageSpecified"
+msgstr "Пакеты не пазначаны."
+
+msgid "runtimeCommand.error.sameAppOrBin"
+msgstr "--app-name і --bin не могуць быць зададзены адначасова."
+
+msgid "runtimeCommand.error.startingContainer"
+msgstr "An error occurred while starting the container: %s"
+
+msgid "runtimeCommand.error.stoppingContainer"
+msgstr "An error occurred while stopping the container: %s"
+
+msgid "runtimeCommand.error.unexportingApp"
+msgstr "Адбылася памылка пры скасаванні экспарту прыкладання: %s"
+
+msgid "runtimeCommand.error.unexportingBin"
+msgstr "Адбылася памылка падчас адмены экспарту двайковага файла: %s"
+
+msgid "runtimeCommand.info.exportedApp"
+msgstr "Экспартаванае прыкладанне %s"
+
+msgid "runtimeCommand.info.exportedApps"
+msgstr "Экспартавана %d прыкладанняў"
+
+msgid "runtimeCommand.info.exportedBin"
+msgstr "Экспартаваны двайковы %s"
+
+msgid "runtimeCommand.info.startedContainer"
+msgstr "Started container."
+
+msgid "runtimeCommand.info.startingContainer"
+msgstr "Starting container…"
+
+msgid "runtimeCommand.info.stoppedContainer"
+msgstr "Stopped container."
+
+msgid "runtimeCommand.info.stoppingContainer"
+msgstr "Stopping container…"
+
+msgid "runtimeCommand.info.unexportedApp"
+msgstr "Неэкспартаванае прыкладанне %s"
+
+msgid "runtimeCommand.info.unexportedApps"
+msgstr "Неэкспартаваныя праграмы: %d"
+
+msgid "runtimeCommand.info.unexportedBin"
+msgstr "Неэкспартаваны двайковы файл %s"
+
+msgid "stacks.export.error.noName"
+msgstr "Імя не ўказана."
+
+msgid "stacks.export.error.noOutput"
+msgstr "Выхад не пазначаны."
+
+msgid "stacks.export.info.success"
+msgstr "Экспартаваны стэк «%s» у «%s»."
+
+msgid "stacks.import.error.cannotLoad"
+msgstr "Немагчыма загрузіць стэк з «%s»."
+
+msgid "stacks.import.error.noInput"
+msgstr "Увод не пазначаны."
+
+msgid "stacks.import.info.success"
+msgstr "Імпартаваны стэк з «%s»."
+
+msgid "stacks.labels.builtIn"
+msgstr "Убудаваны"
+
+msgid "stacks.labels.name"
+msgstr "Імя"
+
+msgid "stacks.list.info.aborting"
+msgstr "Перапыненне выдалення стэка '%s'."
+
+msgid "stacks.list.info.foundStacks"
+msgstr "Знойдзена %d стосаў:"
+
+msgid "stacks.list.info.noStacks"
+msgstr "Няма даступных стосаў. Стварыце новы з «apx stacks new» або звярніцеся да сістэмнага адміністратара."
+
+msgid "stacks.new.error.alreadyExists"
+msgstr "Стэк з назвай «%s» ужо існуе."
+
+msgid "stacks.new.error.emptyBase"
+msgstr "База не можа быць пустой."
+
+msgid "stacks.new.error.emptyName"
+msgstr "Імя не можа быць пустым."
+
+msgid "stacks.new.error.emptyPackages"
+msgstr "Пакеты не могуць быць пустымі."
+
+msgid "stacks.new.error.emptyPkgManager"
+msgstr "Дыспетчар пакетаў не можа быць пустым."
+
+msgid "stacks.new.error.noBase"
+msgstr "База не ўказана."
+
+msgid "stacks.new.error.noName"
+msgstr "Імя не ўказана."
+
+msgid "stacks.new.error.noPackages"
+msgstr "Пакеты не пазначаны."
+
+msgid "stacks.new.error.noPkgManager"
+msgstr "Менеджэр пакетаў не ўказаны."
+
+msgid "stacks.new.error.noPkgManagers"
+msgstr "Could not find any package managers. Create one with 'apx pkgmanagers new' or contact the system administrator."
+
+msgid "stacks.new.error.pkgManagerDoesNotExist"
+msgstr "Указаны менеджэр пакетаў не існуе. Стварыце яго з дапамогай «apx pkgmanagers new» або звярніцеся да сістэмнага адміністратара."
+
+msgid "stacks.new.info.askBase"
+msgstr "Выберыце аснову (напрыклад, «ванілаос/піка»):"
+
+msgid "stacks.new.info.askName"
+msgstr "Выберыце назву:"
+
+msgid "stacks.new.info.askPackages"
+msgstr "Калі ласка, увядзіце пакеты, якія вы жадаеце ўсталяваць, у стэк, падзеленыя прабелам:"
+
+msgid "stacks.new.info.askPkgManager"
+msgstr "Выберыце менеджэр пакетаў:"
+
+msgid "stacks.new.info.confirmPackages"
+msgstr "Вы хочаце пацвердзіць бягучы спіс пакетаў?"
+
+msgid "stacks.new.info.noPackages"
+msgstr "Вы не далі ніякага пакета для ўсталёўкі ў стэк. Хочаце дадаць?"
+
+msgid "stacks.new.info.selectPkgManager"
+msgstr "Выберыце менеджэр пакетаў [1-%d]:"
+
+msgid "stacks.new.info.success"
+msgstr "Створаны стэк \"%s\"."
+
+msgid "stacks.rm.error.inUse"
+msgstr "The stack is used in %d subsystems:"
+
+msgid "stacks.rm.error.noName"
+msgstr "Імя не ўказана."
+
+msgid "stacks.rm.info.askConfirmation"
+msgstr "Вы ўпэўнены, што хочаце выдаліць '%s'?\n[т/Н]"
+
+msgid "stacks.rm.info.success"
+msgstr "Выдалены стэк '%s'."
+
+msgid "stacks.update.error.builtIn"
+msgstr "Built-in stacks cannot be modified."
+
+msgid "stacks.update.error.noBase"
+msgstr "База не ўказана."
+
+msgid "stacks.update.error.noName"
+msgstr "Імя не ўказана."
+
+msgid "stacks.update.error.noPkgManager"
+msgstr "Менеджэр пакетаў не ўказаны."
+
+msgid "stacks.update.error.pkgManagerDoesNotExist"
+msgstr "Указаны менеджэр пакетаў не існуе. Стварыце яго з дапамогай «apx pkgmanagers new» або звярніцеся да сістэмнага адміністратара."
+
+msgid "stacks.update.info.askBase"
+msgstr "Увядзіце новую базу або пацвердзіце бягучую (%s):"
+
+msgid "stacks.update.info.askPackages"
+msgstr "Увядзіце пакеты, якія вы жадаеце ўсталяваць у стэк, праз прабел, або пацвердзіце бягучыя (%s):"
+
+msgid "stacks.update.info.askPkgManager"
+msgstr "Выберыце новы менеджэр пакетаў або пацвердзіце бягучы (%s):"
+
+msgid "stacks.update.info.confirmPackages"
+msgstr "Do you want to confirm the current packages list?"
+
+msgid "stacks.update.info.noPackages"
+msgstr "You have not provided any packages to install in the stack. Do you want to add some now?"
+
+msgid "stacks.update.info.success"
+msgstr "Абноўлены стэк \"%s\"."
+
+msgid "subsystems.labels.name"
+msgstr "Імя"
+
+msgid "subsystems.labels.status"
+msgstr "Статус"
+
+msgid "subsystems.list.error"
+msgstr "<nil>"
+
+msgid "subsystems.list.info.foundSubsystems"
+msgstr "Знойдзена %d падсістэма:"
+
+msgid "subsystems.list.info.noSubsystems"
+msgstr "Няма даступных падсістэм. Стварыце новы з «apx subsystems new» або звярніцеся да сістэмнага адміністратара."
+
+msgid "subsystems.new.error.alreadyExists"
+msgstr "Падсістэма з назвай «%s» ужо існуе."
+
+msgid "subsystems.new.error.emptyName"
+msgstr "Імя не можа быць пустым."
+
+msgid "subsystems.new.error.emptyStack"
+msgstr "Стэк не можа быць пустым."
+
+msgid "subsystems.new.error.forbiddenName"
+msgstr "The name '%s' is forbidden. Please choose a different name"
+
+msgid "subsystems.new.error.noName"
+msgstr "Імя не ўказана."
+
+msgid "subsystems.new.error.noStack"
+msgstr "Стэк не пазначаны."
+
+msgid "subsystems.new.error.noStacks"
+msgstr "Для стварэння падсістэмы неабходны стэк. Стварыце новы з «apx stacks new» або звярніцеся да сістэмнага адміністратара."
+
+msgid "subsystems.new.error.stackDoesNotExist"
+msgstr "Указаны стэк не існуе. Стварыце яго з дапамогай «apx stacks new» або звярніцеся да сістэмнага адміністратара."
+
+msgid "subsystems.new.info.askName"
+msgstr "Выберыце назву:"
+
+msgid "subsystems.new.info.availableStacks"
+msgstr "Available stacks:"
+
+msgid "subsystems.new.info.creatingSubsystem"
+msgstr "Створана падсістэма «%s» са стэкам «%s»…"
+
+msgid "subsystems.new.info.selectStack"
+msgstr "Выберыце стос [1-%d]:"
+
+msgid "subsystems.new.info.success"
+msgstr "Створана падсістэма \"%s\"."
+
+msgid "subsystems.reset.error.noName"
+msgstr "Імя не ўказана."
+
+msgid "subsystems.reset.info.askConfirmation"
+msgstr "Вы ўпэўнены, што хочаце скінуць '%s'? [y/N]"
+
+msgid "subsystems.reset.info.success"
+msgstr "Падсістэма '%s' была скінута."
+
+msgid "subsystems.rm.error.noName"
+msgstr "Імя не ўказана."
+
+msgid "subsystems.rm.info.askConfirmation"
+msgstr "Вы ўпэўнены, што хочаце выдаліць '%s'?\n[т/Н]"
+
+msgid "subsystems.rm.info.success"
+msgstr "Выдалена падсістэма '%s'."
+

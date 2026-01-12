@@ -1,0 +1,694 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: lo\n"
+
+msgid "apx.cmd.pkgmanagers"
+msgstr "ເຮັດວຽກກັບຕົວຈັດການແພັກເກັດທີ່ມີໃນ apx."
+
+msgid "apx.cmd.pkgmanagers.export"
+msgstr "ສົ່ງອອກຕົວຈັດການແພັກເກັດທີ່ລະບຸ."
+
+msgid "apx.cmd.pkgmanagers.export.options.name"
+msgstr "ຊື່ຂອງຕົວຈັດການແພັກເກັດທີ່ຈະສົ່ງອອກ."
+
+msgid "apx.cmd.pkgmanagers.export.options.output"
+msgstr "ເສັ້ນທາງທີ່ຈະສົ່ງອອກຕົວຈັດການແພັກເກັດໄປ."
+
+msgid "apx.cmd.pkgmanagers.import"
+msgstr "ນຳເຂົ້າຕົວຈັດການແພັກເກັດທີ່ລະບຸ."
+
+msgid "apx.cmd.pkgmanagers.import.options.input"
+msgstr "ເສັ້ນທາງທີ່ຈະນຳເຂົ້າຕົວຈັດການແພັກເກັດ."
+
+msgid "apx.cmd.pkgmanagers.list"
+msgstr "ສະແດງລາຍຊື່ຕົວຈັດການແພັກເກັດທັງໝົດທີ່ມີ."
+
+msgid "apx.cmd.pkgmanagers.list.options.json"
+msgstr "ສະແດງຜົນໃນຮູບແບບ JSON."
+
+msgid "apx.cmd.pkgmanagers.new"
+msgstr "ສ້າງຕົວຈັດການແພັກເກັດໃໝ່."
+
+msgid "apx.cmd.pkgmanagers.new.options.autoremove"
+msgstr "ຄຳສັ່ງສຳລັບການລຶບແພັກເກັດແບບອັດຕະໂນມັດ (autoremove)."
+
+msgid "apx.cmd.pkgmanagers.new.options.clean"
+msgstr "ຄຳສັ່ງສຳລັບການລ້າງແຄດຂອງຕົວຈັດການແພັກເກັດ."
+
+msgid "apx.cmd.pkgmanagers.new.options.install"
+msgstr "ຄຳສັ່ງສຳລັບການຕິດຕັ້ງແພັກເກັດ."
+
+msgid "apx.cmd.pkgmanagers.new.options.list"
+msgstr "ຄຳສັ່ງສຳລັບການສະແດງລາຍຊື່ແພັກເກັດທີ່ຕິດຕັ້ງແລ້ວ."
+
+msgid "apx.cmd.pkgmanagers.new.options.name"
+msgstr "ຊື່ຂອງຕົວຈັດການແພັກເກັດ."
+
+msgid "apx.cmd.pkgmanagers.new.options.needSudo"
+msgstr "ຕົວຈັດການແພັກເກັດຕ້ອງການ sudo ເພື່ອເຮັດວຽກຫຼືບໍ່."
+
+msgid "apx.cmd.pkgmanagers.new.options.noPrompt"
+msgstr "ໃຊ້ຄ່າເລີ່ມຕົ້ນສຳລັບທຸກຄຳຖາມ."
+
+msgid "apx.cmd.pkgmanagers.new.options.purge"
+msgstr "ຄຳສັ່ງສຳລັບການລຶບລ້າງແພັກເກັດ (purge)."
+
+msgid "apx.cmd.pkgmanagers.new.options.remove"
+msgstr "ຄຳສັ່ງສຳລັບການລຶບແພັກເກັດ."
+
+msgid "apx.cmd.pkgmanagers.new.options.search"
+msgstr "ຄຳສັ່ງສຳລັບການຄົ້ນຫາແພັກເກັດ."
+
+msgid "apx.cmd.pkgmanagers.new.options.show"
+msgstr "ຄຳສັ່ງສຳລັບການສະແດງຂໍ້ມູນກ່ຽວກັບແພັກເກັດ."
+
+msgid "apx.cmd.pkgmanagers.new.options.update"
+msgstr "ຄຳສັ່ງສຳລັບການອັບເດດລາຍຊື່ແພັກເກັດ."
+
+msgid "apx.cmd.pkgmanagers.new.options.upgrade"
+msgstr "ຄຳສັ່ງສຳລັບການອັບເກຣດແພັກເກັດ."
+
+msgid "apx.cmd.pkgmanagers.rm"
+msgstr "ລຶບຕົວຈັດການແພັກເກັດທີ່ລະບຸ."
+
+msgid "apx.cmd.pkgmanagers.rm.options.force"
+msgstr "ບັງຄັບລຶບຕົວຈັດການແພັກເກັດ."
+
+msgid "apx.cmd.pkgmanagers.rm.options.name"
+msgstr "ຊື່ຂອງຕົວຈັດການແພັກເກັດທີ່ຈະລຶບ."
+
+msgid "apx.cmd.pkgmanagers.show"
+msgstr "ສະແດງຂໍ້ມູນກ່ຽວກັບຕົວຈັດການແພັກເກັດທີ່ລະບຸ."
+
+msgid "apx.cmd.pkgmanagers.update"
+msgstr "ອັບເດດຕົວຈັດການແພັກເກັດທີ່ລະບຸ."
+
+msgid "apx.cmd.stacks"
+msgstr "ເຮັດວຽກກັບສະແຕັກ (stacks) ທີ່ມີໃນ apx."
+
+msgid "apx.cmd.stacks.export"
+msgstr "ສົ່ງອອກສະແຕັກທີ່ລະບຸ."
+
+msgid "apx.cmd.stacks.export.options.name"
+msgstr "ຊື່ຂອງສະແຕັກທີ່ຈະສົ່ງອອກ."
+
+msgid "apx.cmd.stacks.export.options.output"
+msgstr "ເສັ້ນທາງທີ່ຈະສົ່ງອອກສະແຕັກໄປ."
+
+msgid "apx.cmd.stacks.import"
+msgstr "ນຳເຂົ້າສະແຕັກທີ່ລະບຸ."
+
+msgid "apx.cmd.stacks.import.options.input"
+msgstr "ເສັ້ນທາງທີ່ຈະນຳເຂົ້າສະແຕັກ."
+
+msgid "apx.cmd.stacks.list"
+msgstr "ສະແດງລາຍຊື່ສະແຕັກທັງໝົດທີ່ມີ."
+
+msgid "apx.cmd.stacks.list.options.json"
+msgstr "ສະແດງຜົນໃນຮູບແບບ JSON."
+
+msgid "apx.cmd.stacks.new"
+msgstr "ສ້າງສະແຕັກໃໝ່."
+
+msgid "apx.cmd.stacks.new.options.base"
+msgstr "ອິມເມຈ (image) ການແຈກຢາຍພື້ນຖານທີ່ຈະໃຊ້. (ສຳລັບລາຍຊື່ທີ່ຮອງຮັບ ເບິ່ງທີ່: https://distrobox.it/compatibility/#containers-distros)"
+
+msgid "apx.cmd.stacks.new.options.name"
+msgstr "ຊື່ຂອງສະແຕັກ."
+
+msgid "apx.cmd.stacks.new.options.noPrompt"
+msgstr "ໃຊ້ຄ່າເລີ່ມຕົ້ນສຳລັບທຸກຄຳຖາມ."
+
+msgid "apx.cmd.stacks.new.options.packages"
+msgstr "ແພັກເກັດທີ່ຈະຕິດຕັ້ງ."
+
+msgid "apx.cmd.stacks.new.options.pkgManager"
+msgstr "ຕົວຈັດການແພັກເກັດທີ່ຈະໃຊ້."
+
+msgid "apx.cmd.stacks.rm"
+msgstr "ລຶບສະແຕັກທີ່ລະບຸ."
+
+msgid "apx.cmd.stacks.rm.options.force"
+msgstr "ບັງຄັບລຶບສະແຕັກ."
+
+msgid "apx.cmd.stacks.rm.options.name"
+msgstr "ຊື່ຂອງສະແຕັກທີ່ຈະລຶບ."
+
+msgid "apx.cmd.stacks.show"
+msgstr "ສະແດງຂໍ້ມູນກ່ຽວກັບສະແຕັກທີ່ລະບຸ."
+
+msgid "apx.cmd.stacks.update"
+msgstr "ອັບເດດສະແຕັກທີ່ລະບຸ."
+
+msgid "apx.cmd.stacks.update.options.base"
+msgstr "ລະບົບຍ່ອຍພື້ນຖານທີ່ຈະໃຊ້."
+
+msgid "apx.cmd.stacks.update.options.name"
+msgstr "ຊື່ຂອງສະແຕັກ."
+
+msgid "apx.cmd.stacks.update.options.noPrompt"
+msgstr "ໃຊ້ຄ່າເລີ່ມຕົ້ນສຳລັບທຸກຄຳຖາມ."
+
+msgid "apx.cmd.stacks.update.options.packages"
+msgstr "ແພັກເກັດທີ່ຈະຕິດຕັ້ງ."
+
+msgid "apx.cmd.stacks.update.options.pkgManager"
+msgstr "ຕົວຈັດການແພັກເກັດທີ່ຈະໃຊ້."
+
+msgid "apx.cmd.subsystem.autoremove"
+msgstr "ລຶບແພັກເກັດທີ່ບໍ່ຕ້ອງການແລ້ວ."
+
+msgid "apx.cmd.subsystem.clean"
+msgstr "ລ້າງແຄດ (cache) ຂອງຕົວຈັດການແພັກເກັດ."
+
+msgid "apx.cmd.subsystem.enter"
+msgstr "ເຂົ້າສູ່ສະພາບແວດລ້ອມຂອງລະບົບຍ່ອຍ."
+
+msgid "apx.cmd.subsystem.export"
+msgstr "ສົ່ງອອກແອັບພລິເຄຊັນ ຫຼື ໄຟລ໌ບີນາຣີ ຈາກລະບົບຍ່ອຍໄປຍັງໂຮສ (host)."
+
+msgid "apx.cmd.subsystem.export.options.appName"
+msgstr "ຊື່ຂອງແອັບພລິເຄຊັນທີ່ຈະສົ່ງອອກ."
+
+msgid "apx.cmd.subsystem.export.options.bin"
+msgstr "ຊື່ຂອງໄຟລ໌ບີນາຣີທີ່ຈະສົ່ງອອກ."
+
+msgid "apx.cmd.subsystem.export.options.binOutput"
+msgstr "ເສັ້ນທາງຂອງໄຟລ໌ບີນາຣີທີ່ຈະສົ່ງອອກ (ຄ່າເລີ່ມຕົ້ນ: ~/.local/bin/)."
+
+msgid "apx.cmd.subsystem.install"
+msgstr "ຕິດຕັ້ງແພັກເກັດທີ່ລະບຸ."
+
+msgid "apx.cmd.subsystem.install.options.noExport"
+msgstr "ບໍ່ຕ້ອງສົ່ງອອກ desktop entry."
+
+msgid "apx.cmd.subsystem.list"
+msgstr "ສະແດງລາຍຊື່ແພັກເກັດທີ່ຕິດຕັ້ງທັງໝົດ."
+
+msgid "apx.cmd.subsystem.list.options.json"
+msgstr "ສະແດງຜົນໃນຮູບແບບ JSON."
+
+msgid "apx.cmd.subsystem.new.options.home"
+msgstr "ໄດເຣັກທໍຣີ home ແບບກຳນົດເອງຂອງລະບົບຍ່ອຍ."
+
+msgid "apx.cmd.subsystem.new.options.init"
+msgstr "ໃຊ້ systemd ພາຍໃນລະບົບຍ່ອຍ."
+
+msgid "apx.cmd.subsystem.new.options.name"
+msgstr "ຊື່ຂອງລະບົບຍ່ອຍ."
+
+msgid "apx.cmd.subsystem.new.options.stack"
+msgstr "ສະແຕັກທີ່ຈະໃຊ້."
+
+msgid "apx.cmd.subsystem.purge"
+msgstr "ລຶບລ້າງແພັກເກັດທີ່ລະບຸ (Purge)."
+
+msgid "apx.cmd.subsystem.remove"
+msgstr "ລຶບແພັກເກັດທີ່ລະບຸ."
+
+msgid "apx.cmd.subsystem.reset.options.force"
+msgstr "ບັງຄັບຣີເຊັດລະບົບຍ່ອຍ."
+
+msgid "apx.cmd.subsystem.reset.options.name"
+msgstr "ຊື່ຂອງລະບົບຍ່ອຍທີ່ຈະຣີເຊັດ."
+
+msgid "apx.cmd.subsystem.rm.options.force"
+msgstr "ບັງຄັບລຶບລະບົບຍ່ອຍ."
+
+msgid "apx.cmd.subsystem.rm.options.name"
+msgstr "ຊື່ຂອງລະບົບຍ່ອຍທີ່ຈະລຶບ."
+
+msgid "apx.cmd.subsystem.run"
+msgstr "ແລ່ນຄຳສັ່ງພາຍໃນລະບົບຍ່ອຍ."
+
+msgid "apx.cmd.subsystem.search"
+msgstr "ຄົ້ນຫາແພັກເກັດທີ່ກົງກັບຄຳຄົ້ນ."
+
+msgid "apx.cmd.subsystem.show"
+msgstr "ສະແດງຂໍ້ມູນກ່ຽວກັບແພັກເກັດທີ່ລະບຸ."
+
+msgid "apx.cmd.subsystem.start"
+msgstr "ເລີ່ມຕົ້ນລະບົບຍ່ອຍ."
+
+msgid "apx.cmd.subsystem.stop"
+msgstr "ຢຸດລະບົບຍ່ອຍ."
+
+msgid "apx.cmd.subsystem.unexport"
+msgstr "ຍົກເລີກການສົ່ງອອກແອັບພລິເຄຊັນ ຫຼື ໄຟລ໌ບີນາຣີ ຈາກໂຮສ."
+
+msgid "apx.cmd.subsystem.unexport.options.appName"
+msgstr "ຊື່ຂອງແອັບພລິເຄຊັນທີ່ຈະຍົກເລີກການສົ່ງອອກ."
+
+msgid "apx.cmd.subsystem.unexport.options.bin"
+msgstr "ຊື່ຂອງໄຟລ໌ບີນາຣີທີ່ຈະຍົກເລີກການສົ່ງອອກ."
+
+msgid "apx.cmd.subsystem.unexport.options.binOutput"
+msgstr "ເສັ້ນທາງຂອງໄຟລ໌ບີນາຣີທີ່ຈະສົ່ງອອກ (ຄ່າເລີ່ມຕົ້ນ: ~/.local/bin/)."
+
+msgid "apx.cmd.subsystem.update"
+msgstr "ອັບເດດລາຍຊື່ແພັກເກັດທີ່ມີໃຫ້ໃຊ້."
+
+msgid "apx.cmd.subsystem.upgrade"
+msgstr "ອັບເກຣດແພັກເກັດທີ່ຕິດຕັ້ງທັງໝົດ."
+
+msgid "apx.cmd.subsystems"
+msgstr "ເຮັດວຽກກັບລະບົບຍ່ອຍ (subsystems) ທີ່ມີໃນ apx."
+
+msgid "apx.cmd.subsystems.list"
+msgstr "ສະແດງລາຍຊື່ລະບົບຍ່ອຍທັງໝົດທີ່ມີ."
+
+msgid "apx.cmd.subsystems.new"
+msgstr "ສ້າງລະບົບຍ່ອຍໃໝ່."
+
+msgid "apx.cmd.subsystems.reset"
+msgstr "ຣີເຊັດລະບົບຍ່ອຍທີ່ລະບຸ."
+
+msgid "apx.cmd.subsystems.rm"
+msgstr "ລຶບລະບົບຍ່ອຍທີ່ລະບຸ."
+
+msgid "apx.errors.invalidChoice"
+msgstr "ທາງເລືອກບໍ່ຖືກຕ້ອງ."
+
+msgid "apx.errors.invalidInput"
+msgstr "ຂໍ້ມູນນຳເຂົ້າບໍ່ຖືກຕ້ອງ."
+
+msgid "apx.errors.noRoot"
+msgstr "ຫ້າມແລ່ນ Apx ໃນຖານະ root."
+
+msgid "apx.errors.unknownCommand"
+msgstr "ຄຳສັ່ງທີ່ບໍ່ຮູ້ຈັກ: %s"
+
+msgid "apx.info.aborting"
+msgstr "ຍົກເລີກຕາມການຮ້ອງຂໍ."
+
+msgid "apx.msg.additionalCommands"
+msgstr "ຄຳສັ່ງເພີ່ມເຕີມ"
+
+msgid "apx.msg.additionalHelpTopics"
+msgstr "ຫົວຂໍ້ຊ່ວຍເຫຼືອເພີ່ມເຕີມ"
+
+msgid "apx.msg.aliases"
+msgstr "ຊື່ແຝງ"
+
+msgid "apx.msg.availableCommands"
+msgstr "ຄຳສັ່ງທີ່ມີໃຫ້ໃຊ້"
+
+msgid "apx.msg.examples"
+msgstr "ຕົວຢ່າງ"
+
+msgid "apx.msg.flags"
+msgstr "ທຸງ (Flags)"
+
+msgid "apx.msg.globalFlags"
+msgstr "ທຸງທົ່ວໄປ (Global Flags)"
+
+msgid "apx.msg.help"
+msgstr "ສະແດງວິທີໃຊ້ສຳລັບ apx."
+
+msgid "apx.msg.moreInfo"
+msgstr "ໃຊ້ %s ສຳລັບຂໍ້ມູນເພີ່ມເຕີມກ່ຽວກັບຄຳສັ່ງ"
+
+msgid "apx.msg.usage"
+msgstr "ການນຳໃຊ້"
+
+msgid "apx.msg.version"
+msgstr "ສະແດງເວີຊັນສຳລັບ apx."
+
+msgid "apx.terminal.false"
+msgstr "ບໍ່"
+
+msgid "apx.terminal.true"
+msgstr "ແມ່ນ"
+
+msgid "pkgmanagers.export.error.noName"
+msgstr "ບໍ່ໄດ້ລະບຸຊື່."
+
+msgid "pkgmanagers.export.error.noOutput"
+msgstr "ບໍ່ໄດ້ລະບຸບ່ອນສົ່ງອອກ."
+
+msgid "pkgmanagers.export.info.success"
+msgstr "ສົ່ງອອກຕົວຈັດການແພັກເກັດ '%s' ໄປຍັງ '%s' ແລ້ວ."
+
+msgid "pkgmanagers.import.error.cannotLoad"
+msgstr "ບໍ່ສາມາດໂຫຼດຕົວຈັດການແພັກເກັດຈາກ '%s'."
+
+msgid "pkgmanagers.import.error.noInput"
+msgstr "ບໍ່ໄດ້ລະບຸຂໍ້ມູນນຳເຂົ້າ."
+
+msgid "pkgmanagers.import.info.success"
+msgstr "ນຳເຂົ້າຕົວຈັດການແພັກເກັດຈາກ '%s' ແລ້ວ."
+
+msgid "pkgmanagers.labels.builtIn"
+msgstr "ທີ່ມີໃນຕົວ (Built-in)"
+
+msgid "pkgmanagers.labels.name"
+msgstr "ຊື່"
+
+msgid "pkgmanagers.list.info.foundPkgManagers"
+msgstr "ພົບຕົວຈັດການແພັກເກັດ %d ຕົວ"
+
+msgid "pkgmanagers.list.info.noPkgManagers"
+msgstr "ບໍ່ມີຕົວຈັດການແພັກເກັດ. ສ້າງໃໝ່ດ້ວຍ 'apx pkgmanagers new' ຫຼື ຕິດຕໍ່ຜູ້ຄຸມລະບົບ."
+
+msgid "pkgmanagers.new.error.alreadyExists"
+msgstr "ຕົວຈັດການແພັກເກັດຊື່ '%s' ມີຢູ່ແລ້ວ."
+
+msgid "pkgmanagers.new.error.emptyCommand"
+msgstr "ຄຳສັ່ງຕ້ອງບໍ່ຫວ່າງເປົ່າ."
+
+msgid "pkgmanagers.new.error.emptyName"
+msgstr "ຊື່ຕ້ອງບໍ່ຫວ່າງເປົ່າ."
+
+msgid "pkgmanagers.new.error.noCommand"
+msgstr "ບໍ່ໄດ້ລະບຸຄຳສັ່ງສຳລັບ '%s'."
+
+msgid "pkgmanagers.new.error.noName"
+msgstr "ບໍ່ໄດ້ລະບຸຊື່."
+
+msgid "pkgmanagers.new.info.askCommand"
+msgstr "ປ້ອນຄຳສັ່ງສຳລັບ '%s':"
+
+msgid "pkgmanagers.new.info.askCommandWithDefault"
+msgstr "ປ້ອນຄຳສັ່ງສຳລັບ '%s' (ຄ່າເລີ່ມຕົ້ນ: '%s'):"
+
+msgid "pkgmanagers.new.info.askName"
+msgstr "ເລືອກຊື່:"
+
+msgid "pkgmanagers.new.info.askOverwrite"
+msgstr "ຕົວຈັດການແພັກເກັດຊື່ '%s' ມີຢູ່ແລ້ວ. ຕ້ອງການຂຽນທັບບໍ່?"
+
+msgid "pkgmanagers.new.info.askSudo"
+msgstr "ຕົວຈັດການແພັກເກັດຕ້ອງການ sudo ເພື່ອເຮັດວຽກບໍ່?"
+
+msgid "pkgmanagers.new.success"
+msgstr "ສ້າງຕົວຈັດການແພັກເກັດ %s ສຳເລັດແລ້ວ."
+
+msgid "pkgmanagers.rm.error.inUse"
+msgstr "ຕົວຈັດການແພັກເກັດກຳລັງຖືກໃຊ້ໃນ %d ສະແຕັກ:"
+
+msgid "pkgmanagers.rm.error.noName"
+msgstr "ບໍ່ໄດ້ລະບຸຊື່."
+
+msgid "pkgmanagers.rm.info.aborting"
+msgstr "ຍົກເລີກການລຶບຕົວຈັດການແພັກເກັດ '%s'."
+
+msgid "pkgmanagers.rm.info.askConfirmation"
+msgstr "ທ່ານແນ່ໃຈບໍ່ວ່າຕ້ອງການລຶບ '%s'?"
+
+msgid "pkgmanagers.rm.info.success"
+msgstr "ລຶບຕົວຈັດການແພັກເກັດ '%s' ແລ້ວ."
+
+msgid "pkgmanagers.update.error.builtIn"
+msgstr "ບໍ່ສາມາດແກ້ໄຂຕົວຈັດການແພັກເກັດທີ່ມີໃນຕົວ (built-in) ໄດ້."
+
+msgid "pkgmanagers.update.error.missingCommand"
+msgstr "ຂາດຄຳສັ່ງສຳລັບ %s."
+
+msgid "pkgmanagers.update.error.noName"
+msgstr "ບໍ່ໄດ້ລະບຸຊື່."
+
+msgid "pkgmanagers.update.info.askNewCommand"
+msgstr "ປ້ອນຄຳສັ່ງໃໝ່ສຳລັບ '%s' (ປ່ອຍວ່າງເພື່ອໃຊ້ຄ່າເດີມ '%s'):"
+
+msgid "pkgmanagers.update.info.success"
+msgstr "ອັບເດດຕົວຈັດການແພັກເກັດ '%s' ແລ້ວ."
+
+msgid "runtimeCommand.description"
+msgstr "ເຮັດວຽກກັບລະບົບຍ່ອຍທີ່ລະບຸ, ເຂົ້າເຖິງຕົວຈັດການແພັກເກັດ ແລະ ສະພາບແວດລ້ອມ."
+
+msgid "runtimeCommand.error.cantAccessPkgManager"
+msgstr "ເກີດຂໍ້ຜິດພາດຂະນະເຂົ້າເຖິງຕົວຈັດການແພັກເກັດ: %s"
+
+msgid "runtimeCommand.error.enteringContainer"
+msgstr "ເກີດຂໍ້ຜິດພາດຂະນະເຂົ້າສູ່ຄອນເທນເນີ: %s"
+
+msgid "runtimeCommand.error.executingCommand"
+msgstr "ເກີດຂໍ້ຜິດພາດຂະນະປະຕິບັດຄຳສັ່ງ: %s"
+
+msgid "runtimeCommand.error.exportingApp"
+msgstr "ເກີດຂໍ້ຜິດພາດຂະນະສົ່ງອອກແອັບພລິເຄຊັນ: %s"
+
+msgid "runtimeCommand.error.exportingBin"
+msgstr "ເກີດຂໍ້ຜິດພາດຂະນະສົ່ງອອກໄຟລ໌ບີນາຣີ: %s"
+
+msgid "runtimeCommand.error.noAppNameOrBin"
+msgstr "ຕ້ອງລະບຸ --app-name ຫຼື --bin."
+
+msgid "runtimeCommand.error.noPackageSpecified"
+msgstr "ບໍ່ໄດ້ລະບຸແພັກເກັດ."
+
+msgid "runtimeCommand.error.sameAppOrBin"
+msgstr "ບໍ່ສາມາດລະບຸ --app-name ແລະ --bin ພ້ອມກັນໄດ້."
+
+msgid "runtimeCommand.error.startingContainer"
+msgstr "ເກີດຂໍ້ຜິດພາດຂະນະເລີ່ມຕົ້ນຄອນເທນເນີ: %s"
+
+msgid "runtimeCommand.error.stoppingContainer"
+msgstr "ເກີດຂໍ້ຜິດພາດຂະນະຢຸດຄອນເທນເນີ: %s"
+
+msgid "runtimeCommand.error.unexportingApp"
+msgstr "ເກີດຂໍ້ຜິດພາດຂະນະຍົກເລີກການສົ່ງອອກແອັບພລິເຄຊັນ: %s"
+
+msgid "runtimeCommand.error.unexportingBin"
+msgstr "ເກີດຂໍ້ຜິດພາດຂະນະຍົກເລີກການສົ່ງອອກໄຟລ໌ບີນາຣີ: %s"
+
+msgid "runtimeCommand.info.exportedApp"
+msgstr "ສົ່ງອອກແອັບພລິເຄຊັນ %s ແລ້ວ"
+
+msgid "runtimeCommand.info.exportedApps"
+msgstr "ສົ່ງອອກແລ້ວ %d ແອັບພລິເຄຊັນ"
+
+msgid "runtimeCommand.info.exportedBin"
+msgstr "ສົ່ງອອກໄຟລ໌ບີນາຣີ %s ແລ້ວ"
+
+msgid "runtimeCommand.info.startedContainer"
+msgstr "ເລີ່ມຕົ້ນລະບົບຍ່ອຍແລ້ວ."
+
+msgid "runtimeCommand.info.startingContainer"
+msgstr "ກຳລັງເລີ່ມຕົ້ນລະບົບຍ່ອຍ %s…"
+
+msgid "runtimeCommand.info.stoppedContainer"
+msgstr "ຢຸດລະບົບຍ່ອຍແລ້ວ."
+
+msgid "runtimeCommand.info.stoppingContainer"
+msgstr "ກຳລັງຢຸດລະບົບຍ່ອຍ %s…"
+
+msgid "runtimeCommand.info.unexportedApp"
+msgstr "ຍົກເລີກການສົ່ງອອກແອັບພລິເຄຊັນ %s ແລ້ວ"
+
+msgid "runtimeCommand.info.unexportedApps"
+msgstr "ຍົກເລີກການສົ່ງອອກ %d ແອັບພລິເຄຊັນ"
+
+msgid "runtimeCommand.info.unexportedBin"
+msgstr "ຍົກເລີກການສົ່ງອອກໄຟລ໌ບີນາຣີ %s ແລ້ວ"
+
+msgid "stacks.export.error.noName"
+msgstr "ບໍ່ໄດ້ລະບຸຊື່."
+
+msgid "stacks.export.error.noOutput"
+msgstr "ບໍ່ໄດ້ລະບຸບ່ອນສົ່ງອອກ."
+
+msgid "stacks.export.info.success"
+msgstr "ສົ່ງອອກສະແຕັກ '%s' ໄປຍັງ '%s' ແລ້ວ."
+
+msgid "stacks.import.error.cannotLoad"
+msgstr "ບໍ່ສາມາດໂຫຼດສະແຕັກຈາກ '%s'."
+
+msgid "stacks.import.error.noInput"
+msgstr "ບໍ່ໄດ້ລະບຸຂໍ້ມູນນຳເຂົ້າ."
+
+msgid "stacks.import.info.success"
+msgstr "ນຳເຂົ້າສະແຕັກຈາກ '%s' ແລ້ວ."
+
+msgid "stacks.labels.builtIn"
+msgstr "ທີ່ມີໃນຕົວ (Built-in)"
+
+msgid "stacks.labels.name"
+msgstr "ຊື່"
+
+msgid "stacks.list.info.aborting"
+msgstr "ຍົກເລີກການລຶບສະແຕັກ '%s'."
+
+msgid "stacks.list.info.foundStacks"
+msgstr "ພົບ %d ສະແຕັກ:"
+
+msgid "stacks.list.info.noStacks"
+msgstr "ບໍ່ມີສະແຕັກ. ສ້າງໃໝ່ດ້ວຍ 'apx stacks new' ຫຼື ຕິດຕໍ່ຜູ້ຄຸມລະບົບ."
+
+msgid "stacks.new.error.alreadyExists"
+msgstr "ສະແຕັກຊື່ '%s' ມີຢູ່ແລ້ວ."
+
+msgid "stacks.new.error.emptyBase"
+msgstr "Base ຕ້ອງບໍ່ຫວ່າງເປົ່າ."
+
+msgid "stacks.new.error.emptyName"
+msgstr "ຊື່ຕ້ອງບໍ່ຫວ່າງເປົ່າ."
+
+msgid "stacks.new.error.emptyPackages"
+msgstr "ແພັກເກັດຕ້ອງບໍ່ຫວ່າງເປົ່າ."
+
+msgid "stacks.new.error.emptyPkgManager"
+msgstr "ຕົວຈັດການແພັກເກັດຕ້ອງບໍ່ຫວ່າງເປົ່າ."
+
+msgid "stacks.new.error.noBase"
+msgstr "ບໍ່ໄດ້ລະບຸ Base."
+
+msgid "stacks.new.error.noName"
+msgstr "ບໍ່ໄດ້ລະບຸຊື່."
+
+msgid "stacks.new.error.noPackages"
+msgstr "ບໍ່ໄດ້ລະບຸແພັກເກັດ."
+
+msgid "stacks.new.error.noPkgManager"
+msgstr "ບໍ່ໄດ້ລະບຸຕົວຈັດການແພັກເກັດ."
+
+msgid "stacks.new.error.noPkgManagers"
+msgstr "ບໍ່ພົບຕົວຈັດການແພັກເກັດ. ສ້າງໃໝ່ດ້ວຍ 'apx pkgmanagers new' ຫຼື ຕິດຕໍ່ຜູ້ຄຸມລະບົບ."
+
+msgid "stacks.new.error.pkgManagerDoesNotExist"
+msgstr "ຕົວຈັດການແພັກເກັດທີ່ລະບຸບໍ່ມີຢູ່. ສ້າງມັນດ້ວຍ 'apx pkgmanagers new' ຫຼື ຕິດຕໍ່ຜູ້ຄຸມລະບົບ."
+
+msgid "stacks.new.info.askBase"
+msgstr "ເລືອກ base (ເຊັ່ນ: 'vanillaos/pico'):"
+
+msgid "stacks.new.info.askName"
+msgstr "ເລືອກຊື່:"
+
+msgid "stacks.new.info.askPackages"
+msgstr "ກະລຸນາພິມຊື່ແພັກເກັດທີ່ຕ້ອງການຕິດຕັ້ງໃນສະແຕັກ, ແຍກດ້ວຍຍະຫວ່າງ:"
+
+msgid "stacks.new.info.askPkgManager"
+msgstr "ເລືອກຕົວຈັດການແພັກເກັດ:"
+
+msgid "stacks.new.info.confirmPackages"
+msgstr "ທ່ານຕ້ອງການຢືນຢັນລາຍຊື່ແພັກເກັດປັດຈຸບັນບໍ່?"
+
+msgid "stacks.new.info.noPackages"
+msgstr "ທ່ານຍັງບໍ່ໄດ້ລະບຸແພັກເກັດທີ່ຈະຕິດຕັ້ງໃນສະແຕັກ. ຕ້ອງການເພີ່ມຕອນນີ້ບໍ່?"
+
+msgid "stacks.new.info.selectPkgManager"
+msgstr "ເລືອກຕົວຈັດການແພັກເກັດ [1-%d]:"
+
+msgid "stacks.new.info.success"
+msgstr "ສ້າງສະແຕັກ '%s' ແລ້ວ."
+
+msgid "stacks.rm.error.inUse"
+msgstr "ສະແຕັກກຳລັງຖືກໃຊ້ໃນ %d ລະບົບຍ່ອຍ:"
+
+msgid "stacks.rm.error.noName"
+msgstr "ບໍ່ໄດ້ລະບຸຊື່."
+
+msgid "stacks.rm.info.askConfirmation"
+msgstr "ທ່ານແນ່ໃຈບໍ່ວ່າຕ້ອງການລຶບ '%s'?"
+
+msgid "stacks.rm.info.success"
+msgstr "ລຶບສະແຕັກ '%s' ແລ້ວ."
+
+msgid "stacks.update.error.builtIn"
+msgstr "ບໍ່ສາມາດແກ້ໄຂສະແຕັກທີ່ມີໃນຕົວ (built-in) ໄດ້."
+
+msgid "stacks.update.error.noBase"
+msgstr "ບໍ່ໄດ້ລະບຸ base."
+
+msgid "stacks.update.error.noName"
+msgstr "ບໍ່ໄດ້ລະບຸຊື່."
+
+msgid "stacks.update.error.noPkgManager"
+msgstr "ບໍ່ໄດ້ລະບຸຕົວຈັດການແພັກເກັດ."
+
+msgid "stacks.update.error.pkgManagerDoesNotExist"
+msgstr "ຕົວຈັດການແພັກເກັດທີ່ລະບຸບໍ່ມີຢູ່. ສ້າງມັນດ້ວຍ 'apx pkgmanagers new' ຫຼື ຕິດຕໍ່ຜູ້ຄຸມລະບົບ."
+
+msgid "stacks.update.info.askBase"
+msgstr "ພິມ base ໃໝ່ ຫຼື ຢືນຢັນອັນປັດຈຸບັນ (%s):"
+
+msgid "stacks.update.info.askPackages"
+msgstr "ພິມຊື່ແພັກເກັດທີ່ຕ້ອງການຕິດຕັ້ງໃນສະແຕັກ, ແຍກດ້ວຍຍະຫວ່າງ:"
+
+msgid "stacks.update.info.askPkgManager"
+msgstr "ເລືອກຕົວຈັດການແພັກເກັດໃໝ່ ຫຼື ຢືນຢັນອັນປັດຈຸບັນ (%s):"
+
+msgid "stacks.update.info.confirmPackages"
+msgstr "ທ່ານຕ້ອງການອັບເດດລາຍຊື່ແພັກເກັດບໍ່?"
+
+msgid "stacks.update.info.noPackages"
+msgstr "ທ່ານຍັງບໍ່ໄດ້ລະບຸແພັກເກັດທີ່ຈະຕິດຕັ້ງໃນສະແຕັກ. ຕ້ອງການເພີ່ມຕອນນີ້ບໍ່?"
+
+msgid "stacks.update.info.success"
+msgstr "ອັບເດດສະແຕັກ '%s' ແລ້ວ."
+
+msgid "subsystems.labels.name"
+msgstr "ຊື່"
+
+msgid "subsystems.labels.status"
+msgstr "ສະຖານະ"
+
+msgid "subsystems.list.error"
+msgstr "<nil>"
+
+msgid "subsystems.list.info.foundSubsystems"
+msgstr "ພົບ %d ລະບົບຍ່ອຍ:"
+
+msgid "subsystems.list.info.noSubsystems"
+msgstr "ບໍ່ມີລະບົບຍ່ອຍ. ສ້າງໃໝ່ດ້ວຍ 'apx subsystems new' ຫຼື ຕິດຕໍ່ຜູ້ຄຸມລະບົບ."
+
+msgid "subsystems.new.error.alreadyExists"
+msgstr "ລະບົບຍ່ອຍຊື່ '%s' ມີຢູ່ແລ້ວ."
+
+msgid "subsystems.new.error.emptyName"
+msgstr "ຊື່ຕ້ອງບໍ່ຫວ່າງເປົ່າ."
+
+msgid "subsystems.new.error.emptyStack"
+msgstr "ສະແຕັກຕ້ອງບໍ່ຫວ່າງເປົ່າ."
+
+msgid "subsystems.new.error.forbiddenName"
+msgstr "ຊື່ '%s' ຖືກຫ້າມ. ກະລຸນາເລືອກຊື່ທີ່ແຕກຕ່າງ"
+
+msgid "subsystems.new.error.noName"
+msgstr "ບໍ່ໄດ້ລະບຸຊື່."
+
+msgid "subsystems.new.error.noStack"
+msgstr "ບໍ່ໄດ້ລະບຸສະແຕັກ."
+
+msgid "subsystems.new.error.noStacks"
+msgstr "ຈຳເປັນຕ້ອງມີສະແຕັກເພື່ອສ້າງລະບົບຍ່ອຍ. ສ້າງໃໝ່ດ້ວຍ 'apx stacks new' ຫຼື ຕິດຕໍ່ຜູ້ຄຸມລະບົບ."
+
+msgid "subsystems.new.error.stackDoesNotExist"
+msgstr "ສະແຕັກທີ່ລະບຸບໍ່ມີຢູ່. ສ້າງມັນດ້ວຍ 'apx stacks new' ຫຼື ຕິດຕໍ່ຜູ້ຄຸມລະບົບ."
+
+msgid "subsystems.new.info.askName"
+msgstr "ເລືອກຊື່:"
+
+msgid "subsystems.new.info.availableStacks"
+msgstr "ສະແຕັກທີ່ມີ:"
+
+msgid "subsystems.new.info.creatingSubsystem"
+msgstr "ກຳລັງສ້າງລະບົບຍ່ອຍ '%s' ດ້ວຍສະແຕັກ '%s'…"
+
+msgid "subsystems.new.info.selectStack"
+msgstr "ເລືອກສະແຕັກ [1-%d]:"
+
+msgid "subsystems.new.info.success"
+msgstr "ສ້າງລະບົບຍ່ອຍ '%s' ແລ້ວ."
+
+msgid "subsystems.reset.error.noName"
+msgstr "ບໍ່ໄດ້ລະບຸຊື່."
+
+msgid "subsystems.reset.info.askConfirmation"
+msgstr "ທ່ານແນ່ໃຈບໍ່ວ່າຕ້ອງການຣີເຊັດ '%s'?"
+
+msgid "subsystems.reset.info.success"
+msgstr "ລະບົບຍ່ອຍ '%s' ຖືກຣີເຊັດແລ້ວ."
+
+msgid "subsystems.rm.error.noName"
+msgstr "ບໍ່ໄດ້ລະບຸຊື່."
+
+msgid "subsystems.rm.info.askConfirmation"
+msgstr "ທ່ານແນ່ໃຈບໍ່ວ່າຕ້ອງການລຶບ '%s'?"
+
+msgid "subsystems.rm.info.success"
+msgstr "ລຶບລະບົບຍ່ອຍ '%s' ແລ້ວ."
+

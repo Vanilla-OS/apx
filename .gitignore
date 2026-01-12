@@ -10,3 +10,5 @@ apx
 *.mount
 build.sh
 dist/
+
+!cmd/

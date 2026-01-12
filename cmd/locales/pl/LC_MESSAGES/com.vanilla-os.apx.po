@@ -1,0 +1,694 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: pl\n"
+
+msgid "apx.cmd.pkgmanagers"
+msgstr "Pracuj z menedżerami pakietów dostępnymi w apx."
+
+msgid "apx.cmd.pkgmanagers.export"
+msgstr "Wyeksportuj określony menedżer pakietów."
+
+msgid "apx.cmd.pkgmanagers.export.options.name"
+msgstr "Nazwa menedżera pakietów do wyeksportowania."
+
+msgid "apx.cmd.pkgmanagers.export.options.output"
+msgstr "Ścieżka docelowa dla wyeksportowanego menedżera pakietów."
+
+msgid "apx.cmd.pkgmanagers.import"
+msgstr "Importuj określony menedżer pakietów."
+
+msgid "apx.cmd.pkgmanagers.import.options.input"
+msgstr "Ścieżka docelowa dla zaimportowanego menedżera pakietów."
+
+msgid "apx.cmd.pkgmanagers.list"
+msgstr "Wyświetl wszystkie dostępne menedżery pakietów."
+
+msgid "apx.cmd.pkgmanagers.list.options.json"
+msgstr "Wyjście w formacie JSON."
+
+msgid "apx.cmd.pkgmanagers.new"
+msgstr "Stwórz nowy menedżer pakietów."
+
+msgid "apx.cmd.pkgmanagers.new.options.autoremove"
+msgstr "Komenda do uruchomienia, która będzie automatycznie usuwać pakiety."
+
+msgid "apx.cmd.pkgmanagers.new.options.clean"
+msgstr "Komenda do uruchomienia, która będzie czyścić pamięć cashe menedżera pakietów."
+
+msgid "apx.cmd.pkgmanagers.new.options.install"
+msgstr "Komenda do uruchomienia, która będzie instalować pakiety."
+
+msgid "apx.cmd.pkgmanagers.new.options.list"
+msgstr "Komenda do uruchomienia, która będzie wypisywać zainstalowane pakiety."
+
+msgid "apx.cmd.pkgmanagers.new.options.name"
+msgstr "Nazwa menedżera pakietów."
+
+msgid "apx.cmd.pkgmanagers.new.options.needSudo"
+msgstr "Czy menedżer pakietów potrzebuje uprawnień roota do uruchomienia."
+
+msgid "apx.cmd.pkgmanagers.new.options.noPrompt"
+msgstr "Odpowiedz twierdząco na wszystkie komunikaty."
+
+msgid "apx.cmd.pkgmanagers.new.options.purge"
+msgstr "Komenda do uruchomienia, która będzie niszczyć/czyścić z pakietów."
+
+msgid "apx.cmd.pkgmanagers.new.options.remove"
+msgstr "Komenda do uruchomienia, która będzie usuwać pakiety."
+
+msgid "apx.cmd.pkgmanagers.new.options.search"
+msgstr "Komenda do uruchomienia, która będzie szukać pakietów."
+
+msgid "apx.cmd.pkgmanagers.new.options.show"
+msgstr "Komenda do uruchomienia, która będzie pokazywać informacje o pakietach."
+
+msgid "apx.cmd.pkgmanagers.new.options.update"
+msgstr "Komenda do uruchomienia, która będzie aktualizować listę dostępnych pakietów."
+
+msgid "apx.cmd.pkgmanagers.new.options.upgrade"
+msgstr "Komenda do uruchomienia, która będzie aktualizować pakiety."
+
+msgid "apx.cmd.pkgmanagers.rm"
+msgstr "Usuń określony menedżer pakietów."
+
+msgid "apx.cmd.pkgmanagers.rm.options.force"
+msgstr "Wymuś usunięcie menedżera pakietów."
+
+msgid "apx.cmd.pkgmanagers.rm.options.name"
+msgstr "Nazwa menedżera pakietów do usunięcia."
+
+msgid "apx.cmd.pkgmanagers.show"
+msgstr "Pokaż informacje na temat wybranego menedżera pakietów."
+
+msgid "apx.cmd.pkgmanagers.update"
+msgstr "Aktualizuj konkretny menedżer pakietów."
+
+msgid "apx.cmd.stacks"
+msgstr "Pracuj ze stosami, które są dostępne w apx."
+
+msgid "apx.cmd.stacks.export"
+msgstr "Wyeksportuj określony stos."
+
+msgid "apx.cmd.stacks.export.options.name"
+msgstr "Nazwa stosu do wyeksportowania."
+
+msgid "apx.cmd.stacks.export.options.output"
+msgstr "Ścieżka docelowa dla stosu do wyeksportowania."
+
+msgid "apx.cmd.stacks.import"
+msgstr "Zaimportuj określony stos."
+
+msgid "apx.cmd.stacks.import.options.input"
+msgstr "Ścieżka docelowa dla stosu do zaimportowania."
+
+msgid "apx.cmd.stacks.list"
+msgstr "Wypisz wszystkie dostępne stosy."
+
+msgid "apx.cmd.stacks.list.options.json"
+msgstr "Wyjście w formacie JSON."
+
+msgid "apx.cmd.stacks.new"
+msgstr "Stwórz nowy stos."
+
+msgid "apx.cmd.stacks.new.options.base"
+msgstr "Bazowy obraz dystrybucji do użycia. (Lista kompatybilnych obrazów znajduje się na stronie:: https://distrobox.it/compatibility/#containers-distros)"
+
+msgid "apx.cmd.stacks.new.options.name"
+msgstr "Nazwa stosu."
+
+msgid "apx.cmd.stacks.new.options.noPrompt"
+msgstr "Odpowiedz twierdząco na wszystkie komunikaty."
+
+msgid "apx.cmd.stacks.new.options.packages"
+msgstr "Pakiety do zainstalowania."
+
+msgid "apx.cmd.stacks.new.options.pkgManager"
+msgstr "Menedżer pakietów do użycia."
+
+msgid "apx.cmd.stacks.rm"
+msgstr "Usuń określony stos."
+
+msgid "apx.cmd.stacks.rm.options.force"
+msgstr "Wymuś usunięcie stosu."
+
+msgid "apx.cmd.stacks.rm.options.name"
+msgstr "Nazwa stosu do usunięcia."
+
+msgid "apx.cmd.stacks.show"
+msgstr "Wyświetl informacje o określonym stosie."
+
+msgid "apx.cmd.stacks.update"
+msgstr "Zaktualizuj określony stos."
+
+msgid "apx.cmd.stacks.update.options.base"
+msgstr "Bazowy podsystem do użycia."
+
+msgid "apx.cmd.stacks.update.options.name"
+msgstr "Nazwa stosu."
+
+msgid "apx.cmd.stacks.update.options.noPrompt"
+msgstr "Odpowiedz twierdząco na wszystkie komunikaty."
+
+msgid "apx.cmd.stacks.update.options.packages"
+msgstr "Pakiety do instalacji."
+
+msgid "apx.cmd.stacks.update.options.pkgManager"
+msgstr "Menedżer pakietów do użycia."
+
+msgid "apx.cmd.subsystem.autoremove"
+msgstr "Usuń pakiety które nie są już wymagane."
+
+msgid "apx.cmd.subsystem.clean"
+msgstr "Wyczyść pamięć cache menedżera pakietów."
+
+msgid "apx.cmd.subsystem.enter"
+msgstr "Wejdź do środowiska podsystemu."
+
+msgid "apx.cmd.subsystem.export"
+msgstr "Wyeksportuj aplikację lub plik binarny z podsystemu."
+
+msgid "apx.cmd.subsystem.export.options.appName"
+msgstr "Nazwa aplikacji do wyeksportowania."
+
+msgid "apx.cmd.subsystem.export.options.bin"
+msgstr "Nazwa pliku binarnego do wyeksportowania."
+
+msgid "apx.cmd.subsystem.export.options.binOutput"
+msgstr "Ścieżka wyjścia pliku binarnego (domyślnie: ~/.local/bin/)."
+
+msgid "apx.cmd.subsystem.install"
+msgstr "Zainstaluj określony pakiet."
+
+msgid "apx.cmd.subsystem.install.options.noExport"
+msgstr "Nie eksportuj skrótu."
+
+msgid "apx.cmd.subsystem.list"
+msgstr "Wyświetl wszystkie zainstalowane pakiety."
+
+msgid "apx.cmd.subsystem.list.options.json"
+msgstr "Wyjście w formacie JSON."
+
+msgid "apx.cmd.subsystem.new.options.home"
+msgstr "Niestandardowy katalog domowy podsystemu."
+
+msgid "apx.cmd.subsystem.new.options.init"
+msgstr "Użyj systemd zamiast podsystemu."
+
+msgid "apx.cmd.subsystem.new.options.name"
+msgstr "Nazwa podsystemu."
+
+msgid "apx.cmd.subsystem.new.options.stack"
+msgstr "Stos do użycia."
+
+msgid "apx.cmd.subsystem.purge"
+msgstr "Zniszcz określone pakiety."
+
+msgid "apx.cmd.subsystem.remove"
+msgstr "Usuń określone pakiety."
+
+msgid "apx.cmd.subsystem.reset.options.force"
+msgstr "Wymuś zresetowanie podsystemu."
+
+msgid "apx.cmd.subsystem.reset.options.name"
+msgstr "Nazwa podsystemu do zresetowania."
+
+msgid "apx.cmd.subsystem.rm.options.force"
+msgstr "Wymuś usunięcie podsystemu."
+
+msgid "apx.cmd.subsystem.rm.options.name"
+msgstr "Nazwa podsystemu do usunięcia."
+
+msgid "apx.cmd.subsystem.run"
+msgstr "Run command inside subsystem."
+
+msgid "apx.cmd.subsystem.search"
+msgstr "Szukaj pakietów pasujących do określonego zapytania."
+
+msgid "apx.cmd.subsystem.show"
+msgstr "Wyświetl informacje na temat określonego pakietu."
+
+msgid "apx.cmd.subsystem.start"
+msgstr "Uruchom podsystem."
+
+msgid "apx.cmd.subsystem.stop"
+msgstr "Zatrzymaj podsystem."
+
+msgid "apx.cmd.subsystem.unexport"
+msgstr "Usuń eksport aplikacji lub pliku binarnego z podsystemu."
+
+msgid "apx.cmd.subsystem.unexport.options.appName"
+msgstr "Nazwa aplikacji, której eksport ma zostać usunięty."
+
+msgid "apx.cmd.subsystem.unexport.options.bin"
+msgstr "Nazwa pliku binarnego, której eksport ma zostać usunięty."
+
+msgid "apx.cmd.subsystem.unexport.options.binOutput"
+msgstr "Ścieżka wyjścia pliku binarnego (domyślnie: ~/.local/bin/)."
+
+msgid "apx.cmd.subsystem.update"
+msgstr "Zaktualizuj listę dostępnych pakietów."
+
+msgid "apx.cmd.subsystem.upgrade"
+msgstr "Zaktualizuj wszystkie zainstalowane pakiety."
+
+msgid "apx.cmd.subsystems"
+msgstr "Pracuj z podsystemem, który jest dostępny w apx."
+
+msgid "apx.cmd.subsystems.list"
+msgstr "Wypisz wszystkie dostępne podsystemy."
+
+msgid "apx.cmd.subsystems.new"
+msgstr "Stwórz nowy podsystem."
+
+msgid "apx.cmd.subsystems.reset"
+msgstr "Zresetuj określony podsystem."
+
+msgid "apx.cmd.subsystems.rm"
+msgstr "Usuń określony podsystem."
+
+msgid "apx.errors.invalidChoice"
+msgstr "Nieprawidłowy wybór."
+
+msgid "apx.errors.invalidInput"
+msgstr "Nieprawidłowe dane wejściowe."
+
+msgid "apx.errors.noRoot"
+msgstr "Nie uruchamiaj Apx jako root."
+
+msgid "apx.errors.unknownCommand"
+msgstr "Nieznane polecenie: %s"
+
+msgid "apx.info.aborting"
+msgstr "Przerywanie na żądanie."
+
+msgid "apx.msg.additionalCommands"
+msgstr "Dodatkowe komendy"
+
+msgid "apx.msg.additionalHelpTopics"
+msgstr "Dodatkowe tematy pomocy"
+
+msgid "apx.msg.aliases"
+msgstr "Aliasy"
+
+msgid "apx.msg.availableCommands"
+msgstr "Dostępne komendy"
+
+msgid "apx.msg.examples"
+msgstr "Przykłady"
+
+msgid "apx.msg.flags"
+msgstr "Flagi"
+
+msgid "apx.msg.globalFlags"
+msgstr "Globalne flagi"
+
+msgid "apx.msg.help"
+msgstr "Apx jest menedżerem pakietów z wsparciem dla wielu źródeł, pozwalając Ci na instalacje pakietów w podsystemach."
+
+msgid "apx.msg.moreInfo"
+msgstr "Użyj %s, by uzyskać więcej informacji na temat komendy"
+
+msgid "apx.msg.usage"
+msgstr "Użycie"
+
+msgid "apx.msg.version"
+msgstr "Wyświetl wersję apx."
+
+msgid "apx.terminal.false"
+msgstr "nie"
+
+msgid "apx.terminal.true"
+msgstr "tak"
+
+msgid "pkgmanagers.export.error.noName"
+msgstr "Nie określono nazwy."
+
+msgid "pkgmanagers.export.error.noOutput"
+msgstr "Nie określono wyjścia."
+
+msgid "pkgmanagers.export.info.success"
+msgstr "Wyeksportowano menedżer pakietów '%s' do '%s'."
+
+msgid "pkgmanagers.import.error.cannotLoad"
+msgstr "Nie można załadować menedżera pakietów z '%s'."
+
+msgid "pkgmanagers.import.error.noInput"
+msgstr "Nie określono wejścia."
+
+msgid "pkgmanagers.import.info.success"
+msgstr "Zaimportowano menedżer pakietów z '%s'."
+
+msgid "pkgmanagers.labels.builtIn"
+msgstr "Wbudowane"
+
+msgid "pkgmanagers.labels.name"
+msgstr "Nazwa"
+
+msgid "pkgmanagers.list.info.foundPkgManagers"
+msgstr "Znaleziono %d menedżerów pakietów"
+
+msgid "pkgmanagers.list.info.noPkgManagers"
+msgstr "Brak dostępnych menedżerów pakietów. Stwórz nowy przy użyciu 'apx pkgmanagers new' lub skontaktuj się z administratorem systemu."
+
+msgid "pkgmanagers.new.error.alreadyExists"
+msgstr "Menedżer pakietów z nazwą '%s' już istnieje."
+
+msgid "pkgmanagers.new.error.emptyCommand"
+msgstr "Polecenie nie może być puste."
+
+msgid "pkgmanagers.new.error.emptyName"
+msgstr "Nazwa nie może być pusta."
+
+msgid "pkgmanagers.new.error.noCommand"
+msgstr "Nie podano polecenia dla '%s'."
+
+msgid "pkgmanagers.new.error.noName"
+msgstr "Nie określono nazwy."
+
+msgid "pkgmanagers.new.info.askCommand"
+msgstr "Wpisz polecenie dla '%s':"
+
+msgid "pkgmanagers.new.info.askCommandWithDefault"
+msgstr "Enter the command for '%s' (default: '%s'):"
+
+msgid "pkgmanagers.new.info.askName"
+msgstr "Wybierz nazwę:"
+
+msgid "pkgmanagers.new.info.askOverwrite"
+msgstr "Menedżer pakietów z nazwą '%s' już istnieje. Nadpisać go?"
+
+msgid "pkgmanagers.new.info.askSudo"
+msgstr "Czy menedżer pakietów potrzebuje uprawnień root do uruchomienia?"
+
+msgid "pkgmanagers.new.success"
+msgstr "Package manager %s created successfully."
+
+msgid "pkgmanagers.rm.error.inUse"
+msgstr "Menedżer pakietów jest używany w %d stosach:"
+
+msgid "pkgmanagers.rm.error.noName"
+msgstr "Nie określono nazwy."
+
+msgid "pkgmanagers.rm.info.aborting"
+msgstr "Przerywanie usuwania menedżera pakietów '%s'."
+
+msgid "pkgmanagers.rm.info.askConfirmation"
+msgstr "Czy jesteś pewien, że chcesz usunąć '%s'? [y/N]"
+
+msgid "pkgmanagers.rm.info.success"
+msgstr "Usunięto menedżer pakietów '%s'."
+
+msgid "pkgmanagers.update.error.builtIn"
+msgstr "Built-in package managers cannot be modified."
+
+msgid "pkgmanagers.update.error.missingCommand"
+msgstr "Missing command for %s."
+
+msgid "pkgmanagers.update.error.noName"
+msgstr "No name specified."
+
+msgid "pkgmanagers.update.info.askNewCommand"
+msgstr "Enter new command for '%s' (leave empty to keep '%s'):"
+
+msgid "pkgmanagers.update.info.success"
+msgstr "Zaktualizowano menedżer pakietów '%s'."
+
+msgid "runtimeCommand.description"
+msgstr "Pracuj z określonym podsystemem, mając dostęp do menedżera pakietów oraz środowiska."
+
+msgid "runtimeCommand.error.cantAccessPkgManager"
+msgstr "Wystąpił błąd podczas uzyskiwania dostępu do menedżera pakietów: %s"
+
+msgid "runtimeCommand.error.enteringContainer"
+msgstr "Wystąpił błąd podczas wchodzenia do kontenera: %s"
+
+msgid "runtimeCommand.error.executingCommand"
+msgstr "Wystąpił błąd podczas wykonywania komendy: %s"
+
+msgid "runtimeCommand.error.exportingApp"
+msgstr "Wystąpił błąd podczas eksportowania aplikacji: %s"
+
+msgid "runtimeCommand.error.exportingBin"
+msgstr "Wystąpił błąd podczas eksportowania pliku binarnego: %s"
+
+msgid "runtimeCommand.error.noAppNameOrBin"
+msgstr "--app-name lub --bin musi zostać określony."
+
+msgid "runtimeCommand.error.noPackageSpecified"
+msgstr "Nie określono pakietów."
+
+msgid "runtimeCommand.error.sameAppOrBin"
+msgstr "--app-name i --bin nie mogą być razem określone."
+
+msgid "runtimeCommand.error.startingContainer"
+msgstr "Wystąpił błąd podczas uruchamiania kontenera: %s"
+
+msgid "runtimeCommand.error.stoppingContainer"
+msgstr "Wystąpił błąd podczas zatrzymywania kontenera: %s"
+
+msgid "runtimeCommand.error.unexportingApp"
+msgstr "Wystąpił błąd podczas usuwania eksportu aplikacji: %s"
+
+msgid "runtimeCommand.error.unexportingBin"
+msgstr "Wystąpił błąd podczas usuwania eksportu pliku binarnego: %s"
+
+msgid "runtimeCommand.info.exportedApp"
+msgstr "Wyeksportowana aplikacja %s"
+
+msgid "runtimeCommand.info.exportedApps"
+msgstr "Wyeksportowane %d aplikacje"
+
+msgid "runtimeCommand.info.exportedBin"
+msgstr "Wyeksportowany plik binarny %s"
+
+msgid "runtimeCommand.info.startedContainer"
+msgstr "Uruchomiono kontener."
+
+msgid "runtimeCommand.info.startingContainer"
+msgstr "Uruchamianie kontenera…"
+
+msgid "runtimeCommand.info.stoppedContainer"
+msgstr "Zatrzymano kontener."
+
+msgid "runtimeCommand.info.stoppingContainer"
+msgstr "Zatrzymywanie kontenera…"
+
+msgid "runtimeCommand.info.unexportedApp"
+msgstr "Niewyeksportowana aplikacja %s"
+
+msgid "runtimeCommand.info.unexportedApps"
+msgstr "Niewyeksportowane %d aplikacje"
+
+msgid "runtimeCommand.info.unexportedBin"
+msgstr "Niewyeksportowany plik binarny %s"
+
+msgid "stacks.export.error.noName"
+msgstr "Nie określono nazwy."
+
+msgid "stacks.export.error.noOutput"
+msgstr "Nie określono wyjścia."
+
+msgid "stacks.export.info.success"
+msgstr "Wyeksportowano stos '%s' do '%s'."
+
+msgid "stacks.import.error.cannotLoad"
+msgstr "Nie można załadować stosu z '%s'."
+
+msgid "stacks.import.error.noInput"
+msgstr "Nie określono wejścia."
+
+msgid "stacks.import.info.success"
+msgstr "Zaimportowano stos z '%s'."
+
+msgid "stacks.labels.builtIn"
+msgstr "Wbudowany"
+
+msgid "stacks.labels.name"
+msgstr "Nazwa"
+
+msgid "stacks.list.info.aborting"
+msgstr "Przerywanie usuwania stosu '%s'."
+
+msgid "stacks.list.info.foundStacks"
+msgstr "Znaleziono %d stosów:"
+
+msgid "stacks.list.info.noStacks"
+msgstr "Brak dostępnych stosów. Stwórz nowy z użyciem 'apx stacks new' lub skontaktuj się z administratorem systemu."
+
+msgid "stacks.new.error.alreadyExists"
+msgstr "Stos o nazwie '%s' już istnieje."
+
+msgid "stacks.new.error.emptyBase"
+msgstr "Baza nie może być pusta."
+
+msgid "stacks.new.error.emptyName"
+msgstr "Nazwa nie może być pusta."
+
+msgid "stacks.new.error.emptyPackages"
+msgstr "Pakiety nie mogą być puste."
+
+msgid "stacks.new.error.emptyPkgManager"
+msgstr "Menedżer pakietów nie może być pusty."
+
+msgid "stacks.new.error.noBase"
+msgstr "Nie określono bazy."
+
+msgid "stacks.new.error.noName"
+msgstr "Nie określono nazwy."
+
+msgid "stacks.new.error.noPackages"
+msgstr "Nie określono pakietu."
+
+msgid "stacks.new.error.noPkgManager"
+msgstr "Nie określono menedżera pakietów."
+
+msgid "stacks.new.error.noPkgManagers"
+msgstr "Could not find any package managers. Create one with 'apx pkgmanagers new' or contact the system administrator."
+
+msgid "stacks.new.error.pkgManagerDoesNotExist"
+msgstr "Określony menedżer pakietów nie istnieje. Stwórz go z użyciem 'apx pkgmanagers new' lub skontaktuj się z administratorem systemu."
+
+msgid "stacks.new.info.askBase"
+msgstr "Wybierz bazę (np. 'vanillaos/pico'):"
+
+msgid "stacks.new.info.askName"
+msgstr "Wybierz nazwę:"
+
+msgid "stacks.new.info.askPackages"
+msgstr "Proszę napisz pakiety oddzielone spacją, które chcesz zainstalować w stosie:"
+
+msgid "stacks.new.info.askPkgManager"
+msgstr "Wybierz menedżer pakietów:"
+
+msgid "stacks.new.info.confirmPackages"
+msgstr "Czy chcesz zatwierdzić określoną listę pakietów?"
+
+msgid "stacks.new.info.noPackages"
+msgstr "Nie podałeś żadnego pakietu do instalacji w stosie. Czy chcesz dodać teraz?"
+
+msgid "stacks.new.info.selectPkgManager"
+msgstr "Wybierz menedżer pakietów [1-%d]:"
+
+msgid "stacks.new.info.success"
+msgstr "Stwórz stos '%s'."
+
+msgid "stacks.rm.error.inUse"
+msgstr "The stack is used in %d subsystems:"
+
+msgid "stacks.rm.error.noName"
+msgstr "Nie określono nazwy."
+
+msgid "stacks.rm.info.askConfirmation"
+msgstr "Czy jesteś pewien, że chcesz usunąć '%s'? [y/N]"
+
+msgid "stacks.rm.info.success"
+msgstr "Usunięto stos '%s'."
+
+msgid "stacks.update.error.builtIn"
+msgstr "Built-in stacks cannot be modified."
+
+msgid "stacks.update.error.noBase"
+msgstr "Nie określono bazy."
+
+msgid "stacks.update.error.noName"
+msgstr "Nie określono nazwy."
+
+msgid "stacks.update.error.noPkgManager"
+msgstr "Nie określono menedżera pakietów."
+
+msgid "stacks.update.error.pkgManagerDoesNotExist"
+msgstr "Określony menedżer pakietów nie istnieje. Utwórz go z użyciem 'apx pkgmanagers new' lub skontaktuj się z administratorem systemu."
+
+msgid "stacks.update.info.askBase"
+msgstr "Wpisz nową bazę lub zatwierdź aktualną (%s):"
+
+msgid "stacks.update.info.askPackages"
+msgstr "Napisz nazwy pakietów oddzielone spacją, które chcesz zainstalować w stosie, lub zatwierdź aktualne (%s):"
+
+msgid "stacks.update.info.askPkgManager"
+msgstr "Wybierz nowy menedżer pakietów lub zatwierdź aktualny (%s):"
+
+msgid "stacks.update.info.confirmPackages"
+msgstr "Do you want to confirm the current packages list?"
+
+msgid "stacks.update.info.noPackages"
+msgstr "You have not provided any packages to install in the stack. Do you want to add some now?"
+
+msgid "stacks.update.info.success"
+msgstr "Zaktualizowano stos '%s'."
+
+msgid "subsystems.labels.name"
+msgstr "Nazwa"
+
+msgid "subsystems.labels.status"
+msgstr "Status"
+
+msgid "subsystems.list.error"
+msgstr "<nil>"
+
+msgid "subsystems.list.info.foundSubsystems"
+msgstr "Znaleziono %d podsystemów:"
+
+msgid "subsystems.list.info.noSubsystems"
+msgstr "Brak dostępnych podsystemów. Stwórz nowy z użyciem 'apx subsystems new' lub skontaktuj się z administratorem systemu."
+
+msgid "subsystems.new.error.alreadyExists"
+msgstr "Podsystem o nazwie '%s' już istnieje."
+
+msgid "subsystems.new.error.emptyName"
+msgstr "Nazwa nie może być pusta."
+
+msgid "subsystems.new.error.emptyStack"
+msgstr "Stos nie może być pusty."
+
+msgid "subsystems.new.error.forbiddenName"
+msgstr "The name '%s' is forbidden. Please choose a different name"
+
+msgid "subsystems.new.error.noName"
+msgstr "Nie określono nazwy."
+
+msgid "subsystems.new.error.noStack"
+msgstr "Nie określono stosu."
+
+msgid "subsystems.new.error.noStacks"
+msgstr "Stos jest potrzebny do stworzenia podsystemu. Utwórz nowy z użyciem 'apx stacks new' lub skontaktuj się z administratorem systemu."
+
+msgid "subsystems.new.error.stackDoesNotExist"
+msgstr "Określony stos nie istnieje. Utwórz go z użyciem 'apx stacks new' lub skontaktuj się z administratorem systemu."
+
+msgid "subsystems.new.info.askName"
+msgstr "Wybierz nazwę:"
+
+msgid "subsystems.new.info.availableStacks"
+msgstr "Available stacks:"
+
+msgid "subsystems.new.info.creatingSubsystem"
+msgstr "Tworzenie podsystemu '%s' ze stosem '%s'…"
+
+msgid "subsystems.new.info.selectStack"
+msgstr "Wybierz stos [1-%d]:"
+
+msgid "subsystems.new.info.success"
+msgstr "Stworzono podsystem '%s'."
+
+msgid "subsystems.reset.error.noName"
+msgstr "Nie określono nazwy."
+
+msgid "subsystems.reset.info.askConfirmation"
+msgstr "Czy jesteś pewien, że chcesz zresetować '%s'? [y/N]"
+
+msgid "subsystems.reset.info.success"
+msgstr "Podsystem '%s' został zresetowany."
+
+msgid "subsystems.rm.error.noName"
+msgstr "Nie określono nazwy."
+
+msgid "subsystems.rm.info.askConfirmation"
+msgstr "Czy jesteś pewien, że chcesz usunąć '%s'? [y/N]"
+
+msgid "subsystems.rm.info.success"
+msgstr "Usunięto podsystem '%s'."
+

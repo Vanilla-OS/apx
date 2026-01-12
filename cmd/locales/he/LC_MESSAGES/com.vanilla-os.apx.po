@@ -1,0 +1,694 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: he\n"
+
+msgid "apx.cmd.pkgmanagers"
+msgstr "לעבוד עם מנהלי החבילה זמינים ב Apx."
+
+msgid "apx.cmd.pkgmanagers.export"
+msgstr "ייצוא מנהל החבילה שצוין."
+
+msgid "apx.cmd.pkgmanagers.export.options.name"
+msgstr "שם מנהל החבילה לייצא."
+
+msgid "apx.cmd.pkgmanagers.export.options.output"
+msgstr "הדרך לייצא את מנהל החבילה."
+
+msgid "apx.cmd.pkgmanagers.import"
+msgstr "ייבוא מנהל החבילה שצוין."
+
+msgid "apx.cmd.pkgmanagers.import.options.input"
+msgstr "הדרך לייבא את מנהל החבילה."
+
+msgid "apx.cmd.pkgmanagers.list"
+msgstr "רשימת כל מנהלי החבילה הזמינים."
+
+msgid "apx.cmd.pkgmanagers.list.options.json"
+msgstr "בחוץ בפורמט JSON."
+
+msgid "apx.cmd.pkgmanagers.new"
+msgstr "צור מנהל חבילה חדש."
+
+msgid "apx.cmd.pkgmanagers.new.options.autoremove"
+msgstr "הפקודה לרוץ חבילות אוטומטיות."
+
+msgid "apx.cmd.pkgmanagers.new.options.clean"
+msgstr "הפקודה לרוץ לנקות את המטמון של מנהל החבילה."
+
+msgid "apx.cmd.pkgmanagers.new.options.install"
+msgstr "הפקודה לרוץ להתקין חבילות."
+
+msgid "apx.cmd.pkgmanagers.new.options.list"
+msgstr "הפקודה לרוץ לרשימה מותקן חבילות."
+
+msgid "apx.cmd.pkgmanagers.new.options.name"
+msgstr "שם מנהל החבילה."
+
+msgid "apx.cmd.pkgmanagers.new.options.needSudo"
+msgstr "בין אם מנהל החבילה צריך לפעול."
+
+msgid "apx.cmd.pkgmanagers.new.options.noPrompt"
+msgstr "נניח כן לכל הפניות."
+
+msgid "apx.cmd.pkgmanagers.new.options.purge"
+msgstr "הפקודה לרוץ לטיהור חבילות."
+
+msgid "apx.cmd.pkgmanagers.new.options.remove"
+msgstr "הפקודה לרוץ כדי להסיר חבילות."
+
+msgid "apx.cmd.pkgmanagers.new.options.search"
+msgstr "הפקודה לרוץ לחפש חבילות."
+
+msgid "apx.cmd.pkgmanagers.new.options.show"
+msgstr "הפקודה לרוץ כדי להציג מידע על חבילות."
+
+msgid "apx.cmd.pkgmanagers.new.options.update"
+msgstr "הפקודה להפעיל כדי לעדכן את רשימת חבילות הזמינות."
+
+msgid "apx.cmd.pkgmanagers.new.options.upgrade"
+msgstr "הפקודה לרוץ לשדרג חבילות."
+
+msgid "apx.cmd.pkgmanagers.rm"
+msgstr "להסיר את מנהל החבילה שצוין."
+
+msgid "apx.cmd.pkgmanagers.rm.options.force"
+msgstr "הסרת כוח של מנהל החבילה."
+
+msgid "apx.cmd.pkgmanagers.rm.options.name"
+msgstr "שם מנהל החבילה להסיר."
+
+msgid "apx.cmd.pkgmanagers.show"
+msgstr "הצג מידע על מנהל החבילה שצוין."
+
+msgid "apx.cmd.pkgmanagers.update"
+msgstr "עדכון מנהל החבילה שצוין."
+
+msgid "apx.cmd.stacks"
+msgstr "לעבוד עם הערימה הזמינים ב Apx."
+
+msgid "apx.cmd.stacks.export"
+msgstr "ייצוא את הערימה המפורטת."
+
+msgid "apx.cmd.stacks.export.options.name"
+msgstr "שם הערימה לייצא."
+
+msgid "apx.cmd.stacks.export.options.output"
+msgstr "הדרך לייצא את הערימה."
+
+msgid "apx.cmd.stacks.import"
+msgstr "ייבוא הערימה המפורטת."
+
+msgid "apx.cmd.stacks.import.options.input"
+msgstr "הדרך לייבא את הערימה."
+
+msgid "apx.cmd.stacks.list"
+msgstr "רשימה של כל המחסניות הזמינות."
+
+msgid "apx.cmd.stacks.list.options.json"
+msgstr "בחוץ בפורמט JSON."
+
+msgid "apx.cmd.stacks.new"
+msgstr "ליצור ערימה חדשה."
+
+msgid "apx.cmd.stacks.new.options.base"
+msgstr "תמונת חלוקת הבסיס לשימוש. (לרשימה של תמונות תואמות: TP: www.distrobox.it/compatibility/#containers-distros)"
+
+msgid "apx.cmd.stacks.new.options.name"
+msgstr "שם הערימה."
+
+msgid "apx.cmd.stacks.new.options.noPrompt"
+msgstr "נניח כן לכל הפניות."
+
+msgid "apx.cmd.stacks.new.options.packages"
+msgstr "חבילות להתקין."
+
+msgid "apx.cmd.stacks.new.options.pkgManager"
+msgstr "מנהל החבילה לשימוש."
+
+msgid "apx.cmd.stacks.rm"
+msgstr "להסיר את הערימה המפורטת."
+
+msgid "apx.cmd.stacks.rm.options.force"
+msgstr "הסרת הכוח של הערימה."
+
+msgid "apx.cmd.stacks.rm.options.name"
+msgstr "שם הערימה להסיר."
+
+msgid "apx.cmd.stacks.show"
+msgstr "הצג מידע על הערימה המפורטת."
+
+msgid "apx.cmd.stacks.update"
+msgstr "עדכון הערימה המפורטת."
+
+msgid "apx.cmd.stacks.update.options.base"
+msgstr "מערכת הבסיס לשימוש."
+
+msgid "apx.cmd.stacks.update.options.name"
+msgstr "שם הערימה."
+
+msgid "apx.cmd.stacks.update.options.noPrompt"
+msgstr "נניח כן לכל הפניות."
+
+msgid "apx.cmd.stacks.update.options.packages"
+msgstr "חבילות להתקין."
+
+msgid "apx.cmd.stacks.update.options.pkgManager"
+msgstr "מנהל החבילה לשימוש."
+
+msgid "apx.cmd.subsystem.autoremove"
+msgstr "להסיר חבילות שכבר אינן נדרשות."
+
+msgid "apx.cmd.subsystem.clean"
+msgstr "לנקות את המטמון של מנהל החבילה."
+
+msgid "apx.cmd.subsystem.enter"
+msgstr "היכנסו לסביבה של תת-מערכת."
+
+msgid "apx.cmd.subsystem.export"
+msgstr "ייצוא יישום או בינארי מהמערכת."
+
+msgid "apx.cmd.subsystem.export.options.appName"
+msgstr "שם הבקשה לייצא."
+
+msgid "apx.cmd.subsystem.export.options.bin"
+msgstr "שמו של בינארי לייצא."
+
+msgid "apx.cmd.subsystem.export.options.binOutput"
+msgstr "הנתיב של הפלט בינארי (default: - /local /bin /)."
+
+msgid "apx.cmd.subsystem.install"
+msgstr "התקן את החבילה המפורטת."
+
+msgid "apx.cmd.subsystem.install.options.noExport"
+msgstr "אל תוציאו כניסה שולחנית."
+
+msgid "apx.cmd.subsystem.list"
+msgstr "רשימת כל החבילות המותקנות."
+
+msgid "apx.cmd.subsystem.list.options.json"
+msgstr "בחוץ בפורמט JSON."
+
+msgid "apx.cmd.subsystem.new.options.home"
+msgstr "מנהל בית מותאם אישית של תת-מערכת."
+
+msgid "apx.cmd.subsystem.new.options.init"
+msgstr "השתמש במערכת בתוך תת-מערכת."
+
+msgid "apx.cmd.subsystem.new.options.name"
+msgstr "שם תת-מערכת."
+
+msgid "apx.cmd.subsystem.new.options.stack"
+msgstr "הערימה לשימוש."
+
+msgid "apx.cmd.subsystem.purge"
+msgstr "שחררו את החבילות המפורטות."
+
+msgid "apx.cmd.subsystem.remove"
+msgstr "להסיר את החבילות המפורטות."
+
+msgid "apx.cmd.subsystem.reset.options.force"
+msgstr "איפוס כוח של תת-מערכת."
+
+msgid "apx.cmd.subsystem.reset.options.name"
+msgstr "שם תת-מערכת לאפס."
+
+msgid "apx.cmd.subsystem.rm.options.force"
+msgstr "הסרת כוח של תת-מערכת."
+
+msgid "apx.cmd.subsystem.rm.options.name"
+msgstr "שם תת-מערכת להסיר."
+
+msgid "apx.cmd.subsystem.run"
+msgstr "Run command inside subsystem."
+
+msgid "apx.cmd.subsystem.search"
+msgstr "חיפוש חבילות תואם את השאילתה המפורטת."
+
+msgid "apx.cmd.subsystem.show"
+msgstr "הצג מידע על החבילה המפורטת."
+
+msgid "apx.cmd.subsystem.start"
+msgstr "התחל את תת-מערכת."
+
+msgid "apx.cmd.subsystem.stop"
+msgstr "לעצור את המערכת."
+
+msgid "apx.cmd.subsystem.unexport"
+msgstr "Unexport יישום או בינארי מהמערכת."
+
+msgid "apx.cmd.subsystem.unexport.options.appName"
+msgstr "שם היישום ל unexport."
+
+msgid "apx.cmd.subsystem.unexport.options.bin"
+msgstr "השם של בינארי ל unexport."
+
+msgid "apx.cmd.subsystem.unexport.options.binOutput"
+msgstr "נתיב הפלט הבינארי (ברירת מחדל: ~/.local/bin/)."
+
+msgid "apx.cmd.subsystem.update"
+msgstr "עדכון רשימת החבילות הזמינות."
+
+msgid "apx.cmd.subsystem.upgrade"
+msgstr "לשדרג את כל החבילות המותקנות."
+
+msgid "apx.cmd.subsystems"
+msgstr "לעבוד עם תת-מערכות הזמינות ב- Apx."
+
+msgid "apx.cmd.subsystems.list"
+msgstr "רשימה של כל תת-מערכות הזמינות."
+
+msgid "apx.cmd.subsystems.new"
+msgstr "ליצור תת-מערכת חדשה."
+
+msgid "apx.cmd.subsystems.reset"
+msgstr "איפוס תת-מערכת שצוין."
+
+msgid "apx.cmd.subsystems.rm"
+msgstr "להסיר את תת-מערכת המפורטת."
+
+msgid "apx.errors.invalidChoice"
+msgstr "בחירה לא חוקית."
+
+msgid "apx.errors.invalidInput"
+msgstr "קלט לא חוקי."
+
+msgid "apx.errors.noRoot"
+msgstr "אל תברחו כשורש."
+
+msgid "apx.errors.unknownCommand"
+msgstr "פקודה לא ידועה: s%"
+
+msgid "apx.info.aborting"
+msgstr "מתמזגים כבקשים."
+
+msgid "apx.msg.additionalCommands"
+msgstr "Additional Commands"
+
+msgid "apx.msg.additionalHelpTopics"
+msgstr "Additional help topics"
+
+msgid "apx.msg.aliases"
+msgstr "Aliases"
+
+msgid "apx.msg.availableCommands"
+msgstr "Available Commands"
+
+msgid "apx.msg.examples"
+msgstr "Examples"
+
+msgid "apx.msg.flags"
+msgstr "Flags"
+
+msgid "apx.msg.globalFlags"
+msgstr "Global Flags"
+
+msgid "apx.msg.help"
+msgstr "Apx הוא מנהל חבילה עם תמיכה עבור מקורות מרובים, ומאפשר לך להתקין חבילות במערכות תת-מערכת."
+
+msgid "apx.msg.moreInfo"
+msgstr "Use %s for more information about a command"
+
+msgid "apx.msg.usage"
+msgstr "Usage"
+
+msgid "apx.msg.version"
+msgstr "Show version for apx."
+
+msgid "apx.terminal.false"
+msgstr "לא"
+
+msgid "apx.terminal.true"
+msgstr "כן"
+
+msgid "pkgmanagers.export.error.noName"
+msgstr "שום שם לא צוין."
+
+msgid "pkgmanagers.export.error.noOutput"
+msgstr "שום פלט לא מוגדר."
+
+msgid "pkgmanagers.export.info.success"
+msgstr "מנהל החבילות '%s' ייצא אל '%s'."
+
+msgid "pkgmanagers.import.error.cannotLoad"
+msgstr "לא ניתן לטעון את מנהל החבילות מ'%s'."
+
+msgid "pkgmanagers.import.error.noInput"
+msgstr "שום קלט לא מוגדר."
+
+msgid "pkgmanagers.import.info.success"
+msgstr "מנהל החבילות מיובא מ'%s'."
+
+msgid "pkgmanagers.labels.builtIn"
+msgstr "נבנה-in"
+
+msgid "pkgmanagers.labels.name"
+msgstr "שם השם"
+
+msgid "pkgmanagers.list.info.foundPkgManagers"
+msgstr "נמצאו %d מנהלי חבילות"
+
+msgid "pkgmanagers.list.info.noPkgManagers"
+msgstr "אין מנהלי חבילה זמינים. צור חדש עם \"apx pkgmanagers חדש\" או ליצור קשר עם מנהל המערכת."
+
+msgid "pkgmanagers.new.error.alreadyExists"
+msgstr "כבר קיים מנהל חבילות בשם '%s'."
+
+msgid "pkgmanagers.new.error.emptyCommand"
+msgstr "הפקודה לא יכולה להיות ריקה."
+
+msgid "pkgmanagers.new.error.emptyName"
+msgstr "השם לא יכול להיות ריק."
+
+msgid "pkgmanagers.new.error.noCommand"
+msgstr "לא צוינה פקודה עבור '%s'."
+
+msgid "pkgmanagers.new.error.noName"
+msgstr "שום שם לא צוין."
+
+msgid "pkgmanagers.new.info.askCommand"
+msgstr "Enter the command for '%s':"
+
+msgid "pkgmanagers.new.info.askCommandWithDefault"
+msgstr "Enter the command for '%s' (default: '%s'):"
+
+msgid "pkgmanagers.new.info.askName"
+msgstr "בחרו שם:"
+
+msgid "pkgmanagers.new.info.askOverwrite"
+msgstr "כבר קיים מנהל חבילות בשם '%s'. להחליף אותו?"
+
+msgid "pkgmanagers.new.info.askSudo"
+msgstr "האם מנהל החבילה צריך לרוץ?"
+
+msgid "pkgmanagers.new.success"
+msgstr "Package manager %s created successfully."
+
+msgid "pkgmanagers.rm.error.inUse"
+msgstr "מנהל החבילה משמש מחסניות %d:"
+
+msgid "pkgmanagers.rm.error.noName"
+msgstr "שום שם לא צוין."
+
+msgid "pkgmanagers.rm.info.aborting"
+msgstr "מבטל את ההסרה של מנהל החבילות '%s'."
+
+msgid "pkgmanagers.rm.info.askConfirmation"
+msgstr "האם אתה בטוח שברצונך להסיר את '%s'? [y/N]"
+
+msgid "pkgmanagers.rm.info.success"
+msgstr "הוסר מנהל החבילות '%s'."
+
+msgid "pkgmanagers.update.error.builtIn"
+msgstr "Built-in package managers cannot be modified."
+
+msgid "pkgmanagers.update.error.missingCommand"
+msgstr "Missing command for %s."
+
+msgid "pkgmanagers.update.error.noName"
+msgstr "No name specified."
+
+msgid "pkgmanagers.update.info.askNewCommand"
+msgstr "Enter new command for '%s' (leave empty to keep '%s'):"
+
+msgid "pkgmanagers.update.info.success"
+msgstr "מנהל החבילות '%s' מעודכן."
+
+msgid "runtimeCommand.description"
+msgstr "לעבוד עם תת-מערכת המפורטת, גישה למנהל החבילה והסביבה."
+
+msgid "runtimeCommand.error.cantAccessPkgManager"
+msgstr "שגיאה התרחשה בעת גישה למנהל החבילה: %s"
+
+msgid "runtimeCommand.error.enteringContainer"
+msgstr "טעות אירעה בעת הכניסה למיכל: אחוזים: %s"
+
+msgid "runtimeCommand.error.executingCommand"
+msgstr "טעות התרחשה בעת ביצוע הפקודה: %s"
+
+msgid "runtimeCommand.error.exportingApp"
+msgstr "טעות התרחשה בעת הייצוא היישום: %s"
+
+msgid "runtimeCommand.error.exportingBin"
+msgstr "טעות אירעה בעת יצוא בינארי: %s"
+
+msgid "runtimeCommand.error.noAppNameOrBin"
+msgstr "יש לציין --app-name או --bin."
+
+msgid "runtimeCommand.error.noPackageSpecified"
+msgstr "אין חבילות שצוינו."
+
+msgid "runtimeCommand.error.sameAppOrBin"
+msgstr "לא ניתן לציין שניהם --app-name ו- --bin."
+
+msgid "runtimeCommand.error.startingContainer"
+msgstr "טעות אירעה בעת הפעלת מיכל: %s"
+
+msgid "runtimeCommand.error.stoppingContainer"
+msgstr "טעות אירעה תוך עצירת מיכל: אחוזים: %s"
+
+msgid "runtimeCommand.error.unexportingApp"
+msgstr "טעות התרחשה בזמן שלא דווח על היישום: %s"
+
+msgid "runtimeCommand.error.unexportingBin"
+msgstr "טעות התרחשה כאשר לא דווח על בינארי: %s"
+
+msgid "runtimeCommand.info.exportedApp"
+msgstr "s% יישומים"
+
+msgid "runtimeCommand.info.exportedApps"
+msgstr "ייצאו %d יישומים"
+
+msgid "runtimeCommand.info.exportedBin"
+msgstr "ייצוא בינארי %s"
+
+msgid "runtimeCommand.info.startedContainer"
+msgstr "התחיל מיכל."
+
+msgid "runtimeCommand.info.startingContainer"
+msgstr "החל מכולה…"
+
+msgid "runtimeCommand.info.stoppedContainer"
+msgstr "מיכל עוצר."
+
+msgid "runtimeCommand.info.stoppingContainer"
+msgstr "לעצור מכולה…"
+
+msgid "runtimeCommand.info.unexportedApp"
+msgstr "יישום %s לא מיוצא"
+
+msgid "runtimeCommand.info.unexportedApps"
+msgstr "%d יישומים לא מיוצאים"
+
+msgid "runtimeCommand.info.unexportedBin"
+msgstr "%s בינארי לא מיוצא"
+
+msgid "stacks.export.error.noName"
+msgstr "שום שם לא צוין."
+
+msgid "stacks.export.error.noOutput"
+msgstr "שום פלט לא מוגדר."
+
+msgid "stacks.export.info.success"
+msgstr "ערימה \"%s\" ל \"%s\"."
+
+msgid "stacks.import.error.cannotLoad"
+msgstr "לא ניתן לטעון ערימה של \"%s\"."
+
+msgid "stacks.import.error.noInput"
+msgstr "שום קלט לא מוגדר."
+
+msgid "stacks.import.info.success"
+msgstr "ערימה של \"%s\"."
+
+msgid "stacks.labels.builtIn"
+msgstr "נבנה-in"
+
+msgid "stacks.labels.name"
+msgstr "שם השם"
+
+msgid "stacks.list.info.aborting"
+msgstr "מבטל את הסרת הערימה '%s'."
+
+msgid "stacks.list.info.foundStacks"
+msgstr "נמצאו %d ערימות:"
+
+msgid "stacks.list.info.noStacks"
+msgstr "אין ערימה זמינה. צור חדש עם \"Apxערימה חדשה\" או צור קשר עם מנהל המערכת."
+
+msgid "stacks.new.error.alreadyExists"
+msgstr "כבר קיימת ערימה בשם '%s'."
+
+msgid "stacks.new.error.emptyBase"
+msgstr "הבסיס לא יכול להיות ריק."
+
+msgid "stacks.new.error.emptyName"
+msgstr "השם לא יכול להיות ריק."
+
+msgid "stacks.new.error.emptyPackages"
+msgstr "חבילות לא יכולות להיות ריקות."
+
+msgid "stacks.new.error.emptyPkgManager"
+msgstr "מנהל החבילה לא יכול להיות ריק."
+
+msgid "stacks.new.error.noBase"
+msgstr "שום בסיס לא מוגדר."
+
+msgid "stacks.new.error.noName"
+msgstr "שום שם לא צוין."
+
+msgid "stacks.new.error.noPackages"
+msgstr "אין חבילות שצוינו."
+
+msgid "stacks.new.error.noPkgManager"
+msgstr "אין מנהל חבילה שצוין."
+
+msgid "stacks.new.error.noPkgManagers"
+msgstr "Could not find any package managers. Create one with 'apx pkgmanagers new' or contact the system administrator."
+
+msgid "stacks.new.error.pkgManagerDoesNotExist"
+msgstr "מנהל החבילה שצוין אינו קיים. צור אותו עם \"apx pkgmanagers חדש\" או פנה למנהל המערכת."
+
+msgid "stacks.new.info.askBase"
+msgstr "בחרו בסיס (למשל \"ונדלוס/pico\"):"
+
+msgid "stacks.new.info.askName"
+msgstr "בחרו שם:"
+
+msgid "stacks.new.info.askPackages"
+msgstr "אנא הקלד את החבילות שברצונך להתקין בערימה, מופרדות על ידי חלל:"
+
+msgid "stacks.new.info.askPkgManager"
+msgstr "בחר מנהל חבילה:"
+
+msgid "stacks.new.info.confirmPackages"
+msgstr "רוצים לאשר את רשימת החבילות הנוכחית?"
+
+msgid "stacks.new.info.noPackages"
+msgstr "לא נתת חבילה להתקין בערימה. רוצים להוסיף קצת עכשיו?"
+
+msgid "stacks.new.info.selectPkgManager"
+msgstr "בחר מנהל חבילות [1-%d]:"
+
+msgid "stacks.new.info.success"
+msgstr "נוצר מחסנית '%s'."
+
+msgid "stacks.rm.error.inUse"
+msgstr "The stack is used in %d subsystems:"
+
+msgid "stacks.rm.error.noName"
+msgstr "שום שם לא צוין."
+
+msgid "stacks.rm.info.askConfirmation"
+msgstr "אתה בטוח שאתה רוצה להסיר \"%s\"? [y/N]"
+
+msgid "stacks.rm.info.success"
+msgstr "הסרת ערימה \"%s\"."
+
+msgid "stacks.update.error.builtIn"
+msgstr "Built-in stacks cannot be modified."
+
+msgid "stacks.update.error.noBase"
+msgstr "שום בסיס לא מוגדר."
+
+msgid "stacks.update.error.noName"
+msgstr "שום שם לא צוין."
+
+msgid "stacks.update.error.noPkgManager"
+msgstr "אין מנהל חבילה שצוין."
+
+msgid "stacks.update.error.pkgManagerDoesNotExist"
+msgstr "מנהל החבילה שצוין אינו קיים. צור אותו עם \"apx pkgmanagers חדש\" או פנה למנהל המערכת."
+
+msgid "stacks.update.info.askBase"
+msgstr "הקלד בסיס חדש או לאשר את הנוכחי (%s):"
+
+msgid "stacks.update.info.askPackages"
+msgstr "הקלד את החבילות שברצונך להתקין בערימה, מופרדות על ידי חלל, או לאשר את הנוכחי (%s):"
+
+msgid "stacks.update.info.askPkgManager"
+msgstr "בחר מנהל חבילה חדש או לאשר את הנוכחי (%s):"
+
+msgid "stacks.update.info.confirmPackages"
+msgstr "Do you want to confirm the current packages list?"
+
+msgid "stacks.update.info.noPackages"
+msgstr "You have not provided any packages to install in the stack. Do you want to add some now?"
+
+msgid "stacks.update.info.success"
+msgstr "ערימה מעודכנת '%s'."
+
+msgid "subsystems.labels.name"
+msgstr "שם השם"
+
+msgid "subsystems.labels.status"
+msgstr "סטטוס"
+
+msgid "subsystems.list.error"
+msgstr "<nil>"
+
+msgid "subsystems.list.info.foundSubsystems"
+msgstr "נמצאו %d מערכות משנה:"
+
+msgid "subsystems.list.info.noSubsystems"
+msgstr "אין תת-מערכות זמינות. צור חדש עם \"מערכת תת-מערכת חדשה\" או צור קשר עם מנהל המערכת."
+
+msgid "subsystems.new.error.alreadyExists"
+msgstr "תת-מערכת עם השם '%s' כבר קיימת."
+
+msgid "subsystems.new.error.emptyName"
+msgstr "השם לא יכול להיות ריק."
+
+msgid "subsystems.new.error.emptyStack"
+msgstr "הערימה לא יכולה להיות ריקה."
+
+msgid "subsystems.new.error.forbiddenName"
+msgstr "The name '%s' is forbidden. Please choose a different name"
+
+msgid "subsystems.new.error.noName"
+msgstr "שום שם לא צוין."
+
+msgid "subsystems.new.error.noStack"
+msgstr "אין ערימה שצוין."
+
+msgid "subsystems.new.error.noStacks"
+msgstr "יש צורך בערימה כדי ליצור תת-מערכת. צור חדש עם \"Apxערימה חדשה\" או צור קשר עם מנהל המערכת."
+
+msgid "subsystems.new.error.stackDoesNotExist"
+msgstr "הערימה המפורטת אינה קיימת. צור אותו עם \"Apxערימה חדשה\" או צור קשר עם מנהל המערכת."
+
+msgid "subsystems.new.info.askName"
+msgstr "בחרו שם:"
+
+msgid "subsystems.new.info.availableStacks"
+msgstr "Available stacks:"
+
+msgid "subsystems.new.info.creatingSubsystem"
+msgstr "יוצר תת-מערכת '%s' עם מחסנית '%s'…"
+
+msgid "subsystems.new.info.selectStack"
+msgstr "בחר ערימה [1-%d]:"
+
+msgid "subsystems.new.info.success"
+msgstr "מערכת המשנה \"%s\"."
+
+msgid "subsystems.reset.error.noName"
+msgstr "שום שם לא צוין."
+
+msgid "subsystems.reset.info.askConfirmation"
+msgstr "אתה בטוח שאתה רוצה לאפס את '%s'? [y/N]"
+
+msgid "subsystems.reset.info.success"
+msgstr "ה'%s' של תת-מערכת כבר לאפס."
+
+msgid "subsystems.rm.error.noName"
+msgstr "שום שם לא צוין."
+
+msgid "subsystems.rm.info.askConfirmation"
+msgstr "אתה בטוח שאתה רוצה להסיר \"%s\"? [y/N]"
+
+msgid "subsystems.rm.info.success"
+msgstr "הסרת מערכת משנה \"%s\"."
+

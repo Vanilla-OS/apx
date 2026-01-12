@@ -1,5 +1,14 @@
 package core
 
+/*	License: GPLv3
+	Authors:
+		Mirko Brombin <brombin94@gmail.com>
+		Pietro di Caprio <pietro@fabricators.ltd>
+		Vanilla OS Contributors <https://github.com/vanilla-os/>
+	Copyright: 2024
+	Description: Apx is a wrapper around multiple package managers to install packages and run commands inside a managed container.
+*/
+
 import (
 	"errors"
 	"fmt"

@@ -2,7 +2,7 @@ package settings
 
 /*	License: GPLv3
 	Authors:
-		Mirko Brombin <send@mirko.pm>
+		Mirko Brombin <brombin94@gmail.com>
 		Vanilla OS Contributors <https://github.com/vanilla-os/>
 	Copyright: 2024
 	Description:
@@ -53,8 +53,8 @@ func GetApxDefaultConfig() (*Config, error) {
 	viper.AddConfigPath("/etc/apx/")
 	viper.AddConfigPath("/usr/share/apx/")
 
-    // flatpak paths
-    viper.AddConfigPath("/app/share/apx/")
+	// flatpak paths
+	viper.AddConfigPath("/app/share/apx/")
 
 	viper.SetConfigName("apx")
 	viper.SetConfigType("json")

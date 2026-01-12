@@ -1,0 +1,694 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: cs\n"
+
+msgid "apx.cmd.pkgmanagers"
+msgstr "Pracovat se správci balíčků, které jsou dostupné v apx."
+
+msgid "apx.cmd.pkgmanagers.export"
+msgstr "Export the specified package manager."
+
+msgid "apx.cmd.pkgmanagers.export.options.name"
+msgstr "The name of the package manager to export."
+
+msgid "apx.cmd.pkgmanagers.export.options.output"
+msgstr "The path to export the package manager to."
+
+msgid "apx.cmd.pkgmanagers.import"
+msgstr "Import the specified package manager."
+
+msgid "apx.cmd.pkgmanagers.import.options.input"
+msgstr "The path to import the package manager from."
+
+msgid "apx.cmd.pkgmanagers.list"
+msgstr "Zobrazit všechny dostupné správce balíčků."
+
+msgid "apx.cmd.pkgmanagers.list.options.json"
+msgstr "Vypsat ve formátu JSON."
+
+msgid "apx.cmd.pkgmanagers.new"
+msgstr "Vytvořit nový správce balíčků."
+
+msgid "apx.cmd.pkgmanagers.new.options.autoremove"
+msgstr "Příkaz pro spuštění automatického odstranění balíčků."
+
+msgid "apx.cmd.pkgmanagers.new.options.clean"
+msgstr "Příkaz pro vymazání mezipaměti správce balíčků."
+
+msgid "apx.cmd.pkgmanagers.new.options.install"
+msgstr "Příkaz pro instalaci balíčků."
+
+msgid "apx.cmd.pkgmanagers.new.options.list"
+msgstr "Příkaz pro výpis instalovaných balíčků."
+
+msgid "apx.cmd.pkgmanagers.new.options.name"
+msgstr "Název správce balíčků."
+
+msgid "apx.cmd.pkgmanagers.new.options.needSudo"
+msgstr "Zda správce balíčků vyžaduje sudo."
+
+msgid "apx.cmd.pkgmanagers.new.options.noPrompt"
+msgstr "Automaticky zadat ano pro všechny dotazy."
+
+msgid "apx.cmd.pkgmanagers.new.options.purge"
+msgstr "Příkaz pro odstranění balíčků a jejich konfigurace."
+
+msgid "apx.cmd.pkgmanagers.new.options.remove"
+msgstr "Příkaz pro odstranění balíčků."
+
+msgid "apx.cmd.pkgmanagers.new.options.search"
+msgstr "Příkaz pro vyhledání balíčků."
+
+msgid "apx.cmd.pkgmanagers.new.options.show"
+msgstr "Příkaz pro výpis informací o balíčků."
+
+msgid "apx.cmd.pkgmanagers.new.options.update"
+msgstr "Příkaz pro aktualizaci seznamu dostupných balíčků."
+
+msgid "apx.cmd.pkgmanagers.new.options.upgrade"
+msgstr "Příkaz pro aktualizaci balíčků."
+
+msgid "apx.cmd.pkgmanagers.rm"
+msgstr "Smazat zadaný správce balíčků."
+
+msgid "apx.cmd.pkgmanagers.rm.options.force"
+msgstr "Vynucení odstranění správce balíčků."
+
+msgid "apx.cmd.pkgmanagers.rm.options.name"
+msgstr "Název správce balíčků, který má být odebrán."
+
+msgid "apx.cmd.pkgmanagers.show"
+msgstr "Zobrazit informace o zadaném správci balíčků."
+
+msgid "apx.cmd.pkgmanagers.update"
+msgstr "Update the specified package manager."
+
+msgid "apx.cmd.stacks"
+msgstr "Práce se stacky, které jsou k dispozici v apx."
+
+msgid "apx.cmd.stacks.export"
+msgstr "Exportovat zadaný stack."
+
+msgid "apx.cmd.stacks.export.options.name"
+msgstr "Název stacku pro exportování."
+
+msgid "apx.cmd.stacks.export.options.output"
+msgstr "Cesta, kam se má stack exportovat."
+
+msgid "apx.cmd.stacks.import"
+msgstr "Importovat zadaný stack."
+
+msgid "apx.cmd.stacks.import.options.input"
+msgstr "Cesta, ze které se má stack importovat."
+
+msgid "apx.cmd.stacks.list"
+msgstr "Zobrazit všechny dostupné stacky."
+
+msgid "apx.cmd.stacks.list.options.json"
+msgstr "Vypsat ve formátu JSON."
+
+msgid "apx.cmd.stacks.new"
+msgstr "Vytvořit nový stack."
+
+msgid "apx.cmd.stacks.new.options.base"
+msgstr "Základní subsystém, který se má použít."
+
+msgid "apx.cmd.stacks.new.options.name"
+msgstr "Název stacku."
+
+msgid "apx.cmd.stacks.new.options.noPrompt"
+msgstr "Automaticky zadat ano pro všechny dotazy."
+
+msgid "apx.cmd.stacks.new.options.packages"
+msgstr "Balíčky k instalaci."
+
+msgid "apx.cmd.stacks.new.options.pkgManager"
+msgstr "Správce balíčků, který se má použít."
+
+msgid "apx.cmd.stacks.rm"
+msgstr "Odstranit zadaný stack."
+
+msgid "apx.cmd.stacks.rm.options.force"
+msgstr "Vynutit odstranění stacku."
+
+msgid "apx.cmd.stacks.rm.options.name"
+msgstr "Název stacku pro odstranění."
+
+msgid "apx.cmd.stacks.show"
+msgstr "Zobrazit informace o zadaném stacku."
+
+msgid "apx.cmd.stacks.update"
+msgstr "Aktualizovat zadaný stack."
+
+msgid "apx.cmd.stacks.update.options.base"
+msgstr "Základní subsystém, který se má použít."
+
+msgid "apx.cmd.stacks.update.options.name"
+msgstr "Název stacku."
+
+msgid "apx.cmd.stacks.update.options.noPrompt"
+msgstr "Automaticky zadat ano pro všechny dotazy."
+
+msgid "apx.cmd.stacks.update.options.packages"
+msgstr "Balíčky k instalaci."
+
+msgid "apx.cmd.stacks.update.options.pkgManager"
+msgstr "Správce balíčků, který se má použít."
+
+msgid "apx.cmd.subsystem.autoremove"
+msgstr "Smazat balíčky, které už nejsou potřebné."
+
+msgid "apx.cmd.subsystem.clean"
+msgstr "Smazat mezipaměť správce balíčků."
+
+msgid "apx.cmd.subsystem.enter"
+msgstr "Vstoupit do prostředí subsystému."
+
+msgid "apx.cmd.subsystem.export"
+msgstr "Exportovat aplikaci nebo binární soubor ze subsystému."
+
+msgid "apx.cmd.subsystem.export.options.appName"
+msgstr "Název aplikace, která se má exportovat."
+
+msgid "apx.cmd.subsystem.export.options.bin"
+msgstr "Název binárního souboru, který se má exportovat."
+
+msgid "apx.cmd.subsystem.export.options.binOutput"
+msgstr "Cesta k binárnímu souboru (default: ~/.local/bin/)."
+
+msgid "apx.cmd.subsystem.install"
+msgstr "Instalovat zadaný balíček."
+
+msgid "apx.cmd.subsystem.install.options.noExport"
+msgstr "Neexportovat zástupce na plochu."
+
+msgid "apx.cmd.subsystem.list"
+msgstr "Zobrazit všechny instalované balíčky."
+
+msgid "apx.cmd.subsystem.list.options.json"
+msgstr "Vypsat ve formátu JSON."
+
+msgid "apx.cmd.subsystem.new.options.home"
+msgstr "The custom home directory of the subsystem."
+
+msgid "apx.cmd.subsystem.new.options.init"
+msgstr "Use systemd inside the subsystem."
+
+msgid "apx.cmd.subsystem.new.options.name"
+msgstr "Název subsystému."
+
+msgid "apx.cmd.subsystem.new.options.stack"
+msgstr "Stack, který se má použít."
+
+msgid "apx.cmd.subsystem.purge"
+msgstr "Smazat zadané balíčky a jejich konfiguraci."
+
+msgid "apx.cmd.subsystem.remove"
+msgstr "Smazat zadané balíčky."
+
+msgid "apx.cmd.subsystem.reset.options.force"
+msgstr "Vynutit reset subsystému."
+
+msgid "apx.cmd.subsystem.reset.options.name"
+msgstr "Název subsystému, který má být resetován."
+
+msgid "apx.cmd.subsystem.rm.options.force"
+msgstr "Vynutit odstranění subsystému."
+
+msgid "apx.cmd.subsystem.rm.options.name"
+msgstr "Název subsystému, který má být odstraněn."
+
+msgid "apx.cmd.subsystem.run"
+msgstr "Run command inside subsystem."
+
+msgid "apx.cmd.subsystem.search"
+msgstr "Hledat balíčky, které se shodují se zadaným textem."
+
+msgid "apx.cmd.subsystem.show"
+msgstr "Zobrazit informace o zadaném balíčku."
+
+msgid "apx.cmd.subsystem.start"
+msgstr "Start the subsystem."
+
+msgid "apx.cmd.subsystem.stop"
+msgstr "Stop the subsystem."
+
+msgid "apx.cmd.subsystem.unexport"
+msgstr "Odexportovat aplikaci nebo binární soubor ze subsystému."
+
+msgid "apx.cmd.subsystem.unexport.options.appName"
+msgstr "Název aplikace, která se má odexportovat."
+
+msgid "apx.cmd.subsystem.unexport.options.bin"
+msgstr "Název binárního souboru, který se má odexportovat."
+
+msgid "apx.cmd.subsystem.unexport.options.binOutput"
+msgstr "Cesta k binárnímu souboru (default: ~/.local/bin/)."
+
+msgid "apx.cmd.subsystem.update"
+msgstr "Aktualizovat seznam dostupných balíčků."
+
+msgid "apx.cmd.subsystem.upgrade"
+msgstr "Aktualizovat všechny nainstalované balíčky."
+
+msgid "apx.cmd.subsystems"
+msgstr "Pracovat se subsystémy, které jsou k dispozici v apx."
+
+msgid "apx.cmd.subsystems.list"
+msgstr "Vypsat všechny dostupné subsystémy."
+
+msgid "apx.cmd.subsystems.new"
+msgstr "Vytvořit nový subsystém."
+
+msgid "apx.cmd.subsystems.reset"
+msgstr "Reset zadaného subsystému."
+
+msgid "apx.cmd.subsystems.rm"
+msgstr "Smazat zadaný subsystém."
+
+msgid "apx.errors.invalidChoice"
+msgstr "Invalid choice."
+
+msgid "apx.errors.invalidInput"
+msgstr "Neplatný vstup."
+
+msgid "apx.errors.noRoot"
+msgstr "Do not run Apx as root."
+
+msgid "apx.errors.unknownCommand"
+msgstr "Neznámý příkaz: %s"
+
+msgid "apx.info.aborting"
+msgstr "Přerušuji."
+
+msgid "apx.msg.additionalCommands"
+msgstr "Additional Commands"
+
+msgid "apx.msg.additionalHelpTopics"
+msgstr "Additional help topics"
+
+msgid "apx.msg.aliases"
+msgstr "Aliases"
+
+msgid "apx.msg.availableCommands"
+msgstr "Available Commands"
+
+msgid "apx.msg.examples"
+msgstr "Examples"
+
+msgid "apx.msg.flags"
+msgstr "Flags"
+
+msgid "apx.msg.globalFlags"
+msgstr "Global Flags"
+
+msgid "apx.msg.help"
+msgstr "Show help for apx."
+
+msgid "apx.msg.moreInfo"
+msgstr "Use %s for more information about a command"
+
+msgid "apx.msg.usage"
+msgstr "Usage"
+
+msgid "apx.msg.version"
+msgstr "Show version for apx."
+
+msgid "apx.terminal.false"
+msgstr "ne"
+
+msgid "apx.terminal.true"
+msgstr "ano"
+
+msgid "pkgmanagers.export.error.noName"
+msgstr "No name specified."
+
+msgid "pkgmanagers.export.error.noOutput"
+msgstr "No output specified."
+
+msgid "pkgmanagers.export.info.success"
+msgstr "Exported package manager '%s' to '%s'."
+
+msgid "pkgmanagers.import.error.cannotLoad"
+msgstr "Cannot load package manager from '%s'."
+
+msgid "pkgmanagers.import.error.noInput"
+msgstr "No input specified."
+
+msgid "pkgmanagers.import.info.success"
+msgstr "Imported package manager from '%s'."
+
+msgid "pkgmanagers.labels.builtIn"
+msgstr "Vestavěné"
+
+msgid "pkgmanagers.labels.name"
+msgstr "Název"
+
+msgid "pkgmanagers.list.info.foundPkgManagers"
+msgstr "Nalezeno %d správců balíčků:\n"
+
+msgid "pkgmanagers.list.info.noPkgManagers"
+msgstr "Správce balíčků nejsou dostupné. Vytvořte nový pomocí 'apx pkgmanagers new' nebo kontaktujte Vašeho systémového správce."
+
+msgid "pkgmanagers.new.error.alreadyExists"
+msgstr "Správce balíčků s názvem '%s' již existuje."
+
+msgid "pkgmanagers.new.error.emptyCommand"
+msgstr "Příkaz nemůže být prázdný."
+
+msgid "pkgmanagers.new.error.emptyName"
+msgstr "Název nemůže být prázdný."
+
+msgid "pkgmanagers.new.error.noCommand"
+msgstr "Nebyl specifikován příkaz pro '%s'."
+
+msgid "pkgmanagers.new.error.noName"
+msgstr "Název není uveden."
+
+msgid "pkgmanagers.new.info.askCommand"
+msgstr "Zadejte příkaz pro '%s':"
+
+msgid "pkgmanagers.new.info.askCommandWithDefault"
+msgstr "Enter the command for '%s' (default: '%s'):"
+
+msgid "pkgmanagers.new.info.askName"
+msgstr "Vyberte název:"
+
+msgid "pkgmanagers.new.info.askOverwrite"
+msgstr "Správce balíčků s názvem '%s' již existuje. Přepsat ho?"
+
+msgid "pkgmanagers.new.info.askSudo"
+msgstr "Vyžaduje správce balíčků sudo?"
+
+msgid "pkgmanagers.new.success"
+msgstr "Package manager %s created successfully."
+
+msgid "pkgmanagers.rm.error.inUse"
+msgstr "Správce balíčků se používá v %d zásobnících:\n"
+
+msgid "pkgmanagers.rm.error.noName"
+msgstr "Název není uveden."
+
+msgid "pkgmanagers.rm.info.aborting"
+msgstr "Aborting removal of package manager '%s'."
+
+msgid "pkgmanagers.rm.info.askConfirmation"
+msgstr "Jste si jisti, že chcete odstranit '%s'? [y/N]"
+
+msgid "pkgmanagers.rm.info.success"
+msgstr "Odstraněn správce balíčků '%s'."
+
+msgid "pkgmanagers.update.error.builtIn"
+msgstr "Built-in package managers cannot be modified."
+
+msgid "pkgmanagers.update.error.missingCommand"
+msgstr "Missing command for %s."
+
+msgid "pkgmanagers.update.error.noName"
+msgstr "No name specified."
+
+msgid "pkgmanagers.update.info.askNewCommand"
+msgstr "Enter new command for '%s' (leave empty to keep '%s'):"
+
+msgid "pkgmanagers.update.info.success"
+msgstr "Updated package manager '%s'."
+
+msgid "runtimeCommand.description"
+msgstr "Pracovat se specifikovaným subsystémem a tím získat přístup k jeho správci balíčků a prostředí."
+
+msgid "runtimeCommand.error.cantAccessPkgManager"
+msgstr "Při práci se správcem balíčků nastala chyba: %s"
+
+msgid "runtimeCommand.error.enteringContainer"
+msgstr "An error occurred while entering the container: %s"
+
+msgid "runtimeCommand.error.executingCommand"
+msgstr "Nastala chyba při spouštění příkazu: %s"
+
+msgid "runtimeCommand.error.exportingApp"
+msgstr "Nastala chyba během exportování aplikace: %s"
+
+msgid "runtimeCommand.error.exportingBin"
+msgstr "Nastala chyba během exportování binárního souboru: %s"
+
+msgid "runtimeCommand.error.noAppNameOrBin"
+msgstr "--app-name nebo --bin musí být specifikováno."
+
+msgid "runtimeCommand.error.noPackageSpecified"
+msgstr "Nebyly zadány balíčky."
+
+msgid "runtimeCommand.error.sameAppOrBin"
+msgstr "nelze použít --app-name a --bin najednou."
+
+msgid "runtimeCommand.error.startingContainer"
+msgstr "An error occurred while starting the container: %s"
+
+msgid "runtimeCommand.error.stoppingContainer"
+msgstr "An error occurred while stopping the container: %s"
+
+msgid "runtimeCommand.error.unexportingApp"
+msgstr "Nastala chyba během odexportování aplikace: %s"
+
+msgid "runtimeCommand.error.unexportingBin"
+msgstr "Nastala chyba během odexportování binárního souboru: %s"
+
+msgid "runtimeCommand.info.exportedApp"
+msgstr "Aplikace %s exportována\n"
+
+msgid "runtimeCommand.info.exportedApps"
+msgstr "Exportováno %d aplikací\n"
+
+msgid "runtimeCommand.info.exportedBin"
+msgstr "Binární soubor %s exportován\n"
+
+msgid "runtimeCommand.info.startedContainer"
+msgstr "Started container."
+
+msgid "runtimeCommand.info.startingContainer"
+msgstr "Starting container…"
+
+msgid "runtimeCommand.info.stoppedContainer"
+msgstr "Stopped container."
+
+msgid "runtimeCommand.info.stoppingContainer"
+msgstr "Stopping container…"
+
+msgid "runtimeCommand.info.unexportedApp"
+msgstr "Aplikace %s odexportována\n"
+
+msgid "runtimeCommand.info.unexportedApps"
+msgstr "Odexportováno %d aplikací\n"
+
+msgid "runtimeCommand.info.unexportedBin"
+msgstr "Binární soubor %s odexportován\n"
+
+msgid "stacks.export.error.noName"
+msgstr "Název není uveden."
+
+msgid "stacks.export.error.noOutput"
+msgstr "Výstup není uveden."
+
+msgid "stacks.export.info.success"
+msgstr "Exportován stack '%s' do '%s'."
+
+msgid "stacks.import.error.cannotLoad"
+msgstr "Nelze načíst stack z '%s'."
+
+msgid "stacks.import.error.noInput"
+msgstr "Vstup není uveden."
+
+msgid "stacks.import.info.success"
+msgstr "Stack z '%s' importován."
+
+msgid "stacks.labels.builtIn"
+msgstr "Vestavěný"
+
+msgid "stacks.labels.name"
+msgstr "Název"
+
+msgid "stacks.list.info.aborting"
+msgstr "Aborting removal of stack '%s'."
+
+msgid "stacks.list.info.foundStacks"
+msgstr "%d stacků nalezeno:\n"
+
+msgid "stacks.list.info.noStacks"
+msgstr "Stacky nejsou k dizpozici. Vytvořte nový pomocí 'apx stacks new' nebo kontaktujte vašeho systémového správce."
+
+msgid "stacks.new.error.alreadyExists"
+msgstr "Stack s názvem '%s' již existuje."
+
+msgid "stacks.new.error.emptyBase"
+msgstr "Základ nemůže být prázdný."
+
+msgid "stacks.new.error.emptyName"
+msgstr "Název nemůže být prázdný."
+
+msgid "stacks.new.error.emptyPackages"
+msgstr "Balíčky nemůžou být prázdné."
+
+msgid "stacks.new.error.emptyPkgManager"
+msgstr "Správce balíčků nemůže být prázdný."
+
+msgid "stacks.new.error.noBase"
+msgstr "Není uveden žádný základ."
+
+msgid "stacks.new.error.noName"
+msgstr "Název není uveden."
+
+msgid "stacks.new.error.noPackages"
+msgstr "Nebyly zadány balíčky."
+
+msgid "stacks.new.error.noPkgManager"
+msgstr "Není zadán žádný správce balíčků."
+
+msgid "stacks.new.error.noPkgManagers"
+msgstr "Could not find any package managers. Create one with 'apx pkgmanagers new' or contact the system administrator."
+
+msgid "stacks.new.error.pkgManagerDoesNotExist"
+msgstr "Zadaný správce balíčků neexistuje. Vytvořte jej pomocí příkazu 'apx pkgmanagers new' nebo kontaktujte správce systému."
+
+msgid "stacks.new.info.askBase"
+msgstr "Vyberte základ (např. 'vanillaos/pico'):"
+
+msgid "stacks.new.info.askName"
+msgstr "Vyberte název:"
+
+msgid "stacks.new.info.askPackages"
+msgstr "Zadejte balíčky, které chcete nainstalovat do stacku, oddělené mezerou:"
+
+msgid "stacks.new.info.askPkgManager"
+msgstr "Vyberte správce balíčků:"
+
+msgid "stacks.new.info.confirmPackages"
+msgstr "Chcete potvrdit aktuální seznam balíčků?"
+
+msgid "stacks.new.info.noPackages"
+msgstr "Nezadali jste žádný balíček, který by měl být ve stacku nainstalovaný. Chcete nyní nějaký přidat?"
+
+msgid "stacks.new.info.selectPkgManager"
+msgstr "Vyberte správce balíčků [1-%d]:"
+
+msgid "stacks.new.info.success"
+msgstr "Stack '%s' vytvořen."
+
+msgid "stacks.rm.error.inUse"
+msgstr "The stack is used in %d subsystems:"
+
+msgid "stacks.rm.error.noName"
+msgstr "Název není uveden."
+
+msgid "stacks.rm.info.askConfirmation"
+msgstr "Jste si jisti, že chcete odstranit '%s'?"
+
+msgid "stacks.rm.info.success"
+msgstr "Odstraněn stack '%s'."
+
+msgid "stacks.update.error.builtIn"
+msgstr "Built-in stacks cannot be modified."
+
+msgid "stacks.update.error.noBase"
+msgstr "Není zadán základ."
+
+msgid "stacks.update.error.noName"
+msgstr "Název není uveden."
+
+msgid "stacks.update.error.noPkgManager"
+msgstr "Není zadán správce balíčků."
+
+msgid "stacks.update.error.pkgManagerDoesNotExist"
+msgstr "Zadaný správce balíčků neexistuje. Vytvořte ho pomocí 'apx pkgmanagers new' nebo kontaktujte Vašeho správce systému."
+
+msgid "stacks.update.info.askBase"
+msgstr "Zadejte nový základ nebo potvrďte aktuální (%s):"
+
+msgid "stacks.update.info.askPackages"
+msgstr "Zadejte balíčky, které chcete ve stacku nainstalovat, oddělené mezerou nebo potvrďte aktuální (%s):"
+
+msgid "stacks.update.info.askPkgManager"
+msgstr "Zvolte nový správce balíčků nebo potvrďte aktuální (%s):"
+
+msgid "stacks.update.info.confirmPackages"
+msgstr "Do you want to confirm the current packages list?"
+
+msgid "stacks.update.info.noPackages"
+msgstr "You have not provided any packages to install in the stack. Do you want to add some now?"
+
+msgid "stacks.update.info.success"
+msgstr "Stack '%s' aktualizován."
+
+msgid "subsystems.labels.name"
+msgstr "Název"
+
+msgid "subsystems.labels.status"
+msgstr "Stav"
+
+msgid "subsystems.list.error"
+msgstr "<nil>"
+
+msgid "subsystems.list.info.foundSubsystems"
+msgstr "Nalezeno %d subsystémů:\n"
+
+msgid "subsystems.list.info.noSubsystems"
+msgstr "Nejsou k dispozici žádné subsystémy. Vytvořte nový pomocí příkazu 'apx subsystems new' nebo kontaktujte správce systému."
+
+msgid "subsystems.new.error.alreadyExists"
+msgstr "Subsystém s názvem '%s' již existuje."
+
+msgid "subsystems.new.error.emptyName"
+msgstr "Název nesmí být prázdný."
+
+msgid "subsystems.new.error.emptyStack"
+msgstr "Stack nesmí být prázdný."
+
+msgid "subsystems.new.error.forbiddenName"
+msgstr "The name '%s' is forbidden. Please choose a different name"
+
+msgid "subsystems.new.error.noName"
+msgstr "Název není uveden."
+
+msgid "subsystems.new.error.noStack"
+msgstr "Nebyl zadán stack."
+
+msgid "subsystems.new.error.noStacks"
+msgstr "K vytvoření subsystému je zapotřebí stack. Vytvořte nový pomocí příkazu 'apx stacks new' nebo se obraťte na správce systému."
+
+msgid "subsystems.new.error.stackDoesNotExist"
+msgstr "Zadaný stack neexistuje. Vytvořte jej pomocí příkazu 'apx stacks new' nebo kontaktujte správce systému."
+
+msgid "subsystems.new.info.askName"
+msgstr "Vyberte název:"
+
+msgid "subsystems.new.info.availableStacks"
+msgstr "Available stacks:"
+
+msgid "subsystems.new.info.creatingSubsystem"
+msgstr "Subsystém '%s' se stackem '%s' vytvořen…"
+
+msgid "subsystems.new.info.selectStack"
+msgstr "Vyberte stack [1-%d]:"
+
+msgid "subsystems.new.info.success"
+msgstr "Subsystém '%s' vytvořen."
+
+msgid "subsystems.reset.error.noName"
+msgstr "Název není uveden."
+
+msgid "subsystems.reset.info.askConfirmation"
+msgstr "Jste si jisti, že chcete resetovat '%s'? [y/N]"
+
+msgid "subsystems.reset.info.success"
+msgstr "Subsystém \"%s\" byl resetován."
+
+msgid "subsystems.rm.error.noName"
+msgstr "Název není uveden."
+
+msgid "subsystems.rm.info.askConfirmation"
+msgstr "Jste si jisti, že chcete odstranit '%s'?"
+
+msgid "subsystems.rm.info.success"
+msgstr "Subsystém '%s' odstraněn."
+

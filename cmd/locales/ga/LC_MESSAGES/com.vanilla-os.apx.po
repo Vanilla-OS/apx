@@ -1,0 +1,694 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ga\n"
+
+msgid "apx.cmd.pkgmanagers"
+msgstr "Obair leis na bainisteoirí pacáiste atá ar fáil i apx."
+
+msgid "apx.cmd.pkgmanagers.export"
+msgstr "Easpórtáil an bainisteoir pacáiste sonraithe."
+
+msgid "apx.cmd.pkgmanagers.export.options.name"
+msgstr "Ainm an bhainisteora pacáiste le heaspórtáil."
+
+msgid "apx.cmd.pkgmanagers.export.options.output"
+msgstr "An cosán chun an bainisteoir pacáiste a onnmhairiú chuig."
+
+msgid "apx.cmd.pkgmanagers.import"
+msgstr "Iompórtáil an bainisteoir pacáiste sonraithe."
+
+msgid "apx.cmd.pkgmanagers.import.options.input"
+msgstr "An cosán a allmhairiú an bainisteoir pacáiste ó."
+
+msgid "apx.cmd.pkgmanagers.list"
+msgstr "Liostaigh na bainisteoirí pacáiste go léir atá ar fáil."
+
+msgid "apx.cmd.pkgmanagers.list.options.json"
+msgstr "Aschur i bhformáid JSON."
+
+msgid "apx.cmd.pkgmanagers.new"
+msgstr "Cruthaigh bainisteoir pacáiste nua."
+
+msgid "apx.cmd.pkgmanagers.new.options.autoremove"
+msgstr "An t-ordú a rith chun pacáistí automove."
+
+msgid "apx.cmd.pkgmanagers.new.options.clean"
+msgstr "An t-ordú a reáchtáil chun taisce an bhainisteora pacáiste a ghlanadh."
+
+msgid "apx.cmd.pkgmanagers.new.options.install"
+msgstr "An t-ordú le rith chun pacáistí a shuiteáil."
+
+msgid "apx.cmd.pkgmanagers.new.options.list"
+msgstr "An t- ordú le rith chun pacáistí suiteáilte a liostáil."
+
+msgid "apx.cmd.pkgmanagers.new.options.name"
+msgstr "Ainm an bhainisteora pacáiste."
+
+msgid "apx.cmd.pkgmanagers.new.options.needSudo"
+msgstr "Cibé an gcaithfidh an bainisteoir pacáiste sudo a rith."
+
+msgid "apx.cmd.pkgmanagers.new.options.noPrompt"
+msgstr "Glac leis go bhfuil gach leid."
+
+msgid "apx.cmd.pkgmanagers.new.options.purge"
+msgstr "An t-ordú a reáchtáil chun pacáistí purge."
+
+msgid "apx.cmd.pkgmanagers.new.options.remove"
+msgstr "An t-ordú le rith chun pacáistí a bhaint."
+
+msgid "apx.cmd.pkgmanagers.new.options.search"
+msgstr "An t-ordú le rith chun pacáistí a chuardach."
+
+msgid "apx.cmd.pkgmanagers.new.options.show"
+msgstr "An t-ordú le rith chun faisnéis faoi phacáistí a thaispeáint."
+
+msgid "apx.cmd.pkgmanagers.new.options.update"
+msgstr "An t-ordú le rith chun liosta na bpacáistí atá ar fáil a nuashonrú."
+
+msgid "apx.cmd.pkgmanagers.new.options.upgrade"
+msgstr "An t-ordú a rith chun pacáistí a uasghrádú."
+
+msgid "apx.cmd.pkgmanagers.rm"
+msgstr "Bain an bainisteoir pacáiste sonraithe."
+
+msgid "apx.cmd.pkgmanagers.rm.options.force"
+msgstr "Fórsa deireadh a chur leis an mbainisteoir pacáiste."
+
+msgid "apx.cmd.pkgmanagers.rm.options.name"
+msgstr "Ainm an bhainisteora pacáiste a bhaint."
+
+msgid "apx.cmd.pkgmanagers.show"
+msgstr "Taispeáin faisnéis faoin mbainisteoir pacáiste sonraithe."
+
+msgid "apx.cmd.pkgmanagers.update"
+msgstr "Nuashonraigh an bainisteoir pacáiste sonraithe."
+
+msgid "apx.cmd.stacks"
+msgstr "Obair leis na cruacha atá ar fáil i apx."
+
+msgid "apx.cmd.stacks.export"
+msgstr "Easpórtáil an chairn shonraithe."
+
+msgid "apx.cmd.stacks.export.options.name"
+msgstr "Ainm an chairn le heaspórtáil."
+
+msgid "apx.cmd.stacks.export.options.output"
+msgstr "An cosán a onnmhairiú an chairn a."
+
+msgid "apx.cmd.stacks.import"
+msgstr "Iompórtáil an chairn shonraithe."
+
+msgid "apx.cmd.stacks.import.options.input"
+msgstr "An cosán a allmhairiú an Chairn ó."
+
+msgid "apx.cmd.stacks.list"
+msgstr "Liostaigh na cruacha go léir atá ar fáil."
+
+msgid "apx.cmd.stacks.list.options.json"
+msgstr "Aschur i bhformáid JSON."
+
+msgid "apx.cmd.stacks.new"
+msgstr "Cruthaigh cruach nua."
+
+msgid "apx.cmd.stacks.new.options.base"
+msgstr "An íomhá dáilte bonn le húsáid. (Le haghaidh liosta d'íomhánna comhoiriúnacha amharc: https://distrobox.it/compatibility/#containers-distros)"
+
+msgid "apx.cmd.stacks.new.options.name"
+msgstr "Ainm an chairn."
+
+msgid "apx.cmd.stacks.new.options.noPrompt"
+msgstr "Glac leis go bhfuil gach leid."
+
+msgid "apx.cmd.stacks.new.options.packages"
+msgstr "Na pacáistí le suiteáil."
+
+msgid "apx.cmd.stacks.new.options.pkgManager"
+msgstr "An bainisteoir pacáiste a úsáid."
+
+msgid "apx.cmd.stacks.rm"
+msgstr "Bain an chairn shonraithe."
+
+msgid "apx.cmd.stacks.rm.options.force"
+msgstr "Fórsa deireadh a chur leis an chairn."
+
+msgid "apx.cmd.stacks.rm.options.name"
+msgstr "Ainm an chairn le baint."
+
+msgid "apx.cmd.stacks.show"
+msgstr "Taispeáin faisnéis faoin gcruach shonraithe."
+
+msgid "apx.cmd.stacks.update"
+msgstr "Nuashonraigh an chairn shonraithe."
+
+msgid "apx.cmd.stacks.update.options.base"
+msgstr "An fochóras bonn le húsáid."
+
+msgid "apx.cmd.stacks.update.options.name"
+msgstr "Ainm an chairn."
+
+msgid "apx.cmd.stacks.update.options.noPrompt"
+msgstr "Glac leis go bhfuil gach leid."
+
+msgid "apx.cmd.stacks.update.options.packages"
+msgstr "Na pacáistí le suiteáil."
+
+msgid "apx.cmd.stacks.update.options.pkgManager"
+msgstr "An bainisteoir pacáiste a úsáid."
+
+msgid "apx.cmd.subsystem.autoremove"
+msgstr "Bain pacáistí nach bhfuil ag teastáil a thuilleadh."
+
+msgid "apx.cmd.subsystem.clean"
+msgstr "Glan taisce an bhainisteora pacáiste."
+
+msgid "apx.cmd.subsystem.enter"
+msgstr "Cuir isteach timpeallacht an fhochórais."
+
+msgid "apx.cmd.subsystem.export"
+msgstr "Easpórtáil feidhmchlár nó dénártha ón bhfochóras chuig an óstach."
+
+msgid "apx.cmd.subsystem.export.options.appName"
+msgstr "Ainm an iarratais ar easpórtáil."
+
+msgid "apx.cmd.subsystem.export.options.bin"
+msgstr "An t-ainm ar an dénártha a onnmhairiú."
+
+msgid "apx.cmd.subsystem.export.options.binOutput"
+msgstr "Conair an aschuir dhénártha (réamhshocrú: ~ / .local / bin / )."
+
+msgid "apx.cmd.subsystem.install"
+msgstr "Suiteáil an pacáiste sonraithe."
+
+msgid "apx.cmd.subsystem.install.options.noExport"
+msgstr "Ná heaspórtáil iontráil deisce."
+
+msgid "apx.cmd.subsystem.list"
+msgstr "Liostaigh gach pacáiste suiteáilte."
+
+msgid "apx.cmd.subsystem.list.options.json"
+msgstr "Aschur i bhformáid JSON."
+
+msgid "apx.cmd.subsystem.new.options.home"
+msgstr "Comhadlann bhaile saincheaptha an fhochórais."
+
+msgid "apx.cmd.subsystem.new.options.init"
+msgstr "Úsáid córasaithe taobh istigh den fhochóras."
+
+msgid "apx.cmd.subsystem.new.options.name"
+msgstr "Ainm an fhochórais."
+
+msgid "apx.cmd.subsystem.new.options.stack"
+msgstr "An chairn le húsáid."
+
+msgid "apx.cmd.subsystem.purge"
+msgstr "Purge na pacáistí sonraithe."
+
+msgid "apx.cmd.subsystem.remove"
+msgstr "Bain na pacáistí sonraithe."
+
+msgid "apx.cmd.subsystem.reset.options.force"
+msgstr "Fórsa athshocrú an fhochórais."
+
+msgid "apx.cmd.subsystem.reset.options.name"
+msgstr "Ainm an fhochórais le athshocrú."
+
+msgid "apx.cmd.subsystem.rm.options.force"
+msgstr "Fórsa deireadh a chur leis an bhfochóras."
+
+msgid "apx.cmd.subsystem.rm.options.name"
+msgstr "Ainm an fhochórais le baint."
+
+msgid "apx.cmd.subsystem.run"
+msgstr "Rith ordú taobh istigh den fhochóras."
+
+msgid "apx.cmd.subsystem.search"
+msgstr "Cuardaigh pacáistí a mheaitseálann an cheist shonraithe."
+
+msgid "apx.cmd.subsystem.show"
+msgstr "Taispeáin faisnéis faoin bpacáiste sonraithe."
+
+msgid "apx.cmd.subsystem.start"
+msgstr "Tosaigh an fochóras."
+
+msgid "apx.cmd.subsystem.stop"
+msgstr "Stop an fochóras."
+
+msgid "apx.cmd.subsystem.unexport"
+msgstr "Unexport iarratas nó dénártha ón óstach."
+
+msgid "apx.cmd.subsystem.unexport.options.appName"
+msgstr "Ainm an iarratais ar unexport."
+
+msgid "apx.cmd.subsystem.unexport.options.bin"
+msgstr "An t-ainm ar an dénártha a unexport."
+
+msgid "apx.cmd.subsystem.unexport.options.binOutput"
+msgstr "Conair an aschuir dhénártha (réamhshocrú: ~ / .local / bin / )."
+
+msgid "apx.cmd.subsystem.update"
+msgstr "Nuashonraigh liosta na bpacáistí atá ar fáil."
+
+msgid "apx.cmd.subsystem.upgrade"
+msgstr "Uasghrádú gach pacáiste suiteáilte."
+
+msgid "apx.cmd.subsystems"
+msgstr "Obair leis na fochórais atá ar fáil i apx."
+
+msgid "apx.cmd.subsystems.list"
+msgstr "Liostaigh na fochórais go léir atá ar fáil."
+
+msgid "apx.cmd.subsystems.new"
+msgstr "Cruthaigh fochóras nua."
+
+msgid "apx.cmd.subsystems.reset"
+msgstr "Athshocraigh an fochóras sonraithe."
+
+msgid "apx.cmd.subsystems.rm"
+msgstr "Bain an fochóras sonraithe."
+
+msgid "apx.errors.invalidChoice"
+msgstr "Rogha neamhbhailí."
+
+msgid "apx.errors.invalidInput"
+msgstr "Ionchur neamhbhailí."
+
+msgid "apx.errors.noRoot"
+msgstr "Ná rith Apx mar fhréamh."
+
+msgid "apx.errors.unknownCommand"
+msgstr "Ordú anaithnid: %s"
+
+msgid "apx.info.aborting"
+msgstr "Tobscor de réir mar a iarrtar."
+
+msgid "apx.msg.additionalCommands"
+msgstr "Orduithe Breise"
+
+msgid "apx.msg.additionalHelpTopics"
+msgstr "Topaicí cabhrach breise"
+
+msgid "apx.msg.aliases"
+msgstr "Ailiasanna"
+
+msgid "apx.msg.availableCommands"
+msgstr "Orduithe atá ar Fáil"
+
+msgid "apx.msg.examples"
+msgstr "Samplaí"
+
+msgid "apx.msg.flags"
+msgstr "Bratacha"
+
+msgid "apx.msg.globalFlags"
+msgstr "Bratacha Domhanda"
+
+msgid "apx.msg.help"
+msgstr "Taispeáin cabhair le haghaidh apx."
+
+msgid "apx.msg.moreInfo"
+msgstr "Úsáid %s le haghaidh tuilleadh eolais faoi ordú"
+
+msgid "apx.msg.usage"
+msgstr "Úsáid"
+
+msgid "apx.msg.version"
+msgstr "Taispeáin leagan le haghaidh apx."
+
+msgid "apx.terminal.false"
+msgstr "Ní hea"
+
+msgid "apx.terminal.true"
+msgstr "tá"
+
+msgid "pkgmanagers.export.error.noName"
+msgstr "Níor sonraíodh aon ainm."
+
+msgid "pkgmanagers.export.error.noOutput"
+msgstr "Níor sonraíodh aschur."
+
+msgid "pkgmanagers.export.info.success"
+msgstr "Easpórtáil bainisteoir pacáiste '%s' go '%s'."
+
+msgid "pkgmanagers.import.error.cannotLoad"
+msgstr "Ní féidir bainisteoir an phacáiste a luchtú ó '%s'."
+
+msgid "pkgmanagers.import.error.noInput"
+msgstr "Níor sonraíodh aon ionchur."
+
+msgid "pkgmanagers.import.info.success"
+msgstr "Bainisteoir pacáiste iompórtáilte ó '%s'."
+
+msgid "pkgmanagers.labels.builtIn"
+msgstr "Tógtha i"
+
+msgid "pkgmanagers.labels.name"
+msgstr "Ainm"
+
+msgid "pkgmanagers.list.info.foundPkgManagers"
+msgstr "Aimsíodh %d bainisteoirí pacáiste"
+
+msgid "pkgmanagers.list.info.noPkgManagers"
+msgstr "Níl aon bhainisteoirí pacáiste ar fáil. Cruthaigh ceann nua le 'apx pkgmanagers nua' nó déan teagmháil le riarthóir an chórais."
+
+msgid "pkgmanagers.new.error.alreadyExists"
+msgstr "Tá bainisteoir pacáiste leis an ainm '%s' ann cheana."
+
+msgid "pkgmanagers.new.error.emptyCommand"
+msgstr "Ní féidir leis an ordú a bheith folamh."
+
+msgid "pkgmanagers.new.error.emptyName"
+msgstr "Ní féidir leis an ainm a bheith folamh."
+
+msgid "pkgmanagers.new.error.noCommand"
+msgstr "Níor sonraíodh ordú le haghaidh '%s'."
+
+msgid "pkgmanagers.new.error.noName"
+msgstr "Níor sonraíodh aon ainm."
+
+msgid "pkgmanagers.new.info.askCommand"
+msgstr "Iontráil an t- ordú do '%s':"
+
+msgid "pkgmanagers.new.info.askCommandWithDefault"
+msgstr "Cuir isteach an t-ordú le haghaidh '%s' (réamhshocrú: '%s'):"
+
+msgid "pkgmanagers.new.info.askName"
+msgstr "Roghnaigh ainm:"
+
+msgid "pkgmanagers.new.info.askOverwrite"
+msgstr "Tá bainisteoir pacáiste leis an ainm '%s' ann cheana. Forscríobh é?"
+
+msgid "pkgmanagers.new.info.askSudo"
+msgstr "An gá don bhainisteoir pacáiste sudo a rith?"
+
+msgid "pkgmanagers.new.success"
+msgstr "D' éirigh le bainisteoir pacáiste %s a chruthú."
+
+msgid "pkgmanagers.rm.error.inUse"
+msgstr "Úsáidtear bainisteoir an phacáiste i gcruacha %d:"
+
+msgid "pkgmanagers.rm.error.noName"
+msgstr "Níor sonraíodh aon ainm."
+
+msgid "pkgmanagers.rm.info.aborting"
+msgstr "Bainisteoir pacáiste '%s' a thobscor."
+
+msgid "pkgmanagers.rm.info.askConfirmation"
+msgstr "An bhfuil tú cinnte go bhfuil fonn ort '%s' a bhaint?"
+
+msgid "pkgmanagers.rm.info.success"
+msgstr "Baineadh bainisteoir pacáiste '%s'."
+
+msgid "pkgmanagers.update.error.builtIn"
+msgstr "Ní féidir bainisteoirí pacáiste ionsuite a mhodhnú."
+
+msgid "pkgmanagers.update.error.missingCommand"
+msgstr "Ordú ar iarraidh le haghaidh %s."
+
+msgid "pkgmanagers.update.error.noName"
+msgstr "Níor sonraíodh aon ainm."
+
+msgid "pkgmanagers.update.info.askNewCommand"
+msgstr "Iontráil ordú nua do '%s' (fág folamh chun '%s' a choinneáil):"
+
+msgid "pkgmanagers.update.info.success"
+msgstr "Bainisteoir pacáiste nuashonraithe '%s'."
+
+msgid "runtimeCommand.description"
+msgstr "Oibriú leis an bhfochóras sonraithe, rochtain a fháil ar an mbainisteoir pacáiste agus ar an timpeallacht."
+
+msgid "runtimeCommand.error.cantAccessPkgManager"
+msgstr "Tharla earráid agus bainisteoir an phacáiste á rochtain: %s"
+
+msgid "runtimeCommand.error.enteringContainer"
+msgstr "Tharla earráid agus an coimeádán á iontráil: %s"
+
+msgid "runtimeCommand.error.executingCommand"
+msgstr "Tharla earráid agus an t- ordú á rith: %s"
+
+msgid "runtimeCommand.error.exportingApp"
+msgstr "Tharla earráid agus an feidhmchlár á easpórtáil: %s"
+
+msgid "runtimeCommand.error.exportingBin"
+msgstr "Tharla earráid agus an dénártha á easpórtáil: %s"
+
+msgid "runtimeCommand.error.noAppNameOrBin"
+msgstr "Ní mór --app-name nó --bin a shonrú."
+
+msgid "runtimeCommand.error.noPackageSpecified"
+msgstr "Níor sonraíodh aon phacáistí."
+
+msgid "runtimeCommand.error.sameAppOrBin"
+msgstr "--app-name agus --bin ní féidir an dá rud a shonrú."
+
+msgid "runtimeCommand.error.startingContainer"
+msgstr "Tharla earráid agus an coimeádán á thosú: %s"
+
+msgid "runtimeCommand.error.stoppingContainer"
+msgstr "Tharla earráid agus an coimeádán á stopadh: %s"
+
+msgid "runtimeCommand.error.unexportingApp"
+msgstr "Tharla earráid agus an feidhmchlár á dhíchriptiú: %s"
+
+msgid "runtimeCommand.error.unexportingBin"
+msgstr "Tharla earráid agus an dénártha á dhíchriptiú: %s"
+
+msgid "runtimeCommand.info.exportedApp"
+msgstr "Easpórtáil feidhmchlár %s"
+
+msgid "runtimeCommand.info.exportedApps"
+msgstr "Easpórtáil %d feidhmchlár"
+
+msgid "runtimeCommand.info.exportedBin"
+msgstr "Easpórtáil dénártha %s"
+
+msgid "runtimeCommand.info.startedContainer"
+msgstr "Cuireadh tús leis an bhfochóras."
+
+msgid "runtimeCommand.info.startingContainer"
+msgstr "Fochóras %s á thosú…"
+
+msgid "runtimeCommand.info.stoppedContainer"
+msgstr "Stopadh an fochóras."
+
+msgid "runtimeCommand.info.stoppingContainer"
+msgstr "Fochóras %s á stopadh…"
+
+msgid "runtimeCommand.info.unexportedApp"
+msgstr "Feidhmchlár neamheaspórtáilte %s"
+
+msgid "runtimeCommand.info.unexportedApps"
+msgstr "Feidhmchláir %d gan easpórtáil"
+
+msgid "runtimeCommand.info.unexportedBin"
+msgstr "Dénártha %s gan easpórtáil"
+
+msgid "stacks.export.error.noName"
+msgstr "Níor sonraíodh aon ainm."
+
+msgid "stacks.export.error.noOutput"
+msgstr "Níor sonraíodh aschur."
+
+msgid "stacks.export.info.success"
+msgstr "Easpórtáil cruach '%s' go '%s'."
+
+msgid "stacks.import.error.cannotLoad"
+msgstr "Ní féidir cruach a luchtú ó '%s'."
+
+msgid "stacks.import.error.noInput"
+msgstr "Níor sonraíodh aon ionchur."
+
+msgid "stacks.import.info.success"
+msgstr "Cruach iompórtáilte ó '%s'."
+
+msgid "stacks.labels.builtIn"
+msgstr "Tógtha i"
+
+msgid "stacks.labels.name"
+msgstr "Ainm"
+
+msgid "stacks.list.info.aborting"
+msgstr "Deireadh a chur le cruach '%s'."
+
+msgid "stacks.list.info.foundStacks"
+msgstr "Aimsíodh %d cruacha:"
+
+msgid "stacks.list.info.noStacks"
+msgstr "Níl cruacha ar fáil. Cruthaigh ceann nua le 'apx stacks new' nó déan teagmháil le riarthóir an chórais."
+
+msgid "stacks.new.error.alreadyExists"
+msgstr "Tá cruach leis an ainm '%s' ann cheana."
+
+msgid "stacks.new.error.emptyBase"
+msgstr "Ní féidir leis an mbonn a bheith folamh."
+
+msgid "stacks.new.error.emptyName"
+msgstr "Ní féidir leis an ainm a bheith folamh."
+
+msgid "stacks.new.error.emptyPackages"
+msgstr "Ní féidir leis na pacáistí a bheith folamh."
+
+msgid "stacks.new.error.emptyPkgManager"
+msgstr "Ní féidir leis an mbainisteoir pacáiste a bheith folamh."
+
+msgid "stacks.new.error.noBase"
+msgstr "Níor sonraíodh aon bhonn."
+
+msgid "stacks.new.error.noName"
+msgstr "Níor sonraíodh aon ainm."
+
+msgid "stacks.new.error.noPackages"
+msgstr "Níor sonraíodh aon phacáistí."
+
+msgid "stacks.new.error.noPkgManager"
+msgstr "Níor sonraíodh aon bhainisteoir pacáiste."
+
+msgid "stacks.new.error.noPkgManagers"
+msgstr "Níorbh fhéidir bainisteoirí pacáiste ar bith a aimsiú. Cruthaigh ceann le 'apx pkgmanagers nua' nó déan teagmháil le riarthóir an chórais."
+
+msgid "stacks.new.error.pkgManagerDoesNotExist"
+msgstr "Níl an bainisteoir pacáiste sonraithe ann. Cruthaigh é le 'apx pkgmanagers nua' nó déan teagmháil le riarthóir an chórais."
+
+msgid "stacks.new.info.askBase"
+msgstr "Roghnaigh bonn (m.sh. 'vanillaos/pico'):"
+
+msgid "stacks.new.info.askName"
+msgstr "Roghnaigh ainm:"
+
+msgid "stacks.new.info.askPackages"
+msgstr "Clóscríobh na pacáistí is mian leat a shuiteáil sa chairn, scartha ag spás:"
+
+msgid "stacks.new.info.askPkgManager"
+msgstr "Roghnaigh bainisteoir pacáiste:"
+
+msgid "stacks.new.info.confirmPackages"
+msgstr "An bhfuil fonn ort liosta na bpacáistí reatha a dheimhniú?"
+
+msgid "stacks.new.info.noPackages"
+msgstr "Níor chuir tú aon phacáistí ar fáil le suiteáil sa chruach. An bhfuil fonn ort roinnt a chur leis anois?"
+
+msgid "stacks.new.info.selectPkgManager"
+msgstr "Roghnaigh bainisteoir pacáiste [1-%d]:"
+
+msgid "stacks.new.info.success"
+msgstr "Cruach '%s' cruthaithe."
+
+msgid "stacks.rm.error.inUse"
+msgstr "Úsáidtear an chruach i bhfochórais %d:"
+
+msgid "stacks.rm.error.noName"
+msgstr "Níor sonraíodh aon ainm."
+
+msgid "stacks.rm.info.askConfirmation"
+msgstr "An bhfuil tú cinnte go bhfuil fonn ort '%s' a bhaint?"
+
+msgid "stacks.rm.info.success"
+msgstr "Baineadh cruach '%s'."
+
+msgid "stacks.update.error.builtIn"
+msgstr "Ní féidir stoic ionsuite a mhodhnú."
+
+msgid "stacks.update.error.noBase"
+msgstr "Níor sonraíodh aon bhonn."
+
+msgid "stacks.update.error.noName"
+msgstr "Níor sonraíodh aon ainm."
+
+msgid "stacks.update.error.noPkgManager"
+msgstr "Níor sonraíodh aon bhainisteoir pacáiste."
+
+msgid "stacks.update.error.pkgManagerDoesNotExist"
+msgstr "Níl an bainisteoir pacáiste sonraithe ann. Cruthaigh é le 'apx pkgmanagers nua' nó déan teagmháil le riarthóir an chórais."
+
+msgid "stacks.update.info.askBase"
+msgstr "Clóscríobh bonn nua nó deimhnigh an ceann reatha (%s):"
+
+msgid "stacks.update.info.askPackages"
+msgstr "Clóscríobh na pacáistí is mian leat a shuiteáil sa chruach, scartha le spás:"
+
+msgid "stacks.update.info.askPkgManager"
+msgstr "Roghnaigh bainisteoir pacáiste nua nó deimhnigh an ceann reatha (%s):"
+
+msgid "stacks.update.info.confirmPackages"
+msgstr "Ar mhaith leat liosta na bpacáistí a nuashonrú?"
+
+msgid "stacks.update.info.noPackages"
+msgstr "Níor chuir tú aon phacáistí ar fáil le suiteáil sa chruach. An bhfuil fonn ort roinnt a chur leis anois?"
+
+msgid "stacks.update.info.success"
+msgstr "Cruach nuashonraithe '%s'."
+
+msgid "subsystems.labels.name"
+msgstr "Ainm"
+
+msgid "subsystems.labels.status"
+msgstr "Stádas"
+
+msgid "subsystems.list.error"
+msgstr "<nil>"
+
+msgid "subsystems.list.info.foundSubsystems"
+msgstr "Aimsíodh fochórais %d:"
+
+msgid "subsystems.list.info.noSubsystems"
+msgstr "Níl aon fhochórais ar fáil. Cruthaigh ceann nua le 'fochórais apx nua' nó déan teagmháil le riarthóir an chórais."
+
+msgid "subsystems.new.error.alreadyExists"
+msgstr "Tá fochóras leis an ainm '%s' ann cheana."
+
+msgid "subsystems.new.error.emptyName"
+msgstr "Ní féidir leis an ainm a bheith folamh."
+
+msgid "subsystems.new.error.emptyStack"
+msgstr "Ní féidir leis an gcruach a bheith folamh."
+
+msgid "subsystems.new.error.forbiddenName"
+msgstr "Tá an t-ainm '%s' toirmiscthe. Roghnaigh ainm eile le do thoil"
+
+msgid "subsystems.new.error.noName"
+msgstr "Níor sonraíodh aon ainm."
+
+msgid "subsystems.new.error.noStack"
+msgstr "Níor sonraíodh aon chruach."
+
+msgid "subsystems.new.error.noStacks"
+msgstr "Tá stack ag teastáil chun fochóras a chruthú. Cruthaigh ceann nua le 'apx stacks new' nó déan teagmháil le riarthóir an chórais."
+
+msgid "subsystems.new.error.stackDoesNotExist"
+msgstr "Níl an chairn shonraithe ann. Cruthaigh é le 'cruacha apx nua' nó déan teagmháil le riarthóir an chórais."
+
+msgid "subsystems.new.info.askName"
+msgstr "Roghnaigh ainm:"
+
+msgid "subsystems.new.info.availableStacks"
+msgstr "Cruacha atá ar fáil:"
+
+msgid "subsystems.new.info.creatingSubsystem"
+msgstr "Fochóras '%s' á chruthú le cruach '%s'…"
+
+msgid "subsystems.new.info.selectStack"
+msgstr "Roghnaigh cruach [1-%d]:"
+
+msgid "subsystems.new.info.success"
+msgstr "Cruthaíodh fochóras '%s'."
+
+msgid "subsystems.reset.error.noName"
+msgstr "Níor sonraíodh aon ainm."
+
+msgid "subsystems.reset.info.askConfirmation"
+msgstr "An bhfuil tú cinnte go bhfuil fonn ort '%s' a athshocrú?"
+
+msgid "subsystems.reset.info.success"
+msgstr "Athshocraíodh an fochóras '%s'."
+
+msgid "subsystems.rm.error.noName"
+msgstr "Níor sonraíodh aon ainm."
+
+msgid "subsystems.rm.info.askConfirmation"
+msgstr "An bhfuil tú cinnte go bhfuil fonn ort '%s' a bhaint?"
+
+msgid "subsystems.rm.info.success"
+msgstr "Baineadh fochóras '%s'."
+

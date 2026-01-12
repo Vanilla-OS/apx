@@ -1,0 +1,694 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ca\n"
+
+msgid "apx.cmd.pkgmanagers"
+msgstr "Treballa amb els gestors de paquets disponibles a apx."
+
+msgid "apx.cmd.pkgmanagers.export"
+msgstr "Export the specified package manager."
+
+msgid "apx.cmd.pkgmanagers.export.options.name"
+msgstr "The name of the package manager to export."
+
+msgid "apx.cmd.pkgmanagers.export.options.output"
+msgstr "The path to export the package manager to."
+
+msgid "apx.cmd.pkgmanagers.import"
+msgstr "Import the specified package manager."
+
+msgid "apx.cmd.pkgmanagers.import.options.input"
+msgstr "The path to import the package manager from."
+
+msgid "apx.cmd.pkgmanagers.list"
+msgstr "Llista dels gestors de paquets disponibles."
+
+msgid "apx.cmd.pkgmanagers.list.options.json"
+msgstr "Sortida en format JSON."
+
+msgid "apx.cmd.pkgmanagers.new"
+msgstr "Crear un nou gestor de paquets."
+
+msgid "apx.cmd.pkgmanagers.new.options.autoremove"
+msgstr "L'ordre per executar la neteja automàtica de paquets."
+
+msgid "apx.cmd.pkgmanagers.new.options.clean"
+msgstr "L'ordre per executar la neteja de la memòria cau del gestor de paquets."
+
+msgid "apx.cmd.pkgmanagers.new.options.install"
+msgstr "L'ordre per executar l'instal·lació de paquets."
+
+msgid "apx.cmd.pkgmanagers.new.options.list"
+msgstr "L'ordre per executar el llistat de paquets instal·lats."
+
+msgid "apx.cmd.pkgmanagers.new.options.name"
+msgstr "El nom del gestor de paquets."
+
+msgid "apx.cmd.pkgmanagers.new.options.needSudo"
+msgstr "Si el gestor de paquets necesita sudo per executar-se."
+
+msgid "apx.cmd.pkgmanagers.new.options.noPrompt"
+msgstr "Assumir sí a totes les preguntes."
+
+msgid "apx.cmd.pkgmanagers.new.options.purge"
+msgstr "L'ordre per executar la purga de paquets."
+
+msgid "apx.cmd.pkgmanagers.new.options.remove"
+msgstr "L'ordre per executar la desinstal·lació de paquets."
+
+msgid "apx.cmd.pkgmanagers.new.options.search"
+msgstr "L'ordre per executar la cerca de paquets."
+
+msgid "apx.cmd.pkgmanagers.new.options.show"
+msgstr "L'ordre per mostrar linformacio dels paquets."
+
+msgid "apx.cmd.pkgmanagers.new.options.update"
+msgstr "L'ordre per actualitzar la llista de paquets disponibles."
+
+msgid "apx.cmd.pkgmanagers.new.options.upgrade"
+msgstr "L'ordre per executar l'actualització de paquets."
+
+msgid "apx.cmd.pkgmanagers.rm"
+msgstr "Esborrar el gestor de paquets especificat."
+
+msgid "apx.cmd.pkgmanagers.rm.options.force"
+msgstr "Forçar l'eliminació del gestor de paquets."
+
+msgid "apx.cmd.pkgmanagers.rm.options.name"
+msgstr "Nom del gestor de paquets que s'ha d'esborrar."
+
+msgid "apx.cmd.pkgmanagers.show"
+msgstr "Mostrar informació del gestor de paquets especificat."
+
+msgid "apx.cmd.pkgmanagers.update"
+msgstr "Update the specified package manager."
+
+msgid "apx.cmd.stacks"
+msgstr "Treballa amb les piles que es troben disponibles a apx."
+
+msgid "apx.cmd.stacks.export"
+msgstr "Exportar la pila especificada."
+
+msgid "apx.cmd.stacks.export.options.name"
+msgstr "Nom de la pila que s'ha d'exportar."
+
+msgid "apx.cmd.stacks.export.options.output"
+msgstr "La ruta on exportar la pila."
+
+msgid "apx.cmd.stacks.import"
+msgstr "Importar la pila especificada."
+
+msgid "apx.cmd.stacks.import.options.input"
+msgstr "La ruta des de on importar la pila."
+
+msgid "apx.cmd.stacks.list"
+msgstr "Llista de totes les piles disponibles."
+
+msgid "apx.cmd.stacks.list.options.json"
+msgstr "Sortida en format JSON."
+
+msgid "apx.cmd.stacks.new"
+msgstr "Crear una pila nova."
+
+msgid "apx.cmd.stacks.new.options.base"
+msgstr "El subsistema base a fer servir."
+
+msgid "apx.cmd.stacks.new.options.name"
+msgstr "El nom de la pila."
+
+msgid "apx.cmd.stacks.new.options.noPrompt"
+msgstr "Assumir sí a totes les preguntes."
+
+msgid "apx.cmd.stacks.new.options.packages"
+msgstr "Els paquets a instal·lar."
+
+msgid "apx.cmd.stacks.new.options.pkgManager"
+msgstr "El gestor de paquets a fer servir."
+
+msgid "apx.cmd.stacks.rm"
+msgstr "Esborrar la pila especificada."
+
+msgid "apx.cmd.stacks.rm.options.force"
+msgstr "Força l'eliminació de la pila"
+
+msgid "apx.cmd.stacks.rm.options.name"
+msgstr "Nom de la pila que s'ha d'eliminar."
+
+msgid "apx.cmd.stacks.show"
+msgstr "Mostra informació sobre la pila especificada."
+
+msgid "apx.cmd.stacks.update"
+msgstr "Actualitzar la pila especificada."
+
+msgid "apx.cmd.stacks.update.options.base"
+msgstr "El subssitema base a fer servir."
+
+msgid "apx.cmd.stacks.update.options.name"
+msgstr "El nom de la pila."
+
+msgid "apx.cmd.stacks.update.options.noPrompt"
+msgstr "Assumir sí a totes les preguntes."
+
+msgid "apx.cmd.stacks.update.options.packages"
+msgstr "Els paquets a instal·lar."
+
+msgid "apx.cmd.stacks.update.options.pkgManager"
+msgstr "El gestor de paquets a fer servir."
+
+msgid "apx.cmd.subsystem.autoremove"
+msgstr "Esborra paquets que ja no es necessiten."
+
+msgid "apx.cmd.subsystem.clean"
+msgstr "Neteja la memòria cau del gestor de paquets."
+
+msgid "apx.cmd.subsystem.enter"
+msgstr "Enter the subsystem's environment."
+
+msgid "apx.cmd.subsystem.export"
+msgstr "Export an application or binary from the subsystem."
+
+msgid "apx.cmd.subsystem.export.options.appName"
+msgstr "The name of the application to export."
+
+msgid "apx.cmd.subsystem.export.options.bin"
+msgstr "The name of the binary to export."
+
+msgid "apx.cmd.subsystem.export.options.binOutput"
+msgstr "Path of the binary output (default: ~/.local/bin/)."
+
+msgid "apx.cmd.subsystem.install"
+msgstr "Instala el paquet especificat."
+
+msgid "apx.cmd.subsystem.install.options.noExport"
+msgstr "No exportis una entrada al escriptori."
+
+msgid "apx.cmd.subsystem.list"
+msgstr "Llista tots els paquets instalats."
+
+msgid "apx.cmd.subsystem.list.options.json"
+msgstr "Sortida en format JSON."
+
+msgid "apx.cmd.subsystem.new.options.home"
+msgstr "The custom home directory of the subsystem."
+
+msgid "apx.cmd.subsystem.new.options.init"
+msgstr "Use systemd inside the subsystem."
+
+msgid "apx.cmd.subsystem.new.options.name"
+msgstr "El nom del subsitema."
+
+msgid "apx.cmd.subsystem.new.options.stack"
+msgstr "La pila a fer servir."
+
+msgid "apx.cmd.subsystem.purge"
+msgstr "Purge the specified packages."
+
+msgid "apx.cmd.subsystem.remove"
+msgstr "Remove the specified packages."
+
+msgid "apx.cmd.subsystem.reset.options.force"
+msgstr "Forçar el restabliment del subsitema."
+
+msgid "apx.cmd.subsystem.reset.options.name"
+msgstr "Nom del subsitema a restablir."
+
+msgid "apx.cmd.subsystem.rm.options.force"
+msgstr "Forçar l'eliminació del subsitema."
+
+msgid "apx.cmd.subsystem.rm.options.name"
+msgstr "Nom del subsitema que vols eliminar."
+
+msgid "apx.cmd.subsystem.run"
+msgstr "Run command inside subsystem."
+
+msgid "apx.cmd.subsystem.search"
+msgstr "Search for packages matching the specified query."
+
+msgid "apx.cmd.subsystem.show"
+msgstr "Show information about the specified package."
+
+msgid "apx.cmd.subsystem.start"
+msgstr "Start the subsystem."
+
+msgid "apx.cmd.subsystem.stop"
+msgstr "Stop the subsystem."
+
+msgid "apx.cmd.subsystem.unexport"
+msgstr "Unexport an application or binary from the subsystem."
+
+msgid "apx.cmd.subsystem.unexport.options.appName"
+msgstr "The name of the application to unexport."
+
+msgid "apx.cmd.subsystem.unexport.options.bin"
+msgstr "Nom del binari del que desfer l'exportació."
+
+msgid "apx.cmd.subsystem.unexport.options.binOutput"
+msgstr "Camí de sortida del binari (per defecte: ~/.local/bin/)."
+
+msgid "apx.cmd.subsystem.update"
+msgstr "Update the list of available packages."
+
+msgid "apx.cmd.subsystem.upgrade"
+msgstr "Upgrade all installed packages."
+
+msgid "apx.cmd.subsystems"
+msgstr "Treballa amb els subsistemes disponibles a apx."
+
+msgid "apx.cmd.subsystems.list"
+msgstr "Llista de subsistemes disponibles."
+
+msgid "apx.cmd.subsystems.new"
+msgstr "Crear un subsistema nou."
+
+msgid "apx.cmd.subsystems.reset"
+msgstr "Restableix el subsitema especificat."
+
+msgid "apx.cmd.subsystems.rm"
+msgstr "Eliminar la pila especificada."
+
+msgid "apx.errors.invalidChoice"
+msgstr "Opció invàlida."
+
+msgid "apx.errors.invalidInput"
+msgstr "Entrada invàlida."
+
+msgid "apx.errors.noRoot"
+msgstr "No executis Apx com administrador."
+
+msgid "apx.errors.unknownCommand"
+msgstr "Ordre desconeguda: %s"
+
+msgid "apx.info.aborting"
+msgstr "Avortant com s'ha demanat."
+
+msgid "apx.msg.additionalCommands"
+msgstr "Additional Commands"
+
+msgid "apx.msg.additionalHelpTopics"
+msgstr "Additional help topics"
+
+msgid "apx.msg.aliases"
+msgstr "Aliases"
+
+msgid "apx.msg.availableCommands"
+msgstr "Available Commands"
+
+msgid "apx.msg.examples"
+msgstr "Examples"
+
+msgid "apx.msg.flags"
+msgstr "Flags"
+
+msgid "apx.msg.globalFlags"
+msgstr "Global Flags"
+
+msgid "apx.msg.help"
+msgstr "Apx és un gestor de paquets amb suport per múltiples fonts, permeten l'instal·lació de paquets en subsistemes."
+
+msgid "apx.msg.moreInfo"
+msgstr "Use %s for more information about a command"
+
+msgid "apx.msg.usage"
+msgstr "Usage"
+
+msgid "apx.msg.version"
+msgstr "Show version for apx."
+
+msgid "apx.terminal.false"
+msgstr "no"
+
+msgid "apx.terminal.true"
+msgstr "sí"
+
+msgid "pkgmanagers.export.error.noName"
+msgstr "No name specified."
+
+msgid "pkgmanagers.export.error.noOutput"
+msgstr "No output specified."
+
+msgid "pkgmanagers.export.info.success"
+msgstr "Exported package manager '%s' to '%s'."
+
+msgid "pkgmanagers.import.error.cannotLoad"
+msgstr "Cannot load package manager from '%s'."
+
+msgid "pkgmanagers.import.error.noInput"
+msgstr "No input specified."
+
+msgid "pkgmanagers.import.info.success"
+msgstr "Imported package manager from '%s'."
+
+msgid "pkgmanagers.labels.builtIn"
+msgstr "Incorporat"
+
+msgid "pkgmanagers.labels.name"
+msgstr "Nom"
+
+msgid "pkgmanagers.list.info.foundPkgManagers"
+msgstr "Trobat(s) %d gestor(s) de paquet(s)"
+
+msgid "pkgmanagers.list.info.noPkgManagers"
+msgstr "No es troba cap gestor de paquets. Crea un de nou amb 'apx pkgmanagers new' o posat en contacta amb l'administrador del sistema."
+
+msgid "pkgmanagers.new.error.alreadyExists"
+msgstr "Ja existeix un gestor de paquets anomenat '%s'."
+
+msgid "pkgmanagers.new.error.emptyCommand"
+msgstr "L'ordre no pot estar buida."
+
+msgid "pkgmanagers.new.error.emptyName"
+msgstr "El nom no pot estar buit."
+
+msgid "pkgmanagers.new.error.noCommand"
+msgstr "No s'ha especificat cap ordre per '%s'."
+
+msgid "pkgmanagers.new.error.noName"
+msgstr "No s'ha especificat cap nom."
+
+msgid "pkgmanagers.new.info.askCommand"
+msgstr "Introdueix l'ordre per '%s':"
+
+msgid "pkgmanagers.new.info.askCommandWithDefault"
+msgstr "Enter the command for '%s' (default: '%s'):"
+
+msgid "pkgmanagers.new.info.askName"
+msgstr "Escull un nom:"
+
+msgid "pkgmanagers.new.info.askOverwrite"
+msgstr "Ja existeix un gestor de paquets anomenat '%s'. Vols sobre escriure'l?"
+
+msgid "pkgmanagers.new.info.askSudo"
+msgstr "És necessari ser súper usuari per poder executar el gestor de paquets?"
+
+msgid "pkgmanagers.new.success"
+msgstr "Package manager %s created successfully."
+
+msgid "pkgmanagers.rm.error.inUse"
+msgstr "El gestor de paquets es fa servir en %d piles:"
+
+msgid "pkgmanagers.rm.error.noName"
+msgstr "No s'ha especificat cap nom."
+
+msgid "pkgmanagers.rm.info.aborting"
+msgstr "Parant l'eliminació del gestor de paquets '%s'."
+
+msgid "pkgmanagers.rm.info.askConfirmation"
+msgstr "Segur que vols eliminar '%s'? [y/N]"
+
+msgid "pkgmanagers.rm.info.success"
+msgstr "Eliminat el gestor de paquets '%s'."
+
+msgid "pkgmanagers.update.error.builtIn"
+msgstr "Built-in package managers cannot be modified."
+
+msgid "pkgmanagers.update.error.missingCommand"
+msgstr "Missing command for %s."
+
+msgid "pkgmanagers.update.error.noName"
+msgstr "No name specified."
+
+msgid "pkgmanagers.update.info.askNewCommand"
+msgstr "Enter new command for '%s' (leave empty to keep '%s'):"
+
+msgid "pkgmanagers.update.info.success"
+msgstr "Updated package manager '%s'."
+
+msgid "runtimeCommand.description"
+msgstr "Treballa amb el subsistema especificat, accedint al gestor de paquets i a l'entorn."
+
+msgid "runtimeCommand.error.cantAccessPkgManager"
+msgstr "S'ha trobat un error mentre s'entrava al gestor de paquets: %s"
+
+msgid "runtimeCommand.error.enteringContainer"
+msgstr "S'ha produït un error entrant al contenidor: %s"
+
+msgid "runtimeCommand.error.executingCommand"
+msgstr "S'ha trobat un error mentre s'executava l'ordre: %s"
+
+msgid "runtimeCommand.error.exportingApp"
+msgstr "S'ha trobat un error mentre s'exportava l'aplicació: %s"
+
+msgid "runtimeCommand.error.exportingBin"
+msgstr "S'ha trobat un error mentre s'exportava el binari: %s"
+
+msgid "runtimeCommand.error.noAppNameOrBin"
+msgstr "S'ha de declarar --nom-aplicació o --binari."
+
+msgid "runtimeCommand.error.noPackageSpecified"
+msgstr "No s'ha especificat cap paquet."
+
+msgid "runtimeCommand.error.sameAppOrBin"
+msgstr "No es poden declarar --nom-aplicació o --binari a la vegada."
+
+msgid "runtimeCommand.error.startingContainer"
+msgstr "An error occurred while starting the container: %s"
+
+msgid "runtimeCommand.error.stoppingContainer"
+msgstr "An error occurred while stopping the container: %s"
+
+msgid "runtimeCommand.error.unexportingApp"
+msgstr "S'ha trobat un error mentre es desfeia l'exportació de l'aplicació: %s"
+
+msgid "runtimeCommand.error.unexportingBin"
+msgstr "S'ha produït un error mentre es desfeia l'exportació del binari: %s"
+
+msgid "runtimeCommand.info.exportedApp"
+msgstr "Aplicació exportada %s"
+
+msgid "runtimeCommand.info.exportedApps"
+msgstr "Aplicacions exportades %d"
+
+msgid "runtimeCommand.info.exportedBin"
+msgstr "Binari exportat %s"
+
+msgid "runtimeCommand.info.startedContainer"
+msgstr "Started container."
+
+msgid "runtimeCommand.info.startingContainer"
+msgstr "Starting container…"
+
+msgid "runtimeCommand.info.stoppedContainer"
+msgstr "Stopped container."
+
+msgid "runtimeCommand.info.stoppingContainer"
+msgstr "Stopping container…"
+
+msgid "runtimeCommand.info.unexportedApp"
+msgstr "Aplicacions amb exportacions desfetes %s"
+
+msgid "runtimeCommand.info.unexportedApps"
+msgstr "Aplicacions amb exportacions desfetes %d"
+
+msgid "runtimeCommand.info.unexportedBin"
+msgstr "Binari amb exportació desfeta %s"
+
+msgid "stacks.export.error.noName"
+msgstr "No s'ha especificat cap nom."
+
+msgid "stacks.export.error.noOutput"
+msgstr "No s'ha especificat cap sortida."
+
+msgid "stacks.export.info.success"
+msgstr "Pila exportada de '%s' a '%s'."
+
+msgid "stacks.import.error.cannotLoad"
+msgstr "No es pot carregar la pila des de '%s'."
+
+msgid "stacks.import.error.noInput"
+msgstr "No s'ha especificat res."
+
+msgid "stacks.import.info.success"
+msgstr "Pila importada des de '%s'."
+
+msgid "stacks.labels.builtIn"
+msgstr "Integrat"
+
+msgid "stacks.labels.name"
+msgstr "Nom"
+
+msgid "stacks.list.info.aborting"
+msgstr "S'està avortant l'eliminació de la pila '%s'."
+
+msgid "stacks.list.info.foundStacks"
+msgstr "S'han trobat %d piles:"
+
+msgid "stacks.list.info.noStacks"
+msgstr "No hi han piles disponibles. Crea una de nova amb 'apx stacks new' o posat en contacte amb l'administrador del sistema."
+
+msgid "stacks.new.error.alreadyExists"
+msgstr "Ja existeix una pila amb el nom '%s'."
+
+msgid "stacks.new.error.emptyBase"
+msgstr "La base no pot estar buida."
+
+msgid "stacks.new.error.emptyName"
+msgstr "El nom no pot estar buit."
+
+msgid "stacks.new.error.emptyPackages"
+msgstr "Els paquets no poden estar buits."
+
+msgid "stacks.new.error.emptyPkgManager"
+msgstr "El gestor de paquets no pot estar buit."
+
+msgid "stacks.new.error.noBase"
+msgstr "Cap base especificada."
+
+msgid "stacks.new.error.noName"
+msgstr "No s'ha especificat cap nom."
+
+msgid "stacks.new.error.noPackages"
+msgstr "Cap paquet especificat."
+
+msgid "stacks.new.error.noPkgManager"
+msgstr "No s'ha especificat cap gestor de paquets."
+
+msgid "stacks.new.error.noPkgManagers"
+msgstr "Could not find any package managers. Create one with 'apx pkgmanagers new' or contact the system administrator."
+
+msgid "stacks.new.error.pkgManagerDoesNotExist"
+msgstr "El gestor de paquets especificat no existeix. Creal amb 'apx plgmamangers new' o posat en contacte amb l'administrador del sistema."
+
+msgid "stacks.new.info.askBase"
+msgstr "Tria una base (per exemple 'vanillaos/pico')"
+
+msgid "stacks.new.info.askName"
+msgstr "Tria un nom:"
+
+msgid "stacks.new.info.askPackages"
+msgstr "Sisplau escriu els paquets que vols instal·lar a la pila, separats per un espai:"
+
+msgid "stacks.new.info.askPkgManager"
+msgstr "Tria un gestor de paquets:"
+
+msgid "stacks.new.info.confirmPackages"
+msgstr "Vols confirmar la llista de paquets actual?"
+
+msgid "stacks.new.info.noPackages"
+msgstr "No has triat cap paquet per instal·lar a la pila. Vols triar-ne ara?"
+
+msgid "stacks.new.info.selectPkgManager"
+msgstr "Selecciona un gestor de paquets [1-%d]:"
+
+msgid "stacks.new.info.success"
+msgstr "Pila Creada '%s'."
+
+msgid "stacks.rm.error.inUse"
+msgstr "The stack is used in %d subsystems:"
+
+msgid "stacks.rm.error.noName"
+msgstr "No s'ha especificat cap nom."
+
+msgid "stacks.rm.info.askConfirmation"
+msgstr "Segur que vols eliminar '%s'? [s/N]"
+
+msgid "stacks.rm.info.success"
+msgstr "Pila '%s' eliminada."
+
+msgid "stacks.update.error.builtIn"
+msgstr "Built-in stacks cannot be modified."
+
+msgid "stacks.update.error.noBase"
+msgstr "Cap base especificada."
+
+msgid "stacks.update.error.noName"
+msgstr "Cap nom especificat."
+
+msgid "stacks.update.error.noPkgManager"
+msgstr "No s'ha especificat cap gestor de paquets."
+
+msgid "stacks.update.error.pkgManagerDoesNotExist"
+msgstr "El gestor de paquets especificat no existeix. El pots crear amb 'apx pkgmanagers new' o contactar amb l'administrador del sistema."
+
+msgid "stacks.update.info.askBase"
+msgstr "Escriu una base nova o confirma l'actual (%s):"
+
+msgid "stacks.update.info.askPackages"
+msgstr "Escriu els paquets que vols instal·lar en la pila, separats per un espai, o confirma els actuals (%s):"
+
+msgid "stacks.update.info.askPkgManager"
+msgstr "Escull un nou gestor de paquets o confirma l'actual (%s):"
+
+msgid "stacks.update.info.confirmPackages"
+msgstr "Do you want to confirm the current packages list?"
+
+msgid "stacks.update.info.noPackages"
+msgstr "You have not provided any packages to install in the stack. Do you want to add some now?"
+
+msgid "stacks.update.info.success"
+msgstr "Pila actualitzada '%s'."
+
+msgid "subsystems.labels.name"
+msgstr "Nom"
+
+msgid "subsystems.labels.status"
+msgstr "Estat"
+
+msgid "subsystems.list.error"
+msgstr "<nil>"
+
+msgid "subsystems.list.info.foundSubsystems"
+msgstr "Trobats %d subsistemes:"
+
+msgid "subsystems.list.info.noSubsystems"
+msgstr "No hi han subsistemes disponibles. Crea un de nou amb 'apx subsystem new' o contacta amb l'administrador del sistema."
+
+msgid "subsystems.new.error.alreadyExists"
+msgstr "Ja existeix un subsistema amb el nom '%s'."
+
+msgid "subsystems.new.error.emptyName"
+msgstr "El nom no pot estar buit."
+
+msgid "subsystems.new.error.emptyStack"
+msgstr "La pila no pot estar buida."
+
+msgid "subsystems.new.error.forbiddenName"
+msgstr "The name '%s' is forbidden. Please choose a different name"
+
+msgid "subsystems.new.error.noName"
+msgstr "No s'ha especificat cap nom."
+
+msgid "subsystems.new.error.noStack"
+msgstr "No s'ha especificat cap pila."
+
+msgid "subsystems.new.error.noStacks"
+msgstr "Es necessita una pila per crear un subsistema. Crea una de nova amb 'apx stacks new' o contacta amb l'administrador del sistema."
+
+msgid "subsystems.new.error.stackDoesNotExist"
+msgstr "La pila especificada no existeix. Crea una de nova amb 'apx stacks new' o contacta amb l'administrador del sistema."
+
+msgid "subsystems.new.info.askName"
+msgstr "Escull un nom:"
+
+msgid "subsystems.new.info.availableStacks"
+msgstr "Available stacks:"
+
+msgid "subsystems.new.info.creatingSubsystem"
+msgstr "Creant subsitema '%s' a la pila '%s'…"
+
+msgid "subsystems.new.info.selectStack"
+msgstr "Selecciona una pila [1-%d]:"
+
+msgid "subsystems.new.info.success"
+msgstr "Subsistema '%s' creat."
+
+msgid "subsystems.reset.error.noName"
+msgstr "Cap nom especificat."
+
+msgid "subsystems.reset.info.askConfirmation"
+msgstr "Segur que vols restablir '%s'? [y/N]"
+
+msgid "subsystems.reset.info.success"
+msgstr "El subsitema '%s' s'ha restablert."
+
+msgid "subsystems.rm.error.noName"
+msgstr "No s'ha especificat el nom."
+
+msgid "subsystems.rm.info.askConfirmation"
+msgstr "Segur que vols eliminar '%s'? [y/N]"
+
+msgid "subsystems.rm.info.success"
+msgstr "Subsitema '%s' eliminat."
+

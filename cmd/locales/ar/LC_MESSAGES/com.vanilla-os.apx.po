@@ -1,0 +1,694 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ar\n"
+
+msgid "apx.cmd.pkgmanagers"
+msgstr "يتعامل مع مديري الحزم المتاحة في apx."
+
+msgid "apx.cmd.pkgmanagers.export"
+msgstr "تصدير مدير الحزم المحدد."
+
+msgid "apx.cmd.pkgmanagers.export.options.name"
+msgstr "اسم مدير الحزم المراد تصديره."
+
+msgid "apx.cmd.pkgmanagers.export.options.output"
+msgstr "المسار المراد لتصدير مدير الحزم إليه"
+
+msgid "apx.cmd.pkgmanagers.import"
+msgstr "قم باستيراد مدير الحزم المحدد."
+
+msgid "apx.cmd.pkgmanagers.import.options.input"
+msgstr "المسار لاستيراد مدير الحزم منه."
+
+msgid "apx.cmd.pkgmanagers.list"
+msgstr "عرض جميع مديري الحزم المتاحين."
+
+msgid "apx.cmd.pkgmanagers.list.options.json"
+msgstr "المخرجات في صورة JSON."
+
+msgid "apx.cmd.pkgmanagers.new"
+msgstr "إنشاء مدير حزم جديد."
+
+msgid "apx.cmd.pkgmanagers.new.options.autoremove"
+msgstr "الامر الخاص بالحذف التلقائي للحزم."
+
+msgid "apx.cmd.pkgmanagers.new.options.clean"
+msgstr "الامر الخاص بتنظيف ذاكرة التخزين المؤقت لمدير الحزم."
+
+msgid "apx.cmd.pkgmanagers.new.options.install"
+msgstr "الامر الخاص بتنزيل الحزم."
+
+msgid "apx.cmd.pkgmanagers.new.options.list"
+msgstr "الامر الخاص بعرض الحزم المثبتة."
+
+msgid "apx.cmd.pkgmanagers.new.options.name"
+msgstr "اسم مدير الحزم."
+
+msgid "apx.cmd.pkgmanagers.new.options.needSudo"
+msgstr "ما اذا كان مدير الحزم يحتاج sudo ليعمل أم لا"
+
+msgid "apx.cmd.pkgmanagers.new.options.noPrompt"
+msgstr "افرض الإجابة \"نعم\" لكل الاختيارات."
+
+msgid "apx.cmd.pkgmanagers.new.options.purge"
+msgstr "الامر الخاص بتطهير (purge) الحزم."
+
+msgid "apx.cmd.pkgmanagers.new.options.remove"
+msgstr "الامر الخاص بحذف الحزم."
+
+msgid "apx.cmd.pkgmanagers.new.options.search"
+msgstr "الامر الخاص بالبحث عن الحزم."
+
+msgid "apx.cmd.pkgmanagers.new.options.show"
+msgstr "الامر الخاص بعرض معلومات عن الحزم."
+
+msgid "apx.cmd.pkgmanagers.new.options.update"
+msgstr "الامر الخاص بتحديث قائمة الحزم المتاحة."
+
+msgid "apx.cmd.pkgmanagers.new.options.upgrade"
+msgstr "الامر الخاص بتطوير الحزم."
+
+msgid "apx.cmd.pkgmanagers.rm"
+msgstr "حذف مدير الحزم المحدد."
+
+msgid "apx.cmd.pkgmanagers.rm.options.force"
+msgstr "إجبار إزالة مدير الحزم."
+
+msgid "apx.cmd.pkgmanagers.rm.options.name"
+msgstr "اسم مدير الحزم المراد حذفه."
+
+msgid "apx.cmd.pkgmanagers.show"
+msgstr "عرض معلومات عن مدير الحزم المحدد."
+
+msgid "apx.cmd.pkgmanagers.update"
+msgstr "قم بتحديث مدير الحزم المحدد."
+
+msgid "apx.cmd.stacks"
+msgstr "تستخدم التشكيلات المتاحة في apx."
+
+msgid "apx.cmd.stacks.export"
+msgstr "تصدير التشكيلة المحددة."
+
+msgid "apx.cmd.stacks.export.options.name"
+msgstr "اسم التشكيلة المراد تصديرها."
+
+msgid "apx.cmd.stacks.export.options.output"
+msgstr "المسار المراد تصدير التشكيلة إليه."
+
+msgid "apx.cmd.stacks.import"
+msgstr "استيراد التشكيلة المحددة."
+
+msgid "apx.cmd.stacks.import.options.input"
+msgstr "المسار المراد استيراد التشكيلة منه."
+
+msgid "apx.cmd.stacks.list"
+msgstr "عرض التشكيلات المتاحة."
+
+msgid "apx.cmd.stacks.list.options.json"
+msgstr "المخرجات في صورة JSON."
+
+msgid "apx.cmd.stacks.new"
+msgstr "إنشاء تشكيلة جديدة."
+
+msgid "apx.cmd.stacks.new.options.base"
+msgstr "صورة التوزيعة الأساسية المراد استخدامها."
+
+msgid "apx.cmd.stacks.new.options.name"
+msgstr "اسم التشكيلة."
+
+msgid "apx.cmd.stacks.new.options.noPrompt"
+msgstr "افرض الإجابة \"نعم\" لكل الاختيارات."
+
+msgid "apx.cmd.stacks.new.options.packages"
+msgstr "الحزم المراد تثبيتها."
+
+msgid "apx.cmd.stacks.new.options.pkgManager"
+msgstr "مدير الحزم المراد استخدامه."
+
+msgid "apx.cmd.stacks.rm"
+msgstr "حذف التشكيلة المحددة."
+
+msgid "apx.cmd.stacks.rm.options.force"
+msgstr "الحذف الإجباري للتشكيلة."
+
+msgid "apx.cmd.stacks.rm.options.name"
+msgstr "اسم التشكيلة المراد حذفها."
+
+msgid "apx.cmd.stacks.show"
+msgstr "عرض معلومات عن التشكيلة المحددة."
+
+msgid "apx.cmd.stacks.update"
+msgstr "تحديث التشكيلة المحددة."
+
+msgid "apx.cmd.stacks.update.options.base"
+msgstr "النظام الفرعي المراد استخدامه كأساس."
+
+msgid "apx.cmd.stacks.update.options.name"
+msgstr "اسم التشكيلة."
+
+msgid "apx.cmd.stacks.update.options.noPrompt"
+msgstr "افرض الإجابة \"نعم\" لكل الاختيارات."
+
+msgid "apx.cmd.stacks.update.options.packages"
+msgstr "الحزم المراد تثبيتها."
+
+msgid "apx.cmd.stacks.update.options.pkgManager"
+msgstr "مدير الحزم المراد استخدامه."
+
+msgid "apx.cmd.subsystem.autoremove"
+msgstr "حذف الحزم التي لم تعد مطلوبة."
+
+msgid "apx.cmd.subsystem.clean"
+msgstr "تنظيف ذاكرة التخزين المؤقت لمدير الحزم."
+
+msgid "apx.cmd.subsystem.enter"
+msgstr "دخول بيئة النظام الفرعي."
+
+msgid "apx.cmd.subsystem.export"
+msgstr "تصدير تطبيق أو برنامج من النظام الفرعي."
+
+msgid "apx.cmd.subsystem.export.options.appName"
+msgstr "اسم التطبيق المراد تصدير."
+
+msgid "apx.cmd.subsystem.export.options.bin"
+msgstr "اسم البرنامج المراد تصديره."
+
+msgid "apx.cmd.subsystem.export.options.binOutput"
+msgstr "مسار البرامج\n(الافتراضي: ~/.local/bin)"
+
+msgid "apx.cmd.subsystem.install"
+msgstr "تثبيت الحزمة المحددة."
+
+msgid "apx.cmd.subsystem.install.options.noExport"
+msgstr "لا تقم تصدير ملف لسطح المكتب."
+
+msgid "apx.cmd.subsystem.list"
+msgstr "عرض جميع الحزم المثبتة."
+
+msgid "apx.cmd.subsystem.list.options.json"
+msgstr "المخرجات في صورة JSON."
+
+msgid "apx.cmd.subsystem.new.options.home"
+msgstr "الدليل الرئيسي المخصص للنظام الفرعي."
+
+msgid "apx.cmd.subsystem.new.options.init"
+msgstr "استخدم systemd داخل النظام الفرعي."
+
+msgid "apx.cmd.subsystem.new.options.name"
+msgstr "اسم النظام الفرعي."
+
+msgid "apx.cmd.subsystem.new.options.stack"
+msgstr "التشكيلة المراد استخدامها."
+
+msgid "apx.cmd.subsystem.purge"
+msgstr "تطهير (purge) الحزم المحددة."
+
+msgid "apx.cmd.subsystem.remove"
+msgstr "حذف الحزم المحددة."
+
+msgid "apx.cmd.subsystem.reset.options.force"
+msgstr "إعادة انشاء إجبارية للنظام الفرعي."
+
+msgid "apx.cmd.subsystem.reset.options.name"
+msgstr "اسم النظام الفرعي المراد إعادة انشائه."
+
+msgid "apx.cmd.subsystem.rm.options.force"
+msgstr "الحذف الإجباري للنظام الفرعي."
+
+msgid "apx.cmd.subsystem.rm.options.name"
+msgstr "اسم النظام الفرعي المراد حذفه."
+
+msgid "apx.cmd.subsystem.run"
+msgstr "تشغيل الأمر داخل النظام الفرعي."
+
+msgid "apx.cmd.subsystem.search"
+msgstr "البحث عن حزم تطابق العبارة (الاستعلام) المحددة."
+
+msgid "apx.cmd.subsystem.show"
+msgstr "عرض معلومات عن الحزمة المحددة."
+
+msgid "apx.cmd.subsystem.start"
+msgstr "بدء تشغيل النظام الفرعي."
+
+msgid "apx.cmd.subsystem.stop"
+msgstr "إيقاف النظام الفرعي."
+
+msgid "apx.cmd.subsystem.unexport"
+msgstr "الغاء تصدير تطبيق او برنامج من النظام الفرعي."
+
+msgid "apx.cmd.subsystem.unexport.options.appName"
+msgstr "اسم التطبيق المراد إلغاء تصديره."
+
+msgid "apx.cmd.subsystem.unexport.options.bin"
+msgstr "اسم البرنامج المراد إلغاء تصديره."
+
+msgid "apx.cmd.subsystem.unexport.options.binOutput"
+msgstr "مسار البرامج\n(الافتراضي /.local/bin/)"
+
+msgid "apx.cmd.subsystem.update"
+msgstr "تحديث قائمة الحزم المتاحة."
+
+msgid "apx.cmd.subsystem.upgrade"
+msgstr "تطوير جميع الحزم المثبتة."
+
+msgid "apx.cmd.subsystems"
+msgstr "يتعامل مع الانظمة الفوعية المتاحة في apx."
+
+msgid "apx.cmd.subsystems.list"
+msgstr "عرض جميع الانظمة الفرعية المتاحة."
+
+msgid "apx.cmd.subsystems.new"
+msgstr "انشاء نظام فرعي جديد."
+
+msgid "apx.cmd.subsystems.reset"
+msgstr "إعادة إنشاء النظام الفرعي المحدد."
+
+msgid "apx.cmd.subsystems.rm"
+msgstr "حذف النظام الفرعي المحدد."
+
+msgid "apx.errors.invalidChoice"
+msgstr "خيار غير صالح."
+
+msgid "apx.errors.invalidInput"
+msgstr "المدخل غير صالح."
+
+msgid "apx.errors.noRoot"
+msgstr "لا تقم بتشغيل Apx كروت."
+
+msgid "apx.errors.unknownCommand"
+msgstr "أمر غير معروف: %s"
+
+msgid "apx.info.aborting"
+msgstr "يتم الالغاء."
+
+msgid "apx.msg.additionalCommands"
+msgstr "الأوامر الإضافية"
+
+msgid "apx.msg.additionalHelpTopics"
+msgstr "مواضيع مساعدة إضافية"
+
+msgid "apx.msg.aliases"
+msgstr "اسماء مستعارة"
+
+msgid "apx.msg.availableCommands"
+msgstr "الأوامر المتاحة"
+
+msgid "apx.msg.examples"
+msgstr "أمثلة"
+
+msgid "apx.msg.flags"
+msgstr "أعلام"
+
+msgid "apx.msg.globalFlags"
+msgstr "أعلام عامة"
+
+msgid "apx.msg.help"
+msgstr "Apx هو مدير حزم متعدد المصادر، مما يسمح بتثبيت الحزم في أنظمة فرعية."
+
+msgid "apx.msg.moreInfo"
+msgstr "استخدم %s للمزيد من المعلومات حول الأمر"
+
+msgid "apx.msg.usage"
+msgstr "الاستخدام"
+
+msgid "apx.msg.version"
+msgstr "إظهار الإصدار لـapx"
+
+msgid "apx.terminal.false"
+msgstr "لا"
+
+msgid "apx.terminal.true"
+msgstr "نعم"
+
+msgid "pkgmanagers.export.error.noName"
+msgstr "لم يتم تحديد اسم."
+
+msgid "pkgmanagers.export.error.noOutput"
+msgstr "لم يتم تحديد الإخراج."
+
+msgid "pkgmanagers.export.info.success"
+msgstr "تم تصدير مدير الحزم '%s' إلى '%s'."
+
+msgid "pkgmanagers.import.error.cannotLoad"
+msgstr "لا يمكن تحميل مدير الحزم من '%s'."
+
+msgid "pkgmanagers.import.error.noInput"
+msgstr "لم يتم تحديد أي إدخال."
+
+msgid "pkgmanagers.import.info.success"
+msgstr "مدير الحزم المستورد من '%s'."
+
+msgid "pkgmanagers.labels.builtIn"
+msgstr "مدمج في النظام"
+
+msgid "pkgmanagers.labels.name"
+msgstr "الاسم"
+
+msgid "pkgmanagers.list.info.foundPkgManagers"
+msgstr "تم ايجاد %d مديري حزم:"
+
+msgid "pkgmanagers.list.info.noPkgManagers"
+msgstr "لا يوجد مدير حزم متاح. قم بإنشاء واحد جديد باستخدام 'apx pkgmanagers new' او تحدث مع مسئول النظام."
+
+msgid "pkgmanagers.new.error.alreadyExists"
+msgstr "يوجد مدير حزم بنفس الاسم '%s' بالفعل."
+
+msgid "pkgmanagers.new.error.emptyCommand"
+msgstr "لا يمكن أن يكون الامر فارغا."
+
+msgid "pkgmanagers.new.error.emptyName"
+msgstr "الاسم لا يمكن أن يكون فارغا."
+
+msgid "pkgmanagers.new.error.noCommand"
+msgstr "لم يتم تحديد أمر من أجل '%s'."
+
+msgid "pkgmanagers.new.error.noName"
+msgstr "لم يتم تحديد اسم."
+
+msgid "pkgmanagers.new.info.askCommand"
+msgstr "أدخل الامر لأجل '%s':"
+
+msgid "pkgmanagers.new.info.askCommandWithDefault"
+msgstr "Enter the command for '%s' (default: '%s'):"
+
+msgid "pkgmanagers.new.info.askName"
+msgstr "اختر اسما:"
+
+msgid "pkgmanagers.new.info.askOverwrite"
+msgstr "يوجد مدير حزم بنفس الاسم '%s' بالفعل. هل تريد استبداله؟"
+
+msgid "pkgmanagers.new.info.askSudo"
+msgstr "هل يحتاج مدير الحزم إلى sudo ليعمل؟"
+
+msgid "pkgmanagers.new.success"
+msgstr "تم إنشاء مدير الحزم %s بنجاح."
+
+msgid "pkgmanagers.rm.error.inUse"
+msgstr "مدير الحزم مستخدم في %d طبقات:"
+
+msgid "pkgmanagers.rm.error.noName"
+msgstr "لم يتم تحديد اسم."
+
+msgid "pkgmanagers.rm.info.aborting"
+msgstr "إلغاء حذف مدير الحزم '%s'."
+
+msgid "pkgmanagers.rm.info.askConfirmation"
+msgstr "هل انت متأكد من حذف '%s'؟"
+
+msgid "pkgmanagers.rm.info.success"
+msgstr "تم حذف مدير الحزم '%s'."
+
+msgid "pkgmanagers.update.error.builtIn"
+msgstr "Built-in package managers cannot be modified."
+
+msgid "pkgmanagers.update.error.missingCommand"
+msgstr "الأمر مفقود لأجل %s."
+
+msgid "pkgmanagers.update.error.noName"
+msgstr "لم يتم تحديد اسم."
+
+msgid "pkgmanagers.update.info.askNewCommand"
+msgstr "أدخل أمرًا جديدًا لأجل '%s' (اتركه فارغًا للإبقاء على '%s'):"
+
+msgid "pkgmanagers.update.info.success"
+msgstr "تم تحديث مدير الحزم '%s'."
+
+msgid "runtimeCommand.description"
+msgstr "يتعامل مع النظام الفرعي المحدد، مما يسمح باستخدام مدير الحزم و البيئة."
+
+msgid "runtimeCommand.error.cantAccessPkgManager"
+msgstr "حدث خطأ أثناء الوصول إلى مدير الحزم: %s"
+
+msgid "runtimeCommand.error.enteringContainer"
+msgstr "حدث خطأ ما أثناء إدخال الحاوية: %s"
+
+msgid "runtimeCommand.error.executingCommand"
+msgstr "حدث خطأ أثناء تنفيذ الأمر: %s"
+
+msgid "runtimeCommand.error.exportingApp"
+msgstr "حدث خطأ أثناء تصدير التطبيق: %s"
+
+msgid "runtimeCommand.error.exportingBin"
+msgstr "حدث خطأ أثناء تصدير البرنامج: %s"
+
+msgid "runtimeCommand.error.noAppNameOrBin"
+msgstr "يجب تحديد --app-name او --bin"
+
+msgid "runtimeCommand.error.noPackageSpecified"
+msgstr "لم يتم تحديد حزمة."
+
+msgid "runtimeCommand.error.sameAppOrBin"
+msgstr "لا يمكن تحديد --app-name و --bin في نفس الوقت."
+
+msgid "runtimeCommand.error.startingContainer"
+msgstr "حدث خطأ ما أثناء بدء تشغيل الحاوية: %s"
+
+msgid "runtimeCommand.error.stoppingContainer"
+msgstr "حدث خطأ ما أثناء إيقاف الحاوية: %s"
+
+msgid "runtimeCommand.error.unexportingApp"
+msgstr "حدث خطأ أثناء إلغاء تصدير التطبيق: %s"
+
+msgid "runtimeCommand.error.unexportingBin"
+msgstr "حدث خطأ أثناء إلغاء تصدير البرنامج: %s"
+
+msgid "runtimeCommand.info.exportedApp"
+msgstr "التطبيقات المصدرة %s"
+
+msgid "runtimeCommand.info.exportedApps"
+msgstr "تم تصدير٪ d من التطبيقات"
+
+msgid "runtimeCommand.info.exportedBin"
+msgstr "البرامج المصدرة %s"
+
+msgid "runtimeCommand.info.startedContainer"
+msgstr "بدأت الحاوية."
+
+msgid "runtimeCommand.info.startingContainer"
+msgstr "جارٍ بدء الحاوية…"
+
+msgid "runtimeCommand.info.stoppedContainer"
+msgstr "حاوية متوقفة."
+
+msgid "runtimeCommand.info.stoppingContainer"
+msgstr "جارٍ إيقاف الحاوية…"
+
+msgid "runtimeCommand.info.unexportedApp"
+msgstr "التطبيقات غير المصدرة %s"
+
+msgid "runtimeCommand.info.unexportedApps"
+msgstr "تطبيقات %d غير مصدرة"
+
+msgid "runtimeCommand.info.unexportedBin"
+msgstr "البرامج غير المصدرة %s"
+
+msgid "stacks.export.error.noName"
+msgstr "لم يتم تحديد اسم."
+
+msgid "stacks.export.error.noOutput"
+msgstr "لم يتم تحديد مخرجات."
+
+msgid "stacks.export.info.success"
+msgstr "تم تصدير التشكيلة '%s' إلى '%s'."
+
+msgid "stacks.import.error.cannotLoad"
+msgstr "لم يمكن تحميل التشكيلة من '%s'."
+
+msgid "stacks.import.error.noInput"
+msgstr "لم يتم تحديد مدخل."
+
+msgid "stacks.import.info.success"
+msgstr "تم استيراد التشكيلة من '%s'."
+
+msgid "stacks.labels.builtIn"
+msgstr "مدمج في النظام"
+
+msgid "stacks.labels.name"
+msgstr "الاسم"
+
+msgid "stacks.list.info.aborting"
+msgstr "إلغاء حذف التشكيلة '%s'."
+
+msgid "stacks.list.info.foundStacks"
+msgstr "تم العثور على %d طبقات:"
+
+msgid "stacks.list.info.noStacks"
+msgstr "لا توجد تشكيلات متاحة. قم بإنشاء واحدة جديدة باستخدام 'apx stacks new' او قم بالتحدث الي مسئول النظام."
+
+msgid "stacks.new.error.alreadyExists"
+msgstr "يوجد تشكيلة بالاسم '%s' بالفعل."
+
+msgid "stacks.new.error.emptyBase"
+msgstr "لا يمكن أن يكون النظام الأساس فارغا."
+
+msgid "stacks.new.error.emptyName"
+msgstr "لا يمكن أن يكون الاسم فارغا."
+
+msgid "stacks.new.error.emptyPackages"
+msgstr "الحزم لا يمكن أن تكون فارغة."
+
+msgid "stacks.new.error.emptyPkgManager"
+msgstr "لا يمكن أن يكون مدير الحزم فارغا."
+
+msgid "stacks.new.error.noBase"
+msgstr "لم يتم تحديد النظام الأساس."
+
+msgid "stacks.new.error.noName"
+msgstr "لم يتم تحديد اسم."
+
+msgid "stacks.new.error.noPackages"
+msgstr "لم يتم تحديد حزم."
+
+msgid "stacks.new.error.noPkgManager"
+msgstr "لم يتم تحديد مدير حزم."
+
+msgid "stacks.new.error.noPkgManagers"
+msgstr "لا توجد تشكيلات متاحة. قم بإنشاء واحدة جديدة باستخدام 'apx stacks new' أو تحدث إلى مسؤول النظام."
+
+msgid "stacks.new.error.pkgManagerDoesNotExist"
+msgstr "مدير الحزم المحدد غير موجود. قم بإنشاء واحد جديد باستخدام 'apx pkgmanagers new' او قم بالتحدث لمسؤول النظام."
+
+msgid "stacks.new.info.askBase"
+msgstr "اختر النظام الأساس (على سبيل المثال 'vanillaos/pico'):"
+
+msgid "stacks.new.info.askName"
+msgstr "اختر اسما:"
+
+msgid "stacks.new.info.askPackages"
+msgstr "من فضلك قم بكتابة الحزم المراد تنزيلها في التشكيلة مع فصلها بمسافة:"
+
+msgid "stacks.new.info.askPkgManager"
+msgstr "اختر مديرا للحزم:"
+
+msgid "stacks.new.info.confirmPackages"
+msgstr "هل تريد الموافقة على قائمة الحزم التالية؟"
+
+msgid "stacks.new.info.noPackages"
+msgstr "انت لم تقم بإضافة اي حزم لتثبيتها في التشكيلة. هل تريد إضافة البعض الآن؟"
+
+msgid "stacks.new.info.selectPkgManager"
+msgstr "اختر مديرا للحزم [1-%d] :"
+
+msgid "stacks.new.info.success"
+msgstr "تم إنشاء التشكيلة '%s'."
+
+msgid "stacks.rm.error.inUse"
+msgstr "The stack is used in %d subsystems:"
+
+msgid "stacks.rm.error.noName"
+msgstr "لم يتم تحديد اسم."
+
+msgid "stacks.rm.info.askConfirmation"
+msgstr "هل انت متأكد من حذف '%s'؟"
+
+msgid "stacks.rm.info.success"
+msgstr "تم حذف التشكيلة '%s'."
+
+msgid "stacks.update.error.builtIn"
+msgstr "Built-in stacks cannot be modified."
+
+msgid "stacks.update.error.noBase"
+msgstr "لم يتم تحديد النظام الأساس."
+
+msgid "stacks.update.error.noName"
+msgstr "لم يتم تحديد اسم."
+
+msgid "stacks.update.error.noPkgManager"
+msgstr "لم يتم تحديد مدير حزم."
+
+msgid "stacks.update.error.pkgManagerDoesNotExist"
+msgstr "مدير الحزم المحدد غير موجود. قم بإنشاء واحد جديد باستخدام 'apx pkgmanagers new' او قم بالتحدث لمسؤول النظام."
+
+msgid "stacks.update.info.askBase"
+msgstr "قم بكتابة نظام أساس جديد أو وافق على الحالي(%s):"
+
+msgid "stacks.update.info.askPackages"
+msgstr "قم بكتابة الحزم المراد تثبيتها في التشكيلة مع فصلها بمسافة أو وافق على الحاليين (%s):"
+
+msgid "stacks.update.info.askPkgManager"
+msgstr "قم باختيار مدير حزم جديد أو وافق على الحالي(%s):"
+
+msgid "stacks.update.info.confirmPackages"
+msgstr "هل تريد الموافقة على قائمة الحزم الحالية؟"
+
+msgid "stacks.update.info.noPackages"
+msgstr "لم تقم بتوفير أي حزم لتثبيتها في التشكيلة. هل تريد إضافة بعضها الآن؟"
+
+msgid "stacks.update.info.success"
+msgstr "تم تحديث التشكيلة '%s':"
+
+msgid "subsystems.labels.name"
+msgstr "الاسم"
+
+msgid "subsystems.labels.status"
+msgstr "الحالة"
+
+msgid "subsystems.list.error"
+msgstr "<nil>"
+
+msgid "subsystems.list.info.foundSubsystems"
+msgstr "تم العثور على %d أنظمة فرعية:"
+
+msgid "subsystems.list.info.noSubsystems"
+msgstr "لا يوجد أنظمة فرعية متاحة. قم بإنشاء واحد جديد باستخدام 'apx subsystems new' او قم بالتحدث لمسؤول النظام."
+
+msgid "subsystems.new.error.alreadyExists"
+msgstr "يوجد نظام فرعي بنفس الاسم '%s' بالفعل."
+
+msgid "subsystems.new.error.emptyName"
+msgstr "الاسم لا يمكن أن يكون فارغا."
+
+msgid "subsystems.new.error.emptyStack"
+msgstr "التشكيلة لا يمكن أن تكون فارغة."
+
+msgid "subsystems.new.error.forbiddenName"
+msgstr "The name '%s' is forbidden. Please choose a different name"
+
+msgid "subsystems.new.error.noName"
+msgstr "لم يتم تحديد اسم."
+
+msgid "subsystems.new.error.noStack"
+msgstr "لم يتم تحديد تشكيلة."
+
+msgid "subsystems.new.error.noStacks"
+msgstr "لإنشاء نظام فرعي يجب وجود تشكيلة. قم بإنشاء واحدة جديدة باستخدام 'apx stacks new' او قم بالتحدث لمسؤول النظام."
+
+msgid "subsystems.new.error.stackDoesNotExist"
+msgstr "التشكيلة المحددة غير موجودة. قم بإنشاء واحدة جديدة باستخدام 'apx stacks new' او قم بالتحدث لمسؤول النظام."
+
+msgid "subsystems.new.info.askName"
+msgstr "اختر اسما:"
+
+msgid "subsystems.new.info.availableStacks"
+msgstr "التشكيلات المتاحة:"
+
+msgid "subsystems.new.info.creatingSubsystem"
+msgstr "تم إنشاء نظام فرعي '%s' بالطبقة '%s'…"
+
+msgid "subsystems.new.info.selectStack"
+msgstr "اختر تشكيلة [1-%d]:"
+
+msgid "subsystems.new.info.success"
+msgstr "تم إنشاء النظام الفرعي '%s'."
+
+msgid "subsystems.reset.error.noName"
+msgstr "لم يتم تحديد اسم."
+
+msgid "subsystems.reset.info.askConfirmation"
+msgstr "هل انت متأكد من إعادة ضبط '%s'؟"
+
+msgid "subsystems.reset.info.success"
+msgstr "تم اعادة انشاء النظام الفرعي '%s'."
+
+msgid "subsystems.rm.error.noName"
+msgstr "لم يتم تحديد اسم."
+
+msgid "subsystems.rm.info.askConfirmation"
+msgstr "هل انت متأكد من حذف '%s'؟"
+
+msgid "subsystems.rm.info.success"
+msgstr "تم حذف النظام الفرعي '%s'."
+
