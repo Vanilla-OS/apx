@@ -10,7 +10,6 @@ package cli
 */
 
 import (
-	"bufio"
 	"encoding/json"
 	"fmt"
 	"os"
@@ -51,24 +50,26 @@ func (c *PkgManagersListCmd) Run() error {
 	if !c.Json {
 		pkgManagersCount := len(pkgManagers)
 		if pkgManagersCount == 0 {
-			Apx.Log.Term.Info().Msg(Apx.LC.Get("pkgmanagers.list.info.noPkgManagers"))
+			Apx.Log.Info(Apx.LC.Get("pkgmanagers.list.info.noPkgManagers"))
 			return nil
 		}
 
-		Apx.Log.Term.Info().Msgf(Apx.LC.Get("pkgmanagers.list.info.foundPkgManagers"), pkgManagersCount)
+		Apx.Log.Infof(Apx.LC.Get("pkgmanagers.list.info.foundPkgManagers"), pkgManagersCount)
 
-		table := core.CreateApxTable(os.Stdout)
-		table.SetHeader([]string{Apx.LC.Get("pkgmanagers.labels.name"), Apx.LC.Get("pkgmanagers.labels.builtIn")})
-
+		headers := []string{Apx.LC.Get("pkgmanagers.labels.name"), Apx.LC.Get("pkgmanagers.labels.builtIn")}
+		var data [][]string
 		for _, stack := range pkgManagers {
 			builtIn := Apx.LC.Get("apx.terminal.no")
 			if stack.BuiltIn {
 				builtIn = Apx.LC.Get("apx.terminal.yes")
 			}
-			table.Append([]string{stack.Name, builtIn})
+			data = append(data, []string{stack.Name, builtIn})
 		}
 
-		table.Render()
+		err := Apx.CLI.Table(headers, data)
+		if err != nil {
+			return err
+		}
 	} else {
 		jsonPkgManagers, _ := json.MarshalIndent(pkgManagers, "", "  ")
 		fmt.Println(string(jsonPkgManagers))
@@ -85,61 +86,65 @@ func (c *PkgManagersShowCmd) Run() error {
 	pkgManagerName := args[0]
 	pkgManager, err := core.LoadPkgManager(pkgManagerName)
 	if err != nil {
-		Apx.Log.Term.Error().Msg(err.Error())
+		Apx.Log.Error(err.Error())
 		return nil
 	}
 
-	table := core.CreateApxTable(os.Stdout)
-	table.Append([]string{Apx.LC.Get("pkgmanagers.labels.name"), pkgManager.Name})
-	table.Append([]string{"NeedSudo", fmt.Sprintf("%t", pkgManager.NeedSudo)})
-	table.Append([]string{"AutoRemove", pkgManager.CmdAutoRemove})
-	table.Append([]string{"Clean", pkgManager.CmdClean})
-	table.Append([]string{"Install", pkgManager.CmdInstall})
-	table.Append([]string{"List", pkgManager.CmdList})
-	table.Append([]string{"Purge", pkgManager.CmdPurge})
-	table.Append([]string{"Remove", pkgManager.CmdRemove})
-	table.Append([]string{"Search", pkgManager.CmdSearch})
-	table.Append([]string{"Show", pkgManager.CmdShow})
-	table.Append([]string{"Update", pkgManager.CmdUpdate})
-	table.Append([]string{"Upgrade", pkgManager.CmdUpgrade})
-	table.Render()
+	headers := []string{"Property", "Value"}
+	data := [][]string{
+		{Apx.LC.Get("pkgmanagers.labels.name"), pkgManager.Name},
+		{"NeedSudo", fmt.Sprintf("%t", pkgManager.NeedSudo)},
+		{"AutoRemove", pkgManager.CmdAutoRemove},
+		{"Clean", pkgManager.CmdClean},
+		{"Install", pkgManager.CmdInstall},
+		{"List", pkgManager.CmdList},
+		{"Purge", pkgManager.CmdPurge},
+		{"Remove", pkgManager.CmdRemove},
+		{"Search", pkgManager.CmdSearch},
+		{"Show", pkgManager.CmdShow},
+		{"Update", pkgManager.CmdUpdate},
+		{"Upgrade", pkgManager.CmdUpgrade},
+	}
+
+	err = Apx.CLI.Table(headers, data)
+	if err != nil {
+		return err
+	}
 
 	return nil
 }
 
 func (c *PkgManagersNewCmd) Run() error {
-	reader := bufio.NewReader(os.Stdin)
 
 	if c.Name == "" {
 		if c.NoPrompt {
-			Apx.Log.Term.Error().Msg(Apx.LC.Get("pkgmanagers.new.error.noName"))
+			Apx.Log.Error(Apx.LC.Get("pkgmanagers.new.error.noName"))
 			return nil
 		}
 
-		Apx.Log.Term.Info().Msg(Apx.LC.Get("pkgmanagers.new.info.askName"))
-		c.Name, _ = reader.ReadString('\n')
+		name, err := Apx.CLI.PromptText(Apx.LC.Get("pkgmanagers.new.info.askName"), "")
+		if err != nil {
+			return err
+		}
+		c.Name = name
 		c.Name = strings.ReplaceAll(c.Name, "\n", "")
 		c.Name = strings.ReplaceAll(c.Name, " ", "")
 		if c.Name == "" {
-			Apx.Log.Term.Error().Msg(Apx.LC.Get("pkgmanagers.new.error.emptyName"))
+			Apx.Log.Error(Apx.LC.Get("pkgmanagers.new.error.emptyName"))
 			return nil
 		}
 	}
 
 	if !c.NeedSudo && !c.NoPrompt {
-		validChoice := false
-		for !validChoice {
-			choice, err := Apx.CLI.ConfirmAction(
-				Apx.LC.Get("pkgmanagers.new.info.askSudo"),
-				"y", "N",
-				false,
-			)
-			if err != nil {
-				return err
-			}
-			c.NeedSudo = choice
-			validChoice = true
+		choice, err := Apx.CLI.ConfirmAction(
+			Apx.LC.Get("pkgmanagers.new.info.askSudo"),
+			"y", "N",
+			false,
+		)
+		if err != nil {
+			return err
 		}
+		c.NeedSudo = choice
 	}
 
 	cmdMap := map[string]*string{
@@ -159,24 +164,28 @@ func (c *PkgManagersNewCmd) Run() error {
 		cmd := cmdMap[cmdName]
 		if *cmd == "" {
 			if c.NoPrompt {
-				Apx.Log.Term.Error().Msgf(Apx.LC.Get("pkgmanagers.new.error.noCommand"), cmdName)
+				Apx.Log.Errorf(Apx.LC.Get("pkgmanagers.new.error.noCommand"), cmdName)
 				return nil
 			}
 			if cmdName == PkgManagerCmdPurge || cmdName == PkgManagerCmdAutoRemove {
-				Apx.Log.Term.Info().Msgf(Apx.LC.Get("pkgmanagers.new.info.askCommandWithDefault"), cmdName, c.Remove)
-				*cmd, _ = reader.ReadString('\n')
-				*cmd = strings.ReplaceAll(*cmd, "\n", "")
+				answer, err := Apx.CLI.PromptText(fmt.Sprintf(Apx.LC.Get("pkgmanagers.new.info.askCommandWithDefault"), cmdName, c.Remove), c.Remove)
+				if err != nil {
+					return err
+				}
+				*cmd = strings.TrimSpace(answer)
 				if *cmd == "" {
 					*cmd = c.Remove
 				}
 				continue
 			}
 
-			Apx.Log.Term.Info().Msgf(Apx.LC.Get("pkgmanagers.new.info.askCommand"), cmdName)
-			*cmd, _ = reader.ReadString('\n')
-			*cmd = strings.ReplaceAll(*cmd, "\n", "")
+			answer, err := Apx.CLI.PromptText(fmt.Sprintf(Apx.LC.Get("pkgmanagers.new.info.askCommand"), cmdName), "")
+			if err != nil {
+				return err
+			}
+			*cmd = strings.TrimSpace(answer)
 			if *cmd == "" {
-				Apx.Log.Term.Error().Msgf(Apx.LC.Get("pkgmanagers.new.error.emptyCommand"), cmdName)
+				Apx.Log.Errorf(Apx.LC.Get("pkgmanagers.new.error.emptyCommand"), cmdName)
 				return nil
 			}
 		}
@@ -184,7 +193,7 @@ func (c *PkgManagersNewCmd) Run() error {
 
 	if core.PkgManagerExists(c.Name) {
 		if c.NoPrompt {
-			Apx.Log.Term.Error().Msgf(Apx.LC.Get("pkgmanagers.new.error.alreadyExists"), c.Name)
+			Apx.Log.Errorf(Apx.LC.Get("pkgmanagers.new.error.alreadyExists"), c.Name)
 			return nil
 		}
 
@@ -198,7 +207,7 @@ func (c *PkgManagersNewCmd) Run() error {
 		}
 
 		if !confirm {
-			Apx.Log.Term.Info().Msg(Apx.LC.Get("apx.info.aborting"))
+			Apx.Log.Info(Apx.LC.Get("apx.info.aborting"))
 			return nil
 		}
 	}
@@ -206,18 +215,18 @@ func (c *PkgManagersNewCmd) Run() error {
 	pkgManager := core.NewPkgManager(c.Name, c.NeedSudo, c.AutoRemove, c.Clean, c.Install, c.List, c.Purge, c.Remove, c.Search, c.Show, c.Update, c.Upgrade, false)
 	err := pkgManager.Save()
 	if err != nil {
-		Apx.Log.Term.Error().Msg(err.Error())
+		Apx.Log.Error(err.Error())
 		return nil
 	}
 
-	Apx.Log.Term.Info().Msgf(Apx.LC.Get("pkgmanagers.new.success"), c.Name)
+	Apx.Log.Infof(Apx.LC.Get("pkgmanagers.new.success"), c.Name)
 
 	return nil
 }
 
 func (c *PkgManagersRmCmd) Run() error {
 	if c.Name == "" {
-		Apx.Log.Term.Error().Msg(Apx.LC.Get("pkgmanagers.rm.error.noName"))
+		Apx.Log.Error(Apx.LC.Get("pkgmanagers.rm.error.noName"))
 		return nil
 	}
 
@@ -228,17 +237,17 @@ func (c *PkgManagersRmCmd) Run() error {
 
 	stacks := core.ListStackForPkgManager(pkgManager.Name)
 	if len(stacks) > 0 {
-		Apx.Log.Term.Error().Msgf(Apx.LC.Get("pkgmanagers.rm.error.inUse"), len(stacks))
-		table := core.CreateApxTable(os.Stdout)
-		table.SetHeader([]string{Apx.LC.Get("pkgmanagers.labels.name"), "Base", "Packages", "PkgManager", Apx.LC.Get("pkgmanagers.labels.builtIn")})
+		Apx.Log.Errorf(Apx.LC.Get("pkgmanagers.rm.error.inUse"), len(stacks))
+		headers := []string{Apx.LC.Get("pkgmanagers.labels.name"), "Base", "Packages", "PkgManager", Apx.LC.Get("pkgmanagers.labels.builtIn")}
+		var data [][]string
 		for _, stack := range stacks {
 			builtIn := Apx.LC.Get("apx.terminal.no")
 			if stack.BuiltIn {
 				builtIn = Apx.LC.Get("apx.terminal.yes")
 			}
-			table.Append([]string{stack.Name, stack.Base, strings.Join(stack.Packages, ", "), stack.PkgManager, builtIn})
+			data = append(data, []string{stack.Name, stack.Base, strings.Join(stack.Packages, ", "), stack.PkgManager, builtIn})
 		}
-		table.Render()
+		Apx.CLI.Table(headers, data)
 		return nil
 	}
 
@@ -252,7 +261,7 @@ func (c *PkgManagersRmCmd) Run() error {
 			return err
 		}
 		if !confirm {
-			Apx.Log.Term.Info().Msgf(Apx.LC.Get("pkgmanagers.rm.info.aborting"), c.Name)
+			Apx.Log.Infof(Apx.LC.Get("pkgmanagers.rm.info.aborting"), c.Name)
 			return nil
 		}
 	}
@@ -262,13 +271,13 @@ func (c *PkgManagersRmCmd) Run() error {
 		return error
 	}
 
-	Apx.Log.Term.Info().Msgf(Apx.LC.Get("pkgmanagers.rm.info.success"), c.Name)
+	Apx.Log.Infof(Apx.LC.Get("pkgmanagers.rm.info.success"), c.Name)
 	return nil
 }
 
 func (c *PkgManagersExportCmd) Run() error {
 	if c.Name == "" {
-		Apx.Log.Term.Error().Msg(Apx.LC.Get("pkgmanagers.export.error.noName"))
+		Apx.Log.Error(Apx.LC.Get("pkgmanagers.export.error.noName"))
 		return nil
 	}
 
@@ -278,7 +287,7 @@ func (c *PkgManagersExportCmd) Run() error {
 	}
 
 	if c.Output == "" {
-		Apx.Log.Term.Error().Msg(Apx.LC.Get("pkgmanagers.export.error.noOutput"))
+		Apx.Log.Error(Apx.LC.Get("pkgmanagers.export.error.noOutput"))
 		return nil
 	}
 
@@ -287,19 +296,19 @@ func (c *PkgManagersExportCmd) Run() error {
 		return error
 	}
 
-	Apx.Log.Term.Info().Msgf(Apx.LC.Get("pkgmanagers.export.info.success"), pkgManager.Name, c.Output)
+	Apx.Log.Infof(Apx.LC.Get("pkgmanagers.export.info.success"), pkgManager.Name, c.Output)
 	return nil
 }
 
 func (c *PkgManagersImportCmd) Run() error {
 	if c.Input == "" {
-		Apx.Log.Term.Error().Msg(Apx.LC.Get("pkgmanagers.import.error.noInput"))
+		Apx.Log.Error(Apx.LC.Get("pkgmanagers.import.error.noInput"))
 		return nil
 	}
 
 	pkgmanager, error := core.LoadPkgManagerFromPath(c.Input)
 	if error != nil {
-		Apx.Log.Term.Error().Msgf(Apx.LC.Get("pkgmanagers.import.error.cannotLoad"), c.Input)
+		Apx.Log.Errorf(Apx.LC.Get("pkgmanagers.import.error.cannotLoad"), c.Input)
 	}
 
 	error = pkgmanager.Save()
@@ -307,7 +316,7 @@ func (c *PkgManagersImportCmd) Run() error {
 		return error
 	}
 
-	Apx.Log.Term.Info().Msgf(Apx.LC.Get("pkgmanagers.import.info.success"), pkgmanager.Name)
+	Apx.Log.Infof(Apx.LC.Get("pkgmanagers.import.info.success"), pkgmanager.Name)
 	return nil
 }
 
@@ -315,7 +324,7 @@ func (c *PkgManagersUpdateCmd) Run() error {
 	args := c.Args
 	if c.Name == "" {
 		if len(args) != 1 || args[0] == "" {
-			Apx.Log.Term.Error().Msg(Apx.LC.Get("pkgmanagers.update.error.noName"))
+			Apx.Log.Error(Apx.LC.Get("pkgmanagers.update.error.noName"))
 			return nil
 		}
 
@@ -328,168 +337,166 @@ func (c *PkgManagersUpdateCmd) Run() error {
 	}
 
 	if pkgmanager.BuiltIn {
-		Apx.Log.Term.Error().Msg(Apx.LC.Get("pkgmanagers.update.error.builtIn"))
+		Apx.Log.Error(Apx.LC.Get("pkgmanagers.update.error.builtIn"))
 		os.Exit(126)
 	}
 
-	reader := bufio.NewReader(os.Stdin)
-
 	if c.AutoRemove == "" {
 		if !c.NoPrompt {
-			Apx.Log.Term.Info().Msgf(Apx.LC.Get("pkgmanagers.update.info.askNewCommand"), "autoRemove", pkgmanager.CmdAutoRemove)
-			answer, _ := reader.ReadString('\n')
-			answer = strings.TrimSpace(answer)
-			if answer == "" {
+			answer, err := Apx.CLI.PromptText(fmt.Sprintf(Apx.LC.Get("pkgmanagers.update.info.askNewCommand"), "autoRemove", pkgmanager.CmdAutoRemove), pkgmanager.CmdAutoRemove)
+			if err != nil {
+				return err
+			}
+			c.AutoRemove = strings.TrimSpace(answer)
+			if c.AutoRemove == "" {
 				c.AutoRemove = pkgmanager.CmdAutoRemove
-			} else {
-				c.AutoRemove = answer
 			}
 		} else {
-			Apx.Log.Term.Error().Msgf(Apx.LC.Get("pkgmanagers.update.error.missingCommand"), "autoRemove")
+			Apx.Log.Errorf(Apx.LC.Get("pkgmanagers.update.error.missingCommand"), "autoRemove")
 			return nil
 		}
 	}
 
 	if c.Clean == "" {
 		if !c.NoPrompt {
-			Apx.Log.Term.Info().Msgf(Apx.LC.Get("pkgmanagers.update.info.askNewCommand"), "clean", pkgmanager.CmdClean)
-			answer, _ := reader.ReadString('\n')
-			answer = strings.TrimSpace(answer)
-			if answer == "" {
+			answer, err := Apx.CLI.PromptText(fmt.Sprintf(Apx.LC.Get("pkgmanagers.update.info.askNewCommand"), "clean", pkgmanager.CmdClean), pkgmanager.CmdClean)
+			if err != nil {
+				return err
+			}
+			c.Clean = strings.TrimSpace(answer)
+			if c.Clean == "" {
 				c.Clean = pkgmanager.CmdClean
-			} else {
-				c.Clean = answer
 			}
 		} else {
-			Apx.Log.Term.Error().Msgf(Apx.LC.Get("pkgmanagers.update.error.missingCommand"), "clean")
+			Apx.Log.Errorf(Apx.LC.Get("pkgmanagers.update.error.missingCommand"), "clean")
 			return nil
 		}
 	}
 
 	if c.Install == "" {
 		if !c.NoPrompt {
-			Apx.Log.Term.Info().Msgf(Apx.LC.Get("pkgmanagers.update.info.askNewCommand"), "install", pkgmanager.CmdInstall)
-			answer, _ := reader.ReadString('\n')
-			answer = strings.TrimSpace(answer)
-			if answer == "" {
+			answer, err := Apx.CLI.PromptText(fmt.Sprintf(Apx.LC.Get("pkgmanagers.update.info.askNewCommand"), "install", pkgmanager.CmdInstall), pkgmanager.CmdInstall)
+			if err != nil {
+				return err
+			}
+			c.Install = strings.TrimSpace(answer)
+			if c.Install == "" {
 				c.Install = pkgmanager.CmdInstall
-			} else {
-				c.Install = answer
 			}
 		} else {
-			Apx.Log.Term.Error().Msgf(Apx.LC.Get("pkgmanagers.update.error.missingCommand"), "install")
+			Apx.Log.Errorf(Apx.LC.Get("pkgmanagers.update.error.missingCommand"), "install")
 			return nil
 		}
 	}
 
 	if c.List == "" {
 		if !c.NoPrompt {
-			Apx.Log.Term.Info().Msgf(Apx.LC.Get("pkgmanagers.update.info.askNewCommand"), "list", pkgmanager.CmdList)
-			answer, _ := reader.ReadString('\n')
-			answer = strings.TrimSpace(answer)
-			if answer == "" {
+			answer, err := Apx.CLI.PromptText(fmt.Sprintf(Apx.LC.Get("pkgmanagers.update.info.askNewCommand"), "list", pkgmanager.CmdList), pkgmanager.CmdList)
+			if err != nil {
+				return err
+			}
+			c.List = strings.TrimSpace(answer)
+			if c.List == "" {
 				c.List = pkgmanager.CmdList
-			} else {
-				c.List = answer
 			}
 		} else {
-			Apx.Log.Term.Error().Msgf(Apx.LC.Get("pkgmanagers.update.error.missingCommand"), "list")
+			Apx.Log.Errorf(Apx.LC.Get("pkgmanagers.update.error.missingCommand"), "list")
 			return nil
 		}
 	}
 
 	if c.Purge == "" {
 		if !c.NoPrompt {
-			Apx.Log.Term.Info().Msgf(Apx.LC.Get("pkgmanagers.update.info.askNewCommand"), "purge", pkgmanager.CmdPurge)
-			answer, _ := reader.ReadString('\n')
-			answer = strings.TrimSpace(answer)
-			if answer == "" {
+			answer, err := Apx.CLI.PromptText(fmt.Sprintf(Apx.LC.Get("pkgmanagers.update.info.askNewCommand"), "purge", pkgmanager.CmdPurge), pkgmanager.CmdPurge)
+			if err != nil {
+				return err
+			}
+			c.Purge = strings.TrimSpace(answer)
+			if c.Purge == "" {
 				c.Purge = pkgmanager.CmdPurge
-			} else {
-				c.Purge = answer
 			}
 		} else {
-			Apx.Log.Term.Error().Msgf(Apx.LC.Get("pkgmanagers.update.error.missingCommand"), "purge")
+			Apx.Log.Errorf(Apx.LC.Get("pkgmanagers.update.error.missingCommand"), "purge")
 			return nil
 		}
 	}
 
 	if c.Remove == "" {
 		if !c.NoPrompt {
-			Apx.Log.Term.Info().Msgf(Apx.LC.Get("pkgmanagers.update.info.askNewCommand"), "remove", pkgmanager.CmdRemove)
-			answer, _ := reader.ReadString('\n')
-			answer = strings.TrimSpace(answer)
-			if answer == "" {
+			answer, err := Apx.CLI.PromptText(fmt.Sprintf(Apx.LC.Get("pkgmanagers.update.info.askNewCommand"), "remove", pkgmanager.CmdRemove), pkgmanager.CmdRemove)
+			if err != nil {
+				return err
+			}
+			c.Remove = strings.TrimSpace(answer)
+			if c.Remove == "" {
 				c.Remove = pkgmanager.CmdRemove
-			} else {
-				c.Remove = answer
 			}
 		} else {
-			Apx.Log.Term.Error().Msgf(Apx.LC.Get("pkgmanagers.update.error.missingCommand"), "remove")
+			Apx.Log.Errorf(Apx.LC.Get("pkgmanagers.update.error.missingCommand"), "remove")
 			return nil
 		}
 	}
 
 	if c.Search == "" {
 		if !c.NoPrompt {
-			Apx.Log.Term.Info().Msgf(Apx.LC.Get("pkgmanagers.update.info.askNewCommand"), "search", pkgmanager.CmdSearch)
-			answer, _ := reader.ReadString('\n')
-			answer = strings.TrimSpace(answer)
-			if answer == "" {
+			answer, err := Apx.CLI.PromptText(fmt.Sprintf(Apx.LC.Get("pkgmanagers.update.info.askNewCommand"), "search", pkgmanager.CmdSearch), pkgmanager.CmdSearch)
+			if err != nil {
+				return err
+			}
+			c.Search = strings.TrimSpace(answer)
+			if c.Search == "" {
 				c.Search = pkgmanager.CmdSearch
-			} else {
-				c.Search = answer
 			}
 		} else {
-			Apx.Log.Term.Error().Msgf(Apx.LC.Get("pkgmanagers.update.error.missingCommand"), "search")
+			Apx.Log.Errorf(Apx.LC.Get("pkgmanagers.update.error.missingCommand"), "search")
 			return nil
 		}
 	}
 
 	if c.Show == "" {
 		if !c.NoPrompt {
-			Apx.Log.Term.Info().Msgf(Apx.LC.Get("pkgmanagers.update.info.askNewCommand"), "show", pkgmanager.CmdShow)
-			answer, _ := reader.ReadString('\n')
-			answer = strings.TrimSpace(answer)
-			if answer == "" {
+			answer, err := Apx.CLI.PromptText(fmt.Sprintf(Apx.LC.Get("pkgmanagers.update.info.askNewCommand"), "show", pkgmanager.CmdShow), pkgmanager.CmdShow)
+			if err != nil {
+				return err
+			}
+			c.Show = strings.TrimSpace(answer)
+			if c.Show == "" {
 				c.Show = pkgmanager.CmdShow
-			} else {
-				c.Show = answer
 			}
 		} else {
-			Apx.Log.Term.Error().Msgf(Apx.LC.Get("pkgmanagers.update.error.missingCommand"), "show")
+			Apx.Log.Errorf(Apx.LC.Get("pkgmanagers.update.error.missingCommand"), "show")
 			return nil
 		}
 	}
 
 	if c.Update == "" {
 		if !c.NoPrompt {
-			Apx.Log.Term.Info().Msgf(Apx.LC.Get("pkgmanagers.update.info.askNewCommand"), "update", pkgmanager.CmdUpdate)
-			answer, _ := reader.ReadString('\n')
-			answer = strings.TrimSpace(answer)
-			if answer == "" {
+			answer, err := Apx.CLI.PromptText(fmt.Sprintf(Apx.LC.Get("pkgmanagers.update.info.askNewCommand"), "update", pkgmanager.CmdUpdate), pkgmanager.CmdUpdate)
+			if err != nil {
+				return err
+			}
+			c.Update = strings.TrimSpace(answer)
+			if c.Update == "" {
 				c.Update = pkgmanager.CmdUpdate
-			} else {
-				c.Update = answer
 			}
 		} else {
-			Apx.Log.Term.Error().Msgf(Apx.LC.Get("pkgmanagers.update.error.missingCommand"), "update")
+			Apx.Log.Errorf(Apx.LC.Get("pkgmanagers.update.error.missingCommand"), "update")
 			return nil
 		}
 	}
 
 	if c.Upgrade == "" {
 		if !c.NoPrompt {
-			Apx.Log.Term.Info().Msgf(Apx.LC.Get("pkgmanagers.update.info.askNewCommand"), "upgrade", pkgmanager.CmdUpgrade)
-			answer, _ := reader.ReadString('\n')
-			answer = strings.TrimSpace(answer)
-			if answer == "" {
+			answer, err := Apx.CLI.PromptText(fmt.Sprintf(Apx.LC.Get("pkgmanagers.update.info.askNewCommand"), "upgrade", pkgmanager.CmdUpgrade), pkgmanager.CmdUpgrade)
+			if err != nil {
+				return err
+			}
+			c.Upgrade = strings.TrimSpace(answer)
+			if c.Upgrade == "" {
 				c.Upgrade = pkgmanager.CmdUpgrade
-			} else {
-				c.Upgrade = answer
 			}
 		} else {
-			Apx.Log.Term.Error().Msgf(Apx.LC.Get("pkgmanagers.update.error.missingCommand"), "upgrade")
+			Apx.Log.Errorf(Apx.LC.Get("pkgmanagers.update.error.missingCommand"), "upgrade")
 			return nil
 		}
 	}

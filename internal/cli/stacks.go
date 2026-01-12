@@ -10,7 +10,6 @@ package cli
 */
 
 import (
-	"bufio"
 	"encoding/json"
 	"fmt"
 	"os"
@@ -29,20 +28,18 @@ func (c *StacksListCmd) Run() error {
 			return nil
 		}
 
-		Apx.Log.Term.Info().Msgf(Apx.LC.Get("stacks.list.info.foundStacks"), stacksCount)
+		Apx.Log.Infof(Apx.LC.Get("stacks.list.info.foundStacks"), stacksCount)
 
-		table := core.CreateApxTable(os.Stdout)
-		table.SetHeader([]string{Apx.LC.Get("stacks.labels.name"), "Base", Apx.LC.Get("stacks.labels.builtIn"), "Pkgs", "Pkg manager"})
-
+		headers := []string{Apx.LC.Get("stacks.labels.name"), "Base", Apx.LC.Get("stacks.labels.builtIn"), "Pkgs", "Pkg manager"}
+		var data [][]string
 		for _, stack := range stacks {
 			builtIn := Apx.LC.Get("apx.terminal.no")
 			if stack.BuiltIn {
 				builtIn = Apx.LC.Get("apx.terminal.yes")
 			}
-			table.Append([]string{stack.Name, stack.Base, builtIn, fmt.Sprintf("%d", len(stack.Packages)), stack.PkgManager})
+			data = append(data, []string{stack.Name, stack.Base, builtIn, fmt.Sprintf("%d", len(stack.Packages)), stack.PkgManager})
 		}
-
-		table.Render()
+		Apx.CLI.Table(headers, data)
 	} else {
 		jsonStacks, err := json.MarshalIndent(stacks, "", "  ")
 		if err != nil {
@@ -65,12 +62,14 @@ func (c *StacksShowCmd) Run() error {
 		return error
 	}
 
-	table := core.CreateApxTable(os.Stdout)
-	table.Append([]string{Apx.LC.Get("stacks.labels.name"), stack.Name})
-	table.Append([]string{"Base", stack.Base})
-	table.Append([]string{"Packages", strings.Join(stack.Packages, ", ")})
-	table.Append([]string{"Package manager", stack.PkgManager})
-	table.Render()
+	headers := []string{"Property", "Value"}
+	data := [][]string{
+		{Apx.LC.Get("stacks.labels.name"), stack.Name},
+		{"Base", stack.Base},
+		{"Packages", strings.Join(stack.Packages, ", ")},
+		{"Package manager", stack.PkgManager},
+	}
+	Apx.CLI.Table(headers, data)
 
 	return nil
 }
@@ -79,34 +78,42 @@ func (c *StacksNewCmd) Run() error {
 
 	if c.Name == "" {
 		if !c.NoPrompt {
-			Apx.Log.Term.Info().Msg(Apx.LC.Get("stacks.new.info.askName"))
-			fmt.Scanln(&c.Name)
+			name, err := Apx.CLI.PromptText(Apx.LC.Get("stacks.new.info.askName"), "")
+			if err != nil {
+				return err
+			}
+			c.Name = name
 			if c.Name == "" {
-				Apx.Log.Term.Error().Msg(Apx.LC.Get("stacks.new.error.emptyName"))
+				Apx.Log.Error(Apx.LC.Get("stacks.new.error.emptyName"))
 				return nil
 			}
 		} else {
-			Apx.Log.Term.Error().Msg(Apx.LC.Get("stacks.new.error.noName"))
+			Apx.Log.Error(Apx.LC.Get("stacks.new.error.noName"))
 			return nil
 		}
 	}
 
 	ok := core.StackExists(c.Name)
 	if ok {
-		Apx.Log.Term.Error().Msgf(Apx.LC.Get("stacks.new.error.alreadyExists"), c.Name)
-		return nil
+		if ok {
+			Apx.Log.Errorf(Apx.LC.Get("stacks.new.error.alreadyExists"), c.Name)
+			return nil
+		}
 	}
 
 	if c.BaseImage == "" {
 		if !c.NoPrompt {
-			Apx.Log.Term.Info().Msg(Apx.LC.Get("stacks.new.info.askBase"))
-			fmt.Scanln(&c.BaseImage)
+			base, err := Apx.CLI.PromptText(Apx.LC.Get("stacks.new.info.askBase"), "")
+			if err != nil {
+				return err
+			}
+			c.BaseImage = base
 			if c.BaseImage == "" {
-				Apx.Log.Term.Error().Msg(Apx.LC.Get("stacks.new.error.emptyBase"))
+				Apx.Log.Error(Apx.LC.Get("stacks.new.error.emptyBase"))
 				return nil
 			}
 		} else {
-			Apx.Log.Term.Error().Msg(Apx.LC.Get("stacks.new.error.noBase"))
+			Apx.Log.Error(Apx.LC.Get("stacks.new.error.noBase"))
 			return nil
 		}
 	}
@@ -114,33 +121,25 @@ func (c *StacksNewCmd) Run() error {
 	if c.PkgManager == "" {
 		pkgManagers := core.ListPkgManagers()
 		if len(pkgManagers) == 0 {
-			Apx.Log.Term.Error().Msg(Apx.LC.Get("stacks.new.error.noPkgManagers"))
+			Apx.Log.Error(Apx.LC.Get("stacks.new.error.noPkgManagers"))
 			return nil
 		}
 
-		Apx.Log.Term.Info().Msg(Apx.LC.Get("stacks.new.info.askPkgManager"))
-		for i, manager := range pkgManagers {
-			fmt.Printf("%d. %s\n", i+1, manager.Name)
+		var options []string
+		for _, manager := range pkgManagers {
+			options = append(options, manager.Name)
 		}
-		Apx.Log.Term.Info().Msgf(Apx.LC.Get("stacks.new.info.selectPkgManager"), len(pkgManagers))
-		var pkgManagerIndex int
-		_, err := fmt.Scanln(&pkgManagerIndex)
+
+		selected, err := Apx.CLI.SelectOption(Apx.LC.Get("stacks.new.info.selectPkgManager"), options)
 		if err != nil {
-			Apx.Log.Term.Error().Msg(Apx.LC.Get("apx.errors.invalidInput"))
-			return nil
+			return err
 		}
-
-		if pkgManagerIndex < 1 || pkgManagerIndex > len(pkgManagers) {
-			Apx.Log.Term.Error().Msg(Apx.LC.Get("apx.errors.invalidInput"))
-			return nil
-		}
-
-		c.PkgManager = pkgManagers[pkgManagerIndex-1].Name
+		c.PkgManager = selected
 	}
 
 	ok = core.PkgManagerExists(c.PkgManager)
 	if !ok {
-		Apx.Log.Term.Error().Msg(Apx.LC.Get("stacks.new.error.pkgManagerDoesNotExist"))
+		Apx.Log.Error(Apx.LC.Get("stacks.new.error.pkgManagerDoesNotExist"))
 		return nil
 	}
 
@@ -153,10 +152,8 @@ func (c *StacksNewCmd) Run() error {
 			false,
 		)
 		if confirm {
-			Apx.Log.Term.Info().Msg(Apx.LC.Get("stacks.new.info.askPackages"))
-			reader := bufio.NewReader(os.Stdin)
-			packagesInput, _ := reader.ReadString('\n')
-			packagesInput = strings.TrimSpace(packagesInput)
+			pkgs, _ := Apx.CLI.PromptText(Apx.LC.Get("stacks.new.info.askPackages"), "")
+			packagesInput := strings.TrimSpace(pkgs)
 			packagesArray = strings.Fields(packagesInput)
 		} else {
 			packagesArray = []string{}
@@ -170,7 +167,7 @@ func (c *StacksNewCmd) Run() error {
 		return err
 	}
 
-	Apx.Log.Term.Info().Msgf(Apx.LC.Get("stacks.new.info.success"), c.Name)
+	Apx.Log.Infof(Apx.LC.Get("stacks.new.info.success"), c.Name)
 
 	return nil
 }
@@ -179,7 +176,7 @@ func (c *StacksUpdateCmd) Run() error {
 	args := c.Args
 	if c.Name == "" {
 		if len(args) != 1 || args[0] == "" {
-			Apx.Log.Term.Error().Msg(Apx.LC.Get("stacks.update.error.noName"))
+			Apx.Log.Error(Apx.LC.Get("stacks.update.error.noName"))
 			return nil
 		}
 
@@ -192,39 +189,45 @@ func (c *StacksUpdateCmd) Run() error {
 	}
 
 	if stack.BuiltIn {
-		Apx.Log.Term.Error().Msg(Apx.LC.Get("stacks.update.error.builtIn"))
+		Apx.Log.Error(Apx.LC.Get("stacks.update.error.builtIn"))
 		os.Exit(126)
 	}
 
 	if c.BaseImage == "" {
 		if !c.NoPrompt {
-			Apx.Log.Term.Info().Msgf(Apx.LC.Get("stacks.update.info.askBase"), stack.Base)
-			fmt.Scanln(&c.BaseImage)
+			base, err := Apx.CLI.PromptText(fmt.Sprintf(Apx.LC.Get("stacks.update.info.askBase"), stack.Base), stack.Base)
+			if err != nil {
+				return err
+			}
+			c.BaseImage = base
 			if c.BaseImage == "" {
 				c.BaseImage = stack.Base
 			}
 		} else {
-			Apx.Log.Term.Error().Msg(Apx.LC.Get("stacks.update.error.noBase"))
+			Apx.Log.Error(Apx.LC.Get("stacks.update.error.noBase"))
 			return nil
 		}
 	}
 
 	if c.PkgManager == "" {
 		if !c.NoPrompt {
-			Apx.Log.Term.Info().Msgf(Apx.LC.Get("stacks.update.info.askPkgManager"), stack.PkgManager)
-			fmt.Scanln(&c.PkgManager)
+			manager, err := Apx.CLI.PromptText(fmt.Sprintf(Apx.LC.Get("stacks.update.info.askPkgManager"), stack.PkgManager), stack.PkgManager)
+			if err != nil {
+				return err
+			}
+			c.PkgManager = manager
 			if c.PkgManager == "" {
 				c.PkgManager = stack.PkgManager
 			}
 		} else {
-			Apx.Log.Term.Error().Msg(Apx.LC.Get("stacks.update.error.noPkgManager"))
+			Apx.Log.Error(Apx.LC.Get("stacks.update.error.noPkgManager"))
 			return nil
 		}
 	}
 
 	ok := core.PkgManagerExists(c.PkgManager)
 	if !ok {
-		Apx.Log.Term.Error().Msg(Apx.LC.Get("stacks.update.error.pkgManagerDoesNotExist"))
+		Apx.Log.Error(Apx.LC.Get("stacks.update.error.pkgManagerDoesNotExist"))
 		return nil
 	}
 
@@ -241,10 +244,8 @@ func (c *StacksUpdateCmd) Run() error {
 		packagesArray := []string{}
 
 		if confirm {
-			Apx.Log.Term.Info().Msg(Apx.LC.Get("stacks.update.info.askPackages"))
-			reader := bufio.NewReader(os.Stdin)
-			packagesInput, _ := reader.ReadString('\n')
-			packagesInput = strings.TrimSpace(packagesInput)
+			pkgs, _ := Apx.CLI.PromptText(Apx.LC.Get("stacks.update.info.askPackages"), "")
+			packagesInput := strings.TrimSpace(pkgs)
 			packagesArray = strings.Fields(packagesInput)
 			stack.Packages = packagesArray
 		}
@@ -258,31 +259,31 @@ func (c *StacksUpdateCmd) Run() error {
 		return err
 	}
 
-	Apx.Log.Term.Info().Msgf(Apx.LC.Get("stacks.update.info.success"), c.Name)
+	Apx.Log.Infof(Apx.LC.Get("stacks.update.info.success"), c.Name)
 
 	return nil
 }
 
 func (c *StacksRmCmd) Run() error {
 	if c.Name == "" {
-		Apx.Log.Term.Error().Msg(Apx.LC.Get("stacks.rm.error.noName"))
+		Apx.Log.Error(Apx.LC.Get("stacks.rm.error.noName"))
 		return nil
 	}
 
 	subSystems, _ := core.ListSubsystemForStack(c.Name)
 	if len(subSystems) > 0 {
-		Apx.Log.Term.Error().Msgf(Apx.LC.Get("stacks.rm.error.inUse"), len(subSystems))
-		table := core.CreateApxTable(os.Stdout)
-		table.SetHeader([]string{Apx.LC.Get("subsystems.labels.name"), "Stack", Apx.LC.Get("subsystems.labels.status"), "Pkgs"})
+		Apx.Log.Errorf(Apx.LC.Get("stacks.rm.error.inUse"), len(subSystems))
+		headers := []string{Apx.LC.Get("subsystems.labels.name"), "Stack", Apx.LC.Get("subsystems.labels.status"), "Pkgs"}
+		var data [][]string
 		for _, subSystem := range subSystems {
-			table.Append([]string{
+			data = append(data, []string{
 				subSystem.Name,
 				subSystem.Stack.Name,
 				subSystem.Status,
 				fmt.Sprintf("%d", len(subSystem.Stack.Packages)),
 			})
 		}
-		table.Render()
+		Apx.CLI.Table(headers, data)
 		return nil
 	}
 
@@ -296,7 +297,7 @@ func (c *StacksRmCmd) Run() error {
 			return err
 		}
 		if !confirm {
-			Apx.Log.Term.Info().Msgf(Apx.LC.Get("pkgmanagers.rm.info.aborting"), c.Name)
+			Apx.Log.Infof(Apx.LC.Get("pkgmanagers.rm.info.aborting"), c.Name)
 			return nil
 		}
 	}
@@ -311,13 +312,13 @@ func (c *StacksRmCmd) Run() error {
 		return error
 	}
 
-	Apx.Log.Term.Info().Msgf(Apx.LC.Get("stacks.rm.info.success"), c.Name)
+	Apx.Log.Infof(Apx.LC.Get("stacks.rm.info.success"), c.Name)
 	return nil
 }
 
 func (c *StacksExportCmd) Run() error {
 	if c.Name == "" {
-		Apx.Log.Term.Error().Msg(Apx.LC.Get("stacks.export.error.noName"))
+		Apx.Log.Error(Apx.LC.Get("stacks.export.error.noName"))
 		return nil
 	}
 
@@ -327,7 +328,7 @@ func (c *StacksExportCmd) Run() error {
 	}
 
 	if c.Output == "" {
-		Apx.Log.Term.Error().Msg(Apx.LC.Get("stacks.export.error.noOutput"))
+		Apx.Log.Error(Apx.LC.Get("stacks.export.error.noOutput"))
 		return nil
 	}
 
@@ -336,19 +337,19 @@ func (c *StacksExportCmd) Run() error {
 		return error
 	}
 
-	Apx.Log.Term.Info().Msgf(Apx.LC.Get("stacks.export.info.success"), stack.Name, c.Output)
+	Apx.Log.Infof(Apx.LC.Get("stacks.export.info.success"), stack.Name, c.Output)
 	return nil
 }
 
 func (c *StacksImportCmd) Run() error {
 	if c.Input == "" {
-		Apx.Log.Term.Error().Msg(Apx.LC.Get("stacks.import.error.noInput"))
+		Apx.Log.Error(Apx.LC.Get("stacks.import.error.noInput"))
 		return nil
 	}
 
 	stack, error := core.LoadStackFromPath(c.Input)
 	if error != nil {
-		Apx.Log.Term.Error().Msgf(Apx.LC.Get("stacks.import.error.cannotLoad"), c.Input)
+		Apx.Log.Errorf(Apx.LC.Get("stacks.import.error.cannotLoad"), c.Input)
 	}
 
 	error = stack.Save()
@@ -356,6 +357,6 @@ func (c *StacksImportCmd) Run() error {
 		return error
 	}
 
-	Apx.Log.Term.Info().Msgf(Apx.LC.Get("stacks.import.info.success"), stack.Name)
+	Apx.Log.Infof(Apx.LC.Get("stacks.import.info.success"), stack.Name)
 	return nil
 }

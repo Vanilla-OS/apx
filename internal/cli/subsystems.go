@@ -12,7 +12,6 @@ package cli
 import (
 	"encoding/json"
 	"fmt"
-	"os"
 
 	"github.com/vanilla-os/apx/v2/core"
 )
@@ -26,17 +25,16 @@ func (c *SubsystemsListCmd) Run() error {
 	if !c.Json {
 		subSystemsCount := len(subSystems)
 		if subSystemsCount == 0 {
-			Apx.Log.Term.Info().Msg(Apx.LC.Get("subsystems.list.info.noSubsystems"))
+			Apx.Log.Info(Apx.LC.Get("subsystems.list.info.noSubsystems"))
 			return nil
 		}
 
-		Apx.Log.Term.Info().Msgf(Apx.LC.Get("subsystems.list.info.foundSubsystems"), subSystemsCount)
+		Apx.Log.Infof(Apx.LC.Get("subsystems.list.info.foundSubsystems"), subSystemsCount)
 
-		table := core.CreateApxTable(os.Stdout)
-		table.SetHeader([]string{Apx.LC.Get("subsystems.labels.name"), "Stack", Apx.LC.Get("subsystems.labels.status"), "Pkgs"})
-
+		headers := []string{Apx.LC.Get("subsystems.labels.name"), "Stack", Apx.LC.Get("subsystems.labels.status"), "Pkgs"}
+		var data [][]string
 		for _, subSystem := range subSystems {
-			table.Append([]string{
+			data = append(data, []string{
 				subSystem.Name,
 				subSystem.Stack.Name,
 				subSystem.Status,
@@ -44,7 +42,10 @@ func (c *SubsystemsListCmd) Run() error {
 			})
 		}
 
-		table.Render()
+		err := Apx.CLI.Table(headers, data)
+		if err != nil {
+			return err
+		}
 	} else {
 		jsonSubSystems, err := json.MarshalIndent(subSystems, "", "  ")
 		if err != nil {
@@ -61,44 +62,38 @@ func (c *SubsystemsNewCmd) Run() error {
 
 	stacks := core.ListStacks()
 	if len(stacks) == 0 {
-		Apx.Log.Term.Error().Msg(Apx.LC.Get("subsystems.new.error.noStacks"))
+		Apx.Log.Error(Apx.LC.Get("subsystems.new.error.noStacks"))
 		return nil
 	}
 
 	if c.Name == "" {
-		Apx.Log.Term.Info().Msg(Apx.LC.Get("subsystems.new.info.askName"))
-		fmt.Scanln(&c.Name)
+		name, err := Apx.CLI.PromptText(Apx.LC.Get("subsystems.new.info.askName"), "")
+		if err != nil {
+			return err
+		}
+		c.Name = name
 		if c.Name == "" {
-			Apx.Log.Term.Error().Msg(Apx.LC.Get("subsystems.new.error.emptyName"))
+			Apx.Log.Error(Apx.LC.Get("subsystems.new.error.emptyName"))
 			return nil
 		}
 	}
 
 	if c.Stack == "" {
-		Apx.Log.Term.Info().Msg(Apx.LC.Get("subsystems.new.info.availableStacks"))
-		for i, stack := range stacks {
-			fmt.Printf("%d. %s\n", i+1, stack.Name)
+		var options []string
+		for _, stack := range stacks {
+			options = append(options, stack.Name)
 		}
-		Apx.Log.Term.Info().Msgf(Apx.LC.Get("subsystems.new.info.selectStack"), len(stacks))
 
-		var stackIndex int
-		_, err := fmt.Scanln(&stackIndex)
+		selected, err := Apx.CLI.SelectOption(Apx.LC.Get("subsystems.new.info.selectStack"), options)
 		if err != nil {
-			Apx.Log.Term.Error().Msg(Apx.LC.Get("apx.errors.invalidInput"))
-			return nil
+			return err
 		}
-
-		if stackIndex < 1 || stackIndex > len(stacks) {
-			Apx.Log.Term.Error().Msg(Apx.LC.Get("apx.errors.invalidInput"))
-			return nil
-		}
-
-		c.Stack = stacks[stackIndex-1].Name
+		c.Stack = selected
 	}
 
 	checkSubSystem, err := core.LoadSubSystem(c.Name, false)
 	if err == nil {
-		Apx.Log.Term.Error().Msgf(Apx.LC.Get("subsystems.new.error.alreadyExists"), checkSubSystem.Name)
+		Apx.Log.Errorf(Apx.LC.Get("subsystems.new.error.alreadyExists"), checkSubSystem.Name)
 		return nil
 	}
 
@@ -128,14 +123,14 @@ func (c *SubsystemsNewCmd) Run() error {
 	}
 
 	spinner.Stop()
-	Apx.Log.Term.Info().Msgf(Apx.LC.Get("subsystems.new.info.success"), c.Name)
+	Apx.Log.Infof(Apx.LC.Get("subsystems.new.info.success"), c.Name)
 
 	return nil
 }
 
 func (c *SubsystemsRmCmd) Run() error {
 	if c.Name == "" {
-		Apx.Log.Term.Error().Msg(Apx.LC.Get("subsystems.rm.error.noName"))
+		Apx.Log.Error(Apx.LC.Get("subsystems.rm.error.noName"))
 		return nil
 	}
 
@@ -161,14 +156,14 @@ func (c *SubsystemsRmCmd) Run() error {
 		return err
 	}
 
-	Apx.Log.Term.Info().Msgf(Apx.LC.Get("subsystems.rm.info.success"), c.Name)
+	Apx.Log.Infof(Apx.LC.Get("subsystems.rm.info.success"), c.Name)
 
 	return nil
 }
 
 func (c *SubsystemsResetCmd) Run() error {
 	if c.Name == "" {
-		Apx.Log.Term.Error().Msg(Apx.LC.Get("subsystems.reset.error.noName"))
+		Apx.Log.Error(Apx.LC.Get("subsystems.reset.error.noName"))
 		return nil
 	}
 
@@ -179,7 +174,7 @@ func (c *SubsystemsResetCmd) Run() error {
 			false,
 		)
 		if !confirm {
-			Apx.Log.Term.Info().Msg(Apx.LC.Get("apx.info.aborting"))
+			Apx.Log.Info(Apx.LC.Get("apx.info.aborting"))
 			return nil
 		}
 	}
@@ -194,7 +189,7 @@ func (c *SubsystemsResetCmd) Run() error {
 		return err
 	}
 
-	Apx.Log.Term.Info().Msgf(Apx.LC.Get("subsystems.reset.info.success"), c.Name)
+	Apx.Log.Infof(Apx.LC.Get("subsystems.reset.info.success"), c.Name)
 
 	return nil
 }
