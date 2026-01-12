@@ -11,6 +11,7 @@ package cmd
 import (
 	"fmt"
 	"slices"
+	"os/exec"
 
 	"github.com/spf13/cobra"
 	"github.com/vanilla-os/apx/v2/core"
@@ -357,9 +358,15 @@ func handleExport(subSystem *core.SubSystem, command, appName, bin, binOutput st
 
 			cmdr.Info.Printfln(apx.Trans("runtimeCommand.info.exportedApp"), appName)
 		} else {
-			err := subSystem.ExportBin(bin, binOutput)
-			if err != nil {
-				return fmt.Errorf(apx.Trans("runtimeCommand.error.exportingBin"), err)
+			_, binErr := exec.LookPath(bin)
+			_, outErr := exec.LookPath(binOutput)
+			if binErr != nil && outErr != nil {
+				err := subSystem.ExportBin(bin, binOutput)
+				if err != nil {
+					return fmt.Errorf(apx.Trans("runtimeCommand.error.exportingBin"), err)
+				}
+			} else {
+				return fmt.Errorf(apx.Trans("runtimeCommand.error.protectedBin"))
 			}
 
 			cmdr.Info.Printfln(apx.Trans("runtimeCommand.info.exportedBin"), bin)
