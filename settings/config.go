@@ -16,7 +16,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/spf13/viper"
+	"github.com/vanilla-os/sdk/pkg/v1/conf"
+	"github.com/vanilla-os/sdk/pkg/v1/conf/types"
 )
 
 type Config struct {
@@ -35,58 +36,31 @@ type Config struct {
 }
 
 func GetApxDefaultConfig() (*Config, error) {
-	userConfigDir, err := os.UserConfigDir()
-	if err != nil {
-		return nil, err
+	opts := types.ConfigOptions{
+		Domain: "apx",
+		Type:   "json",
 	}
 
-	// dev paths
-	viper.AddConfigPath("config/")
-
-	// tests paths
-	viper.AddConfigPath("../config/")
-
-	// user paths
-	viper.AddConfigPath(filepath.Join(userConfigDir, "apx/"))
-
-	// prod paths
-	viper.AddConfigPath("/etc/apx/")
-	viper.AddConfigPath("/usr/share/apx/")
-
-	// flatpak paths
-	viper.AddConfigPath("/app/share/apx/")
-
-	viper.SetConfigName("apx")
-	viper.SetConfigType("json")
-
-	err = viper.ReadInConfig()
+	config, err := conf.InitConfig[Config](opts)
 	if err != nil {
 		fmt.Printf("Unable to read config file: \n\t%s\n", err)
 		os.Exit(1)
 	}
 
-	// if viper.ConfigFileUsed() != "/etc/apx/apx.json" || viper.ConfigFileUsed() != "/usr/share/apx/apx.json" {
-	// 	fmt.Printf("Using config file: %s\n\n", viper.ConfigFileUsed())
-	// }
-
-	distroboxPath := viper.GetString("distroboxPath")
+	distroboxPath := config.DistroboxPath
 
 	err = TestFile(distroboxPath)
 	if err != nil {
 		if os.IsNotExist(err) {
-			path, err := LookPath("distrobox")
-			if err != nil {
-				fmt.Printf("Unable to find distrobox in PATH.\n")
-			} else {
-				distroboxPath = path
-			}
+			path, _ := LookPath("distrobox")
+			distroboxPath = path
 		}
 	}
 
 	Cnf := NewApxConfig(
-		viper.GetString("apxPath"),
+		config.ApxPath,
 		distroboxPath,
-		viper.GetString("storageDriver"),
+		config.StorageDriver,
 	)
 	return Cnf, nil
 }
