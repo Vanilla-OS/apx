@@ -17,7 +17,6 @@ import (
 	"strings"
 
 	"github.com/vanilla-os/sdk/pkg/v1/conf"
-	"github.com/vanilla-os/sdk/pkg/v1/conf/types"
 )
 
 type Config struct {
@@ -36,12 +35,9 @@ type Config struct {
 }
 
 func GetApxDefaultConfig() (*Config, error) {
-	opts := types.ConfigOptions{
-		Domain: "apx",
-		Type:   "json",
-	}
-
-	config, err := conf.InitConfig[Config](opts)
+	config, err := conf.NewBuilder[Config]("apx").
+		WithType("json").
+		Build()
 	if err != nil {
 		fmt.Printf("Unable to read config file: \n\t%s\n", err)
 		os.Exit(1)
