@@ -22,7 +22,7 @@ jobs:
 
     - name: Build
       run: |
-        go build -o apx -ldflags="-X 'main.Version=${{ github.sha }}'"
+        go build -o apx -ldflags="-X 'main.Version=${{ github.sha }}'" cmd/
         tar -czvf apx-amd64.tar.gz apx
         GOARCH=arm64 go build -o apx -ldflags="-X 'main.Version=${{ github.sha }}'"
         tar -czvf apx-arm64.tar.gz apx
