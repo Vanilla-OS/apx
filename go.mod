@@ -4,7 +4,7 @@ go 1.24.4
 
 require (
 	github.com/google/uuid v1.6.0
-	github.com/vanilla-os/sdk v0.0.0-20260119192110-81d99c5bcee6
+	github.com/vanilla-os/sdk v0.0.0-20260119195140-88fa4a06134f
 	gopkg.in/yaml.v2 v2.4.0
 )
 
