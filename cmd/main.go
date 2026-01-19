@@ -1,3 +1,5 @@
+//go:build !check_missing_strings
+
 package main
 
 /*	License: GPLv3
@@ -40,7 +42,7 @@ func main() {
 	cmd.Apx, err = app.NewApp(types.AppOptions{
 		Name:          "apx",
 		Version:       Version,
-		RDNN:          "com.vanilla-os.apx",
+		RDNN:          "org.vanillaos.apx",
 		LocalesFS:     subFS,
 		DefaultLocale: "en",
 	})
