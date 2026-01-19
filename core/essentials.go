@@ -17,7 +17,7 @@ import (
 	"os/exec"
 	"strings"
 
-	"github.com/vanilla-os/apx/v2/settings"
+	"github.com/vanilla-os/apx/v3/settings"
 )
 
 func (a *Apx) EssentialChecks() error {

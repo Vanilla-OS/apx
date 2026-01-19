@@ -15,7 +15,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/vanilla-os/apx/v2/core"
+	"github.com/vanilla-os/apx/v3/core"
 )
 
 const (

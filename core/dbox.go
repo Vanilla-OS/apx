@@ -18,7 +18,7 @@ import (
 	"strings"
 	"syscall"
 
-	"github.com/vanilla-os/apx/v2/settings"
+	"github.com/vanilla-os/apx/v3/settings"
 )
 
 type dbox struct {
@@ -106,10 +106,11 @@ func (d *dbox) RunCommand(command string, args []string, engineFlags []string, u
 
 	// NOTE: the custom storage is not being used since it prevent other
 	//		 utilities, like VSCode, to access the container.
-	if d.Engine == "podman" {
+	switch d.Engine {
+	case "podman":
 		envVars = append(envVars, "CONTAINER_STORAGE_DRIVER="+apx.Cnf.StorageDriver)
 		// envVars = append(envVars, "XDG_DATA_HOME="+apx.Cnf.ApxStoragePath)
-	} else if d.Engine == "docker" {
+	case "docker":
 		envVars = append(envVars, "DOCKER_STORAGE_DRIVER="+apx.Cnf.StorageDriver)
 		// envVars = append(envVars, "DOCKER_DATA_ROOT="+apx.Cnf.ApxStoragePath)
 	}

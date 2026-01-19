@@ -13,7 +13,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/vanilla-os/apx/v2/core"
+	"github.com/vanilla-os/apx/v3/core"
 )
 
 func (c *SubsystemsListCmd) Run() error {

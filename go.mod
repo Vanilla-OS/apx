@@ -1,4 +1,4 @@
-module github.com/vanilla-os/apx/v2
+module github.com/vanilla-os/apx/v3
 
 go 1.24.4
 

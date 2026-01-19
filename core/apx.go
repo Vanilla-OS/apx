@@ -12,7 +12,7 @@ package core
 import (
 	"fmt"
 
-	"github.com/vanilla-os/apx/v2/settings"
+	"github.com/vanilla-os/apx/v3/settings"
 )
 
 var apx *Apx

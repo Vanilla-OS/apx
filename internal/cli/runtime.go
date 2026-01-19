@@ -12,7 +12,7 @@ package cli
 import (
 	"fmt"
 
-	"github.com/vanilla-os/apx/v2/core"
+	"github.com/vanilla-os/apx/v3/core"
 )
 
 // RootCmd does not have a Run method to trigger help automatically
