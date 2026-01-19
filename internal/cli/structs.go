@@ -63,7 +63,7 @@ type SubsystemRunCmd struct {
 type SubsystemInstallCmd struct {
 	cli.Base
 	Name     string   `json:"-"`
-	NoExport bool     `flag:"short:n, long:no-export, name:pr:apx.flag.no_export"`
+	NoExport bool     `flag:"short:n, long:no-export, name:pr:apx.cmd.subsystem.install.options.noExport"`
 	Args     []string `arg:"" optional:"" name:"packages" help:"pr:apx.arg.packages"`
 }
 
@@ -159,7 +159,7 @@ type StacksCmd struct {
 
 type StacksListCmd struct {
 	cli.Base
-	Json bool `flag:"short:j, long:json, name:pr:apx.flag.json"`
+	Json bool `flag:"short:j, long:json, name:pr:apx.cmd.stacks.list.options.json"`
 }
 
 type StacksShowCmd struct {
@@ -169,20 +169,20 @@ type StacksShowCmd struct {
 
 type StacksNewCmd struct {
 	cli.Base
-	NoPrompt   bool   `flag:"short:y, long:no-prompt, name:pr:apx.flag.no_prompt"`
-	Name       string `flag:"short:n, long:name, name:pr:apx.flag.stack.name"`
-	BaseImage  string `flag:"short:b, long:base, name:pr:apx.flag.stack.base"`
-	Packages   string `flag:"short:p, long:packages, name:pr:apx.flag.packages"`
-	PkgManager string `flag:"short:k, long:pkg-manager, name:pr:apx.flag.pkg_manager"`
+	NoPrompt   bool   `flag:"short:y, long:no-prompt, name:pr:apx.cmd.stacks.new.options.noPrompt"`
+	Name       string `flag:"short:n, long:name, name:pr:apx.cmd.stacks.new.options.name"`
+	BaseImage  string `flag:"short:b, long:base, name:pr:apx.cmd.stacks.new.options.base"`
+	Packages   string `flag:"short:p, long:packages, name:pr:apx.cmd.stacks.new.options.packages"`
+	PkgManager string `flag:"short:k, long:pkg-manager, name:pr:apx.cmd.stacks.new.options.pkgManager"`
 }
 
 type StacksUpdateCmd struct {
 	cli.Base
-	NoPrompt   bool     `flag:"short:y, long:no-prompt, name:pr:apx.flag.no_prompt"`
-	Name       string   `flag:"short:n, long:name, name:pr:apx.flag.stack.name"`
-	BaseImage  string   `flag:"short:b, long:base, name:pr:apx.flag.stack.base"`
-	Packages   string   `flag:"short:p, long:packages, name:pr:apx.flag.packages"`
-	PkgManager string   `flag:"short:k, long:pkg-manager, name:pr:apx.flag.pkg_manager"`
+	NoPrompt   bool     `flag:"short:y, long:no-prompt, name:pr:apx.cmd.stacks.update.options.noPrompt"`
+	Name       string   `flag:"short:n, long:name, name:pr:apx.cmd.stacks.update.options.name"`
+	BaseImage  string   `flag:"short:b, long:base, name:pr:apx.cmd.stacks.update.options.base"`
+	Packages   string   `flag:"short:p, long:packages, name:pr:apx.cmd.stacks.update.options.packages"`
+	PkgManager string   `flag:"short:k, long:pkg-manager, name:pr:apx.cmd.stacks.update.options.pkgManager"`
 	Args       []string `arg:"" optional:"" name:"stack" help:"pr:apx.arg.stack"`
 }
 
@@ -193,37 +193,37 @@ type PkgManagersShowCmd struct {
 
 type PkgManagersUpdateCmd struct {
 	cli.Base
-	NoPrompt   bool     `flag:"short:y, long:no-prompt, name:pr:apx.flag.no_prompt"`
-	Name       string   `flag:"short:n, long:name, name:pr:apx.flag.pkgmanager.name"`
-	NeedSudo   bool     `flag:"short:S, long:need-sudo, name:pr:apx.flag.need_sudo"`
-	AutoRemove string   `flag:"short:a, long:autoremove, name:pr:apx.flag.autoremove_cmd"`
-	Clean      string   `flag:"short:c, long:clean, name:pr:apx.flag.clean_cmd"`
-	Install    string   `flag:"short:i, long:install, name:pr:apx.flag.install_cmd"`
-	List       string   `flag:"short:l, long:list, name:pr:apx.flag.list_cmd"`
-	Purge      string   `flag:"short:p, long:purge, name:pr:apx.flag.purge_cmd"`
-	Remove     string   `flag:"short:r, long:remove, name:pr:apx.flag.remove_cmd"`
-	Search     string   `flag:"short:s, long:search, name:pr:apx.flag.search_cmd"`
-	Show       string   `flag:"short:w, long:show, name:pr:apx.flag.show_cmd"`
-	Update     string   `flag:"short:u, long:update, name:pr:apx.flag.update_cmd"`
-	Upgrade    string   `flag:"short:U, long:upgrade, name:pr:apx.flag.upgrade_cmd"`
+	NoPrompt   bool     `flag:"short:y, long:no-prompt, name:pr:apx.cmd.pkgmanagers.new.options.noPrompt"`
+	Name       string   `flag:"short:n, long:name, name:pr:apx.cmd.pkgmanagers.new.options.name"`
+	NeedSudo   bool     `flag:"short:S, long:need-sudo, name:pr:apx.cmd.pkgmanagers.new.options.needSudo"`
+	AutoRemove string   `flag:"short:a, long:autoremove, name:pr:apx.cmd.pkgmanagers.new.options.autoremove"`
+	Clean      string   `flag:"short:c, long:clean, name:pr:apx.cmd.pkgmanagers.new.options.clean"`
+	Install    string   `flag:"short:i, long:install, name:pr:apx.cmd.pkgmanagers.new.options.install"`
+	List       string   `flag:"short:l, long:list, name:pr:apx.cmd.pkgmanagers.new.options.list"`
+	Purge      string   `flag:"short:p, long:purge, name:pr:apx.cmd.pkgmanagers.new.options.purge"`
+	Remove     string   `flag:"short:r, long:remove, name:pr:apx.cmd.pkgmanagers.new.options.remove"`
+	Search     string   `flag:"short:s, long:search, name:pr:apx.cmd.pkgmanagers.new.options.search"`
+	Show       string   `flag:"short:w, long:show, name:pr:apx.cmd.pkgmanagers.new.options.show"`
+	Update     string   `flag:"short:u, long:update, name:pr:apx.cmd.pkgmanagers.new.options.update"`
+	Upgrade    string   `flag:"short:U, long:upgrade, name:pr:apx.cmd.pkgmanagers.new.options.upgrade"`
 	Args       []string `arg:"" optional:"" name:"pkgmanager" help:"pr:apx.arg.pkgmanager"`
 }
 
 type StacksRmCmd struct {
 	cli.Base
-	Name  string `flag:"short:n, long:name, name:pr:apx.flag.stack.name"`
-	Force bool   `flag:"short:f, long:force, name:pr:apx.flag.force"`
+	Name  string `flag:"short:n, long:name, name:pr:apx.cmd.stacks.rm.options.name"`
+	Force bool   `flag:"short:f, long:force, name:pr:apx.cmd.stacks.rm.options.force"`
 }
 
 type StacksExportCmd struct {
 	cli.Base
-	Name   string `flag:"short:n, long:name, name:pr:apx.flag.stack.name"`
-	Output string `flag:"short:o, long:output, name:pr:apx.flag.output"`
+	Name   string `flag:"short:n, long:name, name:pr:apx.cmd.stacks.export.options.name"`
+	Output string `flag:"short:o, long:output, name:pr:apx.cmd.stacks.export.options.output"`
 }
 
 type StacksImportCmd struct {
 	cli.Base
-	Input string `flag:"short:i, long:input, name:pr:apx.flag.input"`
+	Input string `flag:"short:i, long:input, name:pr:apx.cmd.stacks.import.options.input"`
 }
 
 // Subsystems
@@ -238,27 +238,27 @@ type SubsystemsCmd struct {
 
 type SubsystemsListCmd struct {
 	cli.Base
-	Json bool `flag:"short:j, long:json, name:pr:apx.flag.json"`
+	Json bool `flag:"short:j, long:json, name:pr:apx.cmd.subsystem.list.options.json"`
 }
 
 type SubsystemsNewCmd struct {
 	cli.Base
-	Stack string `flag:"short:s, long:stack, name:pr:apx.flag.stack"`
-	Name  string `flag:"short:n, long:name, name:pr:apx.flag.subsystem.name"`
-	Home  string `flag:"short:H, long:home, name:pr:apx.flag.home"`
-	Init  bool   `flag:"short:i, long:init, name:pr:apx.flag.init"`
+	Stack string `flag:"short:s, long:stack, name:pr:apx.cmd.subsystem.new.options.stack"`
+	Name  string `flag:"short:n, long:name, name:pr:apx.cmd.subsystem.new.options.name"`
+	Home  string `flag:"short:H, long:home, name:pr:apx.cmd.subsystem.new.options.home"`
+	Init  bool   `flag:"short:i, long:init, name:pr:apx.cmd.subsystem.new.options.init"`
 }
 
 type SubsystemsRmCmd struct {
 	cli.Base
-	Name  string `flag:"short:n, long:name, name:pr:apx.flag.subsystem.name"`
-	Force bool   `flag:"short:f, long:force, name:pr:apx.flag.force"`
+	Name  string `flag:"short:n, long:name, name:pr:apx.cmd.subsystem.rm.options.name"`
+	Force bool   `flag:"short:f, long:force, name:pr:apx.cmd.subsystem.rm.options.force"`
 }
 
 type SubsystemsResetCmd struct {
 	cli.Base
-	Name  string `flag:"short:n, long:name, name:pr:apx.flag.subsystem.name"`
-	Force bool   `flag:"short:f, long:force, name:pr:apx.flag.force"`
+	Name  string `flag:"short:n, long:name, name:pr:apx.cmd.subsystem.reset.options.name"`
+	Force bool   `flag:"short:f, long:force, name:pr:apx.cmd.subsystem.reset.options.force"`
 }
 
 // PkgManagers
@@ -276,39 +276,39 @@ type PkgManagersCmd struct {
 
 type PkgManagersListCmd struct {
 	cli.Base
-	Json bool `flag:"short:j, long:json, name:pr:apx.flag.json"`
+	Json bool `flag:"short:j, long:json, name:pr:apx.cmd.pkgmanagers.list.options.json"`
 }
 
 type PkgManagersNewCmd struct {
 	cli.Base
-	NoPrompt   bool   `flag:"short:y, long:no-prompt, name:pr:apx.flag.no_prompt"`
-	Name       string `flag:"short:n, long:name, name:pr:apx.flag.pkgmanager.name"`
-	NeedSudo   bool   `flag:"short:S, long:need-sudo, name:pr:apx.flag.need_sudo"`
-	AutoRemove string `flag:"short:a, long:autoremove, name:pr:apx.flag.autoremove_cmd"`
-	Clean      string `flag:"short:c, long:clean, name:pr:apx.flag.clean_cmd"`
-	Install    string `flag:"short:i, long:install, name:pr:apx.flag.install_cmd"`
-	List       string `flag:"short:l, long:list, name:pr:apx.flag.list_cmd"`
-	Purge      string `flag:"short:p, long:purge, name:pr:apx.flag.purge_cmd"`
-	Remove     string `flag:"short:r, long:remove, name:pr:apx.flag.remove_cmd"`
-	Search     string `flag:"short:s, long:search, name:pr:apx.flag.search_cmd"`
-	Show       string `flag:"short:w, long:show, name:pr:apx.flag.show_cmd"`
-	Update     string `flag:"short:u, long:update, name:pr:apx.flag.update_cmd"`
-	Upgrade    string `flag:"short:U, long:upgrade, name:pr:apx.flag.upgrade_cmd"`
+	NoPrompt   bool   `flag:"short:y, long:no-prompt, name:pr:apx.cmd.pkgmanagers.new.options.noPrompt"`
+	Name       string `flag:"short:n, long:name, name:pr:apx.cmd.pkgmanagers.new.options.name"`
+	NeedSudo   bool   `flag:"short:S, long:need-sudo, name:pr:apx.cmd.pkgmanagers.new.options.needSudo"`
+	AutoRemove string `flag:"short:a, long:autoremove, name:pr:apx.cmd.pkgmanagers.new.options.autoremove"`
+	Clean      string `flag:"short:c, long:clean, name:pr:apx.cmd.pkgmanagers.new.options.clean"`
+	Install    string `flag:"short:i, long:install, name:pr:apx.cmd.pkgmanagers.new.options.install"`
+	List       string `flag:"short:l, long:list, name:pr:apx.cmd.pkgmanagers.new.options.list"`
+	Purge      string `flag:"short:p, long:purge, name:pr:apx.cmd.pkgmanagers.new.options.purge"`
+	Remove     string `flag:"short:r, long:remove, name:pr:apx.cmd.pkgmanagers.new.options.remove"`
+	Search     string `flag:"short:s, long:search, name:pr:apx.cmd.pkgmanagers.new.options.search"`
+	Show       string `flag:"short:w, long:show, name:pr:apx.cmd.pkgmanagers.new.options.show"`
+	Update     string `flag:"short:u, long:update, name:pr:apx.cmd.pkgmanagers.new.options.update"`
+	Upgrade    string `flag:"short:U, long:upgrade, name:pr:apx.cmd.pkgmanagers.new.options.upgrade"`
 }
 
 type PkgManagersRmCmd struct {
 	cli.Base
-	Name  string `flag:"short:n, long:name, name:pr:apx.flag.pkgmanager.name"`
-	Force bool   `flag:"short:f, long:force, name:pr:apx.flag.force"`
+	Name  string `flag:"short:n, long:name, name:pr:apx.cmd.pkgmanagers.rm.options.name"`
+	Force bool   `flag:"short:f, long:force, name:pr:apx.cmd.pkgmanagers.rm.options.force"`
 }
 
 type PkgManagersExportCmd struct {
 	cli.Base
-	Name   string `flag:"short:n, long:name, name:pr:apx.flag.pkgmanager.name"`
-	Output string `flag:"short:o, long:output, name:pr:apx.flag.output"`
+	Name   string `flag:"short:n, long:name, name:pr:apx.cmd.pkgmanagers.export.options.name"`
+	Output string `flag:"short:o, long:output, name:pr:apx.cmd.pkgmanagers.export.options.output"`
 }
 
 type PkgManagersImportCmd struct {
 	cli.Base
-	Input string `flag:"short:i, long:input, name:pr:apx.flag.input"`
+	Input string `flag:"short:i, long:input, name:pr:apx.cmd.pkgmanagers.import.options.input"`
 }
