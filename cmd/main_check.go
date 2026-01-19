@@ -17,7 +17,7 @@ import (
 	"io/fs"
 	"os"
 
-	cmd "github.com/vanilla-os/apx/v2/internal/cli"
+	cmd "github.com/vanilla-os/apx/v3/internal/cli"
 	"github.com/vanilla-os/sdk/pkg/v1/app"
 	"github.com/vanilla-os/sdk/pkg/v1/app/types"
 )
