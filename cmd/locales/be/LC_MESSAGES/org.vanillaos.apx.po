@@ -692,3 +692,25 @@ msgstr "Вы ўпэўнены, што хочаце выдаліць '%s'?\n[т/�
 msgid "subsystems.rm.info.success"
 msgstr "Выдалена падсістэма '%s'."
 
+
+
+msgid "apx.arg.command"
+msgstr ""
+
+msgid "apx.arg.packages"
+msgstr ""
+
+msgid "apx.arg.query"
+msgstr ""
+
+msgid "apx.arg.package"
+msgstr ""
+
+msgid "apx.arg.applications"
+msgstr ""
+
+msgid "apx.arg.stack"
+msgstr ""
+
+msgid "apx.arg.pkgmanager"
+msgstr ""

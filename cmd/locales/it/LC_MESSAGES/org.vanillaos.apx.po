@@ -701,3 +701,25 @@ msgstr "Si è sicuri di voler rimuovere '%s'? [y/N]"
 msgid "subsystems.rm.info.success"
 msgstr "Rimosso il sottosistema '%s'."
 
+
+
+msgid "apx.arg.command"
+msgstr "Il comando da eseguire."
+
+msgid "apx.arg.packages"
+msgstr "I pacchetti da installare/rimuovere."
+
+msgid "apx.arg.query"
+msgstr "La query di ricerca."
+
+msgid "apx.arg.package"
+msgstr "Il nome del pacchetto."
+
+msgid "apx.arg.applications"
+msgstr "Le applicazioni da esportare/rimuovere."
+
+msgid "apx.arg.stack"
+msgstr "Il nome dello stack."
+
+msgid "apx.arg.pkgmanager"
+msgstr "Il nome del gestore pacchetti."

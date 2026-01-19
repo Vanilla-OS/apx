@@ -692,3 +692,25 @@ msgstr "'%s'(을)를 삭제하시겠습니까?"
 msgid "subsystems.rm.info.success"
 msgstr "하위 시스템 '%s'(을)를 삭제하였습니다."
 
+
+
+msgid "apx.arg.command"
+msgstr ""
+
+msgid "apx.arg.packages"
+msgstr ""
+
+msgid "apx.arg.query"
+msgstr ""
+
+msgid "apx.arg.package"
+msgstr ""
+
+msgid "apx.arg.applications"
+msgstr ""
+
+msgid "apx.arg.stack"
+msgstr ""
+
+msgid "apx.arg.pkgmanager"
+msgstr ""

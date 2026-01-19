@@ -692,3 +692,25 @@ msgstr "Είστε σίγουροι πως επιθυμείτε την αφαί�
 msgid "subsystems.rm.info.success"
 msgstr "Αφαιρέθηκε το υποσύστημα '%s'."
 
+
+
+msgid "apx.arg.command"
+msgstr ""
+
+msgid "apx.arg.packages"
+msgstr ""
+
+msgid "apx.arg.query"
+msgstr ""
+
+msgid "apx.arg.package"
+msgstr ""
+
+msgid "apx.arg.applications"
+msgstr ""
+
+msgid "apx.arg.stack"
+msgstr ""
+
+msgid "apx.arg.pkgmanager"
+msgstr ""

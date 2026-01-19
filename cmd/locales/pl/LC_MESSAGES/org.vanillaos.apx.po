@@ -692,3 +692,25 @@ msgstr "Czy jesteś pewien, że chcesz usunąć '%s'? [y/N]"
 msgid "subsystems.rm.info.success"
 msgstr "Usunięto podsystem '%s'."
 
+
+
+msgid "apx.arg.command"
+msgstr ""
+
+msgid "apx.arg.packages"
+msgstr ""
+
+msgid "apx.arg.query"
+msgstr ""
+
+msgid "apx.arg.package"
+msgstr ""
+
+msgid "apx.arg.applications"
+msgstr ""
+
+msgid "apx.arg.stack"
+msgstr ""
+
+msgid "apx.arg.pkgmanager"
+msgstr ""

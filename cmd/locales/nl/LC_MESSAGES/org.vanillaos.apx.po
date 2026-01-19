@@ -692,3 +692,25 @@ msgstr "Weet u zeker dat u ‘%s’ wilt verwĳderen?"
 msgid "subsystems.rm.info.success"
 msgstr "Subsysteem ‘%s’ verwĳderd."
 
+
+
+msgid "apx.arg.command"
+msgstr ""
+
+msgid "apx.arg.packages"
+msgstr ""
+
+msgid "apx.arg.query"
+msgstr ""
+
+msgid "apx.arg.package"
+msgstr ""
+
+msgid "apx.arg.applications"
+msgstr ""
+
+msgid "apx.arg.stack"
+msgstr ""
+
+msgid "apx.arg.pkgmanager"
+msgstr ""

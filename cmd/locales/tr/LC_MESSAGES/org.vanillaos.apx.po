@@ -692,3 +692,25 @@ msgstr "'%s' kaldırılsın ister misiniz?"
 msgid "subsystems.rm.info.success"
 msgstr "'%s' alt sistemi kaldırıldı."
 
+
+
+msgid "apx.arg.command"
+msgstr ""
+
+msgid "apx.arg.packages"
+msgstr ""
+
+msgid "apx.arg.query"
+msgstr ""
+
+msgid "apx.arg.package"
+msgstr ""
+
+msgid "apx.arg.applications"
+msgstr ""
+
+msgid "apx.arg.stack"
+msgstr ""
+
+msgid "apx.arg.pkgmanager"
+msgstr ""

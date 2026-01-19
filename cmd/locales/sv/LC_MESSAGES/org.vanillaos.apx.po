@@ -692,3 +692,25 @@ msgstr "Är du säker på att du vill ta bort '%s'?"
 msgid "subsystems.rm.info.success"
 msgstr "Tog bort undersystem '%s'."
 
+
+
+msgid "apx.arg.command"
+msgstr ""
+
+msgid "apx.arg.packages"
+msgstr ""
+
+msgid "apx.arg.query"
+msgstr ""
+
+msgid "apx.arg.package"
+msgstr ""
+
+msgid "apx.arg.applications"
+msgstr ""
+
+msgid "apx.arg.stack"
+msgstr ""
+
+msgid "apx.arg.pkgmanager"
+msgstr ""
