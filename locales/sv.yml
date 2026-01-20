@@ -1,11 +1,11 @@
 apx:
-  description: "Apx är en pakethanterare med stöd för flera källor, så att du kan
-    installera paket i undersystem."
+  description: "Apx är en pakethanterare med stöd för flera källor, vilket gör att
+    du kan installera paket i delsystem."
   errors:
     unknownCommand: "Okänt kommando: %s"
     invalidInput: "Ogiltig inmatning."
     invalidChoice: Ogiltigt val.
-    noRoot: Kör inte Apx som root
+    noRoot: Kör inte Apx som root.
   info:
     aborting: "Avbryter som begärt."
   terminal:
@@ -75,7 +75,7 @@ runtimeCommand:
   upgrade:
     description: "Uppgradera alla installerade paket."
   enter:
-    description: "Gå in i undersystems miljö"
+    description: "Gå in i undersystems miljö."
   export:
     description: "Exportera ett program eller binär från undersystemet till värden."
     options:
@@ -112,7 +112,7 @@ pkgmanagers:
     info:
       noPkgManagers: "Inga pakethanterare tillgängliga. Skapa en ny med 'apx pkgmanagers
         new' eller kontakta systemadministratören."
-      foundPkgManagers: "Hittade %d pakethanterare:"
+      foundPkgManagers: "Hittade %d pakethanterare"
     options:
       json:
         description: "Utdata i JSON format."
@@ -207,7 +207,7 @@ pkgmanagers:
       success: Uppdaterade pakethanterare "%s".
       askNewCommand: "Ange nytt kommando för '%s' (lämna tomt för att behålla '%s':"
     error:
-      noName: Inget namn specificerat
+      noName: Inget namn specificerat.
       missingCommand: Saknar kommando för %s.
       builtIn: Inbyggda pakethanterare kan inte modifieras.
 stacks:
@@ -242,8 +242,8 @@ stacks:
       emptyPackages: "Paketen kan inte vara tomma."
       noPackages: "Inga paket specificerade."
       alreadyExists: "En stack med namnet '%s' existerar redan."
-      noPkgManagers: Kunde inte hitta någon pakethanterare. Skapa en med 'apx pkgmanagers
-        new' eller kontakta systemadministratören.
+      noPkgManagers: Kunde inte hitta någon pakethanterare. Skapa en med 'apx 
+        pkgmanagers new' eller kontakta systemadministratören.
     info:
       askName: "Välj ett namn:"
       askBase: "Välj en bas (t.e.x. 'vanillaos/pico'):"
@@ -284,8 +284,8 @@ stacks:
       success: "Uppdaterad stack '%s'."
 
       confirmPackages: Vill du uppdatera listan över paket?
-      noPackages: Du har inte tillhandahållit några paket att installera i stacken.
-        Vill du lägga till några nu?
+      noPackages: Du har inte tillhandahållit några paket att installera i 
+        stacken. Vill du lägga till några nu?
     options:
       noPrompt:
         description: "Anta ja till alla uppmaningar."
@@ -361,8 +361,8 @@ subsystems:
       stackDoesNotExist: "Den specificerade stacken finns inte. Skapa den med 'apx
         stack new' eller kontakta systemadministratören."
       alreadyExists: "Ett undersystem med namnet \"%s\" existerar redan."
-      forbiddenName: Namnet '%s' är förbjdet. är förbjudet. Vänligen välj ett annat
-        namn
+      forbiddenName: Namnet '%s' är förbjdet. är förbjudet. Vänligen välj ett 
+        annat namn
     info:
       askName: "Välj ett namn:"
       selectStack: "Välj en stack [1-%d]:"
