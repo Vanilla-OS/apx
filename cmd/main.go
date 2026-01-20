@@ -92,9 +92,6 @@ func main() {
 
 	cmd.Apx.CLI.Reload()
 	cmd.Apx.CLI.SetName("apx")
-
-	cmd.Apx.CLI.Reload()
-	cmd.Apx.CLI.SetName("apx")
 	cmd.Apx.CLI.SetTranslator(func(key string) string {
 		return cmd.Apx.LC.Get(key)
 	})
