@@ -33,7 +33,7 @@ jobs:
         go build -tags check_missing_strings -o apx-check ./cmd
         ./apx-check
 
-    - uses: actions/upload-artifact@v4
+    - uses: actions/upload-artifact@v6
       if: failure()
       with:
         name: missing-strings-report
