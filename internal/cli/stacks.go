@@ -284,7 +284,7 @@ func (c *StacksRmCmd) Run() error {
 			})
 		}
 		Apx.CLI.Table(headers, data)
-		return nil
+    		return fmt.Errorf(Apx.LC.Get("stacks.rm.error.inUse"), len(subSystems))
 	}
 
 	if !c.Force {
