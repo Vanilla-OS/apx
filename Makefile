@@ -9,7 +9,7 @@ all: clean build
 build: ${BINARY_NAME}
 
 ${BINARY_NAME}:
-	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 ${GO} build -a -tags netgo -ldflags '-w -extldflags "-static"' -o $@
+	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 ${GO} build -a -tags netgo -ldflags '-w -extldflags "-static"' -o $@ ./cmd
 
 install: build
 	install -Dm755 ${BINARY_NAME} ${DESTDIR}${PREFIX}/bin/${BINARY_NAME}
