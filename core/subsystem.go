@@ -210,6 +210,10 @@ func (s *SubSystem) Create() error {
 		labels["nvidia"] = "true"
 	}
 
+	if s.Home != "" {
+		labels["home"] = s.Home
+	}
+
 	err = dbox.CreateContainer(
 		s.InternalName,
 		s.Stack.Base,
@@ -249,6 +253,7 @@ func LoadSubSystem(name string, isRootFull bool) (*SubSystem, error) {
 		InternalName: internalName,
 		Name:         container.Labels["name"],
 		Stack:        stack,
+		Home:         container.Labels["home"],
 		Status:       container.Status,
 		HasInit:      container.Labels["hasInit"] == "true",
 		IsManaged:    container.Labels["managed"] == "true",
@@ -292,6 +297,7 @@ func ListSubSystems(includeManaged bool, includeRootFull bool) ([]*SubSystem, er
 			InternalName:     internalName,
 			Name:             container.Labels["name"],
 			Stack:            stack,
+			Home:             container.Labels["home"],
 			Status:           container.Status,
 			ExportedPrograms: findExported(internalName, container.Labels["name"]),
 		}
