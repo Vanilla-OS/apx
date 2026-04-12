@@ -260,7 +260,7 @@ func (d *dbox) ContainerDelete(name string, rootFull bool) error {
 	return err
 }
 
-func (d *dbox) CreateContainer(name string, image string, additionalPackages []string, home string, labels map[string]string, withInit bool, rootFull bool, unshared bool, withNvidiaIntegration bool, hostname string) error {
+func (d *dbox) CreateContainer(name string, image string, additionalPackages []string, home string, labels map[string]string, withInit bool, rootFull bool, unshared bool, withNvidiaIntegration bool, hostname string, additionalArgs ...string) error {
 	args := []string{
 		"--image", image,
 		"--name", name,
@@ -293,6 +293,8 @@ func (d *dbox) CreateContainer(name string, image string, additionalPackages []s
 		args = append(args, "--additional-packages")
 		args = append(args, strings.Join(additionalPackages, " "))
 	}
+
+	args = append(args, additionalArgs...)
 
 	engineFlags := []string{}
 	for key, value := range labels {

@@ -34,9 +34,10 @@ type SubSystem struct {
 	IsUnshared           bool
 	HasNvidiaIntegration bool
 	Hostname             string
+	AdditionalArgs       []string
 }
 
-func NewSubSystem(name string, stack *Stack, home string, hasInit bool, isManaged bool, isRootfull bool, isUnshared bool, hasNvidiaIntegration bool, hostname string) (*SubSystem, error) {
+func NewSubSystem(name string, stack *Stack, home string, hasInit bool, isManaged bool, isRootfull bool, isUnshared bool, hasNvidiaIntegration bool, hostname string, additionalArgs ...string) (*SubSystem, error) {
 	internalName := genInternalName(name)
 	return &SubSystem{
 		InternalName:         internalName,
@@ -49,6 +50,7 @@ func NewSubSystem(name string, stack *Stack, home string, hasInit bool, isManage
 		IsUnshared:           isUnshared,
 		HasNvidiaIntegration: hasNvidiaIntegration,
 		Hostname:             hostname,
+		AdditionalArgs:       additionalArgs,
 	}, nil
 }
 
@@ -221,6 +223,7 @@ func (s *SubSystem) Create() error {
 		s.IsUnshared,
 		s.HasNvidiaIntegration,
 		s.Hostname,
+		s.AdditionalArgs...,
 	)
 	if err != nil {
 		return err
