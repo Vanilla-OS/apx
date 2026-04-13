@@ -39,7 +39,7 @@ jobs:
         name: missing-strings-report
         path: missing_strings.json
 
-    - uses: softprops/action-gh-release@v2
+    - uses: softprops/action-gh-release@v3
       if: github.repository == 'vanilla-os/apx' && github.ref == 'refs/heads/main'
       with:
         token: "${{ secrets.GITHUB_TOKEN }}"
