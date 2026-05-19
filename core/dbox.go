@@ -67,7 +67,7 @@ func getEngine() (string, string) {
 
 func dboxGetVersion() (version string, err error) {
 	entrypoint := apx.Cnf.DistroboxPath
-	finalArgs := []string{"version"}
+	finalArgs := []string{"--version"}
 	if settings.IsFlatpak() {
 		finalArgs = append([]string{"--host", entrypoint}, finalArgs...)
 		entrypoint = "flatpak-spawn"
@@ -77,12 +77,12 @@ func dboxGetVersion() (version string, err error) {
 		return "", err
 	}
 
-	splitted := strings.Split(string(output), "distrobox: ")
-	if len(splitted) != 2 {
+	splitted := strings.Split(string(output), " ")
+	if len(splitted) < 2 {
 		return "", errors.New("can't retrieve distrobox version")
 	}
 
-	return splitted[1], nil
+	return splitted[len(splitted) - 1], nil
 }
 
 func (d *dbox) RunCommand(command string, args []string, engineFlags []string, useEngine bool, captureOutput bool, muteOutput bool, rootFull bool, detachedMode bool) ([]byte, error) {
