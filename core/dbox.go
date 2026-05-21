@@ -10,11 +10,13 @@ package core
 */
 
 import (
+	"encoding/json"
 	"errors"
 	"fmt"
 	"log"
 	"os"
 	"os/exec"
+	"slices"
 	"strings"
 	"syscall"
 
@@ -28,11 +30,19 @@ type dbox struct {
 }
 
 type dboxContainer struct {
-	ID        string
-	CreatedAt string
-	Status    string
-	Labels    map[string]string
-	Name      string
+	ID        string            `json:"Id"`
+	CreatedAt string            `json:"CreatedAt"`
+	Status    string            `json:"Status"`
+	Labels    map[string]string `json:"Labels"`
+	Names     []string          `json:"Names"`
+}
+
+type dockerContainer struct {
+	ID        string `json:"ID"`
+	CreatedAt string `json:"CreatedAt"`
+	Status    string `json:"Status"`
+	Labels    string `json:"Labels"`
+	Names     string `json:"Names"`
 }
 
 func NewDbox() (*dbox, error) {
@@ -190,47 +200,54 @@ func (d *dbox) RunCommand(command string, args []string, engineFlags []string, u
 func (d *dbox) ListContainers(rootFull bool) ([]dboxContainer, error) {
 	output, err := d.RunCommand("ps", []string{
 		"-a",
-		"--format", "{{.ID}}|{{.CreatedAt}}|{{.Status}}|{{.Labels}}|{{.Names}}",
+		"--no-trunc",
+		"--format", "json",
 	}, []string{}, true, true, false, rootFull, false)
 	if err != nil {
 		return nil, err
 	}
 
-	rows := strings.Split(string(output), "\n")
-	containers := []dboxContainer{}
-
-	for _, row := range rows {
-		if row == "" {
-			continue
+	var containers []dboxContainer
+	switch d.Engine {
+	case "podman":
+		err := json.Unmarshal(output, &containers)
+		if err != nil {
+			return nil, err
 		}
 
-		rowItems := strings.Split(row, "|")
-		if len(rowItems) != 5 {
-			continue
-		}
-
-		container := dboxContainer{
-			ID:        strings.Trim(rowItems[0], "\""),
-			CreatedAt: strings.Trim(rowItems[1], "\""),
-			Status:    strings.Trim(rowItems[2], "\""),
-			Name:      strings.Trim(rowItems[4], "\""),
-			Labels:    map[string]string{},
-		}
-
-		// example labels: map[manager:apx name:alpine stack:alpine]
-		labels := strings.ReplaceAll(rowItems[3], "map[", "")
-		labels = strings.ReplaceAll(labels, "]", "")
-		labelsItems := strings.Split(labels, " ")
-		for _, label := range labelsItems {
-			labelItems := strings.Split(label, ":")
-			if len(labelItems) != 2 {
+	case "docker":
+		rows := strings.Split(string(output), "\n")
+		for _, row := range rows {
+			if row == "" {
 				continue
 			}
 
-			container.Labels[labelItems[0]] = labelItems[1]
-		}
+			var container dockerContainer
+			err := json.Unmarshal([]byte(row), &container)
+			if err != nil {
+				return nil, err
+			}
 
-		containers = append(containers, container)
+			labels := map[string]string{}
+			if container.Labels != "" {
+				for _, label := range strings.Split(container.Labels, ",") {
+					labelItems := strings.Split(label, "=")
+					if len(labelItems) == 2 {
+						labels[labelItems[0]] = labelItems[1]
+					}
+				}
+			}
+
+			names := strings.Split(container.Names, ",")
+
+			containers = append(containers, dboxContainer{
+				ID:        container.ID,
+				CreatedAt: container.CreatedAt,
+				Status:    container.Status,
+				Labels:    labels,
+				Names:     names,
+			})
+		}
 	}
 
 	return containers, nil
@@ -244,7 +261,7 @@ func (d *dbox) GetContainer(name string, rootFull bool) (*dboxContainer, error) 
 
 	for _, container := range containers {
 		// fmt.Println("found container", container.Name, "requested", name)
-		if container.Name == name {
+		if slices.Contains(container.Names, name) {
 			return &container, nil
 		}
 	}
