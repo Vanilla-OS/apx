@@ -170,7 +170,7 @@ msgstr "Introduzca el entorno del subsistema."
 msgid "apx.cmd.subsystem.export"
 msgstr "Exporta una aplicación o un binario del subsistema al host."
 
-msgid "apx.cmd.subsystem.export.options.appName"
+msgid "apx.cmd.subsystem.export.options.app"
 msgstr "El nombre de la aplicación a exportar."
 
 msgid "apx.cmd.subsystem.export.options.bin"
@@ -239,7 +239,7 @@ msgstr "Detén el subsistema."
 msgid "apx.cmd.subsystem.unexport"
 msgstr "Dejar de exportar una aplicación o binario del host."
 
-msgid "apx.cmd.subsystem.unexport.options.appName"
+msgid "apx.cmd.subsystem.unexport.options.app"
 msgstr "El nombre de la aplicación a dejar de exportar."
 
 msgid "apx.cmd.subsystem.unexport.options.bin"

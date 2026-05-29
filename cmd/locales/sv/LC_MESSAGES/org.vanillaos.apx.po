@@ -170,7 +170,7 @@ msgstr "Gå in i undersystems miljö"
 msgid "apx.cmd.subsystem.export"
 msgstr "Exportera ett program eller binär från undersystemet till värden."
 
-msgid "apx.cmd.subsystem.export.options.appName"
+msgid "apx.cmd.subsystem.export.options.app"
 msgstr "Namnet på programmet som ska exporteras."
 
 msgid "apx.cmd.subsystem.export.options.bin"
@@ -239,7 +239,7 @@ msgstr "Stoppa undersystem."
 msgid "apx.cmd.subsystem.unexport"
 msgstr "Avexportera ett program eller binär från värden."
 
-msgid "apx.cmd.subsystem.unexport.options.appName"
+msgid "apx.cmd.subsystem.unexport.options.app"
 msgstr "Namnet på programmet att avexportera."
 
 msgid "apx.cmd.subsystem.unexport.options.bin"
@@ -435,13 +435,13 @@ msgid "runtimeCommand.error.exportingBin"
 msgstr "Ett fel inträffade vid export av binär: %s"
 
 msgid "runtimeCommand.error.noAppNameOrBin"
-msgstr "--app-name eller --bin måste anges."
+msgstr "--app eller --bin måste anges."
 
 msgid "runtimeCommand.error.noPackageSpecified"
 msgstr "Inga paket specificerade."
 
 msgid "runtimeCommand.error.sameAppOrBin"
-msgstr "--app-name och --bin kan inte båda specificeras."
+msgstr "--app och --bin kan inte båda specificeras."
 
 msgid "runtimeCommand.error.startingContainer"
 msgstr "Ett fel uppstod då behållaren skulle köras: %s"

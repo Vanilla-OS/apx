@@ -170,7 +170,7 @@ msgstr "ເຂົ້າສູ່ສະພາບແວດລ້ອມຂອງລ
 msgid "apx.cmd.subsystem.export"
 msgstr "ສົ່ງອອກແອັບພລິເຄຊັນ ຫຼື ໄຟລ໌ບີນາຣີ ຈາກລະບົບຍ່ອຍໄປຍັງໂຮສ (host)."
 
-msgid "apx.cmd.subsystem.export.options.appName"
+msgid "apx.cmd.subsystem.export.options.app"
 msgstr "ຊື່ຂອງແອັບພລິເຄຊັນທີ່ຈະສົ່ງອອກ."
 
 msgid "apx.cmd.subsystem.export.options.bin"
@@ -239,7 +239,7 @@ msgstr "ຢຸດລະບົບຍ່ອຍ."
 msgid "apx.cmd.subsystem.unexport"
 msgstr "ຍົກເລີກການສົ່ງອອກແອັບພລິເຄຊັນ ຫຼື ໄຟລ໌ບີນາຣີ ຈາກໂຮສ."
 
-msgid "apx.cmd.subsystem.unexport.options.appName"
+msgid "apx.cmd.subsystem.unexport.options.app"
 msgstr "ຊື່ຂອງແອັບພລິເຄຊັນທີ່ຈະຍົກເລີກການສົ່ງອອກ."
 
 msgid "apx.cmd.subsystem.unexport.options.bin"
@@ -435,13 +435,13 @@ msgid "runtimeCommand.error.exportingBin"
 msgstr "ເກີດຂໍ້ຜິດພາດຂະນະສົ່ງອອກໄຟລ໌ບີນາຣີ: %s"
 
 msgid "runtimeCommand.error.noAppNameOrBin"
-msgstr "ຕ້ອງລະບຸ --app-name ຫຼື --bin."
+msgstr "ຕ້ອງລະບຸ --app ຫຼື --bin."
 
 msgid "runtimeCommand.error.noPackageSpecified"
 msgstr "ບໍ່ໄດ້ລະບຸແພັກເກັດ."
 
 msgid "runtimeCommand.error.sameAppOrBin"
-msgstr "ບໍ່ສາມາດລະບຸ --app-name ແລະ --bin ພ້ອມກັນໄດ້."
+msgstr "ບໍ່ສາມາດລະບຸ --app ແລະ --bin ພ້ອມກັນໄດ້."
 
 msgid "runtimeCommand.error.startingContainer"
 msgstr "ເກີດຂໍ້ຜິດພາດຂະນະເລີ່ມຕົ້ນຄອນເທນເນີ: %s"

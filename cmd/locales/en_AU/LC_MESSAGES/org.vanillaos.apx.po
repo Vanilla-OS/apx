@@ -170,7 +170,7 @@ msgstr "Enter the subsystem's environment."
 msgid "apx.cmd.subsystem.export"
 msgstr "Export an application or binary from the subsystem to the host."
 
-msgid "apx.cmd.subsystem.export.options.appName"
+msgid "apx.cmd.subsystem.export.options.app"
 msgstr "The name of the application to export."
 
 msgid "apx.cmd.subsystem.export.options.bin"
@@ -239,7 +239,7 @@ msgstr "Stop the subsystem."
 msgid "apx.cmd.subsystem.unexport"
 msgstr "Unexport an application or binary from the host."
 
-msgid "apx.cmd.subsystem.unexport.options.appName"
+msgid "apx.cmd.subsystem.unexport.options.app"
 msgstr "The name of the application to unexport."
 
 msgid "apx.cmd.subsystem.unexport.options.bin"
@@ -435,13 +435,13 @@ msgid "runtimeCommand.error.exportingBin"
 msgstr "An error occurred while exporting the binary: %s"
 
 msgid "runtimeCommand.error.noAppNameOrBin"
-msgstr "--app-name or --bin must be specified."
+msgstr "--app or --bin must be specified."
 
 msgid "runtimeCommand.error.noPackageSpecified"
 msgstr "No packages specified."
 
 msgid "runtimeCommand.error.sameAppOrBin"
-msgstr "--app-name and --bin cannot be both specified."
+msgstr "--app and --bin cannot be both specified."
 
 msgid "runtimeCommand.error.startingContainer"
 msgstr "An error occurred while starting the container: %s"

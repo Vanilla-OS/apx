@@ -170,7 +170,7 @@ msgstr "دخول بيئة النظام الفرعي."
 msgid "apx.cmd.subsystem.export"
 msgstr "تصدير تطبيق أو برنامج من النظام الفرعي."
 
-msgid "apx.cmd.subsystem.export.options.appName"
+msgid "apx.cmd.subsystem.export.options.app"
 msgstr "اسم التطبيق المراد تصدير."
 
 msgid "apx.cmd.subsystem.export.options.bin"
@@ -239,7 +239,7 @@ msgstr "إيقاف النظام الفرعي."
 msgid "apx.cmd.subsystem.unexport"
 msgstr "الغاء تصدير تطبيق او برنامج من النظام الفرعي."
 
-msgid "apx.cmd.subsystem.unexport.options.appName"
+msgid "apx.cmd.subsystem.unexport.options.app"
 msgstr "اسم التطبيق المراد إلغاء تصديره."
 
 msgid "apx.cmd.subsystem.unexport.options.bin"
@@ -435,13 +435,13 @@ msgid "runtimeCommand.error.exportingBin"
 msgstr "حدث خطأ أثناء تصدير البرنامج: %s"
 
 msgid "runtimeCommand.error.noAppNameOrBin"
-msgstr "يجب تحديد --app-name او --bin"
+msgstr "يجب تحديد --app او --bin"
 
 msgid "runtimeCommand.error.noPackageSpecified"
 msgstr "لم يتم تحديد حزمة."
 
 msgid "runtimeCommand.error.sameAppOrBin"
-msgstr "لا يمكن تحديد --app-name و --bin في نفس الوقت."
+msgstr "لا يمكن تحديد --app و --bin في نفس الوقت."
 
 msgid "runtimeCommand.error.startingContainer"
 msgstr "حدث خطأ ما أثناء بدء تشغيل الحاوية: %s"

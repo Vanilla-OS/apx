@@ -170,7 +170,7 @@ msgstr "Vstoupit do prostředí subsystému."
 msgid "apx.cmd.subsystem.export"
 msgstr "Exportovat aplikaci nebo binární soubor ze subsystému."
 
-msgid "apx.cmd.subsystem.export.options.appName"
+msgid "apx.cmd.subsystem.export.options.app"
 msgstr "Název aplikace, která se má exportovat."
 
 msgid "apx.cmd.subsystem.export.options.bin"
@@ -239,7 +239,7 @@ msgstr "Stop the subsystem."
 msgid "apx.cmd.subsystem.unexport"
 msgstr "Odexportovat aplikaci nebo binární soubor ze subsystému."
 
-msgid "apx.cmd.subsystem.unexport.options.appName"
+msgid "apx.cmd.subsystem.unexport.options.app"
 msgstr "Název aplikace, která se má odexportovat."
 
 msgid "apx.cmd.subsystem.unexport.options.bin"
@@ -435,13 +435,13 @@ msgid "runtimeCommand.error.exportingBin"
 msgstr "Nastala chyba během exportování binárního souboru: %s"
 
 msgid "runtimeCommand.error.noAppNameOrBin"
-msgstr "--app-name nebo --bin musí být specifikováno."
+msgstr "--app nebo --bin musí být specifikováno."
 
 msgid "runtimeCommand.error.noPackageSpecified"
 msgstr "Nebyly zadány balíčky."
 
 msgid "runtimeCommand.error.sameAppOrBin"
-msgstr "nelze použít --app-name a --bin najednou."
+msgstr "nelze použít --app a --bin najednou."
 
 msgid "runtimeCommand.error.startingContainer"
 msgstr "An error occurred while starting the container: %s"

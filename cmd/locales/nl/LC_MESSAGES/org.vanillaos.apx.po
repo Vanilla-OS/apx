@@ -170,7 +170,7 @@ msgstr "Treed de omgeving van het subsysteem binnen."
 msgid "apx.cmd.subsystem.export"
 msgstr "Exporteert een app of programmabestand van het subsysteem naar de host."
 
-msgid "apx.cmd.subsystem.export.options.appName"
+msgid "apx.cmd.subsystem.export.options.app"
 msgstr "De naam van de app om te exporteren."
 
 msgid "apx.cmd.subsystem.export.options.bin"
@@ -239,7 +239,7 @@ msgstr "Stopt het subsysteem."
 msgid "apx.cmd.subsystem.unexport"
 msgstr "Ontexporteert een app of programmabestand van de host."
 
-msgid "apx.cmd.subsystem.unexport.options.appName"
+msgid "apx.cmd.subsystem.unexport.options.app"
 msgstr "Naam van de app om niet langer te exporteren."
 
 msgid "apx.cmd.subsystem.unexport.options.bin"
@@ -435,13 +435,13 @@ msgid "runtimeCommand.error.exportingBin"
 msgstr "Er is een fout opgetreden bĳ het exporteren van het programmabestand: %s"
 
 msgid "runtimeCommand.error.noAppNameOrBin"
-msgstr "--app-name of --bin moeten worden opgegeven."
+msgstr "--app of --bin moeten worden opgegeven."
 
 msgid "runtimeCommand.error.noPackageSpecified"
 msgstr "Geen pakketten opgegeven."
 
 msgid "runtimeCommand.error.sameAppOrBin"
-msgstr "--app-name en --bin kunnen niet beide worden opgegeven."
+msgstr "--app en --bin kunnen niet beide worden opgegeven."
 
 msgid "runtimeCommand.error.startingContainer"
 msgstr "Er is een fout opgetreden bĳ het starten van de container: %s"

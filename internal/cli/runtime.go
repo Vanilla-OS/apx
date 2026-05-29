@@ -157,20 +157,20 @@ func (c *SubsystemExportCmd) Run() error {
 		return err
 	}
 
-	if c.AppName == "" && c.Bin == "" {
+	if c.App == "" && c.Bin == "" {
 		return fmt.Errorf(Apx.LC.Get("runtimeCommand.error.noAppNameOrBin"))
 	}
 
-	if c.AppName != "" && c.Bin != "" {
+	if c.App != "" && c.Bin != "" {
 		return fmt.Errorf(Apx.LC.Get("runtimeCommand.error.sameAppOrBin"))
 	}
 
-	if c.AppName != "" {
-		err := subSystem.ExportDesktopEntry(c.AppName)
+	if c.App != "" {
+		err := subSystem.ExportDesktopEntry(c.App)
 		if err != nil {
 			return fmt.Errorf(Apx.LC.Get("runtimeCommand.error.exportingApp"), err)
 		}
-		Apx.Log.Infof(Apx.LC.Get("runtimeCommand.info.exportedApp"), c.AppName)
+		Apx.Log.Infof(Apx.LC.Get("runtimeCommand.info.exportedApp"), c.App)
 	} else {
 		err := subSystem.ExportBin(c.Bin, c.BinOutput)
 		if err != nil {
@@ -187,20 +187,20 @@ func (c *SubsystemUnexportCmd) Run() error {
 		return err
 	}
 
-	if c.AppName == "" && c.Bin == "" {
+	if c.App == "" && c.Bin == "" {
 		return fmt.Errorf(Apx.LC.Get("runtimeCommand.error.noAppNameOrBin"))
 	}
 
-	if c.AppName != "" && c.Bin != "" {
+	if c.App != "" && c.Bin != "" {
 		return fmt.Errorf(Apx.LC.Get("runtimeCommand.error.sameAppOrBin"))
 	}
 
-	if c.AppName != "" {
-		err := subSystem.UnexportDesktopEntry(c.AppName)
+	if c.App != "" {
+		err := subSystem.UnexportDesktopEntry(c.App)
 		if err != nil {
 			return fmt.Errorf(Apx.LC.Get("runtimeCommand.error.unexportingApp"), err)
 		}
-		Apx.Log.Infof(Apx.LC.Get("runtimeCommand.info.unexportedApp"), c.AppName)
+		Apx.Log.Infof(Apx.LC.Get("runtimeCommand.info.unexportedApp"), c.App)
 	} else {
 		err := subSystem.UnexportBin(c.Bin, c.BinOutput)
 		if err != nil {

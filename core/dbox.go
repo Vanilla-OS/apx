@@ -403,13 +403,13 @@ func (d *dbox) ContainerExport(name string, delete bool, rootFull bool, args ...
 	return err
 }
 
-func (d *dbox) ContainerExportDesktopEntry(containerName string, appName string, label string, rootFull bool) error {
-	args := []string{"--app", appName, "--export-label", label}
+func (d *dbox) ContainerExportDesktopEntry(containerName string, app string, label string, rootFull bool) error {
+	args := []string{"--app", app, "--export-label", label}
 	return d.ContainerExport(containerName, false, rootFull, args...)
 }
 
-func (d *dbox) ContainerUnexportDesktopEntry(containerName string, appName string, rootFull bool) error {
-	args := []string{"--app", appName}
+func (d *dbox) ContainerUnexportDesktopEntry(containerName string, app string, rootFull bool) error {
+	args := []string{"--app", app}
 	return d.ContainerExport(containerName, true, rootFull, args...)
 }
 

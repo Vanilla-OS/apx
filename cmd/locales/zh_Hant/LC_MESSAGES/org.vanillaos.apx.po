@@ -170,7 +170,7 @@ msgstr "進入子系統的環境。"
 msgid "apx.cmd.subsystem.export"
 msgstr "從子系統向主機匯出應用程式或二進位檔案。"
 
-msgid "apx.cmd.subsystem.export.options.appName"
+msgid "apx.cmd.subsystem.export.options.app"
 msgstr "要匯出的應用程式的名稱。"
 
 msgid "apx.cmd.subsystem.export.options.bin"
@@ -239,7 +239,7 @@ msgstr "停止子系統。"
 msgid "apx.cmd.subsystem.unexport"
 msgstr "從主機中移除匯出的應用程式或二進位檔案。"
 
-msgid "apx.cmd.subsystem.unexport.options.appName"
+msgid "apx.cmd.subsystem.unexport.options.app"
 msgstr "要移除的匯出的應用程式的名稱。"
 
 msgid "apx.cmd.subsystem.unexport.options.bin"
@@ -435,13 +435,13 @@ msgid "runtimeCommand.error.exportingBin"
 msgstr "匯出二進位檔案時發生錯誤：%s"
 
 msgid "runtimeCommand.error.noAppNameOrBin"
-msgstr "必須指定 --app-name 或是 --bin。"
+msgstr "必須指定 --app 或是 --bin。"
 
 msgid "runtimeCommand.error.noPackageSpecified"
 msgstr "沒有指定軟體包。"
 
 msgid "runtimeCommand.error.sameAppOrBin"
-msgstr "不能同時指定 --app-name 及 --bin。"
+msgstr "不能同時指定 --app 及 --bin。"
 
 msgid "runtimeCommand.error.startingContainer"
 msgstr "啟動容器時發生錯誤：%s"

@@ -170,7 +170,7 @@ msgstr "Войти в среду подсистемы."
 msgid "apx.cmd.subsystem.export"
 msgstr "Экспортировать приложения или двоичные файлы из подсистемы на хост."
 
-msgid "apx.cmd.subsystem.export.options.appName"
+msgid "apx.cmd.subsystem.export.options.app"
 msgstr "Имя экспортируемого приложения."
 
 msgid "apx.cmd.subsystem.export.options.bin"
@@ -239,7 +239,7 @@ msgstr "Остановить подсистему."
 msgid "apx.cmd.subsystem.unexport"
 msgstr "Деэкспортировать приложение или двоичный файл из хоста."
 
-msgid "apx.cmd.subsystem.unexport.options.appName"
+msgid "apx.cmd.subsystem.unexport.options.app"
 msgstr "Имя деэкспортируемого приложения."
 
 msgid "apx.cmd.subsystem.unexport.options.bin"
@@ -435,13 +435,13 @@ msgid "runtimeCommand.error.exportingBin"
 msgstr "Произошла ошибка при экспорте двоичного файла: %s"
 
 msgid "runtimeCommand.error.noAppNameOrBin"
-msgstr "Должно быть указано --app-name или --bin."
+msgstr "Должно быть указано --app или --bin."
 
 msgid "runtimeCommand.error.noPackageSpecified"
 msgstr "Нет выбранных пакетов."
 
 msgid "runtimeCommand.error.sameAppOrBin"
-msgstr "--app-name и --bin не могут быть указаны одновременно."
+msgstr "--app и --bin не могут быть указаны одновременно."
 
 msgid "runtimeCommand.error.startingContainer"
 msgstr "Произошла ошибка при запуске контейнера: %s"

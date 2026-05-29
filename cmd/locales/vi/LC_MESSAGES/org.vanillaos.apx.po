@@ -170,7 +170,7 @@ msgstr "Truy cập môi trường của hệ thống con."
 msgid "apx.cmd.subsystem.export"
 msgstr "Xuất một ứng dụng hoặc mã biên dịch từ hệ thống con lên máy chủ."
 
-msgid "apx.cmd.subsystem.export.options.appName"
+msgid "apx.cmd.subsystem.export.options.app"
 msgstr "Tên của ứng dụng cần xuất."
 
 msgid "apx.cmd.subsystem.export.options.bin"
@@ -239,7 +239,7 @@ msgstr "Dừng hệ thống con."
 msgid "apx.cmd.subsystem.unexport"
 msgstr "Hủy xuất một ứng dụng hoặc mã biên dịch từ máy chủ."
 
-msgid "apx.cmd.subsystem.unexport.options.appName"
+msgid "apx.cmd.subsystem.unexport.options.app"
 msgstr "Tên của ứng dụng cần hủy xuất."
 
 msgid "apx.cmd.subsystem.unexport.options.bin"
@@ -435,13 +435,13 @@ msgid "runtimeCommand.error.exportingBin"
 msgstr "Có một lỗi đã xảy ra khi xuất mã biên dịch: %s"
 
 msgid "runtimeCommand.error.noAppNameOrBin"
-msgstr "--app-name hoặc --bin phải được xác định."
+msgstr "--app hoặc --bin phải được xác định."
 
 msgid "runtimeCommand.error.noPackageSpecified"
 msgstr "Chưa có gói nào được xác định."
 
 msgid "runtimeCommand.error.sameAppOrBin"
-msgstr "không được xác định --app-name và --bin cùng lúc."
+msgstr "không được xác định --app và --bin cùng lúc."
 
 msgid "runtimeCommand.error.startingContainer"
 msgstr "Có một lỗi đã xảy ra khi khởi động container: %s"

@@ -170,7 +170,7 @@ msgstr "היכנסו לסביבה של תת-מערכת."
 msgid "apx.cmd.subsystem.export"
 msgstr "ייצוא יישום או בינארי מהמערכת."
 
-msgid "apx.cmd.subsystem.export.options.appName"
+msgid "apx.cmd.subsystem.export.options.app"
 msgstr "שם הבקשה לייצא."
 
 msgid "apx.cmd.subsystem.export.options.bin"
@@ -239,7 +239,7 @@ msgstr "לעצור את המערכת."
 msgid "apx.cmd.subsystem.unexport"
 msgstr "Unexport יישום או בינארי מהמערכת."
 
-msgid "apx.cmd.subsystem.unexport.options.appName"
+msgid "apx.cmd.subsystem.unexport.options.app"
 msgstr "שם היישום ל unexport."
 
 msgid "apx.cmd.subsystem.unexport.options.bin"
@@ -435,13 +435,13 @@ msgid "runtimeCommand.error.exportingBin"
 msgstr "טעות אירעה בעת יצוא בינארי: %s"
 
 msgid "runtimeCommand.error.noAppNameOrBin"
-msgstr "יש לציין --app-name או --bin."
+msgstr "יש לציין --app או --bin."
 
 msgid "runtimeCommand.error.noPackageSpecified"
 msgstr "אין חבילות שצוינו."
 
 msgid "runtimeCommand.error.sameAppOrBin"
-msgstr "לא ניתן לציין שניהם --app-name ו- --bin."
+msgstr "לא ניתן לציין שניהם --app ו- --bin."
 
 msgid "runtimeCommand.error.startingContainer"
 msgstr "טעות אירעה בעת הפעלת מיכל: %s"

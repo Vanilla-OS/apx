@@ -170,7 +170,7 @@ msgstr "Masuk ke lingkungan subsistem."
 msgid "apx.cmd.subsystem.export"
 msgstr "Mengekspor aplikasi atau biner dari subsistem ke host."
 
-msgid "apx.cmd.subsystem.export.options.appName"
+msgid "apx.cmd.subsystem.export.options.app"
 msgstr "Nama aplikasi yang akan diekspor."
 
 msgid "apx.cmd.subsystem.export.options.bin"
@@ -239,7 +239,7 @@ msgstr "Menghentikan subsistem."
 msgid "apx.cmd.subsystem.unexport"
 msgstr "Membatalkan ekspor aplikasi atau biner dari host."
 
-msgid "apx.cmd.subsystem.unexport.options.appName"
+msgid "apx.cmd.subsystem.unexport.options.app"
 msgstr "Nama aplikasi yang akan dibatalkan ekspornya."
 
 msgid "apx.cmd.subsystem.unexport.options.bin"

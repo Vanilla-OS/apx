@@ -170,7 +170,7 @@ msgstr "Enter the subsystem's environment."
 msgid "apx.cmd.subsystem.export"
 msgstr "Export an application or binary from the subsystem."
 
-msgid "apx.cmd.subsystem.export.options.appName"
+msgid "apx.cmd.subsystem.export.options.app"
 msgstr "The name of the application to export."
 
 msgid "apx.cmd.subsystem.export.options.bin"
@@ -239,7 +239,7 @@ msgstr "Stop the subsystem."
 msgid "apx.cmd.subsystem.unexport"
 msgstr "Unexport an application or binary from the subsystem."
 
-msgid "apx.cmd.subsystem.unexport.options.appName"
+msgid "apx.cmd.subsystem.unexport.options.app"
 msgstr "The name of the application to unexport."
 
 msgid "apx.cmd.subsystem.unexport.options.bin"

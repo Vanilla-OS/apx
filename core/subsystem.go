@@ -415,20 +415,20 @@ func (s *SubSystem) Reset() error {
 	return s.Create()
 }
 
-func (s *SubSystem) ExportDesktopEntry(appName string) error {
+func (s *SubSystem) ExportDesktopEntry(app string) error {
 	dbox, err := NewDbox()
 	if err != nil {
 		return err
 	}
 
-	return dbox.ContainerExportDesktopEntry(s.InternalName, appName, fmt.Sprintf("on %s", s.Name), s.IsRootfull)
+	return dbox.ContainerExportDesktopEntry(s.InternalName, app, fmt.Sprintf("on %s", s.Name), s.IsRootfull)
 }
 
 func (s *SubSystem) ExportDesktopEntries(args ...string) (int, error) {
 	exportedN := 0
 
-	for _, appName := range args {
-		err := s.ExportDesktopEntry(appName)
+	for _, app := range args {
+		err := s.ExportDesktopEntry(app)
 		if err != nil {
 			return exportedN, err
 		}
@@ -442,8 +442,8 @@ func (s *SubSystem) ExportDesktopEntries(args ...string) (int, error) {
 func (s *SubSystem) UnexportDesktopEntries(args ...string) (int, error) {
 	exportedN := 0
 
-	for _, appName := range args {
-		err := s.UnexportDesktopEntry(appName)
+	for _, app := range args {
+		err := s.UnexportDesktopEntry(app)
 		if err != nil {
 			return exportedN, err
 		}
@@ -524,13 +524,13 @@ func (s *SubSystem) ExportBin(binary string, exportPath string) error {
 	return nil
 }
 
-func (s *SubSystem) UnexportDesktopEntry(appName string) error {
+func (s *SubSystem) UnexportDesktopEntry(app string) error {
 	dbox, err := NewDbox()
 	if err != nil {
 		return err
 	}
 
-	return dbox.ContainerUnexportDesktopEntry(s.InternalName, appName, s.IsRootfull)
+	return dbox.ContainerUnexportDesktopEntry(s.InternalName, app, s.IsRootfull)
 }
 
 func (s *SubSystem) UnexportBin(binary string, exportPath string) error {

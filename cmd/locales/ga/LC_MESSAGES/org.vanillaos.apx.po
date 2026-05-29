@@ -170,7 +170,7 @@ msgstr "Cuir isteach timpeallacht an fhochórais."
 msgid "apx.cmd.subsystem.export"
 msgstr "Easpórtáil feidhmchlár nó dénártha ón bhfochóras chuig an óstach."
 
-msgid "apx.cmd.subsystem.export.options.appName"
+msgid "apx.cmd.subsystem.export.options.app"
 msgstr "Ainm an iarratais ar easpórtáil."
 
 msgid "apx.cmd.subsystem.export.options.bin"
@@ -239,7 +239,7 @@ msgstr "Stop an fochóras."
 msgid "apx.cmd.subsystem.unexport"
 msgstr "Unexport iarratas nó dénártha ón óstach."
 
-msgid "apx.cmd.subsystem.unexport.options.appName"
+msgid "apx.cmd.subsystem.unexport.options.app"
 msgstr "Ainm an iarratais ar unexport."
 
 msgid "apx.cmd.subsystem.unexport.options.bin"
@@ -435,13 +435,13 @@ msgid "runtimeCommand.error.exportingBin"
 msgstr "Tharla earráid agus an dénártha á easpórtáil: %s"
 
 msgid "runtimeCommand.error.noAppNameOrBin"
-msgstr "Ní mór --app-name nó --bin a shonrú."
+msgstr "Ní mór --app nó --bin a shonrú."
 
 msgid "runtimeCommand.error.noPackageSpecified"
 msgstr "Níor sonraíodh aon phacáistí."
 
 msgid "runtimeCommand.error.sameAppOrBin"
-msgstr "--app-name agus --bin ní féidir an dá rud a shonrú."
+msgstr "--app agus --bin ní féidir an dá rud a shonrú."
 
 msgid "runtimeCommand.error.startingContainer"
 msgstr "Tharla earráid agus an coimeádán á thosú: %s"

@@ -103,7 +103,7 @@ type SubsystemShowCmd struct {
 type SubsystemExportCmd struct {
 	cli.Base
 	Name      string   `json:"-"`
-	AppName   string   `flag:"short:a, long:app-name, name:pr:apx.cmd.subsystem.export.options.appName"`
+	App       string   `flag:"short:a, long:app, name:pr:apx.cmd.subsystem.export.options.app"`
 	Bin       string   `flag:"short:b, long:bin, name:pr:apx.cmd.subsystem.export.options.bin"`
 	BinOutput string   `flag:"short:o, long:bin-output, name:pr:apx.cmd.subsystem.export.options.binOutput"`
 	Args      []string `arg:"" optional:"" name:"applications" help:"pr:apx.arg.applications"`
@@ -112,7 +112,7 @@ type SubsystemExportCmd struct {
 type SubsystemUnexportCmd struct {
 	cli.Base
 	Name      string   `json:"-"`
-	AppName   string   `flag:"short:a, long:app-name, name:pr:apx.cmd.subsystem.unexport.options.appName"`
+	App       string   `flag:"short:a, long:app, name:pr:apx.cmd.subsystem.unexport.options.app"`
 	Bin       string   `flag:"short:b, long:bin, name:pr:apx.cmd.subsystem.unexport.options.bin"`
 	BinOutput string   `flag:"short:o, long:bin-output, name:pr:apx.cmd.subsystem.unexport.options.binOutput"`
 	Args      []string `arg:"" optional:"" name:"applications" help:"pr:apx.arg.applications"`

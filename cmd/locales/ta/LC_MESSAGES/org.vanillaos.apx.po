@@ -170,7 +170,7 @@ msgstr "துணை அமைப்பின் சூழலை உள்ளி
 msgid "apx.cmd.subsystem.export"
 msgstr "துணை அமைப்பிலிருந்து ஓச்டுக்கு ஒரு பயன்பாடு அல்லது பைனரியை ஏற்றுமதி செய்யவும்."
 
-msgid "apx.cmd.subsystem.export.options.appName"
+msgid "apx.cmd.subsystem.export.options.app"
 msgstr "ஏற்றுமதி செய்வதற்கான பயன்பாட்டின் பெயர்."
 
 msgid "apx.cmd.subsystem.export.options.bin"
@@ -239,7 +239,7 @@ msgstr "துணை அமைப்பை நிறுத்து."
 msgid "apx.cmd.subsystem.unexport"
 msgstr "ஓச்டிலிருந்து ஒரு பயன்பாடு அல்லது பைனரி ஏற்றுமதியை நீக்கவும்."
 
-msgid "apx.cmd.subsystem.unexport.options.appName"
+msgid "apx.cmd.subsystem.unexport.options.app"
 msgstr "ஏற்றுமதியை நீக்குவதற்கான பயன்பாட்டின் பெயர்."
 
 msgid "apx.cmd.subsystem.unexport.options.bin"
@@ -435,13 +435,13 @@ msgid "runtimeCommand.error.exportingBin"
 msgstr "பைனரியை ஏற்றுமதி செய்யும் போது பிழை ஏற்பட்டது: %s"
 
 msgid "runtimeCommand.error.noAppNameOrBin"
-msgstr "--app-name அல்லது --bin குறிப்பிடப்பட வேண்டும்."
+msgstr "--app அல்லது --bin குறிப்பிடப்பட வேண்டும்."
 
 msgid "runtimeCommand.error.noPackageSpecified"
 msgstr "தொகுப்புகள் எதுவும் குறிப்பிடப்படவில்லை."
 
 msgid "runtimeCommand.error.sameAppOrBin"
-msgstr "--app-name மற்றும் --bin இரண்டையும் குறிப்பிட முடியாது."
+msgstr "--app மற்றும் --bin இரண்டையும் குறிப்பிட முடியாது."
 
 msgid "runtimeCommand.error.startingContainer"
 msgstr "கொள்கலனைத் தொடங்கும் போது பிழை ஏற்பட்டது: %s"

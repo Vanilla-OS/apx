@@ -170,7 +170,7 @@ msgstr "Introdu mediul subsistemului."
 msgid "apx.cmd.subsystem.export"
 msgstr "Exportați o aplicație sau un fișier binar de la subsistem la gazdă."
 
-msgid "apx.cmd.subsystem.export.options.appName"
+msgid "apx.cmd.subsystem.export.options.app"
 msgstr "Numele aplicației care urmează să fie exportată."
 
 msgid "apx.cmd.subsystem.export.options.bin"
@@ -239,7 +239,7 @@ msgstr "Oprește subsistemul."
 msgid "apx.cmd.subsystem.unexport"
 msgstr "Dezexportă o aplicație sau un fișier binar din gazdă."
 
-msgid "apx.cmd.subsystem.unexport.options.appName"
+msgid "apx.cmd.subsystem.unexport.options.app"
 msgstr "Numele aplicației pentru anularea exportului."
 
 msgid "apx.cmd.subsystem.unexport.options.bin"
@@ -435,13 +435,13 @@ msgid "runtimeCommand.error.exportingBin"
 msgstr "S-a produs o eroare la exportul binarului: %s"
 
 msgid "runtimeCommand.error.noAppNameOrBin"
-msgstr "Trebuie să se specifice --app-name sau --bin."
+msgstr "Trebuie să se specifice --app sau --bin."
 
 msgid "runtimeCommand.error.noPackageSpecified"
 msgstr "Niciun pachet specificat."
 
 msgid "runtimeCommand.error.sameAppOrBin"
-msgstr "--app-name și --bin nu pot fi specificate amândouă."
+msgstr "--app și --bin nu pot fi specificate amândouă."
 
 msgid "runtimeCommand.error.startingContainer"
 msgstr "A apărut o eroare la pornirea containerului: %s"

@@ -170,7 +170,7 @@ msgstr "Eniri la medion de la subsistemo."
 msgid "apx.cmd.subsystem.export"
 msgstr "Eksporti programon aŭ binaraĵon de la subsistemo al la gastiganto."
 
-msgid "apx.cmd.subsystem.export.options.appName"
+msgid "apx.cmd.subsystem.export.options.app"
 msgstr "La nomo de la eksportota programo."
 
 msgid "apx.cmd.subsystem.export.options.bin"
@@ -239,7 +239,7 @@ msgstr "Mallanĉi la subsistemon."
 msgid "apx.cmd.subsystem.unexport"
 msgstr "Maleksporti programon aŭ binaraĵon el la gastiganto."
 
-msgid "apx.cmd.subsystem.unexport.options.appName"
+msgid "apx.cmd.subsystem.unexport.options.app"
 msgstr "La nomo de la maleksportota programo."
 
 msgid "apx.cmd.subsystem.unexport.options.bin"
@@ -435,13 +435,13 @@ msgid "runtimeCommand.error.exportingBin"
 msgstr "Okazis eraro eksportante la binaraĵon: %s"
 
 msgid "runtimeCommand.error.noAppNameOrBin"
-msgstr "Oni devas specifi aŭ «--app-name» aŭ «--bin»."
+msgstr "Oni devas specifi aŭ «--app» aŭ «--bin»."
 
 msgid "runtimeCommand.error.noPackageSpecified"
 msgstr "Neniu pako specifiĝis."
 
 msgid "runtimeCommand.error.sameAppOrBin"
-msgstr "Oni devas ne specifi kaj «--app-name» kaj «--bin»."
+msgstr "Oni devas ne specifi kaj «--app» kaj «--bin»."
 
 msgid "runtimeCommand.error.startingContainer"
 msgstr "Okazis eraro lanĉante la ujon: %s"

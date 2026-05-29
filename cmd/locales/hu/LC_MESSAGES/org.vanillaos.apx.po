@@ -170,7 +170,7 @@ msgstr "Belépés az alrendszer környezetébe."
 msgid "apx.cmd.subsystem.export"
 msgstr "Egy alkalmazás vagy bináris fájl exportálása az alrendszerből."
 
-msgid "apx.cmd.subsystem.export.options.appName"
+msgid "apx.cmd.subsystem.export.options.app"
 msgstr "Az exportálandó alkalmazás neve."
 
 msgid "apx.cmd.subsystem.export.options.bin"
@@ -239,7 +239,7 @@ msgstr "Az alrendszer leállítása."
 msgid "apx.cmd.subsystem.unexport"
 msgstr "Egy alkalmazás vagy bináris fájl exportálás visszavonása az alrendszerből."
 
-msgid "apx.cmd.subsystem.unexport.options.appName"
+msgid "apx.cmd.subsystem.unexport.options.app"
 msgstr "Az exportálásból visszavont alkalmazás neve."
 
 msgid "apx.cmd.subsystem.unexport.options.bin"
@@ -435,13 +435,13 @@ msgid "runtimeCommand.error.exportingBin"
 msgstr "Hiba történt a bináris fájl exportálása során: %s"
 
 msgid "runtimeCommand.error.noAppNameOrBin"
-msgstr "--app-name vagy --bin értéket meg kell adni."
+msgstr "--app vagy --bin értéket meg kell adni."
 
 msgid "runtimeCommand.error.noPackageSpecified"
 msgstr "Nincsenek meghatározott csomagok."
 
 msgid "runtimeCommand.error.sameAppOrBin"
-msgstr "--app-name és --bin nem adható meg egyszerre."
+msgstr "--app és --bin nem adható meg egyszerre."
 
 msgid "runtimeCommand.error.startingContainer"
 msgstr "Hiba történt a konténer indításakor: %s"

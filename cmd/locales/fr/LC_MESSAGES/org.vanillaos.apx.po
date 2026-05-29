@@ -170,7 +170,7 @@ msgstr "Entrer dans l'environnement du sous-système."
 msgid "apx.cmd.subsystem.export"
 msgstr "Exporter une application ou un binaire depuis le sous-système vers l'hôte."
 
-msgid "apx.cmd.subsystem.export.options.appName"
+msgid "apx.cmd.subsystem.export.options.app"
 msgstr "Le nom de l'application à exporter."
 
 msgid "apx.cmd.subsystem.export.options.bin"
@@ -239,7 +239,7 @@ msgstr "Arrête le sous-système."
 msgid "apx.cmd.subsystem.unexport"
 msgstr "Exclure une application ou un binaire de l'hôte."
 
-msgid "apx.cmd.subsystem.unexport.options.appName"
+msgid "apx.cmd.subsystem.unexport.options.app"
 msgstr "Le nom de l'application à exclure."
 
 msgid "apx.cmd.subsystem.unexport.options.bin"
@@ -435,13 +435,13 @@ msgid "runtimeCommand.error.exportingBin"
 msgstr "Une erreur s'est produite lors de l'exportation du binaire : %s"
 
 msgid "runtimeCommand.error.noAppNameOrBin"
-msgstr "Les options --app-name ou --bin doivent être spécifiées."
+msgstr "Les options --app ou --bin doivent être spécifiées."
 
 msgid "runtimeCommand.error.noPackageSpecified"
 msgstr "Aucun paquet spécifié."
 
 msgid "runtimeCommand.error.sameAppOrBin"
-msgstr "--app-name et --bin ne peuvent pas être spécifiés tous les deux."
+msgstr "--app et --bin ne peuvent pas être spécifiés tous les deux."
 
 msgid "runtimeCommand.error.startingContainer"
 msgstr "Une erreur s'est produite lors du démarrage du conteneur : %s"

@@ -170,7 +170,7 @@ msgstr "Entrar no ambiente de subsistema."
 msgid "apx.cmd.subsystem.export"
 msgstr "Exportar uma aplicação ou binário do subsistema, para o sistema raiz."
 
-msgid "apx.cmd.subsystem.export.options.appName"
+msgid "apx.cmd.subsystem.export.options.app"
 msgstr "O nome da aplicação a exportar."
 
 msgid "apx.cmd.subsystem.export.options.bin"
@@ -239,7 +239,7 @@ msgstr "Pare o subsistema."
 msgid "apx.cmd.subsystem.unexport"
 msgstr "Remover a exportação do aplicativo ou binário do sistema raiz."
 
-msgid "apx.cmd.subsystem.unexport.options.appName"
+msgid "apx.cmd.subsystem.unexport.options.app"
 msgstr "O nome da aplicação a ter a sua exportação desfeita."
 
 msgid "apx.cmd.subsystem.unexport.options.bin"
@@ -435,13 +435,13 @@ msgid "runtimeCommand.error.exportingBin"
 msgstr "Ocorreu um erro ao exportar o binário: %s"
 
 msgid "runtimeCommand.error.noAppNameOrBin"
-msgstr "--app-name ou --bin devem ser especificados."
+msgstr "--app ou --bin devem ser especificados."
 
 msgid "runtimeCommand.error.noPackageSpecified"
 msgstr "Não há pacotes especificados."
 
 msgid "runtimeCommand.error.sameAppOrBin"
-msgstr "--app-name e --bin não podem ser especificados simultaneamente."
+msgstr "--app e --bin não podem ser especificados simultaneamente."
 
 msgid "runtimeCommand.error.startingContainer"
 msgstr "Ocorreu um erro ao iniciar o contentor: %s"

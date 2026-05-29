@@ -170,7 +170,7 @@ msgstr "サブシステム環境内に入ります。"
 msgid "apx.cmd.subsystem.export"
 msgstr "アプリケーションもしくはバイナリを、サブシステムからエクスポートします。"
 
-msgid "apx.cmd.subsystem.export.options.appName"
+msgid "apx.cmd.subsystem.export.options.app"
 msgstr "エクスポートするアプリケーションの名前。"
 
 msgid "apx.cmd.subsystem.export.options.bin"
@@ -239,7 +239,7 @@ msgstr "サブシステムを停止。"
 msgid "apx.cmd.subsystem.unexport"
 msgstr "バイナリまたはアプリケーションのエクスポートをサブシステムから削除"
 
-msgid "apx.cmd.subsystem.unexport.options.appName"
+msgid "apx.cmd.subsystem.unexport.options.app"
 msgstr "エクスポート削除するアプリケーションの名前。"
 
 msgid "apx.cmd.subsystem.unexport.options.bin"
@@ -435,13 +435,13 @@ msgid "runtimeCommand.error.exportingBin"
 msgstr "バイナリをエクスポートする際にエラーが発生しました: %s"
 
 msgid "runtimeCommand.error.noAppNameOrBin"
-msgstr "--app-name または --bin が指定されている必要があります。"
+msgstr "--app または --bin が指定されている必要があります。"
 
 msgid "runtimeCommand.error.noPackageSpecified"
 msgstr "パッケージが指定されていません。"
 
 msgid "runtimeCommand.error.sameAppOrBin"
-msgstr "--app-name と --bin の両方は指定できません。"
+msgstr "--app と --bin の両方は指定できません。"
 
 msgid "runtimeCommand.error.startingContainer"
 msgstr "コンテナを開始時にエラーが発生しました: %s"

@@ -170,7 +170,7 @@ msgstr "Увійдіть до середовища підсистеми."
 msgid "apx.cmd.subsystem.export"
 msgstr "Експортуйте застосунок або бінарний файл з підсистеми на хост."
 
-msgid "apx.cmd.subsystem.export.options.appName"
+msgid "apx.cmd.subsystem.export.options.app"
 msgstr "Назва застосунку для експорту."
 
 msgid "apx.cmd.subsystem.export.options.bin"
@@ -239,7 +239,7 @@ msgstr "Зупинити підсистему."
 msgid "apx.cmd.subsystem.unexport"
 msgstr "Експортувати застосунок або бінарний файл з хосту."
 
-msgid "apx.cmd.subsystem.unexport.options.appName"
+msgid "apx.cmd.subsystem.unexport.options.app"
 msgstr "Назва застосунку, який потрібно скасувати."
 
 msgid "apx.cmd.subsystem.unexport.options.bin"
@@ -435,13 +435,13 @@ msgid "runtimeCommand.error.exportingBin"
 msgstr "Під час експорту бінарного файлу сталася помилка: %s"
 
 msgid "runtimeCommand.error.noAppNameOrBin"
-msgstr "Необхідно вказати --app-name або --bin."
+msgstr "Необхідно вказати --app або --bin."
 
 msgid "runtimeCommand.error.noPackageSpecified"
 msgstr "Пакети не вказані."
 
 msgid "runtimeCommand.error.sameAppOrBin"
-msgstr "--app-name і --bin не можуть бути вказані одночасно."
+msgstr "--app і --bin не можуть бути вказані одночасно."
 
 msgid "runtimeCommand.error.startingContainer"
 msgstr "Виникла помилка під час запуску контейнера: %s"

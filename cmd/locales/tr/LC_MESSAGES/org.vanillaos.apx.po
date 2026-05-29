@@ -170,7 +170,7 @@ msgstr "Alt sistemin ortamına gir."
 msgid "apx.cmd.subsystem.export"
 msgstr "Alt sistemden bir uygulama ya da ikiliyi ana makineye dışa aktar."
 
-msgid "apx.cmd.subsystem.export.options.appName"
+msgid "apx.cmd.subsystem.export.options.app"
 msgstr "Dışa aktarılacak uygulamanın adı."
 
 msgid "apx.cmd.subsystem.export.options.bin"
@@ -239,7 +239,7 @@ msgstr "Alt sistemi durdur."
 msgid "apx.cmd.subsystem.unexport"
 msgstr "Ana makineden uygulama ya da ikilinin dışa aktarımını geri al."
 
-msgid "apx.cmd.subsystem.unexport.options.appName"
+msgid "apx.cmd.subsystem.unexport.options.app"
 msgstr "Dışa aktarımın geri alınacağı uygulamanın adı."
 
 msgid "apx.cmd.subsystem.unexport.options.bin"
@@ -435,13 +435,13 @@ msgid "runtimeCommand.error.exportingBin"
 msgstr "İkili dosyayı çıkartırken hata oluştu: %s"
 
 msgid "runtimeCommand.error.noAppNameOrBin"
-msgstr "--app-name veya --bin belirtilmeli."
+msgstr "--app veya --bin belirtilmeli."
 
 msgid "runtimeCommand.error.noPackageSpecified"
 msgstr "Hiçbir paket belirtilmedi."
 
 msgid "runtimeCommand.error.sameAppOrBin"
-msgstr "--app-name ve --bin aynı anda belirtilemez."
+msgstr "--app ve --bin aynı anda belirtilemez."
 
 msgid "runtimeCommand.error.startingContainer"
 msgstr "Konteyner başlatılırken hata oluştu: %s"
