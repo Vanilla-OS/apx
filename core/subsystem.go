@@ -273,8 +273,13 @@ func ListSubSystems(includeManaged bool, includeRootFull bool) ([]*SubSystem, er
 
 	subsystems := []*SubSystem{}
 	for _, container := range containers {
-		if _, ok := container.Labels["name"]; !ok {
-			// log.Printf("Container %s has no name label, skipping", container.Name)
+		containerManager, ok := container.Labels["manager"]
+		if !ok || containerManager != "apx" {
+			continue
+		}
+
+		containerName, ok := container.Labels["name"]
+		if !ok {
 			continue
 		}
 
@@ -284,19 +289,24 @@ func ListSubSystems(includeManaged bool, includeRootFull bool) ([]*SubSystem, er
 			}
 		}
 
-		stack, err := LoadStack(container.Labels["stack"])
-		if err != nil {
-			log.Printf("Error loading stack %s: %s", container.Labels["stack"], err)
+		containerStack, ok := container.Labels["stack"]
+		if !ok || containerStack == "" {
 			continue
 		}
 
-		internalName := genInternalName(container.Labels["name"])
+		stack, err := LoadStack(containerStack)
+		if err != nil {
+			log.Printf("Error loading stack %s: %s", containerStack, err)
+			continue
+		}
+
+		internalName := genInternalName(containerName)
 		subsystem := &SubSystem{
 			InternalName:     internalName,
-			Name:             container.Labels["name"],
+			Name:             containerName,
 			Stack:            stack,
 			Status:           container.Status,
-			ExportedPrograms: findExported(internalName, container.Labels["name"]),
+			ExportedPrograms: findExported(internalName, containerName),
 		}
 
 		subsystems = append(subsystems, subsystem)
