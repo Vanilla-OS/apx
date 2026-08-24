@@ -17,26 +17,19 @@
 
 ## Help
 
-```bash
-Apx is a package manager with support for multiple sources, allowing you to install packages in subsystems.
+```text
+Usage: apx [flags] [command]
 
-Usage:
-  apx [command]
-
-Available Commands:
-  [subsystem] Work with the specified subsystem, accessing the package manager and environment.
-  completion  Generate the autocompletion script for the specified shell
-  help        Help about any command
-  pkgmanagers Work with the package managers that are available in apx.
-  stacks      Work with the stacks that are available in apx.
-  subsystems  Work with the subsystems that are available in apx.
-
-Flags:
-  -h, --help      help for apx
-  -v, --version   version for apx
-
-Use "apx [command] --help" for more information about a command.
+Commands:
+  man             Generate the manual page
+  pkgmanagers     Manage package-manager definitions
+  stacks          Manage subsystem stack definitions
+  subsystems      Create and manage subsystems
 ```
+
+Run `apx SUBSYSTEM COMMAND` to use the package manager and environment of a
+subsystem. Use `apx COMMAND --help` or `apx SUBSYSTEM COMMAND --help` for the
+available options.
 
 ## Documentation and Guides
 
