@@ -27,9 +27,10 @@ Commands:
   subsystems      Create and manage subsystems
 ```
 
-Run `apx SUBSYSTEM COMMAND` to use the package manager and environment of a
-subsystem. Use `apx COMMAND --help` or `apx SUBSYSTEM COMMAND --help` for the
-available options.
+> [!NOTE]
+> Run `apx SUBSYSTEM COMMAND` to use the package manager and environment of a
+> subsystem. Use `apx COMMAND --help` or `apx SUBSYSTEM COMMAND --help` for the
+> available options.
 
 ## Documentation and Guides
 
