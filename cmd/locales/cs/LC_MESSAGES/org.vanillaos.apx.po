@@ -1,13 +1,13 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2026-08-24 05:39+0000\n"
+"Last-Translator: Prefill add-on <noreply-addon-prefill@weblate.org>\n"
+"Language-Team: Czech <https://hosted.weblate.org/projects/vanilla-os/apx/cs/"
+">\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: cs\n"
-"PO-Revision-Date: 2026-08-24 05:39+0000\n"
-"Last-Translator: Prefill add-on <noreply-addon-prefill@weblate.org>\n"
-"Language-Team: Czech <https://hosted.weblate.org/projects/vanilla-os/apx/cs/>"
-"\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Generator: Weblate 2026.9.dev0\n"
 
@@ -323,6 +323,21 @@ msgstr "Usage"
 msgid "apx.msg.version"
 msgstr "Show version for apx."
 
+#, fuzzy
+#| msgid "apx.cmd.subsystem.remove"
+msgid "apx.subsystem.dev"
+msgstr "Smazat zadané balíčky."
+
+#, fuzzy
+#| msgid "apx.cmd.subsystem.start"
+msgid "apx.subsystem.singularityos"
+msgstr "Start the subsystem."
+
+#, fuzzy
+#| msgid "apx.cmd.subsystem.run"
+msgid "apx.subsystem.work"
+msgstr "Run command inside subsystem."
+
 msgid "apx.terminal.false"
 msgstr "ne"
 
@@ -357,7 +372,9 @@ msgid "pkgmanagers.list.info.foundPkgManagers"
 msgstr "Nalezeno %d správců balíčků:\n"
 
 msgid "pkgmanagers.list.info.noPkgManagers"
-msgstr "Správce balíčků nejsou dostupné. Vytvořte nový pomocí 'apx pkgmanagers new' nebo kontaktujte Vašeho systémového správce."
+msgstr ""
+"Správce balíčků nejsou dostupné. Vytvořte nový pomocí 'apx pkgmanagers new' "
+"nebo kontaktujte Vašeho systémového správce."
 
 msgid "pkgmanagers.new.error.alreadyExists"
 msgstr "Správce balíčků s názvem '%s' již existuje."
@@ -423,7 +440,9 @@ msgid "pkgmanagers.update.info.success"
 msgstr "Updated package manager '%s'."
 
 msgid "runtimeCommand.description"
-msgstr "Pracovat se specifikovaným subsystémem a tím získat přístup k jeho správci balíčků a prostředí."
+msgstr ""
+"Pracovat se specifikovaným subsystémem a tím získat přístup k jeho správci "
+"balíčků a prostředí."
 
 msgid "runtimeCommand.error.cantAccessPkgManager"
 msgstr "Při práci se správcem balíčků nastala chyba: %s"
@@ -522,7 +541,9 @@ msgid "stacks.list.info.foundStacks"
 msgstr "%d stacků nalezeno:\n"
 
 msgid "stacks.list.info.noStacks"
-msgstr "Stacky nejsou k dizpozici. Vytvořte nový pomocí 'apx stacks new' nebo kontaktujte vašeho systémového správce."
+msgstr ""
+"Stacky nejsou k dizpozici. Vytvořte nový pomocí 'apx stacks new' nebo "
+"kontaktujte vašeho systémového správce."
 
 msgid "stacks.new.error.alreadyExists"
 msgstr "Stack s názvem '%s' již existuje."
@@ -552,10 +573,14 @@ msgid "stacks.new.error.noPkgManager"
 msgstr "Není zadán žádný správce balíčků."
 
 msgid "stacks.new.error.noPkgManagers"
-msgstr "Could not find any package managers. Create one with 'apx pkgmanagers new' or contact the system administrator."
+msgstr ""
+"Could not find any package managers. Create one with 'apx pkgmanagers new' "
+"or contact the system administrator."
 
 msgid "stacks.new.error.pkgManagerDoesNotExist"
-msgstr "Zadaný správce balíčků neexistuje. Vytvořte jej pomocí příkazu 'apx pkgmanagers new' nebo kontaktujte správce systému."
+msgstr ""
+"Zadaný správce balíčků neexistuje. Vytvořte jej pomocí příkazu 'apx "
+"pkgmanagers new' nebo kontaktujte správce systému."
 
 msgid "stacks.new.info.askBase"
 msgstr "Vyberte základ (např. 'vanillaos/pico'):"
@@ -564,7 +589,8 @@ msgid "stacks.new.info.askName"
 msgstr "Vyberte název:"
 
 msgid "stacks.new.info.askPackages"
-msgstr "Zadejte balíčky, které chcete nainstalovat do stacku, oddělené mezerou:"
+msgstr ""
+"Zadejte balíčky, které chcete nainstalovat do stacku, oddělené mezerou:"
 
 msgid "stacks.new.info.askPkgManager"
 msgstr "Vyberte správce balíčků:"
@@ -573,7 +599,9 @@ msgid "stacks.new.info.confirmPackages"
 msgstr "Chcete potvrdit aktuální seznam balíčků?"
 
 msgid "stacks.new.info.noPackages"
-msgstr "Nezadali jste žádný balíček, který by měl být ve stacku nainstalovaný. Chcete nyní nějaký přidat?"
+msgstr ""
+"Nezadali jste žádný balíček, který by měl být ve stacku nainstalovaný. "
+"Chcete nyní nějaký přidat?"
 
 msgid "stacks.new.info.selectPkgManager"
 msgstr "Vyberte správce balíčků [1-%d]:"
@@ -606,13 +634,17 @@ msgid "stacks.update.error.noPkgManager"
 msgstr "Není zadán správce balíčků."
 
 msgid "stacks.update.error.pkgManagerDoesNotExist"
-msgstr "Zadaný správce balíčků neexistuje. Vytvořte ho pomocí 'apx pkgmanagers new' nebo kontaktujte Vašeho správce systému."
+msgstr ""
+"Zadaný správce balíčků neexistuje. Vytvořte ho pomocí 'apx pkgmanagers new' "
+"nebo kontaktujte Vašeho správce systému."
 
 msgid "stacks.update.info.askBase"
 msgstr "Zadejte nový základ nebo potvrďte aktuální (%s):"
 
 msgid "stacks.update.info.askPackages"
-msgstr "Zadejte balíčky, které chcete ve stacku nainstalovat, oddělené mezerou nebo potvrďte aktuální (%s):"
+msgstr ""
+"Zadejte balíčky, které chcete ve stacku nainstalovat, oddělené mezerou nebo "
+"potvrďte aktuální (%s):"
 
 msgid "stacks.update.info.askPkgManager"
 msgstr "Zvolte nový správce balíčků nebo potvrďte aktuální (%s):"
@@ -621,7 +653,9 @@ msgid "stacks.update.info.confirmPackages"
 msgstr "Do you want to confirm the current packages list?"
 
 msgid "stacks.update.info.noPackages"
-msgstr "You have not provided any packages to install in the stack. Do you want to add some now?"
+msgstr ""
+"You have not provided any packages to install in the stack. Do you want to "
+"add some now?"
 
 msgid "stacks.update.info.success"
 msgstr "Stack '%s' aktualizován."
@@ -639,7 +673,9 @@ msgid "subsystems.list.info.foundSubsystems"
 msgstr "Nalezeno %d subsystémů:\n"
 
 msgid "subsystems.list.info.noSubsystems"
-msgstr "Nejsou k dispozici žádné subsystémy. Vytvořte nový pomocí příkazu 'apx subsystems new' nebo kontaktujte správce systému."
+msgstr ""
+"Nejsou k dispozici žádné subsystémy. Vytvořte nový pomocí příkazu 'apx "
+"subsystems new' nebo kontaktujte správce systému."
 
 msgid "subsystems.new.error.alreadyExists"
 msgstr "Subsystém s názvem '%s' již existuje."
@@ -660,10 +696,14 @@ msgid "subsystems.new.error.noStack"
 msgstr "Nebyl zadán stack."
 
 msgid "subsystems.new.error.noStacks"
-msgstr "K vytvoření subsystému je zapotřebí stack. Vytvořte nový pomocí příkazu 'apx stacks new' nebo se obraťte na správce systému."
+msgstr ""
+"K vytvoření subsystému je zapotřebí stack. Vytvořte nový pomocí příkazu 'apx "
+"stacks new' nebo se obraťte na správce systému."
 
 msgid "subsystems.new.error.stackDoesNotExist"
-msgstr "Zadaný stack neexistuje. Vytvořte jej pomocí příkazu 'apx stacks new' nebo kontaktujte správce systému."
+msgstr ""
+"Zadaný stack neexistuje. Vytvořte jej pomocí příkazu 'apx stacks new' nebo "
+"kontaktujte správce systému."
 
 msgid "subsystems.new.info.askName"
 msgstr "Vyberte název:"

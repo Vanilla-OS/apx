@@ -1,13 +1,13 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2026-08-24 05:39+0000\n"
+"Last-Translator: Prefill add-on <noreply-addon-prefill@weblate.org>\n"
+"Language-Team: Greek <https://hosted.weblate.org/projects/vanilla-os/apx/el/"
+">\n"
+"Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: el\n"
-"PO-Revision-Date: 2026-08-24 05:39+0000\n"
-"Last-Translator: Prefill add-on <noreply-addon-prefill@weblate.org>\n"
-"Language-Team: Greek <https://hosted.weblate.org/projects/vanilla-os/apx/el/>"
-"\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2026.9.dev0\n"
 
@@ -183,7 +183,8 @@ msgid "apx.cmd.subsystem.export.options.bin"
 msgstr "Το όνομα του εκτελέσιμου αρχείου που θα εξαχθεί."
 
 msgid "apx.cmd.subsystem.export.options.binOutput"
-msgstr "Διαδρομή της εξόδου του εκτελέσιμου αρχείου (Προεπιλεγμένη: ~/.local/bin/)."
+msgstr ""
+"Διαδρομή της εξόδου του εκτελέσιμου αρχείου (Προεπιλεγμένη: ~/.local/bin/)."
 
 msgid "apx.cmd.subsystem.install"
 msgstr "Εγκατάσταση του επιλεγμένου πακέτου."
@@ -243,7 +244,8 @@ msgid "apx.cmd.subsystem.stop"
 msgstr "Stop the subsystem."
 
 msgid "apx.cmd.subsystem.unexport"
-msgstr "Άρση εξαγωγής της εφαρμογής ή του εκτελέσιμου αρχείου από το υποσύστημα."
+msgstr ""
+"Άρση εξαγωγής της εφαρμογής ή του εκτελέσιμου αρχείου από το υποσύστημα."
 
 msgid "apx.cmd.subsystem.unexport.options.app"
 msgstr "Το όνομα της εφαρμογής για άρση εξαγωγής της."
@@ -252,7 +254,9 @@ msgid "apx.cmd.subsystem.unexport.options.bin"
 msgstr "Το όνομα του εκτελέσιμου αρχείου για άρση εξαγωγής του."
 
 msgid "apx.cmd.subsystem.unexport.options.binOutput"
-msgstr "Η διαδρομή για την εξαγωγή του εκτελέσιμου αρχείου (Προεπιλεγμένη: ~/.local/bin/)."
+msgstr ""
+"Η διαδρομή για την εξαγωγή του εκτελέσιμου αρχείου (Προεπιλεγμένη: ~/.local/"
+"bin/)."
 
 msgid "apx.cmd.subsystem.update"
 msgstr "Ενημέρωση της λίστας διαθέσιμων πακέτων."
@@ -312,7 +316,9 @@ msgid "apx.msg.globalFlags"
 msgstr "Global Flags"
 
 msgid "apx.msg.help"
-msgstr "Το apx είναι ένας διαχειριστής πακέτων με υποστήριξη πολλών πηγών, επιτρέποντας σας να εγκαταστήσετε πακέτα σε υποσυστήματα."
+msgstr ""
+"Το apx είναι ένας διαχειριστής πακέτων με υποστήριξη πολλών πηγών, "
+"επιτρέποντας σας να εγκαταστήσετε πακέτα σε υποσυστήματα."
 
 msgid "apx.msg.moreInfo"
 msgstr "Use %s for more information about a command"
@@ -322,6 +328,21 @@ msgstr "Usage"
 
 msgid "apx.msg.version"
 msgstr "Show version for apx."
+
+#, fuzzy
+#| msgid "apx.cmd.subsystem.remove"
+msgid "apx.subsystem.dev"
+msgstr "Αφαίρεση των επιλεγμένων πακέτων."
+
+#, fuzzy
+#| msgid "apx.cmd.subsystem.start"
+msgid "apx.subsystem.singularityos"
+msgstr "Start the subsystem."
+
+#, fuzzy
+#| msgid "apx.cmd.subsystem.run"
+msgid "apx.subsystem.work"
+msgstr "Run command inside subsystem."
 
 msgid "apx.terminal.false"
 msgstr "όχι"
@@ -357,7 +378,9 @@ msgid "pkgmanagers.list.info.foundPkgManagers"
 msgstr "Βρέθηκαν %d διαχειριστές πακέτων"
 
 msgid "pkgmanagers.list.info.noPkgManagers"
-msgstr "Δεν υπάρχουν διαθέσιμοι διαχειριστές πακέτων. Δημιουργήστε έναν νέο με το 'apx pkgmanagers new' ή επικοινωνήστε με τον διαχειριστή του συστήματος."
+msgstr ""
+"Δεν υπάρχουν διαθέσιμοι διαχειριστές πακέτων. Δημιουργήστε έναν νέο με το "
+"'apx pkgmanagers new' ή επικοινωνήστε με τον διαχειριστή του συστήματος."
 
 msgid "pkgmanagers.new.error.alreadyExists"
 msgstr "Ένας διαχειριστής πακέτων με το όνομα '%s' υπάρχει ήδη."
@@ -423,7 +446,9 @@ msgid "pkgmanagers.update.info.success"
 msgstr "Updated package manager '%s'."
 
 msgid "runtimeCommand.description"
-msgstr "Εργαστείτε στο επιλεγμένο υποσύστημα, με πρόσβαση στον διαχειριστή πακέτων και στο περιβάλλον."
+msgstr ""
+"Εργαστείτε στο επιλεγμένο υποσύστημα, με πρόσβαση στον διαχειριστή πακέτων "
+"και στο περιβάλλον."
 
 msgid "runtimeCommand.error.cantAccessPkgManager"
 msgstr "Εμφανίστηκε σφάλμα κατά τη πρόσβαση στον διαχειριστή πακέτων: %s"
@@ -441,13 +466,16 @@ msgid "runtimeCommand.error.exportingBin"
 msgstr "Προέκυψε σφάλμα κατά την εξαγωγή του εκτελέσιμου αρχείου: %s"
 
 msgid "runtimeCommand.error.noAppNameOrBin"
-msgstr "Πρέπει να προσδιοριστεί το --όνομα-της-εφαρμογής ή --του-εκτελέσιμου-αρχείου."
+msgstr ""
+"Πρέπει να προσδιοριστεί το --όνομα-της-εφαρμογής ή --του-εκτελέσιμου-αρχείου."
 
 msgid "runtimeCommand.error.noPackageSpecified"
 msgstr "Δεν επιλέχθηκαν πακέτα."
 
 msgid "runtimeCommand.error.sameAppOrBin"
-msgstr "Δεν γίνεται να καθοριστεί το --όνομα-της-εφαρμογής και το --εκτελέσιμο-αρχείο ταυτόχρονα."
+msgstr ""
+"Δεν γίνεται να καθοριστεί το --όνομα-της-εφαρμογής και το --εκτελέσιμο-"
+"αρχείο ταυτόχρονα."
 
 msgid "runtimeCommand.error.startingContainer"
 msgstr "An error occurred while starting the container: %s"
@@ -522,7 +550,9 @@ msgid "stacks.list.info.foundStacks"
 msgstr "Βρέθηκαν %d στόιβες:"
 
 msgid "stacks.list.info.noStacks"
-msgstr "Δεν υπάρχουν διαθέσιμες στοίβες. Δημιουργήστε μια νέα με το 'apx stacks new' ή επικοινωνήστε με τον διαχειριστή του συστήματος."
+msgstr ""
+"Δεν υπάρχουν διαθέσιμες στοίβες. Δημιουργήστε μια νέα με το 'apx stacks new' "
+"ή επικοινωνήστε με τον διαχειριστή του συστήματος."
 
 msgid "stacks.new.error.alreadyExists"
 msgstr "Υπάρχει ήδη μια στοίβα με το όνομα '%s'."
@@ -552,10 +582,14 @@ msgid "stacks.new.error.noPkgManager"
 msgstr "Δεν καθορίστηκε διαχειριστής πακέτων."
 
 msgid "stacks.new.error.noPkgManagers"
-msgstr "Could not find any package managers. Create one with 'apx pkgmanagers new' or contact the system administrator."
+msgstr ""
+"Could not find any package managers. Create one with 'apx pkgmanagers new' "
+"or contact the system administrator."
 
 msgid "stacks.new.error.pkgManagerDoesNotExist"
-msgstr "Ο επιλεγμένος διαχειριστής πακέτων δεν υπάρχει. Δημιουργήστε τον με το 'apx pkgmanagers new' ή επικοινωνήστε με τον διαχειριστή του συστήματος."
+msgstr ""
+"Ο επιλεγμένος διαχειριστής πακέτων δεν υπάρχει. Δημιουργήστε τον με το 'apx "
+"pkgmanagers new' ή επικοινωνήστε με τον διαχειριστή του συστήματος."
 
 msgid "stacks.new.info.askBase"
 msgstr "Επιλογή μιας βάσης (π.χ. 'vanillaos/pico'):"
@@ -564,7 +598,9 @@ msgid "stacks.new.info.askName"
 msgstr "Επιλογή ονόματος:"
 
 msgid "stacks.new.info.askPackages"
-msgstr "Παρακαλείστε να πληκτρολογήσετε τα πακέτα που επιθυμείτε να εγκατασταθούν στη στοίβα, χωρισμένα με κενό:"
+msgstr ""
+"Παρακαλείστε να πληκτρολογήσετε τα πακέτα που επιθυμείτε να εγκατασταθούν "
+"στη στοίβα, χωρισμένα με κενό:"
 
 msgid "stacks.new.info.askPkgManager"
 msgstr "Επιλογή ενός διαχειριστή πακέτων:"
@@ -573,7 +609,9 @@ msgid "stacks.new.info.confirmPackages"
 msgstr "Θέλετε να επιβεβαιώσετε την τρέχουσα λίστα πακέτων?"
 
 msgid "stacks.new.info.noPackages"
-msgstr "Δεν έχετε περιλάβει κάποια πακέτα για εγκατάσταση στη στοίβα. Θέλετε να προσθέσετε μερικά τώρα;"
+msgstr ""
+"Δεν έχετε περιλάβει κάποια πακέτα για εγκατάσταση στη στοίβα. Θέλετε να "
+"προσθέσετε μερικά τώρα;"
 
 msgid "stacks.new.info.selectPkgManager"
 msgstr "Επιλέξτε έναν διαχειριστή πακέτων [1-%d]:"
@@ -606,22 +644,29 @@ msgid "stacks.update.error.noPkgManager"
 msgstr "Δεν καθορίστηκε διαχειριστής πακέτων."
 
 msgid "stacks.update.error.pkgManagerDoesNotExist"
-msgstr "Ο επιλεγμένος διαχειριστής πακέτων δεν υπάρχει. Δημιουργήστε τον με το 'apx pkgmanagers new' ή επικοινωνήστε με τον διαχειριστή του συστήματος."
+msgstr ""
+"Ο επιλεγμένος διαχειριστής πακέτων δεν υπάρχει. Δημιουργήστε τον με το 'apx "
+"pkgmanagers new' ή επικοινωνήστε με τον διαχειριστή του συστήματος."
 
 msgid "stacks.update.info.askBase"
 msgstr "Πληκτρολογήστε μια νέα βάση ή επιβεβαιώστε τη τρέχουσα (%s):"
 
 msgid "stacks.update.info.askPackages"
-msgstr "Πληκτρολογήστε τα πακέτα που επιθυμείτε να εγκατασταθούν στη στοίβα, χωρισμένα με κενό, ή επιβεβαιώστε τα τρέχοντα (%s):"
+msgstr ""
+"Πληκτρολογήστε τα πακέτα που επιθυμείτε να εγκατασταθούν στη στοίβα, "
+"χωρισμένα με κενό, ή επιβεβαιώστε τα τρέχοντα (%s):"
 
 msgid "stacks.update.info.askPkgManager"
-msgstr "Επιλέξτε έναν νέο διαχειριστή πακέτων ή επιβεβαιώστε τον τρέχοντα (%s):"
+msgstr ""
+"Επιλέξτε έναν νέο διαχειριστή πακέτων ή επιβεβαιώστε τον τρέχοντα (%s):"
 
 msgid "stacks.update.info.confirmPackages"
 msgstr "Do you want to confirm the current packages list?"
 
 msgid "stacks.update.info.noPackages"
-msgstr "You have not provided any packages to install in the stack. Do you want to add some now?"
+msgstr ""
+"You have not provided any packages to install in the stack. Do you want to "
+"add some now?"
 
 msgid "stacks.update.info.success"
 msgstr "Ενημερώθηκε η στοίβα '%s'."
@@ -639,7 +684,9 @@ msgid "subsystems.list.info.foundSubsystems"
 msgstr "Βρέθηκαν %d υποσυστήματα:"
 
 msgid "subsystems.list.info.noSubsystems"
-msgstr "Δεν υπάρχουν διαθέσιμα υποσυστήματα. Δημιουργήστε ένα νέο με το 'apx subsystems new' ή επικοινωνήστε με τον διαχειριστή του συστήματος."
+msgstr ""
+"Δεν υπάρχουν διαθέσιμα υποσυστήματα. Δημιουργήστε ένα νέο με το 'apx "
+"subsystems new' ή επικοινωνήστε με τον διαχειριστή του συστήματος."
 
 msgid "subsystems.new.error.alreadyExists"
 msgstr "Ένα υποσύστημα με όνομα '%s' υπάρχει ήδη."
@@ -660,10 +707,15 @@ msgid "subsystems.new.error.noStack"
 msgstr "Δεν καθορίστηκε στοίβα."
 
 msgid "subsystems.new.error.noStacks"
-msgstr "Χρειάζεται μια στοίβα για την δημιουργία ενός υποσυστήματος. Δημιουργήστε μια νέα με το 'apx stacks new' ή επικοινωνήστε με τον διαχειριστή του συστήματος."
+msgstr ""
+"Χρειάζεται μια στοίβα για την δημιουργία ενός υποσυστήματος. Δημιουργήστε "
+"μια νέα με το 'apx stacks new' ή επικοινωνήστε με τον διαχειριστή του "
+"συστήματος."
 
 msgid "subsystems.new.error.stackDoesNotExist"
-msgstr "Η επιλεγμένη στοίβα δεν υπάρχει. Δημιουργήστε τη με το 'apx stacks new' ή επικοινωνήστε με τον διαχειριστή του συστήματος."
+msgstr ""
+"Η επιλεγμένη στοίβα δεν υπάρχει. Δημιουργήστε τη με το 'apx stacks new' ή "
+"επικοινωνήστε με τον διαχειριστή του συστήματος."
 
 msgid "subsystems.new.info.askName"
 msgstr "Επιλέξτε ένα όνομα:"

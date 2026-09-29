@@ -1,13 +1,13 @@
 msgid ""
 msgstr ""
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Language: eo\n"
 "PO-Revision-Date: 2026-08-24 05:39+0000\n"
 "Last-Translator: Prefill add-on <noreply-addon-prefill@weblate.org>\n"
 "Language-Team: Esperanto <https://hosted.weblate.org/projects/vanilla-os/apx/"
 "eo/>\n"
+"Language: eo\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2026.9.dev0\n"
 
@@ -120,7 +120,9 @@ msgid "apx.cmd.stacks.new"
 msgstr "Krei novan stakon."
 
 msgid "apx.cmd.stacks.new.options.base"
-msgstr "La baza distribuaĵo uzota. (Por listo de kongruaj distribuaĵoj, vidu https://distrobox.it/compatibility/#containers-distros)"
+msgstr ""
+"La baza distribuaĵo uzota. (Por listo de kongruaj distribuaĵoj, vidu https://"
+"distrobox.it/compatibility/#containers-distros)"
 
 msgid "apx.cmd.stacks.new.options.name"
 msgstr "La nomo de la stako."
@@ -312,7 +314,9 @@ msgid "apx.msg.globalFlags"
 msgstr "Mallokaj flagoj"
 
 msgid "apx.msg.help"
-msgstr "Apx estas pakadministrilo subtenanta plurajn fontojn, permesanta al vi instali pakojn en subsistemojn."
+msgstr ""
+"Apx estas pakadministrilo subtenanta plurajn fontojn, permesanta al vi "
+"instali pakojn en subsistemojn."
 
 msgid "apx.msg.moreInfo"
 msgstr "Uzu %s por pliaj informoj pri komando"
@@ -322,6 +326,21 @@ msgstr "Uzado"
 
 msgid "apx.msg.version"
 msgstr "Montri la version de apx."
+
+#, fuzzy
+#| msgid "apx.cmd.subsystem.remove"
+msgid "apx.subsystem.dev"
+msgstr "Malinstali la specifitajn pakojn."
+
+#, fuzzy
+#| msgid "apx.cmd.subsystem.start"
+msgid "apx.subsystem.singularityos"
+msgstr "Lanĉi la subsistemon."
+
+#, fuzzy
+#| msgid "apx.cmd.subsystem.run"
+msgid "apx.subsystem.work"
+msgstr "Ruli komandon en subsistemo."
 
 msgid "apx.terminal.false"
 msgstr "ne"
@@ -357,7 +376,9 @@ msgid "pkgmanagers.list.info.foundPkgManagers"
 msgstr "Troviĝis %d pakadministriloj"
 
 msgid "pkgmanagers.list.info.noPkgManagers"
-msgstr "Ekzistas neniu pakadministrilo. Aŭ kreu pakadministrilon per «apx pkgmanagers new», aŭ kontaktu la sistemadimistranton."
+msgstr ""
+"Ekzistas neniu pakadministrilo. Aŭ kreu pakadministrilon per «apx "
+"pkgmanagers new», aŭ kontaktu la sistemadimistranton."
 
 msgid "pkgmanagers.new.error.alreadyExists"
 msgstr "Pakadministrilo nomita «%s» jam ekzistas."
@@ -522,7 +543,9 @@ msgid "stacks.list.info.foundStacks"
 msgstr "Troviĝis %d stakoj:"
 
 msgid "stacks.list.info.noStacks"
-msgstr "Ekzistas neniu stako. Aŭ kreu stakon per «apx stacks new», aŭ kontaktu la sistemadimistranton."
+msgstr ""
+"Ekzistas neniu stako. Aŭ kreu stakon per «apx stacks new», aŭ kontaktu la "
+"sistemadimistranton."
 
 msgid "stacks.new.error.alreadyExists"
 msgstr "Jam ekzistas stako de la nomo «%s»."
@@ -552,10 +575,14 @@ msgid "stacks.new.error.noPkgManager"
 msgstr "Neniu pakadministrilo specifiĝis."
 
 msgid "stacks.new.error.noPkgManagers"
-msgstr "Ekzistas neniu stako. Aŭ kreu stakon per «apx stacks new», aŭ kontaktu la sistemadimistranton."
+msgstr ""
+"Ekzistas neniu stako. Aŭ kreu stakon per «apx stacks new», aŭ kontaktu la "
+"sistemadimistranton."
 
 msgid "stacks.new.error.pkgManagerDoesNotExist"
-msgstr "La specifita pakadministrilo ne ekzistas. Aŭ kreu ĝin per «apx pkgmanagers new», aŭ kontaktu la sistemadministranton."
+msgstr ""
+"La specifita pakadministrilo ne ekzistas. Aŭ kreu ĝin per «apx pkgmanagers "
+"new», aŭ kontaktu la sistemadministranton."
 
 msgid "stacks.new.info.askBase"
 msgstr "Elektu bazon (ekz. «vanillaos/pico»):"
@@ -564,7 +591,9 @@ msgid "stacks.new.info.askName"
 msgstr "Elektu nomon:"
 
 msgid "stacks.new.info.askPackages"
-msgstr "Bonvolu tajpi tiujn pakojn, kiujn vi volas instali en la stakon, apartigitajn per spacetoj:"
+msgstr ""
+"Bonvolu tajpi tiujn pakojn, kiujn vi volas instali en la stakon, "
+"apartigitajn per spacetoj:"
 
 msgid "stacks.new.info.askPkgManager"
 msgstr "Elektu pakadministrilon:"
@@ -573,7 +602,8 @@ msgid "stacks.new.info.confirmPackages"
 msgstr "Ĉu konfirmi la aktualan liston de pakoj?"
 
 msgid "stacks.new.info.noPackages"
-msgstr "Vi ne specifis ajnajn pakaĵojn instalotajn en la stakon. Ĉu specifi nun?"
+msgstr ""
+"Vi ne specifis ajnajn pakaĵojn instalotajn en la stakon. Ĉu specifi nun?"
 
 msgid "stacks.new.info.selectPkgManager"
 msgstr "Elektu pakadministrilon [1-%d]:"
@@ -606,13 +636,17 @@ msgid "stacks.update.error.noPkgManager"
 msgstr "Neniu pakadministrilo specifiĝis."
 
 msgid "stacks.update.error.pkgManagerDoesNotExist"
-msgstr "La specifita pakadministrilo ne ekzistas. Aŭ kreu ĝin per «apx pkgmanagers new», aŭ kontaktu la sistemadministranton."
+msgstr ""
+"La specifita pakadministrilo ne ekzistas. Aŭ kreu ĝin per «apx pkgmanagers "
+"new», aŭ kontaktu la sistemadministranton."
 
 msgid "stacks.update.info.askBase"
 msgstr "Tajpu novan bazon, aŭ konfirmu la aktualan (%s):"
 
 msgid "stacks.update.info.askPackages"
-msgstr "Bonvolu tajpi tiujn pakojn, kiujn vi volas instali en la stakon, apartigitajn per spacetoj, aŭ konfirmi la aktualajn pakojn (%s):"
+msgstr ""
+"Bonvolu tajpi tiujn pakojn, kiujn vi volas instali en la stakon, "
+"apartigitajn per spacetoj, aŭ konfirmi la aktualajn pakojn (%s):"
 
 msgid "stacks.update.info.askPkgManager"
 msgstr "Elektu novan pakadministrilon, aŭ konfirmu la aktualan (%s):"
@@ -621,7 +655,8 @@ msgid "stacks.update.info.confirmPackages"
 msgstr "Ĉu konfirmi la aktualan liston de pakoj?"
 
 msgid "stacks.update.info.noPackages"
-msgstr "Vi ne specifis ajnajn pakaĵojn instalotajn en la stakon. Ĉu specifi nun?"
+msgstr ""
+"Vi ne specifis ajnajn pakaĵojn instalotajn en la stakon. Ĉu specifi nun?"
 
 msgid "stacks.update.info.success"
 msgstr "Ĝisdatiĝis stako «%s»."
@@ -639,7 +674,9 @@ msgid "subsystems.list.info.foundSubsystems"
 msgstr "Troviĝis %d subsistemoj:"
 
 msgid "subsystems.list.info.noSubsystems"
-msgstr "Ekzistas neniu subsistemo. Aŭ kreu subsistemon per «apx subsystems new», aŭ kontaktu la sistemadimistranton."
+msgstr ""
+"Ekzistas neniu subsistemo. Aŭ kreu subsistemon per «apx subsystems new», aŭ "
+"kontaktu la sistemadimistranton."
 
 msgid "subsystems.new.error.alreadyExists"
 msgstr "Subsistemo nomita «%s» jam ekzistas."
@@ -660,10 +697,14 @@ msgid "subsystems.new.error.noStack"
 msgstr "Neniu stako specifiĝis."
 
 msgid "subsystems.new.error.noStacks"
-msgstr "Oni bezonas stakon por krei subsistemon. Aŭ kreu stakon per «apx stacks new», aŭ kontaktu la sistemadimistranton."
+msgstr ""
+"Oni bezonas stakon por krei subsistemon. Aŭ kreu stakon per «apx stacks "
+"new», aŭ kontaktu la sistemadimistranton."
 
 msgid "subsystems.new.error.stackDoesNotExist"
-msgstr "La specifita stako ne ekzistas. Aŭ kreu ĝin per «apx stacks new», aŭ kontaktu la sistemadimistranton."
+msgstr ""
+"La specifita stako ne ekzistas. Aŭ kreu ĝin per «apx stacks new», aŭ "
+"kontaktu la sistemadimistranton."
 
 msgid "subsystems.new.info.askName"
 msgstr "Elektu nomon:"

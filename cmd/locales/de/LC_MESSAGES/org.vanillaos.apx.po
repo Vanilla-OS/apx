@@ -1,13 +1,13 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2026-08-24 05:39+0000\n"
+"Last-Translator: Prefill add-on <noreply-addon-prefill@weblate.org>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/vanilla-os/apx/de/"
+">\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: de\n"
-"PO-Revision-Date: 2026-08-24 05:39+0000\n"
-"Last-Translator: Prefill add-on <noreply-addon-prefill@weblate.org>\n"
-"Language-Team: German <https://hosted.weblate.org/projects/vanilla-os/apx/"
-"de/>\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2026.9.dev0\n"
 
@@ -39,7 +39,9 @@ msgid "apx.cmd.pkgmanagers.new"
 msgstr "Erstellen Sie einen neuen Paketmanager."
 
 msgid "apx.cmd.pkgmanagers.new.options.autoremove"
-msgstr "Der Befehl, der zum automatischen Entfernen von Paketen ausgeführt werden soll."
+msgstr ""
+"Der Befehl, der zum automatischen Entfernen von Paketen ausgeführt werden "
+"soll."
 
 msgid "apx.cmd.pkgmanagers.new.options.clean"
 msgstr "Der Befehl, um den Cache des Paketmanagers zu leeren."
@@ -72,7 +74,9 @@ msgid "apx.cmd.pkgmanagers.new.options.show"
 msgstr "Der auszuführende Befehl, um Informationen über Pakete anzuzeigen."
 
 msgid "apx.cmd.pkgmanagers.new.options.update"
-msgstr "Der auszuführende Befehl, um die Liste der verfügbaren Pakete zu aktualisieren."
+msgstr ""
+"Der auszuführende Befehl, um die Liste der verfügbaren Pakete zu "
+"aktualisieren."
 
 msgid "apx.cmd.pkgmanagers.new.options.upgrade"
 msgstr "Der auszuführende Befehl zum Upgrade von Paketen."
@@ -120,7 +124,9 @@ msgid "apx.cmd.stacks.new"
 msgstr "Einen neuen Stapel erstellen."
 
 msgid "apx.cmd.stacks.new.options.base"
-msgstr "Das zu verwendende Basis-Distributionsimage. (Für eine Liste der kompatiblen Images besuchen Sie: https://distrobox.it/compatibility/#containers-distros)"
+msgstr ""
+"Das zu verwendende Basis-Distributionsimage. (Für eine Liste der kompatiblen "
+"Images besuchen Sie: https://distrobox.it/compatibility/#containers-distros)"
 
 msgid "apx.cmd.stacks.new.options.name"
 msgstr "Der Name des Stapels."
@@ -243,7 +249,9 @@ msgid "apx.cmd.subsystem.stop"
 msgstr "Stoppe das Subsystem."
 
 msgid "apx.cmd.subsystem.unexport"
-msgstr "Export einer Anwendung oder eine Binärdatei aus dem Subsystem rückgängig machen."
+msgstr ""
+"Export einer Anwendung oder eine Binärdatei aus dem Subsystem rückgängig "
+"machen."
 
 msgid "apx.cmd.subsystem.unexport.options.app"
 msgstr "Der Name der Anwendung, die nicht exportiert werden soll."
@@ -323,6 +331,21 @@ msgstr "Verwendung"
 msgid "apx.msg.version"
 msgstr "Version für apx anzeigen."
 
+#, fuzzy
+#| msgid "apx.cmd.subsystem.remove"
+msgid "apx.subsystem.dev"
+msgstr "Entfernen Sie die angegebenen Pakete."
+
+#, fuzzy
+#| msgid "apx.cmd.subsystem.start"
+msgid "apx.subsystem.singularityos"
+msgstr "Starte das Subsystem."
+
+#, fuzzy
+#| msgid "apx.cmd.subsystem.run"
+msgid "apx.subsystem.work"
+msgstr "Befehl innerhalb des Subsystems ausführen."
+
 msgid "apx.terminal.false"
 msgstr "nein"
 
@@ -357,7 +380,9 @@ msgid "pkgmanagers.list.info.foundPkgManagers"
 msgstr "%d Paketmanager gefunden"
 
 msgid "pkgmanagers.list.info.noPkgManagers"
-msgstr "Keine Paketmanager verfügbar. Erstellen Sie einen neuen mit 'apx pkgmanagers new' oder wenden Sie sich an den Systemadministrator."
+msgstr ""
+"Keine Paketmanager verfügbar. Erstellen Sie einen neuen mit 'apx pkgmanagers "
+"new' oder wenden Sie sich an den Systemadministrator."
 
 msgid "pkgmanagers.new.error.alreadyExists"
 msgstr "Ein Paketmanager mit dem Namen '%s' existiert bereits."
@@ -384,7 +409,8 @@ msgid "pkgmanagers.new.info.askName"
 msgstr "Wählen Sie einen Namen:"
 
 msgid "pkgmanagers.new.info.askOverwrite"
-msgstr "Ein Paketmanager mit dem Namen '%s' existiert bereits. Überschreiben Sie ihn?"
+msgstr ""
+"Ein Paketmanager mit dem Namen '%s' existiert bereits. Überschreiben Sie ihn?"
 
 msgid "pkgmanagers.new.info.askSudo"
 msgstr "Benötigt der Paketmanager sudo zur Ausführung?"
@@ -423,7 +449,9 @@ msgid "pkgmanagers.update.info.success"
 msgstr "Paketmanager '%s' aktualisiert."
 
 msgid "runtimeCommand.description"
-msgstr "Arbeiten Sie mit dem angegebenen Subsystem und greifen Sie auf den Paketmanager und die Umgebung zu."
+msgstr ""
+"Arbeiten Sie mit dem angegebenen Subsystem und greifen Sie auf den "
+"Paketmanager und die Umgebung zu."
 
 msgid "runtimeCommand.error.cantAccessPkgManager"
 msgstr "Beim Zugriff auf den Paketmanager ist ein Fehler aufgetreten: %s"
@@ -522,7 +550,9 @@ msgid "stacks.list.info.foundStacks"
 msgstr "%d Stapel gefunden:"
 
 msgid "stacks.list.info.noStacks"
-msgstr "Keine Stacks verfügbar. Erstellen Sie einen neuen mit 'apx stacks new' oder wenden Sie sich an den Systemadministrator."
+msgstr ""
+"Keine Stacks verfügbar. Erstellen Sie einen neuen mit 'apx stacks new' oder "
+"wenden Sie sich an den Systemadministrator."
 
 msgid "stacks.new.error.alreadyExists"
 msgstr "Ein Stapel mit dem Namen '%s' existiert bereits."
@@ -552,10 +582,14 @@ msgid "stacks.new.error.noPkgManager"
 msgstr "Kein Paketmanager angegeben."
 
 msgid "stacks.new.error.noPkgManagers"
-msgstr "Es konnten keine Paketmanager gefunden werden. Erstellen Sie einen mit ‚apx pkgmanagers new‘ oder wenden Sie sich an den Systemadministrator."
+msgstr ""
+"Es konnten keine Paketmanager gefunden werden. Erstellen Sie einen mit ‚apx "
+"pkgmanagers new‘ oder wenden Sie sich an den Systemadministrator."
 
 msgid "stacks.new.error.pkgManagerDoesNotExist"
-msgstr "Der angegebene Paketmanager existiert nicht. Erstellen Sie ihn mit 'apx pkgmanagers new' oder wenden Sie sich an den Systemadministrator."
+msgstr ""
+"Der angegebene Paketmanager existiert nicht. Erstellen Sie ihn mit 'apx "
+"pkgmanagers new' oder wenden Sie sich an den Systemadministrator."
 
 msgid "stacks.new.info.askBase"
 msgstr "Wählen Sie eine Basis (z. B. \"vanillaos/pico\"):"
@@ -564,7 +598,9 @@ msgid "stacks.new.info.askName"
 msgstr "Wählen Sie einen Namen:"
 
 msgid "stacks.new.info.askPackages"
-msgstr "Geben Sie die Pakete, die Sie im Stapel installieren möchten, durch ein Leerzeichen getrennt ein:"
+msgstr ""
+"Geben Sie die Pakete, die Sie im Stapel installieren möchten, durch ein "
+"Leerzeichen getrennt ein:"
 
 msgid "stacks.new.info.askPkgManager"
 msgstr "Wählen Sie einen Paketmanager:"
@@ -573,7 +609,9 @@ msgid "stacks.new.info.confirmPackages"
 msgstr "Möchten Sie die aktuelle Paketliste bestätigen?"
 
 msgid "stacks.new.info.noPackages"
-msgstr "Sie haben keine Pakete zur Installation im Stapel angegeben. Möchten Sie jetzt welche hinzufügen?"
+msgstr ""
+"Sie haben keine Pakete zur Installation im Stapel angegeben. Möchten Sie "
+"jetzt welche hinzufügen?"
 
 msgid "stacks.new.info.selectPkgManager"
 msgstr "Wählen Sie einen Paketmanager [1-%d]:"
@@ -606,22 +644,29 @@ msgid "stacks.update.error.noPkgManager"
 msgstr "Kein Paketmanager angegeben."
 
 msgid "stacks.update.error.pkgManagerDoesNotExist"
-msgstr "Der angegebene Paketmanager existiert nicht. Erstellen Sie ihn mit 'apx pkgmanagers new' oder wenden Sie sich an den Systemadministrator."
+msgstr ""
+"Der angegebene Paketmanager existiert nicht. Erstellen Sie ihn mit 'apx "
+"pkgmanagers new' oder wenden Sie sich an den Systemadministrator."
 
 msgid "stacks.update.info.askBase"
 msgstr "Geben Sie eine neue Basis ein oder bestätigen Sie die aktuelle (%s):"
 
 msgid "stacks.update.info.askPackages"
-msgstr "Geben Sie die Pakete, die Sie in den Stapel installieren möchten, durch ein Leerzeichen getrennt ein:"
+msgstr ""
+"Geben Sie die Pakete, die Sie in den Stapel installieren möchten, durch ein "
+"Leerzeichen getrennt ein:"
 
 msgid "stacks.update.info.askPkgManager"
-msgstr "Wählen Sie einen neuen Paketmanager oder bestätigen Sie den aktuellen (%s):"
+msgstr ""
+"Wählen Sie einen neuen Paketmanager oder bestätigen Sie den aktuellen (%s):"
 
 msgid "stacks.update.info.confirmPackages"
 msgstr "Möchten Sie die Liste der Pakete aktualisieren?"
 
 msgid "stacks.update.info.noPackages"
-msgstr "Sie haben keine Pakete zur Installation im Stapel angegeben. Möchten Sie jetzt welche hinzufügen?"
+msgstr ""
+"Sie haben keine Pakete zur Installation im Stapel angegeben. Möchten Sie "
+"jetzt welche hinzufügen?"
 
 msgid "stacks.update.info.success"
 msgstr "Stapel '%s' aktualisiert."
@@ -639,7 +684,9 @@ msgid "subsystems.list.info.foundSubsystems"
 msgstr "%d Subsysteme gefunden:"
 
 msgid "subsystems.list.info.noSubsystems"
-msgstr "Keine Subsysteme vorhanden. Erstellen Sie ein neues mit 'apx subsystems new' oder wenden Sie sich an den Systemadministrator."
+msgstr ""
+"Keine Subsysteme vorhanden. Erstellen Sie ein neues mit 'apx subsystems new' "
+"oder wenden Sie sich an den Systemadministrator."
 
 msgid "subsystems.new.error.alreadyExists"
 msgstr "Ein Subsystem mit dem Namen '%s' existiert bereits."
@@ -660,10 +707,14 @@ msgid "subsystems.new.error.noStack"
 msgstr "Kein Stapel angegeben."
 
 msgid "subsystems.new.error.noStacks"
-msgstr "Um ein Subsystem zu erstellen, wird ein Stapel benötigt. Erstellen Sie einen neuen mit 'apx stacks new' oder wenden Sie sich an den Systemadministrator."
+msgstr ""
+"Um ein Subsystem zu erstellen, wird ein Stapel benötigt. Erstellen Sie einen "
+"neuen mit 'apx stacks new' oder wenden Sie sich an den Systemadministrator."
 
 msgid "subsystems.new.error.stackDoesNotExist"
-msgstr "Der angegebene Stapel existiert nicht. Erstellen Sie ihn mit 'apx stacks new' oder wenden Sie sich an den Systemadministrator."
+msgstr ""
+"Der angegebene Stapel existiert nicht. Erstellen Sie ihn mit 'apx stacks "
+"new' oder wenden Sie sich an den Systemadministrator."
 
 msgid "subsystems.new.info.askName"
 msgstr "Wählen Sie einen Namen:"

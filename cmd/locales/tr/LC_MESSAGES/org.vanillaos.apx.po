@@ -1,13 +1,13 @@
 msgid ""
 msgstr ""
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Language: tr\n"
 "PO-Revision-Date: 2026-08-24 05:40+0000\n"
 "Last-Translator: Prefill add-on <noreply-addon-prefill@weblate.org>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/vanilla-os/apx/"
 "tr/>\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2026.9.dev0\n"
 
@@ -72,7 +72,8 @@ msgid "apx.cmd.pkgmanagers.new.options.show"
 msgstr "Paketlerle ilgili bilgi göstermek için çalıştırılacak komut."
 
 msgid "apx.cmd.pkgmanagers.new.options.update"
-msgstr "Kullanılabilir paketlerin listesini güncellemek için çalıştırılacak komut."
+msgstr ""
+"Kullanılabilir paketlerin listesini güncellemek için çalıştırılacak komut."
 
 msgid "apx.cmd.pkgmanagers.new.options.upgrade"
 msgstr "Paketleri yükseltmek için çalıştırılacak komut."
@@ -120,7 +121,9 @@ msgid "apx.cmd.stacks.new"
 msgstr "Yeni yığın oluştur."
 
 msgid "apx.cmd.stacks.new.options.base"
-msgstr "Kullanılacak taban dağıtımın kalıbı. (Uyumlu kalıplar için: https://distrobox.it/compatibility/#containers-distros)"
+msgstr ""
+"Kullanılacak taban dağıtımın kalıbı. (Uyumlu kalıplar için: https://"
+"distrobox.it/compatibility/#containers-distros)"
 
 msgid "apx.cmd.stacks.new.options.name"
 msgstr "Yığının adı."
@@ -312,7 +315,9 @@ msgid "apx.msg.globalFlags"
 msgstr "Küresel İmler"
 
 msgid "apx.msg.help"
-msgstr "Apx alt sistemler içinde paket kurmanızı sağlayan, birden çok kaynağı destekleyen paket yöneticisidir."
+msgstr ""
+"Apx alt sistemler içinde paket kurmanızı sağlayan, birden çok kaynağı "
+"destekleyen paket yöneticisidir."
 
 msgid "apx.msg.moreInfo"
 msgstr "Komutla ilgili daha çok bilgi için %s kullanın"
@@ -322,6 +327,21 @@ msgstr "Kullanım"
 
 msgid "apx.msg.version"
 msgstr "Apx için sürümü göster."
+
+#, fuzzy
+#| msgid "apx.cmd.subsystem.remove"
+msgid "apx.subsystem.dev"
+msgstr "Belirtilen paketleri kaldır."
+
+#, fuzzy
+#| msgid "apx.cmd.subsystem.start"
+msgid "apx.subsystem.singularityos"
+msgstr "Alt sistemi başlat."
+
+#, fuzzy
+#| msgid "apx.cmd.subsystem.run"
+msgid "apx.subsystem.work"
+msgstr "Komutu alt sistemin içinde çalıştır."
 
 msgid "apx.terminal.false"
 msgstr "hayır"
@@ -357,7 +377,9 @@ msgid "pkgmanagers.list.info.foundPkgManagers"
 msgstr "%d paket yöneticisi bulundu"
 
 msgid "pkgmanagers.list.info.noPkgManagers"
-msgstr "Paket yöneticisi yok. 'apx pkgmanagers new' ile yenisini oluşturun ya da sistem yöneticisine başvurun."
+msgstr ""
+"Paket yöneticisi yok. 'apx pkgmanagers new' ile yenisini oluşturun ya da "
+"sistem yöneticisine başvurun."
 
 msgid "pkgmanagers.new.error.alreadyExists"
 msgstr "'%s' adlı paket yöneticisi zaten var."
@@ -522,7 +544,9 @@ msgid "stacks.list.info.foundStacks"
 msgstr "%d yığın bulundu:"
 
 msgid "stacks.list.info.noStacks"
-msgstr "Yığın yok. 'apx stacks new' ile yenisini oluşturun ya da sistem yöneticisine başvurun."
+msgstr ""
+"Yığın yok. 'apx stacks new' ile yenisini oluşturun ya da sistem yöneticisine "
+"başvurun."
 
 msgid "stacks.new.error.alreadyExists"
 msgstr "'%s' adlı yığın zaten var."
@@ -552,10 +576,14 @@ msgid "stacks.new.error.noPkgManager"
 msgstr "Paket yöneticisi belirtilmemiş."
 
 msgid "stacks.new.error.noPkgManagers"
-msgstr "Herhangi bir paket yönetici bulunamadı. 'apx pkgmanagers new' ile yeni birini oluşturun ya da sistem yöneticisiyle iletişime geçin."
+msgstr ""
+"Herhangi bir paket yönetici bulunamadı. 'apx pkgmanagers new' ile yeni "
+"birini oluşturun ya da sistem yöneticisiyle iletişime geçin."
 
 msgid "stacks.new.error.pkgManagerDoesNotExist"
-msgstr "Belirtilen paket yöneticisi yok. 'apx pkgmanagers new' ile oluşturun ya da sistem yöneticisiyle iletişime geçin."
+msgstr ""
+"Belirtilen paket yöneticisi yok. 'apx pkgmanagers new' ile oluşturun ya da "
+"sistem yöneticisiyle iletişime geçin."
 
 msgid "stacks.new.info.askBase"
 msgstr "Taban seç (örn. 'vanillaos/pico'):"
@@ -564,7 +592,8 @@ msgid "stacks.new.info.askName"
 msgstr "Ad seç:"
 
 msgid "stacks.new.info.askPackages"
-msgstr "Lütfen yığına kurmak istediğiniz paketleri aralarında boşluk bırakarak yazın:"
+msgstr ""
+"Lütfen yığına kurmak istediğiniz paketleri aralarında boşluk bırakarak yazın:"
 
 msgid "stacks.new.info.askPkgManager"
 msgstr "Paket yöneticisi seç:"
@@ -573,7 +602,9 @@ msgid "stacks.new.info.confirmPackages"
 msgstr "Geçerli paket listesini onaylıyor musunuz?"
 
 msgid "stacks.new.info.noPackages"
-msgstr "Yığında kurulacak herhangi bir paket sağlamadınız. Şimdi birkaç tane eklemek ister misiniz?"
+msgstr ""
+"Yığında kurulacak herhangi bir paket sağlamadınız. Şimdi birkaç tane eklemek "
+"ister misiniz?"
 
 msgid "stacks.new.info.selectPkgManager"
 msgstr "Paket yöneticisi seç [1-%d]:"
@@ -606,7 +637,9 @@ msgid "stacks.update.error.noPkgManager"
 msgstr "Paket yöneticisi belirtilmedi."
 
 msgid "stacks.update.error.pkgManagerDoesNotExist"
-msgstr "Belirtilen paket yöneticisi yok. 'apx pkgmanagers new' ile yeni oluşturun ya da sistem yöneticisiyle iletişime geçin."
+msgstr ""
+"Belirtilen paket yöneticisi yok. 'apx pkgmanagers new' ile yeni oluşturun ya "
+"da sistem yöneticisiyle iletişime geçin."
 
 msgid "stacks.update.info.askBase"
 msgstr "Yeni taban yazın ya da geçerli olanı onaylayın (%s):"
@@ -621,7 +654,9 @@ msgid "stacks.update.info.confirmPackages"
 msgstr "Paket listesini güncellemek istiyor musunuz?"
 
 msgid "stacks.update.info.noPackages"
-msgstr "Yığında kurulacak herhangi bir paket sağlamadınız. Şimdi birkaç tane eklemek ister misiniz?"
+msgstr ""
+"Yığında kurulacak herhangi bir paket sağlamadınız. Şimdi birkaç tane eklemek "
+"ister misiniz?"
 
 msgid "stacks.update.info.success"
 msgstr "'%s' yığını güncellendi."
@@ -639,7 +674,9 @@ msgid "subsystems.list.info.foundSubsystems"
 msgstr "%d alt sistem bulundu:"
 
 msgid "subsystems.list.info.noSubsystems"
-msgstr "Alt sistem yok. 'apx subsystems new' ile yenisini oluşturun ya da sistem yöneticisine başvurun."
+msgstr ""
+"Alt sistem yok. 'apx subsystems new' ile yenisini oluşturun ya da sistem "
+"yöneticisine başvurun."
 
 msgid "subsystems.new.error.alreadyExists"
 msgstr "'%s' adlı alt sistem zaten var."
@@ -660,10 +697,14 @@ msgid "subsystems.new.error.noStack"
 msgstr "Yığın belirtilmedi."
 
 msgid "subsystems.new.error.noStacks"
-msgstr "Alt sistem oluşturmak için yığın gereklidir. 'apx stacks new' ile yenisini oluşturun ya da sistem yöneticisine başvurun."
+msgstr ""
+"Alt sistem oluşturmak için yığın gereklidir. 'apx stacks new' ile yenisini "
+"oluşturun ya da sistem yöneticisine başvurun."
 
 msgid "subsystems.new.error.stackDoesNotExist"
-msgstr "Belirtilen yığın yok. 'apx stacks new' ile oluşturun ya da sistem yöneticisiyle iletişime geçin."
+msgstr ""
+"Belirtilen yığın yok. 'apx stacks new' ile oluşturun ya da sistem "
+"yöneticisiyle iletişime geçin."
 
 msgid "subsystems.new.info.askName"
 msgstr "Ad seç:"

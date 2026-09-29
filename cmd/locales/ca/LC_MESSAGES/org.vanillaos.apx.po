@@ -1,13 +1,13 @@
 msgid ""
 msgstr ""
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Language: ca\n"
 "PO-Revision-Date: 2026-08-24 05:39+0000\n"
 "Last-Translator: Prefill add-on <noreply-addon-prefill@weblate.org>\n"
 "Language-Team: Catalan <https://hosted.weblate.org/projects/vanilla-os/apx/"
 "ca/>\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2026.9.dev0\n"
 
@@ -42,7 +42,8 @@ msgid "apx.cmd.pkgmanagers.new.options.autoremove"
 msgstr "L'ordre per executar la neteja automàtica de paquets."
 
 msgid "apx.cmd.pkgmanagers.new.options.clean"
-msgstr "L'ordre per executar la neteja de la memòria cau del gestor de paquets."
+msgstr ""
+"L'ordre per executar la neteja de la memòria cau del gestor de paquets."
 
 msgid "apx.cmd.pkgmanagers.new.options.install"
 msgstr "L'ordre per executar l'instal·lació de paquets."
@@ -312,7 +313,9 @@ msgid "apx.msg.globalFlags"
 msgstr "Global Flags"
 
 msgid "apx.msg.help"
-msgstr "Apx és un gestor de paquets amb suport per múltiples fonts, permeten l'instal·lació de paquets en subsistemes."
+msgstr ""
+"Apx és un gestor de paquets amb suport per múltiples fonts, permeten "
+"l'instal·lació de paquets en subsistemes."
 
 msgid "apx.msg.moreInfo"
 msgstr "Use %s for more information about a command"
@@ -322,6 +325,21 @@ msgstr "Usage"
 
 msgid "apx.msg.version"
 msgstr "Show version for apx."
+
+#, fuzzy
+#| msgid "apx.cmd.subsystem.remove"
+msgid "apx.subsystem.dev"
+msgstr "Remove the specified packages."
+
+#, fuzzy
+#| msgid "apx.cmd.subsystem.start"
+msgid "apx.subsystem.singularityos"
+msgstr "Start the subsystem."
+
+#, fuzzy
+#| msgid "apx.cmd.subsystem.run"
+msgid "apx.subsystem.work"
+msgstr "Run command inside subsystem."
 
 msgid "apx.terminal.false"
 msgstr "no"
@@ -357,7 +375,9 @@ msgid "pkgmanagers.list.info.foundPkgManagers"
 msgstr "Trobat(s) %d gestor(s) de paquet(s)"
 
 msgid "pkgmanagers.list.info.noPkgManagers"
-msgstr "No es troba cap gestor de paquets. Crea un de nou amb 'apx pkgmanagers new' o posat en contacta amb l'administrador del sistema."
+msgstr ""
+"No es troba cap gestor de paquets. Crea un de nou amb 'apx pkgmanagers new' "
+"o posat en contacta amb l'administrador del sistema."
 
 msgid "pkgmanagers.new.error.alreadyExists"
 msgstr "Ja existeix un gestor de paquets anomenat '%s'."
@@ -423,7 +443,9 @@ msgid "pkgmanagers.update.info.success"
 msgstr "Updated package manager '%s'."
 
 msgid "runtimeCommand.description"
-msgstr "Treballa amb el subsistema especificat, accedint al gestor de paquets i a l'entorn."
+msgstr ""
+"Treballa amb el subsistema especificat, accedint al gestor de paquets i a "
+"l'entorn."
 
 msgid "runtimeCommand.error.cantAccessPkgManager"
 msgstr "S'ha trobat un error mentre s'entrava al gestor de paquets: %s"
@@ -522,7 +544,9 @@ msgid "stacks.list.info.foundStacks"
 msgstr "S'han trobat %d piles:"
 
 msgid "stacks.list.info.noStacks"
-msgstr "No hi han piles disponibles. Crea una de nova amb 'apx stacks new' o posat en contacte amb l'administrador del sistema."
+msgstr ""
+"No hi han piles disponibles. Crea una de nova amb 'apx stacks new' o posat "
+"en contacte amb l'administrador del sistema."
 
 msgid "stacks.new.error.alreadyExists"
 msgstr "Ja existeix una pila amb el nom '%s'."
@@ -552,10 +576,14 @@ msgid "stacks.new.error.noPkgManager"
 msgstr "No s'ha especificat cap gestor de paquets."
 
 msgid "stacks.new.error.noPkgManagers"
-msgstr "Could not find any package managers. Create one with 'apx pkgmanagers new' or contact the system administrator."
+msgstr ""
+"Could not find any package managers. Create one with 'apx pkgmanagers new' "
+"or contact the system administrator."
 
 msgid "stacks.new.error.pkgManagerDoesNotExist"
-msgstr "El gestor de paquets especificat no existeix. Creal amb 'apx plgmamangers new' o posat en contacte amb l'administrador del sistema."
+msgstr ""
+"El gestor de paquets especificat no existeix. Creal amb 'apx plgmamangers "
+"new' o posat en contacte amb l'administrador del sistema."
 
 msgid "stacks.new.info.askBase"
 msgstr "Tria una base (per exemple 'vanillaos/pico')"
@@ -564,7 +592,9 @@ msgid "stacks.new.info.askName"
 msgstr "Tria un nom:"
 
 msgid "stacks.new.info.askPackages"
-msgstr "Sisplau escriu els paquets que vols instal·lar a la pila, separats per un espai:"
+msgstr ""
+"Sisplau escriu els paquets que vols instal·lar a la pila, separats per un "
+"espai:"
 
 msgid "stacks.new.info.askPkgManager"
 msgstr "Tria un gestor de paquets:"
@@ -606,13 +636,17 @@ msgid "stacks.update.error.noPkgManager"
 msgstr "No s'ha especificat cap gestor de paquets."
 
 msgid "stacks.update.error.pkgManagerDoesNotExist"
-msgstr "El gestor de paquets especificat no existeix. El pots crear amb 'apx pkgmanagers new' o contactar amb l'administrador del sistema."
+msgstr ""
+"El gestor de paquets especificat no existeix. El pots crear amb 'apx "
+"pkgmanagers new' o contactar amb l'administrador del sistema."
 
 msgid "stacks.update.info.askBase"
 msgstr "Escriu una base nova o confirma l'actual (%s):"
 
 msgid "stacks.update.info.askPackages"
-msgstr "Escriu els paquets que vols instal·lar en la pila, separats per un espai, o confirma els actuals (%s):"
+msgstr ""
+"Escriu els paquets que vols instal·lar en la pila, separats per un espai, o "
+"confirma els actuals (%s):"
 
 msgid "stacks.update.info.askPkgManager"
 msgstr "Escull un nou gestor de paquets o confirma l'actual (%s):"
@@ -621,7 +655,9 @@ msgid "stacks.update.info.confirmPackages"
 msgstr "Do you want to confirm the current packages list?"
 
 msgid "stacks.update.info.noPackages"
-msgstr "You have not provided any packages to install in the stack. Do you want to add some now?"
+msgstr ""
+"You have not provided any packages to install in the stack. Do you want to "
+"add some now?"
 
 msgid "stacks.update.info.success"
 msgstr "Pila actualitzada '%s'."
@@ -639,7 +675,9 @@ msgid "subsystems.list.info.foundSubsystems"
 msgstr "Trobats %d subsistemes:"
 
 msgid "subsystems.list.info.noSubsystems"
-msgstr "No hi han subsistemes disponibles. Crea un de nou amb 'apx subsystem new' o contacta amb l'administrador del sistema."
+msgstr ""
+"No hi han subsistemes disponibles. Crea un de nou amb 'apx subsystem new' o "
+"contacta amb l'administrador del sistema."
 
 msgid "subsystems.new.error.alreadyExists"
 msgstr "Ja existeix un subsistema amb el nom '%s'."
@@ -660,10 +698,14 @@ msgid "subsystems.new.error.noStack"
 msgstr "No s'ha especificat cap pila."
 
 msgid "subsystems.new.error.noStacks"
-msgstr "Es necessita una pila per crear un subsistema. Crea una de nova amb 'apx stacks new' o contacta amb l'administrador del sistema."
+msgstr ""
+"Es necessita una pila per crear un subsistema. Crea una de nova amb 'apx "
+"stacks new' o contacta amb l'administrador del sistema."
 
 msgid "subsystems.new.error.stackDoesNotExist"
-msgstr "La pila especificada no existeix. Crea una de nova amb 'apx stacks new' o contacta amb l'administrador del sistema."
+msgstr ""
+"La pila especificada no existeix. Crea una de nova amb 'apx stacks new' o "
+"contacta amb l'administrador del sistema."
 
 msgid "subsystems.new.info.askName"
 msgstr "Escull un nom:"

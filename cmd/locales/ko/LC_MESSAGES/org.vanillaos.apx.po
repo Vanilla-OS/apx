@@ -1,13 +1,13 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2026-08-24 05:40+0000\n"
+"Last-Translator: Prefill add-on <noreply-addon-prefill@weblate.org>\n"
+"Language-Team: Korean <https://hosted.weblate.org/projects/vanilla-os/apx/ko/"
+">\n"
+"Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ko\n"
-"PO-Revision-Date: 2026-08-24 05:40+0000\n"
-"Last-Translator: Prefill add-on <noreply-addon-prefill@weblate.org>\n"
-"Language-Team: Korean <https://hosted.weblate.org/projects/vanilla-os/apx/"
-"ko/>\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 2026.9.dev0\n"
 
@@ -120,7 +120,9 @@ msgid "apx.cmd.stacks.new"
 msgstr "새로운 스택을 생성합니다."
 
 msgid "apx.cmd.stacks.new.options.base"
-msgstr "사용할 기본 배포 이미지입니다. (호환되는 이미지 목록: https://distrobox.it/compatibility/#containers-distros)"
+msgstr ""
+"사용할 기본 배포 이미지입니다. (호환되는 이미지 목록: https://distrobox.it/"
+"compatibility/#containers-distros)"
 
 msgid "apx.cmd.stacks.new.options.name"
 msgstr "스택의 이름입니다."
@@ -312,7 +314,9 @@ msgid "apx.msg.globalFlags"
 msgstr "전역 플래그"
 
 msgid "apx.msg.help"
-msgstr "APX는 다양한 소스를 지원하며, 하위 시스템에 패키지를 설치할 수 있게 하는 패키지 관리자입니다."
+msgstr ""
+"APX는 다양한 소스를 지원하며, 하위 시스템에 패키지를 설치할 수 있게 하는 패키"
+"지 관리자입니다."
 
 msgid "apx.msg.moreInfo"
 msgstr "명령어에 대한 자세한 정보를 보려면 %s를 사용하세요"
@@ -322,6 +326,21 @@ msgstr "사용법"
 
 msgid "apx.msg.version"
 msgstr "apx에 대한 도움말을 표시합니다."
+
+#, fuzzy
+#| msgid "apx.cmd.subsystem.remove"
+msgid "apx.subsystem.dev"
+msgstr "지정된 패키지를 제거합니다."
+
+#, fuzzy
+#| msgid "apx.cmd.subsystem.start"
+msgid "apx.subsystem.singularityos"
+msgstr "서브 시스템을 시작하세요."
+
+#, fuzzy
+#| msgid "apx.cmd.subsystem.run"
+msgid "apx.subsystem.work"
+msgstr "하위 시스템내에서 명령어를 실행합니다."
 
 msgid "apx.terminal.false"
 msgstr "아니오"
@@ -357,7 +376,9 @@ msgid "pkgmanagers.list.info.foundPkgManagers"
 msgstr "%d개의 패키지 관리자를 찾았습니다:"
 
 msgid "pkgmanagers.list.info.noPkgManagers"
-msgstr "사용 가능한 패키지 관리자가 없습니다. 'apx pkgmanagers new'로 새로 만들거나 시스템 관리자에게 문의하십시오."
+msgstr ""
+"사용 가능한 패키지 관리자가 없습니다. 'apx pkgmanagers new'로 새로 만들거나 "
+"시스템 관리자에게 문의하십시오."
 
 msgid "pkgmanagers.new.error.alreadyExists"
 msgstr "이미 '%s'라는 이름의 패키지 관리자가 있습니다."
@@ -423,7 +444,8 @@ msgid "pkgmanagers.update.info.success"
 msgstr "패키지 관리자 '%s'를 업데이트했습니다."
 
 msgid "runtimeCommand.description"
-msgstr "지정된 하위 시스템과 함께 작업하며, 패키지 관리자와 환경에 액세스합니다."
+msgstr ""
+"지정된 하위 시스템과 함께 작업하며, 패키지 관리자와 환경에 액세스합니다."
 
 msgid "runtimeCommand.error.cantAccessPkgManager"
 msgstr "패키지 관리자에 액세스하는 중 오류가 발생했습니다: %s"
@@ -522,7 +544,9 @@ msgid "stacks.list.info.foundStacks"
 msgstr "%d개의 스택을 찾았습니다:"
 
 msgid "stacks.list.info.noStacks"
-msgstr "사용 가능한 스택이 없습니다. 'apx stacks new'로 새로 만들거나 시스템 관리자에게 문의하십시오."
+msgstr ""
+"사용 가능한 스택이 없습니다. 'apx stacks new'로 새로 만들거나 시스템 관리자에"
+"게 문의하십시오."
 
 msgid "stacks.new.error.alreadyExists"
 msgstr "'%s'라는 이름의 스택이 이미 있습니다."
@@ -552,10 +576,14 @@ msgid "stacks.new.error.noPkgManager"
 msgstr "지정된 패키지 관리자가 없습니다."
 
 msgid "stacks.new.error.noPkgManagers"
-msgstr "패키지 관리자를 찾을 수 없습니다. 'apx pkgmanagers new'로 생성하거나 시스템 관리자에게 문의하세요."
+msgstr ""
+"패키지 관리자를 찾을 수 없습니다. 'apx pkgmanagers new'로 생성하거나 시스템 "
+"관리자에게 문의하세요."
 
 msgid "stacks.new.error.pkgManagerDoesNotExist"
-msgstr "지정된 패키지 관리자가 존재하지 않습니다. 'apx pkgmanagers new'로 만들거나 시스템 관리자에게 문의하십시오."
+msgstr ""
+"지정된 패키지 관리자가 존재하지 않습니다. 'apx pkgmanagers new'로 만들거나 시"
+"스템 관리자에게 문의하십시오."
 
 msgid "stacks.new.info.askBase"
 msgstr "Base을 입력하십시오 (예: 'vanillaos/pico'):"
@@ -606,16 +634,21 @@ msgid "stacks.update.error.noPkgManager"
 msgstr "지정된 패키지 관리자가 없습니다."
 
 msgid "stacks.update.error.pkgManagerDoesNotExist"
-msgstr "지정된 패키지 관리자가 존재하지 않습니다. 'apx pkgmanagers new'로 만들거나 시스템 관리자에게 문의하십시오."
+msgstr ""
+"지정된 패키지 관리자가 존재하지 않습니다. 'apx pkgmanagers new'로 만들거나 시"
+"스템 관리자에게 문의하십시오."
 
 msgid "stacks.update.info.askBase"
 msgstr "새로운 Base를 입력하거나 현재 Base를 확인하십시오 (%s):"
 
 msgid "stacks.update.info.askPackages"
-msgstr "스택에 설치할 패키지를 띄어쓰기로 구분하여 입력하거나 현재 패키지를 확인하십시오 (%s):"
+msgstr ""
+"스택에 설치할 패키지를 띄어쓰기로 구분하여 입력하거나 현재 패키지를 확인하십"
+"시오 (%s):"
 
 msgid "stacks.update.info.askPkgManager"
-msgstr "새로운 패키지 관리자를 선택하거나 현재 패키지 관리자를 확인하십시오 (%s):"
+msgstr ""
+"새로운 패키지 관리자를 선택하거나 현재 패키지 관리자를 확인하십시오 (%s):"
 
 msgid "stacks.update.info.confirmPackages"
 msgstr "현재 패키지 목록을 확인하시겠습니까?"
@@ -639,7 +672,9 @@ msgid "subsystems.list.info.foundSubsystems"
 msgstr "하위 시스템을 찾았습니다: %d"
 
 msgid "subsystems.list.info.noSubsystems"
-msgstr "하위 시스템이 없습니다. 'apx subsystems new' 명령어로 새 하위 시스템을 생성하시거나 시스템 관리자에게 문의하십시오."
+msgstr ""
+"하위 시스템이 없습니다. 'apx subsystems new' 명령어로 새 하위 시스템을 생성하"
+"시거나 시스템 관리자에게 문의하십시오."
 
 msgid "subsystems.new.error.alreadyExists"
 msgstr "'%s' 이름을 가진 하위 시스템이 이미 존재합니다."
@@ -660,10 +695,14 @@ msgid "subsystems.new.error.noStack"
 msgstr "스택이 특정되지 않았습니다."
 
 msgid "subsystems.new.error.noStacks"
-msgstr "하위 시스템을 만드는 데 스택이 필요합니다. 'apx stacks new' 명령어로 새로운 스택을 생성하시거나 시스템 관리자에게 문의하십시오."
+msgstr ""
+"하위 시스템을 만드는 데 스택이 필요합니다. 'apx stacks new' 명령어로 새로운 "
+"스택을 생성하시거나 시스템 관리자에게 문의하십시오."
 
 msgid "subsystems.new.error.stackDoesNotExist"
-msgstr "특정된 스택이 존재하지 않습니다. 'apx stacks new' 명령어로 해당 스택을 생성하시거나 시스템 관리자에게 문의하십시오."
+msgstr ""
+"특정된 스택이 존재하지 않습니다. 'apx stacks new' 명령어로 해당 스택을 생성하"
+"시거나 시스템 관리자에게 문의하십시오."
 
 msgid "subsystems.new.info.askName"
 msgstr "이름 입력:"

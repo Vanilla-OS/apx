@@ -1,13 +1,13 @@
 msgid ""
 msgstr ""
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Language: zh_Hant\n"
 "PO-Revision-Date: 2026-08-24 05:40+0000\n"
 "Last-Translator: Prefill add-on <noreply-addon-prefill@weblate.org>\n"
 "Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
 "projects/vanilla-os/apx/zh_Hant/>\n"
+"Language: zh_Hant\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 2026.9.dev0\n"
 
@@ -120,7 +120,9 @@ msgid "apx.cmd.stacks.new"
 msgstr "建立新包捆。"
 
 msgid "apx.cmd.stacks.new.options.base"
-msgstr "要使用的基礎散布版映像。（相容映像之清單參見：https://distrobox.it/compatibility/#containers-distros）"
+msgstr ""
+"要使用的基礎散布版映像。（相容映像之清單參見：https://distrobox.it/"
+"compatibility/#containers-distros）"
 
 msgid "apx.cmd.stacks.new.options.name"
 msgstr "包捆的名稱。"
@@ -312,7 +314,8 @@ msgid "apx.msg.globalFlags"
 msgstr "全域參數"
 
 msgid "apx.msg.help"
-msgstr "Apx 是支援多種軟體包來源的軟體包管理器，允許使用者在子系統中安裝軟體包。"
+msgstr ""
+"Apx 是支援多種軟體包來源的軟體包管理器，允許使用者在子系統中安裝軟體包。"
 
 msgid "apx.msg.moreInfo"
 msgstr "使用 %s 取得關於命令的詳細資訊"
@@ -322,6 +325,21 @@ msgstr "用法"
 
 msgid "apx.msg.version"
 msgstr "顯示 apx 的版本。"
+
+#, fuzzy
+#| msgid "apx.cmd.subsystem.remove"
+msgid "apx.subsystem.dev"
+msgstr "移除指定的軟體包。"
+
+#, fuzzy
+#| msgid "apx.cmd.subsystem.start"
+msgid "apx.subsystem.singularityos"
+msgstr "啟動子系統。"
+
+#, fuzzy
+#| msgid "apx.cmd.subsystem.run"
+msgid "apx.subsystem.work"
+msgstr "在子系統內部執行命令。"
 
 msgid "apx.terminal.false"
 msgstr "否"
@@ -357,7 +375,9 @@ msgid "pkgmanagers.list.info.foundPkgManagers"
 msgstr "找到 %d 個軟體包管理器"
 
 msgid "pkgmanagers.list.info.noPkgManagers"
-msgstr "沒有可使用的軟體包管理器。請使用 'apx pkgmanagers new' 建立新的軟體包管理器，或是聯絡系統管理員。"
+msgstr ""
+"沒有可使用的軟體包管理器。請使用 'apx pkgmanagers new' 建立新的軟體包管理器，"
+"或是聯絡系統管理員。"
 
 msgid "pkgmanagers.new.error.alreadyExists"
 msgstr "名為 '%s' 的軟體包管理器已經存在。"
@@ -522,7 +542,8 @@ msgid "stacks.list.info.foundStacks"
 msgstr "找到 %d 個包捆："
 
 msgid "stacks.list.info.noStacks"
-msgstr "沒有可使用的包捆。請使用 'apx stacks new' 建立新的包捆，或是聯絡系統管理員。"
+msgstr ""
+"沒有可使用的包捆。請使用 'apx stacks new' 建立新的包捆，或是聯絡系統管理員。"
 
 msgid "stacks.new.error.alreadyExists"
 msgstr "名為 '%s' 的包捆已經存在。"
@@ -552,10 +573,14 @@ msgid "stacks.new.error.noPkgManager"
 msgstr "沒有指定軟體包管理器。"
 
 msgid "stacks.new.error.noPkgManagers"
-msgstr "無法找到任何軟體包管理器。請使用 'apx pkgmanagers new' 建立，或是聯絡系統管理員。"
+msgstr ""
+"無法找到任何軟體包管理器。請使用 'apx pkgmanagers new' 建立，或是聯絡系統管理"
+"員。"
 
 msgid "stacks.new.error.pkgManagerDoesNotExist"
-msgstr "指定的軟體包管理器不存在。請使用 'apx pkgmanagers new' 建立或是聯絡系統管理員。"
+msgstr ""
+"指定的軟體包管理器不存在。請使用 'apx pkgmanagers new' 建立或是聯絡系統管理"
+"員。"
 
 msgid "stacks.new.info.askBase"
 msgstr "選擇基礎映像（如 'vanillaos/pico'）："
@@ -606,7 +631,9 @@ msgid "stacks.update.error.noPkgManager"
 msgstr "沒有指定軟體包管理器。"
 
 msgid "stacks.update.error.pkgManagerDoesNotExist"
-msgstr "指定的軟體包管理器不存在。請使用 'apx pkgmanagers new' 建立或是聯絡系統管理員。"
+msgstr ""
+"指定的軟體包管理器不存在。請使用 'apx pkgmanagers new' 建立或是聯絡系統管理"
+"員。"
 
 msgid "stacks.update.info.askBase"
 msgstr "輸入新的基礎映像或是確認使用目前的（%s）："
@@ -639,7 +666,9 @@ msgid "subsystems.list.info.foundSubsystems"
 msgstr "找到 %d 個子系統："
 
 msgid "subsystems.list.info.noSubsystems"
-msgstr "沒有可使用的子系統。請使用 'apx subsystems new' 建立新的子系統，或是聯絡系統管理員。"
+msgstr ""
+"沒有可使用的子系統。請使用 'apx subsystems new' 建立新的子系統，或是聯絡系統"
+"管理員。"
 
 msgid "subsystems.new.error.alreadyExists"
 msgstr "名為 '%s' 的子系統已經存在。"
@@ -660,7 +689,8 @@ msgid "subsystems.new.error.noStack"
 msgstr "沒有指定包捆。"
 
 msgid "subsystems.new.error.noStacks"
-msgstr "建立子系統需要包捆。請使用 'apx stacks new' 建立新包捆，或是聯絡系統管理員。"
+msgstr ""
+"建立子系統需要包捆。請使用 'apx stacks new' 建立新包捆，或是聯絡系統管理員。"
 
 msgid "subsystems.new.error.stackDoesNotExist"
 msgstr "指定的包捆不存在。請使用 'apx stacks new' 建立或是聯絡系統管理員。"
