@@ -4,6 +4,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ko\n"
+"PO-Revision-Date: 2026-08-24 05:40+0000\n"
+"Last-Translator: Prefill add-on <noreply-addon-prefill@weblate.org>\n"
+"Language-Team: Korean <https://hosted.weblate.org/projects/vanilla-os/apx/"
+"ko/>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.9.dev0\n"
 
 msgid "apx.cmd.pkgmanagers"
 msgstr "apx에서 사용 가능한 패키지 관리자와 작업합니다."
@@ -692,25 +698,30 @@ msgstr "'%s'(을)를 삭제하시겠습니까?"
 msgid "subsystems.rm.info.success"
 msgstr "하위 시스템 '%s'(을)를 삭제하였습니다."
 
-
-
+#, fuzzy
 msgid "apx.arg.command"
-msgstr ""
+msgstr "apx.arg.command"
 
+#, fuzzy
 msgid "apx.arg.packages"
-msgstr ""
+msgstr "apx.arg.packages"
 
+#, fuzzy
 msgid "apx.arg.query"
-msgstr ""
+msgstr "apx.arg.query"
 
+#, fuzzy
 msgid "apx.arg.package"
-msgstr ""
+msgstr "apx.arg.package"
 
+#, fuzzy
 msgid "apx.arg.applications"
-msgstr ""
+msgstr "apx.arg.applications"
 
+#, fuzzy
 msgid "apx.arg.stack"
-msgstr ""
+msgstr "apx.arg.stack"
 
+#, fuzzy
 msgid "apx.arg.pkgmanager"
-msgstr ""
+msgstr "apx.arg.pkgmanager"

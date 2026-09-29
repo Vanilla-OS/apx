@@ -4,6 +4,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: uk\n"
+"PO-Revision-Date: 2026-08-24 05:40+0000\n"
+"Last-Translator: Prefill add-on <noreply-addon-prefill@weblate.org>\n"
+"Language-Team: Ukrainian <https://hosted.weblate.org/projects/vanilla-os/apx/"
+"uk/>\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 2026.9.dev0\n"
 
 msgid "apx.cmd.pkgmanagers"
 msgstr "Працюйте з менеджерами пакунків, які доступні в apx."
@@ -692,25 +699,30 @@ msgstr "Ви впевнені, що хочете видалити «%s»?"
 msgid "subsystems.rm.info.success"
 msgstr "Видалено підсистему «%s»."
 
-
-
+#, fuzzy
 msgid "apx.arg.command"
-msgstr ""
+msgstr "apx.arg.command"
 
+#, fuzzy
 msgid "apx.arg.packages"
-msgstr ""
+msgstr "apx.arg.packages"
 
+#, fuzzy
 msgid "apx.arg.query"
-msgstr ""
+msgstr "apx.arg.query"
 
+#, fuzzy
 msgid "apx.arg.package"
-msgstr ""
+msgstr "apx.arg.package"
 
+#, fuzzy
 msgid "apx.arg.applications"
-msgstr ""
+msgstr "apx.arg.applications"
 
+#, fuzzy
 msgid "apx.arg.stack"
-msgstr ""
+msgstr "apx.arg.stack"
 
+#, fuzzy
 msgid "apx.arg.pkgmanager"
-msgstr ""
+msgstr "apx.arg.pkgmanager"
