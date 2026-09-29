@@ -1,9 +1,14 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2026-08-24 05:40+0000\n"
+"Last-Translator: Prefill add-on <noreply-addon-prefill@weblate.org>\n"
+"Language-Team: Lao <https://hosted.weblate.org/projects/vanilla-os/apx/lo/>\n"
+"Language: lo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: lo\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.9.dev0\n"
 
 msgid "apx.cmd.pkgmanagers"
 msgstr "ເຮັດວຽກກັບຕົວຈັດການແພັກເກັດທີ່ມີໃນ apx."
@@ -114,7 +119,9 @@ msgid "apx.cmd.stacks.new"
 msgstr "ສ້າງສະແຕັກໃໝ່."
 
 msgid "apx.cmd.stacks.new.options.base"
-msgstr "ອິມເມຈ (image) ການແຈກຢາຍພື້ນຖານທີ່ຈະໃຊ້. (ສຳລັບລາຍຊື່ທີ່ຮອງຮັບ ເບິ່ງທີ່: https://distrobox.it/compatibility/#containers-distros)"
+msgstr ""
+"ອິມເມຈ (image) ການແຈກຢາຍພື້ນຖານທີ່ຈະໃຊ້. (ສຳລັບລາຍຊື່ທີ່ຮອງຮັບ ເບິ່ງທີ່: https://"
+"distrobox.it/compatibility/#containers-distros)"
 
 msgid "apx.cmd.stacks.new.options.name"
 msgstr "ຊື່ຂອງສະແຕັກ."
@@ -316,6 +323,21 @@ msgstr "ການນຳໃຊ້"
 
 msgid "apx.msg.version"
 msgstr "ສະແດງເວີຊັນສຳລັບ apx."
+
+#, fuzzy
+#| msgid "apx.cmd.subsystem.remove"
+msgid "apx.subsystem.dev"
+msgstr "ລຶບແພັກເກັດທີ່ລະບຸ."
+
+#, fuzzy
+#| msgid "apx.cmd.subsystem.start"
+msgid "apx.subsystem.singularityos"
+msgstr "ເລີ່ມຕົ້ນລະບົບຍ່ອຍ."
+
+#, fuzzy
+#| msgid "apx.cmd.subsystem.run"
+msgid "apx.subsystem.work"
+msgstr "ແລ່ນຄຳສັ່ງພາຍໃນລະບົບຍ່ອຍ."
 
 msgid "apx.terminal.false"
 msgstr "ບໍ່"
@@ -692,25 +714,30 @@ msgstr "ທ່ານແນ່ໃຈບໍ່ວ່າຕ້ອງການລຶ
 msgid "subsystems.rm.info.success"
 msgstr "ລຶບລະບົບຍ່ອຍ '%s' ແລ້ວ."
 
-
-
+#, fuzzy
 msgid "apx.arg.command"
-msgstr ""
+msgstr "apx.arg.command"
 
+#, fuzzy
 msgid "apx.arg.packages"
-msgstr ""
+msgstr "apx.arg.packages"
 
+#, fuzzy
 msgid "apx.arg.query"
-msgstr ""
+msgstr "apx.arg.query"
 
+#, fuzzy
 msgid "apx.arg.package"
-msgstr ""
+msgstr "apx.arg.package"
 
+#, fuzzy
 msgid "apx.arg.applications"
-msgstr ""
+msgstr "apx.arg.applications"
 
+#, fuzzy
 msgid "apx.arg.stack"
-msgstr ""
+msgstr "apx.arg.stack"
 
+#, fuzzy
 msgid "apx.arg.pkgmanager"
-msgstr ""
+msgstr "apx.arg.pkgmanager"
