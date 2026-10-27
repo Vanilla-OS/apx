@@ -1,7 +1,8 @@
+# Emin Tufan Çetin <etc@users.noreply.hosted.weblate.org>, 2026.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-08-24 05:40+0000\n"
-"Last-Translator: Prefill add-on <noreply-addon-prefill@weblate.org>\n"
+"PO-Revision-Date: 2026-10-27 14:51+0000\n"
+"Last-Translator: Emin Tufan Çetin <etc@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/vanilla-os/apx/"
 "tr/>\n"
 "Language: tr\n"
@@ -9,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.9.dev0\n"
+"X-Generator: Weblate 2026.11.dev0\n"
 
 msgid "apx.cmd.pkgmanagers"
 msgstr "Apx içinde kullanılabilir paket yöneticileri ile çalış."
@@ -328,20 +329,14 @@ msgstr "Kullanım"
 msgid "apx.msg.version"
 msgstr "Apx için sürümü göster."
 
-#, fuzzy
-#| msgid "apx.cmd.subsystem.remove"
 msgid "apx.subsystem.dev"
-msgstr "Belirtilen paketleri kaldır."
+msgstr "apx.subsystem.dev"
 
-#, fuzzy
-#| msgid "apx.cmd.subsystem.start"
 msgid "apx.subsystem.singularityos"
-msgstr "Alt sistemi başlat."
+msgstr "apx.subsystem.singularityos"
 
-#, fuzzy
-#| msgid "apx.cmd.subsystem.run"
 msgid "apx.subsystem.work"
-msgstr "Komutu alt sistemin içinde çalıştır."
+msgstr "apx.subsystem.work"
 
 msgid "apx.terminal.false"
 msgstr "hayır"
@@ -739,30 +734,23 @@ msgstr "'%s' kaldırılsın ister misiniz?"
 msgid "subsystems.rm.info.success"
 msgstr "'%s' alt sistemi kaldırıldı."
 
-#, fuzzy
 msgid "apx.arg.command"
 msgstr "apx.arg.command"
 
-#, fuzzy
 msgid "apx.arg.packages"
 msgstr "apx.arg.packages"
 
-#, fuzzy
 msgid "apx.arg.query"
 msgstr "apx.arg.query"
 
-#, fuzzy
 msgid "apx.arg.package"
 msgstr "apx.arg.package"
 
-#, fuzzy
 msgid "apx.arg.applications"
 msgstr "apx.arg.applications"
 
-#, fuzzy
 msgid "apx.arg.stack"
 msgstr "apx.arg.stack"
 
-#, fuzzy
 msgid "apx.arg.pkgmanager"
 msgstr "apx.arg.pkgmanager"
