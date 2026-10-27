@@ -1,153 +1,162 @@
+# Zahid Rizky Fakhri <zahidrizkyfakhri@gmail.com>, 2026.
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2026-08-25 06:51+0000\n"
+"Last-Translator: Zahid Rizky Fakhri <zahidrizkyfakhri@gmail.com>\n"
+"Language-Team: Indonesian <https://hosted.weblate.org/projects/vanilla-os/"
+"apx/id/>\n"
+"Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: id\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.9.dev0\n"
 
 msgid "apx.cmd.pkgmanagers"
-msgstr "Bekerja dengan manajer paket yang tersedia di apx."
+msgstr "apx.cmd.pkgmanagers"
 
 msgid "apx.cmd.pkgmanagers.export"
-msgstr "Mengekspor manajer paket yang ditentukan."
+msgstr "apx.cmd.pkgmanagers.export"
 
 msgid "apx.cmd.pkgmanagers.export.options.name"
-msgstr "Nama manajer paket yang akan diekspor."
+msgstr "apx.cmd.pkgmanagers.export.options.name"
 
 msgid "apx.cmd.pkgmanagers.export.options.output"
-msgstr "Jalur untuk mengekspor manajer paket."
+msgstr "apx.cmd.pkgmanagers.export.options.output"
 
 msgid "apx.cmd.pkgmanagers.import"
-msgstr "Mengimpor manajer paket tertentu."
+msgstr "apx.cmd.pkgmanagers.import"
 
 msgid "apx.cmd.pkgmanagers.import.options.input"
-msgstr "Jalur untuk mengimpor manajer paket."
+msgstr "apx.cmd.pkgmanagers.import.options.input"
 
 msgid "apx.cmd.pkgmanagers.list"
-msgstr "Daftar semua manajer paket yang tersedia."
+msgstr "apx.cmd.pkgmanagers.list"
 
 msgid "apx.cmd.pkgmanagers.list.options.json"
-msgstr "Keluaran dalam format JSON."
+msgstr "apx.cmd.pkgmanagers.list.options.json"
 
 msgid "apx.cmd.pkgmanagers.new"
-msgstr "Membuat manajer paket baru."
+msgstr "apx.cmd.pkgmanagers.new"
 
 msgid "apx.cmd.pkgmanagers.new.options.autoremove"
-msgstr "Perintah yang harus dijalankan untuk menghapus paket secara otomatis."
+msgstr "apx.cmd.pkgmanagers.new.options.autoremove"
 
 msgid "apx.cmd.pkgmanagers.new.options.clean"
-msgstr "Perintah yang harus dijalankan untuk membersihkan cache manajer paket."
+msgstr "apx.cmd.pkgmanagers.new.options.clean"
 
 msgid "apx.cmd.pkgmanagers.new.options.install"
-msgstr "Perintah yang harus dijalankan untuk menginstal paket."
+msgstr "apx.cmd.pkgmanagers.new.options.install"
 
 msgid "apx.cmd.pkgmanagers.new.options.list"
-msgstr "Perintah yang dijalankan untuk membuat daftar paket yang terinstal."
+msgstr "apx.cmd.pkgmanagers.new.options.list"
 
 msgid "apx.cmd.pkgmanagers.new.options.name"
-msgstr "Nama manajer paket."
+msgstr "apx.cmd.pkgmanagers.new.options.name"
 
 msgid "apx.cmd.pkgmanagers.new.options.needSudo"
-msgstr "Apakah manajer paket membutuhkan sudo untuk dijalankan."
+msgstr "apx.cmd.pkgmanagers.new.options.needSudo"
 
 msgid "apx.cmd.pkgmanagers.new.options.noPrompt"
-msgstr "Jawab ya untuk semua pertanyaan."
+msgstr "apx.cmd.pkgmanagers.new.options.noPrompt"
 
 msgid "apx.cmd.pkgmanagers.new.options.purge"
-msgstr "Perintah untuk menjalankan untuk membersihkan paket."
+msgstr "apx.cmd.pkgmanagers.new.options.purge"
 
 msgid "apx.cmd.pkgmanagers.new.options.remove"
-msgstr "Perintah untuk menjalankan untuk menghapus paket."
+msgstr "apx.cmd.pkgmanagers.new.options.remove"
 
 msgid "apx.cmd.pkgmanagers.new.options.search"
-msgstr "Perintah untuk menjalankan untuk mencari paket."
+msgstr "apx.cmd.pkgmanagers.new.options.search"
 
 msgid "apx.cmd.pkgmanagers.new.options.show"
-msgstr "Perintah untuk menjalankan untuk menampilkan informasi tentang paket."
+msgstr "apx.cmd.pkgmanagers.new.options.show"
 
 msgid "apx.cmd.pkgmanagers.new.options.update"
-msgstr "Perintah yang dijalankan untuk mengupdate daftar paket yang tersedia."
+msgstr "apx.cmd.pkgmanagers.new.options.update"
 
 msgid "apx.cmd.pkgmanagers.new.options.upgrade"
-msgstr "Perintah yang dijalankan untuk mengupgrade paket."
+msgstr "apx.cmd.pkgmanagers.new.options.upgrade"
 
 msgid "apx.cmd.pkgmanagers.rm"
-msgstr "Menghapus manajer paket yang ditentukan."
+msgstr "apx.cmd.pkgmanagers.rm"
 
 msgid "apx.cmd.pkgmanagers.rm.options.force"
-msgstr "Menghapus paksa manajer paket."
+msgstr "apx.cmd.pkgmanagers.rm.options.force"
 
 msgid "apx.cmd.pkgmanagers.rm.options.name"
-msgstr "Nama manajer paket yang akan dihapus."
+msgstr "apx.cmd.pkgmanagers.rm.options.name"
 
 msgid "apx.cmd.pkgmanagers.show"
-msgstr "Menampilkan informasi tentang manajer paket yang ditentukan."
+msgstr "apx.cmd.pkgmanagers.show"
 
 msgid "apx.cmd.pkgmanagers.update"
-msgstr "Memperbarui manajer paket yang ditentukan."
+msgstr "apx.cmd.pkgmanagers.update"
 
 msgid "apx.cmd.stacks"
-msgstr "Bekerja dengan stack yang tersedia di apx."
+msgstr "apx.cmd.stacks"
 
 msgid "apx.cmd.stacks.export"
-msgstr "Mengekspor stack yang ditentukan."
+msgstr "apx.cmd.stacks.export"
 
 msgid "apx.cmd.stacks.export.options.name"
-msgstr "Nama stack yang akan diekspor."
+msgstr "apx.cmd.stacks.export.options.name"
 
 msgid "apx.cmd.stacks.export.options.output"
-msgstr "Jalur untuk mengekspor stack."
+msgstr "apx.cmd.stacks.export.options.output"
 
 msgid "apx.cmd.stacks.import"
-msgstr "Mengimpor stack yang ditentukan."
+msgstr "apx.cmd.stacks.import"
 
 msgid "apx.cmd.stacks.import.options.input"
-msgstr "Jalur untuk mengimpor stack."
+msgstr "apx.cmd.stacks.import.options.input"
 
 msgid "apx.cmd.stacks.list"
-msgstr "Daftar semua stack yang tersedia."
+msgstr "apx.cmd.stacks.list"
 
 msgid "apx.cmd.stacks.list.options.json"
-msgstr "Keluaran dalam format JSON."
+msgstr "apx.cmd.stacks.list.options.json"
 
 msgid "apx.cmd.stacks.new"
-msgstr "Membuat stack baru."
+msgstr "apx.cmd.stacks.new"
 
 msgid "apx.cmd.stacks.new.options.base"
-msgstr "Citra distribusi dasar yang akan digunakan. (Untuk daftar citra yang kompatibel, lihat: https://distrobox.it/compatibility/#containers-distros)"
+msgstr ""
+"Citra distribusi dasar yang akan digunakan. (Untuk daftar citra yang "
+"kompatibel, lihat: https://distrobox.it/compatibility/#containers-distros)"
 
 msgid "apx.cmd.stacks.new.options.name"
-msgstr "Nama stack."
+msgstr "apx.cmd.stacks.new.options.name"
 
 msgid "apx.cmd.stacks.new.options.noPrompt"
-msgstr "Jawab ya untuk semua pertanyaan."
+msgstr "apx.cmd.stacks.new.options.noPrompt"
 
 msgid "apx.cmd.stacks.new.options.packages"
-msgstr "Paket-paket yang akan diinstal."
+msgstr "apx.cmd.stacks.new.options.packages"
 
 msgid "apx.cmd.stacks.new.options.pkgManager"
-msgstr "Manajer paket yang akan digunakan."
+msgstr "apx.cmd.stacks.new.options.pkgManager"
 
 msgid "apx.cmd.stacks.rm"
-msgstr "Menghapus stack yang ditentukan."
+msgstr "apx.cmd.stacks.rm"
 
 msgid "apx.cmd.stacks.rm.options.force"
-msgstr "Menghapus stack secara paksa."
+msgstr "apx.cmd.stacks.rm.options.force"
 
 msgid "apx.cmd.stacks.rm.options.name"
-msgstr "Nama stack yang akan dihapus."
+msgstr "apx.cmd.stacks.rm.options.name"
 
 msgid "apx.cmd.stacks.show"
-msgstr "Menampilkan informasi tentang stack yang ditentukan."
+msgstr "apx.cmd.stacks.show"
 
 msgid "apx.cmd.stacks.update"
-msgstr "Memperbarui stack yang ditentukan."
+msgstr "apx.cmd.stacks.update"
 
 msgid "apx.cmd.stacks.update.options.base"
-msgstr "Subsistem dasar yang akan digunakan."
+msgstr "apx.cmd.stacks.update.options.base"
 
 msgid "apx.cmd.stacks.update.options.name"
-msgstr "Nama stack."
+msgstr "apx.cmd.stacks.update.options.name"
 
 msgid "apx.cmd.stacks.update.options.noPrompt"
 msgstr "Jawab ya untuk semua pertanyaan."
@@ -306,7 +315,9 @@ msgid "apx.msg.globalFlags"
 msgstr "Flag Global"
 
 msgid "apx.msg.help"
-msgstr "Apx adalah manajer paket dengan dukungan untuk beberapa sumber, memungkinkan Anda untuk menginstal paket dalam subsistem."
+msgstr ""
+"Apx adalah manajer paket dengan dukungan untuk beberapa sumber, memungkinkan "
+"Anda untuk menginstal paket dalam subsistem."
 
 msgid "apx.msg.moreInfo"
 msgstr "Gunakan %s untuk informasi lebih lanjut tentang suatu perintah"
@@ -316,6 +327,15 @@ msgstr "Penggunaan"
 
 msgid "apx.msg.version"
 msgstr "Tampilkan versi untuk apx."
+
+msgid "apx.subsystem.dev"
+msgstr "apx.subsystem.dev"
+
+msgid "apx.subsystem.singularityos"
+msgstr "apx.subsystem.singularityos"
+
+msgid "apx.subsystem.work"
+msgstr "apx.subsystem.work"
 
 msgid "apx.terminal.false"
 msgstr "tidak"
@@ -351,7 +371,9 @@ msgid "pkgmanagers.list.info.foundPkgManagers"
 msgstr "Ditemukan %d manajer paket"
 
 msgid "pkgmanagers.list.info.noPkgManagers"
-msgstr "Tidak ada manajer paket yang tersedia. Buat yang baru dengan 'apx pkgmanagers new' atau hubungi administrator sistem."
+msgstr ""
+"Tidak ada manajer paket yang tersedia. Buat yang baru dengan 'apx "
+"pkgmanagers new' atau hubungi administrator sistem."
 
 msgid "pkgmanagers.new.error.alreadyExists"
 msgstr "Manajer paket dengan nama '%s' sudah ada."
@@ -411,13 +433,16 @@ msgid "pkgmanagers.update.error.noName"
 msgstr "Tidak ada nama yang ditentukan."
 
 msgid "pkgmanagers.update.info.askNewCommand"
-msgstr "Masukkan perintah baru untuk '%s' (biarkan kosong untuk menyimpan '%s'):"
+msgstr ""
+"Masukkan perintah baru untuk '%s' (biarkan kosong untuk menyimpan '%s'):"
 
 msgid "pkgmanagers.update.info.success"
 msgstr "Memperbarui manajer paket '%s'."
 
 msgid "runtimeCommand.description"
-msgstr "Bekerja dengan subsistem yang ditentukan, mengakses manajer paket dan lingkungan."
+msgstr ""
+"Bekerja dengan subsistem yang ditentukan, mengakses manajer paket dan "
+"lingkungan."
 
 msgid "runtimeCommand.error.cantAccessPkgManager"
 msgstr "Terjadi kesalahan saat mengakses manajer paket: %s"
@@ -516,7 +541,9 @@ msgid "stacks.list.info.foundStacks"
 msgstr "Menemukan stack %d:"
 
 msgid "stacks.list.info.noStacks"
-msgstr "Tidak ada stack yang tersedia. Buat yang baru dengan 'apx stacks new' atau hubungi administrator sistem."
+msgstr ""
+"Tidak ada stack yang tersedia. Buat yang baru dengan 'apx stacks new' atau "
+"hubungi administrator sistem."
 
 msgid "stacks.new.error.alreadyExists"
 msgstr "stack dengan nama '%s' sudah ada."
@@ -546,10 +573,14 @@ msgid "stacks.new.error.noPkgManager"
 msgstr "Tidak ada manajer paket yang ditentukan."
 
 msgid "stacks.new.error.noPkgManagers"
-msgstr "Tidak dapat menemukan manajer paket. Buatlah dengan 'apx pkgmanagers new' atau hubungi administrator sistem."
+msgstr ""
+"Tidak dapat menemukan manajer paket. Buatlah dengan 'apx pkgmanagers new' "
+"atau hubungi administrator sistem."
 
 msgid "stacks.new.error.pkgManagerDoesNotExist"
-msgstr "Manajer paket yang ditentukan tidak ada. Buatlah dengan 'apx pkgmanagers new' atau hubungi administrator sistem."
+msgstr ""
+"Manajer paket yang ditentukan tidak ada. Buatlah dengan 'apx pkgmanagers "
+"new' atau hubungi administrator sistem."
 
 msgid "stacks.new.info.askBase"
 msgstr "Pilih sebuah basis (misal: 'vanillaos/pico'):"
@@ -558,7 +589,8 @@ msgid "stacks.new.info.askName"
 msgstr "Pilih sebuah nama:"
 
 msgid "stacks.new.info.askPackages"
-msgstr "Ketik paket yang ingin Anda instal di dalam stack, dipisahkan dengan spasi:"
+msgstr ""
+"Ketik paket yang ingin Anda instal di dalam stack, dipisahkan dengan spasi:"
 
 msgid "stacks.new.info.askPkgManager"
 msgstr "Pilih manajer paket:"
@@ -567,7 +599,9 @@ msgid "stacks.new.info.confirmPackages"
 msgstr "Apakah Anda ingin mengkonfirmasi daftar paket yang ada saat ini?"
 
 msgid "stacks.new.info.noPackages"
-msgstr "Anda belum menyediakan paket apa pun untuk diinstal di dalam stack. Apakah Anda ingin menambahkannya sekarang?"
+msgstr ""
+"Anda belum menyediakan paket apa pun untuk diinstal di dalam stack. Apakah "
+"Anda ingin menambahkannya sekarang?"
 
 msgid "stacks.new.info.selectPkgManager"
 msgstr "Pilih manajer paket [1-%d]:"
@@ -600,22 +634,30 @@ msgid "stacks.update.error.noPkgManager"
 msgstr "Tidak ada manajer paket yang ditentukan."
 
 msgid "stacks.update.error.pkgManagerDoesNotExist"
-msgstr "Manajer paket yang ditentukan tidak ada. Buatlah dengan 'apx pkgmanagers new' atau hubungi administrator sistem."
+msgstr ""
+"Manajer paket yang ditentukan tidak ada. Buatlah dengan 'apx pkgmanagers "
+"new' atau hubungi administrator sistem."
 
 msgid "stacks.update.info.askBase"
 msgstr "Ketik basis baru atau konfirmasikan basis yang ada saat ini (%s):"
 
 msgid "stacks.update.info.askPackages"
-msgstr "Ketik paket-paket yang ingin Anda instal dalam stack, dipisahkan dengan spasi:"
+msgstr ""
+"Ketik paket-paket yang ingin Anda instal dalam stack, dipisahkan dengan "
+"spasi:"
 
 msgid "stacks.update.info.askPkgManager"
-msgstr "Pilih manajer paket baru atau konfirmasikan manajer paket yang ada saat ini (%s):"
+msgstr ""
+"Pilih manajer paket baru atau konfirmasikan manajer paket yang ada saat ini "
+"(%s):"
 
 msgid "stacks.update.info.confirmPackages"
 msgstr "Apakah Anda ingin memperbarui daftar paket?"
 
 msgid "stacks.update.info.noPackages"
-msgstr "Anda belum menyediakan paket apa pun untuk diinstal dalam stack. Apakah Anda ingin menambahkannya sekarang?"
+msgstr ""
+"Anda belum menyediakan paket apa pun untuk diinstal dalam stack. Apakah Anda "
+"ingin menambahkannya sekarang?"
 
 msgid "stacks.update.info.success"
 msgstr "stack yang diperbarui '%s'."
@@ -633,7 +675,9 @@ msgid "subsystems.list.info.foundSubsystems"
 msgstr "Ditemukan %d subsistem:"
 
 msgid "subsystems.list.info.noSubsystems"
-msgstr "Tidak ada subsistem yang tersedia. Buat yang baru dengan 'apx subsystems new' atau hubungi administrator sistem."
+msgstr ""
+"Tidak ada subsistem yang tersedia. Buat yang baru dengan 'apx subsystems "
+"new' atau hubungi administrator sistem."
 
 msgid "subsystems.new.error.alreadyExists"
 msgstr "Subsistem dengan nama '%s' sudah ada."
@@ -654,10 +698,14 @@ msgid "subsystems.new.error.noStack"
 msgstr "Tidak ada stack yang ditentukan."
 
 msgid "subsystems.new.error.noStacks"
-msgstr "stack diperlukan untuk membuat subsistem. Buat yang baru dengan 'apx stacks new' atau hubungi administrator sistem."
+msgstr ""
+"stack diperlukan untuk membuat subsistem. Buat yang baru dengan 'apx stacks "
+"new' atau hubungi administrator sistem."
 
 msgid "subsystems.new.error.stackDoesNotExist"
-msgstr "stack yang ditentukan tidak ada. Buatlah dengan 'apx stacks new' atau hubungi administrator sistem."
+msgstr ""
+"stack yang ditentukan tidak ada. Buatlah dengan 'apx stacks new' atau "
+"hubungi administrator sistem."
 
 msgid "subsystems.new.info.askName"
 msgstr "Pilih sebuah nama:"
@@ -692,25 +740,23 @@ msgstr "Apakah Anda yakin ingin menghapus '%s'?"
 msgid "subsystems.rm.info.success"
 msgstr "Menghapus subsistem '%s'."
 
-
-
 msgid "apx.arg.command"
-msgstr ""
+msgstr "apx.arg.command"
 
 msgid "apx.arg.packages"
-msgstr ""
+msgstr "apx.arg.packages"
 
 msgid "apx.arg.query"
-msgstr ""
+msgstr "apx.arg.query"
 
 msgid "apx.arg.package"
-msgstr ""
+msgstr "apx.arg.package"
 
 msgid "apx.arg.applications"
-msgstr ""
+msgstr "apx.arg.applications"
 
 msgid "apx.arg.stack"
-msgstr ""
+msgstr "apx.arg.stack"
 
 msgid "apx.arg.pkgmanager"
-msgstr ""
+msgstr "apx.arg.pkgmanager"
