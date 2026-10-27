@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
+"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: it\n"
 
 msgid "apx.cmd.pkgmanagers"
 msgstr "Lavora con i gestori di pacchetti disponibili in apx."
@@ -66,7 +66,8 @@ msgid "apx.cmd.pkgmanagers.new.options.show"
 msgstr "Il comando da eseguire per mostrare informazioni sui pacchetti."
 
 msgid "apx.cmd.pkgmanagers.new.options.update"
-msgstr "Il comando da eseguire per aggiornare l'elenco dei pacchetti disponibili."
+msgstr ""
+"Il comando da eseguire per aggiornare l'elenco dei pacchetti disponibili."
 
 msgid "apx.cmd.pkgmanagers.new.options.upgrade"
 msgstr "Il comando da eseguire per aggiornare i pacchetti."
@@ -114,7 +115,9 @@ msgid "apx.cmd.stacks.new"
 msgstr "Crea un nuovo stack."
 
 msgid "apx.cmd.stacks.new.options.base"
-msgstr "L'immagine della distribuzione base da utilizzare. (Per una lista di immagini compatibili: https://distrobox.it/compatibility/#containers-distros)"
+msgstr ""
+"L'immagine della distribuzione base da utilizzare. (Per una lista di "
+"immagini compatibili: https://distrobox.it/compatibility/#containers-distros)"
 
 msgid "apx.cmd.stacks.new.options.name"
 msgstr "Il nome dello stack."
@@ -306,7 +309,9 @@ msgid "apx.msg.globalFlags"
 msgstr "Global Flags"
 
 msgid "apx.msg.help"
-msgstr "Apx è un gestore di pacchetti con supporto per sorgenti multiple che permette di installare pacchetti in sottosistemi."
+msgstr ""
+"Apx è un gestore di pacchetti con supporto per sorgenti multiple che "
+"permette di installare pacchetti in sottosistemi."
 
 msgid "apx.msg.moreInfo"
 msgstr "Use %s for more information about a command"
@@ -360,7 +365,9 @@ msgid "pkgmanagers.list.info.foundPkgManagers"
 msgstr "Trovati %d gestori di pacchetti"
 
 msgid "pkgmanagers.list.info.noPkgManagers"
-msgstr "Non ci sono gestori di pacchetti disponibili. Creane uno nuovo con 'apx pkgmanagers new' o contatta l'amministratore di sistema."
+msgstr ""
+"Non ci sono gestori di pacchetti disponibili. Creane uno nuovo con 'apx "
+"pkgmanagers new' o contatta l'amministratore di sistema."
 
 msgid "pkgmanagers.new.error.alreadyExists"
 msgstr "Esiste già un gestore di pacchetti con il nome '%s'."
@@ -426,10 +433,13 @@ msgid "pkgmanagers.update.info.success"
 msgstr "Aggiorna il gestore di pacchetti '%s'."
 
 msgid "runtimeCommand.description"
-msgstr "Usa il sottosistema specificato, accesso al gestore di pacchetti e all'ambiente."
+msgstr ""
+"Usa il sottosistema specificato, accesso al gestore di pacchetti e "
+"all'ambiente."
 
 msgid "runtimeCommand.error.cantAccessPkgManager"
-msgstr "Si è verificato un errore durante l'accesso al gestore di pacchetti: %s"
+msgstr ""
+"Si è verificato un errore durante l'accesso al gestore di pacchetti: %s"
 
 msgid "runtimeCommand.error.enteringContainer"
 msgstr "Si è verificato un errore durante l'entrata nel container: %s"
@@ -459,10 +469,14 @@ msgid "runtimeCommand.error.stoppingContainer"
 msgstr "Si è verificato un errore nell'arresto del containter: %s"
 
 msgid "runtimeCommand.error.unexportingApp"
-msgstr "Si è verificato un errore durante l'annullamento dell'esportazione dell'applicazione: %s"
+msgstr ""
+"Si è verificato un errore durante l'annullamento dell'esportazione "
+"dell'applicazione: %s"
 
 msgid "runtimeCommand.error.unexportingBin"
-msgstr "Si è verificato un errore durante l'annullamento dell'esportazione del file binario: %s"
+msgstr ""
+"Si è verificato un errore durante l'annullamento dell'esportazione del file "
+"binario: %s"
 
 msgid "runtimeCommand.info.exportedApp"
 msgstr "Esportata applicazione %s"
@@ -525,7 +539,9 @@ msgid "stacks.list.info.foundStacks"
 msgstr "Trovati %d stack:"
 
 msgid "stacks.list.info.noStacks"
-msgstr "Non ci sono stack disponibili. Creane uno nuovo con 'apx stacks new' o contatta l'amministratore del sistema."
+msgstr ""
+"Non ci sono stack disponibili. Creane uno nuovo con 'apx stacks new' o "
+"contatta l'amministratore del sistema."
 
 msgid "stacks.new.error.alreadyExists"
 msgstr "Esiste già uno stack con il nome '%s'."
@@ -555,10 +571,14 @@ msgid "stacks.new.error.noPkgManager"
 msgstr "Non è stato specificato alcun gestore di pacchetti."
 
 msgid "stacks.new.error.noPkgManagers"
-msgstr "Could not find any package managers. Create one with 'apx pkgmanagers new' or contact the system administrator."
+msgstr ""
+"Could not find any package managers. Create one with 'apx pkgmanagers new' "
+"or contact the system administrator."
 
 msgid "stacks.new.error.pkgManagerDoesNotExist"
-msgstr "Il gestore di pacchetti specificato non esiste. Crealo con 'apx pkgmanagers new' o contatta l'amministratore di sistema."
+msgstr ""
+"Il gestore di pacchetti specificato non esiste. Crealo con 'apx pkgmanagers "
+"new' o contatta l'amministratore di sistema."
 
 msgid "stacks.new.info.askBase"
 msgstr "Scegli una base (ad esempio, \"vanillaos/pico\"):"
@@ -567,7 +587,9 @@ msgid "stacks.new.info.askName"
 msgstr "Scegli un nome:"
 
 msgid "stacks.new.info.askPackages"
-msgstr "Digitare i pacchetti che si desidera installare nello stack, separati da uno spazio:"
+msgstr ""
+"Digitare i pacchetti che si desidera installare nello stack, separati da uno "
+"spazio:"
 
 msgid "stacks.new.info.askPkgManager"
 msgstr "Scegli un gestore di pacchetti:"
@@ -576,7 +598,9 @@ msgid "stacks.new.info.confirmPackages"
 msgstr "Volete confermare l'elenco attuale dei pacchetti?"
 
 msgid "stacks.new.info.noPackages"
-msgstr "Non è stato fornito alcun pacchetto da installare nello stack. Si desidera aggiungerne qualcuno ora?"
+msgstr ""
+"Non è stato fornito alcun pacchetto da installare nello stack. Si desidera "
+"aggiungerne qualcuno ora?"
 
 msgid "stacks.new.info.selectPkgManager"
 msgstr "Seleziona un gestore di pacchetti [1-%d]:"
@@ -609,22 +633,29 @@ msgid "stacks.update.error.noPkgManager"
 msgstr "Non è stato specificato alcun gestore di pacchetti."
 
 msgid "stacks.update.error.pkgManagerDoesNotExist"
-msgstr "Il gestore di pacchetti specificato non esiste. Crealo con 'apx pkgmanagers new' o contatta l'amministratore di sistema."
+msgstr ""
+"Il gestore di pacchetti specificato non esiste. Crealo con 'apx pkgmanagers "
+"new' o contatta l'amministratore di sistema."
 
 msgid "stacks.update.info.askBase"
 msgstr "Digita una nuova base o confermare quella attuale (%s):"
 
 msgid "stacks.update.info.askPackages"
-msgstr "Digitate i pacchetti che volete installare nello stack, separati da uno spazio, oppure confermate quelli attuali (%s):"
+msgstr ""
+"Digitate i pacchetti che volete installare nello stack, separati da uno "
+"spazio, oppure confermate quelli attuali (%s):"
 
 msgid "stacks.update.info.askPkgManager"
-msgstr "Scegliere un nuovo gestore di pacchetti o confermare quello attuale (%s):"
+msgstr ""
+"Scegliere un nuovo gestore di pacchetti o confermare quello attuale (%s):"
 
 msgid "stacks.update.info.confirmPackages"
 msgstr "Do you want to confirm the current packages list?"
 
 msgid "stacks.update.info.noPackages"
-msgstr "You have not provided any packages to install in the stack. Do you want to add some now?"
+msgstr ""
+"You have not provided any packages to install in the stack. Do you want to "
+"add some now?"
 
 msgid "stacks.update.info.success"
 msgstr "Aggiornato lo stack '%s'."
@@ -642,7 +673,9 @@ msgid "subsystems.list.info.foundSubsystems"
 msgstr "Trovati %d sottosistemi:"
 
 msgid "subsystems.list.info.noSubsystems"
-msgstr "Non ci sono sottosistemi disponibili. Creane uno nuovo con 'apx subsystems new' o contatta l'amministratore del sistema."
+msgstr ""
+"Non ci sono sottosistemi disponibili. Creane uno nuovo con 'apx subsystems "
+"new' o contatta l'amministratore del sistema."
 
 msgid "subsystems.new.error.alreadyExists"
 msgstr "Esiste già un sottosistema con il nome '%s'."
@@ -663,10 +696,14 @@ msgid "subsystems.new.error.noStack"
 msgstr "Non è stato specificato alcuno stack."
 
 msgid "subsystems.new.error.noStacks"
-msgstr "Per creare un sottosistema è necessario uno stack. Creane uno nuovo con 'apx stacks new' o contatta l'amministratore del sistema."
+msgstr ""
+"Per creare un sottosistema è necessario uno stack. Creane uno nuovo con 'apx "
+"stacks new' o contatta l'amministratore del sistema."
 
 msgid "subsystems.new.error.stackDoesNotExist"
-msgstr "Lo stack specificato non esiste. Crealo con 'apx stacks new' o contatta l'amministratore del sistema."
+msgstr ""
+"Lo stack specificato non esiste. Crealo con 'apx stacks new' o contatta "
+"l'amministratore del sistema."
 
 msgid "subsystems.new.info.askName"
 msgstr "Scegli un nome:"
@@ -700,8 +737,6 @@ msgstr "Si è sicuri di voler rimuovere '%s'? [y/N]"
 
 msgid "subsystems.rm.info.success"
 msgstr "Rimosso il sottosistema '%s'."
-
-
 
 msgid "apx.arg.command"
 msgstr "Il comando da eseguire."

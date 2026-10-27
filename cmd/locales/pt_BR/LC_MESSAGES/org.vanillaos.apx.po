@@ -1,18 +1,19 @@
 msgid ""
 msgstr ""
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Language: pt_BR\n"
 "PO-Revision-Date: 2026-08-24 05:40+0000\n"
 "Last-Translator: Prefill add-on <noreply-addon-prefill@weblate.org>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
 "vanilla-os/apx/pt_BR/>\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: Weblate 2026.9.dev0\n"
 
 msgid "apx.cmd.pkgmanagers"
-msgstr "Trabalhar com os gerenciadores de pacotes que estão disponíveis no apx."
+msgstr ""
+"Trabalhar com os gerenciadores de pacotes que estão disponíveis no apx."
 
 msgid "apx.cmd.pkgmanagers.export"
 msgstr "Exporte o gerenciador de pacotes especificado."
@@ -42,7 +43,8 @@ msgid "apx.cmd.pkgmanagers.new.options.autoremove"
 msgstr "O comando a ser executado para a remoção automática de pacotes."
 
 msgid "apx.cmd.pkgmanagers.new.options.clean"
-msgstr "O comando a ser executado para limpar o cache do gerenciador de pacotes."
+msgstr ""
+"O comando a ser executado para limpar o cache do gerenciador de pacotes."
 
 msgid "apx.cmd.pkgmanagers.new.options.install"
 msgstr "O comando a ser executado para instalar pacotes."
@@ -72,7 +74,8 @@ msgid "apx.cmd.pkgmanagers.new.options.show"
 msgstr "O comando a ser executado para mostrar informações sobre pacotes."
 
 msgid "apx.cmd.pkgmanagers.new.options.update"
-msgstr "O comando a ser executado para atualizar a lista de pacotes disponíveis."
+msgstr ""
+"O comando a ser executado para atualizar a lista de pacotes disponíveis."
 
 msgid "apx.cmd.pkgmanagers.new.options.upgrade"
 msgstr "O comando a ser executado para atualizar pacotes."
@@ -120,7 +123,9 @@ msgid "apx.cmd.stacks.new"
 msgstr "Criar uma nova pilha."
 
 msgid "apx.cmd.stacks.new.options.base"
-msgstr "A imagem de distribuição base a ser usada. (Para obter uma lista de imagens compatíveis, veja: https://distrobox.it/compatibility/#containers-distros)"
+msgstr ""
+"A imagem de distribuição base a ser usada. (Para obter uma lista de imagens "
+"compatíveis, veja: https://distrobox.it/compatibility/#containers-distros)"
 
 msgid "apx.cmd.stacks.new.options.name"
 msgstr "O nome da pilha."
@@ -312,7 +317,9 @@ msgid "apx.msg.globalFlags"
 msgstr "Sinalizadores globais"
 
 msgid "apx.msg.help"
-msgstr "O Apx é um gerenciador de pacotes com suporte para várias origens, permitindo que você instale pacotes em subsistemas."
+msgstr ""
+"O Apx é um gerenciador de pacotes com suporte para várias origens, "
+"permitindo que você instale pacotes em subsistemas."
 
 msgid "apx.msg.moreInfo"
 msgstr "Use %s para mais informações sobre um comando"
@@ -322,6 +329,21 @@ msgstr "Uso"
 
 msgid "apx.msg.version"
 msgstr "Mostrar versão do Apx."
+
+#, fuzzy
+#| msgid "apx.cmd.subsystem.remove"
+msgid "apx.subsystem.dev"
+msgstr "Remover os pacotes especificados."
+
+#, fuzzy
+#| msgid "apx.cmd.subsystem.start"
+msgid "apx.subsystem.singularityos"
+msgstr "Inicie o subsistema."
+
+#, fuzzy
+#| msgid "apx.cmd.subsystem.run"
+msgid "apx.subsystem.work"
+msgstr "Execute o comando dentro do subsistema."
 
 msgid "apx.terminal.false"
 msgstr "não"
@@ -357,7 +379,9 @@ msgid "pkgmanagers.list.info.foundPkgManagers"
 msgstr "Encontrados %d gerenciadores de pacotes"
 
 msgid "pkgmanagers.list.info.noPkgManagers"
-msgstr "Nenhum gerenciador de pacote disponível. Crie um utilizando 'apx pkgmanagers new' ou entre em contato com o administrador do sistema."
+msgstr ""
+"Nenhum gerenciador de pacote disponível. Crie um utilizando 'apx pkgmanagers "
+"new' ou entre em contato com o administrador do sistema."
 
 msgid "pkgmanagers.new.error.alreadyExists"
 msgstr "Um gerenciador de pacotes com o nome '%s' já existe."
@@ -423,7 +447,9 @@ msgid "pkgmanagers.update.info.success"
 msgstr "Gerenciador de pacotes atualizado '%s'."
 
 msgid "runtimeCommand.description"
-msgstr "Trabalhe com o subsistema especificado, acessando o gerenciador de pacotes e o ambiente."
+msgstr ""
+"Trabalhe com o subsistema especificado, acessando o gerenciador de pacotes e "
+"o ambiente."
 
 msgid "runtimeCommand.error.cantAccessPkgManager"
 msgstr "Ocorreu um erro ao acessar o gerenciador de pacotes: %s"
@@ -522,7 +548,9 @@ msgid "stacks.list.info.foundStacks"
 msgstr "Encontrou %d pilhas:"
 
 msgid "stacks.list.info.noStacks"
-msgstr "Não há pilhas disponíveis. Crie uma nova com 'apx stacks new' ou entre em contato com o administrador do sistema."
+msgstr ""
+"Não há pilhas disponíveis. Crie uma nova com 'apx stacks new' ou entre em "
+"contato com o administrador do sistema."
 
 msgid "stacks.new.error.alreadyExists"
 msgstr "Já existe uma pilha com o nome '%s'."
@@ -552,10 +580,14 @@ msgid "stacks.new.error.noPkgManager"
 msgstr "Nenhum gerenciador de pacotes especificado."
 
 msgid "stacks.new.error.noPkgManagers"
-msgstr "Não foi possível encontrar nenhum gerenciador de pacotes. Tente criar um com 'apx pkgmanagers new' ou entre em contato com o administrador do sistema."
+msgstr ""
+"Não foi possível encontrar nenhum gerenciador de pacotes. Tente criar um com "
+"'apx pkgmanagers new' ou entre em contato com o administrador do sistema."
 
 msgid "stacks.new.error.pkgManagerDoesNotExist"
-msgstr "O gerenciador de pacotes especificado não existe. Crie-o com 'apx pkgmanagers new' ou entre em contato com o administrador do sistema."
+msgstr ""
+"O gerenciador de pacotes especificado não existe. Crie-o com 'apx "
+"pkgmanagers new' ou entre em contato com o administrador do sistema."
 
 msgid "stacks.new.info.askBase"
 msgstr "Escolha uma base (por exemplo, 'vanillaos/pico'):"
@@ -564,7 +596,8 @@ msgid "stacks.new.info.askName"
 msgstr "Escolha um nome:"
 
 msgid "stacks.new.info.askPackages"
-msgstr "Digite os pacotes que deseja instalar na pilha, separados por um espaço:"
+msgstr ""
+"Digite os pacotes que deseja instalar na pilha, separados por um espaço:"
 
 msgid "stacks.new.info.askPkgManager"
 msgstr "Escolha um gerenciador de pacotes:"
@@ -573,7 +606,9 @@ msgid "stacks.new.info.confirmPackages"
 msgstr "Deseja confirmar a lista de pacotes atual?"
 
 msgid "stacks.new.info.noPackages"
-msgstr "Você não forneceu nenhum pacote para instalar na pilha. Deseja adicionar algum?"
+msgstr ""
+"Você não forneceu nenhum pacote para instalar na pilha. Deseja adicionar "
+"algum?"
 
 msgid "stacks.new.info.selectPkgManager"
 msgstr "Selecione um gerenciador de pacotes [1-%d]:"
@@ -606,13 +641,16 @@ msgid "stacks.update.error.noPkgManager"
 msgstr "Nenhum gerenciador de pacotes especificado."
 
 msgid "stacks.update.error.pkgManagerDoesNotExist"
-msgstr "O gerenciador de pacotes especificado não existe. Crie-o com 'apx pkgmanagers new' ou entre em contato com o administrador do sistema."
+msgstr ""
+"O gerenciador de pacotes especificado não existe. Crie-o com 'apx "
+"pkgmanagers new' ou entre em contato com o administrador do sistema."
 
 msgid "stacks.update.info.askBase"
 msgstr "Digite uma nova base ou confirme a atual (%s):"
 
 msgid "stacks.update.info.askPackages"
-msgstr "Digite os pacotes que deseja instalar na pilha, separados por um espaço:"
+msgstr ""
+"Digite os pacotes que deseja instalar na pilha, separados por um espaço:"
 
 msgid "stacks.update.info.askPkgManager"
 msgstr "Escolha um novo gerenciador de pacotes ou confirme o atual (%s):"
@@ -621,7 +659,9 @@ msgid "stacks.update.info.confirmPackages"
 msgstr "Deseja atualizar a lista de pacotes?"
 
 msgid "stacks.update.info.noPackages"
-msgstr "Você não forneceu nenhum pacote para instalar na pilha. Deseja adicionar algum?"
+msgstr ""
+"Você não forneceu nenhum pacote para instalar na pilha. Deseja adicionar "
+"algum?"
 
 msgid "stacks.update.info.success"
 msgstr "Pilha '%s' atualizada."
@@ -639,7 +679,9 @@ msgid "subsystems.list.info.foundSubsystems"
 msgstr "Encontrados %d subsistemas:"
 
 msgid "subsystems.list.info.noSubsystems"
-msgstr "Não há subsistemas disponíveis. Crie um novo com 'apx subsystems new' ou entre em contato com o administrador do sistema."
+msgstr ""
+"Não há subsistemas disponíveis. Crie um novo com 'apx subsystems new' ou "
+"entre em contato com o administrador do sistema."
 
 msgid "subsystems.new.error.alreadyExists"
 msgstr "Já existe um subsistema com o nome '%s'."
@@ -660,10 +702,14 @@ msgid "subsystems.new.error.noStack"
 msgstr "Nenhuma pilha especificada."
 
 msgid "subsystems.new.error.noStacks"
-msgstr "É necessária uma pilha para criar um subsistema. Crie uma nova com 'apx stacks new' ou entre em contato com o administrador do sistema."
+msgstr ""
+"É necessária uma pilha para criar um subsistema. Crie uma nova com 'apx "
+"stacks new' ou entre em contato com o administrador do sistema."
 
 msgid "subsystems.new.error.stackDoesNotExist"
-msgstr "A pilha especificada não existe. Crie-a com 'apx stacks new' ou entre em contato com o administrador do sistema."
+msgstr ""
+"A pilha especificada não existe. Crie-a com 'apx stacks new' ou entre em "
+"contato com o administrador do sistema."
 
 msgid "subsystems.new.info.askName"
 msgstr "Escolha um nome:"

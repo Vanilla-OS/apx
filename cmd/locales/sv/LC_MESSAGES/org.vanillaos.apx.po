@@ -1,13 +1,13 @@
 msgid ""
 msgstr ""
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Language: sv\n"
 "PO-Revision-Date: 2026-08-24 05:40+0000\n"
 "Last-Translator: Prefill add-on <noreply-addon-prefill@weblate.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/vanilla-os/apx/"
 "sv/>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2026.9.dev0\n"
 
@@ -120,7 +120,9 @@ msgid "apx.cmd.stacks.new"
 msgstr "Skapa en ny stack."
 
 msgid "apx.cmd.stacks.new.options.base"
-msgstr "Basdistributionsavbilden som ska användas. (För en lista över kompatibla avbilder se: https://distrobox.it/compatibility/#containers-distros)"
+msgstr ""
+"Basdistributionsavbilden som ska användas. (För en lista över kompatibla "
+"avbilder se: https://distrobox.it/compatibility/#containers-distros)"
 
 msgid "apx.cmd.stacks.new.options.name"
 msgstr "Namnet på stacken."
@@ -323,6 +325,21 @@ msgstr "Användning"
 msgid "apx.msg.version"
 msgstr "Visa version av apx."
 
+#, fuzzy
+#| msgid "apx.cmd.subsystem.remove"
+msgid "apx.subsystem.dev"
+msgstr "Ta bort det specificerade paketen."
+
+#, fuzzy
+#| msgid "apx.cmd.subsystem.start"
+msgid "apx.subsystem.singularityos"
+msgstr "Starta undersystem."
+
+#, fuzzy
+#| msgid "apx.cmd.subsystem.run"
+msgid "apx.subsystem.work"
+msgstr "Kör kommando inuti undersystem."
+
 msgid "apx.terminal.false"
 msgstr "nej"
 
@@ -357,7 +374,9 @@ msgid "pkgmanagers.list.info.foundPkgManagers"
 msgstr "Hittade %d pakethanterare:"
 
 msgid "pkgmanagers.list.info.noPkgManagers"
-msgstr "Inga pakethanterare tillgängliga. Skapa en ny med 'apx pkgmanagers new' eller kontakta systemadministratören."
+msgstr ""
+"Inga pakethanterare tillgängliga. Skapa en ny med 'apx pkgmanagers new' "
+"eller kontakta systemadministratören."
 
 msgid "pkgmanagers.new.error.alreadyExists"
 msgstr "En pakethanterare med namnet '%s' existerar redan."
@@ -384,7 +403,8 @@ msgid "pkgmanagers.new.info.askName"
 msgstr "Välj ett namn:"
 
 msgid "pkgmanagers.new.info.askOverwrite"
-msgstr "En pakethanterare med namnet '%s' finns redan. Vill du skriva över det?"
+msgstr ""
+"En pakethanterare med namnet '%s' finns redan. Vill du skriva över det?"
 
 msgid "pkgmanagers.new.info.askSudo"
 msgstr "Behöver pakethanteraren sudo för att köras?"
@@ -423,7 +443,9 @@ msgid "pkgmanagers.update.info.success"
 msgstr "Uppdaterade pakethanterare \"%s\"."
 
 msgid "runtimeCommand.description"
-msgstr "Arbeta med det angivna undersystemet, åtkomst till pakethanteraren och miljön."
+msgstr ""
+"Arbeta med det angivna undersystemet, åtkomst till pakethanteraren och "
+"miljön."
 
 msgid "runtimeCommand.error.cantAccessPkgManager"
 msgstr "Ett fel uppstod vid åtkomst till pakethanteraren: %s"
@@ -522,7 +544,9 @@ msgid "stacks.list.info.foundStacks"
 msgstr "Hittade %d stackar:"
 
 msgid "stacks.list.info.noStacks"
-msgstr "Inga stackar tillgängliga. Skapa en ny med 'apx stack new' eller kontakta systemadministratören."
+msgstr ""
+"Inga stackar tillgängliga. Skapa en ny med 'apx stack new' eller kontakta "
+"systemadministratören."
 
 msgid "stacks.new.error.alreadyExists"
 msgstr "En stack med namnet '%s' existerar redan."
@@ -552,10 +576,14 @@ msgid "stacks.new.error.noPkgManager"
 msgstr "Ingen pakethanterare specificerad."
 
 msgid "stacks.new.error.noPkgManagers"
-msgstr "Kunde inte hitta någon pakethanterare. Skapa en med 'apx pkgmanagers new' eller kontakta systemadministratören."
+msgstr ""
+"Kunde inte hitta någon pakethanterare. Skapa en med 'apx pkgmanagers new' "
+"eller kontakta systemadministratören."
 
 msgid "stacks.new.error.pkgManagerDoesNotExist"
-msgstr "Den angivna pakethanteraren finns inte. Skapa den med 'apx pkgmanagers new' eller kontakta systemadministratören."
+msgstr ""
+"Den angivna pakethanteraren finns inte. Skapa den med 'apx pkgmanagers new' "
+"eller kontakta systemadministratören."
 
 msgid "stacks.new.info.askBase"
 msgstr "Välj en bas (t.e.x. 'vanillaos/pico'):"
@@ -564,7 +592,9 @@ msgid "stacks.new.info.askName"
 msgstr "Välj ett namn:"
 
 msgid "stacks.new.info.askPackages"
-msgstr "Vänligen skriv paketen du vill installera i stacken, åtskilda av ett mellanslag:"
+msgstr ""
+"Vänligen skriv paketen du vill installera i stacken, åtskilda av ett "
+"mellanslag:"
 
 msgid "stacks.new.info.askPkgManager"
 msgstr "Välj en pakethanterare:"
@@ -573,7 +603,9 @@ msgid "stacks.new.info.confirmPackages"
 msgstr "Vill du bekräfta den aktuella paketlistan?"
 
 msgid "stacks.new.info.noPackages"
-msgstr "Du har inte tillhandahållit några paket att installera i stacken. Vill du lägga till några nu?"
+msgstr ""
+"Du har inte tillhandahållit några paket att installera i stacken. Vill du "
+"lägga till några nu?"
 
 msgid "stacks.new.info.selectPkgManager"
 msgstr "Välj en pakethanterare [1-%d]:"
@@ -606,13 +638,16 @@ msgid "stacks.update.error.noPkgManager"
 msgstr "Ingen pakethanterare specificerad."
 
 msgid "stacks.update.error.pkgManagerDoesNotExist"
-msgstr "Den specificerade pakethanteraren finns inte. Skapa den med 'apx pkgmanagers new' eller kontakta systemadministratören."
+msgstr ""
+"Den specificerade pakethanteraren finns inte. Skapa den med 'apx pkgmanagers "
+"new' eller kontakta systemadministratören."
 
 msgid "stacks.update.info.askBase"
 msgstr "Skriv en ny bas eller bekräfta den nuvarande (%s):"
 
 msgid "stacks.update.info.askPackages"
-msgstr "Skriv in de paketen du vill installera i stacken, åtskilda av ett mellanslag:"
+msgstr ""
+"Skriv in de paketen du vill installera i stacken, åtskilda av ett mellanslag:"
 
 msgid "stacks.update.info.askPkgManager"
 msgstr "Välj en ny pakethanterare eller bekräfta den nuvarande (%s):"
@@ -621,7 +656,9 @@ msgid "stacks.update.info.confirmPackages"
 msgstr "Vill du uppdatera listan över paket?"
 
 msgid "stacks.update.info.noPackages"
-msgstr "Du har inte tillhandahållit några paket att installera i stacken. Vill du lägga till några nu?"
+msgstr ""
+"Du har inte tillhandahållit några paket att installera i stacken. Vill du "
+"lägga till några nu?"
 
 msgid "stacks.update.info.success"
 msgstr "Uppdaterad stack '%s'."
@@ -639,7 +676,9 @@ msgid "subsystems.list.info.foundSubsystems"
 msgstr "Hittade %d undersystem:"
 
 msgid "subsystems.list.info.noSubsystems"
-msgstr "Inga undersystem tillgänliga. Skapa ett nytt med 'apx subsystems new' eller kontakta systemadministratören."
+msgstr ""
+"Inga undersystem tillgänliga. Skapa ett nytt med 'apx subsystems new' eller "
+"kontakta systemadministratören."
 
 msgid "subsystems.new.error.alreadyExists"
 msgstr "Ett undersystem med namnet \"%s\" existerar redan."
@@ -660,10 +699,14 @@ msgid "subsystems.new.error.noStack"
 msgstr "Ingen stack specificerad."
 
 msgid "subsystems.new.error.noStacks"
-msgstr "En stack behövs för att skapa ett undersystem. Skapa ett nytt med 'apx stack new' eller kontakta systemadministratören."
+msgstr ""
+"En stack behövs för att skapa ett undersystem. Skapa ett nytt med 'apx stack "
+"new' eller kontakta systemadministratören."
 
 msgid "subsystems.new.error.stackDoesNotExist"
-msgstr "Den specificerade stacken finns inte. Skapa den med 'apx stack new' eller kontakta systemadministratören."
+msgstr ""
+"Den specificerade stacken finns inte. Skapa den med 'apx stack new' eller "
+"kontakta systemadministratören."
 
 msgid "subsystems.new.info.askName"
 msgstr "Välj ett namn:"

@@ -1,13 +1,13 @@
 msgid ""
 msgstr ""
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Language: ro\n"
 "PO-Revision-Date: 2026-08-24 05:40+0000\n"
 "Last-Translator: Prefill add-on <noreply-addon-prefill@weblate.org>\n"
 "Language-Team: Romanian <https://hosted.weblate.org/projects/vanilla-os/apx/"
 "ro/>\n"
+"Language: ro\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
 "20)) ? 1 : 2;\n"
 "X-Generator: Weblate 2026.9.dev0\n"
@@ -43,7 +43,8 @@ msgid "apx.cmd.pkgmanagers.new.options.autoremove"
 msgstr "Comanda de executat pentru ștergerea automată a pachetelor."
 
 msgid "apx.cmd.pkgmanagers.new.options.clean"
-msgstr "Comanda de executat pentru a curăța memoria cache a managerului de pachete."
+msgstr ""
+"Comanda de executat pentru a curăța memoria cache a managerului de pachete."
 
 msgid "apx.cmd.pkgmanagers.new.options.install"
 msgstr "Comanda de executat pentru instalare pachete."
@@ -121,7 +122,9 @@ msgid "apx.cmd.stacks.new"
 msgstr "Crează o stivă nouă."
 
 msgid "apx.cmd.stacks.new.options.base"
-msgstr "Imaginea de bază a distribuției de utilizat. (Pentru o listă cu imaginile compatibile vezi: https://distrobox.it/compatibility/#containers-distros)"
+msgstr ""
+"Imaginea de bază a distribuției de utilizat. (Pentru o listă cu imaginile "
+"compatibile vezi: https://distrobox.it/compatibility/#containers-distros)"
 
 msgid "apx.cmd.stacks.new.options.name"
 msgstr "Numele stivei."
@@ -324,6 +327,21 @@ msgstr "Utilizare"
 msgid "apx.msg.version"
 msgstr "Afișați versiunea pentru apx."
 
+#, fuzzy
+#| msgid "apx.cmd.subsystem.remove"
+msgid "apx.subsystem.dev"
+msgstr "Șterge pachetele specificate."
+
+#, fuzzy
+#| msgid "apx.cmd.subsystem.start"
+msgid "apx.subsystem.singularityos"
+msgstr "Pornește subsistemul."
+
+#, fuzzy
+#| msgid "apx.cmd.subsystem.run"
+msgid "apx.subsystem.work"
+msgstr "Rulați comanda în interiorul subsistemului."
+
 msgid "apx.terminal.false"
 msgstr "nu"
 
@@ -358,7 +376,9 @@ msgid "pkgmanagers.list.info.foundPkgManagers"
 msgstr "S-au găsit %d manageri de pachete"
 
 msgid "pkgmanagers.list.info.noPkgManagers"
-msgstr "Niciun manager de pachete disponibil. Crează unul nou cu 'apx pkgmanagers new' sau contactează administratorul de sistem."
+msgstr ""
+"Niciun manager de pachete disponibil. Crează unul nou cu 'apx pkgmanagers "
+"new' sau contactează administratorul de sistem."
 
 msgid "pkgmanagers.new.error.alreadyExists"
 msgstr "Un manager de pachete numit \"%s\" există deja."
@@ -418,13 +438,15 @@ msgid "pkgmanagers.update.error.noName"
 msgstr "Niciun nume specificat."
 
 msgid "pkgmanagers.update.info.askNewCommand"
-msgstr "Introduceți o nouă comandă pentru „%s” (lăsați gol pentru a păstra „%s”):"
+msgstr ""
+"Introduceți o nouă comandă pentru „%s” (lăsați gol pentru a păstra „%s”):"
 
 msgid "pkgmanagers.update.info.success"
 msgstr "Actualizat managerul de pachete '%s'."
 
 msgid "runtimeCommand.description"
-msgstr "Lucrează cu subsistemul specificat, accesând managerul de pachete și mediul."
+msgstr ""
+"Lucrează cu subsistemul specificat, accesând managerul de pachete și mediul."
 
 msgid "runtimeCommand.error.cantAccessPkgManager"
 msgstr "A apărut o eroare la accesarea managerului de pachete: %s"
@@ -523,7 +545,9 @@ msgid "stacks.list.info.foundStacks"
 msgstr "S-au găsit %d stive:"
 
 msgid "stacks.list.info.noStacks"
-msgstr "Nicio stivă disponibilă. Crează una nouă cu 'apx stacks new' sau contactează administratorul de sistem."
+msgstr ""
+"Nicio stivă disponibilă. Crează una nouă cu 'apx stacks new' sau contactează "
+"administratorul de sistem."
 
 msgid "stacks.new.error.alreadyExists"
 msgstr "O stivă cu numele \"%s\" există deja."
@@ -553,10 +577,14 @@ msgid "stacks.new.error.noPkgManager"
 msgstr "Niciun manager de pachete specificat."
 
 msgid "stacks.new.error.noPkgManagers"
-msgstr "Nu s-a putut găsi niciun manager de pachete. Creați unul cu „apx pkgmanagers new” sau contactați administratorul sistemului."
+msgstr ""
+"Nu s-a putut găsi niciun manager de pachete. Creați unul cu „apx pkgmanagers "
+"new” sau contactați administratorul sistemului."
 
 msgid "stacks.new.error.pkgManagerDoesNotExist"
-msgstr "Managerul de pachete specificat nu există. Crează-l cu 'apx pkgmanagers new' sau contactează administratorul de sistem."
+msgstr ""
+"Managerul de pachete specificat nu există. Crează-l cu 'apx pkgmanagers new' "
+"sau contactează administratorul de sistem."
 
 msgid "stacks.new.info.askBase"
 msgstr "Alegeți o stivă de bază (de exemplu, \"vanillaos/pico\"):"
@@ -565,7 +593,9 @@ msgid "stacks.new.info.askName"
 msgstr "Alege un nume:"
 
 msgid "stacks.new.info.askPackages"
-msgstr "Te rog scrie pachetele pe care dorești să le instalezi în stivă, separate prin spațiu:"
+msgstr ""
+"Te rog scrie pachetele pe care dorești să le instalezi în stivă, separate "
+"prin spațiu:"
 
 msgid "stacks.new.info.askPkgManager"
 msgstr "Alege un manager de pachete:"
@@ -574,7 +604,9 @@ msgid "stacks.new.info.confirmPackages"
 msgstr "Dorești să confirmi lista curentă de pachete?"
 
 msgid "stacks.new.info.noPackages"
-msgstr "Nu ați furnizat niciun pachet de instalat în stivă. Doriți să adăugați unele acum?"
+msgstr ""
+"Nu ați furnizat niciun pachet de instalat în stivă. Doriți să adăugați unele "
+"acum?"
 
 msgid "stacks.new.info.selectPkgManager"
 msgstr "Selectează un manager de pachete [1-%d]:"
@@ -607,13 +639,17 @@ msgid "stacks.update.error.noPkgManager"
 msgstr "Niciun manager de pachete specificat."
 
 msgid "stacks.update.error.pkgManagerDoesNotExist"
-msgstr "Managerul de pachete specificat nu există. Crează-l cu 'apx pkgmanagers new' sau contactează administratorul de sistem."
+msgstr ""
+"Managerul de pachete specificat nu există. Crează-l cu 'apx pkgmanagers new' "
+"sau contactează administratorul de sistem."
 
 msgid "stacks.update.info.askBase"
 msgstr "Introdu o nouă bază sau confirm-o pe cea actuală (%s):"
 
 msgid "stacks.update.info.askPackages"
-msgstr "Introdu pachetele pe care dorești să le instalezi în stivă, separate printr-un spațiu:"
+msgstr ""
+"Introdu pachetele pe care dorești să le instalezi în stivă, separate printr-"
+"un spațiu:"
 
 msgid "stacks.update.info.askPkgManager"
 msgstr "Alege un nou manager de pachete sau confirmă-l pe cel actual (%s):"
@@ -622,7 +658,9 @@ msgid "stacks.update.info.confirmPackages"
 msgstr "Doriți să actualizați lista de pachete?"
 
 msgid "stacks.update.info.noPackages"
-msgstr "Nu ați furnizat niciun pachet de instalat în stivă. Doriți să adăugați unele acum?"
+msgstr ""
+"Nu ați furnizat niciun pachet de instalat în stivă. Doriți să adăugați unele "
+"acum?"
 
 msgid "stacks.update.info.success"
 msgstr "Stiva \"%s\" actualizată."
@@ -640,7 +678,9 @@ msgid "subsystems.list.info.foundSubsystems"
 msgstr "S-au găsit %d subsisteme:"
 
 msgid "subsystems.list.info.noSubsystems"
-msgstr "Nu există subsisteme disponibile. Crează unul nou cu 'apx subsystems new' sau contactează administratorul de sistem."
+msgstr ""
+"Nu există subsisteme disponibile. Crează unul nou cu 'apx subsystems new' "
+"sau contactează administratorul de sistem."
 
 msgid "subsystems.new.error.alreadyExists"
 msgstr "Un subsistem cu numele \"%s\" există deja."
@@ -661,10 +701,14 @@ msgid "subsystems.new.error.noStack"
 msgstr "Nu este specificată nicio stivă."
 
 msgid "subsystems.new.error.noStacks"
-msgstr "Pentru a crea un subsistem este necesară o stivă. Crează una nouă cu \"apx stacks new\" sau contactează administratorul de sistem."
+msgstr ""
+"Pentru a crea un subsistem este necesară o stivă. Crează una nouă cu \"apx "
+"stacks new\" sau contactează administratorul de sistem."
 
 msgid "subsystems.new.error.stackDoesNotExist"
-msgstr "Stiva specificată nu există. Creaz-o cu \"apx stacks new\" sau contactează administratorul de sistem."
+msgstr ""
+"Stiva specificată nu există. Creaz-o cu \"apx stacks new\" sau contactează "
+"administratorul de sistem."
 
 msgid "subsystems.new.info.askName"
 msgstr "Alege un nume:"
