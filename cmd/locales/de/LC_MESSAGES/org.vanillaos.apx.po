@@ -4,6 +4,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: de\n"
+"PO-Revision-Date: 2026-08-24 05:39+0000\n"
+"Last-Translator: Prefill add-on <noreply-addon-prefill@weblate.org>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/vanilla-os/apx/"
+"de/>\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2026.9.dev0\n"
 
 msgid "apx.cmd.pkgmanagers"
 msgstr "Arbeiten Sie mit den Paketmanagern, die in apx verfügbar sind."
@@ -692,25 +698,30 @@ msgstr "Sind Sie sicher, dass Sie ,%s' entfernen möchten?"
 msgid "subsystems.rm.info.success"
 msgstr "Das Subsystem '%s' wurde entfernt."
 
-
-
+#, fuzzy
 msgid "apx.arg.command"
-msgstr ""
+msgstr "apx.arg.command"
 
+#, fuzzy
 msgid "apx.arg.packages"
-msgstr ""
+msgstr "apx.arg.packages"
 
+#, fuzzy
 msgid "apx.arg.query"
-msgstr ""
+msgstr "apx.arg.query"
 
+#, fuzzy
 msgid "apx.arg.package"
-msgstr ""
+msgstr "apx.arg.package"
 
+#, fuzzy
 msgid "apx.arg.applications"
-msgstr ""
+msgstr "apx.arg.applications"
 
+#, fuzzy
 msgid "apx.arg.stack"
-msgstr ""
+msgstr "apx.arg.stack"
 
+#, fuzzy
 msgid "apx.arg.pkgmanager"
-msgstr ""
+msgstr "apx.arg.pkgmanager"

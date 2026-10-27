@@ -4,6 +4,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ar\n"
+"PO-Revision-Date: 2026-08-24 05:39+0000\n"
+"Last-Translator: Prefill add-on <noreply-addon-prefill@weblate.org>\n"
+"Language-Team: Arabic <https://hosted.weblate.org/projects/vanilla-os/apx/"
+"ar/>\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"X-Generator: Weblate 2026.9.dev0\n"
 
 msgid "apx.cmd.pkgmanagers"
 msgstr "يتعامل مع مديري الحزم المتاحة في apx."
@@ -692,25 +699,30 @@ msgstr "هل انت متأكد من حذف '%s'؟"
 msgid "subsystems.rm.info.success"
 msgstr "تم حذف النظام الفرعي '%s'."
 
-
-
+#, fuzzy
 msgid "apx.arg.command"
-msgstr ""
+msgstr "apx.arg.command"
 
+#, fuzzy
 msgid "apx.arg.packages"
-msgstr ""
+msgstr "apx.arg.packages"
 
+#, fuzzy
 msgid "apx.arg.query"
-msgstr ""
+msgstr "apx.arg.query"
 
+#, fuzzy
 msgid "apx.arg.package"
-msgstr ""
+msgstr "apx.arg.package"
 
+#, fuzzy
 msgid "apx.arg.applications"
-msgstr ""
+msgstr "apx.arg.applications"
 
+#, fuzzy
 msgid "apx.arg.stack"
-msgstr ""
+msgstr "apx.arg.stack"
 
+#, fuzzy
 msgid "apx.arg.pkgmanager"
-msgstr ""
+msgstr "apx.arg.pkgmanager"
