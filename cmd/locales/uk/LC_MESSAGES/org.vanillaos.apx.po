@@ -1,16 +1,17 @@
+# Dan <jonweblin2205@protonmail.com>, 2026.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-08-24 05:40+0000\n"
-"Last-Translator: Prefill add-on <noreply-addon-prefill@weblate.org>\n"
+"PO-Revision-Date: 2026-09-22 05:51+0000\n"
+"Last-Translator: Dan <jonweblin2205@protonmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/vanilla-os/apx/"
 "uk/>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 2026.9.dev0\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 2026.10.dev0\n"
 
 msgid "apx.cmd.pkgmanagers"
 msgstr "Працюйте з менеджерами пакунків, які доступні в apx."
@@ -326,20 +327,14 @@ msgstr "Використання"
 msgid "apx.msg.version"
 msgstr "Показати версію apx."
 
-#, fuzzy
-#| msgid "apx.cmd.subsystem.remove"
 msgid "apx.subsystem.dev"
-msgstr "Видаліть вказані пакунки."
+msgstr "apx.subsystem.dev"
 
-#, fuzzy
-#| msgid "apx.cmd.subsystem.start"
 msgid "apx.subsystem.singularityos"
-msgstr "Запустити підсистему."
+msgstr "apx.subsystem.singularityos"
 
-#, fuzzy
-#| msgid "apx.cmd.subsystem.run"
 msgid "apx.subsystem.work"
-msgstr "Виконати команду всередині підсистеми."
+msgstr "apx.subsystem.work"
 
 msgid "apx.terminal.false"
 msgstr "ні"
@@ -736,30 +731,23 @@ msgstr "Ви впевнені, що хочете видалити «%s»?"
 msgid "subsystems.rm.info.success"
 msgstr "Видалено підсистему «%s»."
 
-#, fuzzy
 msgid "apx.arg.command"
 msgstr "apx.arg.command"
 
-#, fuzzy
 msgid "apx.arg.packages"
 msgstr "apx.arg.packages"
 
-#, fuzzy
 msgid "apx.arg.query"
 msgstr "apx.arg.query"
 
-#, fuzzy
 msgid "apx.arg.package"
 msgstr "apx.arg.package"
 
-#, fuzzy
 msgid "apx.arg.applications"
 msgstr "apx.arg.applications"
 
-#, fuzzy
 msgid "apx.arg.stack"
 msgstr "apx.arg.stack"
 
-#, fuzzy
 msgid "apx.arg.pkgmanager"
 msgstr "apx.arg.pkgmanager"
